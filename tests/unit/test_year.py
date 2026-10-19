@@ -66,3 +66,41 @@ def test_mixed_years():
 def test_repeated_year_is_single():
     r = resolve_year("2020 and 2020")
     assert r["comparison"] is False and [p["year"] for p in r["periods"]] == [2020]
+
+
+@pytest.mark.parametrize("text", [None, "latest"])
+def test_latest_message_not_current(text):
+    m = resolve_year(text)["message"].lower()
+    assert m and "2016–2020" in m and "not a current" in m
+
+
+@pytest.mark.parametrize(
+    "text,year",
+    [
+        ("2015–2019", 2019),
+        ("2015-2019", 2019),
+        ("2015 to 2019", 2019),
+        ("2015 through 2019", 2019),
+        ("2016–2020", 2020),
+        ("2016-2020", 2020),
+        ("2016 to 2020", 2020),
+        ("2016 through 2020", 2020),
+    ],
+)
+def test_period_labels(text, year):
+    r = resolve_year(text)
+    assert r["status"] == "ok" and r["comparison"] is False
+    assert [p["year"] for p in r["periods"]] == [year]
+
+
+def test_label_comparison():
+    r = resolve_year("2015–2019 vs 2016–2020")
+    assert r["comparison"] is True and [p["year"] for p in r["periods"]] == [2019, 2020]
+
+
+def test_unrecognized_text_ambiguous():
+    assert resolve_year("last year")["status"] == "ambiguous"
+
+
+def test_2015_and_2020_ambiguous():
+    assert resolve_year("2015 and 2020")["status"] == "ambiguous"

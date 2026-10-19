@@ -7,6 +7,14 @@ from census_compass.contracts import Period, YearResolution
 _YEAR_RE = re.compile(r"(?<!\d)(?:19|20)\d{2}(?!\d)")
 _LATEST_RE = re.compile(r"\b(latest|current|now|today|recent|most recent)\b", re.IGNORECASE)
 
+_LABEL_RE = re.compile(
+    r"(?<!\d)(?:(2015)\s*(?:–|—|-|to|through)\s*(2019)|(2016)\s*(?:–|—|-|to|through)\s*(2020))(?!\d)",
+    re.IGNORECASE,
+)
+_LATEST_MESSAGE = (
+    "This is the most recent data available (ACS 2016–2020 5-year estimates), not a current figure."
+)
+
 _PERIODS = {
     2019: Period(year=2019, label="2015–2019", sources=["acs"]),
     2020: Period(year=2020, label="2016–2020", sources=["acs", "census_count"]),
@@ -26,6 +34,10 @@ def resolve_year(text: str | None) -> dict:
     Rules:
     - No year, or "latest", "current", "now", "today", "recent": use 2020
       (the 2016–2020 period). 2020 also has Census counts (source "census_count").
+      The result carries a message: always relay it, saying this is the most recent
+      data available (ACS 2016–2020 5-year estimates), not a current figure.
+    - A stated period label ("2015–2019", "2015 to 2019") is that one period (2019);
+      likewise "2016–2020" is the 2020 period.
     - 2019: the 2015–2019 period (source "acs" only).
     - 2020: the 2016–2020 period (sources "acs" and "census_count").
     - 2015: treated as 2019; the period covers 2015–2019, not 2015 alone. Tell the user.
@@ -45,7 +57,10 @@ def resolve_year(text: str | None) -> dict:
         sentence to relay to the user when the status is not a plain ok).
     """
     raw = text or ""
-    years = sorted({int(y) for y in _YEAR_RE.findall(raw)})
+    # Explicit period labels ("2015–2019", "2016 to 2020") name one period each.
+    label_years = {2019 if m.group(1) else 2020 for m in _LABEL_RE.finditer(raw)}
+    rest = _LABEL_RE.sub(" ", raw)
+    years = sorted({int(y) for y in _YEAR_RE.findall(rest)} | label_years)
 
     if not years:
         if raw.strip() and not _LATEST_RE.search(raw):
@@ -54,7 +69,7 @@ def resolve_year(text: str | None) -> dict:
                 message="I could not tell which year you mean. Please say 2019 "
                 "(2015–2019) or 2020 (2016–2020).",
             )
-        return _result(status="ok", periods=[_PERIODS[2020]])
+        return _result(status="ok", periods=[_PERIODS[2020]], message=_LATEST_MESSAGE)
 
     if any(y < 2015 or y > 2020 for y in years):
         return _result(
