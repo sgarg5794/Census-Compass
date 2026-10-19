@@ -1,0 +1,194 @@
+{
+  "$defs": {
+    "Dimension": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "sql": {
+          "title": "Sql",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "string",
+            "number"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "primary_key": {
+          "default": false,
+          "title": "Primary Key",
+          "type": "boolean"
+        },
+        "format": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Format"
+        },
+        "meta": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Meta",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "title",
+        "description",
+        "sql",
+        "type"
+      ],
+      "title": "Dimension",
+      "type": "object"
+    },
+    "Join": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "relationship": {
+          "enum": [
+            "one_to_one",
+            "many_to_one"
+          ],
+          "title": "Relationship",
+          "type": "string"
+        },
+        "sql": {
+          "title": "Sql",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "relationship",
+        "sql"
+      ],
+      "title": "Join",
+      "type": "object"
+    },
+    "Measure": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "sql": {
+          "title": "Sql",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "sum",
+            "number"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "format": {
+          "title": "Format",
+          "type": "string"
+        },
+        "meta": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Meta",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name",
+        "title",
+        "description",
+        "sql",
+        "type",
+        "format"
+      ],
+      "title": "Measure",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "sql_table": {
+      "title": "Sql Table",
+      "type": "string"
+    },
+    "dimensions": {
+      "items": {
+        "$ref": "#/$defs/Dimension"
+      },
+      "title": "Dimensions",
+      "type": "array"
+    },
+    "measures": {
+      "items": {
+        "$ref": "#/$defs/Measure"
+      },
+      "title": "Measures",
+      "type": "array"
+    },
+    "joins": {
+      "items": {
+        "$ref": "#/$defs/Join"
+      },
+      "title": "Joins",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "title",
+    "description",
+    "sql_table",
+    "dimensions",
+    "measures"
+  ],
+  "title": "TopicFile",
+  "type": "object"
+}

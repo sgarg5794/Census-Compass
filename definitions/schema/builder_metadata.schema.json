@@ -1,0 +1,168 @@
+{
+  "$defs": {
+    "MemberMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "title": "File",
+          "type": "string"
+        },
+        "member": {
+          "title": "Member",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "dimension",
+            "measure"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "table": {
+          "title": "Table",
+          "type": "string"
+        },
+        "source_column": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Column"
+        },
+        "aggregation": {
+          "enum": [
+            "sum",
+            "none",
+            "formula"
+          ],
+          "title": "Aggregation",
+          "type": "string"
+        },
+        "definition_source": {
+          "enum": [
+            "dictionary",
+            "census_api",
+            "hand_written",
+            "project"
+          ],
+          "title": "Definition Source",
+          "type": "string"
+        },
+        "subject_definitions_page": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject Definitions Page"
+        },
+        "normalized_sql": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Normalized Sql"
+        },
+        "numerator_columns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Numerator Columns",
+          "type": "array"
+        },
+        "denominator_columns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Denominator Columns",
+          "type": "array"
+        },
+        "coverage_sql": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coverage Sql"
+        },
+        "population_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Population Group"
+        }
+      },
+      "required": [
+        "file",
+        "member",
+        "kind",
+        "table",
+        "source_column",
+        "aggregation",
+        "definition_source"
+      ],
+      "title": "MemberMetadata",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "year": {
+      "title": "Year",
+      "type": "integer"
+    },
+    "members": {
+      "items": {
+        "$ref": "#/$defs/MemberMetadata"
+      },
+      "title": "Members",
+      "type": "array"
+    },
+    "table_columns": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Table Columns",
+      "type": "object"
+    },
+    "fips_table": {
+      "title": "Fips Table",
+      "type": "string"
+    }
+  },
+  "required": [
+    "year",
+    "members",
+    "table_columns",
+    "fips_table"
+  ],
+  "title": "BuilderMetadata",
+  "type": "object"
+}
