@@ -69,6 +69,24 @@ def build_index(semantic_dir: Path, index_dir: Path, model_name: str) -> None:
     except BaseException:
         shutil.rmtree(tmp, ignore_errors=True)
         raise
-    if index_dir.exists():
-        shutil.rmtree(index_dir)
-    tmp.rename(index_dir)
+    _swap(tmp, index_dir)
+
+
+def _swap(tmp: Path, index_dir: Path) -> None:
+    """Move `tmp` into place; on any failure restore the previous index."""
+    old = index_dir.with_name(index_dir.name + ".old")
+    if old.exists():
+        shutil.rmtree(old)
+    had_old = index_dir.exists()
+    try:
+        if had_old:
+            index_dir.rename(old)
+        tmp.rename(index_dir)
+    except BaseException:
+        if had_old and old.exists():
+            if index_dir.exists():
+                shutil.rmtree(index_dir)
+            old.rename(index_dir)
+        shutil.rmtree(tmp, ignore_errors=True)
+        raise
+    shutil.rmtree(old, ignore_errors=True)

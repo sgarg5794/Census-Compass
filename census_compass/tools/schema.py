@@ -54,9 +54,12 @@ def search_schema(query: str, year: int, population_group: str | None = None) ->
     Args:
         query: Natural-language description of the data needed.
         year: Data year, 2019 or 2020. Only files for that year are searched.
-        population_group: Optional race/ethnicity group code (for example "D"
-            for Asian alone). When given, race-specific fields for other groups
-            are excluded; general (all-population) fields are always kept.
+        population_group: Optional race/ethnicity group code, a letter A-I,
+            as returned by resolve_population_group. If omitted, race- or
+            ethnicity-specific fields are NOT searched; only general
+            (all-population) fields are. If given, fields for that group are
+            searched in addition to all general fields (fields for other
+            groups are still excluded).
 
     Returns:
         {"results": [{"name", "title", "description", "matched_members":

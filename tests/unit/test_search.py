@@ -124,3 +124,33 @@ def test_atomic_swap_keeps_old_index_on_failure(env, tmp_path, monkeypatch):
     assert sorted(p.name for p in idx.rglob("*")) == before
     assert not (tmp_path / "index.tmp").exists()
     assert _search("poverty", 2020, None, index_dir=idx, model_name=MODEL)
+
+
+def test_population_group_none_never_returns_race_members(env):
+    race = ("household_income_asian_alone", "household_income_black_alone")
+    none_names = [m.name for h in search(env, "household income asian black", 2020, None)
+                  for m in h.matched_members]
+    assert none_names and not any(n in race for n in none_names)
+    d_names = [m.name for h in search(env, "household income asian", 2020, "D")
+               for m in h.matched_members]
+    assert "household_income_asian_alone" in d_names
+
+
+def test_swap_failure_restores_old_index(env, tmp_path, monkeypatch):
+    root, _ = env
+    idx = tmp_path / "index"
+    build_index(root, idx, MODEL)
+    orig = Path.rename
+
+    def flaky(self, target):
+        if self.name == "index.tmp":
+            raise OSError("swap failed")
+        return orig(self, target)
+
+    monkeypatch.setattr(Path, "rename", flaky)
+    with pytest.raises(OSError):
+        build_index(root, idx, MODEL)
+    monkeypatch.undo()
+    assert idx.is_dir()
+    assert not (tmp_path / "index.tmp").exists() and not (tmp_path / "index.old").exists()
+    assert _search("poverty", 2020, None, index_dir=idx, model_name=MODEL)
