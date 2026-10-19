@@ -1,0 +1,2602 @@
+version: 1
+name: class_of_worker_2020
+description: '2020-labeled Census demographic fields in 2020_CBG_B24. Contains Census statistical groups: B24080:
+  Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.'
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B24"'
+grain:
+  description: One row per Census block group.
+  primary_key:
+  - census_block_group
+  verification: Unique non-null key confirmed in the earlier live join audit.
+dimensions:
+  census_block_group:
+    description: Census block-group geographic identifier for the area summarized by this row.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"CENSUS_BLOCK_GROUP"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: CENSUS_BLOCK_GROUP
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+measures:
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_b24080e1:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e1"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e1
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e1
+      source_metadata:
+        TABLE_ID: B24080e1
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: null
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m1"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m1
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m1
+        source_metadata:
+          TABLE_ID: B24080m1
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: null
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_b24080e2:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e2"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e2
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e2
+      source_metadata:
+        TABLE_ID: B24080e2
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m2"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m2
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m2
+        source_metadata:
+          TABLE_ID: B24080m2
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_for_profit_wage_and_salary_workers_b24080e3
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Private for-profit wage and salary
+      workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e3"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e3
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Private for-profit wage and salary workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e3
+      source_metadata:
+        TABLE_ID: B24080e3
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Private for-profit wage and salary workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m3"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Private for-profit wage
+        and salary workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m3
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Private for-profit wage and salary workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m3
+        source_metadata:
+          TABLE_ID: B24080m3
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Private for-profit wage and salary workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_for_profit_wage_and_salary_workers_employee_of_private_comp_b24080e4
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Private for-profit wage and salary
+      workers > Employee of private company workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e4"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e4
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Private for-profit wage and salary workers
+      - Employee of private company workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e4
+      source_metadata:
+        TABLE_ID: B24080e4
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Private for-profit wage and salary workers
+        FIELD_LEVEL_7: Employee of private company workers
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m4"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Private for-profit wage
+        and salary workers > Employee of private company workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m4
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Private for-profit wage and salary workers
+        - Employee of private company workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m4
+        source_metadata:
+          TABLE_ID: B24080m4
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Private for-profit wage and salary workers
+          FIELD_LEVEL_7: Employee of private company workers
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_for_profit_wage_and_salary_workers_self_employed_in_own_inc_b24080e5
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Private for-profit wage and salary
+      workers > Self-employed in own incorporated business workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e5"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e5
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Private for-profit wage and salary workers
+      - Self-employed in own incorporated business workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e5
+      source_metadata:
+        TABLE_ID: B24080e5
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Private for-profit wage and salary workers
+        FIELD_LEVEL_7: Self-employed in own incorporated business workers
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m5"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Private for-profit wage
+        and salary workers > Self-employed in own incorporated business workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m5
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Private for-profit wage and salary workers
+        - Self-employed in own incorporated business workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m5
+        source_metadata:
+          TABLE_ID: B24080m5
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Private for-profit wage and salary workers
+          FIELD_LEVEL_7: Self-employed in own incorporated business workers
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_not_for_profit_wage_and_salary_workers_b24080e6
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Private not-for-profit wage and
+      salary workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e6"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e6
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Private not-for-profit wage and salary workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e6
+      source_metadata:
+        TABLE_ID: B24080e6
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Private not-for-profit wage and salary workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m6"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Private not-for-profit
+        wage and salary workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m6
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Private not-for-profit wage and salary workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m6
+        source_metadata:
+          TABLE_ID: B24080m6
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Private not-for-profit wage and salary workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_local_government_workers_b24080e7:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Local government workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e7"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e7
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Local government workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e7
+      source_metadata:
+        TABLE_ID: B24080e7
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Local government workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m7"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Local government workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m7
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Local government workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m7
+        source_metadata:
+          TABLE_ID: B24080m7
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Local government workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_state_government_workers_b24080e8:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > State government workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e8"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e8
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - State government workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e8
+      source_metadata:
+        TABLE_ID: B24080e8
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: State government workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m8"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > State government workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m8
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - State government workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m8
+        source_metadata:
+          TABLE_ID: B24080m8
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: State government workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_federal_government_workers_b24080e9:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Federal government workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e9"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e9
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Federal government workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e9
+      source_metadata:
+        TABLE_ID: B24080e9
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Federal government workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m9"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Federal government workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m9
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Federal government workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m9
+        source_metadata:
+          TABLE_ID: B24080m9
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Federal government workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_self_employed_in_own_not_incorporated_business_workers_b24080e10
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Self-employed in own not incorporated
+      business workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e10"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e10
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Self-employed in own not incorporated business workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e10
+      source_metadata:
+        TABLE_ID: B24080e10
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Self-employed in own not incorporated business workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m10"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Self-employed in own
+        not incorporated business workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m10
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Self-employed in own not incorporated business workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m10
+        source_metadata:
+          TABLE_ID: B24080m10
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Self-employed in own not incorporated business workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_unpaid_family_workers_b24080e11:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Male > Unpaid family workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e11"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e11
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Male
+      - Unpaid family workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e11
+      source_metadata:
+        TABLE_ID: B24080e11
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Unpaid family workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m11"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Male > Unpaid family workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m11
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Male
+        - Unpaid family workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m11
+        source_metadata:
+          TABLE_ID: B24080m11
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Unpaid family workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_b24080e12:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e12"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e12
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e12
+      source_metadata:
+        TABLE_ID: B24080e12
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m12"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m12
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m12
+        source_metadata:
+          TABLE_ID: B24080m12
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_for_profit_wage_and_salary_workers_b24080e13
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Private for-profit wage and salary
+      workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e13"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e13
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Private for-profit wage and salary workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e13
+      source_metadata:
+        TABLE_ID: B24080e13
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Private for-profit wage and salary workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m13"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Private for-profit
+        wage and salary workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m13
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Private for-profit wage and salary workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m13
+        source_metadata:
+          TABLE_ID: B24080m13
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Private for-profit wage and salary workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_for_profit_wage_and_salary_workers_employee_of_private_co_b24080e14
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Private for-profit wage and salary
+      workers > Employee of private company workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e14"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e14
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Private for-profit wage and salary workers
+      - Employee of private company workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e14
+      source_metadata:
+        TABLE_ID: B24080e14
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Private for-profit wage and salary workers
+        FIELD_LEVEL_7: Employee of private company workers
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m14"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Private for-profit
+        wage and salary workers > Employee of private company workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m14
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Private for-profit wage and salary workers
+        - Employee of private company workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m14
+        source_metadata:
+          TABLE_ID: B24080m14
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Private for-profit wage and salary workers
+          FIELD_LEVEL_7: Employee of private company workers
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_for_profit_wage_and_salary_workers_self_employed_in_own_i_b24080e15
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Private for-profit wage and salary
+      workers > Self-employed in own incorporated business workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e15"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e15
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Private for-profit wage and salary workers
+      - Self-employed in own incorporated business workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e15
+      source_metadata:
+        TABLE_ID: B24080e15
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Private for-profit wage and salary workers
+        FIELD_LEVEL_7: Self-employed in own incorporated business workers
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m15"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Private for-profit
+        wage and salary workers > Self-employed in own incorporated business workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m15
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Private for-profit wage and salary workers
+        - Self-employed in own incorporated business workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m15
+        source_metadata:
+          TABLE_ID: B24080m15
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Private for-profit wage and salary workers
+          FIELD_LEVEL_7: Self-employed in own incorporated business workers
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_not_for_profit_wage_and_salary_workers_b24080e16
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Private not-for-profit wage and
+      salary workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e16"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e16
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Private not-for-profit wage and salary workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e16
+      source_metadata:
+        TABLE_ID: B24080e16
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Private not-for-profit wage and salary workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m16"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Private not-for-profit
+        wage and salary workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m16
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Private not-for-profit wage and salary workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m16
+        source_metadata:
+          TABLE_ID: B24080m16
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Private not-for-profit wage and salary workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_local_government_workers_b24080e17:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Local government workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e17"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e17
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Local government workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e17
+      source_metadata:
+        TABLE_ID: B24080e17
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Local government workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m17"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Local government workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m17
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Local government workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m17
+        source_metadata:
+          TABLE_ID: B24080m17
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Local government workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_state_government_workers_b24080e18:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > State government workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e18"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e18
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - State government workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e18
+      source_metadata:
+        TABLE_ID: B24080e18
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: State government workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m18"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > State government workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m18
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - State government workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m18
+        source_metadata:
+          TABLE_ID: B24080m18
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: State government workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_federal_government_workers_b24080e19:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Federal government workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e19"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e19
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Federal government workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e19
+      source_metadata:
+        TABLE_ID: B24080e19
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Federal government workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m19"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Federal government
+        workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m19
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Federal government workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m19
+        source_metadata:
+          TABLE_ID: B24080m19
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Federal government workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ? sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_self_employed_in_own_not_incorporated_business_workers_b24080e20
+  : description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Self-employed in own not incorporated
+      business workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e20"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e20
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Self-employed in own not incorporated business workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e20
+      source_metadata:
+        TABLE_ID: B24080e20
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Self-employed in own not incorporated business workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m20"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Self-employed in own
+        not incorporated business workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m20
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Self-employed in own not incorporated business workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m20
+        source_metadata:
+          TABLE_ID: B24080m20
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Self-employed in own not incorporated business workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_unpaid_family_workers_b24080e21:
+    description: 'Estimate. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+      Civilian employed population 16 years and over. Breakdown: Total > Female > Unpaid family workers.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Civilian employed population 16 years and over
+    sql: '"B24080e21"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B24080e21
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+      - Civilian employed population 16 years and over
+      - Total
+      - Female
+      - Unpaid family workers
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B24080e21
+      source_metadata:
+        TABLE_ID: B24080e21
+        TABLE_NUMBER: B24080
+        TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+        TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+        TABLE_UNIVERSE: Civilian employed population 16 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        FIELD_LEVEL_3: Civilian employed population 16 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Unpaid family workers
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B24080m21"'
+      description: 'MarginOfError. Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over.
+        Universe: Civilian employed population 16 years and over. Breakdown: Total > Female > Unpaid family workers.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B24080m21
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+        - Civilian employed population 16 years and over
+        - Total
+        - Female
+        - Unpaid family workers
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B24080m21
+        source_metadata:
+          TABLE_ID: B24080m21
+          TABLE_NUMBER: B24080
+          TABLE_TITLE: Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+          TABLE_TOPICS: Age and Sex, Civilian Population, Class of Worker
+          TABLE_UNIVERSE: Civilian employed population 16 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY CLASS OF WORKER FOR THE CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER
+          FIELD_LEVEL_3: Civilian employed population 16 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Unpaid family workers
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+relationships:
+  population_age_and_sex_2020:
+    target_table: 2020_CBG_B01
+    target_model: population_age_and_sex_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  race_2020:
+    target_table: 2020_CBG_B02
+    target_model: race_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  hispanic_latino_origin_2020:
+    target_table: 2020_CBG_B03
+    target_model: hispanic_latino_origin_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  geographic_mobility_2020:
+    target_table: 2020_CBG_B07
+    target_model: geographic_mobility_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  work_location_and_commuting_2020:
+    target_table: 2020_CBG_B08
+    target_model: work_location_and_commuting_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  children_and_household_relationships_2020:
+    target_table: 2020_CBG_B09
+    target_model: children_and_household_relationships_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  households_and_families_2020:
+    target_table: 2020_CBG_B11
+    target_model: households_and_families_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  marital_status_2020:
+    target_table: 2020_CBG_B12
+    target_model: marital_status_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  school_enrollment_2020:
+    target_table: 2020_CBG_B14
+    target_model: school_enrollment_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  educational_attainment_2020:
+    target_table: 2020_CBG_B15
+    target_model: educational_attainment_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  language_and_english_proficiency_2020:
+    target_table: 2020_CBG_B16
+    target_model: language_and_english_proficiency_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  poverty_2020:
+    target_table: 2020_CBG_B17
+    target_model: poverty_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  household_income_2020:
+    target_table: 2020_CBG_B19
+    target_model: household_income_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  earnings_2020:
+    target_table: 2020_CBG_B20
+    target_model: earnings_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  veteran_status_2020:
+    target_table: 2020_CBG_B21
+    target_model: veteran_status_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  snap_and_disability_2020:
+    target_table: 2020_CBG_B22
+    target_model: snap_and_disability_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  employment_and_labor_force_2020:
+    target_table: 2020_CBG_B23
+    target_model: employment_and_labor_force_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  housing_2020:
+    target_table: 2020_CBG_B25
+    target_model: housing_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  health_insurance_2020:
+    target_table: 2020_CBG_B27
+    target_model: health_insurance_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  computers_and_internet_2020:
+    target_table: 2020_CBG_B28
+    target_model: computers_and_internet_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  citizen_voting_age_population_2020:
+    target_table: 2020_CBG_B29
+    target_model: citizen_voting_age_population_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  response_allocation_2020:
+    target_table: 2020_CBG_B99
+    target_model: response_allocation_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  detailed_race_2020:
+    target_table: 2020_CBG_C02
+    target_model: detailed_race_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  bachelors_degree_fields_2020:
+    target_table: 2020_CBG_C15
+    target_model: bachelors_degree_fields_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  household_language_2020:
+    target_table: 2020_CBG_C16
+    target_model: household_language_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  income_to_poverty_ratio_2020:
+    target_table: 2020_CBG_C17
+    target_model: income_to_poverty_ratio_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  veterans_poverty_and_disability_2020:
+    target_table: 2020_CBG_C21
+    target_model: veterans_poverty_and_disability_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  occupation_2020:
+    target_table: 2020_CBG_C24
+    target_model: occupation_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  cbg_geometry_wkt_2020:
+    target_table: 2020_CBG_GEOMETRY_WKT
+    target_model: cbg_geometry_wkt_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  metadata_cbg_geographic_data_2020:
+    target_table: 2020_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: metadata_cbg_geographic_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  redistricting_cbg_data_2020:
+    target_table: 2020_REDISTRICTING_CBG_DATA
+    target_model: redistricting_cbg_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  redistricting_metadata_cbg_geographic_data_2020:
+    target_table: 2020_REDISTRICTING_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: redistricting_metadata_cbg_geographic_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+constraints:
+- Choose an allowed aggregation explicitly; there is no default.
+- Direct retrieval and sorting do not themselves require aggregation.
+- Do not treat NULL or unverified numeric sentinel codes as zero.
+- Do not combine overlapping categories or duplicate records introduced by joins.
+- Check geographic coverage, compatible universes, reporting periods, and uncertainty before combining values.
+unresolved_columns: {}
+metadata:
+  schema_status: v1
+  physical_table: 2020_CBG_B24
+  object_type: BASE TABLE
+  family: demographic
+  year_label: 2020
+  reporting_period: null
+  description_source: field_dictionary_summary
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 43
+  aggregation_policy: Population count operations are approved. Other statistical concepts require individual review;
+    empty allowed operations do not authorize rollup.
+  source_dictionary_gap_count: 1
+  documented_measure_count: 21
+  unresolved_column_count: 0

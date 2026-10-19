@@ -1,0 +1,3 @@
+# Install the pinned dependencies and this project.
+-r requirements.lock.txt
+-e .

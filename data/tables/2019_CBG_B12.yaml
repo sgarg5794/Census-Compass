@@ -1,0 +1,2447 @@
+version: 1
+name: marital_status_2019
+description: '2019-labeled Census demographic fields in 2019_CBG_B12. Contains Census statistical groups: B12001:
+  Sex By Marital Status For The Population 15 Years And Over.'
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B12"'
+grain:
+  description: One row per Census block group.
+  primary_key:
+  - census_block_group
+  verification: Unique non-null key confirmed in the earlier live join audit.
+dimensions:
+  census_block_group:
+    description: Census block-group geographic identifier for the area summarized by this row.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"CENSUS_BLOCK_GROUP"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: CENSUS_BLOCK_GROUP
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+measures:
+  sex_by_marital_status_for_the_population_15_years_and_over_b12001e1:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e1"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e1
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e1
+      source_metadata:
+        TABLE_ID: B12001e1
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: null
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m1"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m1
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m1
+        source_metadata:
+          TABLE_ID: B12001m1
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: null
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_b12001e2:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e2"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e2
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e2
+      source_metadata:
+        TABLE_ID: B12001e2
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m2"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m2
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m2
+        source_metadata:
+          TABLE_ID: B12001m2
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_never_married_b12001e3:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Never married.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e3"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e3
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Never married
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e3
+      source_metadata:
+        TABLE_ID: B12001e3
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Never married
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m3"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Never married.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m3
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Never married
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m3
+        source_metadata:
+          TABLE_ID: B12001m3
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Never married
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_b12001e4:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Now married.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e4"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e4
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Now married
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e4
+      source_metadata:
+        TABLE_ID: B12001e4
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m4"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Now married.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m4
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Now married
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m4
+        source_metadata:
+          TABLE_ID: B12001m4
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_present_b12001e5:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Now married > Married spouse present.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e5"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e5
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Now married
+      - Married spouse present
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e5
+      source_metadata:
+        TABLE_ID: B12001e5
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse present
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m5"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Now married > Married spouse present.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m5
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Now married
+        - Married spouse present
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m5
+        source_metadata:
+          TABLE_ID: B12001m5
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse present
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_absent_b12001e6:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Now married > Married spouse absent.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e6"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e6
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Now married
+      - Married spouse absent
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e6
+      source_metadata:
+        TABLE_ID: B12001e6
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse absent
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m6"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Now married > Married spouse absent.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m6
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Now married
+        - Married spouse absent
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m6
+        source_metadata:
+          TABLE_ID: B12001m6
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse absent
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_absent_separated_b12001e7:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Now married > Married spouse absent > Separated.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e7"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e7
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Now married
+      - Married spouse absent
+      - Separated
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e7
+      source_metadata:
+        TABLE_ID: B12001e7
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse absent
+        FIELD_LEVEL_8: Separated
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m7"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Now married > Married spouse absent > Separated.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m7
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Now married
+        - Married spouse absent
+        - Separated
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m7
+        source_metadata:
+          TABLE_ID: B12001m7
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse absent
+          FIELD_LEVEL_8: Separated
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_absent_other_b12001e8:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Now married > Married spouse absent > Other.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e8"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e8
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Now married
+      - Married spouse absent
+      - Other
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e8
+      source_metadata:
+        TABLE_ID: B12001e8
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse absent
+        FIELD_LEVEL_8: Other
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m8"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Now married > Married spouse absent > Other.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m8
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Now married
+        - Married spouse absent
+        - Other
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m8
+        source_metadata:
+          TABLE_ID: B12001m8
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse absent
+          FIELD_LEVEL_8: Other
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_widowed_b12001e9:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Widowed.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e9"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e9
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Widowed
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e9
+      source_metadata:
+        TABLE_ID: B12001e9
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Widowed
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m9"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Widowed.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m9
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Widowed
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m9
+        source_metadata:
+          TABLE_ID: B12001m9
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Widowed
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_male_divorced_b12001e10:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Male > Divorced.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e10"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e10
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Male
+      - Divorced
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e10
+      source_metadata:
+        TABLE_ID: B12001e10
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Male
+        FIELD_LEVEL_6: Divorced
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m10"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Male > Divorced.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m10
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Male
+        - Divorced
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m10
+        source_metadata:
+          TABLE_ID: B12001m10
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Male
+          FIELD_LEVEL_6: Divorced
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_b12001e11:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e11"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e11
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e11
+      source_metadata:
+        TABLE_ID: B12001e11
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m11"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m11
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m11
+        source_metadata:
+          TABLE_ID: B12001m11
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_never_married_b12001e12:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Never married.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e12"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e12
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Never married
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e12
+      source_metadata:
+        TABLE_ID: B12001e12
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Never married
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m12"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Never married.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m12
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Never married
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m12
+        source_metadata:
+          TABLE_ID: B12001m12
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Never married
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_b12001e13:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Now married.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e13"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e13
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Now married
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e13
+      source_metadata:
+        TABLE_ID: B12001e13
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m13"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Now married.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m13
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Now married
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m13
+        source_metadata:
+          TABLE_ID: B12001m13
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_present_b12001e14:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Now married > Married spouse present.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e14"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e14
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Now married
+      - Married spouse present
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e14
+      source_metadata:
+        TABLE_ID: B12001e14
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse present
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m14"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Now married > Married spouse present.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m14
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Now married
+        - Married spouse present
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m14
+        source_metadata:
+          TABLE_ID: B12001m14
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse present
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_absent_b12001e15:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Now married > Married spouse absent.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e15"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e15
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Now married
+      - Married spouse absent
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e15
+      source_metadata:
+        TABLE_ID: B12001e15
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse absent
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m15"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Now married > Married spouse absent.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m15
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Now married
+        - Married spouse absent
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m15
+        source_metadata:
+          TABLE_ID: B12001m15
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse absent
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_absent_separated_b12001e16:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Now married > Married spouse absent > Separated.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e16"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e16
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Now married
+      - Married spouse absent
+      - Separated
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e16
+      source_metadata:
+        TABLE_ID: B12001e16
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse absent
+        FIELD_LEVEL_8: Separated
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m16"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Now married > Married spouse absent > Separated.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m16
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Now married
+        - Married spouse absent
+        - Separated
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m16
+        source_metadata:
+          TABLE_ID: B12001m16
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse absent
+          FIELD_LEVEL_8: Separated
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_absent_other_b12001e17:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Now married > Married spouse absent > Other.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e17"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e17
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Now married
+      - Married spouse absent
+      - Other
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e17
+      source_metadata:
+        TABLE_ID: B12001e17
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Now married
+        FIELD_LEVEL_7: Married spouse absent
+        FIELD_LEVEL_8: Other
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m17"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Now married > Married spouse absent > Other.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m17
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Now married
+        - Married spouse absent
+        - Other
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m17
+        source_metadata:
+          TABLE_ID: B12001m17
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Now married
+          FIELD_LEVEL_7: Married spouse absent
+          FIELD_LEVEL_8: Other
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_widowed_b12001e18:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Widowed.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e18"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e18
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Widowed
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e18
+      source_metadata:
+        TABLE_ID: B12001e18
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Widowed
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m18"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Widowed.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m18
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Widowed
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m18
+        source_metadata:
+          TABLE_ID: B12001m18
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Widowed
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  sex_by_marital_status_for_the_population_15_years_and_over_female_divorced_b12001e19:
+    description: 'Estimate. Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15
+      years and over. Breakdown: Total > Female > Divorced.'
+    data_type: number
+    source_data_type: NUMBER
+    unit: null
+    universe: Population 15 years and over
+    sql: '"B12001e19"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: B12001e19
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+      - Population 15 years and over
+      - Total
+      - Female
+      - Divorced
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: B12001e19
+      source_metadata:
+        TABLE_ID: B12001e19
+        TABLE_NUMBER: B12001
+        TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+        TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+        TABLE_UNIVERSE: Population 15 years and over
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        FIELD_LEVEL_3: Population 15 years and over
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Female
+        FIELD_LEVEL_6: Divorced
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"B12001m19"'
+      description: 'MarginOfError. Sex By Marital Status For The Population 15 Years And Over. Universe: Population
+        15 years and over. Breakdown: Total > Female > Divorced.'
+      data_type: number
+      source_data_type: NUMBER
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B12001m19
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+        - Population 15 years and over
+        - Total
+        - Female
+        - Divorced
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: B12001m19
+        source_metadata:
+          TABLE_ID: B12001m19
+          TABLE_NUMBER: B12001
+          TABLE_TITLE: Sex By Marital Status For The Population 15 Years And Over
+          TABLE_TOPICS: Age and Sex, Marital Status and Marital History
+          TABLE_UNIVERSE: Population 15 years and over
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: SEX BY MARITAL STATUS FOR THE POPULATION 15 YEARS AND OVER
+          FIELD_LEVEL_3: Population 15 years and over
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Female
+          FIELD_LEVEL_6: Divorced
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+relationships:
+  population_age_and_sex_2019:
+    target_table: 2019_CBG_B01
+    target_model: population_age_and_sex_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  race_2019:
+    target_table: 2019_CBG_B02
+    target_model: race_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  hispanic_latino_origin_2019:
+    target_table: 2019_CBG_B03
+    target_model: hispanic_latino_origin_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  geographic_mobility_2019:
+    target_table: 2019_CBG_B07
+    target_model: geographic_mobility_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  work_location_and_commuting_2019:
+    target_table: 2019_CBG_B08
+    target_model: work_location_and_commuting_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  children_and_household_relationships_2019:
+    target_table: 2019_CBG_B09
+    target_model: children_and_household_relationships_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  households_and_families_2019:
+    target_table: 2019_CBG_B11
+    target_model: households_and_families_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  school_enrollment_2019:
+    target_table: 2019_CBG_B14
+    target_model: school_enrollment_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  educational_attainment_2019:
+    target_table: 2019_CBG_B15
+    target_model: educational_attainment_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  language_and_english_proficiency_2019:
+    target_table: 2019_CBG_B16
+    target_model: language_and_english_proficiency_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  poverty_2019:
+    target_table: 2019_CBG_B17
+    target_model: poverty_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  household_income_2019:
+    target_table: 2019_CBG_B19
+    target_model: household_income_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  earnings_2019:
+    target_table: 2019_CBG_B20
+    target_model: earnings_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  veteran_status_2019:
+    target_table: 2019_CBG_B21
+    target_model: veteran_status_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  snap_and_disability_2019:
+    target_table: 2019_CBG_B22
+    target_model: snap_and_disability_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  employment_and_labor_force_2019:
+    target_table: 2019_CBG_B23
+    target_model: employment_and_labor_force_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  class_of_worker_2019:
+    target_table: 2019_CBG_B24
+    target_model: class_of_worker_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  housing_2019:
+    target_table: 2019_CBG_B25
+    target_model: housing_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  health_insurance_2019:
+    target_table: 2019_CBG_B27
+    target_model: health_insurance_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  computers_and_internet_2019:
+    target_table: 2019_CBG_B28
+    target_model: computers_and_internet_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  citizen_voting_age_population_2019:
+    target_table: 2019_CBG_B29
+    target_model: citizen_voting_age_population_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  response_allocation_2019:
+    target_table: 2019_CBG_B99
+    target_model: response_allocation_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  detailed_race_2019:
+    target_table: 2019_CBG_C02
+    target_model: detailed_race_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  bachelors_degree_fields_2019:
+    target_table: 2019_CBG_C15
+    target_model: bachelors_degree_fields_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  household_language_2019:
+    target_table: 2019_CBG_C16
+    target_model: household_language_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  income_to_poverty_ratio_2019:
+    target_table: 2019_CBG_C17
+    target_model: income_to_poverty_ratio_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  veterans_poverty_and_disability_2019:
+    target_table: 2019_CBG_C21
+    target_model: veterans_poverty_and_disability_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  occupation_2019:
+    target_table: 2019_CBG_C24
+    target_model: occupation_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  cbg_geometry_2019:
+    target_table: 2019_CBG_GEOMETRY
+    target_model: cbg_geometry_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 407
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  cbg_geometry_wkt_2019:
+    target_table: 2019_CBG_GEOMETRY_WKT
+    target_model: cbg_geometry_wkt_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 407
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  cbg_patterns_2019:
+    target_table: 2019_CBG_PATTERNS
+    target_model: cbg_patterns_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 2
+        target_keys_without_source: 403
+        source_null_key_rows: 0
+        target_null_key_rows: 1
+        matching_distinct_keys: 220331
+        inner_join_rows: 220331
+  metadata_cbg_geographic_data_2019:
+    target_table: 2019_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: metadata_cbg_geographic_data_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  rent_percentage_household_income_2019:
+    target_table: 2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME
+    target_model: rent_percentage_household_income_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 220333
+        inner_join_rows: 220333
+  total_rental_geo_2019:
+    target_table: 2019_TOTAL_RENTAL_GEO
+    target_model: total_rental_geo_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 57612
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+constraints:
+- Choose an allowed aggregation explicitly; there is no default.
+- Direct retrieval and sorting do not themselves require aggregation.
+- Do not treat NULL or unverified numeric sentinel codes as zero.
+- Do not combine overlapping categories or duplicate records introduced by joins.
+- Check geographic coverage, compatible universes, reporting periods, and uncertainty before combining values.
+unresolved_columns: {}
+metadata:
+  schema_status: v1
+  physical_table: 2019_CBG_B12
+  object_type: BASE TABLE
+  family: demographic
+  year_label: 2019
+  reporting_period: null
+  description_source: field_dictionary_summary
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 39
+  aggregation_policy: Population count operations are approved. Other statistical concepts require individual review;
+    empty allowed operations do not authorize rollup.
+  source_dictionary_gap_count: 1
+  documented_measure_count: 19
+  unresolved_column_count: 0

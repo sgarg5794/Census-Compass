@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Source-derived extraction format; calculation and relationship rules remain unconfigured.",
+  "type": "object",
+  "required": [
+    "version",
+    "source",
+    "tables"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "source": {
+      "type": "object"
+    },
+    "tables": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "name",
+          "source_table",
+          "object_type",
+          "family",
+          "description",
+          "description_source",
+          "columns",
+          "column_count",
+          "documented_column_count",
+          "grain",
+          "relationships",
+          "reporting_period"
+        ],
+        "properties": {
+          "columns": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "name",
+                "ordinal_position",
+                "data_type",
+                "nullable",
+                "sql",
+                "is_identifier",
+                "semantic_type",
+                "statistic_kind",
+                "description",
+                "metadata_status",
+                "metadata_source",
+                "source_metadata",
+                "field_path",
+                "universe",
+                "aggregation",
+                "embedding_eligible"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "ordinal_position": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "data_type": {
+                  "type": "string"
+                },
+                "nullable": {
+                  "type": "boolean"
+                },
+                "sql": {
+                  "type": "string"
+                },
+                "is_identifier": {
+                  "type": "boolean"
+                },
+                "semantic_type": {
+                  "enum": [
+                    "measure",
+                    "dimension",
+                    "unclassified"
+                  ]
+                },
+                "statistic_kind": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "description": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "metadata_status": {
+                  "enum": [
+                    "available",
+                    "column_comment",
+                    "missing"
+                  ]
+                },
+                "metadata_source": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "source_metadata": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "field_path": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "universe": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "aggregation": {
+                  "type": "null"
+                },
+                "embedding_eligible": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

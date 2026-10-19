@@ -1,0 +1,688 @@
+version: 1
+name: total_rental_geo_2019
+description: VIEW 2019_TOTAL_RENTAL_GEO, classified by its schema name as supporting_data. Contains 4 columns. No
+  table-level semantic definition was supplied; column names alone are not verified meanings.
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_TOTAL_RENTAL_GEO"'
+grain:
+  description: One row per Census block group.
+  primary_key:
+  - census_block_group
+  verification: Unique non-null key confirmed in the earlier live join audit.
+dimensions:
+  census_block_group:
+    description: Census block-group geographic identifier for the area summarized by this row.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"CENSUS_BLOCK_GROUP"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: CENSUS_BLOCK_GROUP
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+measures: {}
+relationships:
+  population_age_and_sex_2019:
+    target_table: 2019_CBG_B01
+    target_model: population_age_and_sex_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  race_2019:
+    target_table: 2019_CBG_B02
+    target_model: race_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  hispanic_latino_origin_2019:
+    target_table: 2019_CBG_B03
+    target_model: hispanic_latino_origin_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  geographic_mobility_2019:
+    target_table: 2019_CBG_B07
+    target_model: geographic_mobility_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  work_location_and_commuting_2019:
+    target_table: 2019_CBG_B08
+    target_model: work_location_and_commuting_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  children_and_household_relationships_2019:
+    target_table: 2019_CBG_B09
+    target_model: children_and_household_relationships_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  households_and_families_2019:
+    target_table: 2019_CBG_B11
+    target_model: households_and_families_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  marital_status_2019:
+    target_table: 2019_CBG_B12
+    target_model: marital_status_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  school_enrollment_2019:
+    target_table: 2019_CBG_B14
+    target_model: school_enrollment_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  educational_attainment_2019:
+    target_table: 2019_CBG_B15
+    target_model: educational_attainment_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  language_and_english_proficiency_2019:
+    target_table: 2019_CBG_B16
+    target_model: language_and_english_proficiency_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  poverty_2019:
+    target_table: 2019_CBG_B17
+    target_model: poverty_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  household_income_2019:
+    target_table: 2019_CBG_B19
+    target_model: household_income_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  earnings_2019:
+    target_table: 2019_CBG_B20
+    target_model: earnings_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  veteran_status_2019:
+    target_table: 2019_CBG_B21
+    target_model: veteran_status_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  snap_and_disability_2019:
+    target_table: 2019_CBG_B22
+    target_model: snap_and_disability_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  employment_and_labor_force_2019:
+    target_table: 2019_CBG_B23
+    target_model: employment_and_labor_force_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  class_of_worker_2019:
+    target_table: 2019_CBG_B24
+    target_model: class_of_worker_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  housing_2019:
+    target_table: 2019_CBG_B25
+    target_model: housing_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  health_insurance_2019:
+    target_table: 2019_CBG_B27
+    target_model: health_insurance_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  computers_and_internet_2019:
+    target_table: 2019_CBG_B28
+    target_model: computers_and_internet_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  citizen_voting_age_population_2019:
+    target_table: 2019_CBG_B29
+    target_model: citizen_voting_age_population_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  response_allocation_2019:
+    target_table: 2019_CBG_B99
+    target_model: response_allocation_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  detailed_race_2019:
+    target_table: 2019_CBG_C02
+    target_model: detailed_race_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  bachelors_degree_fields_2019:
+    target_table: 2019_CBG_C15
+    target_model: bachelors_degree_fields_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  household_language_2019:
+    target_table: 2019_CBG_C16
+    target_model: household_language_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  income_to_poverty_ratio_2019:
+    target_table: 2019_CBG_C17
+    target_model: income_to_poverty_ratio_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  veterans_poverty_and_disability_2019:
+    target_table: 2019_CBG_C21
+    target_model: veterans_poverty_and_disability_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  occupation_2019:
+    target_table: 2019_CBG_C24
+    target_model: occupation_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  cbg_geometry_2019:
+    target_table: 2019_CBG_GEOMETRY
+    target_model: cbg_geometry_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 58019
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  cbg_geometry_wkt_2019:
+    target_table: 2019_CBG_GEOMETRY_WKT
+    target_model: cbg_geometry_wkt_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 58019
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  cbg_patterns_2019:
+    target_table: 2019_CBG_PATTERNS
+    target_model: cbg_patterns_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 58013
+        source_null_key_rows: 0
+        target_null_key_rows: 1
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  metadata_cbg_geographic_data_2019:
+    target_table: 2019_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: metadata_cbg_geographic_data_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+  rent_percentage_household_income_2019:
+    target_table: 2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME
+    target_model: rent_percentage_household_income_2019
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 57612
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 162721
+        inner_join_rows: 162721
+constraints:
+- Choose an allowed aggregation explicitly; there is no default.
+- Direct retrieval and sorting do not themselves require aggregation.
+- Do not treat NULL or unverified numeric sentinel codes as zero.
+- Do not combine overlapping categories or duplicate records introduced by joins.
+- Check geographic coverage, compatible universes, reporting periods, and uncertainty before combining values.
+unresolved_columns:
+  'Total: Renter-occupied housing units':
+    sql: '"Total: Renter-occupied housing units"'
+    data_type: number
+    source_data_type: NUMBER
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  LATITUDE:
+    sql: '"LATITUDE"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  LONGITUDE:
+    sql: '"LONGITUDE"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+metadata:
+  schema_status: v1
+  physical_table: 2019_TOTAL_RENTAL_GEO
+  object_type: VIEW
+  family: supporting_data
+  year_label: 2019
+  reporting_period: null
+  description_source: schema_structure
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 4
+  aggregation_policy: Population count operations are approved. Other statistical concepts require individual review;
+    empty allowed operations do not authorize rollup.
+  source_dictionary_gap_count: 4
+  documented_measure_count: 0
+  unresolved_column_count: 3

@@ -1,0 +1,1354 @@
+version: 1
+name: income_to_poverty_ratio_2020
+description: '2020-labeled Census demographic fields in 2020_CBG_C17. Contains Census statistical groups: C17002:
+  Ratio Of Income To Poverty Level In The Past 12 Months.'
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_C17"'
+grain:
+  description: One row per Census block group.
+  primary_key:
+  - census_block_group
+  verification: Unique non-null key confirmed in the earlier live join audit.
+dimensions:
+  census_block_group:
+    description: Census block-group geographic identifier for the area summarized by this row.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"CENSUS_BLOCK_GROUP"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: CENSUS_BLOCK_GROUP
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+measures:
+  ratio_of_income_to_poverty_level_in_the_past_12_months_c17002e1:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e1"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e1
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e1
+      source_metadata:
+        TABLE_ID: C17002e1
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: null
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m1"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m1
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m1
+        source_metadata:
+          TABLE_ID: C17002m1
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: null
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_under_50_c17002e2:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > Under .50.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e2"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e2
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - Under .50
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e2
+      source_metadata:
+        TABLE_ID: C17002e2
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: Under .50
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m2"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > Under .50.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m2
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - Under .50
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m2
+        source_metadata:
+          TABLE_ID: C17002m2
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: Under .50
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_50_to_99_c17002e3:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > .50 to .99.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e3"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e3
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - .50 to .99
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e3
+      source_metadata:
+        TABLE_ID: C17002e3
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: .50 to .99
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m3"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > .50 to .99.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m3
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - .50 to .99
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m3
+        source_metadata:
+          TABLE_ID: C17002m3
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: .50 to .99
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_1_00_to_1_24_c17002e4:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > 1.00 to 1.24.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e4"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e4
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - 1.00 to 1.24
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e4
+      source_metadata:
+        TABLE_ID: C17002e4
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: 1.00 to 1.24
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m4"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > 1.00 to 1.24.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m4
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - 1.00 to 1.24
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m4
+        source_metadata:
+          TABLE_ID: C17002m4
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: 1.00 to 1.24
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_1_25_to_1_49_c17002e5:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > 1.25 to 1.49.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e5"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e5
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - 1.25 to 1.49
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e5
+      source_metadata:
+        TABLE_ID: C17002e5
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: 1.25 to 1.49
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m5"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > 1.25 to 1.49.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m5
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - 1.25 to 1.49
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m5
+        source_metadata:
+          TABLE_ID: C17002m5
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: 1.25 to 1.49
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_1_50_to_1_84_c17002e6:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > 1.50 to 1.84.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e6"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e6
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - 1.50 to 1.84
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e6
+      source_metadata:
+        TABLE_ID: C17002e6
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: 1.50 to 1.84
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m6"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > 1.50 to 1.84.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m6
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - 1.50 to 1.84
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m6
+        source_metadata:
+          TABLE_ID: C17002m6
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: 1.50 to 1.84
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_1_85_to_1_99_c17002e7:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > 1.85 to 1.99.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e7"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e7
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - 1.85 to 1.99
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e7
+      source_metadata:
+        TABLE_ID: C17002e7
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: 1.85 to 1.99
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m7"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > 1.85 to 1.99.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m7
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - 1.85 to 1.99
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m7
+        source_metadata:
+          TABLE_ID: C17002m7
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: 1.85 to 1.99
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+  ratio_of_income_to_poverty_level_in_the_past_12_months_2_00_and_over_c17002e8:
+    description: 'Estimate. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+      poverty status is determined. Breakdown: Total > 2.00 and over.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: null
+    universe: Population for whom poverty status is determined
+    sql: '"C17002e8"'
+    aggregation:
+      allowed: {}
+    constraints:
+      aggregation_review_required: true
+      explanation: Source field meaning is documented; valid units and cross-row aggregations require measure-specific
+        review. No aggregate operation is authorized yet.
+    metadata:
+      source_column: C17002e8
+      metadata_status: available
+      statistic_kind: estimate
+      field_path:
+      - Estimate
+      - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+      - Population for whom poverty status is determined
+      - Total
+      - 2.00 and over
+      definition_source:
+        table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+        match_column: TABLE_ID
+        match_value: C17002e8
+      source_metadata:
+        TABLE_ID: C17002e8
+        TABLE_NUMBER: C17002
+        TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+        TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+        TABLE_UNIVERSE: Population for whom poverty status is determined
+        FIELD_LEVEL_1: Estimate
+        FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        FIELD_LEVEL_3: Population for whom poverty status is determined
+        FIELD_LEVEL_4: Total
+        FIELD_LEVEL_5: 2.00 and over
+        FIELD_LEVEL_6: null
+        FIELD_LEVEL_7: null
+        FIELD_LEVEL_8: null
+        FIELD_LEVELl_9: null
+        FIELD_LEVEL_10: null
+      nullable: true
+      embedding_eligible: true
+      aggregation_status: requires_measure_specific_review
+    margin_of_error:
+      sql: '"C17002m8"'
+      description: 'MarginOfError. Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population
+        for whom poverty status is determined. Breakdown: Total > 2.00 and over.'
+      data_type: number
+      source_data_type: FLOAT
+      unit: null
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply estimate aggregation rules to uncertainty.
+      - Combined uncertainty requires a separately verified method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: C17002m8
+        metadata_status: available
+        statistic_kind: margin_of_error
+        field_path:
+        - MarginOfError
+        - RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+        - Population for whom poverty status is determined
+        - Total
+        - 2.00 and over
+        definition_source:
+          table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIELD_DESCRIPTIONS"'
+          match_column: TABLE_ID
+          match_value: C17002m8
+        source_metadata:
+          TABLE_ID: C17002m8
+          TABLE_NUMBER: C17002
+          TABLE_TITLE: Ratio Of Income To Poverty Level In The Past 12 Months
+          TABLE_TOPICS: Earnings Individuals, Official Poverty Measure
+          TABLE_UNIVERSE: Population for whom poverty status is determined
+          FIELD_LEVEL_1: MarginOfError
+          FIELD_LEVEL_2: RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS
+          FIELD_LEVEL_3: Population for whom poverty status is determined
+          FIELD_LEVEL_4: Total
+          FIELD_LEVEL_5: 2.00 and over
+          FIELD_LEVEL_6: null
+          FIELD_LEVEL_7: null
+          FIELD_LEVEL_8: null
+          FIELD_LEVELl_9: null
+          FIELD_LEVEL_10: null
+        nullable: true
+relationships:
+  population_age_and_sex_2020:
+    target_table: 2020_CBG_B01
+    target_model: population_age_and_sex_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  race_2020:
+    target_table: 2020_CBG_B02
+    target_model: race_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  hispanic_latino_origin_2020:
+    target_table: 2020_CBG_B03
+    target_model: hispanic_latino_origin_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  geographic_mobility_2020:
+    target_table: 2020_CBG_B07
+    target_model: geographic_mobility_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  work_location_and_commuting_2020:
+    target_table: 2020_CBG_B08
+    target_model: work_location_and_commuting_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  children_and_household_relationships_2020:
+    target_table: 2020_CBG_B09
+    target_model: children_and_household_relationships_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  households_and_families_2020:
+    target_table: 2020_CBG_B11
+    target_model: households_and_families_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  marital_status_2020:
+    target_table: 2020_CBG_B12
+    target_model: marital_status_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  school_enrollment_2020:
+    target_table: 2020_CBG_B14
+    target_model: school_enrollment_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  educational_attainment_2020:
+    target_table: 2020_CBG_B15
+    target_model: educational_attainment_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  language_and_english_proficiency_2020:
+    target_table: 2020_CBG_B16
+    target_model: language_and_english_proficiency_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  poverty_2020:
+    target_table: 2020_CBG_B17
+    target_model: poverty_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  household_income_2020:
+    target_table: 2020_CBG_B19
+    target_model: household_income_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  earnings_2020:
+    target_table: 2020_CBG_B20
+    target_model: earnings_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  veteran_status_2020:
+    target_table: 2020_CBG_B21
+    target_model: veteran_status_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  snap_and_disability_2020:
+    target_table: 2020_CBG_B22
+    target_model: snap_and_disability_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  employment_and_labor_force_2020:
+    target_table: 2020_CBG_B23
+    target_model: employment_and_labor_force_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  class_of_worker_2020:
+    target_table: 2020_CBG_B24
+    target_model: class_of_worker_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  housing_2020:
+    target_table: 2020_CBG_B25
+    target_model: housing_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  health_insurance_2020:
+    target_table: 2020_CBG_B27
+    target_model: health_insurance_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  computers_and_internet_2020:
+    target_table: 2020_CBG_B28
+    target_model: computers_and_internet_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  citizen_voting_age_population_2020:
+    target_table: 2020_CBG_B29
+    target_model: citizen_voting_age_population_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  response_allocation_2020:
+    target_table: 2020_CBG_B99
+    target_model: response_allocation_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  detailed_race_2020:
+    target_table: 2020_CBG_C02
+    target_model: detailed_race_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  bachelors_degree_fields_2020:
+    target_table: 2020_CBG_C15
+    target_model: bachelors_degree_fields_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  household_language_2020:
+    target_table: 2020_CBG_C16
+    target_model: household_language_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  veterans_poverty_and_disability_2020:
+    target_table: 2020_CBG_C21
+    target_model: veterans_poverty_and_disability_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  occupation_2020:
+    target_table: 2020_CBG_C24
+    target_model: occupation_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  cbg_geometry_wkt_2020:
+    target_table: 2020_CBG_GEOMETRY_WKT
+    target_model: cbg_geometry_wkt_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  metadata_cbg_geographic_data_2020:
+    target_table: 2020_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: metadata_cbg_geographic_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  redistricting_cbg_data_2020:
+    target_table: 2020_REDISTRICTING_CBG_DATA
+    target_model: redistricting_cbg_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  redistricting_metadata_cbg_geographic_data_2020:
+    target_table: 2020_REDISTRICTING_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: redistricting_metadata_cbg_geographic_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+constraints:
+- Choose an allowed aggregation explicitly; there is no default.
+- Direct retrieval and sorting do not themselves require aggregation.
+- Do not treat NULL or unverified numeric sentinel codes as zero.
+- Do not combine overlapping categories or duplicate records introduced by joins.
+- Check geographic coverage, compatible universes, reporting periods, and uncertainty before combining values.
+unresolved_columns: {}
+metadata:
+  schema_status: v1
+  physical_table: 2020_CBG_C17
+  object_type: BASE TABLE
+  family: demographic
+  year_label: 2020
+  reporting_period: null
+  description_source: field_dictionary_summary
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 17
+  aggregation_policy: Population count operations are approved. Other statistical concepts require individual review;
+    empty allowed operations do not authorize rollup.
+  source_dictionary_gap_count: 1
+  documented_measure_count: 8
+  unresolved_column_count: 0

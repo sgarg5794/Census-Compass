@@ -1,0 +1,173 @@
+version: 1
+name: metadata_cbg_field_descriptions_2019
+description: BASE TABLE 2019_METADATA_CBG_FIELD_DESCRIPTIONS, classified by its schema name as field_dictionary.
+  Contains 15 columns. No table-level semantic definition was supplied; column names alone are not verified meanings.
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_METADATA_CBG_FIELD_DESCRIPTIONS"'
+grain:
+  description: One row per demographic field definition.
+  primary_key:
+  - table_id
+  verification: Dictionary codes were checked for uniqueness during catalog extraction.
+dimensions:
+  table_id:
+    description: Demographic field code described by this dictionary row; not a physical table name.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"TABLE_ID"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: TABLE_ID
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+  table_number:
+    description: Census statistical table/group code associated with the field definition.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"TABLE_NUMBER"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: TABLE_NUMBER
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+measures: {}
+relationships: {}
+constraints:
+- Choose an allowed aggregation explicitly; there is no default.
+- Direct retrieval and sorting do not themselves require aggregation.
+- Do not treat NULL or unverified numeric sentinel codes as zero.
+- Do not combine overlapping categories or duplicate records introduced by joins.
+- Check geographic coverage, compatible universes, reporting periods, and uncertainty before combining values.
+unresolved_columns:
+  TABLE_TITLE:
+    sql: '"TABLE_TITLE"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  TABLE_TOPICS:
+    sql: '"TABLE_TOPICS"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  TABLE_UNIVERSE:
+    sql: '"TABLE_UNIVERSE"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_1:
+    sql: '"FIELD_LEVEL_1"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_2:
+    sql: '"FIELD_LEVEL_2"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_3:
+    sql: '"FIELD_LEVEL_3"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_4:
+    sql: '"FIELD_LEVEL_4"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_5:
+    sql: '"FIELD_LEVEL_5"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_6:
+    sql: '"FIELD_LEVEL_6"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_7:
+    sql: '"FIELD_LEVEL_7"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_8:
+    sql: '"FIELD_LEVEL_8"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVELl_9:
+    sql: '"FIELD_LEVELl_9"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  FIELD_LEVEL_10:
+    sql: '"FIELD_LEVEL_10"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+metadata:
+  schema_status: v1
+  physical_table: 2019_METADATA_CBG_FIELD_DESCRIPTIONS
+  object_type: BASE TABLE
+  family: field_dictionary
+  year_label: 2019
+  reporting_period: null
+  description_source: schema_structure
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 15
+  aggregation_policy: Population count operations are approved. Other statistical concepts require individual review;
+    empty allowed operations do not authorize rollup.
+  source_dictionary_gap_count: 15
+  documented_measure_count: 0
+  unresolved_column_count: 13

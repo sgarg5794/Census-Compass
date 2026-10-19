@@ -1,0 +1,20 @@
+# Evaluation scenarios to expand with verified expected answers and assertions.
+version: 1
+cases:
+  - id: explain_field
+    question: What does B01001e3 mean?
+    expected_behavior: Explain the estimated male population under five, with source context.
+  - id: ambiguous_county
+    question: What is the population of Orange County?
+    expected_behavior: Ask which state unless conversation context resolves it.
+  - id: unsupported_zip
+    question: What is the population of ZIP code 10001?
+    expected_behavior: Explain the absence of verified ZIP/ZCTA support.
+  - id: invalid_median_rollup
+    question: What is the median household income of California?
+    expected_behavior: Do not average block-group medians; explain if no valid source exists.
+  - id: follow_up
+    turns:
+      - What is the population of California in 2020?
+      - And Texas?
+    expected_behavior: Preserve the selected measure and source period when resolving the follow-up.
