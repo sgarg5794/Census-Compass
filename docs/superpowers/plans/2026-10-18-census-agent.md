@@ -17,7 +17,7 @@
 - Member `sql` is always qualified with the real physical table name (`"2020_CBG_B25"."B25064e1"`); no aliases in LLM-facing files.
 - LLM-facing files contain no provenance, verification, coverage or missing-count fields.
 - Excluded tables: `2019_CBG_PATTERNS`, `2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME`, `2019_TOTAL_RENTAL_GEO`, `2019_CBG_B99`, `2020_CBG_B99`; geometry tables are never queried.
-- Starting values: 60-second request budget; statement timeout = remaining budget, minimum 5 s; 2 SQL retries; 1,000 result rows; 12,000-token topic file limit (estimate: characters ÷ 4); coverage reporting threshold 0.90.
+- Starting values: 60-second request budget; statement timeout = remaining budget, minimum 5 s; 2 SQL retries; 1,000 result rows; 12,000-token topic-size warning threshold (estimate: characters ÷ 4; warning only — reviewed topics are never split for the MVP); coverage reporting threshold 0.90.
 - Embedding model fixed for the project once chosen (Task 15); same model for index and queries.
 - National = "US including Puerto Rico"; no exclusion option.
 - Generated files under `definitions/generated/` are never edited by hand.
@@ -27,7 +27,7 @@
 
 ## Review Focus
 
-1. **Topic file over 12k tokens** (likely `rent_and_rent_burden`, `commuting`): the build must fail naming the file and its estimated size, not truncate. Test in Task 6.
+1. **Topic file over 12k tokens** (likely `rent_and_rent_burden`, `commuting`): the build must succeed and print a warning naming the file and its estimated size; the file is written complete, never truncated. Test in Task 6.
 2. **Question with no year and a race group that has no race-specific measure** (e.g. "poverty rate of Asian people"): search must still return the general poverty topic so the agent can apply rule C. Test in Task 14.
 3. **LLM SQL that ranks counties by a hand-written rate** (CTE + `RANK()` + `WHERE rank <= 10`): must pass validation and keep per-row completeness. Test in Task 11.
 4. **Block group with population but no published value** (238 such rows for per capita income): ratio returns "not available" for that block group, not 0. Test in Task 5 fixtures.
@@ -357,9 +357,9 @@ def test_block_group_without_published_income_is_not_zero():
 
 **Interfaces:**
 - Consumes: Tasks 3–5.
-- Produces: `generate(settings, year) -> tuple[list[TopicFile], BuilderMetadata]`; `run_checks(files, metadata, topics, v1_tables, settings) -> list[str]` (empty = pass); `write_outputs(files, metadata, allowed, out_dir)` writing `definitions/generated/{year}/{topic}_{year}.yaml` (topic names already ending in `_2020` are not suffixed again), `definitions/generated/{year}/builder_metadata.json`, `definitions/generated/allowed_tables.json`. Internal topics (`geography`, `land_area_and_location`) are generated with `internal: true` written to metadata only (not embedded).
+- Produces: `generate(settings, year) -> tuple[list[TopicFile], BuilderMetadata]`; `run_checks(files, metadata, topics, v1_tables, settings) -> list[str]` (empty = pass); `size_warnings(files, settings) -> list[str]` (topics over `topic_token_limit`, never an error); `write_outputs(files, metadata, allowed, out_dir)` writing `definitions/generated/{year}/{topic}_{year}.yaml` (topic names already ending in `_2020` are not suffixed again), `definitions/generated/{year}/builder_metadata.json`, `definitions/generated/allowed_tables.json`. Internal topics (`geography`, `land_area_and_location`) are generated with `internal: true` written to metadata only (not embedded).
 
-Checks (spec §5): every Census group of included tables in exactly one topic, both years; one physical table per topic; every measure column in its file or a declared joined table; every referenced column exists in `table_columns`; every hand-written ratio has `coverage_sql` and input columns; no LLM file contains `coverage_sql`/`missing_sql`/`definition_source`; every file validates against `definitions/schema/topic_file.schema.json`; every file's estimated tokens ≤ `topic_token_limit`; all 148 E columns per year have descriptions; excluded and geometry tables absent from `allowed_tables.json`.
+Checks (spec §5): every Census group of included tables in exactly one topic, both years; one physical table per topic; every measure column in its file or a declared joined table; every referenced column exists in `table_columns`; every hand-written ratio has `coverage_sql` and input columns; no LLM file contains `coverage_sql`/`missing_sql`/`definition_source`; every file validates against `definitions/schema/topic_file.schema.json`; all 148 E columns per year have descriptions; excluded and geometry tables absent from `allowed_tables.json`.
 
 - [ ] **Step 1: Write failing tests**
 ```python
@@ -368,10 +368,12 @@ def test_real_build_passes_all_checks(settings):
         files, meta = generate(settings, year)
         assert run_checks(files, meta, load_topics(...), ..., settings) == []
 
-def test_oversize_topic_fails_with_name_and_size(settings, monkeypatch):
+def test_oversize_topic_warns_but_does_not_fail(settings, monkeypatch):
     monkeypatch.setattr(settings, "topic_token_limit", 100)
-    errors = run_checks(*generate(settings, 2020)[:2], ...)
-    assert any("rent_and_rent_burden_2020" in e and "tokens" in e for e in errors)
+    files, meta = generate(settings, 2020)
+    assert run_checks(files, meta, ...) == []                     # not an error
+    warnings = size_warnings(files, settings)
+    assert any("rent_and_rent_burden_2020" in w and "tokens" in w for w in warnings)
 
 def test_unassigned_group_detected(settings):
     errors = run_checks(..., topics=topics_without("B25004"))
@@ -381,7 +383,7 @@ def test_allowed_tables_exclude_blocked():
     allowed = json.loads(Path("definitions/generated/allowed_tables.json").read_text())
     assert "2020_CBG_B99" not in allowed["2020"] and "2019_CBG_PATTERNS" not in allowed["2019"]
 ```
-- [ ] **Step 2:** run → FAIL. **Step 3:** implement. If the real build exceeds 12k tokens for a topic, stop and report the topic and size — splitting a reviewed topic needs the user's approval. **Step 4:** run → PASS.
+- [ ] **Step 2:** run → FAIL. **Step 3:** implement. Oversized topics only produce warnings (user decision: no splitting for the MVP). **Step 4:** run → PASS.
 - [ ] **Step 5:** Commit `feat: topic file generation and build checks` (generated files committed in Task 18, not here).
 
 ### Stream B — Resolvers (Tasks 7–9)

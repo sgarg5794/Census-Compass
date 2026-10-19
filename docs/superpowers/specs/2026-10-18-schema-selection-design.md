@@ -289,7 +289,8 @@ unclear ("White" → White alone, or White alone not Hispanic?).
   chosen by testing 2–3 candidates on the development question set (§12). Same model for index
   and queries.
 - **get_schema(names)**: returns complete topic files; accepts several names; unknown name →
-  error listing valid names. Largest topic file must fit 12k tokens (build check).
+  error listing valid names. Topic files over 12k tokens are reported as a build **warning**
+  (file and estimated size); reviewed topics are not split for the MVP (user decision).
 - **Joins** — exactly two forms are allowed:
   1. Same-year demographic tables, one-to-one: `"<A>"."CENSUS_BLOCK_GROUP" = "<B>"."CENSUS_BLOCK_GROUP"`.
      Declared in a file only where a measure needs it; the general rule is in the domain rules.
@@ -490,7 +491,7 @@ Thresholds are frozen when this spec is approved; changing them requires a spec 
 ## 14. Starting values to tune after the agent works
 
 1,000 result rows; 60-second request budget with per-query timeout = remaining budget; 2 SQL
-retries; 12k-token limit per topic file; coverage threshold 90%.
+retries; 12k-token topic-size warning threshold; coverage threshold 90%.
 
 ## 15. Architecture review response (revision 2)
 
@@ -520,5 +521,6 @@ retries; 12k-token limit per topic file; coverage threshold 90%.
 | Draft inconsistencies | Fixed: six tools, exact excluded tables, mapping comment updated |
 | Traceability contract | Accepted in light form (§11) |
 | Freeze thresholds, versioned fixtures | Accepted (§12) |
+| Topic size (user decision during execution) | Topics stay as reviewed; 12k tokens is a warning, not a build failure (§8, §14) |
 | How results obtain completeness fields (follow-up) | Accepted: `execute_query` augments every aggregate with companion fields in the same scope, rejects when it cannot; coverage/missing expressions moved from LLM files to builder metadata; totals of income, minutes and rent included (§6.3, §9.5, criteria 6, 10) |
 | Geography resolved before the year is final (follow-up) | Accepted: year and population group resolve in parallel; geography runs after the year is final, once per period (§3, §7, criterion 8) |
