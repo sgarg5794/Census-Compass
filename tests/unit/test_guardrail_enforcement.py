@@ -135,10 +135,11 @@ def test_mixed_route_hint_reaches_agent(monkeypatch):
     _, llm, _ = _run(
         "population of Ohio and a poem",
         monkeypatch,
-        Decision(label="mixed", census_part="population of Ohio"),
+        Decision(label="mixed", census_part="distinctive-census-part-marker"),
     )
     assert len(llm.requests) == 1
     assert gate.routing_hint("mixed") in llm.requests[0]
+    assert "distinctive-census-part-marker" not in llm.requests[0]
 
 
 def test_data_question_unaffected_when_classifier_says_data(monkeypatch):
@@ -156,5 +157,5 @@ def test_data_question_unaffected_when_classifier_says_data(monkeypatch):
 
 
 def test_real_glossary_file_is_valid():
-    path = REPO / get_settings().glossary_path
+    path = REPO / "definitions/source/census_glossary.yaml"
     assert validate_glossary(load_glossary(path)) == []
