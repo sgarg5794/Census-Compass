@@ -13,7 +13,6 @@ from google.adk.runners import InMemoryRunner
 from google.genai import types
 
 from census_compass.agent import INSTRUCTION, root_agent
-from census_compass.config import get_settings
 from census_compass.guardrails import gate
 from census_compass.guardrails.contracts import Decision
 from census_compass.guardrails.replies import MANIPULATION, OFF_TOPIC, reply_for
