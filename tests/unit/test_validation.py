@@ -306,3 +306,47 @@ def test_unknown_table_suggests_close_match():
     with pytest.raises(QueryRejected) as e:
         _run('SELECT * FROM "2020_CBG_B0"')
     assert "2020_CBG_B01" in e.value.suggestions
+
+
+# --- fix round 1: scope-aware CTE resolution and star tracing (security review) ---
+
+BYPASS = {
+    "nested_with_shadows_unknown_table": 'SELECT * FROM "2020_CBG_B99" WHERE EXISTS (WITH "2020_CBG_B99" '
+    'AS (SELECT 1 AS a) SELECT "2020_CBG_B99".a FROM "2020_CBG_B99")',
+    "nested_with_shadows_secret": 'SELECT COUNT(*) FROM "SECRET" WHERE EXISTS (WITH "SECRET" AS '
+    '(SELECT 1 AS a) SELECT "SECRET".a FROM "SECRET")',
+    "cte_forward_reference": "WITH a AS (SELECT * FROM b), b AS (SELECT 1 AS x) SELECT 1 FROM a",
+    "cte_in_derived_subquery_only": 'SELECT t.a FROM (WITH "2020_CBG_B99" AS (SELECT 1 AS a) '
+    'SELECT a FROM "2020_CBG_B99") t WHERE EXISTS (SELECT 1 FROM "2020_CBG_B99")',
+    "cte_in_subquery_named_like_table": 'SELECT "2020_CBG_B01"."B01001e1" FROM "2020_CBG_B01" WHERE '
+    'EXISTS (WITH "2020_CBG_B19" AS (SELECT 1 AS a) SELECT 1 FROM "2020_CBG_B19")',
+    "array_agg_object_construct_star": 'SELECT ARRAY_AGG(OBJECT_CONSTRUCT(*)) FROM "2020_CBG_B19"',
+    "array_agg_qualified_star": 'SELECT ARRAY_AGG("2020_CBG_B19".*) FROM "2020_CBG_B19"',
+    "max_object_construct_star": 'SELECT MAX(OBJECT_CONSTRUCT(*)) FROM "2020_CBG_B19"',
+    "cte_object_construct_star": 'WITH a AS (SELECT OBJECT_CONSTRUCT(*) AS o FROM "2020_CBG_B19") '
+    "SELECT ARRAY_AGG(a.o) FROM a",
+    "window_star": 'SELECT ARRAY_AGG(OBJECT_CONSTRUCT(*)) OVER () FROM "2020_CBG_B19"',
+    "count_distinct_star": 'SELECT COUNT(DISTINCT "2020_CBG_B19".*) FROM "2020_CBG_B19"',
+}
+
+
+@pytest.mark.parametrize("name", BYPASS)
+def test_security_bypasses_rejected(name):
+    with pytest.raises(QueryRejected):
+        _run(BYPASS[name])
+
+
+def test_every_output_table_is_qualified_or_visible_cte():
+    out = _run(
+        'WITH a AS (SELECT "2020_CBG_B01"."B01001e1" AS v FROM "2020_CBG_B01"), '
+        "b AS (SELECT SUM(v) AS s FROM a) SELECT s FROM b"
+    )
+    assert f'FROM "{DB}"."{SCHEMA}"."2020_CBG_B01"' in out
+    assert 'FROM "A"' in out and 'FROM "B"' in out
+
+
+def test_star_allowed_as_projection_and_count_star():
+    _run('SELECT * FROM "2020_CBG_B19"')
+    _run('SELECT "2020_CBG_B19".* FROM "2020_CBG_B19"')
+    _run('SELECT COUNT(*), COUNT(*) OVER () FROM "2020_CBG_B19"')
+    _run('SELECT SUM("2020_CBG_B19"."B19001e1") OVER () FROM "2020_CBG_B19"')

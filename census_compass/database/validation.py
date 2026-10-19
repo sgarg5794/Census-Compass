@@ -100,17 +100,59 @@ def _validate_once(sql: str, ctx: _Ctx) -> str:
     stmt = _parse_single_select(sql)
     _reject_forbidden(stmt)
     _normalize_identifiers(stmt, ctx)
-    _check_and_rewrite_tables(stmt, ctx)
     try:
-        root = build_scope(stmt)
-        if root is None:
-            raise QueryRejected("Only a single SELECT statement is supported.")
-        for scope in root.traverse():
+        _check_and_rewrite_tables(stmt, ctx, _cte_reference_ids(stmt))
+        for scope in _scopes(stmt):
             _check_scope(scope, ctx)
+        _assert_tables_resolved(stmt, ctx)
     except OptimizeError as e:
         raise QueryRejected(f"The query structure could not be analysed: {e}") from e
     _apply_limit(stmt, ctx.max_rows)
     return stmt.sql(dialect="snowflake", identify=True)
+
+
+def _scopes(stmt: exp.Select) -> list[Scope]:
+    root = build_scope(stmt)
+    if root is None:
+        raise QueryRejected("Only a single SELECT statement is supported.")
+    return list(root.traverse())
+
+
+def _cte_reference_ids(stmt: exp.Select) -> set[int]:
+    """ids of the ``exp.Table`` nodes that reference a CTE visible in their own scope.
+
+    Visibility is decided by sqlglot's scope builder: a CTE is visible in the WITH that
+    defines it (only to later CTEs and the main query) and in scopes nested below it; a
+    bare table name anywhere else is a physical table.
+    """
+    refs: set[int] = set()
+    for scope in _scopes(stmt):
+        for node, source in scope.selected_sources.values():
+            if (
+                isinstance(node, exp.Table)
+                and isinstance(source, Scope)
+                and not node.args.get("db")
+                and not node.args.get("catalog")
+            ):
+                refs.add(id(node))
+    return refs
+
+
+def _assert_tables_resolved(stmt: exp.Select, ctx: _Ctx) -> None:
+    """Final guard: every table is a visible CTE or ``"DB"."SCHEMA".<allowed table>``."""
+    refs = _cte_reference_ids(stmt)
+    for table in stmt.find_all(exp.Table):
+        if id(table) in refs:
+            continue
+        catalog, db = table.args.get("catalog"), table.args.get("db")
+        if (
+            catalog is None
+            or db is None
+            or catalog.name != ctx.database
+            or db.name != ctx.schema
+            or table.name not in ctx.allowed
+        ):
+            raise QueryRejected(f"Table {table.name!r} is not an allowed, fully qualified table.")
 
 
 def _parse_single_select(sql: str) -> exp.Select:
@@ -128,8 +170,20 @@ def _parse_single_select(sql: str) -> exp.Select:
     return stmt
 
 
+def _star_allowed(star: exp.Star) -> bool:
+    owner = star.parent if isinstance(star.parent, (exp.Column, exp.Dot)) else star
+    if isinstance(owner.parent, exp.Select) and owner.arg_key == "expressions":
+        return True  # bare projection item: SELECT * / SELECT "T".*
+    return owner is star and isinstance(star.parent, exp.Count) and star.arg_key == "this"
+
+
 def _reject_forbidden(stmt: exp.Select) -> None:
     for node in stmt.walk():
+        if isinstance(node, exp.Star) and not _star_allowed(node):
+            raise QueryRejected(
+                "* is only allowed as a whole select item or as COUNT(*); its columns cannot "
+                f"be traced inside an expression. {_QUALIFY_HINT}"
+            )
         if isinstance(node, _FORBIDDEN):
             raise QueryRejected(f"Unsupported SQL construct: {node.key.upper()}.")
         if isinstance(node, exp.Anonymous):
@@ -210,7 +264,7 @@ def _derived_aliases(stmt: exp.Select) -> list[str]:
     return names
 
 
-def _check_and_rewrite_tables(stmt: exp.Select, ctx: _Ctx) -> None:
+def _check_and_rewrite_tables(stmt: exp.Select, ctx: _Ctx, cte_refs: set[int]) -> None:
     cte_names = _cte_names(stmt, ctx)
     derived_aliases = _derived_aliases(stmt)
     physical: list[str] = []
@@ -223,7 +277,7 @@ def _check_and_rewrite_tables(stmt: exp.Select, ctx: _Ctx) -> None:
         if not isinstance(table.this, exp.Identifier):
             raise QueryRejected("Only plain table names are allowed (no stages or functions).")
         name = table.name
-        if not table.args.get("db") and not table.args.get("catalog") and name in cte_names:
+        if id(table) in cte_refs:
             if table.alias:
                 alias_names.append(table.alias)
             continue
