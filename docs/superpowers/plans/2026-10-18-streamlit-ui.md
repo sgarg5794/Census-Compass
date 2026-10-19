@@ -146,6 +146,13 @@ Create `__init__.py` in new packages as needed. Do not change `census_compass/ag
 
 ## Completion and later work
 
+## Execution status (2026-10-18)
+
+- Tasks 1–4 are implemented and covered by unit and Streamlit AppTest checks.
+- Task 5's typed ADK runtime adapter and safe unavailable bootstrap are implemented and tested with injected runtimes. The live-runtime acceptance remains open: the application-level runtime with the required pre-ReAct scope gate is not available, so production UI requests return a safe unavailable response.
+- Task 6 documentation and verification are complete for the available UI boundary. The full project suite passes (543 passed, 14 skipped); targeted Ruff and `git diff --check` pass. Desktop/mobile browser checks confirmed history restore, independent browser-session state, and narrow-screen question wrapping.
+- Final branch review approved with no findings. Live ADK/Snowflake behavior, hosting, service-user authentication, durable memory, and guardrail implementation remain separate work.
+
 UI-only acceptance: Tasks 1–4 and Task 6 pass with an injected fixture, and production displays honest unavailability if agent dependencies are missing. Live integration acceptance additionally requires Task 5 and an actual data question/follow-up smoke test. Neither milestone means the public deployment is ready: the scope gate, service-user authentication, deployment limits and final session-memory design remain required deployment work.
 
 The approved HTML is a visual reference. Do not ship its scripted responses or JavaScript as the Streamlit application.
