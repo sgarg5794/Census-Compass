@@ -413,3 +413,200 @@ def test_split_end_to_end_with_augmented_query():
     assert rows == [values]
     assert len(comp) == 1 and comp[0].column == "RATE" and comp[0].coverage == 1.0
     assert set(comp[0].missing_inputs) == {"B23025e5", "B23025e3"}
+
+
+# --------------------------------------------------------------------------- fix round 1
+
+LATERAL_RATE = (
+    f'SELECT f."COUNTY", SUM(e."B23025e5") AS u, SUM(e."B23025e3") AS lf, '
+    f'u / NULLIF(lf, 0) AS r FROM "{B23}" e {FIPS_JOIN} GROUP BY f."COUNTY"'
+)
+LATERAL_ROUNDED_RATE = LATERAL_RATE.replace(
+    "u / NULLIF(lf, 0) AS r", "ROUND(100 * u / NULLIF(lf, 0), 1) AS r"
+)
+_GROUPED = f' FROM "{B23}" e {FIPS_JOIN} GROUP BY f."COUNTY"'
+SWAPPED_OR = (
+    UNEMPLOYMENT.replace(
+        'e."B23025e5" is null or e."B23025e3" is null',
+        'e."B23025e3" is null or e."B23025e5" is null',
+    )
+    .replace("AS unemployment_rate FROM", 'AS unemployment_rate, f."COUNTY" FROM')
+    .replace(f' FROM "{B23}" e', _GROUPED)
+)
+SCALE_AT_END = (
+    'SELECT sum(iff(e."B23025e5" is null or e."B23025e3" is null, null, e."B23025e5"))'
+    ' / nullif(sum(iff(e."B23025e5" is null or e."B23025e3" is null, null, e."B23025e3")), 0)'
+    f' * 100 AS unemployment_rate, f."COUNTY"{_GROUPED}'
+)
+CASE_GUARDED_RATE = (
+    'SELECT SUM(CASE WHEN e."B23025e3" IS NOT NULL AND e."B23025e5" IS NOT NULL '
+    'THEN e."B23025e5" END) / NULLIF(SUM(CASE WHEN e."B23025e3" IS NOT NULL AND '
+    'e."B23025e5" IS NOT NULL THEN e."B23025e3" END), 0) AS r, f."COUNTY"' + _GROUPED
+)
+
+
+@pytest.mark.parametrize("sql", [LATERAL_RATE, LATERAL_ROUNDED_RATE], ids=["plain", "rounded"])
+def test_lateral_alias_rate_is_a_custom_rate(sql):
+    q = _aug(sql)
+    assert _kinds(q, "R") == {"block_groups", "missing_input", "coverage", "unknown_denominator"}
+    assert {c.input_column for c in q.companions if c.output_column == "R"} >= {
+        "B23025e5",
+        "B23025e3",
+    }
+    assert _kinds(q, "U") == _kinds(q, "LF") == {"block_groups", "missing_input"}
+    tree = sqlglot.parse_one(q.sql, read="snowflake")
+    coverage = next(c for c in q.companions if c.kind == "coverage")
+    by_alias = {e.alias: e.this for e in tree.expressions}
+    assert by_alias[coverage.alias] == sqlglot.parse_one(
+        f"SUM(IFF({E5} IS NULL OR {E3} IS NULL, NULL, {E3})) / NULLIF(SUM({E3}), 0)",
+        read="snowflake",
+    )
+
+
+@pytest.mark.parametrize("sql", [SWAPPED_OR, SCALE_AT_END], ids=["swapped_or", "scale_at_end"])
+def test_reordered_copy_matches_hand_written_measure(sql):
+    q = _aug(sql)
+    tree = sqlglot.parse_one(q.sql, read="snowflake")
+    by_alias = {e.alias: e.this for e in tree.expressions}
+    coverage = next(c for c in q.companions if c.kind == "coverage")
+    assert by_alias[coverage.alias] == sqlglot.parse_one(
+        UNEMPLOYMENT_COVERAGE_SQL, read="snowflake"
+    )
+
+
+def test_null_guarded_custom_rate_uses_raw_denominator():
+    q = _aug(CASE_GUARDED_RATE)
+    tree = sqlglot.parse_one(q.sql, read="snowflake")
+    by_alias = {e.alias: e.this for e in tree.expressions}
+    unknown = next(c for c in q.companions if c.kind == "unknown_denominator")
+    assert by_alias[unknown.alias].sql(dialect="snowflake") == f"COUNT_IF({E3} IS NULL)"
+    coverage = next(c for c in q.companions if c.kind == "coverage")
+    assert by_alias[coverage.alias].find(exp.Case) is None  # guard peeled off the whole
+
+
+SHARE_OF_TOTAL = {
+    "ratio_to_report": 'SELECT f."COUNTY", RATIO_TO_REPORT(SUM(e."B23025e5")) OVER () AS s'
+    + _GROUPED,
+    "window_sum_of_aggregate": 'SELECT f."COUNTY", SUM(SUM(e."B23025e5")) OVER () AS s' + _GROUPED,
+    "outer_share": f'WITH t AS ({BY_COUNTY}) SELECT t."COUNTY", t.unemployed / '
+    "SUM(t.unemployed) OVER () AS share FROM t",
+    "block_group_share": 'SELECT "2020_CBG_B01"."CENSUS_BLOCK_GROUP", '
+    '"2020_CBG_B01"."B01001e1" / SUM("2020_CBG_B01"."B01001e1") OVER () AS s '
+    'FROM "2020_CBG_B01"',
+}
+
+
+@pytest.mark.parametrize("name", SHARE_OF_TOTAL)
+def test_share_of_total_rejection_says_what_to_do(name):
+    with pytest.raises(QueryRejected) as e:
+        augment(_v(SHARE_OF_TOTAL[name]), META)
+    assert "share of total is not computed in sql" in e.value.reason.lower()
+    assert "compute each share from the returned rows" in e.value.reason
+    assert any("overall total separately" in s for s in e.value.suggestions)
+
+
+# --------------------------------------------------------------------------- executed (sqlite)
+
+_BG_ROWS = [  # block group, B23025e3 (labor force), B23025e5 (unemployed), B23025m5
+    ("170310001001", 100, 10, 3),
+    ("170310001002", 200, None, 4),
+    ("170310001003", None, 5, None),
+    ("170310001004", 300, 30, 5),
+    ("170970001001", 50, 5, 1),
+    ("170970001002", 50, 5, 1),
+    ("180890001001", 1000, 100, 9),
+]
+_COUNTIES = [
+    ("Illinois", "17", "031", "Cook"),
+    ("Illinois", "17", "097", "Lake"),
+    ("Indiana", "18", "089", "Lake IN"),
+]
+
+
+@pytest.fixture(scope="module")
+def lite():
+    import sqlite3
+
+    db = sqlite3.connect(":memory:")
+    db.create_function("LEFT", 2, lambda s, n: None if s is None else s[:n])
+    db.create_function("SQRT", 1, lambda x: None if x is None else x**0.5)
+    db.create_function("POWER", 2, lambda a, b: None if a is None else a**b)
+    db.execute(
+        f'CREATE TABLE "{B23}" ("CENSUS_BLOCK_GROUP" TEXT, "B23025e3" REAL, '
+        '"B23025e5" REAL, "B23025m5" REAL)'
+    )
+    db.execute(
+        f'CREATE TABLE "{FIPS}" ("STATE" TEXT, "STATE_FIPS" TEXT, "COUNTY_FIPS" TEXT, "COUNTY" TEXT)'
+    )
+    db.executemany(f'INSERT INTO "{B23}" VALUES (?,?,?,?)', _BG_ROWS)
+    db.executemany(f'INSERT INTO "{FIPS}" VALUES (?,?,?,?)', _COUNTIES)
+    return db
+
+
+def _lateral_free(select_sql: str) -> str:
+    """SQLite has no lateral column aliases: inline them (test harness only)."""
+    tree = sqlglot.parse_one(select_sql, read="snowflake")
+    for select in tree.find_all(exp.Select):
+        aliases = {e.alias: e.this for e in select.expressions if isinstance(e, exp.Alias)}
+        for col in list(select.find_all(exp.Column)):
+            if not col.table and col.name in aliases and col.find_ancestor(exp.Select) is select:
+                col.replace(exp.Paren(this=aliases[col.name].copy()))
+    return tree.sql(dialect="snowflake", identify=True)
+
+
+def _execute(lite, sql):
+    q = _aug(sql)
+    text = sqlglot.transpile(_lateral_free(q.sql), read="snowflake", write="sqlite")[0]
+    cursor = lite.execute(text.replace(f'"{DB}"."{SCHEMA}".', ""))
+    columns = [d[0] for d in cursor.description]
+    rows, completeness = split_result(columns, cursor.fetchall(), q.companions)
+    return rows, {(rows[c.row]["COUNTY"], c.column): c for c in completeness}
+
+
+def test_executed_where_group_by_having(lite):
+    rows, comp = _execute(
+        lite,
+        f'SELECT f."COUNTY", SUM(e."B23025e5") AS u FROM "{B23}" e {FIPS_JOIN} '
+        'WHERE f."STATE" = \'Illinois\' GROUP BY f."COUNTY" HAVING SUM(e."B23025e3") > 100',
+    )
+    assert rows == [{"COUNTY": "Cook", "U": 45.0}]
+    cook = comp[("Cook", "U")]
+    assert cook.block_groups == 4 and cook.missing_inputs == {"B23025e5": 1}
+
+
+@pytest.mark.parametrize(
+    "sql, column",
+    [
+        (SWAPPED_OR, "UNEMPLOYMENT_RATE"),
+        (SCALE_AT_END, "UNEMPLOYMENT_RATE"),
+        (CASE_GUARDED_RATE, "R"),
+        (CUSTOM_RATE, "RATE"),
+        (LATERAL_RATE, "R"),
+        (LATERAL_ROUNDED_RATE, "R"),
+    ],
+    ids=["swapped_or", "scale_at_end", "case_guarded", "custom", "lateral", "lateral_rounded"],
+)
+def test_executed_rate_completeness(lite, sql, column):
+    _, comp = _execute(lite, sql)
+    cook, lake, indiana = comp[("Cook", column)], comp[("Lake", column)], comp[("Lake IN", column)]
+    assert cook.block_groups == 4
+    assert cook.missing_inputs == {"B23025e5": 1, "B23025e3": 1}
+    assert cook.coverage == pytest.approx(400 / 600) and cook.unknown_denominator == 1
+    assert lake.block_groups == 2 and lake.coverage == 1.0 and lake.unknown_denominator == 0
+    assert indiana.block_groups == 1 and indiana.coverage == 1.0
+
+
+def test_executed_rank_top10_carries_values(lite):
+    rows, comp = _execute(lite, RANK_TOP10)
+    assert sorted(r["COUNTY"] for r in rows) == ["Cook", "Lake", "Lake IN"]
+    assert all("__cc_" not in key for r in rows for key in r)
+    assert comp[("Cook", "RATE")].coverage == pytest.approx(400 / 600)
+    assert comp[("Lake", "RATE")].block_groups == 2
+
+
+def test_executed_moe(lite):
+    _, comp = _execute(
+        lite,
+        f'SELECT f."COUNTY", SQRT(SUM(POWER(e."B23025m5", 2))) AS m{_GROUPED}',
+    )
+    assert comp[("Cook", "M")].missing_moe == 1 and comp[("Lake", "M")].missing_moe == 0

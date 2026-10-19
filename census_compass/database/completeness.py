@@ -33,6 +33,10 @@ _SINGLE_LEVEL = (
     "levels only select from, rank, filter, order or limit), without re-aggregating, combining "
     "or windowing aggregated values."
 )
+SHARE_OF_TOTAL_GUIDANCE = (
+    "Share of total is not computed in SQL: query the per-group values and the overall total "
+    "separately, or compute each share from the returned rows."
+)
 _RANKING = (exp.RowNumber, exp.Rank, exp.DenseRank, exp.PercentRank, exp.CumeDist, exp.Ntile)
 _FILTER_CLAUSES = (exp.Where, exp.Having, exp.Qualify)
 
@@ -206,6 +210,14 @@ def _reject(detail: str = "") -> QueryRejected:
     return QueryRejected(f"{detail} {_SINGLE_LEVEL}".strip())
 
 
+def _window_reject(window: exp.Window, detail: str) -> QueryRejected:
+    if _is_window_aggregate(window):
+        return QueryRejected(
+            f"{detail} {SHARE_OF_TOTAL_GUIDANCE} {_SINGLE_LEVEL}", [SHARE_OF_TOTAL_GUIDANCE]
+        )
+    return _reject(detail)
+
+
 def _alias(n: int, kind: str, input_column: str | None) -> str:
     suffix = f"_{re.sub(r'[^0-9A-Za-z_]', '_', input_column)}" if kind == "missing_input" else ""
     return f"{_PREFIX}{n}_{kind}{suffix}"
@@ -312,7 +324,10 @@ class _Augmenter:
             expr = projection.this if isinstance(projection, exp.Alias) else projection
             for window in _windows(expr):
                 if _is_value_window(window):
-                    raise _reject("A window function is applied to aggregated values.")
+                    raise _window_reject(
+                        window, "A window function is applied to aggregated values."
+                    )
+            expr = _resolve_lateral(select, expr, frozenset())
             if not _aggregates(expr):
                 continue
             specs: list[_Spec] = []
@@ -335,9 +350,8 @@ class _Augmenter:
             ("block_groups", None, _parse("COUNT(*)"))
         ]
         core = _core(expr)
-        measure = next(
-            (m for m in self.measures if m.expression == expr or m.expression == core), None
-        )
+        candidates = {_canonical(expr), _canonical(core)}
+        measure = next((m for m in self.measures if _canonical(m.expression) in candidates), None)
         if measure is not None:
             names = _input_names(measure.inputs)
             for (table, column), name in zip(measure.inputs, names, strict=True):
@@ -358,14 +372,13 @@ class _Augmenter:
         rate = _custom_rate(core)
         if rate is not None:
             part, whole = rate
-            rate_inputs = _dedupe_columns(
-                [c for c in [*part.find_all(exp.Column), *whole.find_all(exp.Column)]]
-            )
+            rate_inputs = _dedupe_columns([*part.find_all(exp.Column), *whole.find_all(exp.Column)])
+            raw_whole = _peel_null_guard(whole)
             valid = " OR ".join(f"{_sql(c)} IS NULL" for c in rate_inputs)
-            whole_sql = _sql(whole)
+            whole_sql = _sql(raw_whole)
             coverage = f"SUM(IFF({valid}, NULL, {whole_sql})) / NULLIF(SUM({whole_sql}), 0)"
             result.append(("coverage", None, _parse(coverage)))
-            dens = _dedupe_columns(list(whole.find_all(exp.Column)))
+            dens = _dedupe_columns(list(raw_whole.find_all(exp.Column)))
             result.append(("unknown_denominator", None, _count_if_null(dens)))
         return result
 
@@ -376,12 +389,8 @@ class _Augmenter:
             for col in agg.find_all(exp.Column):
                 if isinstance(col.this, exp.Star):
                     continue
-                if not col.table:  # lateral reference to another select item
-                    target = _lateral(select, col.name)
-                    if target is None:
-                        raise _reject(f'Column "{col.name}" cannot be traced.')
-                    columns.extend(c for c in target.find_all(exp.Column) if c.table)
-                    continue
+                if not col.table:  # lateral references were substituted already
+                    raise _reject(f'Column "{col.name}" cannot be traced.')
                 columns.append(col)
         return _dedupe_columns(columns)
 
@@ -451,7 +460,7 @@ class _Augmenter:
             if _is_value_window(window) and (
                 _is_window_aggregate(window) or self._mentions(select, window, source, child, seen)
             ):
-                raise _reject("A window function is applied to aggregated values.")
+                raise _window_reject(window, "A window function is applied to aggregated values.")
         for col in _local(expr):
             if not isinstance(col, exp.Column) or _in_window(col, expr):
                 continue
@@ -484,7 +493,9 @@ class _Augmenter:
         for projection in select.expressions:
             for window in _windows(projection):
                 if _is_window_aggregate(window):
-                    raise _reject("A window aggregate across block groups has no completeness.")
+                    raise _window_reject(
+                        window, "A window aggregate across block groups has no completeness."
+                    )
 
 
 def _lateral(select: exp.Select, name: str) -> exp.Expr | None:
@@ -492,6 +503,31 @@ def _lateral(select: exp.Select, name: str) -> exp.Expr | None:
         if isinstance(e, exp.Alias) and e.alias == name:
             return e.this
     return None
+
+
+def _resolve_lateral(select: exp.Select, expr: exp.Expr, seen: frozenset[str]) -> exp.Expr:
+    """Copy of ``expr`` with lateral alias references replaced by the aliased expressions.
+
+    After validation every column is qualified, so an unqualified column can only be a
+    reference to another select item; anything that cannot be substituted is rejected.
+    """
+    if not any(
+        isinstance(c, exp.Column) and not c.table and not isinstance(c.this, exp.Star)
+        for c in _local(expr)
+    ):
+        return expr
+
+    def substitute(node: exp.Expr) -> exp.Expr:
+        if not isinstance(node, exp.Column) or node.table or isinstance(node.this, exp.Star):
+            return node
+        target = _lateral(select, node.name)
+        if target is None or node.name in seen:
+            raise _reject(f'Column "{node.name}" cannot be traced with certainty.')
+        return exp.Paren(this=_resolve_lateral(select, target.copy(), seen | {node.name}))
+
+    if any(n is not expr and _is_query(n) for n in expr.walk()):
+        raise _reject("A lateral alias reference next to a subquery cannot be traced.")
+    return expr.copy().transform(substitute)
 
 
 def _dedupe_columns(columns: list[exp.Column]) -> list[exp.Column]:
@@ -525,6 +561,93 @@ def _unscale(node: exp.Expr) -> exp.Expr:
         else:
             break
     return _strip(node)
+
+
+def _is_null_test(node: exp.Expr) -> bool:
+    node = _strip(node)
+    return (
+        isinstance(node, exp.Is)
+        and isinstance(_strip(node.expression), exp.Null)
+        and isinstance(_strip(node.this), exp.Column)
+    )
+
+
+def _is_not_null_test(node: exp.Expr) -> bool:
+    node = _strip(node)
+    return (isinstance(node, exp.Not) and _is_null_test(node.this)) or (
+        isinstance(node, exp.Is)
+        and isinstance(_strip(node.expression), exp.Not)
+        and isinstance(_strip(node.expression).this, exp.Null)
+    )
+
+
+def _all_terms(node: exp.Expr, connective: type[exp.Expr], test) -> bool:
+    node = _strip(node)
+    if isinstance(node, connective):
+        return _all_terms(node.this, connective, test) and _all_terms(
+            node.expression, connective, test
+        )
+    return test(node)
+
+
+def _is_null(node: exp.Expr | None) -> bool:
+    return node is None or isinstance(_strip(node), exp.Null)
+
+
+def _peel_null_guard(node: exp.Expr) -> exp.Expr:
+    """The raw value inside ``IFF(<any input NULL>, NULL, x)`` style guards (else ``node``)."""
+    node = _strip(node)
+    if isinstance(node, exp.If):
+        cond, true, false = node.this, node.args.get("true"), node.args.get("false")
+        if _all_terms(cond, exp.Or, _is_null_test) and _is_null(true) and false is not None:
+            return _peel_null_guard(false)
+        if _all_terms(cond, exp.And, _is_not_null_test) and _is_null(false) and true is not None:
+            return _peel_null_guard(true)
+    if isinstance(node, exp.Case) and node.this is None and len(node.args.get("ifs") or []) == 1:
+        branch = node.args["ifs"][0]
+        cond, value, default = branch.this, branch.args.get("true"), node.args.get("default")
+        if _all_terms(cond, exp.And, _is_not_null_test) and _is_null(default) and value is not None:
+            return _peel_null_guard(value)
+        if _all_terms(cond, exp.Or, _is_null_test) and _is_null(value) and default is not None:
+            return _peel_null_guard(default)
+    return node
+
+
+def _canonical(expr: exp.Expr) -> exp.Expr:
+    """``expr`` with AND/OR operands sorted and constant scale factors moved to the front."""
+
+    def sort_connectives(node: exp.Expr) -> exp.Expr:
+        if isinstance(node, (exp.And, exp.Or)) and not isinstance(node.parent, type(node)):
+            terms = []
+            for term in node.flatten():
+                term = _strip(term).copy().transform(sort_connectives)
+                terms.append(exp.Paren(this=term) if isinstance(term, exp.Connector) else term)
+            terms.sort(key=_sql)
+            rebuilt = terms[0]
+            for term in terms[1:]:
+                rebuilt = type(node)(this=rebuilt, expression=term)
+            return rebuilt
+        return node
+
+    def pull_scale(node: exp.Expr) -> tuple[list[str], exp.Expr]:
+        node = _strip(node)
+        if isinstance(node, exp.Mul):
+            for literal, other in ((node.this, node.expression), (node.expression, node.this)):
+                literal = _strip(literal)
+                if isinstance(literal, exp.Literal) and not literal.is_string:
+                    scales, rest = pull_scale(other)
+                    return [literal.name, *scales], rest
+        if isinstance(node, exp.Div):
+            scales, rest = pull_scale(node.this)
+            if scales:
+                return scales, exp.Div(this=rest, expression=node.expression.copy())
+        return [], node
+
+    tree = _strip(expr.copy()).transform(sort_connectives)
+    scales, rest = pull_scale(tree)
+    for scale in sorted(scales):
+        rest = exp.Mul(this=exp.Literal.number(scale), expression=rest)
+    return _parse(_sql(rest))
 
 
 def _custom_rate(core: exp.Expr) -> tuple[exp.Expr, exp.Expr] | None:
