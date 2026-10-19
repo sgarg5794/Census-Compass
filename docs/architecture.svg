@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title description">
+  <title id="title">Census Compass architecture</title>
+  <desc id="description">A visual architecture diagram showing the Streamlit visitor experience, pre-agent rule-based scope gate, ADK Census data agent, resolver and semantic schema tools, SQLGlot validation, and Snowflake query path. General Census document retrieval is marked as not connected in the current MVP.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#53657d"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4776b8"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#478663"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#192b42" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1050" fill="#f6f8fb"/>
+  <text x="56" y="60" fill="#16283f" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="31" font-weight="700">Census Compass</text>
+  <text x="57" y="91" fill="#627187" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="16">Architecture · dataset question flow and safety boundaries</text>
+  <rect x="1375" y="44" width="170" height="32" rx="16" fill="#e5f4ec"/>
+  <circle cx="1394" cy="60" r="5" fill="#478663"/>
+  <text x="1407" y="65" fill="#285a3d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="0.5">MVP · CURRENT</text>
+
+  <!-- Main request path -->
+  <text x="56" y="143" fill="#78869a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">REQUEST PATH</text>
+
+  <g filter="url(#shadow)">
+    <rect x="55" y="170" width="245" height="168" rx="18" fill="#ffffff" stroke="#d6e2f1" stroke-width="1.5"/>
+    <rect x="55" y="170" width="245" height="7" rx="4" fill="#4776b8"/>
+    <circle cx="86" cy="211" r="14" fill="#eaf2ff"/>
+    <path d="M80 214c0-4 3-7 6-7s6 3 6 7m-12 0h12m-15 5h18" fill="none" stroke="#4776b8" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="110" y="216" fill="#192b42" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Visitor experience</text>
+    <text x="78" y="254" fill="#33455d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Streamlit chat UI</text>
+    <text x="78" y="279" fill="#66758a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Chat service + visitor isolation</text>
+    <text x="78" y="302" fill="#66758a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Conversation state held in memory</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="355" y="170" width="275" height="168" rx="18" fill="#fffaf0" stroke="#ecd8a9" stroke-width="1.5"/>
+    <rect x="355" y="170" width="275" height="7" rx="4" fill="#c18a27"/>
+    <circle cx="386" cy="211" r="14" fill="#fff0ca"/>
+    <path d="M386 201l9 4v6c0 6-4 10-9 12-5-2-9-6-9-12v-6z" fill="none" stroke="#9b6c17" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M382 211l3 3 5-6" fill="none" stroke="#9b6c17" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="410" y="216" fill="#3c2d12" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Pre-agent scope gate</text>
+    <text x="380" y="254" fill="#5a4928" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Rule-based request routing</text>
+    <text x="380" y="279" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Runs before ADK / tool calls</text>
+    <text x="380" y="302" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Dataset questions continue to agent</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="690" y="170" width="305" height="168" rx="18" fill="#f7f4ff" stroke="#d9ceef" stroke-width="1.5"/>
+    <rect x="690" y="170" width="305" height="7" rx="4" fill="#7554b5"/>
+    <circle cx="722" cy="211" r="14" fill="#ece5fb"/>
+    <path d="M716 209c0-4 3-7 7-7 3 0 6 2 6 5 3 0 5 2 5 5s-2 5-5 5h-13c-3 0-5-2-5-4s2-4 5-4" fill="none" stroke="#7554b5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="747" y="216" fill="#302347" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">ADK ReAct data agent</text>
+    <text x="716" y="254" fill="#4b3f62" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Claude through LiteLLM</text>
+    <text x="716" y="279" fill="#716587" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Chooses resolver, schema, and query tools</text>
+    <text x="716" y="302" fill="#716587" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Uses conversation context for follow-ups</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1074" y="170" width="205" height="168" rx="18" fill="#f0f8ff" stroke="#c9ddef" stroke-width="1.5"/>
+    <rect x="1074" y="170" width="205" height="7" rx="4" fill="#4776b8"/>
+    <circle cx="1106" cy="211" r="14" fill="#dcecff"/>
+    <path d="M1099 206h14v10h-14zm3-4h8m-8 18h8" fill="none" stroke="#4776b8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1131" y="216" fill="#203954" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="700">SQLGlot checks</text>
+    <text x="1098" y="254" fill="#405a75" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Validate generated SQL</text>
+    <text x="1098" y="279" fill="#6a7e92" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Enforce query constraints</text>
+    <text x="1098" y="302" fill="#6a7e92" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Reject unsafe / invalid queries</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1354" y="170" width="190" height="168" rx="18" fill="#eff8f2" stroke="#c7e3d1" stroke-width="1.5"/>
+    <rect x="1354" y="170" width="190" height="7" rx="4" fill="#478663"/>
+    <ellipse cx="1386" cy="205" rx="12" ry="5" fill="none" stroke="#478663" stroke-width="1.7"/>
+    <path d="M1374 205v14c0 3 5 5 12 5s12-2 12-5v-14m-24 7c0 3 5 5 12 5s12-2 12-5" fill="none" stroke="#478663" stroke-width="1.7"/>
+    <text x="1410" y="216" fill="#244431" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Snowflake</text>
+    <text x="1378" y="254" fill="#466454" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Census dataset</text>
+    <text x="1378" y="279" fill="#72887b" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Validated query execution</text>
+    <text x="1378" y="302" fill="#72887b" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Rows returned to the agent</text>
+  </g>
+
+  <!-- Main arrows -->
+  <path d="M300 254H349" fill="none" stroke="#53657d" stroke-width="2.3" marker-end="url(#arrow)"/>
+  <path d="M630 254H684" fill="none" stroke="#53657d" stroke-width="2.3" marker-end="url(#arrow)"/>
+  <text x="640" y="238" fill="#8a6a2b" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">dataset</text>
+  <path d="M995 254H1068" fill="none" stroke="#53657d" stroke-width="2.3" marker-end="url(#arrow)"/>
+  <text x="1005" y="238" fill="#66758a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">execute_query</text>
+  <path d="M1279 254H1348" fill="none" stroke="#53657d" stroke-width="2.3" marker-end="url(#arrow)"/>
+  <text x="1289" y="238" fill="#66758a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">valid SQL</text>
+
+  <!-- Gate outcomes -->
+  <path d="M492 339v45" fill="none" stroke="#c18a27" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="510" y="366" fill="#9b6c17" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">other routes</text>
+  <text x="56" y="459" fill="#78869a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">NON-DATASET ROUTES</text>
+  <g>
+    <rect x="55" y="482" width="250" height="95" rx="14" fill="#ffffff" stroke="#dce2e9" stroke-width="1.2"/>
+    <circle cx="81" cy="512" r="7" fill="#97a2b0"/>
+    <text x="99" y="517" fill="#33455d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Off-topic</text>
+    <text x="77" y="546" fill="#6c7a8d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Fixed redirect; no agent or data tools</text>
+  </g>
+  <g>
+    <rect x="325" y="482" width="250" height="95" rx="14" fill="#ffffff" stroke="#ecd8a9" stroke-width="1.2"/>
+    <circle cx="351" cy="512" r="7" fill="#c18a27"/>
+    <text x="369" y="517" fill="#5a4928" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Unclear request</text>
+    <text x="347" y="546" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Ask the visitor to clarify the data question</text>
+  </g>
+  <g>
+    <rect x="595" y="482" width="290" height="95" rx="14" fill="#ffffff" stroke="#e7d9d8" stroke-width="1.2"/>
+    <circle cx="621" cy="512" r="7" fill="#b46a61"/>
+    <text x="639" y="517" fill="#563632" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">General Census explanation</text>
+    <text x="617" y="546" fill="#806662" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Currently unsupported; docs RAG is not connected</text>
+  </g>
+  <path d="M430 339v104H180v32" fill="none" stroke="#a2adba" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <path d="M492 339v104H450v32" fill="none" stroke="#c18a27" stroke-width="1.4" marker-end="url(#arrow)"/>
+  <path d="M552 339v104H740v32" fill="none" stroke="#b46a61" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+  <!-- Agent tool layer -->
+  <text x="935" y="459" fill="#78869a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">AGENT SUPPORTING TOOLS</text>
+
+  <g filter="url(#shadow)">
+    <rect x="935" y="482" width="260" height="130" rx="16" fill="#ffffff" stroke="#d9ceef" stroke-width="1.4"/>
+    <rect x="935" y="482" width="6" height="130" rx="3" fill="#7554b5"/>
+    <text x="961" y="515" fill="#302347" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700">Entity resolvers</text>
+    <text x="961" y="545" fill="#615573" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Geography · year / period</text>
+    <text x="961" y="568" fill="#615573" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Population group</text>
+    <text x="961" y="591" fill="#8a7d9d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Resolve names into query filters</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1220" y="482" width="325" height="130" rx="16" fill="#ffffff" stroke="#c9ddef" stroke-width="1.4"/>
+    <rect x="1220" y="482" width="6" height="130" rx="3" fill="#4776b8"/>
+    <text x="1246" y="515" fill="#203954" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700">Schema discovery tools</text>
+    <text x="1246" y="545" fill="#536b84" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">search_schema → narrow candidates</text>
+    <text x="1246" y="568" fill="#536b84" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">get_schema → full table definition</text>
+    <text x="1246" y="591" fill="#72879b" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Descriptions guide table and field selection</text>
+  </g>
+
+  <!-- Semantic assets -->
+  <text x="935" y="672" fill="#78869a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">SEMANTIC DATA LAYER</text>
+  <g>
+    <rect x="935" y="695" width="260" height="116" rx="15" fill="#eef5ff" stroke="#c9ddef" stroke-width="1.3"/>
+    <path d="M965 720c0-5 8-8 17-8s17 3 17 8-8 8-17 8-17-3-17-8zm0 0v25c0 5 8 8 17 8s17-3 17-8v-25m-34 12c0 5 8 8 17 8s17-3 17-8" fill="none" stroke="#4776b8" stroke-width="1.6"/>
+    <text x="1012" y="725" fill="#203954" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">LanceDB index</text>
+    <text x="960" y="773" fill="#536b84" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Semantic schema retrieval</text>
+    <text x="960" y="794" fill="#72879b" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Prebuilt vectors reused at startup</text>
+  </g>
+  <g>
+    <rect x="1220" y="695" width="325" height="116" rx="15" fill="#eff8f2" stroke="#c7e3d1" stroke-width="1.3"/>
+    <path d="M1247 716h19l9 9v31h-28z" fill="none" stroke="#478663" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M1266 716v10h9m-22 8h15m-15 7h15" fill="none" stroke="#478663" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="1288" y="730" fill="#244431" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Table definitions</text>
+    <text x="1246" y="773" fill="#466454" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Measures · dimensions · grain · joins</text>
+    <text x="1246" y="794" fill="#72887b" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Metadata gaps remain explicitly unresolved</text>
+  </g>
+  <path d="M1220 752H1202" fill="none" stroke="#478663" stroke-width="1.6" marker-end="url(#arrow-teal)"/>
+
+  <!-- Future docs retrieval callout -->
+  <g>
+    <rect x="55" y="650" width="830" height="161" rx="17" fill="#ffffff" stroke="#d5dbe3" stroke-width="1.4" stroke-dasharray="8 6"/>
+    <rect x="78" y="674" width="118" height="27" rx="13.5" fill="#eef0f3"/>
+    <text x="137" y="692" text-anchor="middle" fill="#596879" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.7">FUTURE WORK</text>
+    <text x="78" y="735" fill="#35465a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="700">Approved Census documentation retrieval</text>
+    <text x="78" y="763" fill="#6b788a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Planned for general Census questions. Not connected to the current MVP, so these questions receive a limitation response.</text>
+    <text x="78" y="787" fill="#8793a1" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">When built: reviewed Census Bureau sources → hybrid retrieval → cited, evidence-grounded explanation</text>
+  </g>
+
+  <!-- Legend and boundary note -->
+  <path d="M56 872H1544" stroke="#dce2e9" stroke-width="1"/>
+  <text x="57" y="909" fill="#627187" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.2">BOUNDARIES</text>
+  <line x1="57" y1="942" x2="102" y2="942" stroke="#53657d" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <text x="115" y="947" fill="#53657d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Live request / tool flow</text>
+  <line x1="295" y1="942" x2="340" y2="942" stroke="#4776b8" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrow-blue)"/>
+  <text x="353" y="947" fill="#53657d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Return path or agent feedback</text>
+  <rect x="570" y="929" width="42" height="25" rx="6" fill="#ffffff" stroke="#aab4c0" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="624" y="947" fill="#53657d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">Planned, not implemented</text>
+  <text x="1543" y="1000" text-anchor="end" fill="#8793a1" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11">Census Compass · Engineering reflection</text>
+</svg>
