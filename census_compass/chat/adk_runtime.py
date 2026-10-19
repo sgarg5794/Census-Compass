@@ -17,7 +17,6 @@ from census_compass.chat.contracts import (
     ResultEvent,
     StatusEvent,
 )
-from census_compass.chat.scope_gate import classify_dataset_question
 from census_compass.contracts import Outcome
 
 log = logging.getLogger(__name__)
@@ -34,7 +33,6 @@ class CensusAgentRuntime:
     def __init__(self, runner: InMemoryRunner | None = None):
         self._runner = runner or InMemoryRunner(agent=root_agent, app_name="census_compass")
         self._sessions: dict[tuple[str, str], str] = {}
-        self._dataset_conversations: set[tuple[str, str]] = set()
         self._closed = False
         self._loop = asyncio.new_event_loop()
         self._ready = threading.Event()
@@ -55,29 +53,6 @@ class CensusAgentRuntime:
             yield ErrorEvent(message="Census Compass couldn't complete that request. Please try again.")
             return
 
-        key = (request.visitor_id, request.conversation_id)
-        route = classify_dataset_question(
-            request.text, has_dataset_context=key in self._dataset_conversations
-        )
-        if route != "dataset":
-            yield ResultEvent(result=ChatResult(
-                outcome={
-                    "clarify": Outcome.CLARIFICATION_NEEDED,
-                    "unsupported_general_census": Outcome.UNSUPPORTED,
-                }.get(route, Outcome.UNSUPPORTED),
-                answer={
-                    "clarify": "Please ask a specific question about a Census data measure or geography.",
-                    "unsupported_general_census": (
-                        "I can answer questions from the connected Census dataset. General Census "
-                        "explanations aren't available until approved Census Bureau documents are connected."
-                    ),
-                    "out_of_scope": "I can help with questions about US Census data. Please ask a Census data question.",
-                }[route],
-                rows=[], evidence=[], completeness=[], truncated=False,
-            ))
-            return
-
-        self._dataset_conversations.add(key)
         events: queue.Queue = queue.Queue()
         future = self._submit(self._run_agent_turn(request, events))
         try:
