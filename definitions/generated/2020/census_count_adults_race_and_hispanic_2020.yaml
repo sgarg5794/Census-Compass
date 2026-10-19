@@ -1,0 +1,1481 @@
+name: census_count_adults_race_and_hispanic_2020
+title: 2020 Census count — adults 18 and over by race and Hispanic origin
+description: 'Official 2020 Census count as of April 1, 2020, for each Census block group: race for the
+  population 18 years and over; Hispanic or Latino, and not Hispanic or Latino by race for the population
+  18 years and over. The preferred source for 2020 population, race and Hispanic origin counts.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_REDISTRICTING_CBG_DATA"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_REDISTRICTING_CBG_DATA"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: total_p0030001
+  title: 'Race For The Population 18 Years And Over: Total'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Total.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030001"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_one_race_p0030002
+  title: 'Race For The Population 18 Years And Over: Population of one race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of one race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030002"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_alone_p0030003
+  title: 'Race For The Population 18 Years And Over: White alone'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030003"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_alone_p0030004
+  title: 'Race For The Population 18 Years And Over: Black or African American alone'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030004"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_alone_p0030005
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native alone'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030005"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_alone_p0030006
+  title: 'Race For The Population 18 Years And Over: Asian alone'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Asian alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030006"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: native_hawaiian_and_other_pacific_islander_alone_p0030007
+  title: 'Race For The Population 18 Years And Over: Native Hawaiian and Other Pacific Islander alone'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Native Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030007"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: some_other_race_alone_p0030008
+  title: 'Race For The Population 18 Years And Over: Some Other Race alone'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Some Other Race alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030008"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_two_or_more_races_p0030009
+  title: 'Race For The Population 18 Years And Over: Population of two or more races'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of two or more races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030009"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_two_races_p0030010
+  title: 'Race For The Population 18 Years And Over: Population of two races'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of two races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030010"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_p0030011
+  title: 'Race For The Population 18 Years And Over: White; Black or African American'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030011"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_p0030012
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030012"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_p0030013
+  title: 'Race For The Population 18 Years And Over: White; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030013"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_native_hawaiian_and_other_pacific_islander_p0030014
+  title: 'Race For The Population 18 Years And Over: White; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030014"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_some_other_race_p0030015
+  title: 'Race For The Population 18 Years And Over: White; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030015"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_p0030016
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030016"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_p0030017
+  title: 'Race For The Population 18 Years And Over: Black or African American; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030017"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_p0030018
+  title: 'Race For The Population 18 Years And Over: Black or African American; Native Hawaiian and Other
+    Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030018"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_some_other_race_p0030019
+  title: 'Race For The Population 18 Years And Over: Black or African American; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030019"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_p0030020
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030020"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0030021
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Native Hawaiian
+    and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030021"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_some_other_race_p0030022
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030022"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_native_hawaiian_and_other_pacific_islander_p0030023
+  title: 'Race For The Population 18 Years And Over: Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030023"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_some_other_race_p0030024
+  title: 'Race For The Population 18 Years And Over: Asian; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030024"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: native_hawaiian_and_other_pacific_islander_some_other_race_p0030025
+  title: 'Race For The Population 18 Years And Over: Native Hawaiian and Other Pacific Islander; Some
+    Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030025"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_three_races_p0030026
+  title: 'Race For The Population 18 Years And Over: Population of three races'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of three races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030026"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_p0030027
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030027"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_p0030028
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030028"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_p0030029
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Native Hawaiian
+    and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030029"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_some_other_race_p0030030
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030030"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_p0030031
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030031"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0030032
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Native
+    Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030032"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_some_other_race_p0030033
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Some Other
+    Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030033"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_native_hawaiian_and_other_pacific_islander_p0030034
+  title: 'Race For The Population 18 Years And Over: White; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030034"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_some_other_race_p0030035
+  title: 'Race For The Population 18 Years And Over: White; Asian; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030035"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_native_hawaiian_and_other_pacific_islander_some_other_race_p0030036
+  title: 'Race For The Population 18 Years And Over: White; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030036"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_p0030037
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030037"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0030038
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030038"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_some_other_race_p0030039
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030039"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0030040
+  title: 'Race For The Population 18 Years And Over: Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030040"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_some_other_race_p0030041
+  title: 'Race For The Population 18 Years And Over: Black or African American; Asian; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030041"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0030042
+  title: 'Race For The Population 18 Years And Over: Black or African American; Native Hawaiian and Other
+    Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030042"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0030043
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Asian; Native
+    Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030043"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_some_other_race_p0030044
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Asian; Some Other
+    Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030044"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0030045
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Native Hawaiian
+    and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030045"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030046
+  title: 'Race For The Population 18 Years And Over: Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030046"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_four_races_p0030047
+  title: 'Race For The Population 18 Years And Over: Population of four races'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of four races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030047"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_p0030048
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Asian'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030048"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0030049
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific
+    Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030049"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_some_other_race_p0030050
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030050"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0030051
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030051"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_some_other_race_p0030052
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Asian; Some Other
+    Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030052"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0030053
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Native Hawaiian
+    and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030053"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0030054
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Asian;
+    Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030054"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_some_other_race_p0030055
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Asian;
+    Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030055"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0030056
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Native
+    Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030056"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030057
+  title: 'Race For The Population 18 Years And Over: White; Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030057"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0030058
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific
+    Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030058"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0030059
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Asian; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030059"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0030060
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030060"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030061
+  title: 'Race For The Population 18 Years And Over: Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030061"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030062
+  title: 'Race For The Population 18 Years And Over: American Indian and Alaska Native; Asian; Native
+    Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030062"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_five_races_p0030063
+  title: 'Race For The Population 18 Years And Over: Population of five races'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of five races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030063"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0030064
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other
+    Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030064"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0030065
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Asian; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030065"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0030066
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific
+    Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030066"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030067
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030067"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030068
+  title: 'Race For The Population 18 Years And Over: White; American Indian and Alaska Native; Asian;
+    Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030068"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030069
+  title: 'Race For The Population 18 Years And Over: Black or African American; American Indian and Alaska
+    Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific
+    Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030069"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_six_races_p0030070
+  title: 'Race For The Population 18 Years And Over: Population of six races'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    Population of six races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030070"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0030071
+  title: 'Race For The Population 18 Years And Over: White; Black or African American; American Indian
+    and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race For The Population 18 Years And Over. Universe: Total population 18 years and over.
+    White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other
+    Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0030071"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: total_p0040001
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Total'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Total.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040001"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: hispanic_or_latino_p0040002
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Hispanic or Latino'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Hispanic or Latino.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040002"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: not_hispanic_or_latino_p0040003
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Not Hispanic or Latino'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Not Hispanic or Latino.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040003"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_one_race_p0040004
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of one race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of one race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040004"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_alone_p0040005
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040005"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_alone_p0040006
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040006"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_alone_p0040007
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040007"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_alone_p0040008
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Asian alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Asian alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040008"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: native_hawaiian_and_other_pacific_islander_alone_p0040009
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Native Hawaiian and Other Pacific Islander alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Native Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040009"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: some_other_race_alone_p0040010
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Some Other Race alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Some Other Race alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040010"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_two_or_more_races_p0040011
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of two or more races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of two or more races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040011"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_two_races_p0040012
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of two races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of two races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040012"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_p0040013
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040013"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_p0040014
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040014"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_p0040015
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040015"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_native_hawaiian_and_other_pacific_islander_p0040016
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040016"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_some_other_race_p0040017
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040017"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_p0040018
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040018"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_p0040019
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040019"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_p0040020
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Native Hawaiian and
+    Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040020"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_some_other_race_p0040021
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040021"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_p0040022
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040022"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0040023
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Native Hawaiian
+    and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040023"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_some_other_race_p0040024
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Some Other
+    Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040024"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_native_hawaiian_and_other_pacific_islander_p0040025
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040025"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_some_other_race_p0040026
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040026"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: native_hawaiian_and_other_pacific_islander_some_other_race_p0040027
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Native Hawaiian and Other Pacific Islander; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040027"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_three_races_p0040028
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of three races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of three races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040028"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_p0040029
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040029"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_p0040030
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040030"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_p0040031
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Native Hawaiian
+    and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040031"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_some_other_race_p0040032
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040032"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_p0040033
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040033"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0040034
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Native
+    Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040034"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_some_other_race_p0040035
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040035"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_native_hawaiian_and_other_pacific_islander_p0040036
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Asian; Native Hawaiian and Other Pacific
+    Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040036"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_some_other_race_p0040037
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040037"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_native_hawaiian_and_other_pacific_islander_some_other_race_p0040038
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040038"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_p0040039
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040039"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0040040
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040040"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_some_other_race_p0040041
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040041"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0040042
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040042"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_some_other_race_p0040043
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040043"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0040044
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Native Hawaiian and
+    Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040044"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0040045
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Asian; Native
+    Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040045"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_some_other_race_p0040046
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Asian; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040046"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0040047
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Native Hawaiian
+    and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040047"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040048
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040048"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_four_races_p0040049
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of four races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of four races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040049"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_p0040050
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040050"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0040051
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific
+    Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040051"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_some_other_race_p0040052
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040052"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0040053
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Asian; Native
+    Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040053"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_some_other_race_p0040054
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Asian; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040054"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0040055
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Native Hawaiian
+    and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040055"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0040056
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Asian;
+    Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040056"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_some_other_race_p0040057
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Asian;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040057"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0040058
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Native
+    Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040058"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040059
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Asian; Native Hawaiian and Other Pacific
+    Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040059"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0040060
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific
+    Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040060"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0040061
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040061"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0040062
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040062"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040063
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040063"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040064
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. American Indian and Alaska Native; Asian; Native
+    Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040064"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_five_races_p0040065
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of five races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of five races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040065"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0040066
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other
+    Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040066"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0040067
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040067"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0040068
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific
+    Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040068"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040069
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; Asian; Native
+    Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040069"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040070
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some
+    Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; American Indian and Alaska Native; Asian;
+    Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040070"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040071
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific
+    Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Black or African American; American Indian and
+    Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040071"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: population_of_six_races_p0040072
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    Population of six races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. Population of six races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040072"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0040073
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And Over:
+    White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other
+    Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race For The Population 18 Years And
+    Over. Universe: Total population 18 years and over. White; Black or African American; American Indian
+    and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0040073"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population 18 years and over

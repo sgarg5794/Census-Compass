@@ -1,0 +1,639 @@
+name: industry_2019
+title: Industry by sex (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by industry for the civilian employed population 16 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_C24"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_C24"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_c24030e1
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Total'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Total.'
+  sql: '"2019_CBG_C24"."C24030e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m1"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_c24030e2
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male.'
+  sql: '"2019_CBG_C24"."C24030e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m2"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_agriculture_forestry_fishing_and_hunting_and_mining_c24030e3
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Agriculture forestry
+    fishing and hunting and mining'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Agriculture forestry fishing and hunting and mining.'
+  sql: '"2019_CBG_C24"."C24030e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m3"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_agriculture_forestry_fishing_and_hunting_and_mining_agriculture_forestry_f_c24030e4
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Agriculture forestry
+    fishing and hunting and mining > Agriculture forestry fishing and hunting'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Agriculture forestry fishing and hunting and mining
+    > Agriculture forestry fishing and hunting.'
+  sql: '"2019_CBG_C24"."C24030e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m4"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_agriculture_forestry_fishing_and_hunting_and_mining_mining_quarrying_and_o_c24030e5
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Agriculture forestry
+    fishing and hunting and mining > Mining quarrying and oil and gas extraction'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Agriculture forestry fishing and hunting and mining
+    > Mining quarrying and oil and gas extraction.'
+  sql: '"2019_CBG_C24"."C24030e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m5"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_construction_c24030e6
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Construction'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Construction.'
+  sql: '"2019_CBG_C24"."C24030e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m6"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_manufacturing_c24030e7
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Manufacturing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Manufacturing.'
+  sql: '"2019_CBG_C24"."C24030e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m7"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_wholesale_trade_c24030e8
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Wholesale trade'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Wholesale trade.'
+  sql: '"2019_CBG_C24"."C24030e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m8"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_retail_trade_c24030e9
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Retail trade'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Retail trade.'
+  sql: '"2019_CBG_C24"."C24030e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m9"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_transportation_and_warehousing_and_utilities_c24030e10
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Transportation
+    and warehousing and utilities'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Transportation and warehousing and utilities.'
+  sql: '"2019_CBG_C24"."C24030e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m10"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_transportation_and_warehousing_and_utilities_transportation_and_warehousin_c24030e11
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Transportation
+    and warehousing and utilities > Transportation and warehousing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Transportation and warehousing and utilities > Transportation
+    and warehousing.'
+  sql: '"2019_CBG_C24"."C24030e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m11"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_transportation_and_warehousing_and_utilities_utilities_c24030e12
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Transportation
+    and warehousing and utilities > Utilities'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Transportation and warehousing and utilities > Utilities.'
+  sql: '"2019_CBG_C24"."C24030e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m12"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_information_c24030e13
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Information'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Information.'
+  sql: '"2019_CBG_C24"."C24030e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m13"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_finance_and_insurance_and_real_estate_and_rental_and_leasing_c24030e14
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Finance and insurance
+    and real estate and rental and leasing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Finance and insurance and real estate and rental and
+    leasing.'
+  sql: '"2019_CBG_C24"."C24030e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m14"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_finance_and_insurance_and_real_estate_and_rental_and_leasing_finance_and_i_c24030e15
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Finance and insurance
+    and real estate and rental and leasing > Finance and insurance'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Finance and insurance and real estate and rental and
+    leasing > Finance and insurance.'
+  sql: '"2019_CBG_C24"."C24030e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m15"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_finance_and_insurance_and_real_estate_and_rental_and_leasing_real_estate_a_c24030e16
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Finance and insurance
+    and real estate and rental and leasing > Real estate and rental and leasing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Finance and insurance and real estate and rental and
+    leasing > Real estate and rental and leasing.'
+  sql: '"2019_CBG_C24"."C24030e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m16"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_professional_scientific_and_management_and_administrative_and_waste_manage_c24030e17
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Professional
+    scientific and management and administrative and waste management services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Professional scientific and management and administrative
+    and waste management services.'
+  sql: '"2019_CBG_C24"."C24030e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m17"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_professional_scientific_and_management_and_administrative_and_waste_manage_c24030e18
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Professional
+    scientific and management and administrative and waste management services > Professional scientific
+    and technical services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Professional scientific and management and administrative
+    and waste management services > Professional scientific and technical services.'
+  sql: '"2019_CBG_C24"."C24030e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m18"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_professional_scientific_and_management_and_administrative_and_waste_manage_c24030e19
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Professional
+    scientific and management and administrative and waste management services > Management of companies
+    and enterprises'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Professional scientific and management and administrative
+    and waste management services > Management of companies and enterprises.'
+  sql: '"2019_CBG_C24"."C24030e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m19"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_professional_scientific_and_management_and_administrative_and_waste_manage_c24030e20
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Professional
+    scientific and management and administrative and waste management services > Administrative and support
+    and waste management services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Professional scientific and management and administrative
+    and waste management services > Administrative and support and waste management services.'
+  sql: '"2019_CBG_C24"."C24030e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m20"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_educational_services_and_health_care_and_social_assistance_c24030e21
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Educational services
+    and health care and social assistance'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Educational services and health care and social assistance.'
+  sql: '"2019_CBG_C24"."C24030e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m21"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_educational_services_and_health_care_and_social_assistance_educational_ser_c24030e22
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Educational services
+    and health care and social assistance > Educational services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Educational services and health care and social assistance
+    > Educational services.'
+  sql: '"2019_CBG_C24"."C24030e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m22"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_educational_services_and_health_care_and_social_assistance_health_care_and_c24030e23
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Educational services
+    and health care and social assistance > Health care and social assistance'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Educational services and health care and social assistance
+    > Health care and social assistance.'
+  sql: '"2019_CBG_C24"."C24030e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m23"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_arts_entertainment_and_recreation_and_accommodation_and_food_services_c24030e24
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Arts entertainment
+    and recreation and accommodation and food services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Arts entertainment and recreation and accommodation
+    and food services.'
+  sql: '"2019_CBG_C24"."C24030e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m24"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_arts_entertainment_and_recreation_and_accommodation_and_food_services_arts_c24030e25
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Arts entertainment
+    and recreation and accommodation and food services > Arts entertainment and recreation'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Arts entertainment and recreation and accommodation
+    and food services > Arts entertainment and recreation.'
+  sql: '"2019_CBG_C24"."C24030e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m25"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_arts_entertainment_and_recreation_and_accommodation_and_food_services_acco_c24030e26
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Arts entertainment
+    and recreation and accommodation and food services > Accommodation and food services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Arts entertainment and recreation and accommodation
+    and food services > Accommodation and food services.'
+  sql: '"2019_CBG_C24"."C24030e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m26"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_other_services_except_public_administration_c24030e27
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Other services
+    except public administration'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Other services except public administration.'
+  sql: '"2019_CBG_C24"."C24030e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m27"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_male_public_administration_c24030e28
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Male > Public administration'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Male > Public administration.'
+  sql: '"2019_CBG_C24"."C24030e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m28"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_c24030e29
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female.'
+  sql: '"2019_CBG_C24"."C24030e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m29"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_agriculture_forestry_fishing_and_hunting_and_mining_c24030e30
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Agriculture
+    forestry fishing and hunting and mining'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Agriculture forestry fishing and hunting and mining.'
+  sql: '"2019_CBG_C24"."C24030e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m30"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_agriculture_forestry_fishing_and_hunting_and_mining_agriculture_forestry_c24030e31
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Agriculture
+    forestry fishing and hunting and mining > Agriculture forestry fishing and hunting'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Agriculture forestry fishing and hunting and mining
+    > Agriculture forestry fishing and hunting.'
+  sql: '"2019_CBG_C24"."C24030e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m31"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_agriculture_forestry_fishing_and_hunting_and_mining_mining_quarrying_and_c24030e32
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Agriculture
+    forestry fishing and hunting and mining > Mining quarrying and oil and gas extraction'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Agriculture forestry fishing and hunting and mining
+    > Mining quarrying and oil and gas extraction.'
+  sql: '"2019_CBG_C24"."C24030e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m32"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_construction_c24030e33
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Construction'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Construction.'
+  sql: '"2019_CBG_C24"."C24030e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m33"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_manufacturing_c24030e34
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Manufacturing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Manufacturing.'
+  sql: '"2019_CBG_C24"."C24030e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m34"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_wholesale_trade_c24030e35
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Wholesale trade'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Wholesale trade.'
+  sql: '"2019_CBG_C24"."C24030e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m35"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_retail_trade_c24030e36
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Retail trade'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Retail trade.'
+  sql: '"2019_CBG_C24"."C24030e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m36"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_transportation_and_warehousing_and_utilities_c24030e37
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Transportation
+    and warehousing and utilities'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Transportation and warehousing and utilities.'
+  sql: '"2019_CBG_C24"."C24030e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m37"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_transportation_and_warehousing_and_utilities_transportation_and_warehous_c24030e38
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Transportation
+    and warehousing and utilities > Transportation and warehousing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Transportation and warehousing and utilities > Transportation
+    and warehousing.'
+  sql: '"2019_CBG_C24"."C24030e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m38"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_transportation_and_warehousing_and_utilities_utilities_c24030e39
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Transportation
+    and warehousing and utilities > Utilities'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Transportation and warehousing and utilities > Utilities.'
+  sql: '"2019_CBG_C24"."C24030e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m39"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_information_c24030e40
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Information'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Information.'
+  sql: '"2019_CBG_C24"."C24030e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m40"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_finance_and_insurance_and_real_estate_and_rental_and_leasing_c24030e41
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Finance and
+    insurance and real estate and rental and leasing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Finance and insurance and real estate and rental and
+    leasing.'
+  sql: '"2019_CBG_C24"."C24030e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m41"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_finance_and_insurance_and_real_estate_and_rental_and_leasing_finance_and_c24030e42
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Finance and
+    insurance and real estate and rental and leasing > Finance and insurance'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Finance and insurance and real estate and rental and
+    leasing > Finance and insurance.'
+  sql: '"2019_CBG_C24"."C24030e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m42"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_finance_and_insurance_and_real_estate_and_rental_and_leasing_real_estate_c24030e43
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Finance and
+    insurance and real estate and rental and leasing > Real estate and rental and leasing'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Finance and insurance and real estate and rental and
+    leasing > Real estate and rental and leasing.'
+  sql: '"2019_CBG_C24"."C24030e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m43"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_professional_scientific_and_management_and_administrative_and_waste_mana_c24030e44
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Professional
+    scientific and management and administrative and waste management services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Professional scientific and management and administrative
+    and waste management services.'
+  sql: '"2019_CBG_C24"."C24030e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m44"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_professional_scientific_and_management_and_administrative_and_waste_mana_c24030e45
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Professional
+    scientific and management and administrative and waste management services > Professional scientific
+    and technical services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Professional scientific and management and administrative
+    and waste management services > Professional scientific and technical services.'
+  sql: '"2019_CBG_C24"."C24030e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m45"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_professional_scientific_and_management_and_administrative_and_waste_mana_c24030e46
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Professional
+    scientific and management and administrative and waste management services > Management of companies
+    and enterprises'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Professional scientific and management and administrative
+    and waste management services > Management of companies and enterprises.'
+  sql: '"2019_CBG_C24"."C24030e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m46"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_professional_scientific_and_management_and_administrative_and_waste_mana_c24030e47
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Professional
+    scientific and management and administrative and waste management services > Administrative and support
+    and waste management services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Professional scientific and management and administrative
+    and waste management services > Administrative and support and waste management services.'
+  sql: '"2019_CBG_C24"."C24030e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m47"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_educational_services_and_health_care_and_social_assistance_c24030e48
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Educational
+    services and health care and social assistance'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Educational services and health care and social assistance.'
+  sql: '"2019_CBG_C24"."C24030e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m48"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_educational_services_and_health_care_and_social_assistance_educational_s_c24030e49
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Educational
+    services and health care and social assistance > Educational services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Educational services and health care and social assistance
+    > Educational services.'
+  sql: '"2019_CBG_C24"."C24030e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m49"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_educational_services_and_health_care_and_social_assistance_health_care_a_c24030e50
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Educational
+    services and health care and social assistance > Health care and social assistance'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Educational services and health care and social assistance
+    > Health care and social assistance.'
+  sql: '"2019_CBG_C24"."C24030e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m50"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_arts_entertainment_and_recreation_and_accommodation_and_food_services_c24030e51
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Arts entertainment
+    and recreation and accommodation and food services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Arts entertainment and recreation and accommodation
+    and food services.'
+  sql: '"2019_CBG_C24"."C24030e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m51"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_arts_entertainment_and_recreation_and_accommodation_and_food_services_ar_c24030e52
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Arts entertainment
+    and recreation and accommodation and food services > Arts entertainment and recreation'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Arts entertainment and recreation and accommodation
+    and food services > Arts entertainment and recreation.'
+  sql: '"2019_CBG_C24"."C24030e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m52"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_arts_entertainment_and_recreation_and_accommodation_and_food_services_ac_c24030e53
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Arts entertainment
+    and recreation and accommodation and food services > Accommodation and food services'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Arts entertainment and recreation and accommodation
+    and food services > Accommodation and food services.'
+  sql: '"2019_CBG_C24"."C24030e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m53"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_other_services_except_public_administration_c24030e54
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Other services
+    except public administration'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Other services except public administration.'
+  sql: '"2019_CBG_C24"."C24030e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m54"'
+- name: sex_by_industry_for_the_civilian_employed_population_16_years_and_over_female_public_administration_c24030e55
+  title: 'Sex By Industry For The Civilian Employed Population 16 Years And Over: Female > Public administration'
+  description: 'Sex By Industry For The Civilian Employed Population 16 Years And Over. Universe: Civilian
+    employed population 16 years and over. Female > Public administration.'
+  sql: '"2019_CBG_C24"."C24030e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_C24"."C24030m55"'

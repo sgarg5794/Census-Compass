@@ -1,0 +1,1093 @@
+name: moved_in_past_year_2020
+title: People who moved in the past year (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: geographical
+  mobility in the past year for current residence--metropolitan statistical area level in the United States;
+  geographical mobility in the past year for current residence--metropolitan statistical area level in
+  Puerto Rico; geographical mobility in the past year for current residence--micropolitan statistical
+  area level in the United States; geographical mobility in the past year for current residence--micropolitan
+  statistical area level in Puerto Rico; geographical mobility in the past year for current residence--not
+  metropolitan or micropolitan statistical area level in the United States; geographical mobility in the
+  past year for current residence--not metropolitan or micropolitan statistical area level in Puerto Rico.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B07"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B07"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_b07201e1
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Total'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Total.'
+  sql: '"2020_CBG_B07"."B07201e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m1"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_same_house_1_year_ago_b07201e2
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Same house 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Same house 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m2"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e3
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m3"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e4
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Same Metropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Same Metropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07201e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m4"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e5
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Same Metropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Same Metropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07201e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m5"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e6
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Same Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Same Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m6"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e7
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Different Metropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Different Metropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07201e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m7"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e8
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Different Metropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Different Metropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07201e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m8"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e9
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Different Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Different Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m9"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e10
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Micropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Micropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07201e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m10"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e11
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Micropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Micropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07201e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m11"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e12
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Micropolitan Statistical
+    Area > Moved from remainder of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Micropolitan Statistical
+    Area > Moved from remainder of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m12"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07201e13
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Not in a Metropolitan or
+    Micropolitan Statistical Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Not in a Metropolitan or
+    Micropolitan Statistical Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m13"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_the_united_states_abroad_1_year_ago_b07201e14
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In The United States: Abroad 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in the United States. Abroad 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07201m14"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_b07201pre1
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Total'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Total.'
+  sql: '"2020_CBG_B07"."B07201PRe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm1"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_same_house_1_year_ago_b07201pre2
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Same house 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Same house 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201PRe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm2"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre3
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201PRe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm3"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre4
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Same Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Same Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm4"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre5
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Same Metropolitan Statistical Area
+    > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Same Metropolitan Statistical Area
+    > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07201PRe5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm5"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre6
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Same Metropolitan Statistical Area
+    > Moved from remainder of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Same Metropolitan Statistical Area
+    > Moved from remainder of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm6"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre7
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Different Metropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Different Metropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07201PRe7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm7"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre8
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Different Metropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Different Metropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07201PRe8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm8"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre9
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Different Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Different Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm9"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre10
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm10"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre11
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Micropolitan Statistical Area >
+    Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Micropolitan Statistical Area > Moved
+    from principal city.'
+  sql: '"2020_CBG_B07"."B07201PRe11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm11"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre12
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Micropolitan Statistical Area >
+    Moved from remainder of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Micropolitan Statistical Area > Moved
+    from remainder of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm12"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07201pre13
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Not in a Metropolitan or Micropolitan
+    Statistical Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Not in a Metropolitan or Micropolitan
+    Statistical Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201PRe13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm13"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_b07201pre14
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201PRe14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm14"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_metropolitan__b07201pre15
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm15"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_metropolitan__b07201pre16
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Metropolitan Statistical Area > Moved from principal
+    city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Metropolitan Statistical Area > Moved from principal
+    city.'
+  sql: '"2020_CBG_B07"."B07201PRe16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm16"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_metropolitan__b07201pre17
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Metropolitan Statistical Area > Moved from remainder
+    of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Metropolitan Statistical Area > Moved from remainder
+    of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm17"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_micropolitan__b07201pre18
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm18"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_micropolitan__b07201pre19
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Micropolitan Statistical Area > Moved from principal
+    city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Micropolitan Statistical Area > Moved from principal
+    city.'
+  sql: '"2020_CBG_B07"."B07201PRe19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm19"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_micropolitan__b07201pre20
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Micropolitan Statistical Area > Moved from remainder
+    of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Micropolitan Statistical Area > Moved from remainder
+    of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07201PRe20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm20"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_not_in_a_metr_b07201pre21
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago > Not in a Metropolitan or Micropolitan Statistical
+    Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago > Not in a Metropolitan or Micropolitan Statistical
+    Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201PRe21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm21"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_metropolitan_statistical_area_level_in_puerto_rico_abroad_1_year_ago_b07201pre22
+  title: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area
+    Level In Puerto Rico: Abroad 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Metropolitan Statistical
+    Area in Puerto Rico. Abroad 1 year ago.'
+  sql: '"2020_CBG_B07"."B07201PRe22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Metropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07201PRm22"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_b07202e1
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Total'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Total.'
+  sql: '"2020_CBG_B07"."B07202e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m1"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_same_house_1_year_ago_b07202e2
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Same house 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Same house 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m2"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e3
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m3"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e4
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Same Micropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Same Micropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07202e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m4"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e5
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Same Micropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Same Micropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07202e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m5"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e6
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Same Micropolitan Statistical
+    Area > Moved from remainder of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Same Micropolitan Statistical
+    Area > Moved from remainder of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07202e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m6"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e7
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Different Micropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Different Micropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07202e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m7"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e8
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Different Micropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Different Micropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07202e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m8"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e9
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Different Micropolitan Statistical
+    Area > Moved from remainder of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Different Micropolitan Statistical
+    Area > Moved from remainder of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07202e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m9"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e10
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Metropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Metropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07202e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m10"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e11
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Metropolitan Statistical
+    Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Metropolitan Statistical
+    Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07202e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m11"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e12
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Metropolitan Statistical
+    Area > Moved from remainder of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07202e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m12"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_different_house_in_united_states_b07202e13
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Different house in United States 1 year ago > Not in a Metropolitan or
+    Micropolitan Statistical Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Different house in United States 1 year ago > Not in a Metropolitan or
+    Micropolitan Statistical Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m13"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_the_united_states_abroad_1_year_ago_b07202e14
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In The United States: Abroad 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In The United States. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in the United States. Abroad 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in the United States
+    moe_sql: '"2020_CBG_B07"."B07202m14"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_b07202pre1
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Total'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Total.'
+  sql: '"2020_CBG_B07"."B07202PRe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm1"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_same_house_1_year_ago_b07202pre2
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Same house 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Same house 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202PRe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm2"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre3
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202PRe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm3"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre4
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Same Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Same Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07202PRe4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm4"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre5
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Same Micropolitan Statistical Area
+    > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Same Micropolitan Statistical Area
+    > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07202PRe5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm5"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre6
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Same Micropolitan Statistical Area
+    > Moved from remainder of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Same Micropolitan Statistical Area
+    > Moved from remainder of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07202PRe6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm6"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre7
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Different Micropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Different Micropolitan Statistical
+    Area.'
+  sql: '"2020_CBG_B07"."B07202PRe7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm7"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre8
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07202PRe8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm8"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_puerto_rico_1_year__b07202pre9
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Not in a Metropolitan or Micropolitan
+    Statistical Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Not in a Metropolitan or Micropolitan
+    Statistical Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202PRe9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm9"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_united_states_1_year_ago_b07202pre10
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: United States 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. United States 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202PRe10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm10"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_micropolitan_statistical_area_level_in_puerto_rico_abroad_1_year_ago_b07202pre11
+  title: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area
+    Level In Puerto Rico: Abroad 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical
+    Area Level In Puerto Rico. Universe: Population 1 year and over living in a Micropolitan Statistical
+    Area in Puerto Rico. Abroad 1 year ago.'
+  sql: '"2020_CBG_B07"."B07202PRe11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over living in a Micropolitan Statistical Area in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07202PRm11"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_b07203e1
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Total'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Total.'
+  sql: '"2020_CBG_B07"."B07203e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m1"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_same_house_1_b07203e2
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Same house 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Same house 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m2"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e3
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago.'
+  sql: '"2020_CBG_B07"."B07203e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m3"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e4
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Metropolitan
+    Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07203e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m4"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e5
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Metropolitan
+    Statistical Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Metropolitan Statistical Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07203e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m5"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e6
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Metropolitan
+    Statistical Area > Moved from remainder of Metropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Metropolitan Statistical Area > Moved from remainder of Metropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07203e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m6"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e7
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Micropolitan
+    Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07203e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m7"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e8
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Micropolitan
+    Statistical Area > Moved from principal city'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Micropolitan Statistical Area > Moved from principal city.'
+  sql: '"2020_CBG_B07"."B07203e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m8"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e9
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Micropolitan
+    Statistical Area > Moved from remainder of Micropolitan Statistical Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Micropolitan Statistical Area > Moved from remainder of Micropolitan Statistical Area.'
+  sql: '"2020_CBG_B07"."B07203e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m9"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_different_ho_b07203e10
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Different house in United States 1 year ago > Not in
+    a Metropolitan or Micropolitan Statistical Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Different house in United States
+    1 year ago > Not in a Metropolitan or Micropolitan Statistical Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m10"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_the_united_states_abroad_1_yea_b07203e11
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States: Abroad 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In The United States. Universe: Population 1 year and over not living in a
+    Metropolitan or Micropolitan Statistical Area in the United States. Abroad 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in the United States
+    moe_sql: '"2020_CBG_B07"."B07203m11"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_b07203pre1
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Total'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Total.'
+  sql: '"2020_CBG_B07"."B07203PRe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm1"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_same_house_1_year__b07203pre2
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Same house 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Same house 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203PRe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm2"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_b07203pre3
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Different house in Puerto Rico 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Different house in Puerto Rico 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203PRe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm3"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_b07203pre4
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Metropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Metropolitan
+    Statistical Area.'
+  sql: '"2020_CBG_B07"."B07203PRe4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm4"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_b07203pre5
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Micropolitan Statistical
+    Area'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Micropolitan
+    Statistical Area.'
+  sql: '"2020_CBG_B07"."B07203PRe5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm5"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_different_house_in_b07203pre6
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Different house in Puerto Rico 1 year ago > Not in a Metropolitan
+    or Micropolitan Statistical Area 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Different house in Puerto Rico 1 year ago > Not in
+    a Metropolitan or Micropolitan Statistical Area 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203PRe6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm6"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_united_states_1_ye_b07203pre7
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: United States 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. United States 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203PRe7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm7"'
+- name: geographical_mobility_in_the_past_year_for_current_residence_not_metropolitan_or_micropolitan_statistical_area_level_in_puerto_rico_abroad_1_year_ago_b07203pre8
+  title: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico: Abroad 1 year ago'
+  description: 'Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan
+    Statistical Area Level In Puerto Rico. Universe: Population 1 year and over not living in a Metropolitan
+    or Micropolitan Statistical Area in Puerto Rico. Abroad 1 year ago.'
+  sql: '"2020_CBG_B07"."B07203PRe8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 1 year and over not living in a Metropolitan or Micropolitan Statistical Area
+      in Puerto Rico
+    moe_sql: '"2020_CBG_B07"."B07203PRm8"'

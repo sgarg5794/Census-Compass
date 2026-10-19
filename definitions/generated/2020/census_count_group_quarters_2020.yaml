@@ -1,0 +1,104 @@
+name: census_count_group_quarters_2020
+title: 2020 Census count — people living in group quarters (prisons, dorms, nursing homes…)
+description: 'Official 2020 Census count as of April 1, 2020, for each Census block group: group quarters
+  population by major group quarters type. The preferred source for 2020 population, race and Hispanic
+  origin counts.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_REDISTRICTING_CBG_DATA"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_REDISTRICTING_CBG_DATA"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: total_p0050001
+  title: 'Group Quarters Population By Major Group Quarters Type: Total'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Total.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050001"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: institutionalized_population_p0050002
+  title: 'Group Quarters Population By Major Group Quarters Type: Institutionalized population'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Institutionalized population.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050002"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: correctional_facilities_for_adults_p0050003
+  title: 'Group Quarters Population By Major Group Quarters Type: Correctional facilities for adults'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Correctional facilities for adults.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050003"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: juvenile_facilities_p0050004
+  title: 'Group Quarters Population By Major Group Quarters Type: Juvenile facilities'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Juvenile facilities.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050004"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: nursing_facilities_skilled_nursing_facilities_p0050005
+  title: 'Group Quarters Population By Major Group Quarters Type: Nursing facilities/Skilled-nursing facilities'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Nursing facilities/Skilled-nursing facilities.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050005"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: other_institutional_facilities_p0050006
+  title: 'Group Quarters Population By Major Group Quarters Type: Other institutional facilities'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Other institutional facilities.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050006"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: noninstitutionalized_population_p0050007
+  title: 'Group Quarters Population By Major Group Quarters Type: Noninstitutionalized population'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Noninstitutionalized population.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050007"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: college_university_student_housing_p0050008
+  title: 'Group Quarters Population By Major Group Quarters Type: College/University student housing'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. College/University student housing.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050008"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: military_quarters_p0050009
+  title: 'Group Quarters Population By Major Group Quarters Type: Military quarters'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Military quarters.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050009"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters
+- name: other_noninstitutional_facilities_p0050010
+  title: 'Group Quarters Population By Major Group Quarters Type: Other noninstitutional facilities'
+  description: 'Group Quarters Population By Major Group Quarters Type. Universe: Population in group
+    quarters. Other noninstitutional facilities.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0050010"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in group quarters

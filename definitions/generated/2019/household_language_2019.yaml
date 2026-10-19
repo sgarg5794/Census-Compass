@@ -1,0 +1,174 @@
+name: household_language_2019
+title: Household language and limited-English households (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: household
+  language by household limited English speaking status.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_C16"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_C16"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: household_language_by_household_limited_english_speaking_status_c16002e1
+  title: 'Household Language By Household Limited English Speaking Status: Total'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Total.'
+  sql: '"2019_CBG_C16"."C16002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m1"'
+- name: household_language_by_household_limited_english_speaking_status_english_only_c16002e2
+  title: 'Household Language By Household Limited English Speaking Status: English only'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    English only.'
+  sql: '"2019_CBG_C16"."C16002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m2"'
+- name: household_language_by_household_limited_english_speaking_status_spanish_c16002e3
+  title: 'Household Language By Household Limited English Speaking Status: Spanish'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Spanish.'
+  sql: '"2019_CBG_C16"."C16002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m3"'
+- name: household_language_by_household_limited_english_speaking_status_spanish_limited_english_speaking_household_c16002e4
+  title: 'Household Language By Household Limited English Speaking Status: Spanish > Limited English speaking
+    household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Spanish > Limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m4"'
+- name: household_language_by_household_limited_english_speaking_status_spanish_not_a_limited_english_speaking_household_c16002e5
+  title: 'Household Language By Household Limited English Speaking Status: Spanish > Not a limited English
+    speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Spanish > Not a limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m5"'
+- name: household_language_by_household_limited_english_speaking_status_other_indo_european_languages_c16002e6
+  title: 'Household Language By Household Limited English Speaking Status: Other Indo-European languages'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Other Indo-European languages.'
+  sql: '"2019_CBG_C16"."C16002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m6"'
+- name: household_language_by_household_limited_english_speaking_status_other_indo_european_languages_limited_english_speaking_household_c16002e7
+  title: 'Household Language By Household Limited English Speaking Status: Other Indo-European languages
+    > Limited English speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Other Indo-European languages > Limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m7"'
+- name: household_language_by_household_limited_english_speaking_status_other_indo_european_languages_not_a_limited_english_speaking_household_c16002e8
+  title: 'Household Language By Household Limited English Speaking Status: Other Indo-European languages
+    > Not a limited English speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Other Indo-European languages > Not a limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m8"'
+- name: household_language_by_household_limited_english_speaking_status_asian_and_pacific_island_languages_c16002e9
+  title: 'Household Language By Household Limited English Speaking Status: Asian and Pacific Island languages'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Asian and Pacific Island languages.'
+  sql: '"2019_CBG_C16"."C16002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m9"'
+- name: household_language_by_household_limited_english_speaking_status_asian_and_pacific_island_languages_limited_english_speaking_household_c16002e10
+  title: 'Household Language By Household Limited English Speaking Status: Asian and Pacific Island languages
+    > Limited English speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Asian and Pacific Island languages > Limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m10"'
+- name: household_language_by_household_limited_english_speaking_status_asian_and_pacific_island_languages_not_a_limited_english_speaking_household_c16002e11
+  title: 'Household Language By Household Limited English Speaking Status: Asian and Pacific Island languages
+    > Not a limited English speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Asian and Pacific Island languages > Not a limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m11"'
+- name: household_language_by_household_limited_english_speaking_status_other_languages_c16002e12
+  title: 'Household Language By Household Limited English Speaking Status: Other languages'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Other languages.'
+  sql: '"2019_CBG_C16"."C16002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m12"'
+- name: household_language_by_household_limited_english_speaking_status_other_languages_limited_english_speaking_household_c16002e13
+  title: 'Household Language By Household Limited English Speaking Status: Other languages > Limited English
+    speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Other languages > Limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m13"'
+- name: household_language_by_household_limited_english_speaking_status_other_languages_not_a_limited_english_speaking_household_c16002e14
+  title: 'Household Language By Household Limited English Speaking Status: Other languages > Not a limited
+    English speaking household'
+  description: 'Household Language By Household Limited English Speaking Status. Universe: Households.
+    Other languages > Not a limited English speaking household.'
+  sql: '"2019_CBG_C16"."C16002e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_C16"."C16002m14"'
+- name: limited_english_households_pct
+  title: Limited-English-speaking households (%)
+  description: Percentage of households in which no one 14 years and over speaks only English or speaks
+    English "very well", across Spanish, other Indo-European, Asian and Pacific Island, and other languages.
+  sql: 100 * SUM(IFF("2019_CBG_C16"."C16002e4" IS NULL OR "2019_CBG_C16"."C16002e7" IS NULL OR "2019_CBG_C16"."C16002e10"
+    IS NULL OR "2019_CBG_C16"."C16002e13" IS NULL OR "2019_CBG_C16"."C16002e1" IS NULL, NULL, "2019_CBG_C16"."C16002e4"
+    + "2019_CBG_C16"."C16002e7" + "2019_CBG_C16"."C16002e10" + "2019_CBG_C16"."C16002e13")) / NULLIF(SUM(IFF("2019_CBG_C16"."C16002e4"
+    IS NULL OR "2019_CBG_C16"."C16002e7" IS NULL OR "2019_CBG_C16"."C16002e10" IS NULL OR "2019_CBG_C16"."C16002e13"
+    IS NULL OR "2019_CBG_C16"."C16002e1" IS NULL, NULL, "2019_CBG_C16"."C16002e1")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Households

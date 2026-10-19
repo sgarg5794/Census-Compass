@@ -1,0 +1,1973 @@
+name: home_value_and_owner_costs_2020
+title: Home value, price asked, mortgages and owner costs (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: value;
+  lower value quartile (dollars); median value (dollars); upper value quartile (dollars); aggregate value
+  (dollars) by age of householder; aggregate value (dollars) by units in structure; mortgage status; aggregate
+  value (dollars) by mortgage status; median value (dollars) for mobile homes; price asked; aggregate
+  price asked (dollars); mortgage status and selected monthly owner costs; median selected monthly owner
+  costs (dollars) by mortgage status; aggregate selected monthly owner costs (dollars) by mortgage status;
+  mortgage status by selected monthly owner costs as a percentage of household income; median selected
+  monthly owner costs as a percentage of household income; age of householder by selected monthly owner
+  costs as a percentage of household income.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: lower_value_quartile_dollars_lower_value_quartile_dollars_b25076e1
+  title: 'Lower Value Quartile (Dollars): Total'
+  description: 'Lower Value Quartile (Dollars). Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25076e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25076m1"'
+- name: median_value_dollars_median_value_dollars_b25077e1
+  title: 'Median Value (Dollars): Total'
+  description: 'Median Value (Dollars). Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25077e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25077m1"'
+- name: upper_value_quartile_dollars_upper_value_quartile_dollars_b25078e1
+  title: 'Upper Value Quartile (Dollars): Total'
+  description: 'Upper Value Quartile (Dollars). Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25078e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25078m1"'
+- name: median_value_dollars_for_mobile_homes_median_value_dollars_b25083e1
+  title: 'Median Value (Dollars) For Mobile Homes: Median value (dollars)'
+  description: 'Median Value (Dollars) For Mobile Homes. Universe: Owner-occupied mobile homes. Median
+    value (dollars).'
+  sql: '"2020_CBG_B25"."B25083e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied mobile homes
+    moe_sql: '"2020_CBG_B25"."B25083m1"'
+- name: median_selected_monthly_owner_costs_dollars_by_mortgage_status_median_selected_monthly_owner_costs_dollars_b25088e1
+  title: 'Median Selected Monthly Owner Costs (Dollars) By Mortgage Status: Median selected monthly owner
+    costs (dollars)'
+  description: 'Median Selected Monthly Owner Costs (Dollars) By Mortgage Status. Universe: Owner-occupied
+    housing units. Median selected monthly owner costs (dollars).'
+  sql: '"2020_CBG_B25"."B25088e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25088m1"'
+- name: median_selected_monthly_owner_costs_dollars_by_mortgage_status_median_selected_monthly_owner_costs_dollars_housing_units_with_a_mortgage_dollars_b25088e2
+  title: 'Median Selected Monthly Owner Costs (Dollars) By Mortgage Status: Median selected monthly owner
+    costs (dollars) > Housing units with a mortgage (dollars)'
+  description: 'Median Selected Monthly Owner Costs (Dollars) By Mortgage Status. Universe: Owner-occupied
+    housing units. Median selected monthly owner costs (dollars) > Housing units with a mortgage (dollars).'
+  sql: '"2020_CBG_B25"."B25088e2"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25088m2"'
+- name: median_selected_monthly_owner_costs_dollars_by_mortgage_status_median_selected_monthly_owner_costs_dollars_housing_units_without_a_mortgage_dollars_b25088e3
+  title: 'Median Selected Monthly Owner Costs (Dollars) By Mortgage Status: Median selected monthly owner
+    costs (dollars) > Housing units without a mortgage (dollars)'
+  description: 'Median Selected Monthly Owner Costs (Dollars) By Mortgage Status. Universe: Owner-occupied
+    housing units. Median selected monthly owner costs (dollars) > Housing units without a mortgage (dollars).'
+  sql: '"2020_CBG_B25"."B25088e3"'
+  type: number
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25088m3"'
+- name: median_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_median_selected_monthly_owner_costs_as_a_percentage_of_h_b25092e1
+  title: 'Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12 Months:
+    Total'
+  description: 'Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12
+    Months. Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25092e1"'
+  type: number
+  format: percent
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25092m1"'
+- name: median_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_median_selected_monthly_owner_costs_as_a_percentage_of_h_b25092e2
+  title: 'Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12 Months:
+    Housing units with a mortgage'
+  description: 'Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12
+    Months. Universe: Owner-occupied housing units. Housing units with a mortgage.'
+  sql: '"2020_CBG_B25"."B25092e2"'
+  type: number
+  format: percent
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25092m2"'
+- name: median_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_median_selected_monthly_owner_costs_as_a_percentage_of_h_b25092e3
+  title: 'Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12 Months:
+    Housing units without a mortgage'
+  description: 'Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12
+    Months. Universe: Owner-occupied housing units. Housing units without a mortgage.'
+  sql: '"2020_CBG_B25"."B25092e3"'
+  type: number
+  format: percent
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25092m3"'
+measures:
+- name: value_b25075e1
+  title: 'Value: Total'
+  description: 'Value. Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25075e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m1"'
+- name: value_less_than_10_000_b25075e2
+  title: 'Value: Less than $10 000'
+  description: 'Value. Universe: Owner-occupied housing units. Less than $10 000.'
+  sql: '"2020_CBG_B25"."B25075e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m2"'
+- name: value_10_000_to_14_999_b25075e3
+  title: 'Value: $10 000 to $14 999'
+  description: 'Value. Universe: Owner-occupied housing units. $10 000 to $14 999.'
+  sql: '"2020_CBG_B25"."B25075e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m3"'
+- name: value_15_000_to_19_999_b25075e4
+  title: 'Value: $15 000 to $19 999'
+  description: 'Value. Universe: Owner-occupied housing units. $15 000 to $19 999.'
+  sql: '"2020_CBG_B25"."B25075e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m4"'
+- name: value_20_000_to_24_999_b25075e5
+  title: 'Value: $20 000 to $24 999'
+  description: 'Value. Universe: Owner-occupied housing units. $20 000 to $24 999.'
+  sql: '"2020_CBG_B25"."B25075e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m5"'
+- name: value_25_000_to_29_999_b25075e6
+  title: 'Value: $25 000 to $29 999'
+  description: 'Value. Universe: Owner-occupied housing units. $25 000 to $29 999.'
+  sql: '"2020_CBG_B25"."B25075e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m6"'
+- name: value_30_000_to_34_999_b25075e7
+  title: 'Value: $30 000 to $34 999'
+  description: 'Value. Universe: Owner-occupied housing units. $30 000 to $34 999.'
+  sql: '"2020_CBG_B25"."B25075e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m7"'
+- name: value_35_000_to_39_999_b25075e8
+  title: 'Value: $35 000 to $39 999'
+  description: 'Value. Universe: Owner-occupied housing units. $35 000 to $39 999.'
+  sql: '"2020_CBG_B25"."B25075e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m8"'
+- name: value_40_000_to_49_999_b25075e9
+  title: 'Value: $40 000 to $49 999'
+  description: 'Value. Universe: Owner-occupied housing units. $40 000 to $49 999.'
+  sql: '"2020_CBG_B25"."B25075e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m9"'
+- name: value_50_000_to_59_999_b25075e10
+  title: 'Value: $50 000 to $59 999'
+  description: 'Value. Universe: Owner-occupied housing units. $50 000 to $59 999.'
+  sql: '"2020_CBG_B25"."B25075e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m10"'
+- name: value_60_000_to_69_999_b25075e11
+  title: 'Value: $60 000 to $69 999'
+  description: 'Value. Universe: Owner-occupied housing units. $60 000 to $69 999.'
+  sql: '"2020_CBG_B25"."B25075e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m11"'
+- name: value_70_000_to_79_999_b25075e12
+  title: 'Value: $70 000 to $79 999'
+  description: 'Value. Universe: Owner-occupied housing units. $70 000 to $79 999.'
+  sql: '"2020_CBG_B25"."B25075e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m12"'
+- name: value_80_000_to_89_999_b25075e13
+  title: 'Value: $80 000 to $89 999'
+  description: 'Value. Universe: Owner-occupied housing units. $80 000 to $89 999.'
+  sql: '"2020_CBG_B25"."B25075e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m13"'
+- name: value_90_000_to_99_999_b25075e14
+  title: 'Value: $90 000 to $99 999'
+  description: 'Value. Universe: Owner-occupied housing units. $90 000 to $99 999.'
+  sql: '"2020_CBG_B25"."B25075e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m14"'
+- name: value_100_000_to_124_999_b25075e15
+  title: 'Value: $100 000 to $124 999'
+  description: 'Value. Universe: Owner-occupied housing units. $100 000 to $124 999.'
+  sql: '"2020_CBG_B25"."B25075e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m15"'
+- name: value_125_000_to_149_999_b25075e16
+  title: 'Value: $125 000 to $149 999'
+  description: 'Value. Universe: Owner-occupied housing units. $125 000 to $149 999.'
+  sql: '"2020_CBG_B25"."B25075e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m16"'
+- name: value_150_000_to_174_999_b25075e17
+  title: 'Value: $150 000 to $174 999'
+  description: 'Value. Universe: Owner-occupied housing units. $150 000 to $174 999.'
+  sql: '"2020_CBG_B25"."B25075e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m17"'
+- name: value_175_000_to_199_999_b25075e18
+  title: 'Value: $175 000 to $199 999'
+  description: 'Value. Universe: Owner-occupied housing units. $175 000 to $199 999.'
+  sql: '"2020_CBG_B25"."B25075e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m18"'
+- name: value_200_000_to_249_999_b25075e19
+  title: 'Value: $200 000 to $249 999'
+  description: 'Value. Universe: Owner-occupied housing units. $200 000 to $249 999.'
+  sql: '"2020_CBG_B25"."B25075e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m19"'
+- name: value_250_000_to_299_999_b25075e20
+  title: 'Value: $250 000 to $299 999'
+  description: 'Value. Universe: Owner-occupied housing units. $250 000 to $299 999.'
+  sql: '"2020_CBG_B25"."B25075e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m20"'
+- name: value_300_000_to_399_999_b25075e21
+  title: 'Value: $300 000 to $399 999'
+  description: 'Value. Universe: Owner-occupied housing units. $300 000 to $399 999.'
+  sql: '"2020_CBG_B25"."B25075e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m21"'
+- name: value_400_000_to_499_999_b25075e22
+  title: 'Value: $400 000 to $499 999'
+  description: 'Value. Universe: Owner-occupied housing units. $400 000 to $499 999.'
+  sql: '"2020_CBG_B25"."B25075e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m22"'
+- name: value_500_000_to_749_999_b25075e23
+  title: 'Value: $500 000 to $749 999'
+  description: 'Value. Universe: Owner-occupied housing units. $500 000 to $749 999.'
+  sql: '"2020_CBG_B25"."B25075e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m23"'
+- name: value_750_000_to_999_999_b25075e24
+  title: 'Value: $750 000 to $999 999'
+  description: 'Value. Universe: Owner-occupied housing units. $750 000 to $999 999.'
+  sql: '"2020_CBG_B25"."B25075e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m24"'
+- name: value_1_000_000_to_1_499_999_b25075e25
+  title: 'Value: $1 000 000 to $1 499 999'
+  description: 'Value. Universe: Owner-occupied housing units. $1 000 000 to $1 499 999.'
+  sql: '"2020_CBG_B25"."B25075e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m25"'
+- name: value_1_500_000_to_1_999_999_b25075e26
+  title: 'Value: $1 500 000 to $1 999 999'
+  description: 'Value. Universe: Owner-occupied housing units. $1 500 000 to $1 999 999.'
+  sql: '"2020_CBG_B25"."B25075e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m26"'
+- name: value_2_000_000_or_more_b25075e27
+  title: 'Value: $2 000 000 or more'
+  description: 'Value. Universe: Owner-occupied housing units. $2 000 000 or more.'
+  sql: '"2020_CBG_B25"."B25075e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25075m27"'
+- name: aggregate_value_dollars_by_age_of_householder_aggregate_value_dollars_b25079e1
+  title: 'Aggregate Value (Dollars) By Age Of Householder: Aggregate value (dollars)'
+  description: 'Aggregate Value (Dollars) By Age Of Householder. Universe: Owner-occupied housing units.
+    Aggregate value (dollars).'
+  sql: '"2020_CBG_B25"."B25079e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25079m1"'
+- name: aggregate_value_dollars_by_age_of_householder_aggregate_value_dollars_householder_15_to_24_years_dollars_b25079e2
+  title: 'Aggregate Value (Dollars) By Age Of Householder: Aggregate value (dollars) > Householder 15
+    to 24 years (dollars)'
+  description: 'Aggregate Value (Dollars) By Age Of Householder. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Householder 15 to 24 years (dollars).'
+  sql: '"2020_CBG_B25"."B25079e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25079m2"'
+- name: aggregate_value_dollars_by_age_of_householder_aggregate_value_dollars_householder_25_to_34_years_dollars_b25079e3
+  title: 'Aggregate Value (Dollars) By Age Of Householder: Aggregate value (dollars) > Householder 25
+    to 34 years (dollars)'
+  description: 'Aggregate Value (Dollars) By Age Of Householder. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Householder 25 to 34 years (dollars).'
+  sql: '"2020_CBG_B25"."B25079e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25079m3"'
+- name: aggregate_value_dollars_by_age_of_householder_aggregate_value_dollars_householder_35_to_64_years_dollars_b25079e4
+  title: 'Aggregate Value (Dollars) By Age Of Householder: Aggregate value (dollars) > Householder 35
+    to 64 years (dollars)'
+  description: 'Aggregate Value (Dollars) By Age Of Householder. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Householder 35 to 64 years (dollars).'
+  sql: '"2020_CBG_B25"."B25079e4"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25079m4"'
+- name: aggregate_value_dollars_by_age_of_householder_aggregate_value_dollars_householder_65_years_and_over_dollars_b25079e5
+  title: 'Aggregate Value (Dollars) By Age Of Householder: Aggregate value (dollars) > Householder 65
+    years and over (dollars)'
+  description: 'Aggregate Value (Dollars) By Age Of Householder. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Householder 65 years and over (dollars).'
+  sql: '"2020_CBG_B25"."B25079e5"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25079m5"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_b25080e1
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars).'
+  sql: '"2020_CBG_B25"."B25080e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m1"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_1_detached_dollars_b25080e2
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > 1 detached (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > 1 detached (dollars).'
+  sql: '"2020_CBG_B25"."B25080e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m2"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_1_attached_dollars_b25080e3
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > 1 attached (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > 1 attached (dollars).'
+  sql: '"2020_CBG_B25"."B25080e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m3"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_2_dollars_b25080e4
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > 2 (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > 2 (dollars).'
+  sql: '"2020_CBG_B25"."B25080e4"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m4"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_3_or_4_dollars_b25080e5
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > 3 or 4 (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > 3 or 4 (dollars).'
+  sql: '"2020_CBG_B25"."B25080e5"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m5"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_5_or_more_dollars_b25080e6
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > 5 or more (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > 5 or more (dollars).'
+  sql: '"2020_CBG_B25"."B25080e6"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m6"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_mobile_home_dollars_b25080e7
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > Mobile home (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Mobile home (dollars).'
+  sql: '"2020_CBG_B25"."B25080e7"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m7"'
+- name: aggregate_value_dollars_by_units_in_structure_aggregate_value_dollars_boat_rv_van_etc_dollars_b25080e8
+  title: 'Aggregate Value (Dollars) By Units In Structure: Aggregate value (dollars) > Boat RV van etc.
+    (dollars)'
+  description: 'Aggregate Value (Dollars) By Units In Structure. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Boat RV van etc. (dollars).'
+  sql: '"2020_CBG_B25"."B25080e8"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25080m8"'
+- name: mortgage_status_b25081e1
+  title: 'Mortgage Status: Total'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25081e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m1"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_b25081e2
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt.'
+  sql: '"2020_CBG_B25"."B25081e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m2"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_housing_units_with_no_second_mortgage_and_no_home_equity_loan_b25081e3
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt > Housing
+    units with no second mortgage and no home equity loan'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt > Housing units with no second mortgage and no home equity loan.'
+  sql: '"2020_CBG_B25"."B25081e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m3"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_housing_units_with_multiple_mortgages_b25081e4
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt > Housing
+    units with multiple mortgages'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt > Housing units with multiple mortgages.'
+  sql: '"2020_CBG_B25"."B25081e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m4"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_housing_units_with_multiple_mortgages_mortgage_with_both_second_mor_b25081e5
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt > Housing
+    units with multiple mortgages > Mortgage with both second mortgage and home equity loan'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt > Housing units with multiple mortgages > Mortgage with both
+    second mortgage and home equity loan.'
+  sql: '"2020_CBG_B25"."B25081e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m5"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_housing_units_with_multiple_mortgages_mortgage_with_only_home_equit_b25081e6
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt > Housing
+    units with multiple mortgages > Mortgage with only home equity loan'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt > Housing units with multiple mortgages > Mortgage with only
+    home equity loan.'
+  sql: '"2020_CBG_B25"."B25081e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m6"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_housing_units_with_multiple_mortgages_mortgage_with_only_second_mor_b25081e7
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt > Housing
+    units with multiple mortgages > Mortgage with only second mortgage'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt > Housing units with multiple mortgages > Mortgage with only
+    second mortgage.'
+  sql: '"2020_CBG_B25"."B25081e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m7"'
+- name: mortgage_status_housing_units_with_a_mortgage_contract_to_purchase_or_similar_debt_home_equity_loan_without_a_primary_mortgage_b25081e8
+  title: 'Mortgage Status: Housing units with a mortgage contract to purchase or similar debt > Home equity
+    loan without a primary mortgage'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units with a mortgage
+    contract to purchase or similar debt > Home equity loan without a primary mortgage.'
+  sql: '"2020_CBG_B25"."B25081e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m8"'
+- name: mortgage_status_housing_units_without_a_mortgage_b25081e9
+  title: 'Mortgage Status: Housing units without a mortgage'
+  description: 'Mortgage Status. Universe: Owner-occupied housing units. Housing units without a mortgage.'
+  sql: '"2020_CBG_B25"."B25081e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25081m9"'
+- name: aggregate_value_dollars_by_mortgage_status_aggregate_value_dollars_b25082e1
+  title: 'Aggregate Value (Dollars) By Mortgage Status: Aggregate value (dollars)'
+  description: 'Aggregate Value (Dollars) By Mortgage Status. Universe: Owner-occupied housing units.
+    Aggregate value (dollars).'
+  sql: '"2020_CBG_B25"."B25082e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25082m1"'
+- name: aggregate_value_dollars_by_mortgage_status_aggregate_value_dollars_housing_units_with_a_mortgage_dollars_b25082e2
+  title: 'Aggregate Value (Dollars) By Mortgage Status: Aggregate value (dollars) > Housing units with
+    a mortgage (dollars)'
+  description: 'Aggregate Value (Dollars) By Mortgage Status. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Housing units with a mortgage (dollars).'
+  sql: '"2020_CBG_B25"."B25082e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25082m2"'
+- name: aggregate_value_dollars_by_mortgage_status_aggregate_value_dollars_housing_units_without_a_mortgage_dollars_b25082e3
+  title: 'Aggregate Value (Dollars) By Mortgage Status: Aggregate value (dollars) > Housing units without
+    a mortgage (dollars)'
+  description: 'Aggregate Value (Dollars) By Mortgage Status. Universe: Owner-occupied housing units.
+    Aggregate value (dollars) > Housing units without a mortgage (dollars).'
+  sql: '"2020_CBG_B25"."B25082e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25082m3"'
+- name: price_asked_b25085e1
+  title: 'Price Asked: Total'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25085e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m1"'
+- name: price_asked_less_than_10_000_b25085e2
+  title: 'Price Asked: Less than $10 000'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. Less
+    than $10 000.'
+  sql: '"2020_CBG_B25"."B25085e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m2"'
+- name: price_asked_10_000_to_14_999_b25085e3
+  title: 'Price Asked: $10 000 to $14 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $10
+    000 to $14 999.'
+  sql: '"2020_CBG_B25"."B25085e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m3"'
+- name: price_asked_15_000_to_19_999_b25085e4
+  title: 'Price Asked: $15 000 to $19 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $15
+    000 to $19 999.'
+  sql: '"2020_CBG_B25"."B25085e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m4"'
+- name: price_asked_20_000_to_24_999_b25085e5
+  title: 'Price Asked: $20 000 to $24 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $20
+    000 to $24 999.'
+  sql: '"2020_CBG_B25"."B25085e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m5"'
+- name: price_asked_25_000_to_29_999_b25085e6
+  title: 'Price Asked: $25 000 to $29 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $25
+    000 to $29 999.'
+  sql: '"2020_CBG_B25"."B25085e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m6"'
+- name: price_asked_30_000_to_34_999_b25085e7
+  title: 'Price Asked: $30 000 to $34 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $30
+    000 to $34 999.'
+  sql: '"2020_CBG_B25"."B25085e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m7"'
+- name: price_asked_35_000_to_39_999_b25085e8
+  title: 'Price Asked: $35 000 to $39 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $35
+    000 to $39 999.'
+  sql: '"2020_CBG_B25"."B25085e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m8"'
+- name: price_asked_40_000_to_49_999_b25085e9
+  title: 'Price Asked: $40 000 to $49 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $40
+    000 to $49 999.'
+  sql: '"2020_CBG_B25"."B25085e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m9"'
+- name: price_asked_50_000_to_59_999_b25085e10
+  title: 'Price Asked: $50 000 to $59 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $50
+    000 to $59 999.'
+  sql: '"2020_CBG_B25"."B25085e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m10"'
+- name: price_asked_60_000_to_69_999_b25085e11
+  title: 'Price Asked: $60 000 to $69 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $60
+    000 to $69 999.'
+  sql: '"2020_CBG_B25"."B25085e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m11"'
+- name: price_asked_70_000_to_79_999_b25085e12
+  title: 'Price Asked: $70 000 to $79 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $70
+    000 to $79 999.'
+  sql: '"2020_CBG_B25"."B25085e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m12"'
+- name: price_asked_80_000_to_89_999_b25085e13
+  title: 'Price Asked: $80 000 to $89 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $80
+    000 to $89 999.'
+  sql: '"2020_CBG_B25"."B25085e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m13"'
+- name: price_asked_90_000_to_99_999_b25085e14
+  title: 'Price Asked: $90 000 to $99 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $90
+    000 to $99 999.'
+  sql: '"2020_CBG_B25"."B25085e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m14"'
+- name: price_asked_100_000_to_124_999_b25085e15
+  title: 'Price Asked: $100 000 to $124 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $100
+    000 to $124 999.'
+  sql: '"2020_CBG_B25"."B25085e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m15"'
+- name: price_asked_125_000_to_149_999_b25085e16
+  title: 'Price Asked: $125 000 to $149 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $125
+    000 to $149 999.'
+  sql: '"2020_CBG_B25"."B25085e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m16"'
+- name: price_asked_150_000_to_174_999_b25085e17
+  title: 'Price Asked: $150 000 to $174 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $150
+    000 to $174 999.'
+  sql: '"2020_CBG_B25"."B25085e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m17"'
+- name: price_asked_175_000_to_199_999_b25085e18
+  title: 'Price Asked: $175 000 to $199 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $175
+    000 to $199 999.'
+  sql: '"2020_CBG_B25"."B25085e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m18"'
+- name: price_asked_200_000_to_249_999_b25085e19
+  title: 'Price Asked: $200 000 to $249 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $200
+    000 to $249 999.'
+  sql: '"2020_CBG_B25"."B25085e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m19"'
+- name: price_asked_250_000_to_299_999_b25085e20
+  title: 'Price Asked: $250 000 to $299 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $250
+    000 to $299 999.'
+  sql: '"2020_CBG_B25"."B25085e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m20"'
+- name: price_asked_300_000_to_399_999_b25085e21
+  title: 'Price Asked: $300 000 to $399 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $300
+    000 to $399 999.'
+  sql: '"2020_CBG_B25"."B25085e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m21"'
+- name: price_asked_400_000_to_499_999_b25085e22
+  title: 'Price Asked: $400 000 to $499 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $400
+    000 to $499 999.'
+  sql: '"2020_CBG_B25"."B25085e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m22"'
+- name: price_asked_500_000_to_749_999_b25085e23
+  title: 'Price Asked: $500 000 to $749 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $500
+    000 to $749 999.'
+  sql: '"2020_CBG_B25"."B25085e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m23"'
+- name: price_asked_750_000_to_999_999_b25085e24
+  title: 'Price Asked: $750 000 to $999 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $750
+    000 to $999 999.'
+  sql: '"2020_CBG_B25"."B25085e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m24"'
+- name: price_asked_1_000_000_to_1_499_999_b25085e25
+  title: 'Price Asked: $1 000 000 to $1 499 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $1 000
+    000 to $1 499 999.'
+  sql: '"2020_CBG_B25"."B25085e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m25"'
+- name: price_asked_1_500_000_to_1_999_999_b25085e26
+  title: 'Price Asked: $1 500 000 to $1 999 999'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $1 500
+    000 to $1 999 999.'
+  sql: '"2020_CBG_B25"."B25085e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m26"'
+- name: price_asked_2_000_000_or_more_b25085e27
+  title: 'Price Asked: $2 000 000 or more'
+  description: 'Price Asked. Universe: Vacant-for-sale-only and sold, not occupied housing units. $2 000
+    000 or more.'
+  sql: '"2020_CBG_B25"."B25085e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25085m27"'
+- name: aggregate_price_asked_dollars_aggregate_price_asked_dollars_b25086e1
+  title: 'Aggregate Price Asked (Dollars): Total'
+  description: 'Aggregate Price Asked (Dollars). Universe: Vacant-for-sale-only and sold, not occupied
+    housing units. Total.'
+  sql: '"2020_CBG_B25"."B25086e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Vacant-for-sale-only and sold, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25086m1"'
+- name: mortgage_status_and_selected_monthly_owner_costs_b25087e1
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Total'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Total.'
+  sql: '"2020_CBG_B25"."B25087e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m1"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_b25087e2
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage.'
+  sql: '"2020_CBG_B25"."B25087e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m2"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_less_than_200_b25087e3
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > Less than
+    $200'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > Less than $200.'
+  sql: '"2020_CBG_B25"."B25087e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m3"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_200_to_299_b25087e4
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $200 to $299'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $200 to $299.'
+  sql: '"2020_CBG_B25"."B25087e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m4"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_300_to_399_b25087e5
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $300 to $399'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $300 to $399.'
+  sql: '"2020_CBG_B25"."B25087e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m5"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_400_to_499_b25087e6
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $400 to $499'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $400 to $499.'
+  sql: '"2020_CBG_B25"."B25087e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m6"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_500_to_599_b25087e7
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $500 to $599'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $500 to $599.'
+  sql: '"2020_CBG_B25"."B25087e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m7"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_600_to_699_b25087e8
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $600 to $699'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $600 to $699.'
+  sql: '"2020_CBG_B25"."B25087e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m8"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_700_to_799_b25087e9
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $700 to $799'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $700 to $799.'
+  sql: '"2020_CBG_B25"."B25087e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m9"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_800_to_899_b25087e10
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $800 to $899'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $800 to $899.'
+  sql: '"2020_CBG_B25"."B25087e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m10"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_900_to_999_b25087e11
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $900 to $999'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $900 to $999.'
+  sql: '"2020_CBG_B25"."B25087e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m11"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_1_000_to_1_249_b25087e12
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $1 000 to
+    $1 249'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $1 000 to $1 249.'
+  sql: '"2020_CBG_B25"."B25087e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m12"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_1_250_to_1_499_b25087e13
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $1 250 to
+    $1 499'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $1 250 to $1 499.'
+  sql: '"2020_CBG_B25"."B25087e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m13"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_1_500_to_1_999_b25087e14
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $1 500 to
+    $1 999'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $1 500 to $1 999.'
+  sql: '"2020_CBG_B25"."B25087e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m14"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_2_000_to_2_499_b25087e15
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $2 000 to
+    $2 499'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $2 000 to $2 499.'
+  sql: '"2020_CBG_B25"."B25087e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m15"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_2_500_to_2_999_b25087e16
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $2 500 to
+    $2 999'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $2 500 to $2 999.'
+  sql: '"2020_CBG_B25"."B25087e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m16"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_3_000_to_3_499_b25087e17
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $3 000 to
+    $3 499'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $3 000 to $3 499.'
+  sql: '"2020_CBG_B25"."B25087e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m17"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_3_500_to_3_999_b25087e18
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $3 500 to
+    $3 999'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $3 500 to $3 999.'
+  sql: '"2020_CBG_B25"."B25087e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m18"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_with_a_mortgage_4_000_or_more_b25087e19
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units with a mortgage > $4 000 or
+    more'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units with a mortgage > $4 000 or more.'
+  sql: '"2020_CBG_B25"."B25087e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m19"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_b25087e20
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage.'
+  sql: '"2020_CBG_B25"."B25087e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m20"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_less_than_100_b25087e21
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > Less than
+    $100'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > Less than $100.'
+  sql: '"2020_CBG_B25"."B25087e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m21"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_100_to_149_b25087e22
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $100 to
+    $149'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $100 to $149.'
+  sql: '"2020_CBG_B25"."B25087e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m22"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_150_to_199_b25087e23
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $150 to
+    $199'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $150 to $199.'
+  sql: '"2020_CBG_B25"."B25087e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m23"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_200_to_249_b25087e24
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $200 to
+    $249'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $200 to $249.'
+  sql: '"2020_CBG_B25"."B25087e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m24"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_250_to_299_b25087e25
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $250 to
+    $299'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $250 to $299.'
+  sql: '"2020_CBG_B25"."B25087e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m25"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_300_to_349_b25087e26
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $300 to
+    $349'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $300 to $349.'
+  sql: '"2020_CBG_B25"."B25087e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m26"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_350_to_399_b25087e27
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $350 to
+    $399'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $350 to $399.'
+  sql: '"2020_CBG_B25"."B25087e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m27"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_400_to_499_b25087e28
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $400 to
+    $499'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $400 to $499.'
+  sql: '"2020_CBG_B25"."B25087e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m28"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_500_to_599_b25087e29
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $500 to
+    $599'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $500 to $599.'
+  sql: '"2020_CBG_B25"."B25087e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m29"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_600_to_699_b25087e30
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $600 to
+    $699'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $600 to $699.'
+  sql: '"2020_CBG_B25"."B25087e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m30"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_700_to_799_b25087e31
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $700 to
+    $799'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $700 to $799.'
+  sql: '"2020_CBG_B25"."B25087e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m31"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_800_to_899_b25087e32
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $800 to
+    $899'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $800 to $899.'
+  sql: '"2020_CBG_B25"."B25087e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m32"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_900_to_999_b25087e33
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $900 to
+    $999'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $900 to $999.'
+  sql: '"2020_CBG_B25"."B25087e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m33"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_1000_to_1_099_b25087e34
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $1000 to
+    $1 099'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $1000 to $1 099.'
+  sql: '"2020_CBG_B25"."B25087e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m34"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_1100_to_1_199_b25087e35
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $1100 to
+    $1 199'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $1100 to $1 199.'
+  sql: '"2020_CBG_B25"."B25087e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m35"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_1200_to_1_299_b25087e36
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $1200 to
+    $1 299'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $1200 to $1 299.'
+  sql: '"2020_CBG_B25"."B25087e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m36"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_1300_to_1_399_b25087e37
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $1300 to
+    $1 399'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $1300 to $1 399.'
+  sql: '"2020_CBG_B25"."B25087e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m37"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_1400_to_1_499_b25087e38
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $1400 to
+    $1 499'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $1400 to $1 499.'
+  sql: '"2020_CBG_B25"."B25087e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m38"'
+- name: mortgage_status_and_selected_monthly_owner_costs_housing_units_without_a_mortgage_1_500_or_more_b25087e39
+  title: 'Mortgage Status And Selected Monthly Owner Costs: Housing units without a mortgage > $1 500
+    or more'
+  description: 'Mortgage Status And Selected Monthly Owner Costs. Universe: Owner-occupied housing units.
+    Housing units without a mortgage > $1 500 or more.'
+  sql: '"2020_CBG_B25"."B25087e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25087m39"'
+- name: aggregate_selected_monthly_owner_costs_dollars_by_mortgage_status_aggregate_selected_monthly_owner_costs_dollars_b25089e1
+  title: 'Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status: Aggregate selected monthly
+    owner costs (dollars)'
+  description: 'Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status. Universe: Owner-occupied
+    housing units. Aggregate selected monthly owner costs (dollars).'
+  sql: '"2020_CBG_B25"."B25089e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25089m1"'
+- name: aggregate_selected_monthly_owner_costs_dollars_by_mortgage_status_aggregate_selected_monthly_owner_costs_dollars_housing_units_with_a_mortgage_dollars_b25089e2
+  title: 'Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status: Aggregate selected monthly
+    owner costs (dollars) > Housing units with a mortgage (dollars)'
+  description: 'Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status. Universe: Owner-occupied
+    housing units. Aggregate selected monthly owner costs (dollars) > Housing units with a mortgage (dollars).'
+  sql: '"2020_CBG_B25"."B25089e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25089m2"'
+- name: aggregate_selected_monthly_owner_costs_dollars_by_mortgage_status_aggregate_selected_monthly_owner_costs_dollars_housing_units_without_a_mortgage_doll_b25089e3
+  title: 'Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status: Aggregate selected monthly
+    owner costs (dollars) > Housing units without a mortgage (dollars)'
+  description: 'Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status. Universe: Owner-occupied
+    housing units. Aggregate selected monthly owner costs (dollars) > Housing units without a mortgage
+    (dollars).'
+  sql: '"2020_CBG_B25"."B25089e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25089m3"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_b25091e1
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Total'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25091e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m1"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_b25091e2
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage.'
+  sql: '"2020_CBG_B25"."B25091e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m2"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_less_than_10_0_b25091e3
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > Less than 10.0 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > Less than
+    10.0 percent.'
+  sql: '"2020_CBG_B25"."B25091e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m3"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_10_0_to_14_9_p_b25091e4
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 10.0 to 14.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 10.0 to
+    14.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m4"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_15_0_to_19_9_p_b25091e5
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 15.0 to 19.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 15.0 to
+    19.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m5"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_20_0_to_24_9_p_b25091e6
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 20.0 to 24.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 20.0 to
+    24.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m6"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_25_0_to_29_9_p_b25091e7
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 25.0 to 29.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 25.0 to
+    29.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m7"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_30_0_to_34_9_p_b25091e8
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 30.0 to 34.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 30.0 to
+    34.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m8"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_35_0_to_39_9_p_b25091e9
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 35.0 to 39.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 35.0 to
+    39.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m9"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_40_0_to_49_9_p_b25091e10
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 40.0 to 49.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 40.0 to
+    49.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m10"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_50_0_percent_o_b25091e11
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > 50.0 percent or more'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > 50.0 percent
+    or more.'
+  sql: '"2020_CBG_B25"."B25091e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m11"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_with_a_mortgage_not_computed_b25091e12
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units with a mortgage > Not computed'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units with a mortgage > Not computed.'
+  sql: '"2020_CBG_B25"."B25091e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m12"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_b25091e13
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage.'
+  sql: '"2020_CBG_B25"."B25091e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m13"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_less_than_1_b25091e14
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > Less than 10.0 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > Less
+    than 10.0 percent.'
+  sql: '"2020_CBG_B25"."B25091e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m14"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_10_0_to_14__b25091e15
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 10.0 to 14.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 10.0
+    to 14.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m15"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_15_0_to_19__b25091e16
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 15.0 to 19.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 15.0
+    to 19.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m16"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_20_0_to_24__b25091e17
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 20.0 to 24.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 20.0
+    to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m17"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_25_0_to_29__b25091e18
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 25.0 to 29.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 25.0
+    to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m18"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_30_0_to_34__b25091e19
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 30.0 to 34.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 30.0
+    to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m19"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_35_0_to_39__b25091e20
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 35.0 to 39.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 35.0
+    to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m20"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_40_0_to_49__b25091e21
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 40.0 to 49.9 percent'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 40.0
+    to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25091e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m21"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_50_0_percen_b25091e22
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > 50.0 percent or more'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > 50.0
+    percent or more.'
+  sql: '"2020_CBG_B25"."B25091e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m22"'
+- name: mortgage_status_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_housing_units_without_a_mortgage_not_compute_b25091e23
+  title: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past
+    12 Months: Housing units without a mortgage > Not computed'
+  description: 'Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In
+    The Past 12 Months. Universe: Owner-occupied housing units. Housing units without a mortgage > Not
+    computed.'
+  sql: '"2020_CBG_B25"."B25091e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25091m23"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_b25093e1
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Total'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25093e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m1"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_b25093e2
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years.'
+  sql: '"2020_CBG_B25"."B25093e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m2"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_less_than_20_0_b25093e3
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years > Less than 20.0 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years > Less than
+    20.0 percent.'
+  sql: '"2020_CBG_B25"."B25093e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m3"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_20_0_to_24_9_p_b25093e4
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years > 20.0 to
+    24.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m4"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_25_0_to_29_9_p_b25093e5
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years > 25.0 to
+    29.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m5"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_30_0_to_34_9_p_b25093e6
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years > 30.0 to
+    34.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m6"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_35_0_percent_o_b25093e7
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years > 35.0 percent or more'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years > 35.0 percent
+    or more.'
+  sql: '"2020_CBG_B25"."B25093e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m7"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_not_computed_b25093e8
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 15 to 24 years > Not computed'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 15 to 24 years > Not computed.'
+  sql: '"2020_CBG_B25"."B25093e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m8"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_b25093e9
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years.'
+  sql: '"2020_CBG_B25"."B25093e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m9"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_less_than_20_0_b25093e10
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years > Less than 20.0 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years > Less than
+    20.0 percent.'
+  sql: '"2020_CBG_B25"."B25093e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m10"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_20_0_to_24_9_p_b25093e11
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years > 20.0 to
+    24.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m11"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_25_0_to_29_9_p_b25093e12
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years > 25.0 to
+    29.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m12"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_30_0_to_34_9_p_b25093e13
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years > 30.0 to
+    34.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m13"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_35_0_percent_o_b25093e14
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years > 35.0 percent or more'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years > 35.0 percent
+    or more.'
+  sql: '"2020_CBG_B25"."B25093e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m14"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_not_computed_b25093e15
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 25 to 34 years > Not computed'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 25 to 34 years > Not computed.'
+  sql: '"2020_CBG_B25"."B25093e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m15"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_b25093e16
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years.'
+  sql: '"2020_CBG_B25"."B25093e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m16"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_less_than_20_0_b25093e17
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years > Less than 20.0 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years > Less than
+    20.0 percent.'
+  sql: '"2020_CBG_B25"."B25093e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m17"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_20_0_to_24_9_p_b25093e18
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years > 20.0 to
+    24.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m18"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_25_0_to_29_9_p_b25093e19
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years > 25.0 to
+    29.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m19"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_30_0_to_34_9_p_b25093e20
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years > 30.0 to
+    34.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m20"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_35_0_percent_o_b25093e21
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years > 35.0 percent or more'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years > 35.0 percent
+    or more.'
+  sql: '"2020_CBG_B25"."B25093e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m21"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_not_computed_b25093e22
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 35 to 64 years > Not computed'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 35 to 64 years > Not computed.'
+  sql: '"2020_CBG_B25"."B25093e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m22"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_b25093e23
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over.'
+  sql: '"2020_CBG_B25"."B25093e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m23"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_less_than_2_b25093e24
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over > Less than 20.0 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over > Less
+    than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25093e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m24"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_20_0_to_24__b25093e25
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over > 20.0
+    to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m25"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_25_0_to_29__b25093e26
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over > 25.0
+    to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m26"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_30_0_to_34__b25093e27
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over > 30.0
+    to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25093e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m27"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_35_0_percen_b25093e28
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over > 35.0 percent or more'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over > 35.0
+    percent or more.'
+  sql: '"2020_CBG_B25"."B25093e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m28"'
+- name: age_of_householder_by_selected_monthly_owner_costs_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_not_compute_b25093e29
+  title: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The
+    Past 12 Months: Householder 65 years and over > Not computed'
+  description: 'Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income
+    In The Past 12 Months. Universe: Owner-occupied housing units. Householder 65 years and over > Not
+    computed.'
+  sql: '"2020_CBG_B25"."B25093e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25093m29"'

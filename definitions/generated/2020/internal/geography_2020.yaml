@@ -1,0 +1,28 @@
+name: geography_2020
+title: States and counties (2020)
+description: 'States and counties for 2020: state abbreviation, state code, county code and county name,
+  one row per county. Used by the tools to find places.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_FIPS_CODES"'
+dimensions:
+- name: state
+  title: State
+  description: Two-letter postal abbreviation of the state.
+  sql: '"2020_METADATA_CBG_FIPS_CODES"."STATE"'
+  type: string
+- name: state_fips
+  title: State code
+  description: Two-digit state code; the first 2 digits of a Census block group identifier.
+  sql: '"2020_METADATA_CBG_FIPS_CODES"."STATE_FIPS"'
+  type: string
+- name: county_fips
+  title: County code
+  description: Three-digit county code within the state; state code plus county code are the first 5 digits
+    of a Census block group identifier.
+  sql: '"2020_METADATA_CBG_FIPS_CODES"."COUNTY_FIPS"'
+  type: string
+- name: county
+  title: County
+  description: County name, for example Cook County.
+  sql: '"2020_METADATA_CBG_FIPS_CODES"."COUNTY"'
+  type: string
+measures: []

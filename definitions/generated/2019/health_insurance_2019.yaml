@@ -1,0 +1,772 @@
+name: health_insurance_2019
+title: Health insurance coverage by age (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: types
+  of health insurance coverage by age.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B27"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B27"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: types_of_health_insurance_coverage_by_age_b27010e1
+  title: 'Types Of Health Insurance Coverage By Age: Total'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Total.'
+  sql: '"2019_CBG_B27"."B27010e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m1"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_b27010e2
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years.'
+  sql: '"2019_CBG_B27"."B27010e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m2"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_b27010e3
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m3"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_with_employer_based_health_insurance_only_b27010e4
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage > With employer-based health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage > With employer-based health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m4"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_with_direct_purchase_health_insurance_only_b27010e5
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage > With direct-purchase health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage > With direct-purchase health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m5"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_with_medicare_coverage_only_b27010e6
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage > With Medicare coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage > With Medicare coverage only.'
+  sql: '"2019_CBG_B27"."B27010e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m6"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_with_medicaid_means_tested_public_coverage_only_b27010e7
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage > With Medicaid/means-tested public coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage > With Medicaid/means-tested public coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m7"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_with_tricare_military_health_coverage_only_b27010e8
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage > With TRICARE/military health coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage > With TRICARE/military health coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m8"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_one_type_of_health_insurance_coverage_with_va_health_care_only_b27010e9
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With one type of health insurance
+    coverage > With VA Health Care only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With one type of health insurance coverage > With VA Health Care only.'
+  sql: '"2019_CBG_B27"."B27010e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m9"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_b27010e10
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m10"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_direct_purchase_c_b27010e11
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage > With employer-based and direct-purchase coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage > With employer-based and direct-purchase
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m11"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_medicare_coverage_b27010e12
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage > With employer-based and Medicare coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage > With employer-based and Medicare
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m12"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_with_medicare_and_medicaid_means_tested_p_b27010e13
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage > With Medicare and Medicaid/means-tested public coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage > With Medicare and Medicaid/means-tested
+    public coverage.'
+  sql: '"2019_CBG_B27"."B27010e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m13"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_other_private_only_combinations_b27010e14
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage > Other private only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage > Other private only combinations.'
+  sql: '"2019_CBG_B27"."B27010e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m14"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_other_public_only_combinations_b27010e15
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage > Other public only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage > Other public only combinations.'
+  sql: '"2019_CBG_B27"."B27010e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m15"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_with_two_or_more_types_of_health_insurance_coverage_other_coverage_combinations_b27010e16
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > With two or more types of health
+    insurance coverage > Other coverage combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > With two or more types of health insurance coverage > Other coverage combinations.'
+  sql: '"2019_CBG_B27"."B27010e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m16"'
+- name: types_of_health_insurance_coverage_by_age_under_19_years_no_health_insurance_coverage_b27010e17
+  title: 'Types Of Health Insurance Coverage By Age: Under 19 years > No health insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    Under 19 years > No health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m17"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_b27010e18
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years.'
+  sql: '"2019_CBG_B27"."B27010e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m18"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_b27010e19
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m19"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_with_employer_based_health_insurance_only_b27010e20
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage > With employer-based health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage > With employer-based health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m20"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_with_direct_purchase_health_insurance_only_b27010e21
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage > With direct-purchase health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage > With direct-purchase health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m21"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_with_medicare_coverage_only_b27010e22
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage > With Medicare coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage > With Medicare coverage only.'
+  sql: '"2019_CBG_B27"."B27010e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m22"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_with_medicaid_means_tested_public_coverage_only_b27010e23
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage > With Medicaid/means-tested public coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage > With Medicaid/means-tested public coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m23"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_with_tricare_military_health_coverage_only_b27010e24
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage > With TRICARE/military health coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage > With TRICARE/military health coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m24"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_one_type_of_health_insurance_coverage_with_va_health_care_only_b27010e25
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With one type of health insurance
+    coverage > With VA Health Care only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With one type of health insurance coverage > With VA Health Care only.'
+  sql: '"2019_CBG_B27"."B27010e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m25"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_b27010e26
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m26"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_direct_purchase_c_b27010e27
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage > With employer-based and direct-purchase coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage > With employer-based and direct-purchase
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m27"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_medicare_coverage_b27010e28
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage > With employer-based and Medicare coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage > With employer-based and Medicare
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m28"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_with_medicare_and_medicaid_means_tested_p_b27010e29
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage > With Medicare and Medicaid/means-tested public coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage > With Medicare and Medicaid/means-tested
+    public coverage.'
+  sql: '"2019_CBG_B27"."B27010e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m29"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_other_private_only_combinations_b27010e30
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage > Other private only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage > Other private only combinations.'
+  sql: '"2019_CBG_B27"."B27010e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m30"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_other_public_only_combinations_b27010e31
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage > Other public only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage > Other public only combinations.'
+  sql: '"2019_CBG_B27"."B27010e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m31"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_with_two_or_more_types_of_health_insurance_coverage_other_coverage_combinations_b27010e32
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > With two or more types of health
+    insurance coverage > Other coverage combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > With two or more types of health insurance coverage > Other coverage combinations.'
+  sql: '"2019_CBG_B27"."B27010e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m32"'
+- name: types_of_health_insurance_coverage_by_age_19_to_34_years_no_health_insurance_coverage_b27010e33
+  title: 'Types Of Health Insurance Coverage By Age: 19 to 34 years > No health insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    19 to 34 years > No health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m33"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_b27010e34
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years.'
+  sql: '"2019_CBG_B27"."B27010e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m34"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_b27010e35
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m35"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_with_employer_based_health_insurance_only_b27010e36
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage > With employer-based health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage > With employer-based health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m36"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_with_direct_purchase_health_insurance_only_b27010e37
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage > With direct-purchase health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage > With direct-purchase health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m37"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_with_medicare_coverage_only_b27010e38
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage > With Medicare coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage > With Medicare coverage only.'
+  sql: '"2019_CBG_B27"."B27010e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m38"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_with_medicaid_means_tested_public_coverage_only_b27010e39
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage > With Medicaid/means-tested public coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage > With Medicaid/means-tested public coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m39"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_with_tricare_military_health_coverage_only_b27010e40
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage > With TRICARE/military health coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage > With TRICARE/military health coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m40"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_one_type_of_health_insurance_coverage_with_va_health_care_only_b27010e41
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With one type of health insurance
+    coverage > With VA Health Care only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With one type of health insurance coverage > With VA Health Care only.'
+  sql: '"2019_CBG_B27"."B27010e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m41"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_b27010e42
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m42"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_direct_purchase_c_b27010e43
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > With employer-based and direct-purchase coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > With employer-based and direct-purchase
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m43"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_medicare_coverage_b27010e44
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > With employer-based and Medicare coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > With employer-based and Medicare
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m44"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_with_direct_purchase_and_medicare_coverag_b27010e45
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > With direct-purchase and Medicare coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > With direct-purchase and Medicare
+    coverage.'
+  sql: '"2019_CBG_B27"."B27010e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m45"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_with_medicare_and_medicaid_means_tested_p_b27010e46
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > With Medicare and Medicaid/means-tested public coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > With Medicare and Medicaid/means-tested
+    public coverage.'
+  sql: '"2019_CBG_B27"."B27010e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m46"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_other_private_only_combinations_b27010e47
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > Other private only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > Other private only combinations.'
+  sql: '"2019_CBG_B27"."B27010e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m47"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_other_public_only_combinations_b27010e48
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > Other public only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > Other public only combinations.'
+  sql: '"2019_CBG_B27"."B27010e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m48"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_with_two_or_more_types_of_health_insurance_coverage_other_coverage_combinations_b27010e49
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > With two or more types of health
+    insurance coverage > Other coverage combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > With two or more types of health insurance coverage > Other coverage combinations.'
+  sql: '"2019_CBG_B27"."B27010e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m49"'
+- name: types_of_health_insurance_coverage_by_age_35_to_64_years_no_health_insurance_coverage_b27010e50
+  title: 'Types Of Health Insurance Coverage By Age: 35 to 64 years > No health insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    35 to 64 years > No health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m50"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_b27010e51
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over.'
+  sql: '"2019_CBG_B27"."B27010e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m51"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_one_type_of_health_insurance_coverage_b27010e52
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With one type of health insurance
+    coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With one type of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m52"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_one_type_of_health_insurance_coverage_with_employer_based_health_insurance_only_b27010e53
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With one type of health insurance
+    coverage > With employer-based health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With one type of health insurance coverage > With employer-based health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m53"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_one_type_of_health_insurance_coverage_with_direct_purchase_health_insurance_only_b27010e54
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With one type of health insurance
+    coverage > With direct-purchase health insurance only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With one type of health insurance coverage > With direct-purchase health insurance
+    only.'
+  sql: '"2019_CBG_B27"."B27010e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m54"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_one_type_of_health_insurance_coverage_with_medicare_coverage_only_b27010e55
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With one type of health insurance
+    coverage > With Medicare coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With one type of health insurance coverage > With Medicare coverage only.'
+  sql: '"2019_CBG_B27"."B27010e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m55"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_one_type_of_health_insurance_coverage_with_tricare_military_health_coverage_only_b27010e56
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With one type of health insurance
+    coverage > With TRICARE/military health coverage only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With one type of health insurance coverage > With TRICARE/military health coverage
+    only.'
+  sql: '"2019_CBG_B27"."B27010e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m56"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_one_type_of_health_insurance_coverage_with_va_health_care_only_b27010e57
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With one type of health insurance
+    coverage > With VA Health Care only'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With one type of health insurance coverage > With VA Health Care only.'
+  sql: '"2019_CBG_B27"."B27010e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m57"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_b27010e58
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m58"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_direct_purchas_b27010e59
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > With employer-based and direct-purchase coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > With employer-based and
+    direct-purchase coverage.'
+  sql: '"2019_CBG_B27"."B27010e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m59"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_with_employer_based_and_medicare_cover_b27010e60
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > With employer-based and Medicare coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > With employer-based and
+    Medicare coverage.'
+  sql: '"2019_CBG_B27"."B27010e60"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m60"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_with_direct_purchase_and_medicare_cove_b27010e61
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > With direct-purchase and Medicare coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > With direct-purchase and
+    Medicare coverage.'
+  sql: '"2019_CBG_B27"."B27010e61"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m61"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_with_medicare_and_medicaid_means_teste_b27010e62
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > With Medicare and Medicaid/means-tested public coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > With Medicare and Medicaid/means-tested
+    public coverage.'
+  sql: '"2019_CBG_B27"."B27010e62"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m62"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_other_private_only_combinations_b27010e63
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > Other private only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > Other private only combinations.'
+  sql: '"2019_CBG_B27"."B27010e63"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m63"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_other_public_only_combinations_b27010e64
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > Other public only combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > Other public only combinations.'
+  sql: '"2019_CBG_B27"."B27010e64"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m64"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_with_two_or_more_types_of_health_insurance_coverage_other_coverage_combinations_b27010e65
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > With two or more types of health
+    insurance coverage > Other coverage combinations'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > With two or more types of health insurance coverage > Other coverage combinations.'
+  sql: '"2019_CBG_B27"."B27010e65"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m65"'
+- name: types_of_health_insurance_coverage_by_age_65_years_and_over_no_health_insurance_coverage_b27010e66
+  title: 'Types Of Health Insurance Coverage By Age: 65 years and over > No health insurance coverage'
+  description: 'Types Of Health Insurance Coverage By Age. Universe: Civilian noninstitutionalized population.
+    65 years and over > No health insurance coverage.'
+  sql: '"2019_CBG_B27"."B27010e66"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian noninstitutionalized population
+    moe_sql: '"2019_CBG_B27"."B27010m66"'
+- name: uninsured_pct
+  title: Uninsured (%)
+  description: Percentage of the civilian population not living in institutions that has no health insurance
+    coverage, all ages.
+  sql: 100 * SUM(IFF("2019_CBG_B27"."B27010e17" IS NULL OR "2019_CBG_B27"."B27010e33" IS NULL OR "2019_CBG_B27"."B27010e50"
+    IS NULL OR "2019_CBG_B27"."B27010e66" IS NULL OR "2019_CBG_B27"."B27010e1" IS NULL, NULL, "2019_CBG_B27"."B27010e17"
+    + "2019_CBG_B27"."B27010e33" + "2019_CBG_B27"."B27010e50" + "2019_CBG_B27"."B27010e66")) / NULLIF(SUM(IFF("2019_CBG_B27"."B27010e17"
+    IS NULL OR "2019_CBG_B27"."B27010e33" IS NULL OR "2019_CBG_B27"."B27010e50" IS NULL OR "2019_CBG_B27"."B27010e66"
+    IS NULL OR "2019_CBG_B27"."B27010e1" IS NULL, NULL, "2019_CBG_B27"."B27010e1")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Civilian noninstitutionalized population

@@ -1,0 +1,610 @@
+name: veterans_2019
+title: Veteran status and period of service (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by age by veteran status for the civilian population 18 years and over; period of military service for
+  civilian veterans 18 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B21"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B21"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_b21001e1
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Total'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Total.'
+  sql: '"2019_CBG_B21"."B21001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m1"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_veteran_b21001e2
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Veteran.'
+  sql: '"2019_CBG_B21"."B21001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m2"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_nonveteran_b21001e3
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m3"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_b21001e4
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male.'
+  sql: '"2019_CBG_B21"."B21001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m4"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_veteran_b21001e5
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m5"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_nonveteran_b21001e6
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m6"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_18_to_34_years_b21001e7
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 18 to 34
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 18 to 34 years.'
+  sql: '"2019_CBG_B21"."B21001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m7"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_18_to_34_years_veteran_b21001e8
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 18 to 34
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 18 to 34 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m8"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_18_to_34_years_nonveteran_b21001e9
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 18 to 34
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 18 to 34 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m9"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_35_to_54_years_b21001e10
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 35 to 54
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 35 to 54 years.'
+  sql: '"2019_CBG_B21"."B21001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m10"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_35_to_54_years_veteran_b21001e11
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 35 to 54
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 35 to 54 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m11"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_35_to_54_years_nonveteran_b21001e12
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 35 to 54
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 35 to 54 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m12"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_55_to_64_years_b21001e13
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 55 to 64
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 55 to 64 years.'
+  sql: '"2019_CBG_B21"."B21001e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m13"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_55_to_64_years_veteran_b21001e14
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 55 to 64
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 55 to 64 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m14"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_55_to_64_years_nonveteran_b21001e15
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 55 to 64
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 55 to 64 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m15"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_65_to_74_years_b21001e16
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 65 to 74
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 65 to 74 years.'
+  sql: '"2019_CBG_B21"."B21001e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m16"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_65_to_74_years_veteran_b21001e17
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 65 to 74
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 65 to 74 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m17"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_65_to_74_years_nonveteran_b21001e18
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 65 to 74
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 65 to 74 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m18"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_75_years_and_over_b21001e19
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 75 years
+    and over'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 75 years and over.'
+  sql: '"2019_CBG_B21"."B21001e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m19"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_75_years_and_over_veteran_b21001e20
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 75 years
+    and over > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 75 years and over > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m20"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_male_75_years_and_over_nonveteran_b21001e21
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Male > 75 years
+    and over > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Male > 75 years and over > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m21"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_b21001e22
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female.'
+  sql: '"2019_CBG_B21"."B21001e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m22"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_veteran_b21001e23
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m23"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_nonveteran_b21001e24
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m24"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_18_to_34_years_b21001e25
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 18 to 34
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 18 to 34 years.'
+  sql: '"2019_CBG_B21"."B21001e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m25"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_18_to_34_years_veteran_b21001e26
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 18 to 34
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 18 to 34 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m26"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_18_to_34_years_nonveteran_b21001e27
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 18 to 34
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 18 to 34 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m27"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_35_to_54_years_b21001e28
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 35 to 54
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 35 to 54 years.'
+  sql: '"2019_CBG_B21"."B21001e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m28"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_35_to_54_years_veteran_b21001e29
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 35 to 54
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 35 to 54 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m29"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_35_to_54_years_nonveteran_b21001e30
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 35 to 54
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 35 to 54 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m30"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_55_to_64_years_b21001e31
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 55 to 64
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 55 to 64 years.'
+  sql: '"2019_CBG_B21"."B21001e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m31"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_55_to_64_years_veteran_b21001e32
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 55 to 64
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 55 to 64 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m32"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_55_to_64_years_nonveteran_b21001e33
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 55 to 64
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 55 to 64 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m33"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_65_to_74_years_b21001e34
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 65 to 74
+    years'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 65 to 74 years.'
+  sql: '"2019_CBG_B21"."B21001e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m34"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_65_to_74_years_veteran_b21001e35
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 65 to 74
+    years > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 65 to 74 years > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m35"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_65_to_74_years_nonveteran_b21001e36
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 65 to 74
+    years > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 65 to 74 years > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m36"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_75_years_and_over_b21001e37
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 75 years
+    and over'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 75 years and over.'
+  sql: '"2019_CBG_B21"."B21001e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m37"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_75_years_and_over_veteran_b21001e38
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 75 years
+    and over > Veteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 75 years and over > Veteran.'
+  sql: '"2019_CBG_B21"."B21001e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m38"'
+- name: sex_by_age_by_veteran_status_for_the_civilian_population_18_years_and_over_female_75_years_and_over_nonveteran_b21001e39
+  title: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over: Female > 75 years
+    and over > Nonveteran'
+  description: 'Sex By Age By Veteran Status For The Civilian Population 18 Years And Over. Universe:
+    Civilian population 18 years and over. Female > 75 years and over > Nonveteran.'
+  sql: '"2019_CBG_B21"."B21001e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21001m39"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_b21002e1
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Total'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Total.'
+  sql: '"2019_CBG_B21"."B21002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m1"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_gulf_war_9_2001_or_later_no_gulf_war_8_1990_to_8_2001_no_vietnam_era_b21002e2
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Gulf War (9/2001 or later)
+    no Gulf War (8/1990 to 8/2001) no Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Gulf War (9/2001 or later) no Gulf War (8/1990 to 8/2001) no Vietnam Era.'
+  sql: '"2019_CBG_B21"."B21002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m2"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_gulf_war_9_2001_or_later_and_gulf_war_8_1990_to_8_2001_no_vietnam_era_b21002e3
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Gulf War (9/2001 or later)
+    and Gulf War (8/1990 to 8/2001) no Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Gulf War (9/2001 or later) and Gulf War (8/1990 to 8/2001) no Vietnam
+    Era.'
+  sql: '"2019_CBG_B21"."B21002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m3"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_gulf_war_9_2001_or_later_and_gulf_war_8_1990_to_8_2001_and_vietnam_era_b21002e4
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Gulf War (9/2001 or later)
+    and Gulf War (8/1990 to 8/2001) and Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Gulf War (9/2001 or later) and Gulf War (8/1990 to 8/2001) and Vietnam
+    Era.'
+  sql: '"2019_CBG_B21"."B21002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m4"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_gulf_war_8_1990_to_8_2001_no_vietnam_era_b21002e5
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Gulf War (8/1990 to 8/2001)
+    no Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Gulf War (8/1990 to 8/2001) no Vietnam Era.'
+  sql: '"2019_CBG_B21"."B21002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m5"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_gulf_war_8_1990_to_8_2001_and_vietnam_era_b21002e6
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Gulf War (8/1990 to 8/2001)
+    and Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Gulf War (8/1990 to 8/2001) and Vietnam Era.'
+  sql: '"2019_CBG_B21"."B21002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m6"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_vietnam_era_no_korean_war_no_world_war_ii_b21002e7
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Vietnam Era no Korean War
+    no World War II'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Vietnam Era no Korean War no World War II.'
+  sql: '"2019_CBG_B21"."B21002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m7"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_vietnam_era_and_korean_war_no_world_war_ii_b21002e8
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Vietnam Era and Korean War
+    no World War II'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Vietnam Era and Korean War no World War II.'
+  sql: '"2019_CBG_B21"."B21002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m8"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_vietnam_era_and_korean_war_and_world_war_ii_b21002e9
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Vietnam Era and Korean War
+    and World War II'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Vietnam Era and Korean War and World War II.'
+  sql: '"2019_CBG_B21"."B21002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m9"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_korean_war_no_vietnam_era_no_world_war_ii_b21002e10
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Korean War no Vietnam Era
+    no World War II'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Korean War no Vietnam Era no World War II.'
+  sql: '"2019_CBG_B21"."B21002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m10"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_korean_war_and_world_war_ii_no_vietnam_era_b21002e11
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Korean War and World War
+    II no Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Korean War and World War II no Vietnam Era.'
+  sql: '"2019_CBG_B21"."B21002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m11"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_world_war_ii_no_korean_war_no_vietnam_era_b21002e12
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: World War II no Korean War
+    no Vietnam Era'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. World War II no Korean War no Vietnam Era.'
+  sql: '"2019_CBG_B21"."B21002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m12"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_between_gulf_war_and_vietnam_era_only_b21002e13
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Between Gulf War and Vietnam
+    Era only'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Between Gulf War and Vietnam Era only.'
+  sql: '"2019_CBG_B21"."B21002e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m13"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_between_vietnam_era_and_korean_war_only_b21002e14
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Between Vietnam Era and
+    Korean War only'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Between Vietnam Era and Korean War only.'
+  sql: '"2019_CBG_B21"."B21002e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m14"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_between_korean_war_and_world_war_ii_only_b21002e15
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Between Korean War and World
+    War II only'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Between Korean War and World War II only.'
+  sql: '"2019_CBG_B21"."B21002e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m15"'
+- name: period_of_military_service_for_civilian_veterans_18_years_and_over_pre_world_war_ii_only_b21002e16
+  title: 'Period Of Military Service For Civilian Veterans 18 Years And Over: Pre-World War II only'
+  description: 'Period Of Military Service For Civilian Veterans 18 Years And Over. Universe: Civilian
+    veterans 18 years and over. Pre-World War II only.'
+  sql: '"2019_CBG_B21"."B21002e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian veterans 18 years and over
+    moe_sql: '"2019_CBG_B21"."B21002m16"'

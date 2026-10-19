@@ -1,0 +1,93 @@
+name: income_to_poverty_ratio_2020
+title: Income relative to the poverty line (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: ratio
+  of income to poverty level.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_C17"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_C17"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_c17002e1
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: Total'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. Total.'
+  sql: '"2020_CBG_C17"."C17002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m1"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_under_50_c17002e2
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: Under .50'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. Under .50.'
+  sql: '"2020_CBG_C17"."C17002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m2"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_50_to_99_c17002e3
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: .50 to .99'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. .50 to .99.'
+  sql: '"2020_CBG_C17"."C17002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m3"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_1_00_to_1_24_c17002e4
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: 1.00 to 1.24'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. 1.00 to 1.24.'
+  sql: '"2020_CBG_C17"."C17002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m4"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_1_25_to_1_49_c17002e5
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: 1.25 to 1.49'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. 1.25 to 1.49.'
+  sql: '"2020_CBG_C17"."C17002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m5"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_1_50_to_1_84_c17002e6
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: 1.50 to 1.84'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. 1.50 to 1.84.'
+  sql: '"2020_CBG_C17"."C17002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m6"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_1_85_to_1_99_c17002e7
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: 1.85 to 1.99'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. 1.85 to 1.99.'
+  sql: '"2020_CBG_C17"."C17002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m7"'
+- name: ratio_of_income_to_poverty_level_in_the_past_12_months_2_00_and_over_c17002e8
+  title: 'Ratio Of Income To Poverty Level In The Past 12 Months: 2.00 and over'
+  description: 'Ratio Of Income To Poverty Level In The Past 12 Months. Universe: Population for whom
+    poverty status is determined. 2.00 and over.'
+  sql: '"2020_CBG_C17"."C17002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2020_CBG_C17"."C17002m8"'

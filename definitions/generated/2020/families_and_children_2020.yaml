@@ -1,0 +1,772 @@
+name: families_and_children_2020
+title: Families and households with children (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: family
+  type by presence and age of own children under 18 years; family type by presence and age of related
+  children under 18 years; households by presence of people under 18 years by household type; cohabiting
+  couple households by presence and age of own children under 18 years.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B11"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B11"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_b11003e1
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Total'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Total.'
+  sql: '"2020_CBG_B11"."B11003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m1"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_married_couple_family_b11003e2
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Married-couple family'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Married-couple
+    family.'
+  sql: '"2020_CBG_B11"."B11003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m2"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_married_couple_family_with_own_children_of_the_householder_under_18_years_b11003e3
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Married-couple family > With
+    own children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Married-couple
+    family > With own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m3"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_married_couple_family_with_own_children_of_the_householder_under_18_years_under_6_years_b11003e4
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Married-couple family > With
+    own children of the householder under 18 years > Under 6 years only'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Married-couple
+    family > With own children of the householder under 18 years > Under 6 years only.'
+  sql: '"2020_CBG_B11"."B11003e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m4"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_married_couple_family_with_own_children_of_the_householder_under_18_years_under_6_years_b11003e5
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Married-couple family > With
+    own children of the householder under 18 years > Under 6 years and 6 to 17 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Married-couple
+    family > With own children of the householder under 18 years > Under 6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11003e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m5"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_married_couple_family_with_own_children_of_the_householder_under_18_years_6_to_17_years_b11003e6
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Married-couple family > With
+    own children of the householder under 18 years > 6 to 17 years only'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Married-couple
+    family > With own children of the householder under 18 years > 6 to 17 years only.'
+  sql: '"2020_CBG_B11"."B11003e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m6"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_married_couple_family_no_own_children_of_the_householder_under_18_years_b11003e7
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Married-couple family > No own
+    children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Married-couple
+    family > No own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11003e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m7"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_b11003e8
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family.'
+  sql: '"2020_CBG_B11"."B11003e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m8"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_male_householder_no_spouse_present_b11003e9
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Male householder
+    no spouse present'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Male householder no spouse present.'
+  sql: '"2020_CBG_B11"."B11003e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m9"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_male_householder_no_spouse_present_with_own_children_of_the_householder_un_b11003e10
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Male householder
+    no spouse present > With own children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Male householder no spouse present > With own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11003e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m10"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_male_householder_no_spouse_present_with_own_children_of_the_householder_un_b11003e11
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Male householder
+    no spouse present > With own children of the householder under 18 years > Under 6 years only'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Male householder no spouse present > With own children of the householder under 18 years
+    > Under 6 years only.'
+  sql: '"2020_CBG_B11"."B11003e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m11"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_male_householder_no_spouse_present_with_own_children_of_the_householder_un_b11003e12
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Male householder
+    no spouse present > With own children of the householder under 18 years > Under 6 years and 6 to 17
+    years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Male householder no spouse present > With own children of the householder under 18 years
+    > Under 6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11003e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m12"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_male_householder_no_spouse_present_with_own_children_of_the_householder_un_b11003e13
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Male householder
+    no spouse present > With own children of the householder under 18 years > 6 to 17 years only'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Male householder no spouse present > With own children of the householder under 18 years
+    > 6 to 17 years only.'
+  sql: '"2020_CBG_B11"."B11003e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m13"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_male_householder_no_spouse_present_no_own_children_of_the_householder_unde_b11003e14
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Male householder
+    no spouse present > No own children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Male householder no spouse present > No own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11003e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m14"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_female_householder_no_spouse_present_b11003e15
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Female householder
+    no spouse present'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Female householder no spouse present.'
+  sql: '"2020_CBG_B11"."B11003e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m15"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_female_householder_no_spouse_present_with_own_children_of_the_householder__b11003e16
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Female householder
+    no spouse present > With own children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Female householder no spouse present > With own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11003e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m16"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_female_householder_no_spouse_present_with_own_children_of_the_householder__b11003e17
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Female householder
+    no spouse present > With own children of the householder under 18 years > Under 6 years only'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Female householder no spouse present > With own children of the householder under 18 years
+    > Under 6 years only.'
+  sql: '"2020_CBG_B11"."B11003e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m17"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_female_householder_no_spouse_present_with_own_children_of_the_householder__b11003e18
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Female householder
+    no spouse present > With own children of the householder under 18 years > Under 6 years and 6 to 17
+    years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Female householder no spouse present > With own children of the householder under 18 years
+    > Under 6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11003e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m18"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_female_householder_no_spouse_present_with_own_children_of_the_householder__b11003e19
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Female householder
+    no spouse present > With own children of the householder under 18 years > 6 to 17 years only'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Female householder no spouse present > With own children of the householder under 18 years
+    > 6 to 17 years only.'
+  sql: '"2020_CBG_B11"."B11003e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m19"'
+- name: family_type_by_presence_and_age_of_own_children_under_18_years_other_family_female_householder_no_spouse_present_no_own_children_of_the_householder_un_b11003e20
+  title: 'Family Type By Presence And Age Of Own Children Under 18 Years: Other family > Female householder
+    no spouse present > No own children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Own Children Under 18 Years. Universe: Families. Other
+    family > Female householder no spouse present > No own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11003e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11003m20"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_b11004e1
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Total'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Total.'
+  sql: '"2020_CBG_B11"."B11004e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m1"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_married_couple_family_b11004e2
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Married-couple family'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Married-couple family.'
+  sql: '"2020_CBG_B11"."B11004e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m2"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_married_couple_family_with_related_children_of_the_householder_under_18_years_b11004e3
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Married-couple family >
+    With related children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Married-couple family > With related children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11004e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m3"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_married_couple_family_with_related_children_of_the_householder_under_18_years_under_b11004e4
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Married-couple family >
+    With related children of the householder under 18 years > Under 6 years only'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Married-couple family > With related children of the householder under 18 years > Under 6 years only.'
+  sql: '"2020_CBG_B11"."B11004e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m4"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_married_couple_family_with_related_children_of_the_householder_under_18_years_under_b11004e5
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Married-couple family >
+    With related children of the householder under 18 years > Under 6 years and 6 to 17 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Married-couple family > With related children of the householder under 18 years > Under 6 years and
+    6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11004e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m5"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_married_couple_family_with_related_children_of_the_householder_under_18_years_6_to__b11004e6
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Married-couple family >
+    With related children of the householder under 18 years > 6 to 17 years only'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Married-couple family > With related children of the householder under 18 years > 6 to 17 years only.'
+  sql: '"2020_CBG_B11"."B11004e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m6"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_married_couple_family_no_related_children_of_the_householder_under_18_years_b11004e7
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Married-couple family >
+    No related children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Married-couple family > No related children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11004e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m7"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_b11004e8
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family.'
+  sql: '"2020_CBG_B11"."B11004e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m8"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_male_householder_no_spouse_present_b11004e9
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Male householder
+    no spouse present'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Male householder no spouse present.'
+  sql: '"2020_CBG_B11"."B11004e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m9"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_male_householder_no_spouse_present_with_related_children_of_the_househ_b11004e10
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Male householder
+    no spouse present > With related children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Male householder no spouse present > With related children of the householder under
+    18 years.'
+  sql: '"2020_CBG_B11"."B11004e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m10"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_male_householder_no_spouse_present_with_related_children_of_the_househ_b11004e11
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Male householder
+    no spouse present > With related children of the householder under 18 years > Under 6 years only'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Male householder no spouse present > With related children of the householder under
+    18 years > Under 6 years only.'
+  sql: '"2020_CBG_B11"."B11004e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m11"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_male_householder_no_spouse_present_with_related_children_of_the_househ_b11004e12
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Male householder
+    no spouse present > With related children of the householder under 18 years > Under 6 years and 6
+    to 17 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Male householder no spouse present > With related children of the householder under
+    18 years > Under 6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11004e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m12"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_male_householder_no_spouse_present_with_related_children_of_the_househ_b11004e13
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Male householder
+    no spouse present > With related children of the householder under 18 years > 6 to 17 years only'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Male householder no spouse present > With related children of the householder under
+    18 years > 6 to 17 years only.'
+  sql: '"2020_CBG_B11"."B11004e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m13"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_male_householder_no_spouse_present_no_related_children_of_the_househol_b11004e14
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Male householder
+    no spouse present > No related children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Male householder no spouse present > No related children of the householder under 18
+    years.'
+  sql: '"2020_CBG_B11"."B11004e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m14"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_female_householder_no_spouse_present_b11004e15
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Female householder
+    no spouse present'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Female householder no spouse present.'
+  sql: '"2020_CBG_B11"."B11004e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m15"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_female_householder_no_spouse_present_with_related_children_of_the_hous_b11004e16
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Female householder
+    no spouse present > With related children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Female householder no spouse present > With related children of the householder under
+    18 years.'
+  sql: '"2020_CBG_B11"."B11004e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m16"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_female_householder_no_spouse_present_with_related_children_of_the_hous_b11004e17
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Female householder
+    no spouse present > With related children of the householder under 18 years > Under 6 years only'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Female householder no spouse present > With related children of the householder under
+    18 years > Under 6 years only.'
+  sql: '"2020_CBG_B11"."B11004e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m17"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_female_householder_no_spouse_present_with_related_children_of_the_hous_b11004e18
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Female householder
+    no spouse present > With related children of the householder under 18 years > Under 6 years and 6
+    to 17 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Female householder no spouse present > With related children of the householder under
+    18 years > Under 6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11004e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m18"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_female_householder_no_spouse_present_with_related_children_of_the_hous_b11004e19
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Female householder
+    no spouse present > With related children of the householder under 18 years > 6 to 17 years only'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Female householder no spouse present > With related children of the householder under
+    18 years > 6 to 17 years only.'
+  sql: '"2020_CBG_B11"."B11004e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m19"'
+- name: family_type_by_presence_and_age_of_related_children_under_18_years_other_family_female_householder_no_spouse_present_no_related_children_of_the_househ_b11004e20
+  title: 'Family Type By Presence And Age Of Related Children Under 18 Years: Other family > Female householder
+    no spouse present > No related children of the householder under 18 years'
+  description: 'Family Type By Presence And Age Of Related Children Under 18 Years. Universe: Families.
+    Other family > Female householder no spouse present > No related children of the householder under
+    18 years.'
+  sql: '"2020_CBG_B11"."B11004e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B11"."B11004m20"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_b11005e1
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Total'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Total.'
+  sql: '"2020_CBG_B11"."B11005e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m1"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_b11005e2
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years.'
+  sql: '"2020_CBG_B11"."B11005e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m2"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_family_households_b11005e3
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Family households'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Family households.'
+  sql: '"2020_CBG_B11"."B11005e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m3"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_family_households_married_couple_f_b11005e4
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Family households > Married-couple family'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Family households > Married-couple family.'
+  sql: '"2020_CBG_B11"."B11005e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m4"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_family_households_other_family_b11005e5
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Family households > Other family'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Family households > Other family.'
+  sql: '"2020_CBG_B11"."B11005e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m5"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_family_households_other_family_mal_b11005e6
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Family households > Other family > Male householder no spouse present'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Family households > Other family > Male householder
+    no spouse present.'
+  sql: '"2020_CBG_B11"."B11005e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m6"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_family_households_other_family_fem_b11005e7
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Family households > Other family > Female householder no spouse present'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Family households > Other family > Female householder
+    no spouse present.'
+  sql: '"2020_CBG_B11"."B11005e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m7"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_nonfamily_households_b11005e8
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Nonfamily households'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Nonfamily households.'
+  sql: '"2020_CBG_B11"."B11005e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m8"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_nonfamily_households_male_househol_b11005e9
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Nonfamily households > Male householder'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Nonfamily households > Male householder.'
+  sql: '"2020_CBG_B11"."B11005e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m9"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_one_or_more_people_under_18_years_nonfamily_households_female_househ_b11005e10
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with one or more
+    people under 18 years > Nonfamily households > Female householder'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with one or more people under 18 years > Nonfamily households > Female householder.'
+  sql: '"2020_CBG_B11"."B11005e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m10"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_b11005e11
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years.'
+  sql: '"2020_CBG_B11"."B11005e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m11"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_family_households_b11005e12
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Family households'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Family households.'
+  sql: '"2020_CBG_B11"."B11005e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m12"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_family_households_married_couple_family_b11005e13
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Family households > Married-couple family'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Family households > Married-couple family.'
+  sql: '"2020_CBG_B11"."B11005e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m13"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_family_households_other_family_b11005e14
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Family households > Other family'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Family households > Other family.'
+  sql: '"2020_CBG_B11"."B11005e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m14"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_family_households_other_family_male_househo_b11005e15
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Family households > Other family > Male householder no spouse present'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Family households > Other family > Male householder no
+    spouse present.'
+  sql: '"2020_CBG_B11"."B11005e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m15"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_family_households_other_family_female_house_b11005e16
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Family households > Other family > Female householder no spouse present'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Family households > Other family > Female householder no
+    spouse present.'
+  sql: '"2020_CBG_B11"."B11005e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m16"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_nonfamily_households_b11005e17
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Nonfamily households'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Nonfamily households.'
+  sql: '"2020_CBG_B11"."B11005e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m17"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_nonfamily_households_male_householder_b11005e18
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Nonfamily households > Male householder'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Nonfamily households > Male householder.'
+  sql: '"2020_CBG_B11"."B11005e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m18"'
+- name: households_by_presence_of_people_under_18_years_by_household_type_households_with_no_people_under_18_years_nonfamily_households_female_householder_b11005e19
+  title: 'Households By Presence Of People Under 18 Years By Household Type: Households with no people
+    under 18 years > Nonfamily households > Female householder'
+  description: 'Households By Presence Of People Under 18 Years By Household Type. Universe: Households.
+    Households with no people under 18 years > Nonfamily households > Female householder.'
+  sql: '"2020_CBG_B11"."B11005e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11005m19"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_b11008e1
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Total'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Total.'
+  sql: '"2020_CBG_B11"."B11008e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m1"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_cohabiting_couple_household_b11008e2
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Cohabiting
+    couple household'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Cohabiting couple household.'
+  sql: '"2020_CBG_B11"."B11008e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m2"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_cohabiting_couple_household_with_own_children_of_the_householder_under_b11008e3
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Cohabiting
+    couple household > With own children of the householder under 18 years'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Cohabiting couple household > With own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11008e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m3"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_cohabiting_couple_household_with_own_children_of_the_householder_under_b11008e4
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Cohabiting
+    couple household > With own children of the householder under 18 years > Under 6 years only'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Cohabiting couple household > With own children of the householder under 18 years > Under
+    6 years only.'
+  sql: '"2020_CBG_B11"."B11008e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m4"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_cohabiting_couple_household_with_own_children_of_the_householder_under_b11008e5
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Cohabiting
+    couple household > With own children of the householder under 18 years > Under 6 years and 6 to 17
+    years'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Cohabiting couple household > With own children of the householder under 18 years > Under
+    6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B11"."B11008e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m5"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_cohabiting_couple_household_with_own_children_of_the_householder_under_b11008e6
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Cohabiting
+    couple household > With own children of the householder under 18 years > 6 to 17 years only'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Cohabiting couple household > With own children of the householder under 18 years > 6
+    to 17 years only.'
+  sql: '"2020_CBG_B11"."B11008e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m6"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_cohabiting_couple_household_with_no_own_children_of_the_householder_un_b11008e7
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Cohabiting
+    couple household > With no own children of the householder under 18 years'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Cohabiting couple household > With no own children of the householder under 18 years.'
+  sql: '"2020_CBG_B11"."B11008e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m7"'
+- name: cohabiting_couple_households_by_presence_and_age_of_own_children_under_18_years_not_a_cohabiting_couple_household_b11008e8
+  title: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years: Not a cohabiting
+    couple household'
+  description: 'Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years. Universe:
+    Households. Not a cohabiting couple household.'
+  sql: '"2020_CBG_B11"."B11008e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11008m8"'

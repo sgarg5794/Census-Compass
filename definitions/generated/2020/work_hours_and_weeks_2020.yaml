@@ -1,0 +1,1772 @@
+name: work_hours_and_weeks_2020
+title: Hours and weeks worked, full-time year-round work (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: sex
+  by work status by usual hours worked per week by weeks worked for the population 16 to 64 years; sex
+  by work status by usual hours worked per week by weeks worked for the population 65 years and over;
+  full-time, year-round work status by age for the population 16 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B23"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B23"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e1
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Total'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Total.'
+  sql: '"2020_CBG_B23"."B23022e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m1"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e2
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male.'
+  sql: '"2020_CBG_B23"."B23022e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m2"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e3
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23022e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m3"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e4
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week.'
+  sql: '"2020_CBG_B23"."B23022e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m4"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e5
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week > 50
+    to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23022e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m5"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e6
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week > 48
+    and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23022e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m6"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e7
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week > 40
+    to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23022e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m7"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e8
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week > 27
+    to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23022e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m8"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e9
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week > 14
+    to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23022e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m9"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e10
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 35 or more hours per week > 1
+    to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23022e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m10"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e11
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week.'
+  sql: '"2020_CBG_B23"."B23022e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m11"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e12
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 50
+    to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23022e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m12"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e13
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 48
+    and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23022e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m13"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e14
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 40
+    to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23022e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m14"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e15
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 27
+    to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23022e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m15"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e16
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 14
+    to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23022e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m16"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e17
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 1 to
+    13 weeks.'
+  sql: '"2020_CBG_B23"."B23022e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m17"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e18
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week.'
+  sql: '"2020_CBG_B23"."B23022e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m18"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e19
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 50 to
+    52 weeks.'
+  sql: '"2020_CBG_B23"."B23022e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m19"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e20
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 48 and
+    49 weeks.'
+  sql: '"2020_CBG_B23"."B23022e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m20"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e21
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 40 to
+    47 weeks.'
+  sql: '"2020_CBG_B23"."B23022e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m21"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e22
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 27 to
+    39 weeks.'
+  sql: '"2020_CBG_B23"."B23022e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m22"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e23
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 14 to
+    26 weeks.'
+  sql: '"2020_CBG_B23"."B23022e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m23"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e24
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 1 to
+    13 weeks.'
+  sql: '"2020_CBG_B23"."B23022e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m24"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e25
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Male > Did not work in the
+    past 12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Male > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23022e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m25"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e26
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female.'
+  sql: '"2020_CBG_B23"."B23022e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m26"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e27
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23022e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m27"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e28
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week.'
+  sql: '"2020_CBG_B23"."B23022e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m28"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e29
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week >
+    50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23022e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m29"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e30
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week >
+    48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23022e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m30"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e31
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week >
+    40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23022e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m31"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e32
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week >
+    27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23022e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m32"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e33
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week >
+    14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23022e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m33"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e34
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 35 or more hours per week >
+    1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23022e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m34"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e35
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week.'
+  sql: '"2020_CBG_B23"."B23022e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m35"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e36
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 50
+    to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23022e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m36"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e37
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 48
+    and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23022e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m37"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e38
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 40
+    to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23022e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m38"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e39
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 27
+    to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23022e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m39"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e40
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 14
+    to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23022e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m40"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e41
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 15 to 34 hours per week > 1
+    to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23022e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m41"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e42
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week.'
+  sql: '"2020_CBG_B23"."B23022e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m42"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e43
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 50
+    to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23022e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m43"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e44
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 48
+    and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23022e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m44"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e45
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 40
+    to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23022e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m45"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e46
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 27
+    to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23022e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m46"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e47
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 14
+    to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23022e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m47"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e48
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Worked in the past 12 months > Usually worked 1 to 14 hours per week > 1
+    to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23022e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m48"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23022e49
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years: Female > Did not work in
+    the past 12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years. Universe: Population
+    16 to 64 years. Female > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23022e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 to 64 years
+    moe_sql: '"2020_CBG_B23"."B23022m49"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e1
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Total'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Total.'
+  sql: '"2020_CBG_B23"."B23026e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m1"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e2
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male.'
+  sql: '"2020_CBG_B23"."B23026e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m2"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e3
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23026e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m3"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e4
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week.'
+  sql: '"2020_CBG_B23"."B23026e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m4"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e5
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23026e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m5"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e6
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23026e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m6"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e7
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23026e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m7"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e8
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23026e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m8"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e9
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23026e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m9"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e10
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 35 or more hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23026e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m10"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e11
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week.'
+  sql: '"2020_CBG_B23"."B23026e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m11"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e12
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23026e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m12"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e13
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23026e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m13"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e14
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23026e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m14"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e15
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23026e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m15"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e16
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23026e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m16"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e17
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 15 to 34 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23026e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m17"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e18
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week.'
+  sql: '"2020_CBG_B23"."B23026e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m18"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e19
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week > 50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23026e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m19"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e20
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week > 48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23026e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m20"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e21
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week > 40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23026e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m21"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e22
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week > 27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23026e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m22"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e23
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week > 14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23026e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m23"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e24
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Worked in the past
+    12 months > Usually worked 1 to 14 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Worked in the past 12 months > Usually worked 1 to 14 hours per
+    week > 1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23026e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m24"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e25
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Male > Did not work in
+    the past 12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Male > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23026e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m25"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e26
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female.'
+  sql: '"2020_CBG_B23"."B23026e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m26"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e27
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23026e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m27"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e28
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week.'
+  sql: '"2020_CBG_B23"."B23026e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m28"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e29
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23026e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m29"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e30
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23026e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m30"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e31
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23026e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m31"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e32
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23026e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m32"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e33
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23026e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m33"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e34
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 35 or more hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 35 or more hours
+    per week > 1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23026e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m34"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e35
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week.'
+  sql: '"2020_CBG_B23"."B23026e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m35"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e36
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23026e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m36"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e37
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23026e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m37"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e38
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23026e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m38"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e39
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23026e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m39"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e40
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23026e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m40"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e41
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 15 to 34 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 15 to 34 hours
+    per week > 1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23026e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m41"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e42
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week.'
+  sql: '"2020_CBG_B23"."B23026e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m42"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e43
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week > 50 to 52 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week > 50 to 52 weeks.'
+  sql: '"2020_CBG_B23"."B23026e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m43"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e44
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week > 48 and 49 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week > 48 and 49 weeks.'
+  sql: '"2020_CBG_B23"."B23026e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m44"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e45
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week > 40 to 47 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week > 40 to 47 weeks.'
+  sql: '"2020_CBG_B23"."B23026e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m45"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e46
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week > 27 to 39 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week > 27 to 39 weeks.'
+  sql: '"2020_CBG_B23"."B23026e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m46"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e47
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week > 14 to 26 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week > 14 to 26 weeks.'
+  sql: '"2020_CBG_B23"."B23026e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m47"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e48
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Worked in the
+    past 12 months > Usually worked 1 to 14 hours per week > 1 to 13 weeks'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Worked in the past 12 months > Usually worked 1 to 14 hours
+    per week > 1 to 13 weeks.'
+  sql: '"2020_CBG_B23"."B23026e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m48"'
+- name: sex_by_work_status_in_the_past_12_months_by_usual_hours_worked_per_week_in_the_past_12_months_by_weeks_worked_in_the_past_12_months_for_the_population_b23026e49
+  title: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months
+    By Weeks Worked In The Past 12 Months For The Population 65 Years And Over: Female > Did not work
+    in the past 12 months'
+  description: 'Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12
+    Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over. Universe: Civilian
+    population 65 Years and Over. Female > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23026e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 65 Years and Over
+    moe_sql: '"2020_CBG_B23"."B23026m49"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_b23027e1
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: Total'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. Total.'
+  sql: '"2020_CBG_B23"."B23027e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m1"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_16_to_19_years_b23027e2
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 16 to 19 years'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 16 to 19 years.'
+  sql: '"2020_CBG_B23"."B23027e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m2"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_16_to_19_years_worked_in_the_past_12_months_b23027e3
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 16 to 19 years > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 16 to 19 years > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m3"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_16_to_19_years_worked_in_the_past_12_months_worked__b23027e4
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 16 to 19 years > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 16 to 19 years > Worked in the past 12 months >
+    Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m4"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_16_to_19_years_worked_in_the_past_12_months_worked__b23027e5
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 16 to 19 years > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 16 to 19 years > Worked in the past 12 months >
+    Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m5"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_16_to_19_years_did_not_work_in_the_past_12_months_b23027e6
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 16 to 19 years > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 16 to 19 years > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m6"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_20_to_24_years_b23027e7
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 20 to 24 years'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 20 to 24 years.'
+  sql: '"2020_CBG_B23"."B23027e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m7"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_20_to_24_years_worked_in_the_past_12_months_b23027e8
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 20 to 24 years > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 20 to 24 years > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m8"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_20_to_24_years_worked_in_the_past_12_months_worked__b23027e9
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 20 to 24 years > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 20 to 24 years > Worked in the past 12 months >
+    Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m9"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_20_to_24_years_worked_in_the_past_12_months_worked__b23027e10
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 20 to 24 years > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 20 to 24 years > Worked in the past 12 months >
+    Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m10"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_20_to_24_years_did_not_work_in_the_past_12_months_b23027e11
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 20 to 24 years > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 20 to 24 years > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m11"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_25_to_44_years_b23027e12
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 25 to 44 years'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 25 to 44 years.'
+  sql: '"2020_CBG_B23"."B23027e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m12"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_25_to_44_years_worked_in_the_past_12_months_b23027e13
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 25 to 44 years > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 25 to 44 years > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m13"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_25_to_44_years_worked_in_the_past_12_months_worked__b23027e14
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 25 to 44 years > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 25 to 44 years > Worked in the past 12 months >
+    Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m14"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_25_to_44_years_worked_in_the_past_12_months_worked__b23027e15
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 25 to 44 years > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 25 to 44 years > Worked in the past 12 months >
+    Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m15"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_25_to_44_years_did_not_work_in_the_past_12_months_b23027e16
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 25 to 44 years > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 25 to 44 years > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m16"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_45_to_54_years_b23027e17
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 45 to 54 years'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 45 to 54 years.'
+  sql: '"2020_CBG_B23"."B23027e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m17"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_45_to_54_years_worked_in_the_past_12_months_b23027e18
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 45 to 54 years > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 45 to 54 years > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m18"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_45_to_54_years_worked_in_the_past_12_months_worked__b23027e19
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 45 to 54 years > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 45 to 54 years > Worked in the past 12 months >
+    Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m19"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_45_to_54_years_worked_in_the_past_12_months_worked__b23027e20
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 45 to 54 years > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 45 to 54 years > Worked in the past 12 months >
+    Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m20"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_45_to_54_years_did_not_work_in_the_past_12_months_b23027e21
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 45 to 54 years > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 45 to 54 years > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m21"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_55_to_64_years_b23027e22
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 55 to 64 years'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 55 to 64 years.'
+  sql: '"2020_CBG_B23"."B23027e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m22"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_55_to_64_years_worked_in_the_past_12_months_b23027e23
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 55 to 64 years > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 55 to 64 years > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m23"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_55_to_64_years_worked_in_the_past_12_months_worked__b23027e24
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 55 to 64 years > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 55 to 64 years > Worked in the past 12 months >
+    Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m24"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_55_to_64_years_worked_in_the_past_12_months_worked__b23027e25
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 55 to 64 years > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 55 to 64 years > Worked in the past 12 months >
+    Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m25"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_55_to_64_years_did_not_work_in_the_past_12_months_b23027e26
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 55 to 64 years > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 55 to 64 years > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m26"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_65_to_69_years_b23027e27
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 65 to 69 years'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 65 to 69 years.'
+  sql: '"2020_CBG_B23"."B23027e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m27"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_65_to_69_years_worked_in_the_past_12_months_b23027e28
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 65 to 69 years > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 65 to 69 years > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m28"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_65_to_69_years_worked_in_the_past_12_months_worked__b23027e29
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 65 to 69 years > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 65 to 69 years > Worked in the past 12 months >
+    Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m29"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_65_to_69_years_worked_in_the_past_12_months_worked__b23027e30
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 65 to 69 years > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 65 to 69 years > Worked in the past 12 months >
+    Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m30"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_65_to_69_years_did_not_work_in_the_past_12_months_b23027e31
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 65 to 69 years > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 65 to 69 years > Did not work in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m31"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_70_years_and_over_b23027e32
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 70 years and over'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 70 years and over.'
+  sql: '"2020_CBG_B23"."B23027e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m32"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_70_years_and_over_worked_in_the_past_12_months_b23027e33
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 70 years and over > Worked in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 70 years and over > Worked in the past 12 months.'
+  sql: '"2020_CBG_B23"."B23027e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m33"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_70_years_and_over_worked_in_the_past_12_months_work_b23027e34
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 70 years and over > Worked in the past 12 months > Worked full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 70 years and over > Worked in the past 12 months
+    > Worked full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m34"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_70_years_and_over_worked_in_the_past_12_months_work_b23027e35
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 70 years and over > Worked in the past 12 months > Worked less than full-time year-round'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 70 years and over > Worked in the past 12 months
+    > Worked less than full-time year-round.'
+  sql: '"2020_CBG_B23"."B23027e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m35"'
+- name: full_time_year_round_work_status_in_the_past_12_months_by_age_for_the_population_16_years_and_over_70_years_and_over_did_not_work_in_the_past_12_month_b23027e36
+  title: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And
+    Over: 70 years and over > Did not work in the past 12 months'
+  description: 'Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years
+    And Over. Universe: Population 16 years and over. 70 years and over > Did not work in the past 12
+    months.'
+  sql: '"2020_CBG_B23"."B23027e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23027m36"'

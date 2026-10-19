@@ -1,0 +1,2102 @@
+name: commuting_2019
+title: 'Getting to work: transport mode, travel time and departure time (2019)'
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: means
+  of transportation to work by travel time to work; aggregate travel time to work (in minutes) of workers
+  by travel time to work; aggregate travel time to work (in minutes) of workers by means of transportation
+  to work; means of transportation to work; time of departure to go to work; travel time to work.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B08"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B08"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: means_of_transportation_to_work_by_travel_time_to_work_b08134e1
+  title: 'Means Of Transportation To Work By Travel Time To Work: Total'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Total.'
+  sql: '"2019_CBG_B08"."B08134e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m1"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_less_than_10_minutes_b08134e2
+  title: 'Means Of Transportation To Work By Travel Time To Work: Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m2"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_10_to_14_minutes_b08134e3
+  title: 'Means Of Transportation To Work By Travel Time To Work: 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m3"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_15_to_19_minutes_b08134e4
+  title: 'Means Of Transportation To Work By Travel Time To Work: 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m4"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_20_to_24_minutes_b08134e5
+  title: 'Means Of Transportation To Work By Travel Time To Work: 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m5"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_25_to_29_minutes_b08134e6
+  title: 'Means Of Transportation To Work By Travel Time To Work: 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m6"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_30_to_34_minutes_b08134e7
+  title: 'Means Of Transportation To Work By Travel Time To Work: 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m7"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_35_to_44_minutes_b08134e8
+  title: 'Means Of Transportation To Work By Travel Time To Work: 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m8"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_45_to_59_minutes_b08134e9
+  title: 'Means Of Transportation To Work By Travel Time To Work: 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m9"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_60_or_more_minutes_b08134e10
+  title: 'Means Of Transportation To Work By Travel Time To Work: 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m10"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_b08134e11
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van.'
+  sql: '"2019_CBG_B08"."B08134e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m11"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_less_than_10_minutes_b08134e12
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m12"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_10_to_14_minutes_b08134e13
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m13"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_15_to_19_minutes_b08134e14
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m14"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_20_to_24_minutes_b08134e15
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m15"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_25_to_29_minutes_b08134e16
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m16"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_30_to_34_minutes_b08134e17
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m17"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_35_to_44_minutes_b08134e18
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m18"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_45_to_59_minutes_b08134e19
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m19"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_60_or_more_minutes_b08134e20
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m20"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_b08134e21
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone.'
+  sql: '"2019_CBG_B08"."B08134e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m21"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_less_than_10_minutes_b08134e22
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > Less
+    than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m22"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_10_to_14_minutes_b08134e23
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 10
+    to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m23"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_15_to_19_minutes_b08134e24
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 15
+    to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m24"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_20_to_24_minutes_b08134e25
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 20
+    to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m25"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_25_to_29_minutes_b08134e26
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 25
+    to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m26"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_30_to_34_minutes_b08134e27
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 30
+    to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m27"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_35_to_44_minutes_b08134e28
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 35
+    to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m28"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_45_to_59_minutes_b08134e29
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 45
+    to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m29"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_drove_alone_60_or_more_minutes_b08134e30
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Drove alone > 60
+    or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Drove alone > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m30"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_b08134e31
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled.'
+  sql: '"2019_CBG_B08"."B08134e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m31"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_less_than_10_minutes_b08134e32
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > Less
+    than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m32"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_10_to_14_minutes_b08134e33
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 10 to
+    14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m33"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_15_to_19_minutes_b08134e34
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 15 to
+    19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m34"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_20_to_24_minutes_b08134e35
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 20 to
+    24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m35"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_25_to_29_minutes_b08134e36
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 25 to
+    29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m36"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_30_to_34_minutes_b08134e37
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 30 to
+    34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m37"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_35_to_44_minutes_b08134e38
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 35 to
+    44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m38"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_45_to_59_minutes_b08134e39
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 45 to
+    59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m39"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_60_or_more_minutes_b08134e40
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > 60 or
+    more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m40"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_b08134e41
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool.'
+  sql: '"2019_CBG_B08"."B08134e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m41"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_less_than_10_minutes_b08134e42
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > Less than 10
+    minutes.'
+  sql: '"2019_CBG_B08"."B08134e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m42"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_10_to_14_minutes_b08134e43
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m43"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_15_to_19_minutes_b08134e44
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m44"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_20_to_24_minutes_b08134e45
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m45"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_25_to_29_minutes_b08134e46
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m46"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_30_to_34_minutes_b08134e47
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m47"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_35_to_44_minutes_b08134e48
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m48"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_45_to_59_minutes_b08134e49
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m49"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_2_person_carpool_60_or_more_minutes_b08134e50
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 2-person
+    carpool > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 2-person carpool > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m50"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_b08134e51
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool.'
+  sql: '"2019_CBG_B08"."B08134e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m51"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_less_than_10_minutes_b08134e52
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > Less
+    than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m52"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_10_to_14_minutes_b08134e53
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 10 to
+    14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m53"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_15_to_19_minutes_b08134e54
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 15 to
+    19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m54"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_20_to_24_minutes_b08134e55
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 20 to
+    24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m55"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_25_to_29_minutes_b08134e56
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 25 to
+    29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m56"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_30_to_34_minutes_b08134e57
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 30 to
+    34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m57"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_35_to_44_minutes_b08134e58
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 35 to
+    44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m58"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_45_to_59_minutes_b08134e59
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 45 to
+    59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m59"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_car_truck_or_van_carpooled_in_3_or_more_person_carpool_60_or_more_minutes_b08134e60
+  title: 'Means Of Transportation To Work By Travel Time To Work: Car truck or van > Carpooled > In 3-or-more-person
+    carpool > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Car truck or van > Carpooled > In 3-or-more-person carpool > 60 or
+    more minutes.'
+  sql: '"2019_CBG_B08"."B08134e60"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m60"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_b08134e61
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab).'
+  sql: '"2019_CBG_B08"."B08134e61"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m61"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_less_than_10_minutes_b08134e62
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e62"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m62"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_10_to_14_minutes_b08134e63
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e63"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m63"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_15_to_19_minutes_b08134e64
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e64"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m64"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_20_to_24_minutes_b08134e65
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e65"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m65"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_25_to_29_minutes_b08134e66
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e66"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m66"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_30_to_34_minutes_b08134e67
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e67"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m67"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_35_to_44_minutes_b08134e68
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e68"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m68"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_45_to_59_minutes_b08134e69
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e69"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m69"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_60_or_more_minutes_b08134e70
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e70"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m70"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_b08134e71
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus.'
+  sql: '"2019_CBG_B08"."B08134e71"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m71"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_less_than_10_minutes_b08134e72
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e72"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m72"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_10_to_14_minutes_b08134e73
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e73"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m73"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_15_to_19_minutes_b08134e74
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e74"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m74"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_20_to_24_minutes_b08134e75
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e75"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m75"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_25_to_29_minutes_b08134e76
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e76"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m76"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_30_to_34_minutes_b08134e77
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e77"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m77"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_35_to_44_minutes_b08134e78
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e78"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m78"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_45_to_59_minutes_b08134e79
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e79"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m79"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_bus_60_or_more_minutes_b08134e80
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Bus > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Bus > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e80"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m80"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e81
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico)'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico).'
+  sql: '"2019_CBG_B08"."B08134e81"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m81"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e82
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > Less than
+    10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e82"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m82"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e83
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 10 to 14
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e83"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m83"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e84
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 15 to 19
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e84"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m84"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e85
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 20 to 24
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e85"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m85"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e86
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 25 to 29
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e86"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m86"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e87
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 30 to 34
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e87"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m87"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e88
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 35 to 44
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e88"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m88"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e89
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 45 to 59
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e89"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m89"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_light_rail_streetcar_or_trolley_b08134e90
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Subway or elevated rail Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 60 or more
+    minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Subway or elevated rail
+    Light rail streetcar or trolley (carro p·blico in Puerto Rico) > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e90"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m90"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_b08134e91
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat.'
+  sql: '"2019_CBG_B08"."B08134e91"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m91"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_less__b08134e92
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e92"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m92"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_10_to_b08134e93
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e93"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m93"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_15_to_b08134e94
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e94"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m94"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_20_to_b08134e95
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e95"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m95"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_25_to_b08134e96
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e96"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m96"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_30_to_b08134e97
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e97"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m97"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_35_to_b08134e98
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e98"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m98"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_45_to_b08134e99
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e99"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m99"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_or_ferryboat_60_or_b08134e100
+  title: 'Means Of Transportation To Work By Travel Time To Work: Public transportation (excluding taxicab)
+    > Long-distance train or commuter rail or Ferryboat > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Public transportation (excluding taxicab) > Long-distance train or
+    commuter rail or Ferryboat > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e100"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m100"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_b08134e101
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked.'
+  sql: '"2019_CBG_B08"."B08134e101"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m101"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_less_than_10_minutes_b08134e102
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e102"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m102"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_10_to_14_minutes_b08134e103
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e103"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m103"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_15_to_19_minutes_b08134e104
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e104"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m104"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_20_to_24_minutes_b08134e105
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e105"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m105"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_25_to_29_minutes_b08134e106
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e106"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m106"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_30_to_34_minutes_b08134e107
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e107"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m107"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_35_to_44_minutes_b08134e108
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e108"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m108"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_45_to_59_minutes_b08134e109
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e109"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m109"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_walked_60_or_more_minutes_b08134e110
+  title: 'Means Of Transportation To Work By Travel Time To Work: Walked > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Walked > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e110"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m110"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_b08134e111
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means.'
+  sql: '"2019_CBG_B08"."B08134e111"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m111"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_less_than_10_minutes_b08134e112
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > Less than 10 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08134e112"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m112"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_10_to_14_minutes_b08134e113
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 10 to 14 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08134e113"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m113"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_15_to_19_minutes_b08134e114
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 15 to 19 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08134e114"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m114"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_20_to_24_minutes_b08134e115
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 20 to 24 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08134e115"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m115"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_25_to_29_minutes_b08134e116
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 25 to 29 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08134e116"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m116"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_30_to_34_minutes_b08134e117
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 30 to 34 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08134e117"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m117"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_35_to_44_minutes_b08134e118
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 35 to 44 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08134e118"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m118"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_45_to_59_minutes_b08134e119
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 45 to 59 minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08134e119"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m119"'
+- name: means_of_transportation_to_work_by_travel_time_to_work_taxicab_motorcycle_bicycle_or_other_means_60_or_more_minutes_b08134e120
+  title: 'Means Of Transportation To Work By Travel Time To Work: Taxicab motorcycle bicycle or other
+    means > 60 or more minutes'
+  description: 'Means Of Transportation To Work By Travel Time To Work. Universe: Workers 16 years and
+    over who did not work from home. Taxicab motorcycle bicycle or other means > 60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08134e120"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08134m120"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_b08135e1
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes)'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes).'
+  sql: '"2019_CBG_B08"."B08135e1"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m1"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_less_than_10_minutes_b08135e2
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > Less than 10 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    Less than 10 minutes.'
+  sql: '"2019_CBG_B08"."B08135e2"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m2"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_10_to_14_minutes_b08135e3
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 10 to 14 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    10 to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08135e3"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m3"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_15_to_19_minutes_b08135e4
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 15 to 19 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    15 to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08135e4"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m4"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_20_to_24_minutes_b08135e5
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 20 to 24 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    20 to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08135e5"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m5"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_25_to_29_minutes_b08135e6
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 25 to 29 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    25 to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08135e6"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m6"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_30_to_34_minutes_b08135e7
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 30 to 34 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    30 to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08135e7"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m7"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_35_to_44_minutes_b08135e8
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 35 to 44 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    35 to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08135e8"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m8"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_45_to_59_minutes_b08135e9
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 45 to 59 minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    45 to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08135e9"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m9"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_travel_time_to_work_aggregate_travel_time_to_work_in_minutes_60_or_more_minutes_b08135e10
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work: Aggregate travel
+    time to work (in minutes) > 60 or more minutes'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work. Universe:
+    Workers 16 years and over who did not work from home. Aggregate travel time to work (in minutes) >
+    60 or more minutes.'
+  sql: '"2019_CBG_B08"."B08135e10"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08135m10"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_b08136e1
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes)'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes).'
+  sql: '"2019_CBG_B08"."B08136e1"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m1"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_car_truck_or_van_b08136e2
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Car truck or van'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Car truck or van.'
+  sql: '"2019_CBG_B08"."B08136e2"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m2"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_car_truck_or_van_drove_b08136e3
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Car truck or van > Drove alone'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Car truck or van > Drove alone.'
+  sql: '"2019_CBG_B08"."B08136e3"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m3"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_car_truck_or_van_carpo_b08136e4
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Car truck or van > Carpooled'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Car truck or van > Carpooled.'
+  sql: '"2019_CBG_B08"."B08136e4"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m4"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_car_truck_or_van_carpo_b08136e5
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Car truck or van > Carpooled > In 2-person carpool'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Car truck or van > Carpooled > In 2-person carpool.'
+  sql: '"2019_CBG_B08"."B08136e5"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m5"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_car_truck_or_van_carpo_b08136e6
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Car truck or van > Carpooled > In 3-or-more-person carpool'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Car truck or van > Carpooled > In 3-or-more-person carpool.'
+  sql: '"2019_CBG_B08"."B08136e6"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m6"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_public_transportation__b08136e7
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Public transportation (excluding taxicab)'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Public transportation (excluding taxicab).'
+  sql: '"2019_CBG_B08"."B08136e7"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m7"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_public_transportation__b08136e8
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Public transportation (excluding taxicab) > Bus'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Public transportation (excluding taxicab) > Bus.'
+  sql: '"2019_CBG_B08"."B08136e8"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m8"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_public_transportation__b08136e9
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Public transportation (excluding taxicab) > Subway or elevated
+    rail Light rail streetcar or trolley (carro p·blico in Puerto Rico)'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Public transportation (excluding taxicab) > Subway or elevated rail Light rail streetcar
+    or trolley (carro p·blico in Puerto Rico).'
+  sql: '"2019_CBG_B08"."B08136e9"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m9"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_public_transportation__b08136e10
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Public transportation (excluding taxicab) > Long-distance train
+    or commuter rail or Ferryboat'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Public transportation (excluding taxicab) > Long-distance train or commuter rail or Ferryboat.'
+  sql: '"2019_CBG_B08"."B08136e10"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m10"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_walked_b08136e11
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Walked'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Walked.'
+  sql: '"2019_CBG_B08"."B08136e11"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m11"'
+- name: aggregate_travel_time_to_work_in_minutes_of_workers_by_means_of_transportation_to_work_aggregate_travel_time_to_work_in_minutes_taxicab_motorcycle_bic_b08136e12
+  title: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work: Aggregate
+    travel time to work (in minutes) > Taxicab motorcycle bicycle or other means'
+  description: 'Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work.
+    Universe: Workers 16 years and over who did not work from home. Aggregate travel time to work (in
+    minutes) > Taxicab motorcycle bicycle or other means.'
+  sql: '"2019_CBG_B08"."B08136e12"'
+  type: sum
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08136m12"'
+- name: means_of_transportation_to_work_b08301e1
+  title: 'Means Of Transportation To Work: Total'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Total.'
+  sql: '"2019_CBG_B08"."B08301e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m1"'
+- name: means_of_transportation_to_work_car_truck_or_van_b08301e2
+  title: 'Means Of Transportation To Work: Car truck or van'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van.'
+  sql: '"2019_CBG_B08"."B08301e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m2"'
+- name: means_of_transportation_to_work_car_truck_or_van_drove_alone_b08301e3
+  title: 'Means Of Transportation To Work: Car truck or van > Drove alone'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Drove alone.'
+  sql: '"2019_CBG_B08"."B08301e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m3"'
+- name: means_of_transportation_to_work_car_truck_or_van_carpooled_b08301e4
+  title: 'Means Of Transportation To Work: Car truck or van > Carpooled'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Carpooled.'
+  sql: '"2019_CBG_B08"."B08301e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m4"'
+- name: means_of_transportation_to_work_car_truck_or_van_carpooled_in_2_person_carpool_b08301e5
+  title: 'Means Of Transportation To Work: Car truck or van > Carpooled > In 2-person carpool'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Carpooled > In 2-person carpool.'
+  sql: '"2019_CBG_B08"."B08301e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m5"'
+- name: means_of_transportation_to_work_car_truck_or_van_carpooled_in_3_person_carpool_b08301e6
+  title: 'Means Of Transportation To Work: Car truck or van > Carpooled > In 3-person carpool'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Carpooled > In 3-person carpool.'
+  sql: '"2019_CBG_B08"."B08301e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m6"'
+- name: means_of_transportation_to_work_car_truck_or_van_carpooled_in_4_person_carpool_b08301e7
+  title: 'Means Of Transportation To Work: Car truck or van > Carpooled > In 4-person carpool'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Carpooled > In 4-person carpool.'
+  sql: '"2019_CBG_B08"."B08301e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m7"'
+- name: means_of_transportation_to_work_car_truck_or_van_carpooled_in_5_or_6_person_carpool_b08301e8
+  title: 'Means Of Transportation To Work: Car truck or van > Carpooled > In 5- or 6-person carpool'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Carpooled > In 5- or 6-person carpool.'
+  sql: '"2019_CBG_B08"."B08301e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m8"'
+- name: means_of_transportation_to_work_car_truck_or_van_carpooled_in_7_or_more_person_carpool_b08301e9
+  title: 'Means Of Transportation To Work: Car truck or van > Carpooled > In 7-or-more-person carpool'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Car truck or van
+    > Carpooled > In 7-or-more-person carpool.'
+  sql: '"2019_CBG_B08"."B08301e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m9"'
+- name: means_of_transportation_to_work_public_transportation_excluding_taxicab_b08301e10
+  title: 'Means Of Transportation To Work: Public transportation (excluding taxicab)'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Public transportation
+    (excluding taxicab).'
+  sql: '"2019_CBG_B08"."B08301e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m10"'
+- name: means_of_transportation_to_work_public_transportation_excluding_taxicab_bus_b08301e11
+  title: 'Means Of Transportation To Work: Public transportation (excluding taxicab) > Bus'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Public transportation
+    (excluding taxicab) > Bus.'
+  sql: '"2019_CBG_B08"."B08301e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m11"'
+- name: means_of_transportation_to_work_public_transportation_excluding_taxicab_subway_or_elevated_rail_b08301e12
+  title: 'Means Of Transportation To Work: Public transportation (excluding taxicab) > Subway or elevated
+    rail'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Public transportation
+    (excluding taxicab) > Subway or elevated rail.'
+  sql: '"2019_CBG_B08"."B08301e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m12"'
+- name: means_of_transportation_to_work_public_transportation_excluding_taxicab_long_distance_train_or_commuter_rail_b08301e13
+  title: 'Means Of Transportation To Work: Public transportation (excluding taxicab) > Long-distance train
+    or commuter rail'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Public transportation
+    (excluding taxicab) > Long-distance train or commuter rail.'
+  sql: '"2019_CBG_B08"."B08301e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m13"'
+- name: means_of_transportation_to_work_public_transportation_excluding_taxicab_light_rail_streetcar_or_trolley_carro_p_blico_in_puerto_rico_b08301e14
+  title: 'Means Of Transportation To Work: Public transportation (excluding taxicab) > Light rail streetcar
+    or trolley (carro p·blico in Puerto Rico)'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Public transportation
+    (excluding taxicab) > Light rail streetcar or trolley (carro p·blico in Puerto Rico).'
+  sql: '"2019_CBG_B08"."B08301e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m14"'
+- name: means_of_transportation_to_work_public_transportation_excluding_taxicab_ferryboat_b08301e15
+  title: 'Means Of Transportation To Work: Public transportation (excluding taxicab) > Ferryboat'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Public transportation
+    (excluding taxicab) > Ferryboat.'
+  sql: '"2019_CBG_B08"."B08301e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m15"'
+- name: means_of_transportation_to_work_taxicab_b08301e16
+  title: 'Means Of Transportation To Work: Taxicab'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Taxicab.'
+  sql: '"2019_CBG_B08"."B08301e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m16"'
+- name: means_of_transportation_to_work_motorcycle_b08301e17
+  title: 'Means Of Transportation To Work: Motorcycle'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Motorcycle.'
+  sql: '"2019_CBG_B08"."B08301e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m17"'
+- name: means_of_transportation_to_work_bicycle_b08301e18
+  title: 'Means Of Transportation To Work: Bicycle'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Bicycle.'
+  sql: '"2019_CBG_B08"."B08301e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m18"'
+- name: means_of_transportation_to_work_walked_b08301e19
+  title: 'Means Of Transportation To Work: Walked'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Walked.'
+  sql: '"2019_CBG_B08"."B08301e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m19"'
+- name: means_of_transportation_to_work_other_means_b08301e20
+  title: 'Means Of Transportation To Work: Other means'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Other means.'
+  sql: '"2019_CBG_B08"."B08301e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m20"'
+- name: means_of_transportation_to_work_worked_from_home_b08301e21
+  title: 'Means Of Transportation To Work: Worked from home'
+  description: 'Means Of Transportation To Work. Universe: Workers 16 years and over. Worked from home.'
+  sql: '"2019_CBG_B08"."B08301e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08301m21"'
+- name: time_of_departure_to_go_to_work_b08302e1
+  title: 'Time Of Departure To Go To Work: Total'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. Total.'
+  sql: '"2019_CBG_B08"."B08302e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m1"'
+- name: time_of_departure_to_go_to_work_12_00_a_m_to_4_59_a_m_b08302e2
+  title: 'Time Of Departure To Go To Work: 12 00 a.m. to 4 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 12 00 a.m. to 4 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m2"'
+- name: time_of_departure_to_go_to_work_5_00_a_m_to_5_29_a_m_b08302e3
+  title: 'Time Of Departure To Go To Work: 5 00 a.m. to 5 29 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 5 00 a.m. to 5 29 a.m..'
+  sql: '"2019_CBG_B08"."B08302e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m3"'
+- name: time_of_departure_to_go_to_work_5_30_a_m_to_5_59_a_m_b08302e4
+  title: 'Time Of Departure To Go To Work: 5 30 a.m. to 5 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 5 30 a.m. to 5 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m4"'
+- name: time_of_departure_to_go_to_work_6_00_a_m_to_6_29_a_m_b08302e5
+  title: 'Time Of Departure To Go To Work: 6 00 a.m. to 6 29 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 6 00 a.m. to 6 29 a.m..'
+  sql: '"2019_CBG_B08"."B08302e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m5"'
+- name: time_of_departure_to_go_to_work_6_30_a_m_to_6_59_a_m_b08302e6
+  title: 'Time Of Departure To Go To Work: 6 30 a.m. to 6 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 6 30 a.m. to 6 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m6"'
+- name: time_of_departure_to_go_to_work_7_00_a_m_to_7_29_a_m_b08302e7
+  title: 'Time Of Departure To Go To Work: 7 00 a.m. to 7 29 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 7 00 a.m. to 7 29 a.m..'
+  sql: '"2019_CBG_B08"."B08302e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m7"'
+- name: time_of_departure_to_go_to_work_7_30_a_m_to_7_59_a_m_b08302e8
+  title: 'Time Of Departure To Go To Work: 7 30 a.m. to 7 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 7 30 a.m. to 7 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m8"'
+- name: time_of_departure_to_go_to_work_8_00_a_m_to_8_29_a_m_b08302e9
+  title: 'Time Of Departure To Go To Work: 8 00 a.m. to 8 29 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 8 00 a.m. to 8 29 a.m..'
+  sql: '"2019_CBG_B08"."B08302e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m9"'
+- name: time_of_departure_to_go_to_work_8_30_a_m_to_8_59_a_m_b08302e10
+  title: 'Time Of Departure To Go To Work: 8 30 a.m. to 8 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 8 30 a.m. to 8 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m10"'
+- name: time_of_departure_to_go_to_work_9_00_a_m_to_9_59_a_m_b08302e11
+  title: 'Time Of Departure To Go To Work: 9 00 a.m. to 9 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 9 00 a.m. to 9 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m11"'
+- name: time_of_departure_to_go_to_work_10_00_a_m_to_10_59_a_m_b08302e12
+  title: 'Time Of Departure To Go To Work: 10 00 a.m. to 10 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 10 00 a.m. to 10 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m12"'
+- name: time_of_departure_to_go_to_work_11_00_a_m_to_11_59_a_m_b08302e13
+  title: 'Time Of Departure To Go To Work: 11 00 a.m. to 11 59 a.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 11 00 a.m. to 11 59 a.m..'
+  sql: '"2019_CBG_B08"."B08302e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m13"'
+- name: time_of_departure_to_go_to_work_12_00_p_m_to_3_59_p_m_b08302e14
+  title: 'Time Of Departure To Go To Work: 12 00 p.m. to 3 59 p.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 12 00 p.m. to 3 59 p.m..'
+  sql: '"2019_CBG_B08"."B08302e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m14"'
+- name: time_of_departure_to_go_to_work_4_00_p_m_to_11_59_p_m_b08302e15
+  title: 'Time Of Departure To Go To Work: 4 00 p.m. to 11 59 p.m.'
+  description: 'Time Of Departure To Go To Work. Universe: Workers 16 years and over who did not work
+    from home. 4 00 p.m. to 11 59 p.m..'
+  sql: '"2019_CBG_B08"."B08302e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08302m15"'
+- name: travel_time_to_work_b08303e1
+  title: 'Travel Time To Work: Total'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. Total.'
+  sql: '"2019_CBG_B08"."B08303e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m1"'
+- name: travel_time_to_work_less_than_5_minutes_b08303e2
+  title: 'Travel Time To Work: Less than 5 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. Less
+    than 5 minutes.'
+  sql: '"2019_CBG_B08"."B08303e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m2"'
+- name: travel_time_to_work_5_to_9_minutes_b08303e3
+  title: 'Travel Time To Work: 5 to 9 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 5
+    to 9 minutes.'
+  sql: '"2019_CBG_B08"."B08303e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m3"'
+- name: travel_time_to_work_10_to_14_minutes_b08303e4
+  title: 'Travel Time To Work: 10 to 14 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 10
+    to 14 minutes.'
+  sql: '"2019_CBG_B08"."B08303e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m4"'
+- name: travel_time_to_work_15_to_19_minutes_b08303e5
+  title: 'Travel Time To Work: 15 to 19 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 15
+    to 19 minutes.'
+  sql: '"2019_CBG_B08"."B08303e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m5"'
+- name: travel_time_to_work_20_to_24_minutes_b08303e6
+  title: 'Travel Time To Work: 20 to 24 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 20
+    to 24 minutes.'
+  sql: '"2019_CBG_B08"."B08303e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m6"'
+- name: travel_time_to_work_25_to_29_minutes_b08303e7
+  title: 'Travel Time To Work: 25 to 29 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 25
+    to 29 minutes.'
+  sql: '"2019_CBG_B08"."B08303e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m7"'
+- name: travel_time_to_work_30_to_34_minutes_b08303e8
+  title: 'Travel Time To Work: 30 to 34 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 30
+    to 34 minutes.'
+  sql: '"2019_CBG_B08"."B08303e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m8"'
+- name: travel_time_to_work_35_to_39_minutes_b08303e9
+  title: 'Travel Time To Work: 35 to 39 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 35
+    to 39 minutes.'
+  sql: '"2019_CBG_B08"."B08303e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m9"'
+- name: travel_time_to_work_40_to_44_minutes_b08303e10
+  title: 'Travel Time To Work: 40 to 44 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 40
+    to 44 minutes.'
+  sql: '"2019_CBG_B08"."B08303e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m10"'
+- name: travel_time_to_work_45_to_59_minutes_b08303e11
+  title: 'Travel Time To Work: 45 to 59 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 45
+    to 59 minutes.'
+  sql: '"2019_CBG_B08"."B08303e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m11"'
+- name: travel_time_to_work_60_to_89_minutes_b08303e12
+  title: 'Travel Time To Work: 60 to 89 minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 60
+    to 89 minutes.'
+  sql: '"2019_CBG_B08"."B08303e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m12"'
+- name: travel_time_to_work_90_or_more_minutes_b08303e13
+  title: 'Travel Time To Work: 90 or more minutes'
+  description: 'Travel Time To Work. Universe: Workers 16 years and over who did not work from home. 90
+    or more minutes.'
+  sql: '"2019_CBG_B08"."B08303e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over who did not work from home
+    moe_sql: '"2019_CBG_B08"."B08303m13"'
+- name: mean_travel_time_to_work
+  title: Mean travel time to work (minutes)
+  description: 'Average one-way commute in minutes: total travel time to work of all workers divided by
+    the number of workers 16 years and over who did not work from home.'
+  sql: SUM(IFF("2019_CBG_B08"."B08135e1" IS NULL OR "2019_CBG_B08"."B08303e1" IS NULL, NULL, "2019_CBG_B08"."B08135e1"))
+    / NULLIF(SUM(IFF("2019_CBG_B08"."B08135e1" IS NULL OR "2019_CBG_B08"."B08303e1" IS NULL, NULL, "2019_CBG_B08"."B08303e1")),
+    0)
+  type: number
+  format: minutes
+  meta:
+    universe: Workers 16 years and over who did not work from home

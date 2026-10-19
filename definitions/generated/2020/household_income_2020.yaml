@@ -1,0 +1,1367 @@
+name: household_income_2020
+title: 'Household income: distribution, median and mean (2020)'
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: household
+  income; median household income; aggregate household income; age of householder by household income;
+  median household income by age of householder; aggregate household income by age of householder. Some
+  of these are also given by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B19"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B19"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: median_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_median_household_income_in_the_past_12_months_in_2020_inflation_adjus_b19013e1
+  title: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. Total.'
+  sql: '"2020_CBG_B19"."B19013e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19013m1"'
+- name: median_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_median_household_income_in_the_past_12_months_i_b19049e1
+  title: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age Of
+    Householder: Median household income in the past 12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By
+    Age Of Householder. Universe: Households. Median household income in the past 12 months (in 2020 inflation-adjusted
+    dollars).'
+  sql: '"2020_CBG_B19"."B19049e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19049m1"'
+- name: median_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_median_household_income_in_the_past_12_months_i_b19049e2
+  title: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age Of
+    Householder: Median household income in the past 12 months (in 2020 inflation-adjusted dollars) >
+    Householder under 25 years'
+  description: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By
+    Age Of Householder. Universe: Households. Median household income in the past 12 months (in 2020 inflation-adjusted
+    dollars) > Householder under 25 years.'
+  sql: '"2020_CBG_B19"."B19049e2"'
+  type: number
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19049m2"'
+- name: median_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_median_household_income_in_the_past_12_months_i_b19049e3
+  title: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age Of
+    Householder: Median household income in the past 12 months (in 2020 inflation-adjusted dollars) >
+    Householder 25 to 44 years'
+  description: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By
+    Age Of Householder. Universe: Households. Median household income in the past 12 months (in 2020 inflation-adjusted
+    dollars) > Householder 25 to 44 years.'
+  sql: '"2020_CBG_B19"."B19049e3"'
+  type: number
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19049m3"'
+- name: median_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_median_household_income_in_the_past_12_months_i_b19049e4
+  title: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age Of
+    Householder: Median household income in the past 12 months (in 2020 inflation-adjusted dollars) >
+    Householder 45 to 64 years'
+  description: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By
+    Age Of Householder. Universe: Households. Median household income in the past 12 months (in 2020 inflation-adjusted
+    dollars) > Householder 45 to 64 years.'
+  sql: '"2020_CBG_B19"."B19049e4"'
+  type: number
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19049m4"'
+- name: median_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_median_household_income_in_the_past_12_months_i_b19049e5
+  title: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age Of
+    Householder: Median household income in the past 12 months (in 2020 inflation-adjusted dollars) >
+    Householder 65 years and over'
+  description: 'Median Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By
+    Age Of Householder. Universe: Households. Median household income in the past 12 months (in 2020 inflation-adjusted
+    dollars) > Householder 65 years and over.'
+  sql: '"2020_CBG_B19"."B19049e5"'
+  type: number
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19049m5"'
+measures:
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_b19001e1
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. Total.'
+  sql: '"2020_CBG_B19"."B19001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m1"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_less_than_10_000_b19001e2
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Less than $10 000'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m2"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_10_000_to_14_999_b19001e3
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $10 000 to $14
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m3"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_15_000_to_19_999_b19001e4
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $15 000 to $19
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m4"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_20_000_to_24_999_b19001e5
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $20 000 to $24
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m5"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_25_000_to_29_999_b19001e6
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $25 000 to $29
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m6"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_30_000_to_34_999_b19001e7
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $30 000 to $34
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m7"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_35_000_to_39_999_b19001e8
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $35 000 to $39
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m8"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_40_000_to_44_999_b19001e9
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $40 000 to $44
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m9"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_45_000_to_49_999_b19001e10
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $45 000 to $49
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m10"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_50_000_to_59_999_b19001e11
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $50 000 to $59
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19001e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m11"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_60_000_to_74_999_b19001e12
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $60 000 to $74
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19001e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m12"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_75_000_to_99_999_b19001e13
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $75 000 to $99
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19001e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m13"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_100_000_to_124_999_b19001e14
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $100 000 to $124
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19001e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m14"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_125_000_to_149_999_b19001e15
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $125 000 to $149
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19001e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m15"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_150_000_to_199_999_b19001e16
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $150 000 to $199
+    999'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19001e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m16"'
+- name: household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_200_000_or_more_b19001e17
+  title: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $200 000 or more'
+  description: 'Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Households. $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19001e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19001m17"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_aggregate_household_income_in_the_past_12_months_in_2020_inflation_b19025e1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19025e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19025m1"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_white_alone_householder_aggregate_household_income_in_the_past_12__b19025ae1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (White
+    Alone Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (White Alone Householder). Universe: Households with a householder who is White alone. Total (White
+    alone; also called White).'
+  sql: '"2020_CBG_B19"."B19025Ae1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2020_CBG_B19"."B19025Am1"'
+    population_group: A
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_black_or_african_american_alone_householder_aggregate_household_in_b19025be1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Black
+    Or African American Alone Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (Black Or African American Alone Householder). Universe: Households with a householder who is Black
+    or African American alone. Total (Black or African American alone; also called Black, African American).'
+  sql: '"2020_CBG_B19"."B19025Be1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2020_CBG_B19"."B19025Bm1"'
+    population_group: B
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_american_indian_and_alaska_native_alone_householder_aggregate_hous_b19025ce1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (American
+    Indian And Alaska Native Alone Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (American Indian And Alaska Native Alone Householder). Universe: Households with a householder who
+    is American Indian and Alaska Native alone. Total (American Indian and Alaska Native alone; also called
+    Native American).'
+  sql: '"2020_CBG_B19"."B19025Ce1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2020_CBG_B19"."B19025Cm1"'
+    population_group: C
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_asian_alone_householder_aggregate_household_income_in_the_past_12__b19025de1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Asian
+    Alone Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (Asian Alone Householder). Universe: Households with a householder who is Asian alone. Total (Asian
+    alone; also called Asian).'
+  sql: '"2020_CBG_B19"."B19025De1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2020_CBG_B19"."B19025Dm1"'
+    population_group: D
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_native_hawaiian_and_other_pacific_islander_alone_householder_aggre_b19025ee1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Native
+    Hawaiian And Other Pacific Islander Alone Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (Native Hawaiian And Other Pacific Islander Alone Householder). Universe: Households with a householder
+    who is Native Hawaiian and Other Pacific Islander alone. Total (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B19"."B19025Ee1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2020_CBG_B19"."B19025Em1"'
+    population_group: E
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_some_other_race_alone_householder_aggregate_household_income_in_th_b19025fe1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Some
+    Other Race Alone Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (Some Other Race Alone Householder). Universe: Households with a householder who is Some other race
+    alone. Total (Some other race alone).'
+  sql: '"2020_CBG_B19"."B19025Fe1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2020_CBG_B19"."B19025Fm1"'
+    population_group: F
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_two_or_more_races_householder_aggregate_household_income_in_the_pa_b19025ge1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Two Or
+    More Races Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (Two Or More Races Householder). Universe: Households with a householder who is Two or more races.
+    Total (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B19"."B19025Ge1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2020_CBG_B19"."B19025Gm1"'
+    population_group: G
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_white_alone_not_hispanic_or_latino_householder_aggregate_household_b19025he1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (White
+    Alone, Not Hispanic Or Latino Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (White Alone, Not Hispanic Or Latino Householder). Universe: Households with a householder who is
+    White alone, not Hispanic or Latino. Total (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2020_CBG_B19"."B19025He1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2020_CBG_B19"."B19025Hm1"'
+    population_group: H
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_hispanic_or_latino_householder_aggregate_household_income_in_the_p_b19025ie1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Hispanic
+    Or Latino Householder): Total'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    (Hispanic Or Latino Householder). Universe: Households with a householder who is Hispanic or Latino.
+    Total (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B19"."B19025Ie1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2020_CBG_B19"."B19025Im1"'
+    population_group: I
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_b19037e1
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Total'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19037e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m1"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_b19037e2
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years.'
+  sql: '"2020_CBG_B19"."B19037e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m2"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_less_than_10_000_b19037e3
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > Less than $10 000'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19037e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m3"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_10_000_to_14_999_b19037e4
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $10 000 to $14 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19037e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m4"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_15_000_to_19_999_b19037e5
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $15 000 to $19 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19037e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m5"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_20_000_to_24_999_b19037e6
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $20 000 to $24 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19037e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m6"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_25_000_to_29_999_b19037e7
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $25 000 to $29 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19037e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m7"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_30_000_to_34_999_b19037e8
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $30 000 to $34 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19037e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m8"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_35_000_to_39_999_b19037e9
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $35 000 to $39 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19037e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m9"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_40_000_to_44_999_b19037e10
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $40 000 to $44 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19037e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m10"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_45_000_to_49_999_b19037e11
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $45 000 to $49 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19037e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m11"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_50_000_to_59_999_b19037e12
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $50 000 to $59 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19037e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m12"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_60_000_to_74_999_b19037e13
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $60 000 to $74 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19037e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m13"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_75_000_to_99_999_b19037e14
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $75 000 to $99 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19037e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m14"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_100_000_to_124_999_b19037e15
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $100 000 to $124 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19037e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m15"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_125_000_to_149_999_b19037e16
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $125 000 to $149 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19037e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m16"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_150_000_to_199_999_b19037e17
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $150 000 to $199 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19037e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m17"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_under_25_years_200_000_or_more_b19037e18
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder under 25 years > $200 000 or more'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder under 25 years > $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19037e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m18"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_b19037e19
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years.'
+  sql: '"2020_CBG_B19"."B19037e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m19"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_less_than_10_000_b19037e20
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > Less than $10 000'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19037e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m20"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_10_000_to_14_999_b19037e21
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $10 000 to $14 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19037e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m21"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_15_000_to_19_999_b19037e22
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $15 000 to $19 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19037e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m22"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_20_000_to_24_999_b19037e23
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $20 000 to $24 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19037e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m23"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_25_000_to_29_999_b19037e24
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $25 000 to $29 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19037e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m24"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_30_000_to_34_999_b19037e25
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $30 000 to $34 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19037e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m25"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_35_000_to_39_999_b19037e26
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $35 000 to $39 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19037e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m26"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_40_000_to_44_999_b19037e27
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $40 000 to $44 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19037e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m27"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_45_000_to_49_999_b19037e28
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $45 000 to $49 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19037e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m28"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_50_000_to_59_999_b19037e29
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $50 000 to $59 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19037e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m29"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_60_000_to_74_999_b19037e30
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $60 000 to $74 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19037e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m30"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_75_000_to_99_999_b19037e31
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $75 000 to $99 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19037e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m31"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_100_000_to_124_999_b19037e32
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $100 000 to $124 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19037e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m32"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_125_000_to_149_999_b19037e33
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $125 000 to $149 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19037e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m33"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_150_000_to_199_999_b19037e34
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $150 000 to $199 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19037e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m34"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_25_to_44_years_200_000_or_more_b19037e35
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 25 to 44 years > $200 000 or more'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 25 to 44 years > $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19037e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m35"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_b19037e36
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years.'
+  sql: '"2020_CBG_B19"."B19037e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m36"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_less_than_10_000_b19037e37
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > Less than $10 000'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19037e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m37"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_10_000_to_14_999_b19037e38
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $10 000 to $14 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19037e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m38"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_15_000_to_19_999_b19037e39
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $15 000 to $19 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19037e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m39"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_20_000_to_24_999_b19037e40
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $20 000 to $24 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19037e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m40"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_25_000_to_29_999_b19037e41
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $25 000 to $29 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19037e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m41"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_30_000_to_34_999_b19037e42
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $30 000 to $34 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19037e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m42"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_35_000_to_39_999_b19037e43
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $35 000 to $39 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19037e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m43"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_40_000_to_44_999_b19037e44
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $40 000 to $44 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19037e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m44"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_45_000_to_49_999_b19037e45
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $45 000 to $49 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19037e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m45"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_50_000_to_59_999_b19037e46
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $50 000 to $59 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19037e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m46"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_60_000_to_74_999_b19037e47
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $60 000 to $74 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19037e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m47"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_75_000_to_99_999_b19037e48
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $75 000 to $99 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19037e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m48"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_100_000_to_124_999_b19037e49
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $100 000 to $124 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19037e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m49"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_125_000_to_149_999_b19037e50
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $125 000 to $149 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19037e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m50"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_150_000_to_199_999_b19037e51
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $150 000 to $199 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19037e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m51"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_45_to_64_years_200_000_or_more_b19037e52
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 45 to 64 years > $200 000 or more'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 45 to 64 years > $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19037e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m52"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_b19037e53
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over.'
+  sql: '"2020_CBG_B19"."B19037e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m53"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_less_than_10_000_b19037e54
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > Less than $10 000'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19037e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m54"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_10_000_to_14_999_b19037e55
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $10 000 to $14 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19037e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m55"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_15_000_to_19_999_b19037e56
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $15 000 to $19 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19037e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m56"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_20_000_to_24_999_b19037e57
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $20 000 to $24 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19037e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m57"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_25_000_to_29_999_b19037e58
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $25 000 to $29 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19037e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m58"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_30_000_to_34_999_b19037e59
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $30 000 to $34 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19037e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m59"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_35_000_to_39_999_b19037e60
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $35 000 to $39 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19037e60"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m60"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_40_000_to_44_999_b19037e61
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $40 000 to $44 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19037e61"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m61"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_45_000_to_49_999_b19037e62
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $45 000 to $49 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19037e62"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m62"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_50_000_to_59_999_b19037e63
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $50 000 to $59 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19037e63"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m63"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_60_000_to_74_999_b19037e64
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $60 000 to $74 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19037e64"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m64"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_75_000_to_99_999_b19037e65
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $75 000 to $99 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19037e65"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m65"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_100_000_to_124_999_b19037e66
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $100 000 to $124 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19037e66"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m66"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_125_000_to_149_999_b19037e67
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $125 000 to $149 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19037e67"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m67"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_150_000_to_199_999_b19037e68
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $150 000 to $199 999'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19037e68"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m68"'
+- name: age_of_householder_by_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_householder_65_years_and_over_200_000_or_more_b19037e69
+  title: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Householder 65 years and over > $200 000 or more'
+  description: 'Age Of Householder By Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Households. Householder 65 years and over > $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19037e69"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19037m69"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_aggregate_household_income_in_the_past_12_mo_b19050e1
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age
+    Of Householder: Aggregate household income in the past 12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    By Age Of Householder. Universe: Households. Aggregate household income in the past 12 months (in
+    2020 inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19050e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19050m1"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_aggregate_household_income_in_the_past_12_mo_b19050e2
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age
+    Of Householder: Aggregate household income in the past 12 months (in 2020 inflation-adjusted dollars)
+    > Householder under 25 years'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    By Age Of Householder. Universe: Households. Aggregate household income in the past 12 months (in
+    2020 inflation-adjusted dollars) > Householder under 25 years.'
+  sql: '"2020_CBG_B19"."B19050e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19050m2"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_aggregate_household_income_in_the_past_12_mo_b19050e3
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age
+    Of Householder: Aggregate household income in the past 12 months (in 2020 inflation-adjusted dollars)
+    > Householder 25 to 44 years'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    By Age Of Householder. Universe: Households. Aggregate household income in the past 12 months (in
+    2020 inflation-adjusted dollars) > Householder 25 to 44 years.'
+  sql: '"2020_CBG_B19"."B19050e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19050m3"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_aggregate_household_income_in_the_past_12_mo_b19050e4
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age
+    Of Householder: Aggregate household income in the past 12 months (in 2020 inflation-adjusted dollars)
+    > Householder 45 to 64 years'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    By Age Of Householder. Universe: Households. Aggregate household income in the past 12 months (in
+    2020 inflation-adjusted dollars) > Householder 45 to 64 years.'
+  sql: '"2020_CBG_B19"."B19050e4"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19050m4"'
+- name: aggregate_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_by_age_of_householder_aggregate_household_income_in_the_past_12_mo_b19050e5
+  title: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) By Age
+    Of Householder: Aggregate household income in the past 12 months (in 2020 inflation-adjusted dollars)
+    > Householder 65 years and over'
+  description: 'Aggregate Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    By Age Of Householder. Universe: Households. Aggregate household income in the past 12 months (in
+    2020 inflation-adjusted dollars) > Householder 65 years and over.'
+  sql: '"2020_CBG_B19"."B19050e5"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19050m5"'
+- name: mean_household_income
+  title: Mean household income
+  description: 'Average household income in the past 12 months: total income of all households divided
+    by the number of households.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19025e1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households
+- name: mean_household_income_white_alone
+  title: Mean household income (White alone householder)
+  description: 'Average household income in the past 12 months of households whose householder is White
+    alone: their total household income divided by the number of such households. White alone is also
+    called White. The Census Bureau does not publish this for every block group; block groups without
+    it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Ae1" IS NULL OR "2020_CBG_B25"."B25003Ae1" IS NULL, NULL, "2020_CBG_B19"."B19025Ae1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Ae1" IS NULL OR "2020_CBG_B25"."B25003Ae1" IS NULL, NULL, "2020_CBG_B25"."B25003Ae1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is White alone
+    population_group: A
+- name: mean_household_income_black_alone
+  title: Mean household income (Black or African American alone householder)
+  description: 'Average household income in the past 12 months of households whose householder is Black
+    or African American alone: their total household income divided by the number of such households.
+    Black or African American alone is also called Black, African American. The Census Bureau does not
+    publish this for every block group; block groups without it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Be1" IS NULL OR "2020_CBG_B25"."B25003Be1" IS NULL, NULL, "2020_CBG_B19"."B19025Be1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Be1" IS NULL OR "2020_CBG_B25"."B25003Be1" IS NULL, NULL, "2020_CBG_B25"."B25003Be1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is Black or African American alone
+    population_group: B
+- name: mean_household_income_american_indian_alaska_native_alone
+  title: Mean household income (American Indian and Alaska Native alone householder)
+  description: 'Average household income in the past 12 months of households whose householder is American
+    Indian and Alaska Native alone: their total household income divided by the number of such households.
+    American Indian and Alaska Native alone is also called Native American. The Census Bureau does not
+    publish this for every block group; block groups without it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Ce1" IS NULL OR "2020_CBG_B25"."B25003Ce1" IS NULL, NULL, "2020_CBG_B19"."B19025Ce1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Ce1" IS NULL OR "2020_CBG_B25"."B25003Ce1" IS NULL, NULL, "2020_CBG_B25"."B25003Ce1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is American Indian and Alaska Native alone
+    population_group: C
+- name: mean_household_income_asian_alone
+  title: Mean household income (Asian alone householder)
+  description: 'Average household income in the past 12 months of households whose householder is Asian
+    alone: their total household income divided by the number of such households. Asian alone is also
+    called Asian. The Census Bureau does not publish this for every block group; block groups without
+    it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025De1" IS NULL OR "2020_CBG_B25"."B25003De1" IS NULL, NULL, "2020_CBG_B19"."B19025De1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025De1" IS NULL OR "2020_CBG_B25"."B25003De1" IS NULL, NULL, "2020_CBG_B25"."B25003De1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is Asian alone
+    population_group: D
+- name: mean_household_income_pacific_islander_alone
+  title: Mean household income (Native Hawaiian and Other Pacific Islander alone householder)
+  description: 'Average household income in the past 12 months of households whose householder is Native
+    Hawaiian and Other Pacific Islander alone: their total household income divided by the number of such
+    households. Native Hawaiian and Other Pacific Islander alone is also called Pacific Islander, Native
+    Hawaiian. The Census Bureau does not publish this for every block group; block groups without it are
+    left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Ee1" IS NULL OR "2020_CBG_B25"."B25003Ee1" IS NULL, NULL, "2020_CBG_B19"."B19025Ee1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Ee1" IS NULL OR "2020_CBG_B25"."B25003Ee1" IS NULL, NULL, "2020_CBG_B25"."B25003Ee1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is Native Hawaiian and Other Pacific Islander alone
+    population_group: E
+- name: mean_household_income_some_other_race_alone
+  title: Mean household income (Some other race alone householder)
+  description: 'Average household income in the past 12 months of households whose householder is Some
+    other race alone: their total household income divided by the number of such households. The Census
+    Bureau does not publish this for every block group; block groups without it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Fe1" IS NULL OR "2020_CBG_B25"."B25003Fe1" IS NULL, NULL, "2020_CBG_B19"."B19025Fe1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Fe1" IS NULL OR "2020_CBG_B25"."B25003Fe1" IS NULL, NULL, "2020_CBG_B25"."B25003Fe1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is Some other race alone
+    population_group: F
+- name: mean_household_income_two_or_more_races
+  title: Mean household income (Two or more races householder)
+  description: 'Average household income in the past 12 months of households whose householder is Two
+    or more races: their total household income divided by the number of such households. Two or more
+    races is also called multiracial, mixed race. The Census Bureau does not publish this for every block
+    group; block groups without it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Ge1" IS NULL OR "2020_CBG_B25"."B25003Ge1" IS NULL, NULL, "2020_CBG_B19"."B19025Ge1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Ge1" IS NULL OR "2020_CBG_B25"."B25003Ge1" IS NULL, NULL, "2020_CBG_B25"."B25003Ge1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is Two or more races
+    population_group: G
+- name: mean_household_income_white_alone_not_hispanic
+  title: Mean household income (White alone, not Hispanic or Latino householder)
+  description: 'Average household income in the past 12 months of households whose householder is White
+    alone, not Hispanic or Latino: their total household income divided by the number of such households.
+    White alone, not Hispanic or Latino is also called non-Hispanic White. The Census Bureau does not
+    publish this for every block group; block groups without it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025He1" IS NULL OR "2020_CBG_B25"."B25003He1" IS NULL, NULL, "2020_CBG_B19"."B19025He1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025He1" IS NULL OR "2020_CBG_B25"."B25003He1" IS NULL, NULL, "2020_CBG_B25"."B25003He1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is White alone, not Hispanic or Latino
+    population_group: H
+- name: mean_household_income_hispanic_or_latino
+  title: Mean household income (Hispanic or Latino householder)
+  description: 'Average household income in the past 12 months of households whose householder is Hispanic
+    or Latino: their total household income divided by the number of such households. Hispanic or Latino
+    is also called Hispanic, Latino, Latinx. The Census Bureau does not publish this for every block group;
+    block groups without it are left out.'
+  sql: SUM(IFF("2020_CBG_B19"."B19025Ie1" IS NULL OR "2020_CBG_B25"."B25003Ie1" IS NULL, NULL, "2020_CBG_B19"."B19025Ie1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Ie1" IS NULL OR "2020_CBG_B25"."B25003Ie1" IS NULL, NULL, "2020_CBG_B25"."B25003Ie1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households whose householder is Hispanic or Latino
+    population_group: I
+joins:
+- name: housing_occupancy_and_tenure_2020
+  relationship: one_to_one
+  sql: '"2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B25"."CENSUS_BLOCK_GROUP"'

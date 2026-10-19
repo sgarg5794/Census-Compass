@@ -1,0 +1,297 @@
+name: per_capita_income_2020
+title: Per capita income and total personal income (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: per
+  capita income; aggregate income. Some of these are also given by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B19"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B19"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_b19301e1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Total population. Total.'
+  sql: '"2020_CBG_B19"."B19301e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B19"."B19301m1"'
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_white_alone_per_capita_income_in_the_past_12_months_in_2020_inflation_adjus_b19301ae1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (White Alone):
+    Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (White Alone).
+    Universe: People who are White alone. Total (White alone; also called White).'
+  sql: '"2020_CBG_B19"."B19301Ae1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are White alone
+    moe_sql: '"2020_CBG_B19"."B19301Am1"'
+    population_group: A
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_black_or_african_american_alone_per_capita_income_in_the_past_12_months_in__b19301be1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Black Or African
+    American Alone): Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Black Or
+    African American Alone). Universe: People who are Black or African American alone. Total (Black or
+    African American alone; also called Black, African American).'
+  sql: '"2020_CBG_B19"."B19301Be1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are Black or African American alone
+    moe_sql: '"2020_CBG_B19"."B19301Bm1"'
+    population_group: B
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_american_indian_and_alaska_native_alone_per_capita_income_in_the_past_12_mo_b19301ce1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (American Indian
+    And Alaska Native Alone): Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (American
+    Indian And Alaska Native Alone). Universe: People who are American Indian and Alaska Native alone.
+    Total (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B19"."B19301Ce1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are American Indian and Alaska Native alone
+    moe_sql: '"2020_CBG_B19"."B19301Cm1"'
+    population_group: C
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_asian_alone_per_capita_income_in_the_past_12_months_in_2020_inflation_adjus_b19301de1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Asian Alone):
+    Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Asian Alone).
+    Universe: People who are Asian alone. Total (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B19"."B19301De1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are Asian alone
+    moe_sql: '"2020_CBG_B19"."B19301Dm1"'
+    population_group: D
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_native_hawaiian_and_other_pacific_islander_alone_per_capita_income_in_the_p_b19301ee1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Native Hawaiian
+    And Other Pacific Islander Alone): Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: People who are Native Hawaiian and Other Pacific Islander
+    alone. Total (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native
+    Hawaiian).'
+  sql: '"2020_CBG_B19"."B19301Ee1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2020_CBG_B19"."B19301Em1"'
+    population_group: E
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_some_other_race_alone_per_capita_income_in_the_past_12_months_in_2020_infla_b19301fe1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Some Other Race
+    Alone): Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Some Other
+    Race Alone). Universe: People who are Some Other Race alone. Total (Some other race alone).'
+  sql: '"2020_CBG_B19"."B19301Fe1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are Some Other Race alone
+    moe_sql: '"2020_CBG_B19"."B19301Fm1"'
+    population_group: F
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_two_or_more_races_per_capita_income_in_the_past_12_months_in_2020_inflation_b19301ge1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Two Or More Races):
+    Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Two Or More
+    Races). Universe: Two or more races population. Total (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2020_CBG_B19"."B19301Ge1"'
+  type: number
+  format: currency
+  meta:
+    universe: Two or more races population
+    moe_sql: '"2020_CBG_B19"."B19301Gm1"'
+    population_group: G
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_white_alone_not_hispanic_or_latino_per_capita_income_in_the_past_12_months__b19301he1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (White Alone, Not
+    Hispanic Or Latino): Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (White Alone,
+    Not Hispanic Or Latino). Universe: White alone, not Hispanic or Latino population. Total (White alone,
+    not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B19"."B19301He1"'
+  type: number
+  format: currency
+  meta:
+    universe: White alone, not Hispanic or Latino population
+    moe_sql: '"2020_CBG_B19"."B19301Hm1"'
+    population_group: H
+- name: block_group_per_capita_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_hispanic_or_latino_per_capita_income_in_the_past_12_months_in_2020_inflatio_b19301ie1
+  title: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Hispanic Or Latino):
+    Total'
+  description: 'Per Capita Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) (Hispanic
+    Or Latino). Universe: People who are Hispanic or Latino. Total (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2020_CBG_B19"."B19301Ie1"'
+  type: number
+  format: currency
+  meta:
+    universe: People who are Hispanic or Latino
+    moe_sql: '"2020_CBG_B19"."B19301Im1"'
+    population_group: I
+measures:
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_b19313e1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Population 15 years and over. Total.'
+  sql: '"2020_CBG_B19"."B19313e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313m1"'
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_white_alone_aggregate_income_in_the_pas_b19313ae1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (White Alone): Aggregate income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (White Alone). Universe: White alone population 15 years and over. Aggregate income
+    in the past 12 months (in 2020 inflation-adjusted dollars) (White alone; also called White).'
+  sql: '"2020_CBG_B19"."B19313Ae1"'
+  type: sum
+  format: currency
+  meta:
+    universe: White alone population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Am1"'
+    population_group: A
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_black_or_african_american_alone_aggrega_b19313be1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Black Or African American Alone): Aggregate income in the past 12 months (in 2020
+    inflation-adjusted dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Black Or African American Alone). Universe: Black or African American alone population
+    15 years and over. Aggregate income in the past 12 months (in 2020 inflation-adjusted dollars) (Black
+    or African American alone; also called Black, African American).'
+  sql: '"2020_CBG_B19"."B19313Be1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Black or African American alone population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Bm1"'
+    population_group: B
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_american_indian_and_alaska_native_alone_b19313ce1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (American Indian And Alaska Native Alone): Aggregate income in the past 12 months
+    (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (American Indian And Alaska Native Alone). Universe: American Indian and Alaska
+    Native alone population 15 years and over. Aggregate income in the past 12 months (in 2020 inflation-adjusted
+    dollars) (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B19"."B19313Ce1"'
+  type: sum
+  format: currency
+  meta:
+    universe: American Indian and Alaska Native alone population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Cm1"'
+    population_group: C
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_asian_alone_aggregate_income_in_the_pas_b19313de1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Asian Alone): Aggregate income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Asian Alone). Universe: Asian alone population 15 years and over. Aggregate income
+    in the past 12 months (in 2020 inflation-adjusted dollars) (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B19"."B19313De1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Asian alone population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Dm1"'
+    population_group: D
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_native_hawaiian_and_other_pacific_islan_b19313ee1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Native Hawaiian And Other Pacific Islander Alone): Aggregate income in the past
+    12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Native Hawaiian And Other Pacific Islander Alone). Universe: Native Hawaiian and
+    Other Pacific Islander alone population 15 years and over. Aggregate income in the past 12 months
+    (in 2020 inflation-adjusted dollars) (Native Hawaiian and Other Pacific Islander alone; also called
+    Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B19"."B19313Ee1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Em1"'
+    population_group: E
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_some_other_race_alone_aggregate_income__b19313fe1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Some Other Race Alone): Aggregate income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Some Other Race Alone). Universe: Some other race alone population 15 years and
+    over. Aggregate income in the past 12 months (in 2020 inflation-adjusted dollars) (Some other race
+    alone).'
+  sql: '"2020_CBG_B19"."B19313Fe1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Some other race alone population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Fm1"'
+    population_group: F
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_two_or_more_races_aggregate_income_in_t_b19313ge1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Two Or More Races): Aggregate income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Two Or More Races). Universe: Two or more races population 15 years and over. Aggregate
+    income in the past 12 months (in 2020 inflation-adjusted dollars) (Two or more races; also called
+    multiracial, mixed race).'
+  sql: '"2020_CBG_B19"."B19313Ge1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Two or more races population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Gm1"'
+    population_group: G
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_white_alone_not_hispanic_or_latino_aggr_b19313he1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (White Alone, Not Hispanic Or Latino): Aggregate income in the past 12 months (in
+    2020 inflation-adjusted dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (White Alone, Not Hispanic Or Latino). Universe: White alone, not Hispanic or Latino
+    population 15 years and over. Aggregate income in the past 12 months (in 2020 inflation-adjusted dollars)
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B19"."B19313He1"'
+  type: sum
+  format: currency
+  meta:
+    universe: White alone, not Hispanic or Latino population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Hm1"'
+    population_group: H
+- name: aggregate_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_the_population_15_years_and_over_hispanic_or_latino_aggregate_income_in__b19313ie1
+  title: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Hispanic Or Latino): Aggregate income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For The Population
+    15 Years And Over (Hispanic Or Latino). Universe: Hispanic or Latino population 15 years and over.
+    Aggregate income in the past 12 months (in 2020 inflation-adjusted dollars) (Hispanic or Latino; also
+    called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B19"."B19313Ie1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Hispanic or Latino population 15 years and over
+    moe_sql: '"2020_CBG_B19"."B19313Im1"'
+    population_group: I
+- name: per_capita_income
+  title: Per capita income
+  description: 'Average income per person in the past 12 months: total income of people 15 years and over
+    divided by the total population, children included.'
+  sql: SUM(IFF("2020_CBG_B19"."B19313e1" IS NULL OR "2020_CBG_B01"."B01003e1" IS NULL, NULL, "2020_CBG_B19"."B19313e1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19313e1" IS NULL OR "2020_CBG_B01"."B01003e1" IS NULL, NULL, "2020_CBG_B01"."B01003e1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Total population
+joins:
+- name: population_age_and_sex_2020
+  relationship: one_to_one
+  sql: '"2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B01"."CENSUS_BLOCK_GROUP"'

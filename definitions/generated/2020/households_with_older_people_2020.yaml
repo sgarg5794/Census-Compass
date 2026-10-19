@@ -1,0 +1,306 @@
+name: households_with_older_people_2020
+title: Households with people 60 or 65 and over (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: households
+  by presence of people 60 years and over by household type; households by presence of people 65 years
+  and over, household size and household type.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B11"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B11"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_b11006e1
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Total'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Total.'
+  sql: '"2020_CBG_B11"."B11006e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m1"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_b11006e2
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over.'
+  sql: '"2020_CBG_B11"."B11006e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m2"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_family_households_b11006e3
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over > Family households'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over > Family households.'
+  sql: '"2020_CBG_B11"."B11006e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m3"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_family_households_married_co_b11006e4
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over > Family households > Married-couple family'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over > Family households > Married-couple family.'
+  sql: '"2020_CBG_B11"."B11006e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m4"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_family_households_other_fami_b11006e5
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over > Family households > Other family'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over > Family households > Other family.'
+  sql: '"2020_CBG_B11"."B11006e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m5"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_family_households_other_fami_b11006e6
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over > Family households > Other family > Male householder no spouse present'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over > Family households > Other family > Male householder
+    no spouse present.'
+  sql: '"2020_CBG_B11"."B11006e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m6"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_family_households_other_fami_b11006e7
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over > Family households > Other family > Female householder no spouse present'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over > Family households > Other family > Female householder
+    no spouse present.'
+  sql: '"2020_CBG_B11"."B11006e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m7"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_one_or_more_people_60_years_and_over_nonfamily_households_b11006e8
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with one or
+    more people 60 years and over > Nonfamily households'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with one or more people 60 years and over > Nonfamily households.'
+  sql: '"2020_CBG_B11"."B11006e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m8"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_b11006e9
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over.'
+  sql: '"2020_CBG_B11"."B11006e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m9"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_family_households_b11006e10
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over > Family households'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over > Family households.'
+  sql: '"2020_CBG_B11"."B11006e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m10"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_family_households_married_couple_fami_b11006e11
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over > Family households > Married-couple family'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over > Family households > Married-couple family.'
+  sql: '"2020_CBG_B11"."B11006e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m11"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_family_households_other_family_b11006e12
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over > Family households > Other family'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over > Family households > Other family.'
+  sql: '"2020_CBG_B11"."B11006e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m12"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_family_households_other_family_male_h_b11006e13
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over > Family households > Other family > Male householder no spouse present'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over > Family households > Other family > Male householder
+    no spouse present.'
+  sql: '"2020_CBG_B11"."B11006e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m13"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_family_households_other_family_female_b11006e14
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over > Family households > Other family > Female householder no spouse present'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over > Family households > Other family > Female householder
+    no spouse present.'
+  sql: '"2020_CBG_B11"."B11006e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m14"'
+- name: households_by_presence_of_people_60_years_and_over_by_household_type_households_with_no_people_60_years_and_over_nonfamily_households_b11006e15
+  title: 'Households By Presence Of People 60 Years And Over By Household Type: Households with no people
+    60 years and over > Nonfamily households'
+  description: 'Households By Presence Of People 60 Years And Over By Household Type. Universe: Households.
+    Households with no people 60 years and over > Nonfamily households.'
+  sql: '"2020_CBG_B11"."B11006e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11006m15"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_b11007e1
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Total'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Total.'
+  sql: '"2020_CBG_B11"."B11007e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m1"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_one_or_more_people_65_years_and_over_b11007e2
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with one or more people 65 years and over'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with one or more people 65 years and over.'
+  sql: '"2020_CBG_B11"."B11007e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m2"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_one_or_more_people_65_years_and_over_1_person_hou_b11007e3
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with one or more people 65 years and over > 1-person household'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with one or more people 65 years and over > 1-person household.'
+  sql: '"2020_CBG_B11"."B11007e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m3"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_one_or_more_people_65_years_and_over_2_or_more_pe_b11007e4
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with one or more people 65 years and over > 2-or-more-person household'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with one or more people 65 years and over > 2-or-more-person household.'
+  sql: '"2020_CBG_B11"."B11007e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m4"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_one_or_more_people_65_years_and_over_2_or_more_pe_b11007e5
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with one or more people 65 years and over > 2-or-more-person household > Family households'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with one or more people 65 years and over > 2-or-more-person household
+    > Family households.'
+  sql: '"2020_CBG_B11"."B11007e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m5"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_one_or_more_people_65_years_and_over_2_or_more_pe_b11007e6
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with one or more people 65 years and over > 2-or-more-person household > Nonfamily households'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with one or more people 65 years and over > 2-or-more-person household
+    > Nonfamily households.'
+  sql: '"2020_CBG_B11"."B11007e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m6"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_no_people_65_years_and_over_b11007e7
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with no people 65 years and over'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with no people 65 years and over.'
+  sql: '"2020_CBG_B11"."B11007e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m7"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_no_people_65_years_and_over_1_person_households_b11007e8
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with no people 65 years and over > 1-person households'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with no people 65 years and over > 1-person households.'
+  sql: '"2020_CBG_B11"."B11007e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m8"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_no_people_65_years_and_over_2_or_more_person_hous_b11007e9
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with no people 65 years and over > 2-or-more-person household'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with no people 65 years and over > 2-or-more-person household.'
+  sql: '"2020_CBG_B11"."B11007e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m9"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_no_people_65_years_and_over_2_or_more_person_hous_b11007e10
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with no people 65 years and over > 2-or-more-person household > Family households'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with no people 65 years and over > 2-or-more-person household > Family
+    households.'
+  sql: '"2020_CBG_B11"."B11007e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m10"'
+- name: households_by_presence_of_people_65_years_and_over_household_size_and_household_type_households_with_no_people_65_years_and_over_2_or_more_person_hous_b11007e11
+  title: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type: Households
+    with no people 65 years and over > 2-or-more-person household > Nonfamily households'
+  description: 'Households By Presence Of People 65 Years And Over, Household Size And Household Type.
+    Universe: Households. Households with no people 65 years and over > 2-or-more-person household > Nonfamily
+    households.'
+  sql: '"2020_CBG_B11"."B11007e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B11"."B11007m11"'

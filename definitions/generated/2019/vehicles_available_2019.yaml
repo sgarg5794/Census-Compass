@@ -1,0 +1,395 @@
+name: vehicles_available_2019
+title: Vehicles available to households (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: tenure
+  by vehicles available; tenure by vehicles available by age of householder; aggregate number of vehicles
+  available by tenure.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: tenure_by_vehicles_available_b25044e1
+  title: 'Tenure By Vehicles Available: Total'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25044e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m1"'
+- name: tenure_by_vehicles_available_owner_occupied_b25044e2
+  title: 'Tenure By Vehicles Available: Owner occupied'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25044e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m2"'
+- name: tenure_by_vehicles_available_owner_occupied_no_vehicle_available_b25044e3
+  title: 'Tenure By Vehicles Available: Owner occupied > No vehicle available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied > No vehicle
+    available.'
+  sql: '"2019_CBG_B25"."B25044e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m3"'
+- name: tenure_by_vehicles_available_owner_occupied_1_vehicle_available_b25044e4
+  title: 'Tenure By Vehicles Available: Owner occupied > 1 vehicle available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied > 1 vehicle
+    available.'
+  sql: '"2019_CBG_B25"."B25044e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m4"'
+- name: tenure_by_vehicles_available_owner_occupied_2_vehicles_available_b25044e5
+  title: 'Tenure By Vehicles Available: Owner occupied > 2 vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied > 2 vehicles
+    available.'
+  sql: '"2019_CBG_B25"."B25044e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m5"'
+- name: tenure_by_vehicles_available_owner_occupied_3_vehicles_available_b25044e6
+  title: 'Tenure By Vehicles Available: Owner occupied > 3 vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied > 3 vehicles
+    available.'
+  sql: '"2019_CBG_B25"."B25044e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m6"'
+- name: tenure_by_vehicles_available_owner_occupied_4_vehicles_available_b25044e7
+  title: 'Tenure By Vehicles Available: Owner occupied > 4 vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied > 4 vehicles
+    available.'
+  sql: '"2019_CBG_B25"."B25044e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m7"'
+- name: tenure_by_vehicles_available_owner_occupied_5_or_more_vehicles_available_b25044e8
+  title: 'Tenure By Vehicles Available: Owner occupied > 5 or more vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Owner occupied > 5 or
+    more vehicles available.'
+  sql: '"2019_CBG_B25"."B25044e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m8"'
+- name: tenure_by_vehicles_available_renter_occupied_b25044e9
+  title: 'Tenure By Vehicles Available: Renter occupied'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25044e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m9"'
+- name: tenure_by_vehicles_available_renter_occupied_no_vehicle_available_b25044e10
+  title: 'Tenure By Vehicles Available: Renter occupied > No vehicle available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied > No vehicle
+    available.'
+  sql: '"2019_CBG_B25"."B25044e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m10"'
+- name: tenure_by_vehicles_available_renter_occupied_1_vehicle_available_b25044e11
+  title: 'Tenure By Vehicles Available: Renter occupied > 1 vehicle available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied > 1 vehicle
+    available.'
+  sql: '"2019_CBG_B25"."B25044e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m11"'
+- name: tenure_by_vehicles_available_renter_occupied_2_vehicles_available_b25044e12
+  title: 'Tenure By Vehicles Available: Renter occupied > 2 vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied > 2 vehicles
+    available.'
+  sql: '"2019_CBG_B25"."B25044e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m12"'
+- name: tenure_by_vehicles_available_renter_occupied_3_vehicles_available_b25044e13
+  title: 'Tenure By Vehicles Available: Renter occupied > 3 vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied > 3 vehicles
+    available.'
+  sql: '"2019_CBG_B25"."B25044e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m13"'
+- name: tenure_by_vehicles_available_renter_occupied_4_vehicles_available_b25044e14
+  title: 'Tenure By Vehicles Available: Renter occupied > 4 vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied > 4 vehicles
+    available.'
+  sql: '"2019_CBG_B25"."B25044e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m14"'
+- name: tenure_by_vehicles_available_renter_occupied_5_or_more_vehicles_available_b25044e15
+  title: 'Tenure By Vehicles Available: Renter occupied > 5 or more vehicles available'
+  description: 'Tenure By Vehicles Available. Universe: Occupied housing units. Renter occupied > 5 or
+    more vehicles available.'
+  sql: '"2019_CBG_B25"."B25044e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25044m15"'
+- name: tenure_by_vehicles_available_by_age_of_householder_b25045e1
+  title: 'Tenure By Vehicles Available By Age Of Householder: Total'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Total.'
+  sql: '"2019_CBG_B25"."B25045e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m1"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_b25045e2
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied.'
+  sql: '"2019_CBG_B25"."B25045e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m2"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_no_vehicle_available_b25045e3
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > No vehicle available'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > No vehicle available.'
+  sql: '"2019_CBG_B25"."B25045e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m3"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_no_vehicle_available_householder_15_to_34_years_b25045e4
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > No vehicle available >
+    Householder 15 to 34 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > No vehicle available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25045e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m4"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_no_vehicle_available_householder_35_to_64_years_b25045e5
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > No vehicle available >
+    Householder 35 to 64 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > No vehicle available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25045e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m5"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_no_vehicle_available_householder_65_years_and_over_b25045e6
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > No vehicle available >
+    Householder 65 years and over'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > No vehicle available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25045e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m6"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_1_or_more_vehicles_available_b25045e7
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > 1 or more vehicles available'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > 1 or more vehicles available.'
+  sql: '"2019_CBG_B25"."B25045e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m7"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_1_or_more_vehicles_available_householder_15_to_34_years_b25045e8
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > 1 or more vehicles available
+    > Householder 15 to 34 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > 1 or more vehicles available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25045e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m8"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_1_or_more_vehicles_available_householder_35_to_64_years_b25045e9
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > 1 or more vehicles available
+    > Householder 35 to 64 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > 1 or more vehicles available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25045e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m9"'
+- name: tenure_by_vehicles_available_by_age_of_householder_owner_occupied_1_or_more_vehicles_available_householder_65_years_and_over_b25045e10
+  title: 'Tenure By Vehicles Available By Age Of Householder: Owner occupied > 1 or more vehicles available
+    > Householder 65 years and over'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Owner occupied > 1 or more vehicles available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25045e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m10"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_b25045e11
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied.'
+  sql: '"2019_CBG_B25"."B25045e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m11"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_no_vehicle_available_b25045e12
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > No vehicle available'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > No vehicle available.'
+  sql: '"2019_CBG_B25"."B25045e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m12"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_no_vehicle_available_householder_15_to_34_years_b25045e13
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > No vehicle available >
+    Householder 15 to 34 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > No vehicle available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25045e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m13"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_no_vehicle_available_householder_35_to_64_years_b25045e14
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > No vehicle available >
+    Householder 35 to 64 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > No vehicle available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25045e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m14"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_no_vehicle_available_householder_65_years_and_over_b25045e15
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > No vehicle available >
+    Householder 65 years and over'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > No vehicle available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25045e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m15"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_1_or_more_vehicles_available_b25045e16
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > 1 or more vehicles available'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > 1 or more vehicles available.'
+  sql: '"2019_CBG_B25"."B25045e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m16"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_1_or_more_vehicles_available_householder_15_to_34_years_b25045e17
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > 1 or more vehicles available
+    > Householder 15 to 34 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > 1 or more vehicles available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25045e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m17"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_1_or_more_vehicles_available_householder_35_to_64_years_b25045e18
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > 1 or more vehicles available
+    > Householder 35 to 64 years'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > 1 or more vehicles available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25045e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m18"'
+- name: tenure_by_vehicles_available_by_age_of_householder_renter_occupied_1_or_more_vehicles_available_householder_65_years_and_over_b25045e19
+  title: 'Tenure By Vehicles Available By Age Of Householder: Renter occupied > 1 or more vehicles available
+    > Householder 65 years and over'
+  description: 'Tenure By Vehicles Available By Age Of Householder. Universe: Occupied housing units.
+    Renter occupied > 1 or more vehicles available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25045e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25045m19"'
+- name: aggregate_number_of_vehicles_available_by_tenure_aggregate_number_of_vehicles_available_b25046e1
+  title: 'Aggregate Number Of Vehicles Available By Tenure: Aggregate number of vehicles available'
+  description: 'Aggregate Number Of Vehicles Available By Tenure. Universe: Occupied housing units. Aggregate
+    number of vehicles available.'
+  sql: '"2019_CBG_B25"."B25046e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25046m1"'
+- name: aggregate_number_of_vehicles_available_by_tenure_aggregate_number_of_vehicles_available_owner_occupied_b25046e2
+  title: 'Aggregate Number Of Vehicles Available By Tenure: Aggregate number of vehicles available > Owner
+    occupied'
+  description: 'Aggregate Number Of Vehicles Available By Tenure. Universe: Occupied housing units. Aggregate
+    number of vehicles available > Owner occupied.'
+  sql: '"2019_CBG_B25"."B25046e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25046m2"'
+- name: aggregate_number_of_vehicles_available_by_tenure_aggregate_number_of_vehicles_available_renter_occupied_b25046e3
+  title: 'Aggregate Number Of Vehicles Available By Tenure: Aggregate number of vehicles available > Renter
+    occupied'
+  description: 'Aggregate Number Of Vehicles Available By Tenure. Universe: Occupied housing units. Aggregate
+    number of vehicles available > Renter occupied.'
+  sql: '"2019_CBG_B25"."B25046e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25046m3"'

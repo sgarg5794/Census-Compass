@@ -1,0 +1,656 @@
+name: educational_attainment_2019
+title: Educational attainment (adults 25 and over) (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by educational attainment for the population 25 years and over; educational attainment for the population
+  25 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B15"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B15"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_b15002e1
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Total'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Total.'
+  sql: '"2019_CBG_B15"."B15002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m1"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_b15002e2
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male.'
+  sql: '"2019_CBG_B15"."B15002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m2"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_no_schooling_completed_b15002e3
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > No schooling completed'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > No schooling completed.'
+  sql: '"2019_CBG_B15"."B15002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m3"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_nursery_to_4th_grade_b15002e4
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Nursery to 4th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Nursery to 4th grade.'
+  sql: '"2019_CBG_B15"."B15002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m4"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_5th_and_6th_grade_b15002e5
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > 5th and 6th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > 5th and 6th grade.'
+  sql: '"2019_CBG_B15"."B15002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m5"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_7th_and_8th_grade_b15002e6
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > 7th and 8th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > 7th and 8th grade.'
+  sql: '"2019_CBG_B15"."B15002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m6"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_9th_grade_b15002e7
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > 9th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > 9th grade.'
+  sql: '"2019_CBG_B15"."B15002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m7"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_10th_grade_b15002e8
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > 10th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > 10th grade.'
+  sql: '"2019_CBG_B15"."B15002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m8"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_11th_grade_b15002e9
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > 11th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > 11th grade.'
+  sql: '"2019_CBG_B15"."B15002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m9"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_12th_grade_no_diploma_b15002e10
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > 12th grade no diploma'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > 12th grade no diploma.'
+  sql: '"2019_CBG_B15"."B15002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m10"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_high_school_graduate_includes_equivalency_b15002e11
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > High school graduate
+    (includes equivalency)'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > High school graduate (includes equivalency).'
+  sql: '"2019_CBG_B15"."B15002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m11"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_some_college_less_than_1_year_b15002e12
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Some college less
+    than 1 year'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Some college less than 1 year.'
+  sql: '"2019_CBG_B15"."B15002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m12"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_some_college_1_or_more_years_no_degree_b15002e13
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Some college 1 or
+    more years no degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Some college 1 or more years no degree.'
+  sql: '"2019_CBG_B15"."B15002e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m13"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_associate_s_degree_b15002e14
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Associate''s degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Associate''s degree.'
+  sql: '"2019_CBG_B15"."B15002e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m14"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_bachelor_s_degree_b15002e15
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Bachelor''s degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Bachelor''s degree.'
+  sql: '"2019_CBG_B15"."B15002e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m15"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_master_s_degree_b15002e16
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Master''s degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Master''s degree.'
+  sql: '"2019_CBG_B15"."B15002e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m16"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_professional_school_degree_b15002e17
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Professional school
+    degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Professional school degree.'
+  sql: '"2019_CBG_B15"."B15002e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m17"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_male_doctorate_degree_b15002e18
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Male > Doctorate degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Male > Doctorate degree.'
+  sql: '"2019_CBG_B15"."B15002e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m18"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_b15002e19
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female.'
+  sql: '"2019_CBG_B15"."B15002e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m19"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_no_schooling_completed_b15002e20
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > No schooling completed'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > No schooling completed.'
+  sql: '"2019_CBG_B15"."B15002e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m20"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_nursery_to_4th_grade_b15002e21
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Nursery to 4th
+    grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Nursery to 4th grade.'
+  sql: '"2019_CBG_B15"."B15002e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m21"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_5th_and_6th_grade_b15002e22
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > 5th and 6th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > 5th and 6th grade.'
+  sql: '"2019_CBG_B15"."B15002e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m22"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_7th_and_8th_grade_b15002e23
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > 7th and 8th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > 7th and 8th grade.'
+  sql: '"2019_CBG_B15"."B15002e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m23"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_9th_grade_b15002e24
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > 9th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > 9th grade.'
+  sql: '"2019_CBG_B15"."B15002e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m24"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_10th_grade_b15002e25
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > 10th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > 10th grade.'
+  sql: '"2019_CBG_B15"."B15002e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m25"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_11th_grade_b15002e26
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > 11th grade'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > 11th grade.'
+  sql: '"2019_CBG_B15"."B15002e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m26"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_12th_grade_no_diploma_b15002e27
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > 12th grade no diploma'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > 12th grade no diploma.'
+  sql: '"2019_CBG_B15"."B15002e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m27"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_high_school_graduate_includes_equivalency_b15002e28
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > High school graduate
+    (includes equivalency)'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > High school graduate (includes equivalency).'
+  sql: '"2019_CBG_B15"."B15002e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m28"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_some_college_less_than_1_year_b15002e29
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Some college less
+    than 1 year'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Some college less than 1 year.'
+  sql: '"2019_CBG_B15"."B15002e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m29"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_some_college_1_or_more_years_no_degree_b15002e30
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Some college 1
+    or more years no degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Some college 1 or more years no degree.'
+  sql: '"2019_CBG_B15"."B15002e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m30"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_associate_s_degree_b15002e31
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Associate''s degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Associate''s degree.'
+  sql: '"2019_CBG_B15"."B15002e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m31"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_bachelor_s_degree_b15002e32
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Bachelor''s degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Bachelor''s degree.'
+  sql: '"2019_CBG_B15"."B15002e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m32"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_master_s_degree_b15002e33
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Master''s degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Master''s degree.'
+  sql: '"2019_CBG_B15"."B15002e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m33"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_professional_school_degree_b15002e34
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Professional school
+    degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Professional school degree.'
+  sql: '"2019_CBG_B15"."B15002e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m34"'
+- name: sex_by_educational_attainment_for_the_population_25_years_and_over_female_doctorate_degree_b15002e35
+  title: 'Sex By Educational Attainment For The Population 25 Years And Over: Female > Doctorate degree'
+  description: 'Sex By Educational Attainment For The Population 25 Years And Over. Universe: Population
+    25 years and over. Female > Doctorate degree.'
+  sql: '"2019_CBG_B15"."B15002e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15002m35"'
+- name: educational_attainment_for_the_population_25_years_and_over_b15003e1
+  title: 'Educational Attainment For The Population 25 Years And Over: Total'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Total.'
+  sql: '"2019_CBG_B15"."B15003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m1"'
+- name: educational_attainment_for_the_population_25_years_and_over_no_schooling_completed_b15003e2
+  title: 'Educational Attainment For The Population 25 Years And Over: No schooling completed'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. No schooling completed.'
+  sql: '"2019_CBG_B15"."B15003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m2"'
+- name: educational_attainment_for_the_population_25_years_and_over_nursery_school_b15003e3
+  title: 'Educational Attainment For The Population 25 Years And Over: Nursery school'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Nursery school.'
+  sql: '"2019_CBG_B15"."B15003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m3"'
+- name: educational_attainment_for_the_population_25_years_and_over_kindergarten_b15003e4
+  title: 'Educational Attainment For The Population 25 Years And Over: Kindergarten'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Kindergarten.'
+  sql: '"2019_CBG_B15"."B15003e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m4"'
+- name: educational_attainment_for_the_population_25_years_and_over_1st_grade_b15003e5
+  title: 'Educational Attainment For The Population 25 Years And Over: 1st grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 1st grade.'
+  sql: '"2019_CBG_B15"."B15003e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m5"'
+- name: educational_attainment_for_the_population_25_years_and_over_2nd_grade_b15003e6
+  title: 'Educational Attainment For The Population 25 Years And Over: 2nd grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 2nd grade.'
+  sql: '"2019_CBG_B15"."B15003e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m6"'
+- name: educational_attainment_for_the_population_25_years_and_over_3rd_grade_b15003e7
+  title: 'Educational Attainment For The Population 25 Years And Over: 3rd grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 3rd grade.'
+  sql: '"2019_CBG_B15"."B15003e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m7"'
+- name: educational_attainment_for_the_population_25_years_and_over_4th_grade_b15003e8
+  title: 'Educational Attainment For The Population 25 Years And Over: 4th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 4th grade.'
+  sql: '"2019_CBG_B15"."B15003e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m8"'
+- name: educational_attainment_for_the_population_25_years_and_over_5th_grade_b15003e9
+  title: 'Educational Attainment For The Population 25 Years And Over: 5th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 5th grade.'
+  sql: '"2019_CBG_B15"."B15003e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m9"'
+- name: educational_attainment_for_the_population_25_years_and_over_6th_grade_b15003e10
+  title: 'Educational Attainment For The Population 25 Years And Over: 6th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 6th grade.'
+  sql: '"2019_CBG_B15"."B15003e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m10"'
+- name: educational_attainment_for_the_population_25_years_and_over_7th_grade_b15003e11
+  title: 'Educational Attainment For The Population 25 Years And Over: 7th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 7th grade.'
+  sql: '"2019_CBG_B15"."B15003e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m11"'
+- name: educational_attainment_for_the_population_25_years_and_over_8th_grade_b15003e12
+  title: 'Educational Attainment For The Population 25 Years And Over: 8th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 8th grade.'
+  sql: '"2019_CBG_B15"."B15003e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m12"'
+- name: educational_attainment_for_the_population_25_years_and_over_9th_grade_b15003e13
+  title: 'Educational Attainment For The Population 25 Years And Over: 9th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 9th grade.'
+  sql: '"2019_CBG_B15"."B15003e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m13"'
+- name: educational_attainment_for_the_population_25_years_and_over_10th_grade_b15003e14
+  title: 'Educational Attainment For The Population 25 Years And Over: 10th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 10th grade.'
+  sql: '"2019_CBG_B15"."B15003e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m14"'
+- name: educational_attainment_for_the_population_25_years_and_over_11th_grade_b15003e15
+  title: 'Educational Attainment For The Population 25 Years And Over: 11th grade'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 11th grade.'
+  sql: '"2019_CBG_B15"."B15003e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m15"'
+- name: educational_attainment_for_the_population_25_years_and_over_12th_grade_no_diploma_b15003e16
+  title: 'Educational Attainment For The Population 25 Years And Over: 12th grade no diploma'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. 12th grade no diploma.'
+  sql: '"2019_CBG_B15"."B15003e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m16"'
+- name: educational_attainment_for_the_population_25_years_and_over_regular_high_school_diploma_b15003e17
+  title: 'Educational Attainment For The Population 25 Years And Over: Regular high school diploma'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Regular high school diploma.'
+  sql: '"2019_CBG_B15"."B15003e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m17"'
+- name: educational_attainment_for_the_population_25_years_and_over_ged_or_alternative_credential_b15003e18
+  title: 'Educational Attainment For The Population 25 Years And Over: GED or alternative credential'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. GED or alternative credential.'
+  sql: '"2019_CBG_B15"."B15003e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m18"'
+- name: educational_attainment_for_the_population_25_years_and_over_some_college_less_than_1_year_b15003e19
+  title: 'Educational Attainment For The Population 25 Years And Over: Some college less than 1 year'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Some college less than 1 year.'
+  sql: '"2019_CBG_B15"."B15003e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m19"'
+- name: educational_attainment_for_the_population_25_years_and_over_some_college_1_or_more_years_no_degree_b15003e20
+  title: 'Educational Attainment For The Population 25 Years And Over: Some college 1 or more years no
+    degree'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Some college 1 or more years no degree.'
+  sql: '"2019_CBG_B15"."B15003e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m20"'
+- name: educational_attainment_for_the_population_25_years_and_over_associate_s_degree_b15003e21
+  title: 'Educational Attainment For The Population 25 Years And Over: Associate''s degree'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Associate''s degree.'
+  sql: '"2019_CBG_B15"."B15003e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m21"'
+- name: educational_attainment_for_the_population_25_years_and_over_bachelor_s_degree_b15003e22
+  title: 'Educational Attainment For The Population 25 Years And Over: Bachelor''s degree'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Bachelor''s degree.'
+  sql: '"2019_CBG_B15"."B15003e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m22"'
+- name: educational_attainment_for_the_population_25_years_and_over_master_s_degree_b15003e23
+  title: 'Educational Attainment For The Population 25 Years And Over: Master''s degree'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Master''s degree.'
+  sql: '"2019_CBG_B15"."B15003e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m23"'
+- name: educational_attainment_for_the_population_25_years_and_over_professional_school_degree_b15003e24
+  title: 'Educational Attainment For The Population 25 Years And Over: Professional school degree'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Professional school degree.'
+  sql: '"2019_CBG_B15"."B15003e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m24"'
+- name: educational_attainment_for_the_population_25_years_and_over_doctorate_degree_b15003e25
+  title: 'Educational Attainment For The Population 25 Years And Over: Doctorate degree'
+  description: 'Educational Attainment For The Population 25 Years And Over. Universe: Population 25 years
+    and over. Doctorate degree.'
+  sql: '"2019_CBG_B15"."B15003e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 25 years and over
+    moe_sql: '"2019_CBG_B15"."B15003m25"'
+- name: high_school_or_higher_pct
+  title: High school graduate or higher (%)
+  description: 'Percentage of adults 25 years and over who finished high school or more: a regular high
+    school diploma, a GED or alternative credential, some college, or an associate''s, bachelor''s, master''s,
+    professional school or doctorate degree.'
+  sql: 100 * SUM(IFF("2019_CBG_B15"."B15003e17" IS NULL OR "2019_CBG_B15"."B15003e18" IS NULL OR "2019_CBG_B15"."B15003e19"
+    IS NULL OR "2019_CBG_B15"."B15003e20" IS NULL OR "2019_CBG_B15"."B15003e21" IS NULL OR "2019_CBG_B15"."B15003e22"
+    IS NULL OR "2019_CBG_B15"."B15003e23" IS NULL OR "2019_CBG_B15"."B15003e24" IS NULL OR "2019_CBG_B15"."B15003e25"
+    IS NULL OR "2019_CBG_B15"."B15003e1" IS NULL, NULL, "2019_CBG_B15"."B15003e17" + "2019_CBG_B15"."B15003e18"
+    + "2019_CBG_B15"."B15003e19" + "2019_CBG_B15"."B15003e20" + "2019_CBG_B15"."B15003e21" + "2019_CBG_B15"."B15003e22"
+    + "2019_CBG_B15"."B15003e23" + "2019_CBG_B15"."B15003e24" + "2019_CBG_B15"."B15003e25")) / NULLIF(SUM(IFF("2019_CBG_B15"."B15003e17"
+    IS NULL OR "2019_CBG_B15"."B15003e18" IS NULL OR "2019_CBG_B15"."B15003e19" IS NULL OR "2019_CBG_B15"."B15003e20"
+    IS NULL OR "2019_CBG_B15"."B15003e21" IS NULL OR "2019_CBG_B15"."B15003e22" IS NULL OR "2019_CBG_B15"."B15003e23"
+    IS NULL OR "2019_CBG_B15"."B15003e24" IS NULL OR "2019_CBG_B15"."B15003e25" IS NULL OR "2019_CBG_B15"."B15003e1"
+    IS NULL, NULL, "2019_CBG_B15"."B15003e1")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Population 25 years and over
+- name: bachelors_or_higher_pct
+  title: Bachelor's degree or higher (%)
+  description: Percentage of adults 25 years and over with a bachelor's, master's, professional school
+    or doctorate degree.
+  sql: 100 * SUM(IFF("2019_CBG_B15"."B15003e22" IS NULL OR "2019_CBG_B15"."B15003e23" IS NULL OR "2019_CBG_B15"."B15003e24"
+    IS NULL OR "2019_CBG_B15"."B15003e25" IS NULL OR "2019_CBG_B15"."B15003e1" IS NULL, NULL, "2019_CBG_B15"."B15003e22"
+    + "2019_CBG_B15"."B15003e23" + "2019_CBG_B15"."B15003e24" + "2019_CBG_B15"."B15003e25")) / NULLIF(SUM(IFF("2019_CBG_B15"."B15003e22"
+    IS NULL OR "2019_CBG_B15"."B15003e23" IS NULL OR "2019_CBG_B15"."B15003e24" IS NULL OR "2019_CBG_B15"."B15003e25"
+    IS NULL OR "2019_CBG_B15"."B15003e1" IS NULL, NULL, "2019_CBG_B15"."B15003e1")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Population 25 years and over

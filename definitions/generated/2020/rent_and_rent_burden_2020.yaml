@@ -1,0 +1,2708 @@
+name: rent_and_rent_burden_2020
+title: Rent, rent asked and rent as a percentage of income (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: kitchen
+  facilities by meals included in rent; age of householder by meals included in rent; contract rent; lower
+  contract rent quartile (dollars); median contract rent (dollars); upper contract rent quartile (dollars);
+  aggregate contract rent (dollars); rent asked; aggregate rent asked (dollars); gross rent; median gross
+  rent (dollars); aggregate gross rent (dollars); aggregate gross rent (dollars) by units in structure;
+  aggregate gross rent (dollars) by meals included in rent; bedrooms by gross rent; inclusion of utilities
+  in rent; gross rent as a percentage of household income; median gross rent as a percentage of household
+  income (dollars); age of householder by gross rent as a percentage of household income; household income
+  by gross rent as a percentage of household income.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: lower_contract_rent_quartile_dollars_lower_contract_rent_quartile_b25057e1
+  title: 'Lower Contract Rent Quartile (Dollars): Total'
+  description: 'Lower Contract Rent Quartile (Dollars). Universe: Renter-occupied housing units paying
+    cash rent. Total.'
+  sql: '"2020_CBG_B25"."B25057e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25057m1"'
+- name: median_contract_rent_dollars_median_contract_rent_b25058e1
+  title: 'Median Contract Rent (Dollars): Total'
+  description: 'Median Contract Rent (Dollars). Universe: Renter-occupied housing units paying cash rent.
+    Total.'
+  sql: '"2020_CBG_B25"."B25058e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25058m1"'
+- name: upper_contract_rent_quartile_dollars_upper_contract_rent_quartile_b25059e1
+  title: 'Upper Contract Rent Quartile (Dollars): Total'
+  description: 'Upper Contract Rent Quartile (Dollars). Universe: Renter-occupied housing units paying
+    cash rent. Total.'
+  sql: '"2020_CBG_B25"."B25059e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25059m1"'
+- name: median_gross_rent_dollars_median_gross_rent_b25064e1
+  title: 'Median Gross Rent (Dollars): Total'
+  description: 'Median Gross Rent (Dollars). Universe: Renter-occupied housing units paying cash rent.
+    Total.'
+  sql: '"2020_CBG_B25"."B25064e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25064m1"'
+- name: median_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_dollars_median_gross_rent_as_a_percentage_of_household_income_b25071e1
+  title: 'Median Gross Rent As A Percentage Of Household Income In The Past 12 Months (Dollars): Median
+    gross rent as a percentage of household income'
+  description: 'Median Gross Rent As A Percentage Of Household Income In The Past 12 Months (Dollars).
+    Universe: Renter-occupied housing units paying cash rent. Median gross rent as a percentage of household
+    income.'
+  sql: '"2020_CBG_B25"."B25071e1"'
+  type: number
+  format: percent
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25071m1"'
+measures:
+- name: kitchen_facilities_by_meals_included_in_rent_b25054e1
+  title: 'Kitchen Facilities By Meals Included In Rent: Total'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Total.'
+  sql: '"2020_CBG_B25"."B25054e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m1"'
+- name: kitchen_facilities_by_meals_included_in_rent_complete_kitchen_facilities_b25054e2
+  title: 'Kitchen Facilities By Meals Included In Rent: Complete kitchen facilities'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Complete kitchen facilities.'
+  sql: '"2020_CBG_B25"."B25054e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m2"'
+- name: kitchen_facilities_by_meals_included_in_rent_complete_kitchen_facilities_meals_included_in_rent_b25054e3
+  title: 'Kitchen Facilities By Meals Included In Rent: Complete kitchen facilities > Meals included in
+    rent'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Complete kitchen facilities > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25054e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m3"'
+- name: kitchen_facilities_by_meals_included_in_rent_complete_kitchen_facilities_no_meals_included_in_rent_b25054e4
+  title: 'Kitchen Facilities By Meals Included In Rent: Complete kitchen facilities > No meals included
+    in rent'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Complete kitchen facilities > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25054e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m4"'
+- name: kitchen_facilities_by_meals_included_in_rent_lacking_complete_kitchen_facilities_b25054e5
+  title: 'Kitchen Facilities By Meals Included In Rent: Lacking complete kitchen facilities'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Lacking complete kitchen facilities.'
+  sql: '"2020_CBG_B25"."B25054e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m5"'
+- name: kitchen_facilities_by_meals_included_in_rent_lacking_complete_kitchen_facilities_meals_included_in_rent_b25054e6
+  title: 'Kitchen Facilities By Meals Included In Rent: Lacking complete kitchen facilities > Meals included
+    in rent'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Lacking complete kitchen facilities > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25054e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m6"'
+- name: kitchen_facilities_by_meals_included_in_rent_lacking_complete_kitchen_facilities_no_meals_included_in_rent_b25054e7
+  title: 'Kitchen Facilities By Meals Included In Rent: Lacking complete kitchen facilities > No meals
+    included in rent'
+  description: 'Kitchen Facilities By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Lacking complete kitchen facilities > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25054e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25054m7"'
+- name: age_of_householder_by_meals_included_in_rent_b25055e1
+  title: 'Age Of Householder By Meals Included In Rent: Total'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Total.'
+  sql: '"2020_CBG_B25"."B25055e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m1"'
+- name: age_of_householder_by_meals_included_in_rent_householder_15_to_54_years_b25055e2
+  title: 'Age Of Householder By Meals Included In Rent: Householder 15 to 54 years'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 15 to 54 years.'
+  sql: '"2020_CBG_B25"."B25055e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m2"'
+- name: age_of_householder_by_meals_included_in_rent_householder_15_to_54_years_meals_included_in_rent_b25055e3
+  title: 'Age Of Householder By Meals Included In Rent: Householder 15 to 54 years > Meals included in
+    rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 15 to 54 years > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m3"'
+- name: age_of_householder_by_meals_included_in_rent_householder_15_to_54_years_no_meals_included_in_rent_b25055e4
+  title: 'Age Of Householder By Meals Included In Rent: Householder 15 to 54 years > No meals included
+    in rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 15 to 54 years > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m4"'
+- name: age_of_householder_by_meals_included_in_rent_householder_55_to_64_years_b25055e5
+  title: 'Age Of Householder By Meals Included In Rent: Householder 55 to 64 years'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 55 to 64 years.'
+  sql: '"2020_CBG_B25"."B25055e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m5"'
+- name: age_of_householder_by_meals_included_in_rent_householder_55_to_64_years_meals_included_in_rent_b25055e6
+  title: 'Age Of Householder By Meals Included In Rent: Householder 55 to 64 years > Meals included in
+    rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 55 to 64 years > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m6"'
+- name: age_of_householder_by_meals_included_in_rent_householder_55_to_64_years_no_meals_included_in_rent_b25055e7
+  title: 'Age Of Householder By Meals Included In Rent: Householder 55 to 64 years > No meals included
+    in rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 55 to 64 years > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m7"'
+- name: age_of_householder_by_meals_included_in_rent_householder_65_to_74_years_b25055e8
+  title: 'Age Of Householder By Meals Included In Rent: Householder 65 to 74 years'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 65 to 74 years.'
+  sql: '"2020_CBG_B25"."B25055e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m8"'
+- name: age_of_householder_by_meals_included_in_rent_householder_65_to_74_years_meals_included_in_rent_b25055e9
+  title: 'Age Of Householder By Meals Included In Rent: Householder 65 to 74 years > Meals included in
+    rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 65 to 74 years > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m9"'
+- name: age_of_householder_by_meals_included_in_rent_householder_65_to_74_years_no_meals_included_in_rent_b25055e10
+  title: 'Age Of Householder By Meals Included In Rent: Householder 65 to 74 years > No meals included
+    in rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 65 to 74 years > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m10"'
+- name: age_of_householder_by_meals_included_in_rent_householder_75_years_and_over_b25055e11
+  title: 'Age Of Householder By Meals Included In Rent: Householder 75 years and over'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 75 years and over.'
+  sql: '"2020_CBG_B25"."B25055e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m11"'
+- name: age_of_householder_by_meals_included_in_rent_householder_75_years_and_over_meals_included_in_rent_b25055e12
+  title: 'Age Of Householder By Meals Included In Rent: Householder 75 years and over > Meals included
+    in rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 75 years and over > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m12"'
+- name: age_of_householder_by_meals_included_in_rent_householder_75_years_and_over_no_meals_included_in_rent_b25055e13
+  title: 'Age Of Householder By Meals Included In Rent: Householder 75 years and over > No meals included
+    in rent'
+  description: 'Age Of Householder By Meals Included In Rent. Universe: Renter-occupied housing units
+    paying cash rent. Householder 75 years and over > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25055e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25055m13"'
+- name: contract_rent_b25056e1
+  title: 'Contract Rent: Total'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25056e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m1"'
+- name: contract_rent_with_cash_rent_b25056e2
+  title: 'Contract Rent: With cash rent'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent.'
+  sql: '"2020_CBG_B25"."B25056e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m2"'
+- name: contract_rent_with_cash_rent_less_than_100_b25056e3
+  title: 'Contract Rent: With cash rent > Less than $100'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > Less than $100.'
+  sql: '"2020_CBG_B25"."B25056e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m3"'
+- name: contract_rent_with_cash_rent_100_to_149_b25056e4
+  title: 'Contract Rent: With cash rent > $100 to $149'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $100 to $149.'
+  sql: '"2020_CBG_B25"."B25056e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m4"'
+- name: contract_rent_with_cash_rent_150_to_199_b25056e5
+  title: 'Contract Rent: With cash rent > $150 to $199'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $150 to $199.'
+  sql: '"2020_CBG_B25"."B25056e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m5"'
+- name: contract_rent_with_cash_rent_200_to_249_b25056e6
+  title: 'Contract Rent: With cash rent > $200 to $249'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $200 to $249.'
+  sql: '"2020_CBG_B25"."B25056e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m6"'
+- name: contract_rent_with_cash_rent_250_to_299_b25056e7
+  title: 'Contract Rent: With cash rent > $250 to $299'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $250 to $299.'
+  sql: '"2020_CBG_B25"."B25056e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m7"'
+- name: contract_rent_with_cash_rent_300_to_349_b25056e8
+  title: 'Contract Rent: With cash rent > $300 to $349'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $300 to $349.'
+  sql: '"2020_CBG_B25"."B25056e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m8"'
+- name: contract_rent_with_cash_rent_350_to_399_b25056e9
+  title: 'Contract Rent: With cash rent > $350 to $399'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $350 to $399.'
+  sql: '"2020_CBG_B25"."B25056e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m9"'
+- name: contract_rent_with_cash_rent_400_to_449_b25056e10
+  title: 'Contract Rent: With cash rent > $400 to $449'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $400 to $449.'
+  sql: '"2020_CBG_B25"."B25056e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m10"'
+- name: contract_rent_with_cash_rent_450_to_499_b25056e11
+  title: 'Contract Rent: With cash rent > $450 to $499'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $450 to $499.'
+  sql: '"2020_CBG_B25"."B25056e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m11"'
+- name: contract_rent_with_cash_rent_500_to_549_b25056e12
+  title: 'Contract Rent: With cash rent > $500 to $549'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $500 to $549.'
+  sql: '"2020_CBG_B25"."B25056e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m12"'
+- name: contract_rent_with_cash_rent_550_to_599_b25056e13
+  title: 'Contract Rent: With cash rent > $550 to $599'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $550 to $599.'
+  sql: '"2020_CBG_B25"."B25056e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m13"'
+- name: contract_rent_with_cash_rent_600_to_649_b25056e14
+  title: 'Contract Rent: With cash rent > $600 to $649'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $600 to $649.'
+  sql: '"2020_CBG_B25"."B25056e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m14"'
+- name: contract_rent_with_cash_rent_650_to_699_b25056e15
+  title: 'Contract Rent: With cash rent > $650 to $699'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $650 to $699.'
+  sql: '"2020_CBG_B25"."B25056e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m15"'
+- name: contract_rent_with_cash_rent_700_to_749_b25056e16
+  title: 'Contract Rent: With cash rent > $700 to $749'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $700 to $749.'
+  sql: '"2020_CBG_B25"."B25056e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m16"'
+- name: contract_rent_with_cash_rent_750_to_799_b25056e17
+  title: 'Contract Rent: With cash rent > $750 to $799'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $750 to $799.'
+  sql: '"2020_CBG_B25"."B25056e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m17"'
+- name: contract_rent_with_cash_rent_800_to_899_b25056e18
+  title: 'Contract Rent: With cash rent > $800 to $899'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $800 to $899.'
+  sql: '"2020_CBG_B25"."B25056e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m18"'
+- name: contract_rent_with_cash_rent_900_to_999_b25056e19
+  title: 'Contract Rent: With cash rent > $900 to $999'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $900 to $999.'
+  sql: '"2020_CBG_B25"."B25056e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m19"'
+- name: contract_rent_with_cash_rent_1_000_to_1_249_b25056e20
+  title: 'Contract Rent: With cash rent > $1 000 to $1 249'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $1 000 to $1
+    249.'
+  sql: '"2020_CBG_B25"."B25056e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m20"'
+- name: contract_rent_with_cash_rent_1_250_to_1_499_b25056e21
+  title: 'Contract Rent: With cash rent > $1 250 to $1 499'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $1 250 to $1
+    499.'
+  sql: '"2020_CBG_B25"."B25056e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m21"'
+- name: contract_rent_with_cash_rent_1_500_to_1_999_b25056e22
+  title: 'Contract Rent: With cash rent > $1 500 to $1 999'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $1 500 to $1
+    999.'
+  sql: '"2020_CBG_B25"."B25056e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m22"'
+- name: contract_rent_with_cash_rent_2_000_to_2_499_b25056e23
+  title: 'Contract Rent: With cash rent > $2 000 to $2 499'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $2 000 to $2
+    499.'
+  sql: '"2020_CBG_B25"."B25056e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m23"'
+- name: contract_rent_with_cash_rent_2_500_to_2_999_b25056e24
+  title: 'Contract Rent: With cash rent > $2 500 to $2 999'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $2 500 to $2
+    999.'
+  sql: '"2020_CBG_B25"."B25056e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m24"'
+- name: contract_rent_with_cash_rent_3_000_to_3_499_b25056e25
+  title: 'Contract Rent: With cash rent > $3 000 to $3 499'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $3 000 to $3
+    499.'
+  sql: '"2020_CBG_B25"."B25056e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m25"'
+- name: contract_rent_with_cash_rent_3_500_or_more_b25056e26
+  title: 'Contract Rent: With cash rent > $3 500 or more'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. With cash rent > $3 500 or more.'
+  sql: '"2020_CBG_B25"."B25056e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m26"'
+- name: contract_rent_no_cash_rent_b25056e27
+  title: 'Contract Rent: No cash rent'
+  description: 'Contract Rent. Universe: Renter-occupied housing units. No cash rent.'
+  sql: '"2020_CBG_B25"."B25056e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25056m27"'
+- name: aggregate_contract_rent_dollars_aggregate_contract_rent_b25060e1
+  title: 'Aggregate Contract Rent (Dollars): Total'
+  description: 'Aggregate Contract Rent (Dollars). Universe: Renter-occupied housing units paying cash
+    rent. Total.'
+  sql: '"2020_CBG_B25"."B25060e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25060m1"'
+- name: rent_asked_b25061e1
+  title: 'Rent Asked: Total'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25061e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m1"'
+- name: rent_asked_less_than_100_b25061e2
+  title: 'Rent Asked: Less than $100'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. Less than
+    $100.'
+  sql: '"2020_CBG_B25"."B25061e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m2"'
+- name: rent_asked_100_to_149_b25061e3
+  title: 'Rent Asked: $100 to $149'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $100 to
+    $149.'
+  sql: '"2020_CBG_B25"."B25061e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m3"'
+- name: rent_asked_150_to_199_b25061e4
+  title: 'Rent Asked: $150 to $199'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $150 to
+    $199.'
+  sql: '"2020_CBG_B25"."B25061e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m4"'
+- name: rent_asked_200_to_249_b25061e5
+  title: 'Rent Asked: $200 to $249'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $200 to
+    $249.'
+  sql: '"2020_CBG_B25"."B25061e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m5"'
+- name: rent_asked_250_to_299_b25061e6
+  title: 'Rent Asked: $250 to $299'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $250 to
+    $299.'
+  sql: '"2020_CBG_B25"."B25061e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m6"'
+- name: rent_asked_300_to_349_b25061e7
+  title: 'Rent Asked: $300 to $349'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $300 to
+    $349.'
+  sql: '"2020_CBG_B25"."B25061e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m7"'
+- name: rent_asked_350_to_399_b25061e8
+  title: 'Rent Asked: $350 to $399'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $350 to
+    $399.'
+  sql: '"2020_CBG_B25"."B25061e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m8"'
+- name: rent_asked_400_to_449_b25061e9
+  title: 'Rent Asked: $400 to $449'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $400 to
+    $449.'
+  sql: '"2020_CBG_B25"."B25061e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m9"'
+- name: rent_asked_450_to_499_b25061e10
+  title: 'Rent Asked: $450 to $499'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $450 to
+    $499.'
+  sql: '"2020_CBG_B25"."B25061e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m10"'
+- name: rent_asked_500_to_549_b25061e11
+  title: 'Rent Asked: $500 to $549'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $500 to
+    $549.'
+  sql: '"2020_CBG_B25"."B25061e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m11"'
+- name: rent_asked_550_to_599_b25061e12
+  title: 'Rent Asked: $550 to $599'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $550 to
+    $599.'
+  sql: '"2020_CBG_B25"."B25061e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m12"'
+- name: rent_asked_600_to_649_b25061e13
+  title: 'Rent Asked: $600 to $649'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $600 to
+    $649.'
+  sql: '"2020_CBG_B25"."B25061e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m13"'
+- name: rent_asked_650_to_699_b25061e14
+  title: 'Rent Asked: $650 to $699'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $650 to
+    $699.'
+  sql: '"2020_CBG_B25"."B25061e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m14"'
+- name: rent_asked_700_to_749_b25061e15
+  title: 'Rent Asked: $700 to $749'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $700 to
+    $749.'
+  sql: '"2020_CBG_B25"."B25061e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m15"'
+- name: rent_asked_750_to_799_b25061e16
+  title: 'Rent Asked: $750 to $799'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $750 to
+    $799.'
+  sql: '"2020_CBG_B25"."B25061e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m16"'
+- name: rent_asked_800_to_899_b25061e17
+  title: 'Rent Asked: $800 to $899'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $800 to
+    $899.'
+  sql: '"2020_CBG_B25"."B25061e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m17"'
+- name: rent_asked_900_to_999_b25061e18
+  title: 'Rent Asked: $900 to $999'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $900 to
+    $999.'
+  sql: '"2020_CBG_B25"."B25061e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m18"'
+- name: rent_asked_1_000_to_1_249_b25061e19
+  title: 'Rent Asked: $1 000 to $1 249'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $1 000 to
+    $1 249.'
+  sql: '"2020_CBG_B25"."B25061e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m19"'
+- name: rent_asked_1_250_to_1_499_b25061e20
+  title: 'Rent Asked: $1 250 to $1 499'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $1 250 to
+    $1 499.'
+  sql: '"2020_CBG_B25"."B25061e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m20"'
+- name: rent_asked_1_500_to_1_999_b25061e21
+  title: 'Rent Asked: $1 500 to $1 999'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $1 500 to
+    $1 999.'
+  sql: '"2020_CBG_B25"."B25061e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m21"'
+- name: rent_asked_2_000_to_2_499_b25061e22
+  title: 'Rent Asked: $2 000 to $2 499'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $2 000 to
+    $2 499.'
+  sql: '"2020_CBG_B25"."B25061e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m22"'
+- name: rent_asked_2_500_to_2_999_b25061e23
+  title: 'Rent Asked: $2 500 to $2 999'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $2 500 to
+    $2 999.'
+  sql: '"2020_CBG_B25"."B25061e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m23"'
+- name: rent_asked_3_000_to_3_499_b25061e24
+  title: 'Rent Asked: $3 000 to $3 499'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $3 000 to
+    $3 499.'
+  sql: '"2020_CBG_B25"."B25061e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m24"'
+- name: rent_asked_3_500_or_more_b25061e25
+  title: 'Rent Asked: $3 500 or more'
+  description: 'Rent Asked. Universe: Vacant-for-rent and rented, not occupied housing units. $3 500 or
+    more.'
+  sql: '"2020_CBG_B25"."B25061e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25061m25"'
+- name: aggregate_rent_asked_dollars_aggregate_rent_asked_b25062e1
+  title: 'Aggregate Rent Asked (Dollars): Total'
+  description: 'Aggregate Rent Asked (Dollars). Universe: Vacant-for-rent and rented, not occupied housing
+    units. Total.'
+  sql: '"2020_CBG_B25"."B25062e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Vacant-for-rent and rented, not occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25062m1"'
+- name: gross_rent_b25063e1
+  title: 'Gross Rent: Total'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25063e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m1"'
+- name: gross_rent_with_cash_rent_b25063e2
+  title: 'Gross Rent: With cash rent'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent.'
+  sql: '"2020_CBG_B25"."B25063e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m2"'
+- name: gross_rent_with_cash_rent_less_than_100_b25063e3
+  title: 'Gross Rent: With cash rent > Less than $100'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > Less than $100.'
+  sql: '"2020_CBG_B25"."B25063e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m3"'
+- name: gross_rent_with_cash_rent_100_to_149_b25063e4
+  title: 'Gross Rent: With cash rent > $100 to $149'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $100 to $149.'
+  sql: '"2020_CBG_B25"."B25063e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m4"'
+- name: gross_rent_with_cash_rent_150_to_199_b25063e5
+  title: 'Gross Rent: With cash rent > $150 to $199'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $150 to $199.'
+  sql: '"2020_CBG_B25"."B25063e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m5"'
+- name: gross_rent_with_cash_rent_200_to_249_b25063e6
+  title: 'Gross Rent: With cash rent > $200 to $249'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $200 to $249.'
+  sql: '"2020_CBG_B25"."B25063e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m6"'
+- name: gross_rent_with_cash_rent_250_to_299_b25063e7
+  title: 'Gross Rent: With cash rent > $250 to $299'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $250 to $299.'
+  sql: '"2020_CBG_B25"."B25063e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m7"'
+- name: gross_rent_with_cash_rent_300_to_349_b25063e8
+  title: 'Gross Rent: With cash rent > $300 to $349'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $300 to $349.'
+  sql: '"2020_CBG_B25"."B25063e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m8"'
+- name: gross_rent_with_cash_rent_350_to_399_b25063e9
+  title: 'Gross Rent: With cash rent > $350 to $399'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $350 to $399.'
+  sql: '"2020_CBG_B25"."B25063e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m9"'
+- name: gross_rent_with_cash_rent_400_to_449_b25063e10
+  title: 'Gross Rent: With cash rent > $400 to $449'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $400 to $449.'
+  sql: '"2020_CBG_B25"."B25063e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m10"'
+- name: gross_rent_with_cash_rent_450_to_499_b25063e11
+  title: 'Gross Rent: With cash rent > $450 to $499'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $450 to $499.'
+  sql: '"2020_CBG_B25"."B25063e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m11"'
+- name: gross_rent_with_cash_rent_500_to_549_b25063e12
+  title: 'Gross Rent: With cash rent > $500 to $549'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $500 to $549.'
+  sql: '"2020_CBG_B25"."B25063e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m12"'
+- name: gross_rent_with_cash_rent_550_to_599_b25063e13
+  title: 'Gross Rent: With cash rent > $550 to $599'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $550 to $599.'
+  sql: '"2020_CBG_B25"."B25063e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m13"'
+- name: gross_rent_with_cash_rent_600_to_649_b25063e14
+  title: 'Gross Rent: With cash rent > $600 to $649'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $600 to $649.'
+  sql: '"2020_CBG_B25"."B25063e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m14"'
+- name: gross_rent_with_cash_rent_650_to_699_b25063e15
+  title: 'Gross Rent: With cash rent > $650 to $699'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $650 to $699.'
+  sql: '"2020_CBG_B25"."B25063e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m15"'
+- name: gross_rent_with_cash_rent_700_to_749_b25063e16
+  title: 'Gross Rent: With cash rent > $700 to $749'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $700 to $749.'
+  sql: '"2020_CBG_B25"."B25063e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m16"'
+- name: gross_rent_with_cash_rent_750_to_799_b25063e17
+  title: 'Gross Rent: With cash rent > $750 to $799'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $750 to $799.'
+  sql: '"2020_CBG_B25"."B25063e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m17"'
+- name: gross_rent_with_cash_rent_800_to_899_b25063e18
+  title: 'Gross Rent: With cash rent > $800 to $899'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $800 to $899.'
+  sql: '"2020_CBG_B25"."B25063e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m18"'
+- name: gross_rent_with_cash_rent_900_to_999_b25063e19
+  title: 'Gross Rent: With cash rent > $900 to $999'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $900 to $999.'
+  sql: '"2020_CBG_B25"."B25063e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m19"'
+- name: gross_rent_with_cash_rent_1_000_to_1_249_b25063e20
+  title: 'Gross Rent: With cash rent > $1 000 to $1 249'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $1 000 to $1 249.'
+  sql: '"2020_CBG_B25"."B25063e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m20"'
+- name: gross_rent_with_cash_rent_1_250_to_1_499_b25063e21
+  title: 'Gross Rent: With cash rent > $1 250 to $1 499'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $1 250 to $1 499.'
+  sql: '"2020_CBG_B25"."B25063e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m21"'
+- name: gross_rent_with_cash_rent_1_500_to_1_999_b25063e22
+  title: 'Gross Rent: With cash rent > $1 500 to $1 999'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $1 500 to $1 999.'
+  sql: '"2020_CBG_B25"."B25063e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m22"'
+- name: gross_rent_with_cash_rent_2_000_to_2_499_b25063e23
+  title: 'Gross Rent: With cash rent > $2 000 to $2 499'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $2 000 to $2 499.'
+  sql: '"2020_CBG_B25"."B25063e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m23"'
+- name: gross_rent_with_cash_rent_2_500_to_2_999_b25063e24
+  title: 'Gross Rent: With cash rent > $2 500 to $2 999'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $2 500 to $2 999.'
+  sql: '"2020_CBG_B25"."B25063e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m24"'
+- name: gross_rent_with_cash_rent_3_000_to_3_499_b25063e25
+  title: 'Gross Rent: With cash rent > $3 000 to $3 499'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $3 000 to $3 499.'
+  sql: '"2020_CBG_B25"."B25063e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m25"'
+- name: gross_rent_with_cash_rent_3_500_or_more_b25063e26
+  title: 'Gross Rent: With cash rent > $3 500 or more'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. With cash rent > $3 500 or more.'
+  sql: '"2020_CBG_B25"."B25063e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m26"'
+- name: gross_rent_no_cash_rent_b25063e27
+  title: 'Gross Rent: No cash rent'
+  description: 'Gross Rent. Universe: Renter-occupied housing units. No cash rent.'
+  sql: '"2020_CBG_B25"."B25063e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25063m27"'
+- name: aggregate_gross_rent_dollars_aggregate_gross_rent_b25065e1
+  title: 'Aggregate Gross Rent (Dollars): Total'
+  description: 'Aggregate Gross Rent (Dollars). Universe: Renter-occupied housing units paying cash rent.
+    Total.'
+  sql: '"2020_CBG_B25"."B25065e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25065m1"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_b25066e1
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent.'
+  sql: '"2020_CBG_B25"."B25066e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m1"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_1_detached_or_attached_b25066e2
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > 1 detached or attached'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > 1 detached or attached.'
+  sql: '"2020_CBG_B25"."B25066e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m2"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_2_to_4_b25066e3
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > 2 to 4'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > 2 to 4.'
+  sql: '"2020_CBG_B25"."B25066e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m3"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_5_to_19_b25066e4
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > 5 to 19'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > 5 to 19.'
+  sql: '"2020_CBG_B25"."B25066e4"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m4"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_20_to_49_b25066e5
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > 20 to 49'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > 20 to 49.'
+  sql: '"2020_CBG_B25"."B25066e5"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m5"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_50_or_more_b25066e6
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > 50 or more'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > 50 or more.'
+  sql: '"2020_CBG_B25"."B25066e6"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m6"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_mobile_home_b25066e7
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > Mobile home'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > Mobile home.'
+  sql: '"2020_CBG_B25"."B25066e7"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m7"'
+- name: aggregate_gross_rent_dollars_by_units_in_structure_aggregate_gross_rent_boat_rv_van_etc_b25066e8
+  title: 'Aggregate Gross Rent (Dollars) By Units In Structure: Aggregate gross rent > Boat RV van etc.'
+  description: 'Aggregate Gross Rent (Dollars) By Units In Structure. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > Boat RV van etc..'
+  sql: '"2020_CBG_B25"."B25066e8"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25066m8"'
+- name: aggregate_gross_rent_dollars_by_meals_included_in_rent_aggregate_gross_rent_b25067e1
+  title: 'Aggregate Gross Rent (Dollars) By Meals Included In Rent: Aggregate gross rent'
+  description: 'Aggregate Gross Rent (Dollars) By Meals Included In Rent. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent.'
+  sql: '"2020_CBG_B25"."B25067e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25067m1"'
+- name: aggregate_gross_rent_dollars_by_meals_included_in_rent_aggregate_gross_rent_meals_included_in_rent_b25067e2
+  title: 'Aggregate Gross Rent (Dollars) By Meals Included In Rent: Aggregate gross rent > Meals included
+    in rent'
+  description: 'Aggregate Gross Rent (Dollars) By Meals Included In Rent. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > Meals included in rent.'
+  sql: '"2020_CBG_B25"."B25067e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25067m2"'
+- name: aggregate_gross_rent_dollars_by_meals_included_in_rent_aggregate_gross_rent_no_meals_included_in_rent_b25067e3
+  title: 'Aggregate Gross Rent (Dollars) By Meals Included In Rent: Aggregate gross rent > No meals included
+    in rent'
+  description: 'Aggregate Gross Rent (Dollars) By Meals Included In Rent. Universe: Renter-occupied housing
+    units paying cash rent. Aggregate gross rent > No meals included in rent.'
+  sql: '"2020_CBG_B25"."B25067e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Renter-occupied housing units paying cash rent
+    moe_sql: '"2020_CBG_B25"."B25067m3"'
+- name: bedrooms_by_gross_rent_b25068e1
+  title: 'Bedrooms By Gross Rent: Total'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25068e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m1"'
+- name: bedrooms_by_gross_rent_no_bedroom_b25068e2
+  title: 'Bedrooms By Gross Rent: No bedroom'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom.'
+  sql: '"2020_CBG_B25"."B25068e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m2"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_b25068e3
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent.'
+  sql: '"2020_CBG_B25"."B25068e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m3"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_less_than_300_b25068e4
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent > Less than $300'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent > Less than $300.'
+  sql: '"2020_CBG_B25"."B25068e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m4"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_300_to_499_b25068e5
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent > $300 to $499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent > $300 to $499.'
+  sql: '"2020_CBG_B25"."B25068e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m5"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_500_to_749_b25068e6
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent > $500 to $749'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent > $500 to $749.'
+  sql: '"2020_CBG_B25"."B25068e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m6"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_750_to_999_b25068e7
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent > $750 to $999'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent > $750 to $999.'
+  sql: '"2020_CBG_B25"."B25068e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m7"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_1_000_to_1_499_b25068e8
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent > $1 000 to $1 499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent > $1 000 to $1 499.'
+  sql: '"2020_CBG_B25"."B25068e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m8"'
+- name: bedrooms_by_gross_rent_no_bedroom_with_cash_rent_1_500_or_more_b25068e9
+  title: 'Bedrooms By Gross Rent: No bedroom > With cash rent > $1 500 or more'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > With cash
+    rent > $1 500 or more.'
+  sql: '"2020_CBG_B25"."B25068e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m9"'
+- name: bedrooms_by_gross_rent_no_bedroom_no_cash_rent_b25068e10
+  title: 'Bedrooms By Gross Rent: No bedroom > No cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. No bedroom > No cash
+    rent.'
+  sql: '"2020_CBG_B25"."B25068e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m10"'
+- name: bedrooms_by_gross_rent_1_bedroom_b25068e11
+  title: 'Bedrooms By Gross Rent: 1 bedroom'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom.'
+  sql: '"2020_CBG_B25"."B25068e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m11"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_b25068e12
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent.'
+  sql: '"2020_CBG_B25"."B25068e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m12"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_less_than_300_b25068e13
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent > Less than $300'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent > Less than $300.'
+  sql: '"2020_CBG_B25"."B25068e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m13"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_300_to_499_b25068e14
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent > $300 to $499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent > $300 to $499.'
+  sql: '"2020_CBG_B25"."B25068e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m14"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_500_to_749_b25068e15
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent > $500 to $749'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent > $500 to $749.'
+  sql: '"2020_CBG_B25"."B25068e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m15"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_750_to_999_b25068e16
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent > $750 to $999'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent > $750 to $999.'
+  sql: '"2020_CBG_B25"."B25068e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m16"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_1_000_to_1_499_b25068e17
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent > $1 000 to $1 499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent > $1 000 to $1 499.'
+  sql: '"2020_CBG_B25"."B25068e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m17"'
+- name: bedrooms_by_gross_rent_1_bedroom_with_cash_rent_1_500_or_more_b25068e18
+  title: 'Bedrooms By Gross Rent: 1 bedroom > With cash rent > $1 500 or more'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > With cash
+    rent > $1 500 or more.'
+  sql: '"2020_CBG_B25"."B25068e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m18"'
+- name: bedrooms_by_gross_rent_1_bedroom_no_cash_rent_b25068e19
+  title: 'Bedrooms By Gross Rent: 1 bedroom > No cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 1 bedroom > No cash rent.'
+  sql: '"2020_CBG_B25"."B25068e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m19"'
+- name: bedrooms_by_gross_rent_2_bedrooms_b25068e20
+  title: 'Bedrooms By Gross Rent: 2 bedrooms'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms.'
+  sql: '"2020_CBG_B25"."B25068e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m20"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_b25068e21
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent.'
+  sql: '"2020_CBG_B25"."B25068e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m21"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_less_than_300_b25068e22
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent > Less than $300'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent > Less than $300.'
+  sql: '"2020_CBG_B25"."B25068e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m22"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_300_to_499_b25068e23
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent > $300 to $499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent > $300 to $499.'
+  sql: '"2020_CBG_B25"."B25068e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m23"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_500_to_749_b25068e24
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent > $500 to $749'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent > $500 to $749.'
+  sql: '"2020_CBG_B25"."B25068e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m24"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_750_to_999_b25068e25
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent > $750 to $999'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent > $750 to $999.'
+  sql: '"2020_CBG_B25"."B25068e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m25"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_1_000_to_1_499_b25068e26
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent > $1 000 to $1 499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent > $1 000 to $1 499.'
+  sql: '"2020_CBG_B25"."B25068e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m26"'
+- name: bedrooms_by_gross_rent_2_bedrooms_with_cash_rent_1_500_or_more_b25068e27
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > With cash rent > $1 500 or more'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > With cash
+    rent > $1 500 or more.'
+  sql: '"2020_CBG_B25"."B25068e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m27"'
+- name: bedrooms_by_gross_rent_2_bedrooms_no_cash_rent_b25068e28
+  title: 'Bedrooms By Gross Rent: 2 bedrooms > No cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 2 bedrooms > No cash
+    rent.'
+  sql: '"2020_CBG_B25"."B25068e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m28"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_b25068e29
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms.'
+  sql: '"2020_CBG_B25"."B25068e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m29"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_b25068e30
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent.'
+  sql: '"2020_CBG_B25"."B25068e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m30"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_less_than_300_b25068e31
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent > Less than $300'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent > Less than $300.'
+  sql: '"2020_CBG_B25"."B25068e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m31"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_300_to_499_b25068e32
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent > $300 to $499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent > $300 to $499.'
+  sql: '"2020_CBG_B25"."B25068e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m32"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_500_to_749_b25068e33
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent > $500 to $749'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent > $500 to $749.'
+  sql: '"2020_CBG_B25"."B25068e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m33"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_750_to_999_b25068e34
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent > $750 to $999'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent > $750 to $999.'
+  sql: '"2020_CBG_B25"."B25068e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m34"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_1_000_to_1_499_b25068e35
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent > $1 000 to $1 499'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent > $1 000 to $1 499.'
+  sql: '"2020_CBG_B25"."B25068e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m35"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_with_cash_rent_1_500_or_more_b25068e36
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > With cash rent > $1 500 or more'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    With cash rent > $1 500 or more.'
+  sql: '"2020_CBG_B25"."B25068e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m36"'
+- name: bedrooms_by_gross_rent_3_or_more_bedrooms_no_cash_rent_b25068e37
+  title: 'Bedrooms By Gross Rent: 3 or more bedrooms > No cash rent'
+  description: 'Bedrooms By Gross Rent. Universe: Renter-occupied housing units. 3 or more bedrooms >
+    No cash rent.'
+  sql: '"2020_CBG_B25"."B25068e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25068m37"'
+- name: inclusion_of_utilities_in_rent_b25069e1
+  title: 'Inclusion Of Utilities In Rent: Total'
+  description: 'Inclusion Of Utilities In Rent. Universe: Renter-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25069e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25069m1"'
+- name: inclusion_of_utilities_in_rent_pay_extra_for_one_or_more_utilities_b25069e2
+  title: 'Inclusion Of Utilities In Rent: Pay extra for one or more utilities'
+  description: 'Inclusion Of Utilities In Rent. Universe: Renter-occupied housing units. Pay extra for
+    one or more utilities.'
+  sql: '"2020_CBG_B25"."B25069e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25069m2"'
+- name: inclusion_of_utilities_in_rent_no_extra_payment_for_any_utilities_b25069e3
+  title: 'Inclusion Of Utilities In Rent: No extra payment for any utilities'
+  description: 'Inclusion Of Utilities In Rent. Universe: Renter-occupied housing units. No extra payment
+    for any utilities.'
+  sql: '"2020_CBG_B25"."B25069e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25069m3"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_b25070e1
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: Total'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. Total.'
+  sql: '"2020_CBG_B25"."B25070e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m1"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_0_percent_b25070e2
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less than 10.0 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. Less than 10.0 percent.'
+  sql: '"2020_CBG_B25"."B25070e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m2"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_0_to_14_9_percent_b25070e3
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 10.0 to 14.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 10.0 to 14.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m3"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_15_0_to_19_9_percent_b25070e4
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 15.0 to 19.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 15.0 to 19.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m4"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_0_to_24_9_percent_b25070e5
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 20.0 to 24.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m5"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_25_0_to_29_9_percent_b25070e6
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 25.0 to 29.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m6"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_30_0_to_34_9_percent_b25070e7
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 30.0 to 34.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m7"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_0_to_39_9_percent_b25070e8
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 35.0 to 39.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m8"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_40_0_to_49_9_percent_b25070e9
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 40.0 to 49.9 percent'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25070e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m9"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_0_percent_or_more_b25070e10
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: 50.0 percent or more'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25070e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m10"'
+- name: gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_not_computed_b25070e11
+  title: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months: Not computed'
+  description: 'Gross Rent As A Percentage Of Household Income In The Past 12 Months. Universe: Renter-occupied
+    housing units. Not computed.'
+  sql: '"2020_CBG_B25"."B25070e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25070m11"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_b25072e1
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Total'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25072e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m1"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_b25072e2
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years.'
+  sql: '"2020_CBG_B25"."B25072e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m2"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_less_than_20_0_percent_b25072e3
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years > Less than 20.0 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25072e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m3"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_20_0_to_24_9_percent_b25072e4
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m4"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_25_0_to_29_9_percent_b25072e5
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m5"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_30_0_to_34_9_percent_b25072e6
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m6"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_35_0_percent_or_more_b25072e7
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years > 35.0 percent or more'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years > 35.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25072e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m7"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_15_to_24_years_not_computed_b25072e8
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 15 to 24 years > Not computed'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 15 to 24 years > Not computed.'
+  sql: '"2020_CBG_B25"."B25072e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m8"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_b25072e9
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years.'
+  sql: '"2020_CBG_B25"."B25072e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m9"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_less_than_20_0_percent_b25072e10
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years > Less than 20.0 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25072e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m10"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_20_0_to_24_9_percent_b25072e11
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m11"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_25_0_to_29_9_percent_b25072e12
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m12"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_30_0_to_34_9_percent_b25072e13
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m13"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_35_0_percent_or_more_b25072e14
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years > 35.0 percent or more'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years > 35.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25072e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m14"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_25_to_34_years_not_computed_b25072e15
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 25 to 34 years > Not computed'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 25 to 34 years > Not computed.'
+  sql: '"2020_CBG_B25"."B25072e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m15"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_b25072e16
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years.'
+  sql: '"2020_CBG_B25"."B25072e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m16"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_less_than_20_0_percent_b25072e17
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years > Less than 20.0 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25072e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m17"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_20_0_to_24_9_percent_b25072e18
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m18"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_25_0_to_29_9_percent_b25072e19
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m19"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_30_0_to_34_9_percent_b25072e20
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m20"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_35_0_percent_or_more_b25072e21
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years > 35.0 percent or more'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years > 35.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25072e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m21"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_35_to_64_years_not_computed_b25072e22
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 35 to 64 years > Not computed'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 35 to 64 years > Not computed.'
+  sql: '"2020_CBG_B25"."B25072e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m22"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_b25072e23
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over.'
+  sql: '"2020_CBG_B25"."B25072e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m23"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_less_than_20_0_percent_b25072e24
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over > Less than 20.0 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25072e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m24"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_20_0_to_24_9_percent_b25072e25
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over > 20.0 to 24.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m25"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_25_0_to_29_9_percent_b25072e26
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over > 25.0 to 29.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m26"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_30_0_to_34_9_percent_b25072e27
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over > 30.0 to 34.9 percent'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25072e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m27"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_35_0_percent_or_more_b25072e28
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over > 35.0 percent or more'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over > 35.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25072e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m28"'
+- name: age_of_householder_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_householder_65_years_and_over_not_computed_b25072e29
+  title: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months:
+    Householder 65 years and over > Not computed'
+  description: 'Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Householder 65 years and over > Not computed.'
+  sql: '"2020_CBG_B25"."B25072e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25072m29"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_b25074e1
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Total'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25074e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m1"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_b25074e2
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000.'
+  sql: '"2020_CBG_B25"."B25074e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m2"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_less_than_20_0_percent_b25074e3
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m3"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_20_0_to_24_9_percent_b25074e4
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m4"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_25_0_to_29_9_percent_b25074e5
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m5"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_30_0_to_34_9_percent_b25074e6
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m6"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_35_0_to_39_9_percent_b25074e7
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m7"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_40_0_to_49_9_percent_b25074e8
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m8"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_50_0_percent_or_more_b25074e9
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m9"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_less_than_10_000_not_computed_b25074e10
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: Less
+    than $10 000 > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. Less than $10 000 > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m10"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_b25074e11
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999.'
+  sql: '"2020_CBG_B25"."B25074e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m11"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_less_than_20_0_percent_b25074e12
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m12"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_20_0_to_24_9_percent_b25074e13
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m13"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_25_0_to_29_9_percent_b25074e14
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m14"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_30_0_to_34_9_percent_b25074e15
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m15"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_35_0_to_39_9_percent_b25074e16
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m16"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_40_0_to_49_9_percent_b25074e17
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m17"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_50_0_percent_or_more_b25074e18
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m18"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_10_000_to_19_999_not_computed_b25074e19
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $10
+    000 to $19 999 > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $10 000 to $19 999 > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m19"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_b25074e20
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999.'
+  sql: '"2020_CBG_B25"."B25074e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m20"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_less_than_20_0_percent_b25074e21
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m21"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_20_0_to_24_9_percent_b25074e22
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m22"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_25_0_to_29_9_percent_b25074e23
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m23"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_30_0_to_34_9_percent_b25074e24
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m24"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_35_0_to_39_9_percent_b25074e25
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m25"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_40_0_to_49_9_percent_b25074e26
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m26"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_50_0_percent_or_more_b25074e27
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m27"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_20_000_to_34_999_not_computed_b25074e28
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $20
+    000 to $34 999 > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $20 000 to $34 999 > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m28"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_b25074e29
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999.'
+  sql: '"2020_CBG_B25"."B25074e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m29"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_less_than_20_0_percent_b25074e30
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m30"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_20_0_to_24_9_percent_b25074e31
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m31"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_25_0_to_29_9_percent_b25074e32
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m32"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_30_0_to_34_9_percent_b25074e33
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m33"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_35_0_to_39_9_percent_b25074e34
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m34"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_40_0_to_49_9_percent_b25074e35
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m35"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_50_0_percent_or_more_b25074e36
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m36"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_35_000_to_49_999_not_computed_b25074e37
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $35
+    000 to $49 999 > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $35 000 to $49 999 > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m37"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_b25074e38
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999.'
+  sql: '"2020_CBG_B25"."B25074e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m38"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_less_than_20_0_percent_b25074e39
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m39"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_20_0_to_24_9_percent_b25074e40
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m40"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_25_0_to_29_9_percent_b25074e41
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m41"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_30_0_to_34_9_percent_b25074e42
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m42"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_35_0_to_39_9_percent_b25074e43
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m43"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_40_0_to_49_9_percent_b25074e44
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m44"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_50_0_percent_or_more_b25074e45
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m45"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_50_000_to_74_999_not_computed_b25074e46
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $50
+    000 to $74 999 > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $50 000 to $74 999 > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m46"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_b25074e47
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999.'
+  sql: '"2020_CBG_B25"."B25074e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m47"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_less_than_20_0_percent_b25074e48
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m48"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_20_0_to_24_9_percent_b25074e49
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m49"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_25_0_to_29_9_percent_b25074e50
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m50"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_30_0_to_34_9_percent_b25074e51
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m51"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_35_0_to_39_9_percent_b25074e52
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m52"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_40_0_to_49_9_percent_b25074e53
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m53"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_50_0_percent_or_more_b25074e54
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m54"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_75_000_to_99_999_not_computed_b25074e55
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $75
+    000 to $99 999 > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $75 000 to $99 999 > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m55"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_b25074e56
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more.'
+  sql: '"2020_CBG_B25"."B25074e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m56"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_less_than_20_0_percent_b25074e57
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > Less than 20.0 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > Less than 20.0 percent.'
+  sql: '"2020_CBG_B25"."B25074e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m57"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_20_0_to_24_9_percent_b25074e58
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > 20.0 to 24.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > 20.0 to 24.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m58"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_25_0_to_29_9_percent_b25074e59
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > 25.0 to 29.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > 25.0 to 29.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m59"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_30_0_to_34_9_percent_b25074e60
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > 30.0 to 34.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > 30.0 to 34.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e60"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m60"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_35_0_to_39_9_percent_b25074e61
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > 35.0 to 39.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > 35.0 to 39.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e61"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m61"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_40_0_to_49_9_percent_b25074e62
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > 40.0 to 49.9 percent'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > 40.0 to 49.9 percent.'
+  sql: '"2020_CBG_B25"."B25074e62"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m62"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_50_0_percent_or_more_b25074e63
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > 50.0 percent or more'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > 50.0 percent or more.'
+  sql: '"2020_CBG_B25"."B25074e63"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m63"'
+- name: household_income_by_gross_rent_as_a_percentage_of_household_income_in_the_past_12_months_100_000_or_more_not_computed_b25074e64
+  title: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months: $100
+    000 or more > Not computed'
+  description: 'Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months.
+    Universe: Renter-occupied housing units. $100 000 or more > Not computed.'
+  sql: '"2020_CBG_B25"."B25074e64"'
+  type: sum
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25074m64"'
+- name: renters_paying_30_percent_or_more
+  title: Renters paying 30% or more of income on rent
+  description: Percentage of renter households whose gross rent is 30% or more of their household income
+    in the past 12 months, out of renter households for which this share can be computed (households with
+    no income, a loss, or no cash rent are left out).
+  sql: 100 * SUM(IFF("2020_CBG_B25"."B25070e7" IS NULL OR "2020_CBG_B25"."B25070e8" IS NULL OR "2020_CBG_B25"."B25070e9"
+    IS NULL OR "2020_CBG_B25"."B25070e10" IS NULL OR "2020_CBG_B25"."B25070e1" IS NULL OR "2020_CBG_B25"."B25070e11"
+    IS NULL, NULL, "2020_CBG_B25"."B25070e7" + "2020_CBG_B25"."B25070e8" + "2020_CBG_B25"."B25070e9" +
+    "2020_CBG_B25"."B25070e10")) / NULLIF(SUM(IFF("2020_CBG_B25"."B25070e7" IS NULL OR "2020_CBG_B25"."B25070e8"
+    IS NULL OR "2020_CBG_B25"."B25070e9" IS NULL OR "2020_CBG_B25"."B25070e10" IS NULL OR "2020_CBG_B25"."B25070e1"
+    IS NULL OR "2020_CBG_B25"."B25070e11" IS NULL, NULL, "2020_CBG_B25"."B25070e1" - "2020_CBG_B25"."B25070e11")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Renter-occupied housing units where rent as a share of income is computed

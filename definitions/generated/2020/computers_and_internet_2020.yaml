@@ -1,0 +1,2530 @@
+name: computers_and_internet_2020
+title: Computers and internet subscriptions (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: types
+  of computers in household; presence and types of internet subscriptions in household; presence of a
+  computer and type of internet subscription in household; household income by presence and type of internet
+  subscription in household; age by presence of a computer and types of internet subscription in household;
+  educational attainment by presence of a computer and types of internet subscription in household; labor
+  force status by presence of a computer and types of internet subscription in household; computers in
+  household; internet subscriptions in household; age and enrollment status by computer ownership and
+  internet subscription status. Some of these are also given by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B28"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B28"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: types_of_computers_in_household_b28001e1
+  title: 'Types Of Computers In Household: Total'
+  description: 'Types Of Computers In Household. Universe: Households. Total.'
+  sql: '"2020_CBG_B28"."B28001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m1"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_b28001e2
+  title: 'Types Of Computers In Household: Has one or more types of computing devices'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices.'
+  sql: '"2020_CBG_B28"."B28001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m2"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_desktop_or_laptop_b28001e3
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Desktop or laptop'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Desktop or laptop.'
+  sql: '"2020_CBG_B28"."B28001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m3"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_desktop_or_laptop_desktop_or_laptop_with_no_other_type_of_computing_device_b28001e4
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Desktop or laptop
+    > Desktop or laptop with no other type of computing device'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Desktop or laptop > Desktop or laptop with no other type of computing device.'
+  sql: '"2020_CBG_B28"."B28001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m4"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_smartphone_b28001e5
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Smartphone'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Smartphone.'
+  sql: '"2020_CBG_B28"."B28001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m5"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_smartphone_smartphone_with_no_other_type_of_computing_device_b28001e6
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Smartphone > Smartphone
+    with no other type of computing device'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Smartphone > Smartphone with no other type of computing device.'
+  sql: '"2020_CBG_B28"."B28001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m6"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_tablet_or_other_portable_wireless_computer_b28001e7
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Tablet or other
+    portable wireless computer'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Tablet or other portable wireless computer.'
+  sql: '"2020_CBG_B28"."B28001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m7"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_tablet_or_other_portable_wireless_computer_tablet_or_other_portable_wireles_b28001e8
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Tablet or other
+    portable wireless computer > Tablet or other portable wireless computer with no other type of computing
+    device'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Tablet or other portable wireless computer > Tablet or other portable wireless computer
+    with no other type of computing device.'
+  sql: '"2020_CBG_B28"."B28001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m8"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_other_computer_b28001e9
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Other computer'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Other computer.'
+  sql: '"2020_CBG_B28"."B28001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m9"'
+- name: types_of_computers_in_household_has_one_or_more_types_of_computing_devices_other_computer_other_computer_with_no_other_type_of_computing_device_b28001e10
+  title: 'Types Of Computers In Household: Has one or more types of computing devices > Other computer
+    > Other computer with no other type of computing device'
+  description: 'Types Of Computers In Household. Universe: Households. Has one or more types of computing
+    devices > Other computer > Other computer with no other type of computing device.'
+  sql: '"2020_CBG_B28"."B28001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m10"'
+- name: types_of_computers_in_household_no_computer_b28001e11
+  title: 'Types Of Computers In Household: No Computer'
+  description: 'Types Of Computers In Household. Universe: Households. No Computer.'
+  sql: '"2020_CBG_B28"."B28001e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28001m11"'
+- name: presence_and_types_of_internet_subscriptions_in_household_b28002e1
+  title: 'Presence And Types Of Internet Subscriptions In Household: Total'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. Total.'
+  sql: '"2020_CBG_B28"."B28002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m1"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_b28002e2
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m2"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_dial_up_with_no_other_type_of_internet_subscription_b28002e3
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Dial-up
+    with no other type of Internet subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Dial-up with no other type of Internet subscription.'
+  sql: '"2020_CBG_B28"."B28002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m3"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_broadband_of_any_type_b28002e4
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Broadband
+    of any type'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Broadband of any type.'
+  sql: '"2020_CBG_B28"."B28002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m4"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_cellular_data_plan_b28002e5
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Cellular
+    data plan'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Cellular data plan.'
+  sql: '"2020_CBG_B28"."B28002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m5"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_cellular_data_plan_cellular_data_plan_with_no_other_type_of_in_b28002e6
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Cellular
+    data plan > Cellular data plan with no other type of Internet subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Cellular data plan > Cellular data plan with no other type of Internet
+    subscription.'
+  sql: '"2020_CBG_B28"."B28002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m6"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_broadband_such_as_cable_fiber_optic_or_dsl_b28002e7
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Broadband
+    such as cable fiber optic or DSL'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Broadband such as cable fiber optic or DSL.'
+  sql: '"2020_CBG_B28"."B28002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m7"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_broadband_such_as_cable_fiber_optic_or_dsl_broadband_such_as_c_b28002e8
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Broadband
+    such as cable fiber optic or DSL > Broadband such as cable fiber optic or DSL with no other type of
+    Internet subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Broadband such as cable fiber optic or DSL > Broadband such as cable fiber
+    optic or DSL with no other type of Internet subscription.'
+  sql: '"2020_CBG_B28"."B28002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m8"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_satellite_internet_service_b28002e9
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Satellite
+    Internet service'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Satellite Internet service.'
+  sql: '"2020_CBG_B28"."B28002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m9"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_satellite_internet_service_satellite_internet_service_with_no__b28002e10
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Satellite
+    Internet service > Satellite Internet service with no other type of Internet subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Satellite Internet service > Satellite Internet service with no other type
+    of Internet subscription.'
+  sql: '"2020_CBG_B28"."B28002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m10"'
+- name: presence_and_types_of_internet_subscriptions_in_household_with_an_internet_subscription_other_service_with_no_other_type_of_internet_subscription_b28002e11
+  title: 'Presence And Types Of Internet Subscriptions In Household: With an Internet subscription > Other
+    service with no other type of Internet subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. With
+    an Internet subscription > Other service with no other type of Internet subscription.'
+  sql: '"2020_CBG_B28"."B28002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m11"'
+- name: presence_and_types_of_internet_subscriptions_in_household_internet_access_without_a_subscription_b28002e12
+  title: 'Presence And Types Of Internet Subscriptions In Household: Internet access without a subscription'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. Internet
+    access without a subscription.'
+  sql: '"2020_CBG_B28"."B28002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m12"'
+- name: presence_and_types_of_internet_subscriptions_in_household_no_internet_access_b28002e13
+  title: 'Presence And Types Of Internet Subscriptions In Household: No Internet access'
+  description: 'Presence And Types Of Internet Subscriptions In Household. Universe: Households. No Internet
+    access.'
+  sql: '"2020_CBG_B28"."B28002e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28002m13"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_b28003e1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Households): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Households.
+    Total.'
+  sql: '"2020_CBG_B28"."B28003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28003m1"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_b28003e2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Households): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Households.
+    Has a computer.'
+  sql: '"2020_CBG_B28"."B28003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28003m2"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_dial_up_internet_subscription_alone_b28003e3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Households): Has a computer
+    > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Households.
+    Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28003m3"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_a_broadband_internet_subscription_b28003e4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Households): Has a computer
+    > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Households.
+    Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28003e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28003m4"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_without_an_internet_subscription_b28003e5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Households): Has a computer
+    > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Households.
+    Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28003e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28003m5"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_no_computer_b28003e6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Households): No computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Households.
+    No computer.'
+  sql: '"2020_CBG_B28"."B28003e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28003m6"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_b28004e1
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: Total'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. Total.'
+  sql: '"2020_CBG_B28"."B28004e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m1"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_less_than_10_000_b28004e2
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: Less than $10 000'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. Less than $10 000.'
+  sql: '"2020_CBG_B28"."B28004e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m2"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_less_than_10_000__b28004e3
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: Less than $10 000 > With dial-up Internet subscription
+    alone'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. Less than $10 000 > With dial-up
+    Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28004e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m3"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_less_than_10_000__b28004e4
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: Less than $10 000 > With a broadband Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. Less than $10 000 > With a broadband
+    Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m4"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_less_than_10_000__b28004e5
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: Less than $10 000 > Without an Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. Less than $10 000 > Without
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m5"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_10_000_to_19_999_b28004e6
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $10 000 to $19 999'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $10 000 to $19 999.'
+  sql: '"2020_CBG_B28"."B28004e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m6"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_10_000_to_19_999__b28004e7
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $10 000 to $19 999 > With dial-up Internet subscription
+    alone'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $10 000 to $19 999 > With dial-up
+    Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28004e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m7"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_10_000_to_19_999__b28004e8
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $10 000 to $19 999 > With a broadband Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $10 000 to $19 999 > With a
+    broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m8"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_10_000_to_19_999__b28004e9
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $10 000 to $19 999 > Without an Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $10 000 to $19 999 > Without
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m9"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_20_000_to_34_999_b28004e10
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $20 000 to $34 999'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $20 000 to $34 999.'
+  sql: '"2020_CBG_B28"."B28004e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m10"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_20_000_to_34_999__b28004e11
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $20 000 to $34 999 > With dial-up Internet subscription
+    alone'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $20 000 to $34 999 > With dial-up
+    Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28004e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m11"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_20_000_to_34_999__b28004e12
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $20 000 to $34 999 > With a broadband Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $20 000 to $34 999 > With a
+    broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m12"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_20_000_to_34_999__b28004e13
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $20 000 to $34 999 > Without an Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $20 000 to $34 999 > Without
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m13"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_35_000_to_49_999_b28004e14
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $35 000 to $49 999'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $35 000 to $49 999.'
+  sql: '"2020_CBG_B28"."B28004e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m14"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_35_000_to_49_999__b28004e15
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $35 000 to $49 999 > With dial-up Internet subscription
+    alone'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $35 000 to $49 999 > With dial-up
+    Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28004e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m15"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_35_000_to_49_999__b28004e16
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $35 000 to $49 999 > With a broadband Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $35 000 to $49 999 > With a
+    broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m16"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_35_000_to_49_999__b28004e17
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $35 000 to $49 999 > Without an Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $35 000 to $49 999 > Without
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m17"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_50_000_to_74_999_b28004e18
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $50 000 to $74 999'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $50 000 to $74 999.'
+  sql: '"2020_CBG_B28"."B28004e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m18"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_50_000_to_74_999__b28004e19
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $50 000 to $74 999 > With dial-up Internet subscription
+    alone'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $50 000 to $74 999 > With dial-up
+    Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28004e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m19"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_50_000_to_74_999__b28004e20
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $50 000 to $74 999 > With a broadband Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $50 000 to $74 999 > With a
+    broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m20"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_50_000_to_74_999__b28004e21
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $50 000 to $74 999 > Without an Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $50 000 to $74 999 > Without
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m21"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_75_000_or_more_b28004e22
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $75 000 or more'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $75 000 or more.'
+  sql: '"2020_CBG_B28"."B28004e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m22"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_75_000_or_more_wi_b28004e23
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $75 000 or more > With dial-up Internet subscription alone'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $75 000 or more > With dial-up
+    Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28004e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m23"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_75_000_or_more_wi_b28004e24
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $75 000 or more > With a broadband Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $75 000 or more > With a broadband
+    Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m24"'
+- name: household_income_in_the_last_12_months_in_2020_inflation_adjusted_dollars_by_presence_and_type_of_internet_subscription_in_household_75_000_or_more_wi_b28004e25
+  title: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence And
+    Type Of Internet Subscription In Household: $75 000 or more > Without an Internet subscription'
+  description: 'Household Income In The Last 12 Months (In 2020 Inflation-Adjusted Dollars) By Presence
+    And Type Of Internet Subscription In Household. Universe: Households. $75 000 or more > Without an
+    Internet subscription.'
+  sql: '"2020_CBG_B28"."B28004e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28004m25"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_b28005e1
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Total'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Total.'
+  sql: '"2020_CBG_B28"."B28005e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m1"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_under_18_years_b28005e2
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Under 18 years'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Under 18 years.'
+  sql: '"2020_CBG_B28"."B28005e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m2"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_under_18_years_has_a_computer_b28005e3
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Under 18 years
+    > Has a computer'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Under 18 years > Has a computer.'
+  sql: '"2020_CBG_B28"."B28005e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m3"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_under_18_years_has_a_computer_with_dial_up_internet_subscription_alone_b28005e4
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Under 18 years
+    > Has a computer > With dial-up Internet subscription alone'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Under 18 years > Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28005e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m4"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_under_18_years_has_a_computer_with_a_broadband_internet_subscription_b28005e5
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Under 18 years
+    > Has a computer > With a broadband Internet subscription'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Under 18 years > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28005e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m5"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_under_18_years_has_a_computer_without_an_internet_subscription_b28005e6
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Under 18 years
+    > Has a computer > Without an Internet subscription'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Under 18 years > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28005e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m6"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_under_18_years_no_computer_b28005e7
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: Under 18 years
+    > No computer'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. Under 18 years > No computer.'
+  sql: '"2020_CBG_B28"."B28005e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m7"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_18_to_64_years_b28005e8
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 18 to 64 years'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 18 to 64 years.'
+  sql: '"2020_CBG_B28"."B28005e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m8"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_18_to_64_years_has_a_computer_b28005e9
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 18 to 64 years
+    > Has a computer'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 18 to 64 years > Has a computer.'
+  sql: '"2020_CBG_B28"."B28005e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m9"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_18_to_64_years_has_a_computer_with_dial_up_internet_subscription_alone_b28005e10
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 18 to 64 years
+    > Has a computer > With dial-up Internet subscription alone'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 18 to 64 years > Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28005e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m10"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_18_to_64_years_has_a_computer_with_a_broadband_internet_subscription_b28005e11
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 18 to 64 years
+    > Has a computer > With a broadband Internet subscription'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 18 to 64 years > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28005e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m11"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_18_to_64_years_has_a_computer_without_an_internet_subscription_b28005e12
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 18 to 64 years
+    > Has a computer > Without an Internet subscription'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 18 to 64 years > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28005e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m12"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_18_to_64_years_no_computer_b28005e13
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 18 to 64 years
+    > No computer'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 18 to 64 years > No computer.'
+  sql: '"2020_CBG_B28"."B28005e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m13"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_65_years_and_over_b28005e14
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 65 years and
+    over'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 65 years and over.'
+  sql: '"2020_CBG_B28"."B28005e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m14"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_65_years_and_over_has_a_computer_b28005e15
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 65 years and
+    over > Has a computer'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 65 years and over > Has a computer.'
+  sql: '"2020_CBG_B28"."B28005e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m15"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_65_years_and_over_has_a_computer_with_dial_up_internet_subscription_alon_b28005e16
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 65 years and
+    over > Has a computer > With dial-up Internet subscription alone'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 65 years and over > Has a computer > With dial-up Internet subscription
+    alone.'
+  sql: '"2020_CBG_B28"."B28005e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m16"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_65_years_and_over_has_a_computer_with_a_broadband_internet_subscription_b28005e17
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 65 years and
+    over > Has a computer > With a broadband Internet subscription'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 65 years and over > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28005e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m17"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_65_years_and_over_has_a_computer_without_an_internet_subscription_b28005e18
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 65 years and
+    over > Has a computer > Without an Internet subscription'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 65 years and over > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28005e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m18"'
+- name: age_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_65_years_and_over_no_computer_b28005e19
+  title: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household: 65 years and
+    over > No computer'
+  description: 'Age By Presence Of A Computer And Types Of Internet Subscription In Household. Universe:
+    Population in Households. 65 years and over > No computer.'
+  sql: '"2020_CBG_B28"."B28005e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28005m19"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_b28006e1
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Total'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Total.'
+  sql: '"2020_CBG_B28"."B28006e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m1"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_less_than_high_school_graduate_or_equivalency_b28006e2
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Less than high school graduate or equivalency'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Less than high school graduate or equivalency.'
+  sql: '"2020_CBG_B28"."B28006e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m2"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_less_than_high_school_graduate_or_equivalency_has_a_c_b28006e3
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Less than high school graduate or equivalency > Has a computer'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Less than high school graduate or equivalency
+    > Has a computer.'
+  sql: '"2020_CBG_B28"."B28006e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m3"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_less_than_high_school_graduate_or_equivalency_has_a_c_b28006e4
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Less than high school graduate or equivalency > Has a computer > With dial-up Internet subscription
+    alone'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Less than high school graduate or equivalency
+    > Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28006e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m4"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_less_than_high_school_graduate_or_equivalency_has_a_c_b28006e5
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Less than high school graduate or equivalency > Has a computer > With a broadband Internet subscription'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Less than high school graduate or equivalency
+    > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28006e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m5"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_less_than_high_school_graduate_or_equivalency_has_a_c_b28006e6
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Less than high school graduate or equivalency > Has a computer > Without an Internet subscription'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Less than high school graduate or equivalency
+    > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28006e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m6"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_less_than_high_school_graduate_or_equivalency_no_comp_b28006e7
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Less than high school graduate or equivalency > No computer'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Less than high school graduate or equivalency
+    > No computer.'
+  sql: '"2020_CBG_B28"."B28006e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m7"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_high_school_graduate_includes_equivalency_some_colleg_b28006e8
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    High school graduate (includes equivalency) some college or associate''s degree'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. High school graduate (includes equivalency)
+    some college or associate''s degree.'
+  sql: '"2020_CBG_B28"."B28006e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m8"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_high_school_graduate_includes_equivalency_some_colleg_b28006e9
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    High school graduate (includes equivalency) some college or associate''s degree > Has a computer'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. High school graduate (includes equivalency)
+    some college or associate''s degree > Has a computer.'
+  sql: '"2020_CBG_B28"."B28006e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m9"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_high_school_graduate_includes_equivalency_some_colleg_b28006e10
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    High school graduate (includes equivalency) some college or associate''s degree > Has a computer >
+    With dial-up Internet subscription alone'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. High school graduate (includes equivalency)
+    some college or associate''s degree > Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28006e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m10"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_high_school_graduate_includes_equivalency_some_colleg_b28006e11
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    High school graduate (includes equivalency) some college or associate''s degree > Has a computer >
+    With a broadband Internet subscription'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. High school graduate (includes equivalency)
+    some college or associate''s degree > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28006e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m11"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_high_school_graduate_includes_equivalency_some_colleg_b28006e12
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    High school graduate (includes equivalency) some college or associate''s degree > Has a computer >
+    Without an Internet subscription'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. High school graduate (includes equivalency)
+    some college or associate''s degree > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28006e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m12"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_high_school_graduate_includes_equivalency_some_colleg_b28006e13
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    High school graduate (includes equivalency) some college or associate''s degree > No computer'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. High school graduate (includes equivalency)
+    some college or associate''s degree > No computer.'
+  sql: '"2020_CBG_B28"."B28006e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m13"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_bachelor_s_degree_or_higher_b28006e14
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Bachelor''s degree or higher'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Bachelor''s degree or higher.'
+  sql: '"2020_CBG_B28"."B28006e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m14"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_bachelor_s_degree_or_higher_has_a_computer_b28006e15
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Bachelor''s degree or higher > Has a computer'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Bachelor''s degree or higher > Has a
+    computer.'
+  sql: '"2020_CBG_B28"."B28006e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m15"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_bachelor_s_degree_or_higher_has_a_computer_with_dial__b28006e16
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Bachelor''s degree or higher > Has a computer > With dial-up Internet subscription alone'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Bachelor''s degree or higher > Has a
+    computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28006e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m16"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_bachelor_s_degree_or_higher_has_a_computer_with_a_bro_b28006e17
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Bachelor''s degree or higher > Has a computer > With a broadband Internet subscription'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Bachelor''s degree or higher > Has a
+    computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28006e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m17"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_bachelor_s_degree_or_higher_has_a_computer_without_an_b28006e18
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Bachelor''s degree or higher > Has a computer > Without an Internet subscription'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Bachelor''s degree or higher > Has a
+    computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28006e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m18"'
+- name: educational_attainment_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_bachelor_s_degree_or_higher_no_computer_b28006e19
+  title: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Bachelor''s degree or higher > No computer'
+  description: 'Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In
+    Household. Universe: Household population 25 years and over. Bachelor''s degree or higher > No computer.'
+  sql: '"2020_CBG_B28"."B28006e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Household population 25 years and over
+    moe_sql: '"2020_CBG_B28"."B28006m19"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_b28007e1
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Total'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Total.'
+  sql: '"2020_CBG_B28"."B28007e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m1"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_b28007e2
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force.'
+  sql: '"2020_CBG_B28"."B28007e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m2"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_employed_b28007e3
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Employed'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Employed.'
+  sql: '"2020_CBG_B28"."B28007e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m3"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_employed_has_a_computer_b28007e4
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Employed > Has a computer'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Employed
+    > Has a computer.'
+  sql: '"2020_CBG_B28"."B28007e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m4"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_employed_has_a_computer_with__b28007e5
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Employed > Has a computer > With dial-up Internet subscription alone'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Employed
+    > Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28007e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m5"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_employed_has_a_computer_with__b28007e6
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Employed > Has a computer > With a broadband Internet subscription'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Employed
+    > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28007e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m6"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_employed_has_a_computer_witho_b28007e7
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Employed > Has a computer > Without an Internet subscription'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Employed
+    > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28007e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m7"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_employed_no_computer_b28007e8
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Employed > No computer'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Employed
+    > No computer.'
+  sql: '"2020_CBG_B28"."B28007e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m8"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_unemployed_b28007e9
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Unemployed'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Unemployed.'
+  sql: '"2020_CBG_B28"."B28007e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m9"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_unemployed_has_a_computer_b28007e10
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Unemployed > Has a computer'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Unemployed
+    > Has a computer.'
+  sql: '"2020_CBG_B28"."B28007e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m10"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_unemployed_has_a_computer_wit_b28007e11
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Unemployed > Has a computer > With dial-up Internet subscription alone'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Unemployed
+    > Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28007e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m11"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_unemployed_has_a_computer_wit_b28007e12
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Unemployed > Has a computer > With a broadband Internet subscription'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Unemployed
+    > Has a computer > With a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28007e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m12"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_unemployed_has_a_computer_wit_b28007e13
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Unemployed > Has a computer > Without an Internet subscription'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Unemployed
+    > Has a computer > Without an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28007e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m13"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_in_the_civilian_labor_force_unemployed_no_computer_b28007e14
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    In the civilian labor force > Unemployed > No computer'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. In the civilian labor force > Unemployed
+    > No computer.'
+  sql: '"2020_CBG_B28"."B28007e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m14"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_not_in_labor_force_b28007e15
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Not in labor force'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Not in labor force.'
+  sql: '"2020_CBG_B28"."B28007e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m15"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_not_in_labor_force_has_a_computer_b28007e16
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Not in labor force > Has a computer'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Not in labor force > Has a computer.'
+  sql: '"2020_CBG_B28"."B28007e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m16"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_not_in_labor_force_has_a_computer_with_dial_up_internet_s_b28007e17
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Not in labor force > Has a computer > With dial-up Internet subscription alone'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Not in labor force > Has a computer > With
+    dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28007e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m17"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_not_in_labor_force_has_a_computer_with_a_broadband_intern_b28007e18
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Not in labor force > Has a computer > With a broadband Internet subscription'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Not in labor force > Has a computer > With
+    a broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28007e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m18"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_not_in_labor_force_has_a_computer_without_an_internet_sub_b28007e19
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Not in labor force > Has a computer > Without an Internet subscription'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Not in labor force > Has a computer > Without
+    an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28007e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m19"'
+- name: labor_force_status_by_presence_of_a_computer_and_types_of_internet_subscription_in_household_not_in_labor_force_no_computer_b28007e20
+  title: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household:
+    Not in labor force > No computer'
+  description: 'Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household.
+    Universe: Civilian household population 16 years and over. Not in labor force > No computer.'
+  sql: '"2020_CBG_B28"."B28007e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian household population 16 years and over
+    moe_sql: '"2020_CBG_B28"."B28007m20"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_b28008e1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Total.'
+  sql: '"2020_CBG_B28"."B28008e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m1"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_b28008e2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer.'
+  sql: '"2020_CBG_B28"."B28008e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m2"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_dial_up_internet_subscription_alone_b28008e3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > With dial-up Internet subscription alone.'
+  sql: '"2020_CBG_B28"."B28008e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m3"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_a_broadband_subscription_b28008e4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > With a broadband subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > With a broadband subscription.'
+  sql: '"2020_CBG_B28"."B28008e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m4"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_a_broadband_subscription_with_a_fixed_broadband_internet_sub_b28008e5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > With a broadband subscription > With a fixed broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > With a broadband subscription > With a fixed broadband Internet subscription.'
+  sql: '"2020_CBG_B28"."B28008e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m5"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_a_broadband_subscription_with_a_fixed_broadband_internet_sub_b28008e6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > With a broadband subscription > With a fixed broadband Internet subscription > With
+    a cellular data plan'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > With a broadband subscription > With a fixed broadband Internet subscription
+    > With a cellular data plan.'
+  sql: '"2020_CBG_B28"."B28008e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m6"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_a_broadband_subscription_with_a_fixed_broadband_internet_sub_b28008e7
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > With a broadband subscription > With a fixed broadband Internet subscription > Without
+    a cellular data plan'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > With a broadband subscription > With a fixed broadband Internet subscription
+    > Without a cellular data plan.'
+  sql: '"2020_CBG_B28"."B28008e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m7"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_with_a_broadband_subscription_cellular_data_plan_alone_or_with_di_b28008e8
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > With a broadband subscription > Cellular data plan alone or with dial-up'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > With a broadband subscription > Cellular data plan alone or with dial-up.'
+  sql: '"2020_CBG_B28"."B28008e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m8"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_has_a_computer_without_internet_subscription_b28008e9
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    Has a computer > Without Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. Has a computer > Without Internet subscription.'
+  sql: '"2020_CBG_B28"."B28008e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m9"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_no_computer_b28008e10
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Population in Households):
+    No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household. Universe: Population
+    in Households. No Computer.'
+  sql: '"2020_CBG_B28"."B28008e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28008m10"'
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_b28009ae1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone). Universe:
+    White alone household population. Total (White alone; also called White).'
+  sql: '"2020_CBG_B28"."B28009Ae1"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Am1"'
+    population_group: A
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_has_a_computer_b28009ae2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone). Universe:
+    White alone household population. Has a computer (White alone; also called White).'
+  sql: '"2020_CBG_B28"."B28009Ae2"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Am2"'
+    population_group: A
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_has_a_computer_with_dial_up_internet_subscription_alone_b28009ae3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone): Has a computer
+    > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone). Universe:
+    White alone household population. Has a computer > With dial-up Internet subscription alone (White
+    alone; also called White).'
+  sql: '"2020_CBG_B28"."B28009Ae3"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Am3"'
+    population_group: A
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_has_a_computer_with_a_broadband_internet_subscription_b28009ae4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone): Has a computer
+    > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone). Universe:
+    White alone household population. Has a computer > With a broadband Internet subscription (White alone;
+    also called White).'
+  sql: '"2020_CBG_B28"."B28009Ae4"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Am4"'
+    population_group: A
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_has_a_computer_without_an_internet_subscription_b28009ae5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone): Has a computer
+    > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone). Universe:
+    White alone household population. Has a computer > Without an Internet subscription (White alone;
+    also called White).'
+  sql: '"2020_CBG_B28"."B28009Ae5"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Am5"'
+    population_group: A
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_no_computer_b28009ae6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone): No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone). Universe:
+    White alone household population. No Computer (White alone; also called White).'
+  sql: '"2020_CBG_B28"."B28009Ae6"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Am6"'
+    population_group: A
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_black_or_african_american_alone_b28009be1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African American
+    Alone): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African
+    American Alone). Universe: Black or African American alone household population. Total (Black or African
+    American alone; also called Black, African American).'
+  sql: '"2020_CBG_B28"."B28009Be1"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Bm1"'
+    population_group: B
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_black_or_african_american_alone_has_a_computer_b28009be2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African American
+    Alone): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African
+    American Alone). Universe: Black or African American alone household population. Has a computer (Black
+    or African American alone; also called Black, African American).'
+  sql: '"2020_CBG_B28"."B28009Be2"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Bm2"'
+    population_group: B
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_black_or_african_american_alone_has_a_computer_with_dial_up_internet_subscriptio_b28009be3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African American
+    Alone): Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African
+    American Alone). Universe: Black or African American alone household population. Has a computer >
+    With dial-up Internet subscription alone (Black or African American alone; also called Black, African
+    American).'
+  sql: '"2020_CBG_B28"."B28009Be3"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Bm3"'
+    population_group: B
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_black_or_african_american_alone_has_a_computer_with_a_broadband_internet_subscri_b28009be4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African American
+    Alone): Has a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African
+    American Alone). Universe: Black or African American alone household population. Has a computer >
+    With a broadband Internet subscription (Black or African American alone; also called Black, African
+    American).'
+  sql: '"2020_CBG_B28"."B28009Be4"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Bm4"'
+    population_group: B
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_black_or_african_american_alone_has_a_computer_without_an_internet_subscription_b28009be5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African American
+    Alone): Has a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African
+    American Alone). Universe: Black or African American alone household population. Has a computer >
+    Without an Internet subscription (Black or African American alone; also called Black, African American).'
+  sql: '"2020_CBG_B28"."B28009Be5"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Bm5"'
+    population_group: B
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_black_or_african_american_alone_no_computer_b28009be6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African American
+    Alone): No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Black Or African
+    American Alone). Universe: Black or African American alone household population. No Computer (Black
+    or African American alone; also called Black, African American).'
+  sql: '"2020_CBG_B28"."B28009Be6"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Bm6"'
+    population_group: B
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_american_indian_and_alaska_native_alone_b28009ce1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian And Alaska
+    Native Alone): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian
+    And Alaska Native Alone). Universe: American Indian and Alaska Native alone household population.
+    Total (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B28"."B28009Ce1"'
+  type: sum
+  format: number
+  meta:
+    universe: American Indian and Alaska Native alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Cm1"'
+    population_group: C
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_american_indian_and_alaska_native_alone_has_a_computer_b28009ce2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian And Alaska
+    Native Alone): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian
+    And Alaska Native Alone). Universe: American Indian and Alaska Native alone household population.
+    Has a computer (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B28"."B28009Ce2"'
+  type: sum
+  format: number
+  meta:
+    universe: American Indian and Alaska Native alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Cm2"'
+    population_group: C
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_american_indian_and_alaska_native_alone_has_a_computer_with_dial_up_internet_sub_b28009ce3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian And Alaska
+    Native Alone): Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian
+    And Alaska Native Alone). Universe: American Indian and Alaska Native alone household population.
+    Has a computer > With dial-up Internet subscription alone (American Indian and Alaska Native alone;
+    also called Native American).'
+  sql: '"2020_CBG_B28"."B28009Ce3"'
+  type: sum
+  format: number
+  meta:
+    universe: American Indian and Alaska Native alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Cm3"'
+    population_group: C
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_american_indian_and_alaska_native_alone_has_a_computer_with_a_broadband_internet_b28009ce4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian And Alaska
+    Native Alone): Has a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian
+    And Alaska Native Alone). Universe: American Indian and Alaska Native alone household population.
+    Has a computer > With a broadband Internet subscription (American Indian and Alaska Native alone;
+    also called Native American).'
+  sql: '"2020_CBG_B28"."B28009Ce4"'
+  type: sum
+  format: number
+  meta:
+    universe: American Indian and Alaska Native alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Cm4"'
+    population_group: C
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_american_indian_and_alaska_native_alone_has_a_computer_without_an_internet_subsc_b28009ce5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian And Alaska
+    Native Alone): Has a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian
+    And Alaska Native Alone). Universe: American Indian and Alaska Native alone household population.
+    Has a computer > Without an Internet subscription (American Indian and Alaska Native alone; also called
+    Native American).'
+  sql: '"2020_CBG_B28"."B28009Ce5"'
+  type: sum
+  format: number
+  meta:
+    universe: American Indian and Alaska Native alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Cm5"'
+    population_group: C
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_american_indian_and_alaska_native_alone_no_computer_b28009ce6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian And Alaska
+    Native Alone): No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (American Indian
+    And Alaska Native Alone). Universe: American Indian and Alaska Native alone household population.
+    No Computer (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B28"."B28009Ce6"'
+  type: sum
+  format: number
+  meta:
+    universe: American Indian and Alaska Native alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Cm6"'
+    population_group: C
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_asian_alone_b28009de1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone). Universe:
+    Asian alone household population. Total (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B28"."B28009De1"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Dm1"'
+    population_group: D
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_asian_alone_has_a_computer_b28009de2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone). Universe:
+    Asian alone household population. Has a computer (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B28"."B28009De2"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Dm2"'
+    population_group: D
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_asian_alone_has_a_computer_with_dial_up_internet_subscription_alone_b28009de3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone): Has a computer
+    > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone). Universe:
+    Asian alone household population. Has a computer > With dial-up Internet subscription alone (Asian
+    alone; also called Asian).'
+  sql: '"2020_CBG_B28"."B28009De3"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Dm3"'
+    population_group: D
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_asian_alone_has_a_computer_with_a_broadband_internet_subscription_b28009de4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone): Has a computer
+    > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone). Universe:
+    Asian alone household population. Has a computer > With a broadband Internet subscription (Asian alone;
+    also called Asian).'
+  sql: '"2020_CBG_B28"."B28009De4"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Dm4"'
+    population_group: D
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_asian_alone_has_a_computer_without_an_internet_subscription_b28009de5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone): Has a computer
+    > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone). Universe:
+    Asian alone household population. Has a computer > Without an Internet subscription (Asian alone;
+    also called Asian).'
+  sql: '"2020_CBG_B28"."B28009De5"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Dm5"'
+    population_group: D
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_asian_alone_no_computer_b28009de6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone): No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Asian Alone). Universe:
+    Asian alone household population. No Computer (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B28"."B28009De6"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Dm6"'
+    population_group: D
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_native_hawaiian_and_other_pacific_islander_alone_b28009ee1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian And Other
+    Pacific Islander Alone): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian and Other Pacific Islander alone household
+    population. Total (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander,
+    Native Hawaiian).'
+  sql: '"2020_CBG_B28"."B28009Ee1"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Em1"'
+    population_group: E
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_native_hawaiian_and_other_pacific_islander_alone_has_a_computer_b28009ee2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian And Other
+    Pacific Islander Alone): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian and Other Pacific Islander alone household
+    population. Has a computer (Native Hawaiian and Other Pacific Islander alone; also called Pacific
+    Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B28"."B28009Ee2"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Em2"'
+    population_group: E
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_native_hawaiian_and_other_pacific_islander_alone_has_a_computer_with_dial_up_int_b28009ee3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian And Other
+    Pacific Islander Alone): Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian and Other Pacific Islander alone household
+    population. Has a computer > With dial-up Internet subscription alone (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B28"."B28009Ee3"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Em3"'
+    population_group: E
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_native_hawaiian_and_other_pacific_islander_alone_has_a_computer_with_a_broadband_b28009ee4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian And Other
+    Pacific Islander Alone): Has a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian and Other Pacific Islander alone household
+    population. Has a computer > With a broadband Internet subscription (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B28"."B28009Ee4"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Em4"'
+    population_group: E
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_native_hawaiian_and_other_pacific_islander_alone_has_a_computer_without_an_inter_b28009ee5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian And Other
+    Pacific Islander Alone): Has a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian and Other Pacific Islander alone household
+    population. Has a computer > Without an Internet subscription (Native Hawaiian and Other Pacific Islander
+    alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B28"."B28009Ee5"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Em5"'
+    population_group: E
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_native_hawaiian_and_other_pacific_islander_alone_no_computer_b28009ee6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian And Other
+    Pacific Islander Alone): No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian and Other Pacific Islander alone household
+    population. No Computer (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander,
+    Native Hawaiian).'
+  sql: '"2020_CBG_B28"."B28009Ee6"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Em6"'
+    population_group: E
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_some_other_race_alone_b28009fe1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race Alone):
+    Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race
+    Alone). Universe: Some other race alone household population. Total (Some other race alone).'
+  sql: '"2020_CBG_B28"."B28009Fe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Fm1"'
+    population_group: F
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_some_other_race_alone_has_a_computer_b28009fe2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race Alone):
+    Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race
+    Alone). Universe: Some other race alone household population. Has a computer (Some other race alone).'
+  sql: '"2020_CBG_B28"."B28009Fe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Fm2"'
+    population_group: F
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_some_other_race_alone_has_a_computer_with_dial_up_internet_subscription_alone_b28009fe3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race Alone):
+    Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race
+    Alone). Universe: Some other race alone household population. Has a computer > With dial-up Internet
+    subscription alone (Some other race alone).'
+  sql: '"2020_CBG_B28"."B28009Fe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Fm3"'
+    population_group: F
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_some_other_race_alone_has_a_computer_with_a_broadband_internet_subscription_b28009fe4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race Alone):
+    Has a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race
+    Alone). Universe: Some other race alone household population. Has a computer > With a broadband Internet
+    subscription (Some other race alone).'
+  sql: '"2020_CBG_B28"."B28009Fe4"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Fm4"'
+    population_group: F
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_some_other_race_alone_has_a_computer_without_an_internet_subscription_b28009fe5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race Alone):
+    Has a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race
+    Alone). Universe: Some other race alone household population. Has a computer > Without an Internet
+    subscription (Some other race alone).'
+  sql: '"2020_CBG_B28"."B28009Fe5"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Fm5"'
+    population_group: F
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_some_other_race_alone_no_computer_b28009fe6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race Alone):
+    No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Some Other Race
+    Alone). Universe: Some other race alone household population. No Computer (Some other race alone).'
+  sql: '"2020_CBG_B28"."B28009Fe6"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone household population
+    moe_sql: '"2020_CBG_B28"."B28009Fm6"'
+    population_group: F
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_two_or_more_races_b28009ge1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races).
+    Universe: Two or more races household population. Total (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2020_CBG_B28"."B28009Ge1"'
+  type: sum
+  format: number
+  meta:
+    universe: Two or more races household population
+    moe_sql: '"2020_CBG_B28"."B28009Gm1"'
+    population_group: G
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_two_or_more_races_has_a_computer_b28009ge2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races): Has
+    a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races).
+    Universe: Two or more races household population. Has a computer (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2020_CBG_B28"."B28009Ge2"'
+  type: sum
+  format: number
+  meta:
+    universe: Two or more races household population
+    moe_sql: '"2020_CBG_B28"."B28009Gm2"'
+    population_group: G
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_two_or_more_races_has_a_computer_with_dial_up_internet_subscription_alone_b28009ge3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races): Has
+    a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races).
+    Universe: Two or more races household population. Has a computer > With dial-up Internet subscription
+    alone (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B28"."B28009Ge3"'
+  type: sum
+  format: number
+  meta:
+    universe: Two or more races household population
+    moe_sql: '"2020_CBG_B28"."B28009Gm3"'
+    population_group: G
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_two_or_more_races_has_a_computer_with_a_broadband_internet_subscription_b28009ge4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races): Has
+    a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races).
+    Universe: Two or more races household population. Has a computer > With a broadband Internet subscription
+    (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B28"."B28009Ge4"'
+  type: sum
+  format: number
+  meta:
+    universe: Two or more races household population
+    moe_sql: '"2020_CBG_B28"."B28009Gm4"'
+    population_group: G
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_two_or_more_races_has_a_computer_without_an_internet_subscription_b28009ge5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races): Has
+    a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races).
+    Universe: Two or more races household population. Has a computer > Without an Internet subscription
+    (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B28"."B28009Ge5"'
+  type: sum
+  format: number
+  meta:
+    universe: Two or more races household population
+    moe_sql: '"2020_CBG_B28"."B28009Gm5"'
+    population_group: G
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_two_or_more_races_no_computer_b28009ge6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races): No
+    Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Two Or More Races).
+    Universe: Two or more races household population. No Computer (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2020_CBG_B28"."B28009Ge6"'
+  type: sum
+  format: number
+  meta:
+    universe: Two or more races household population
+    moe_sql: '"2020_CBG_B28"."B28009Gm6"'
+    population_group: G
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_not_hispanic_or_latino_b28009he1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not Hispanic
+    Or Latino): Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not
+    Hispanic Or Latino). Universe: White alone, not Hispanic or Latino household population. Total (White
+    alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B28"."B28009He1"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone, not Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Hm1"'
+    population_group: H
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_not_hispanic_or_latino_has_a_computer_b28009he2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not Hispanic
+    Or Latino): Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not
+    Hispanic Or Latino). Universe: White alone, not Hispanic or Latino household population. Has a computer
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B28"."B28009He2"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone, not Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Hm2"'
+    population_group: H
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_not_hispanic_or_latino_has_a_computer_with_dial_up_internet_subscrip_b28009he3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not Hispanic
+    Or Latino): Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not
+    Hispanic Or Latino). Universe: White alone, not Hispanic or Latino household population. Has a computer
+    > With dial-up Internet subscription alone (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2020_CBG_B28"."B28009He3"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone, not Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Hm3"'
+    population_group: H
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_not_hispanic_or_latino_has_a_computer_with_a_broadband_internet_subs_b28009he4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not Hispanic
+    Or Latino): Has a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not
+    Hispanic Or Latino). Universe: White alone, not Hispanic or Latino household population. Has a computer
+    > With a broadband Internet subscription (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2020_CBG_B28"."B28009He4"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone, not Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Hm4"'
+    population_group: H
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_not_hispanic_or_latino_has_a_computer_without_an_internet_subscripti_b28009he5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not Hispanic
+    Or Latino): Has a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not
+    Hispanic Or Latino). Universe: White alone, not Hispanic or Latino household population. Has a computer
+    > Without an Internet subscription (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2020_CBG_B28"."B28009He5"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone, not Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Hm5"'
+    population_group: H
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_white_alone_not_hispanic_or_latino_no_computer_b28009he6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not Hispanic
+    Or Latino): No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (White Alone, Not
+    Hispanic Or Latino). Universe: White alone, not Hispanic or Latino household population. No Computer
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B28"."B28009He6"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone, not Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Hm6"'
+    population_group: H
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_hispanic_or_latino_b28009ie1
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino):
+    Total'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino).
+    Universe: Hispanic or Latino household population. Total (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2020_CBG_B28"."B28009Ie1"'
+  type: sum
+  format: number
+  meta:
+    universe: Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Im1"'
+    population_group: I
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_hispanic_or_latino_has_a_computer_b28009ie2
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino):
+    Has a computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino).
+    Universe: Hispanic or Latino household population. Has a computer (Hispanic or Latino; also called
+    Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B28"."B28009Ie2"'
+  type: sum
+  format: number
+  meta:
+    universe: Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Im2"'
+    population_group: I
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_hispanic_or_latino_has_a_computer_with_dial_up_internet_subscription_alone_b28009ie3
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino):
+    Has a computer > With dial-up Internet subscription alone'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino).
+    Universe: Hispanic or Latino household population. Has a computer > With dial-up Internet subscription
+    alone (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B28"."B28009Ie3"'
+  type: sum
+  format: number
+  meta:
+    universe: Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Im3"'
+    population_group: I
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_hispanic_or_latino_has_a_computer_with_a_broadband_internet_subscription_b28009ie4
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino):
+    Has a computer > With a broadband Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino).
+    Universe: Hispanic or Latino household population. Has a computer > With a broadband Internet subscription
+    (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B28"."B28009Ie4"'
+  type: sum
+  format: number
+  meta:
+    universe: Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Im4"'
+    population_group: I
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_hispanic_or_latino_has_a_computer_without_an_internet_subscription_b28009ie5
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino):
+    Has a computer > Without an Internet subscription'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino).
+    Universe: Hispanic or Latino household population. Has a computer > Without an Internet subscription
+    (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B28"."B28009Ie5"'
+  type: sum
+  format: number
+  meta:
+    universe: Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Im5"'
+    population_group: I
+- name: presence_of_a_computer_and_type_of_internet_subscription_in_household_hispanic_or_latino_no_computer_b28009ie6
+  title: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino):
+    No Computer'
+  description: 'Presence Of A Computer And Type Of Internet Subscription In Household (Hispanic Or Latino).
+    Universe: Hispanic or Latino household population. No Computer (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2020_CBG_B28"."B28009Ie6"'
+  type: sum
+  format: number
+  meta:
+    universe: Hispanic or Latino household population
+    moe_sql: '"2020_CBG_B28"."B28009Im6"'
+    population_group: I
+- name: computers_in_household_b28010e1
+  title: 'Computers In Household: Total'
+  description: 'Computers In Household. Universe: Households. Total.'
+  sql: '"2020_CBG_B28"."B28010e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m1"'
+- name: computers_in_household_has_one_or_more_types_of_computing_devices_b28010e2
+  title: 'Computers In Household: Has one or more types of computing devices'
+  description: 'Computers In Household. Universe: Households. Has one or more types of computing devices.'
+  sql: '"2020_CBG_B28"."B28010e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m2"'
+- name: computers_in_household_has_one_or_more_types_of_computing_devices_desktop_or_laptop_b28010e3
+  title: 'Computers In Household: Has one or more types of computing devices > Desktop or laptop'
+  description: 'Computers In Household. Universe: Households. Has one or more types of computing devices
+    > Desktop or laptop.'
+  sql: '"2020_CBG_B28"."B28010e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m3"'
+- name: computers_in_household_has_one_or_more_types_of_computing_devices_desktop_or_laptop_desktop_or_laptop_alone_b28010e4
+  title: 'Computers In Household: Has one or more types of computing devices > Desktop or laptop > Desktop
+    or laptop alone'
+  description: 'Computers In Household. Universe: Households. Has one or more types of computing devices
+    > Desktop or laptop > Desktop or laptop alone.'
+  sql: '"2020_CBG_B28"."B28010e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m4"'
+- name: computers_in_household_has_one_or_more_types_of_computing_devices_smartphone_tablet_or_other_portable_wireless_computer_or_other_computer_b28010e5
+  title: 'Computers In Household: Has one or more types of computing devices > Smartphone tablet or other
+    portable wireless computer or other computer'
+  description: 'Computers In Household. Universe: Households. Has one or more types of computing devices
+    > Smartphone tablet or other portable wireless computer or other computer.'
+  sql: '"2020_CBG_B28"."B28010e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m5"'
+- name: computers_in_household_has_one_or_more_types_of_computing_devices_smartphone_tablet_or_other_portable_wireless_computer_or_other_computer_smartphone_t_b28010e6
+  title: 'Computers In Household: Has one or more types of computing devices > Smartphone tablet or other
+    portable wireless computer or other computer > Smartphone tablet or other portable wireless computer
+    or other computer no desktop or laptop'
+  description: 'Computers In Household. Universe: Households. Has one or more types of computing devices
+    > Smartphone tablet or other portable wireless computer or other computer > Smartphone tablet or other
+    portable wireless computer or other computer no desktop or laptop.'
+  sql: '"2020_CBG_B28"."B28010e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m6"'
+- name: computers_in_household_no_computer_b28010e7
+  title: 'Computers In Household: No Computer'
+  description: 'Computers In Household. Universe: Households. No Computer.'
+  sql: '"2020_CBG_B28"."B28010e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28010m7"'
+- name: internet_subscriptions_in_household_b28011e1
+  title: 'Internet Subscriptions In Household: Total'
+  description: 'Internet Subscriptions In Household. Universe: Households. Total.'
+  sql: '"2020_CBG_B28"."B28011e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m1"'
+- name: internet_subscriptions_in_household_with_an_internet_subscription_b28011e2
+  title: 'Internet Subscriptions In Household: With an Internet subscription'
+  description: 'Internet Subscriptions In Household. Universe: Households. With an Internet subscription.'
+  sql: '"2020_CBG_B28"."B28011e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m2"'
+- name: internet_subscriptions_in_household_with_an_internet_subscription_dial_up_alone_b28011e3
+  title: 'Internet Subscriptions In Household: With an Internet subscription > Dial-up alone'
+  description: 'Internet Subscriptions In Household. Universe: Households. With an Internet subscription
+    > Dial-up alone.'
+  sql: '"2020_CBG_B28"."B28011e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m3"'
+- name: internet_subscriptions_in_household_with_an_internet_subscription_broadband_such_as_cable_fiber_optic_or_dsl_b28011e4
+  title: 'Internet Subscriptions In Household: With an Internet subscription > Broadband such as cable
+    fiber optic or DSL'
+  description: 'Internet Subscriptions In Household. Universe: Households. With an Internet subscription
+    > Broadband such as cable fiber optic or DSL.'
+  sql: '"2020_CBG_B28"."B28011e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m4"'
+- name: internet_subscriptions_in_household_with_an_internet_subscription_satellite_internet_service_b28011e5
+  title: 'Internet Subscriptions In Household: With an Internet subscription > Satellite Internet service'
+  description: 'Internet Subscriptions In Household. Universe: Households. With an Internet subscription
+    > Satellite Internet service.'
+  sql: '"2020_CBG_B28"."B28011e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m5"'
+- name: internet_subscriptions_in_household_with_an_internet_subscription_other_service_b28011e6
+  title: 'Internet Subscriptions In Household: With an Internet subscription > Other service'
+  description: 'Internet Subscriptions In Household. Universe: Households. With an Internet subscription
+    > Other service.'
+  sql: '"2020_CBG_B28"."B28011e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m6"'
+- name: internet_subscriptions_in_household_internet_access_without_a_subscription_b28011e7
+  title: 'Internet Subscriptions In Household: Internet access without a subscription'
+  description: 'Internet Subscriptions In Household. Universe: Households. Internet access without a subscription.'
+  sql: '"2020_CBG_B28"."B28011e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m7"'
+- name: internet_subscriptions_in_household_no_internet_access_b28011e8
+  title: 'Internet Subscriptions In Household: No Internet access'
+  description: 'Internet Subscriptions In Household. Universe: Households. No Internet access.'
+  sql: '"2020_CBG_B28"."B28011e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B28"."B28011m8"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_b28012e1
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Total'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Total.'
+  sql: '"2020_CBG_B28"."B28012e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m1"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_b28012e2
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older.'
+  sql: '"2020_CBG_B28"."B28012e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m2"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_b28012e3
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school.'
+  sql: '"2020_CBG_B28"."B28012e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m3"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_pre_k_to_4th_grade_b28012e4
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > Pre-K to 4th Grade'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > Pre-K to 4th Grade.'
+  sql: '"2020_CBG_B28"."B28012e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m4"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_pre_k_to_4th_grade_has_a_co_b28012e5
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > Pre-K to 4th Grade > Has a computer and internet subscription'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > Pre-K to 4th Grade > Has a
+    computer and internet subscription.'
+  sql: '"2020_CBG_B28"."B28012e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m5"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_pre_k_to_4th_grade_no_subsc_b28012e6
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > Pre-K to 4th Grade > No subscription or no computer'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > Pre-K to 4th Grade > No subscription
+    or no computer.'
+  sql: '"2020_CBG_B28"."B28012e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m6"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_5th_to_8th_grade_b28012e7
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > 5th to 8th Grade'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > 5th to 8th Grade.'
+  sql: '"2020_CBG_B28"."B28012e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m7"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_5th_to_8th_grade_has_a_comp_b28012e8
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > 5th to 8th Grade > Has a computer and internet subscription'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > 5th to 8th Grade > Has a computer
+    and internet subscription.'
+  sql: '"2020_CBG_B28"."B28012e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m8"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_5th_to_8th_grade_no_subscri_b28012e9
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > 5th to 8th Grade > No subscription or no computer'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > 5th to 8th Grade > No subscription
+    or no computer.'
+  sql: '"2020_CBG_B28"."B28012e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m9"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_9th_to_12th_grade_b28012e10
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > 9th to 12th Grade'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > 9th to 12th Grade.'
+  sql: '"2020_CBG_B28"."B28012e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m10"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_9th_to_12th_grade_has_a_com_b28012e11
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > 9th to 12th Grade > Has a computer and internet subscription'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > 9th to 12th Grade > Has a
+    computer and internet subscription.'
+  sql: '"2020_CBG_B28"."B28012e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m11"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_9th_to_12th_grade_no_subscr_b28012e12
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > 9th to 12th Grade > No subscription or no computer'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > 9th to 12th Grade > No subscription
+    or no computer.'
+  sql: '"2020_CBG_B28"."B28012e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m12"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_undergraduate_or_higher_b28012e13
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > Undergraduate or Higher'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > Undergraduate or Higher.'
+  sql: '"2020_CBG_B28"."B28012e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m13"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_undergraduate_or_higher_has_b28012e14
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > Undergraduate or Higher > Has a computer and internet subscription'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > Undergraduate or Higher >
+    Has a computer and internet subscription.'
+  sql: '"2020_CBG_B28"."B28012e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m14"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_enrolled_in_school_undergraduate_or_higher_no__b28012e15
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Enrolled in school > Undergraduate or Higher > No subscription or no computer'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Enrolled in school > Undergraduate or Higher >
+    No subscription or no computer.'
+  sql: '"2020_CBG_B28"."B28012e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m15"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_not_enrolled_in_school_b28012e16
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Not Enrolled in school'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Not Enrolled in school.'
+  sql: '"2020_CBG_B28"."B28012e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m16"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_not_enrolled_in_school_has_a_computer_and_inte_b28012e17
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Not Enrolled in school > Has a computer and internet subscription'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Not Enrolled in school > Has a computer and internet
+    subscription.'
+  sql: '"2020_CBG_B28"."B28012e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m17"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_3_and_older_not_enrolled_in_school_no_subscription_or_no_c_b28012e18
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    3 and older > Not Enrolled in school > No subscription or no computer'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 3 and older > Not Enrolled in school > No subscription or no
+    computer.'
+  sql: '"2020_CBG_B28"."B28012e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m18"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_2_and_under_b28012e19
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    2 and under'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 2 and under.'
+  sql: '"2020_CBG_B28"."B28012e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m19"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_2_and_under_has_a_computer_and_internet_subscription_b28012e20
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    2 and under > Has a computer and internet subscription'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 2 and under > Has a computer and internet subscription.'
+  sql: '"2020_CBG_B28"."B28012e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m20"'
+- name: age_and_enrollment_status_by_computer_ownership_and_internet_subscription_status_population_2_and_under_no_subscription_or_no_computer_b28012e21
+  title: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status: Population
+    2 and under > No subscription or no computer'
+  description: 'Age And Enrollment Status By Computer Ownership And Internet Subscription Status. Universe:
+    Population in Households. Population 2 and under > No subscription or no computer.'
+  sql: '"2020_CBG_B28"."B28012e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in Households
+    moe_sql: '"2020_CBG_B28"."B28012m21"'
+- name: no_internet_access_pct
+  title: Households with no internet access (%)
+  description: Percentage of households with no internet access at home.
+  sql: 100 * SUM(IFF("2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1" IS NULL, NULL, "2020_CBG_B28"."B28002e13"))
+    / NULLIF(SUM(IFF("2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1" IS NULL, NULL, "2020_CBG_B28"."B28002e1")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Households
+- name: no_internet_subscription_pct
+  title: Households without an internet subscription (%)
+  description: 'Percentage of households without an internet subscription: households with internet access
+    but no paid subscription plus households with no internet access.'
+  sql: 100 * SUM(IFF("2020_CBG_B28"."B28002e12" IS NULL OR "2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1"
+    IS NULL, NULL, "2020_CBG_B28"."B28002e12" + "2020_CBG_B28"."B28002e13")) / NULLIF(SUM(IFF("2020_CBG_B28"."B28002e12"
+    IS NULL OR "2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1" IS NULL, NULL, "2020_CBG_B28"."B28002e1")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Households

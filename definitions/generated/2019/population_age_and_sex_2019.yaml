@@ -1,0 +1,937 @@
+name: population_age_and_sex_2019
+title: Population by age and sex (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by age; median age by sex; total population. Some of these are also given by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B01"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B01"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: median_age_by_sex
+  title: 'Median Age By Sex: Median age'
+  description: 'Median Age By Sex. Universe: Total population. Median age.'
+  sql: '"2019_CBG_B01"."B01002e1"'
+  type: number
+  format: years
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01002m1"'
+- name: median_age_by_sex_male
+  title: 'Median Age By Sex: Median age > Male'
+  description: 'Median Age By Sex. Universe: Total population. Median age > Male.'
+  sql: '"2019_CBG_B01"."B01002e2"'
+  type: number
+  format: years
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01002m2"'
+- name: median_age_by_sex_female
+  title: 'Median Age By Sex: Median age > Female'
+  description: 'Median Age By Sex. Universe: Total population. Median age > Female.'
+  sql: '"2019_CBG_B01"."B01002e3"'
+  type: number
+  format: years
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01002m3"'
+- name: median_age_by_sex_white_alone
+  title: 'Median Age By Sex (White Alone): Median age'
+  description: 'Median Age By Sex (White Alone). Universe: People who are White alone. Median age (White
+    alone; also called White).'
+  sql: '"2019_CBG_B01"."B01002Ae1"'
+  type: number
+  format: years
+  meta:
+    universe: People who are White alone
+    moe_sql: '"2019_CBG_B01"."B01002Am1"'
+    population_group: A
+- name: median_age_by_sex_white_alone_male
+  title: 'Median Age By Sex (White Alone): Median age > Male'
+  description: 'Median Age By Sex (White Alone). Universe: People who are White alone. Median age > Male
+    (White alone; also called White).'
+  sql: '"2019_CBG_B01"."B01002Ae2"'
+  type: number
+  format: years
+  meta:
+    universe: People who are White alone
+    moe_sql: '"2019_CBG_B01"."B01002Am2"'
+    population_group: A
+- name: median_age_by_sex_white_alone_female
+  title: 'Median Age By Sex (White Alone): Median age > Female'
+  description: 'Median Age By Sex (White Alone). Universe: People who are White alone. Median age > Female
+    (White alone; also called White).'
+  sql: '"2019_CBG_B01"."B01002Ae3"'
+  type: number
+  format: years
+  meta:
+    universe: People who are White alone
+    moe_sql: '"2019_CBG_B01"."B01002Am3"'
+    population_group: A
+- name: median_age_by_sex_black_or_african_american_alone
+  title: 'Median Age By Sex (Black Or African American Alone): Median age'
+  description: 'Median Age By Sex (Black Or African American Alone). Universe: Black or African American
+    alone. Median age (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B01"."B01002Be1"'
+  type: number
+  format: years
+  meta:
+    universe: Black or African American alone
+    moe_sql: '"2019_CBG_B01"."B01002Bm1"'
+    population_group: B
+- name: median_age_by_sex_black_or_african_american_alone_male
+  title: 'Median Age By Sex (Black Or African American Alone): Median age > Male'
+  description: 'Median Age By Sex (Black Or African American Alone). Universe: Black or African American
+    alone. Median age > Male (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B01"."B01002Be2"'
+  type: number
+  format: years
+  meta:
+    universe: Black or African American alone
+    moe_sql: '"2019_CBG_B01"."B01002Bm2"'
+    population_group: B
+- name: median_age_by_sex_black_or_african_american_alone_female
+  title: 'Median Age By Sex (Black Or African American Alone): Median age > Female'
+  description: 'Median Age By Sex (Black Or African American Alone). Universe: Black or African American
+    alone. Median age > Female (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B01"."B01002Be3"'
+  type: number
+  format: years
+  meta:
+    universe: Black or African American alone
+    moe_sql: '"2019_CBG_B01"."B01002Bm3"'
+    population_group: B
+- name: median_age_by_sex_american_indian_and_alaska_native_alone
+  title: 'Median Age By Sex (American Indian And Alaska Native Alone): Median age'
+  description: 'Median Age By Sex (American Indian And Alaska Native Alone). Universe: People who are
+    American Indian and Alaska Native alone. Median age (American Indian and Alaska Native alone; also
+    called Native American).'
+  sql: '"2019_CBG_B01"."B01002Ce1"'
+  type: number
+  format: years
+  meta:
+    universe: People who are American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B01"."B01002Cm1"'
+    population_group: C
+- name: median_age_by_sex_american_indian_and_alaska_native_alone_male
+  title: 'Median Age By Sex (American Indian And Alaska Native Alone): Median age > Male'
+  description: 'Median Age By Sex (American Indian And Alaska Native Alone). Universe: People who are
+    American Indian and Alaska Native alone. Median age > Male (American Indian and Alaska Native alone;
+    also called Native American).'
+  sql: '"2019_CBG_B01"."B01002Ce2"'
+  type: number
+  format: years
+  meta:
+    universe: People who are American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B01"."B01002Cm2"'
+    population_group: C
+- name: median_age_by_sex_american_indian_and_alaska_native_alone_female
+  title: 'Median Age By Sex (American Indian And Alaska Native Alone): Median age > Female'
+  description: 'Median Age By Sex (American Indian And Alaska Native Alone). Universe: People who are
+    American Indian and Alaska Native alone. Median age > Female (American Indian and Alaska Native alone;
+    also called Native American).'
+  sql: '"2019_CBG_B01"."B01002Ce3"'
+  type: number
+  format: years
+  meta:
+    universe: People who are American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B01"."B01002Cm3"'
+    population_group: C
+- name: median_age_by_sex_asian_alone
+  title: 'Median Age By Sex (Asian Alone): Median age'
+  description: 'Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Median age (Asian
+    alone; also called Asian).'
+  sql: '"2019_CBG_B01"."B01002De1"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Asian alone
+    moe_sql: '"2019_CBG_B01"."B01002Dm1"'
+    population_group: D
+- name: median_age_by_sex_asian_alone_male
+  title: 'Median Age By Sex (Asian Alone): Median age > Male'
+  description: 'Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Median age > Male
+    (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B01"."B01002De2"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Asian alone
+    moe_sql: '"2019_CBG_B01"."B01002Dm2"'
+    population_group: D
+- name: median_age_by_sex_asian_alone_female
+  title: 'Median Age By Sex (Asian Alone): Median age > Female'
+  description: 'Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Median age > Female
+    (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B01"."B01002De3"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Asian alone
+    moe_sql: '"2019_CBG_B01"."B01002Dm3"'
+    population_group: D
+- name: median_age_by_sex_native_hawaiian_and_other_pacific_islander_alone
+  title: 'Median Age By Sex (Native Hawaiian And Other Pacific Islander Alone): Median age'
+  description: 'Median Age By Sex (Native Hawaiian And Other Pacific Islander Alone). Universe: People
+    who are Native Hawaiian and Other Pacific Islander alone. Median age (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B01"."B01002Ee1"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B01"."B01002Em1"'
+    population_group: E
+- name: median_age_by_sex_native_hawaiian_and_other_pacific_islander_alone_male
+  title: 'Median Age By Sex (Native Hawaiian And Other Pacific Islander Alone): Median age > Male'
+  description: 'Median Age By Sex (Native Hawaiian And Other Pacific Islander Alone). Universe: People
+    who are Native Hawaiian and Other Pacific Islander alone. Median age > Male (Native Hawaiian and Other
+    Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B01"."B01002Ee2"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B01"."B01002Em2"'
+    population_group: E
+- name: median_age_by_sex_native_hawaiian_and_other_pacific_islander_alone_female
+  title: 'Median Age By Sex (Native Hawaiian And Other Pacific Islander Alone): Median age > Female'
+  description: 'Median Age By Sex (Native Hawaiian And Other Pacific Islander Alone). Universe: People
+    who are Native Hawaiian and Other Pacific Islander alone. Median age > Female (Native Hawaiian and
+    Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B01"."B01002Ee3"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B01"."B01002Em3"'
+    population_group: E
+- name: median_age_by_sex_some_other_race_alone
+  title: 'Median Age By Sex (Some Other Race Alone): Median age'
+  description: 'Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other Race alone.
+    Median age (Some other race alone).'
+  sql: '"2019_CBG_B01"."B01002Fe1"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Some Other Race alone
+    moe_sql: '"2019_CBG_B01"."B01002Fm1"'
+    population_group: F
+- name: median_age_by_sex_some_other_race_alone_male
+  title: 'Median Age By Sex (Some Other Race Alone): Median age > Male'
+  description: 'Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other Race alone.
+    Median age > Male (Some other race alone).'
+  sql: '"2019_CBG_B01"."B01002Fe2"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Some Other Race alone
+    moe_sql: '"2019_CBG_B01"."B01002Fm2"'
+    population_group: F
+- name: median_age_by_sex_some_other_race_alone_female
+  title: 'Median Age By Sex (Some Other Race Alone): Median age > Female'
+  description: 'Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other Race alone.
+    Median age > Female (Some other race alone).'
+  sql: '"2019_CBG_B01"."B01002Fe3"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Some Other Race alone
+    moe_sql: '"2019_CBG_B01"."B01002Fm3"'
+    population_group: F
+- name: median_age_by_sex_two_or_more_races
+  title: 'Median Age By Sex (Two Or More Races): Median age'
+  description: 'Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races. Median
+    age (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B01"."B01002Ge1"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Two or More Races
+    moe_sql: '"2019_CBG_B01"."B01002Gm1"'
+    population_group: G
+- name: median_age_by_sex_two_or_more_races_male
+  title: 'Median Age By Sex (Two Or More Races): Median age > Male'
+  description: 'Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races. Median
+    age > Male (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B01"."B01002Ge2"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Two or More Races
+    moe_sql: '"2019_CBG_B01"."B01002Gm2"'
+    population_group: G
+- name: median_age_by_sex_two_or_more_races_female
+  title: 'Median Age By Sex (Two Or More Races): Median age > Female'
+  description: 'Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races. Median
+    age > Female (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B01"."B01002Ge3"'
+  type: number
+  format: years
+  meta:
+    universe: People who are Two or More Races
+    moe_sql: '"2019_CBG_B01"."B01002Gm3"'
+    population_group: G
+- name: median_age_by_sex_white_alone_not_hispanic_or_latino
+  title: 'Median Age By Sex (White Alone, Not Hispanic Or Latino): Median age'
+  description: 'Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone, not Hispanic
+    or Latino population. Median age (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B01"."B01002He1"'
+  type: number
+  format: years
+  meta:
+    universe: White alone, not Hispanic or Latino population
+    moe_sql: '"2019_CBG_B01"."B01002Hm1"'
+    population_group: H
+- name: median_age_by_sex_white_alone_not_hispanic_or_latino_male
+  title: 'Median Age By Sex (White Alone, Not Hispanic Or Latino): Median age > Male'
+  description: 'Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone, not Hispanic
+    or Latino population. Median age > Male (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2019_CBG_B01"."B01002He2"'
+  type: number
+  format: years
+  meta:
+    universe: White alone, not Hispanic or Latino population
+    moe_sql: '"2019_CBG_B01"."B01002Hm2"'
+    population_group: H
+- name: median_age_by_sex_white_alone_not_hispanic_or_latino_female
+  title: 'Median Age By Sex (White Alone, Not Hispanic Or Latino): Median age > Female'
+  description: 'Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone, not Hispanic
+    or Latino population. Median age > Female (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2019_CBG_B01"."B01002He3"'
+  type: number
+  format: years
+  meta:
+    universe: White alone, not Hispanic or Latino population
+    moe_sql: '"2019_CBG_B01"."B01002Hm3"'
+    population_group: H
+- name: median_age_by_sex_hispanic_or_latino
+  title: 'Median Age By Sex (Hispanic Or Latino): Median age'
+  description: 'Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population. Median
+    age (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B01"."B01002Ie1"'
+  type: number
+  format: years
+  meta:
+    universe: Hispanic or Latino population
+    moe_sql: '"2019_CBG_B01"."B01002Im1"'
+    population_group: I
+- name: median_age_by_sex_hispanic_or_latino_male
+  title: 'Median Age By Sex (Hispanic Or Latino): Median age > Male'
+  description: 'Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population. Median
+    age > Male (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B01"."B01002Ie2"'
+  type: number
+  format: years
+  meta:
+    universe: Hispanic or Latino population
+    moe_sql: '"2019_CBG_B01"."B01002Im2"'
+    population_group: I
+- name: median_age_by_sex_hispanic_or_latino_female
+  title: 'Median Age By Sex (Hispanic Or Latino): Median age > Female'
+  description: 'Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population. Median
+    age > Female (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B01"."B01002Ie3"'
+  type: number
+  format: years
+  meta:
+    universe: Hispanic or Latino population
+    moe_sql: '"2019_CBG_B01"."B01002Im3"'
+    population_group: I
+measures:
+- name: population
+  title: 'Sex By Age: Total'
+  description: 'Sex By Age. Universe: Total population. Total.'
+  sql: '"2019_CBG_B01"."B01001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m1"'
+- name: population_male
+  title: 'Sex By Age: Male'
+  description: 'Sex By Age. Universe: Total population. Male.'
+  sql: '"2019_CBG_B01"."B01001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m2"'
+- name: population_male_under_5_years
+  title: 'Sex By Age: Male > Under 5 years'
+  description: 'Sex By Age. Universe: Total population. Male > Under 5 years.'
+  sql: '"2019_CBG_B01"."B01001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m3"'
+- name: population_male_5_to_9_years
+  title: 'Sex By Age: Male > 5 to 9 years'
+  description: 'Sex By Age. Universe: Total population. Male > 5 to 9 years.'
+  sql: '"2019_CBG_B01"."B01001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m4"'
+- name: population_male_10_to_14_years
+  title: 'Sex By Age: Male > 10 to 14 years'
+  description: 'Sex By Age. Universe: Total population. Male > 10 to 14 years.'
+  sql: '"2019_CBG_B01"."B01001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m5"'
+- name: population_male_15_to_17_years
+  title: 'Sex By Age: Male > 15 to 17 years'
+  description: 'Sex By Age. Universe: Total population. Male > 15 to 17 years.'
+  sql: '"2019_CBG_B01"."B01001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m6"'
+- name: population_male_18_and_19_years
+  title: 'Sex By Age: Male > 18 and 19 years'
+  description: 'Sex By Age. Universe: Total population. Male > 18 and 19 years.'
+  sql: '"2019_CBG_B01"."B01001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m7"'
+- name: population_male_20_years
+  title: 'Sex By Age: Male > 20 years'
+  description: 'Sex By Age. Universe: Total population. Male > 20 years.'
+  sql: '"2019_CBG_B01"."B01001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m8"'
+- name: population_male_21_years
+  title: 'Sex By Age: Male > 21 years'
+  description: 'Sex By Age. Universe: Total population. Male > 21 years.'
+  sql: '"2019_CBG_B01"."B01001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m9"'
+- name: population_male_22_to_24_years
+  title: 'Sex By Age: Male > 22 to 24 years'
+  description: 'Sex By Age. Universe: Total population. Male > 22 to 24 years.'
+  sql: '"2019_CBG_B01"."B01001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m10"'
+- name: population_male_25_to_29_years
+  title: 'Sex By Age: Male > 25 to 29 years'
+  description: 'Sex By Age. Universe: Total population. Male > 25 to 29 years.'
+  sql: '"2019_CBG_B01"."B01001e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m11"'
+- name: population_male_30_to_34_years
+  title: 'Sex By Age: Male > 30 to 34 years'
+  description: 'Sex By Age. Universe: Total population. Male > 30 to 34 years.'
+  sql: '"2019_CBG_B01"."B01001e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m12"'
+- name: population_male_35_to_39_years
+  title: 'Sex By Age: Male > 35 to 39 years'
+  description: 'Sex By Age. Universe: Total population. Male > 35 to 39 years.'
+  sql: '"2019_CBG_B01"."B01001e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m13"'
+- name: population_male_40_to_44_years
+  title: 'Sex By Age: Male > 40 to 44 years'
+  description: 'Sex By Age. Universe: Total population. Male > 40 to 44 years.'
+  sql: '"2019_CBG_B01"."B01001e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m14"'
+- name: population_male_45_to_49_years
+  title: 'Sex By Age: Male > 45 to 49 years'
+  description: 'Sex By Age. Universe: Total population. Male > 45 to 49 years.'
+  sql: '"2019_CBG_B01"."B01001e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m15"'
+- name: population_male_50_to_54_years
+  title: 'Sex By Age: Male > 50 to 54 years'
+  description: 'Sex By Age. Universe: Total population. Male > 50 to 54 years.'
+  sql: '"2019_CBG_B01"."B01001e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m16"'
+- name: population_male_55_to_59_years
+  title: 'Sex By Age: Male > 55 to 59 years'
+  description: 'Sex By Age. Universe: Total population. Male > 55 to 59 years.'
+  sql: '"2019_CBG_B01"."B01001e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m17"'
+- name: population_male_60_and_61_years
+  title: 'Sex By Age: Male > 60 and 61 years'
+  description: 'Sex By Age. Universe: Total population. Male > 60 and 61 years.'
+  sql: '"2019_CBG_B01"."B01001e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m18"'
+- name: population_male_62_to_64_years
+  title: 'Sex By Age: Male > 62 to 64 years'
+  description: 'Sex By Age. Universe: Total population. Male > 62 to 64 years.'
+  sql: '"2019_CBG_B01"."B01001e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m19"'
+- name: population_male_65_and_66_years
+  title: 'Sex By Age: Male > 65 and 66 years'
+  description: 'Sex By Age. Universe: Total population. Male > 65 and 66 years.'
+  sql: '"2019_CBG_B01"."B01001e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m20"'
+- name: population_male_67_to_69_years
+  title: 'Sex By Age: Male > 67 to 69 years'
+  description: 'Sex By Age. Universe: Total population. Male > 67 to 69 years.'
+  sql: '"2019_CBG_B01"."B01001e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m21"'
+- name: population_male_70_to_74_years
+  title: 'Sex By Age: Male > 70 to 74 years'
+  description: 'Sex By Age. Universe: Total population. Male > 70 to 74 years.'
+  sql: '"2019_CBG_B01"."B01001e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m22"'
+- name: population_male_75_to_79_years
+  title: 'Sex By Age: Male > 75 to 79 years'
+  description: 'Sex By Age. Universe: Total population. Male > 75 to 79 years.'
+  sql: '"2019_CBG_B01"."B01001e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m23"'
+- name: population_male_80_to_84_years
+  title: 'Sex By Age: Male > 80 to 84 years'
+  description: 'Sex By Age. Universe: Total population. Male > 80 to 84 years.'
+  sql: '"2019_CBG_B01"."B01001e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m24"'
+- name: population_male_85_years_and_over
+  title: 'Sex By Age: Male > 85 years and over'
+  description: 'Sex By Age. Universe: Total population. Male > 85 years and over.'
+  sql: '"2019_CBG_B01"."B01001e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m25"'
+- name: population_female
+  title: 'Sex By Age: Female'
+  description: 'Sex By Age. Universe: Total population. Female.'
+  sql: '"2019_CBG_B01"."B01001e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m26"'
+- name: population_female_under_5_years
+  title: 'Sex By Age: Female > Under 5 years'
+  description: 'Sex By Age. Universe: Total population. Female > Under 5 years.'
+  sql: '"2019_CBG_B01"."B01001e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m27"'
+- name: population_female_5_to_9_years
+  title: 'Sex By Age: Female > 5 to 9 years'
+  description: 'Sex By Age. Universe: Total population. Female > 5 to 9 years.'
+  sql: '"2019_CBG_B01"."B01001e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m28"'
+- name: population_female_10_to_14_years
+  title: 'Sex By Age: Female > 10 to 14 years'
+  description: 'Sex By Age. Universe: Total population. Female > 10 to 14 years.'
+  sql: '"2019_CBG_B01"."B01001e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m29"'
+- name: population_female_15_to_17_years
+  title: 'Sex By Age: Female > 15 to 17 years'
+  description: 'Sex By Age. Universe: Total population. Female > 15 to 17 years.'
+  sql: '"2019_CBG_B01"."B01001e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m30"'
+- name: population_female_18_and_19_years
+  title: 'Sex By Age: Female > 18 and 19 years'
+  description: 'Sex By Age. Universe: Total population. Female > 18 and 19 years.'
+  sql: '"2019_CBG_B01"."B01001e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m31"'
+- name: population_female_20_years
+  title: 'Sex By Age: Female > 20 years'
+  description: 'Sex By Age. Universe: Total population. Female > 20 years.'
+  sql: '"2019_CBG_B01"."B01001e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m32"'
+- name: population_female_21_years
+  title: 'Sex By Age: Female > 21 years'
+  description: 'Sex By Age. Universe: Total population. Female > 21 years.'
+  sql: '"2019_CBG_B01"."B01001e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m33"'
+- name: population_female_22_to_24_years
+  title: 'Sex By Age: Female > 22 to 24 years'
+  description: 'Sex By Age. Universe: Total population. Female > 22 to 24 years.'
+  sql: '"2019_CBG_B01"."B01001e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m34"'
+- name: population_female_25_to_29_years
+  title: 'Sex By Age: Female > 25 to 29 years'
+  description: 'Sex By Age. Universe: Total population. Female > 25 to 29 years.'
+  sql: '"2019_CBG_B01"."B01001e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m35"'
+- name: population_female_30_to_34_years
+  title: 'Sex By Age: Female > 30 to 34 years'
+  description: 'Sex By Age. Universe: Total population. Female > 30 to 34 years.'
+  sql: '"2019_CBG_B01"."B01001e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m36"'
+- name: population_female_35_to_39_years
+  title: 'Sex By Age: Female > 35 to 39 years'
+  description: 'Sex By Age. Universe: Total population. Female > 35 to 39 years.'
+  sql: '"2019_CBG_B01"."B01001e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m37"'
+- name: population_female_40_to_44_years
+  title: 'Sex By Age: Female > 40 to 44 years'
+  description: 'Sex By Age. Universe: Total population. Female > 40 to 44 years.'
+  sql: '"2019_CBG_B01"."B01001e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m38"'
+- name: population_female_45_to_49_years
+  title: 'Sex By Age: Female > 45 to 49 years'
+  description: 'Sex By Age. Universe: Total population. Female > 45 to 49 years.'
+  sql: '"2019_CBG_B01"."B01001e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m39"'
+- name: population_female_50_to_54_years
+  title: 'Sex By Age: Female > 50 to 54 years'
+  description: 'Sex By Age. Universe: Total population. Female > 50 to 54 years.'
+  sql: '"2019_CBG_B01"."B01001e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m40"'
+- name: population_female_55_to_59_years
+  title: 'Sex By Age: Female > 55 to 59 years'
+  description: 'Sex By Age. Universe: Total population. Female > 55 to 59 years.'
+  sql: '"2019_CBG_B01"."B01001e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m41"'
+- name: population_female_60_and_61_years
+  title: 'Sex By Age: Female > 60 and 61 years'
+  description: 'Sex By Age. Universe: Total population. Female > 60 and 61 years.'
+  sql: '"2019_CBG_B01"."B01001e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m42"'
+- name: population_female_62_to_64_years
+  title: 'Sex By Age: Female > 62 to 64 years'
+  description: 'Sex By Age. Universe: Total population. Female > 62 to 64 years.'
+  sql: '"2019_CBG_B01"."B01001e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m43"'
+- name: population_female_65_and_66_years
+  title: 'Sex By Age: Female > 65 and 66 years'
+  description: 'Sex By Age. Universe: Total population. Female > 65 and 66 years.'
+  sql: '"2019_CBG_B01"."B01001e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m44"'
+- name: population_female_67_to_69_years
+  title: 'Sex By Age: Female > 67 to 69 years'
+  description: 'Sex By Age. Universe: Total population. Female > 67 to 69 years.'
+  sql: '"2019_CBG_B01"."B01001e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m45"'
+- name: population_female_70_to_74_years
+  title: 'Sex By Age: Female > 70 to 74 years'
+  description: 'Sex By Age. Universe: Total population. Female > 70 to 74 years.'
+  sql: '"2019_CBG_B01"."B01001e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m46"'
+- name: population_female_75_to_79_years
+  title: 'Sex By Age: Female > 75 to 79 years'
+  description: 'Sex By Age. Universe: Total population. Female > 75 to 79 years.'
+  sql: '"2019_CBG_B01"."B01001e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m47"'
+- name: population_female_80_to_84_years
+  title: 'Sex By Age: Female > 80 to 84 years'
+  description: 'Sex By Age. Universe: Total population. Female > 80 to 84 years.'
+  sql: '"2019_CBG_B01"."B01001e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m48"'
+- name: population_female_85_years_and_over
+  title: 'Sex By Age: Female > 85 years and over'
+  description: 'Sex By Age. Universe: Total population. Female > 85 years and over.'
+  sql: '"2019_CBG_B01"."B01001e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01001m49"'
+- name: total_population_b01003
+  title: 'Total Population: Total'
+  description: 'Total Population. Universe: Total population. Total.'
+  sql: '"2019_CBG_B01"."B01003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B01"."B01003m1"'
+- name: sex_ratio
+  title: Sex ratio (males per 100 females)
+  description: Number of males for every 100 females.
+  sql: 100 * SUM(IFF("2019_CBG_B01"."B01001e2" IS NULL OR "2019_CBG_B01"."B01001e26" IS NULL, NULL, "2019_CBG_B01"."B01001e2"))
+    / NULLIF(SUM(IFF("2019_CBG_B01"."B01001e2" IS NULL OR "2019_CBG_B01"."B01001e26" IS NULL, NULL, "2019_CBG_B01"."B01001e26")),
+    0)
+  type: number
+  format: ratio
+  meta:
+    universe: Total population
+- name: age_dependency_ratio
+  title: Age dependency ratio
+  description: People under 18 years plus people 65 years and over, for every 100 people aged 18 to 64.
+  sql: 100 * SUM(IFF("2019_CBG_B01"."B01001e3" IS NULL OR "2019_CBG_B01"."B01001e4" IS NULL OR "2019_CBG_B01"."B01001e5"
+    IS NULL OR "2019_CBG_B01"."B01001e6" IS NULL OR "2019_CBG_B01"."B01001e20" IS NULL OR "2019_CBG_B01"."B01001e21"
+    IS NULL OR "2019_CBG_B01"."B01001e22" IS NULL OR "2019_CBG_B01"."B01001e23" IS NULL OR "2019_CBG_B01"."B01001e24"
+    IS NULL OR "2019_CBG_B01"."B01001e25" IS NULL OR "2019_CBG_B01"."B01001e27" IS NULL OR "2019_CBG_B01"."B01001e28"
+    IS NULL OR "2019_CBG_B01"."B01001e29" IS NULL OR "2019_CBG_B01"."B01001e30" IS NULL OR "2019_CBG_B01"."B01001e44"
+    IS NULL OR "2019_CBG_B01"."B01001e45" IS NULL OR "2019_CBG_B01"."B01001e46" IS NULL OR "2019_CBG_B01"."B01001e47"
+    IS NULL OR "2019_CBG_B01"."B01001e48" IS NULL OR "2019_CBG_B01"."B01001e49" IS NULL OR "2019_CBG_B01"."B01001e7"
+    IS NULL OR "2019_CBG_B01"."B01001e8" IS NULL OR "2019_CBG_B01"."B01001e9" IS NULL OR "2019_CBG_B01"."B01001e10"
+    IS NULL OR "2019_CBG_B01"."B01001e11" IS NULL OR "2019_CBG_B01"."B01001e12" IS NULL OR "2019_CBG_B01"."B01001e13"
+    IS NULL OR "2019_CBG_B01"."B01001e14" IS NULL OR "2019_CBG_B01"."B01001e15" IS NULL OR "2019_CBG_B01"."B01001e16"
+    IS NULL OR "2019_CBG_B01"."B01001e17" IS NULL OR "2019_CBG_B01"."B01001e18" IS NULL OR "2019_CBG_B01"."B01001e19"
+    IS NULL OR "2019_CBG_B01"."B01001e31" IS NULL OR "2019_CBG_B01"."B01001e32" IS NULL OR "2019_CBG_B01"."B01001e33"
+    IS NULL OR "2019_CBG_B01"."B01001e34" IS NULL OR "2019_CBG_B01"."B01001e35" IS NULL OR "2019_CBG_B01"."B01001e36"
+    IS NULL OR "2019_CBG_B01"."B01001e37" IS NULL OR "2019_CBG_B01"."B01001e38" IS NULL OR "2019_CBG_B01"."B01001e39"
+    IS NULL OR "2019_CBG_B01"."B01001e40" IS NULL OR "2019_CBG_B01"."B01001e41" IS NULL OR "2019_CBG_B01"."B01001e42"
+    IS NULL OR "2019_CBG_B01"."B01001e43" IS NULL, NULL, "2019_CBG_B01"."B01001e3" + "2019_CBG_B01"."B01001e4"
+    + "2019_CBG_B01"."B01001e5" + "2019_CBG_B01"."B01001e6" + "2019_CBG_B01"."B01001e20" + "2019_CBG_B01"."B01001e21"
+    + "2019_CBG_B01"."B01001e22" + "2019_CBG_B01"."B01001e23" + "2019_CBG_B01"."B01001e24" + "2019_CBG_B01"."B01001e25"
+    + "2019_CBG_B01"."B01001e27" + "2019_CBG_B01"."B01001e28" + "2019_CBG_B01"."B01001e29" + "2019_CBG_B01"."B01001e30"
+    + "2019_CBG_B01"."B01001e44" + "2019_CBG_B01"."B01001e45" + "2019_CBG_B01"."B01001e46" + "2019_CBG_B01"."B01001e47"
+    + "2019_CBG_B01"."B01001e48" + "2019_CBG_B01"."B01001e49")) / NULLIF(SUM(IFF("2019_CBG_B01"."B01001e3"
+    IS NULL OR "2019_CBG_B01"."B01001e4" IS NULL OR "2019_CBG_B01"."B01001e5" IS NULL OR "2019_CBG_B01"."B01001e6"
+    IS NULL OR "2019_CBG_B01"."B01001e20" IS NULL OR "2019_CBG_B01"."B01001e21" IS NULL OR "2019_CBG_B01"."B01001e22"
+    IS NULL OR "2019_CBG_B01"."B01001e23" IS NULL OR "2019_CBG_B01"."B01001e24" IS NULL OR "2019_CBG_B01"."B01001e25"
+    IS NULL OR "2019_CBG_B01"."B01001e27" IS NULL OR "2019_CBG_B01"."B01001e28" IS NULL OR "2019_CBG_B01"."B01001e29"
+    IS NULL OR "2019_CBG_B01"."B01001e30" IS NULL OR "2019_CBG_B01"."B01001e44" IS NULL OR "2019_CBG_B01"."B01001e45"
+    IS NULL OR "2019_CBG_B01"."B01001e46" IS NULL OR "2019_CBG_B01"."B01001e47" IS NULL OR "2019_CBG_B01"."B01001e48"
+    IS NULL OR "2019_CBG_B01"."B01001e49" IS NULL OR "2019_CBG_B01"."B01001e7" IS NULL OR "2019_CBG_B01"."B01001e8"
+    IS NULL OR "2019_CBG_B01"."B01001e9" IS NULL OR "2019_CBG_B01"."B01001e10" IS NULL OR "2019_CBG_B01"."B01001e11"
+    IS NULL OR "2019_CBG_B01"."B01001e12" IS NULL OR "2019_CBG_B01"."B01001e13" IS NULL OR "2019_CBG_B01"."B01001e14"
+    IS NULL OR "2019_CBG_B01"."B01001e15" IS NULL OR "2019_CBG_B01"."B01001e16" IS NULL OR "2019_CBG_B01"."B01001e17"
+    IS NULL OR "2019_CBG_B01"."B01001e18" IS NULL OR "2019_CBG_B01"."B01001e19" IS NULL OR "2019_CBG_B01"."B01001e31"
+    IS NULL OR "2019_CBG_B01"."B01001e32" IS NULL OR "2019_CBG_B01"."B01001e33" IS NULL OR "2019_CBG_B01"."B01001e34"
+    IS NULL OR "2019_CBG_B01"."B01001e35" IS NULL OR "2019_CBG_B01"."B01001e36" IS NULL OR "2019_CBG_B01"."B01001e37"
+    IS NULL OR "2019_CBG_B01"."B01001e38" IS NULL OR "2019_CBG_B01"."B01001e39" IS NULL OR "2019_CBG_B01"."B01001e40"
+    IS NULL OR "2019_CBG_B01"."B01001e41" IS NULL OR "2019_CBG_B01"."B01001e42" IS NULL OR "2019_CBG_B01"."B01001e43"
+    IS NULL, NULL, "2019_CBG_B01"."B01001e7" + "2019_CBG_B01"."B01001e8" + "2019_CBG_B01"."B01001e9" +
+    "2019_CBG_B01"."B01001e10" + "2019_CBG_B01"."B01001e11" + "2019_CBG_B01"."B01001e12" + "2019_CBG_B01"."B01001e13"
+    + "2019_CBG_B01"."B01001e14" + "2019_CBG_B01"."B01001e15" + "2019_CBG_B01"."B01001e16" + "2019_CBG_B01"."B01001e17"
+    + "2019_CBG_B01"."B01001e18" + "2019_CBG_B01"."B01001e19" + "2019_CBG_B01"."B01001e31" + "2019_CBG_B01"."B01001e32"
+    + "2019_CBG_B01"."B01001e33" + "2019_CBG_B01"."B01001e34" + "2019_CBG_B01"."B01001e35" + "2019_CBG_B01"."B01001e36"
+    + "2019_CBG_B01"."B01001e37" + "2019_CBG_B01"."B01001e38" + "2019_CBG_B01"."B01001e39" + "2019_CBG_B01"."B01001e40"
+    + "2019_CBG_B01"."B01001e41" + "2019_CBG_B01"."B01001e42" + "2019_CBG_B01"."B01001e43")), 0)
+  type: number
+  format: ratio
+  meta:
+    universe: Total population
+- name: child_dependency_ratio
+  title: Child dependency ratio
+  description: People under 18 years for every 100 people aged 18 to 64.
+  sql: 100 * SUM(IFF("2019_CBG_B01"."B01001e3" IS NULL OR "2019_CBG_B01"."B01001e4" IS NULL OR "2019_CBG_B01"."B01001e5"
+    IS NULL OR "2019_CBG_B01"."B01001e6" IS NULL OR "2019_CBG_B01"."B01001e27" IS NULL OR "2019_CBG_B01"."B01001e28"
+    IS NULL OR "2019_CBG_B01"."B01001e29" IS NULL OR "2019_CBG_B01"."B01001e30" IS NULL OR "2019_CBG_B01"."B01001e7"
+    IS NULL OR "2019_CBG_B01"."B01001e8" IS NULL OR "2019_CBG_B01"."B01001e9" IS NULL OR "2019_CBG_B01"."B01001e10"
+    IS NULL OR "2019_CBG_B01"."B01001e11" IS NULL OR "2019_CBG_B01"."B01001e12" IS NULL OR "2019_CBG_B01"."B01001e13"
+    IS NULL OR "2019_CBG_B01"."B01001e14" IS NULL OR "2019_CBG_B01"."B01001e15" IS NULL OR "2019_CBG_B01"."B01001e16"
+    IS NULL OR "2019_CBG_B01"."B01001e17" IS NULL OR "2019_CBG_B01"."B01001e18" IS NULL OR "2019_CBG_B01"."B01001e19"
+    IS NULL OR "2019_CBG_B01"."B01001e31" IS NULL OR "2019_CBG_B01"."B01001e32" IS NULL OR "2019_CBG_B01"."B01001e33"
+    IS NULL OR "2019_CBG_B01"."B01001e34" IS NULL OR "2019_CBG_B01"."B01001e35" IS NULL OR "2019_CBG_B01"."B01001e36"
+    IS NULL OR "2019_CBG_B01"."B01001e37" IS NULL OR "2019_CBG_B01"."B01001e38" IS NULL OR "2019_CBG_B01"."B01001e39"
+    IS NULL OR "2019_CBG_B01"."B01001e40" IS NULL OR "2019_CBG_B01"."B01001e41" IS NULL OR "2019_CBG_B01"."B01001e42"
+    IS NULL OR "2019_CBG_B01"."B01001e43" IS NULL, NULL, "2019_CBG_B01"."B01001e3" + "2019_CBG_B01"."B01001e4"
+    + "2019_CBG_B01"."B01001e5" + "2019_CBG_B01"."B01001e6" + "2019_CBG_B01"."B01001e27" + "2019_CBG_B01"."B01001e28"
+    + "2019_CBG_B01"."B01001e29" + "2019_CBG_B01"."B01001e30")) / NULLIF(SUM(IFF("2019_CBG_B01"."B01001e3"
+    IS NULL OR "2019_CBG_B01"."B01001e4" IS NULL OR "2019_CBG_B01"."B01001e5" IS NULL OR "2019_CBG_B01"."B01001e6"
+    IS NULL OR "2019_CBG_B01"."B01001e27" IS NULL OR "2019_CBG_B01"."B01001e28" IS NULL OR "2019_CBG_B01"."B01001e29"
+    IS NULL OR "2019_CBG_B01"."B01001e30" IS NULL OR "2019_CBG_B01"."B01001e7" IS NULL OR "2019_CBG_B01"."B01001e8"
+    IS NULL OR "2019_CBG_B01"."B01001e9" IS NULL OR "2019_CBG_B01"."B01001e10" IS NULL OR "2019_CBG_B01"."B01001e11"
+    IS NULL OR "2019_CBG_B01"."B01001e12" IS NULL OR "2019_CBG_B01"."B01001e13" IS NULL OR "2019_CBG_B01"."B01001e14"
+    IS NULL OR "2019_CBG_B01"."B01001e15" IS NULL OR "2019_CBG_B01"."B01001e16" IS NULL OR "2019_CBG_B01"."B01001e17"
+    IS NULL OR "2019_CBG_B01"."B01001e18" IS NULL OR "2019_CBG_B01"."B01001e19" IS NULL OR "2019_CBG_B01"."B01001e31"
+    IS NULL OR "2019_CBG_B01"."B01001e32" IS NULL OR "2019_CBG_B01"."B01001e33" IS NULL OR "2019_CBG_B01"."B01001e34"
+    IS NULL OR "2019_CBG_B01"."B01001e35" IS NULL OR "2019_CBG_B01"."B01001e36" IS NULL OR "2019_CBG_B01"."B01001e37"
+    IS NULL OR "2019_CBG_B01"."B01001e38" IS NULL OR "2019_CBG_B01"."B01001e39" IS NULL OR "2019_CBG_B01"."B01001e40"
+    IS NULL OR "2019_CBG_B01"."B01001e41" IS NULL OR "2019_CBG_B01"."B01001e42" IS NULL OR "2019_CBG_B01"."B01001e43"
+    IS NULL, NULL, "2019_CBG_B01"."B01001e7" + "2019_CBG_B01"."B01001e8" + "2019_CBG_B01"."B01001e9" +
+    "2019_CBG_B01"."B01001e10" + "2019_CBG_B01"."B01001e11" + "2019_CBG_B01"."B01001e12" + "2019_CBG_B01"."B01001e13"
+    + "2019_CBG_B01"."B01001e14" + "2019_CBG_B01"."B01001e15" + "2019_CBG_B01"."B01001e16" + "2019_CBG_B01"."B01001e17"
+    + "2019_CBG_B01"."B01001e18" + "2019_CBG_B01"."B01001e19" + "2019_CBG_B01"."B01001e31" + "2019_CBG_B01"."B01001e32"
+    + "2019_CBG_B01"."B01001e33" + "2019_CBG_B01"."B01001e34" + "2019_CBG_B01"."B01001e35" + "2019_CBG_B01"."B01001e36"
+    + "2019_CBG_B01"."B01001e37" + "2019_CBG_B01"."B01001e38" + "2019_CBG_B01"."B01001e39" + "2019_CBG_B01"."B01001e40"
+    + "2019_CBG_B01"."B01001e41" + "2019_CBG_B01"."B01001e42" + "2019_CBG_B01"."B01001e43")), 0)
+  type: number
+  format: ratio
+  meta:
+    universe: Total population
+- name: old_age_dependency_ratio
+  title: Old-age dependency ratio
+  description: People 65 years and over for every 100 people aged 18 to 64.
+  sql: 100 * SUM(IFF("2019_CBG_B01"."B01001e20" IS NULL OR "2019_CBG_B01"."B01001e21" IS NULL OR "2019_CBG_B01"."B01001e22"
+    IS NULL OR "2019_CBG_B01"."B01001e23" IS NULL OR "2019_CBG_B01"."B01001e24" IS NULL OR "2019_CBG_B01"."B01001e25"
+    IS NULL OR "2019_CBG_B01"."B01001e44" IS NULL OR "2019_CBG_B01"."B01001e45" IS NULL OR "2019_CBG_B01"."B01001e46"
+    IS NULL OR "2019_CBG_B01"."B01001e47" IS NULL OR "2019_CBG_B01"."B01001e48" IS NULL OR "2019_CBG_B01"."B01001e49"
+    IS NULL OR "2019_CBG_B01"."B01001e7" IS NULL OR "2019_CBG_B01"."B01001e8" IS NULL OR "2019_CBG_B01"."B01001e9"
+    IS NULL OR "2019_CBG_B01"."B01001e10" IS NULL OR "2019_CBG_B01"."B01001e11" IS NULL OR "2019_CBG_B01"."B01001e12"
+    IS NULL OR "2019_CBG_B01"."B01001e13" IS NULL OR "2019_CBG_B01"."B01001e14" IS NULL OR "2019_CBG_B01"."B01001e15"
+    IS NULL OR "2019_CBG_B01"."B01001e16" IS NULL OR "2019_CBG_B01"."B01001e17" IS NULL OR "2019_CBG_B01"."B01001e18"
+    IS NULL OR "2019_CBG_B01"."B01001e19" IS NULL OR "2019_CBG_B01"."B01001e31" IS NULL OR "2019_CBG_B01"."B01001e32"
+    IS NULL OR "2019_CBG_B01"."B01001e33" IS NULL OR "2019_CBG_B01"."B01001e34" IS NULL OR "2019_CBG_B01"."B01001e35"
+    IS NULL OR "2019_CBG_B01"."B01001e36" IS NULL OR "2019_CBG_B01"."B01001e37" IS NULL OR "2019_CBG_B01"."B01001e38"
+    IS NULL OR "2019_CBG_B01"."B01001e39" IS NULL OR "2019_CBG_B01"."B01001e40" IS NULL OR "2019_CBG_B01"."B01001e41"
+    IS NULL OR "2019_CBG_B01"."B01001e42" IS NULL OR "2019_CBG_B01"."B01001e43" IS NULL, NULL, "2019_CBG_B01"."B01001e20"
+    + "2019_CBG_B01"."B01001e21" + "2019_CBG_B01"."B01001e22" + "2019_CBG_B01"."B01001e23" + "2019_CBG_B01"."B01001e24"
+    + "2019_CBG_B01"."B01001e25" + "2019_CBG_B01"."B01001e44" + "2019_CBG_B01"."B01001e45" + "2019_CBG_B01"."B01001e46"
+    + "2019_CBG_B01"."B01001e47" + "2019_CBG_B01"."B01001e48" + "2019_CBG_B01"."B01001e49")) / NULLIF(SUM(IFF("2019_CBG_B01"."B01001e20"
+    IS NULL OR "2019_CBG_B01"."B01001e21" IS NULL OR "2019_CBG_B01"."B01001e22" IS NULL OR "2019_CBG_B01"."B01001e23"
+    IS NULL OR "2019_CBG_B01"."B01001e24" IS NULL OR "2019_CBG_B01"."B01001e25" IS NULL OR "2019_CBG_B01"."B01001e44"
+    IS NULL OR "2019_CBG_B01"."B01001e45" IS NULL OR "2019_CBG_B01"."B01001e46" IS NULL OR "2019_CBG_B01"."B01001e47"
+    IS NULL OR "2019_CBG_B01"."B01001e48" IS NULL OR "2019_CBG_B01"."B01001e49" IS NULL OR "2019_CBG_B01"."B01001e7"
+    IS NULL OR "2019_CBG_B01"."B01001e8" IS NULL OR "2019_CBG_B01"."B01001e9" IS NULL OR "2019_CBG_B01"."B01001e10"
+    IS NULL OR "2019_CBG_B01"."B01001e11" IS NULL OR "2019_CBG_B01"."B01001e12" IS NULL OR "2019_CBG_B01"."B01001e13"
+    IS NULL OR "2019_CBG_B01"."B01001e14" IS NULL OR "2019_CBG_B01"."B01001e15" IS NULL OR "2019_CBG_B01"."B01001e16"
+    IS NULL OR "2019_CBG_B01"."B01001e17" IS NULL OR "2019_CBG_B01"."B01001e18" IS NULL OR "2019_CBG_B01"."B01001e19"
+    IS NULL OR "2019_CBG_B01"."B01001e31" IS NULL OR "2019_CBG_B01"."B01001e32" IS NULL OR "2019_CBG_B01"."B01001e33"
+    IS NULL OR "2019_CBG_B01"."B01001e34" IS NULL OR "2019_CBG_B01"."B01001e35" IS NULL OR "2019_CBG_B01"."B01001e36"
+    IS NULL OR "2019_CBG_B01"."B01001e37" IS NULL OR "2019_CBG_B01"."B01001e38" IS NULL OR "2019_CBG_B01"."B01001e39"
+    IS NULL OR "2019_CBG_B01"."B01001e40" IS NULL OR "2019_CBG_B01"."B01001e41" IS NULL OR "2019_CBG_B01"."B01001e42"
+    IS NULL OR "2019_CBG_B01"."B01001e43" IS NULL, NULL, "2019_CBG_B01"."B01001e7" + "2019_CBG_B01"."B01001e8"
+    + "2019_CBG_B01"."B01001e9" + "2019_CBG_B01"."B01001e10" + "2019_CBG_B01"."B01001e11" + "2019_CBG_B01"."B01001e12"
+    + "2019_CBG_B01"."B01001e13" + "2019_CBG_B01"."B01001e14" + "2019_CBG_B01"."B01001e15" + "2019_CBG_B01"."B01001e16"
+    + "2019_CBG_B01"."B01001e17" + "2019_CBG_B01"."B01001e18" + "2019_CBG_B01"."B01001e19" + "2019_CBG_B01"."B01001e31"
+    + "2019_CBG_B01"."B01001e32" + "2019_CBG_B01"."B01001e33" + "2019_CBG_B01"."B01001e34" + "2019_CBG_B01"."B01001e35"
+    + "2019_CBG_B01"."B01001e36" + "2019_CBG_B01"."B01001e37" + "2019_CBG_B01"."B01001e38" + "2019_CBG_B01"."B01001e39"
+    + "2019_CBG_B01"."B01001e40" + "2019_CBG_B01"."B01001e41" + "2019_CBG_B01"."B01001e42" + "2019_CBG_B01"."B01001e43")),
+    0)
+  type: number
+  format: ratio
+  meta:
+    universe: Total population

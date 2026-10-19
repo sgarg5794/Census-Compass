@@ -1,0 +1,201 @@
+name: detailed_race_2019
+title: Detailed race (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: detailed
+  race.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_C02"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_C02"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: detailed_race_c02003e1
+  title: 'Detailed Race: Total'
+  description: 'Detailed Race. Universe: Total population. Total.'
+  sql: '"2019_CBG_C02"."C02003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m1"'
+- name: detailed_race_population_of_one_race_c02003e2
+  title: 'Detailed Race: Population of one race'
+  description: 'Detailed Race. Universe: Total population. Population of one race.'
+  sql: '"2019_CBG_C02"."C02003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m2"'
+- name: detailed_race_population_of_one_race_white_c02003e3
+  title: 'Detailed Race: Population of one race > White'
+  description: 'Detailed Race. Universe: Total population. Population of one race > White.'
+  sql: '"2019_CBG_C02"."C02003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m3"'
+- name: detailed_race_population_of_one_race_black_or_african_american_c02003e4
+  title: 'Detailed Race: Population of one race > Black or African American'
+  description: 'Detailed Race. Universe: Total population. Population of one race > Black or African American.'
+  sql: '"2019_CBG_C02"."C02003e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m4"'
+- name: detailed_race_population_of_one_race_american_indian_and_alaska_native_c02003e5
+  title: 'Detailed Race: Population of one race > American Indian and Alaska Native'
+  description: 'Detailed Race. Universe: Total population. Population of one race > American Indian and
+    Alaska Native.'
+  sql: '"2019_CBG_C02"."C02003e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m5"'
+- name: detailed_race_population_of_one_race_asian_c02003e6
+  title: 'Detailed Race: Population of one race > Asian'
+  description: 'Detailed Race. Universe: Total population. Population of one race > Asian.'
+  sql: '"2019_CBG_C02"."C02003e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m6"'
+- name: detailed_race_population_of_one_race_native_hawaiian_and_other_pacific_islander_c02003e7
+  title: 'Detailed Race: Population of one race > Native Hawaiian and Other Pacific Islander'
+  description: 'Detailed Race. Universe: Total population. Population of one race > Native Hawaiian and
+    Other Pacific Islander.'
+  sql: '"2019_CBG_C02"."C02003e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m7"'
+- name: detailed_race_population_of_one_race_some_other_race_c02003e8
+  title: 'Detailed Race: Population of one race > Some other race'
+  description: 'Detailed Race. Universe: Total population. Population of one race > Some other race.'
+  sql: '"2019_CBG_C02"."C02003e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m8"'
+- name: detailed_race_population_of_two_or_more_races_c02003e9
+  title: 'Detailed Race: Population of two or more races'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races.'
+  sql: '"2019_CBG_C02"."C02003e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m9"'
+- name: detailed_race_population_of_two_or_more_races_two_races_including_some_other_race_c02003e10
+  title: 'Detailed Race: Population of two or more races > Two races including Some other race'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Two races
+    including Some other race.'
+  sql: '"2019_CBG_C02"."C02003e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m10"'
+- name: detailed_race_population_of_two_or_more_races_two_races_excluding_some_other_race_and_three_or_more_races_c02003e11
+  title: 'Detailed Race: Population of two or more races > Two races excluding Some other race and three
+    or more races'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Two races
+    excluding Some other race and three or more races.'
+  sql: '"2019_CBG_C02"."C02003e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m11"'
+- name: detailed_race_population_of_two_or_more_races_population_of_two_races_c02003e12
+  title: 'Detailed Race: Population of two or more races > Population of two races'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of two races.'
+  sql: '"2019_CBG_C02"."C02003e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m12"'
+- name: detailed_race_population_of_two_or_more_races_population_of_two_races_white_black_or_african_american_c02003e13
+  title: 'Detailed Race: Population of two or more races > Population of two races > White; Black or African
+    American'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of two races > White; Black or African American.'
+  sql: '"2019_CBG_C02"."C02003e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m13"'
+- name: detailed_race_population_of_two_or_more_races_population_of_two_races_white_american_indian_and_alaska_native_c02003e14
+  title: 'Detailed Race: Population of two or more races > Population of two races > White; American Indian
+    and Alaska Native'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of two races > White; American Indian and Alaska Native.'
+  sql: '"2019_CBG_C02"."C02003e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m14"'
+- name: detailed_race_population_of_two_or_more_races_population_of_two_races_white_asian_c02003e15
+  title: 'Detailed Race: Population of two or more races > Population of two races > White; Asian'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of two races > White; Asian.'
+  sql: '"2019_CBG_C02"."C02003e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m15"'
+- name: detailed_race_population_of_two_or_more_races_population_of_two_races_black_or_african_american_american_indian_and_alaska_native_c02003e16
+  title: 'Detailed Race: Population of two or more races > Population of two races > Black or African
+    American; American Indian and Alaska Native'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of two races > Black or African American; American Indian and Alaska Native.'
+  sql: '"2019_CBG_C02"."C02003e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m16"'
+- name: detailed_race_population_of_two_or_more_races_population_of_two_races_all_other_two_race_combinations_c02003e17
+  title: 'Detailed Race: Population of two or more races > Population of two races > All other two race
+    combinations'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of two races > All other two race combinations.'
+  sql: '"2019_CBG_C02"."C02003e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m17"'
+- name: detailed_race_population_of_two_or_more_races_population_of_three_races_c02003e18
+  title: 'Detailed Race: Population of two or more races > Population of three races'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of three races.'
+  sql: '"2019_CBG_C02"."C02003e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m18"'
+- name: detailed_race_population_of_two_or_more_races_population_of_four_or_more_races_c02003e19
+  title: 'Detailed Race: Population of two or more races > Population of four or more races'
+  description: 'Detailed Race. Universe: Total population. Population of two or more races > Population
+    of four or more races.'
+  sql: '"2019_CBG_C02"."C02003e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_C02"."C02003m19"'

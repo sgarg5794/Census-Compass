@@ -1,0 +1,3087 @@
+name: household_types_and_size_2019
+title: Household types and household size (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: household
+  type (including living alone); household type by relatives and nonrelatives for population in households;
+  households by type; households by presence of nonrelatives; household type by household size. Some of
+  these are also given by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B11"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B11"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: household_type_including_living_alone_b11001e1
+  title: 'Household Type (Including Living Alone): Total'
+  description: 'Household Type (Including Living Alone). Universe: Households. Total.'
+  sql: '"2019_CBG_B11"."B11001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m1"'
+- name: household_type_including_living_alone_family_households_b11001e2
+  title: 'Household Type (Including Living Alone): Family households'
+  description: 'Household Type (Including Living Alone). Universe: Households. Family households.'
+  sql: '"2019_CBG_B11"."B11001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m2"'
+- name: household_type_including_living_alone_family_households_married_couple_family_b11001e3
+  title: 'Household Type (Including Living Alone): Family households > Married-couple family'
+  description: 'Household Type (Including Living Alone). Universe: Households. Family households > Married-couple
+    family.'
+  sql: '"2019_CBG_B11"."B11001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m3"'
+- name: household_type_including_living_alone_family_households_other_family_b11001e4
+  title: 'Household Type (Including Living Alone): Family households > Other family'
+  description: 'Household Type (Including Living Alone). Universe: Households. Family households > Other
+    family.'
+  sql: '"2019_CBG_B11"."B11001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m4"'
+- name: household_type_including_living_alone_family_households_other_family_male_householder_no_spouse_present_b11001e5
+  title: 'Household Type (Including Living Alone): Family households > Other family > Male householder
+    no spouse present'
+  description: 'Household Type (Including Living Alone). Universe: Households. Family households > Other
+    family > Male householder no spouse present.'
+  sql: '"2019_CBG_B11"."B11001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m5"'
+- name: household_type_including_living_alone_family_households_other_family_female_householder_no_spouse_present_b11001e6
+  title: 'Household Type (Including Living Alone): Family households > Other family > Female householder
+    no spouse present'
+  description: 'Household Type (Including Living Alone). Universe: Households. Family households > Other
+    family > Female householder no spouse present.'
+  sql: '"2019_CBG_B11"."B11001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m6"'
+- name: household_type_including_living_alone_nonfamily_households_b11001e7
+  title: 'Household Type (Including Living Alone): Nonfamily households'
+  description: 'Household Type (Including Living Alone). Universe: Households. Nonfamily households.'
+  sql: '"2019_CBG_B11"."B11001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m7"'
+- name: household_type_including_living_alone_nonfamily_households_householder_living_alone_b11001e8
+  title: 'Household Type (Including Living Alone): Nonfamily households > Householder living alone'
+  description: 'Household Type (Including Living Alone). Universe: Households. Nonfamily households >
+    Householder living alone.'
+  sql: '"2019_CBG_B11"."B11001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m8"'
+- name: household_type_including_living_alone_nonfamily_households_householder_not_living_alone_b11001e9
+  title: 'Household Type (Including Living Alone): Nonfamily households > Householder not living alone'
+  description: 'Household Type (Including Living Alone). Universe: Households. Nonfamily households >
+    Householder not living alone.'
+  sql: '"2019_CBG_B11"."B11001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11001m9"'
+- name: household_type_including_living_alone_white_alone_b11001ae1
+  title: 'Household Type (Including Living Alone) (White Alone): Total'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Total (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am1"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_family_households_b11001ae2
+  title: 'Household Type (Including Living Alone) (White Alone): Family households'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Family households (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am2"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_family_households_married_couple_family_b11001ae3
+  title: 'Household Type (Including Living Alone) (White Alone): Family households > Married-couple family'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Family households > Married-couple family (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am3"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_family_households_other_family_b11001ae4
+  title: 'Household Type (Including Living Alone) (White Alone): Family households > Other family'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Family households > Other family (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am4"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_family_households_other_family_male_householder_no_spouse_present_b11001ae5
+  title: 'Household Type (Including Living Alone) (White Alone): Family households > Other family > Male
+    householder no spouse present'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Family households > Other family > Male householder no spouse present (White alone;
+    also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am5"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_family_households_other_family_female_householder_no_spouse_present_b11001ae6
+  title: 'Household Type (Including Living Alone) (White Alone): Family households > Other family > Female
+    householder no spouse present'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Family households > Other family > Female householder no spouse present (White
+    alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am6"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_nonfamily_households_b11001ae7
+  title: 'Household Type (Including Living Alone) (White Alone): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Nonfamily households (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am7"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_nonfamily_households_householder_living_alone_b11001ae8
+  title: 'Household Type (Including Living Alone) (White Alone): Nonfamily households > Householder living
+    alone'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Nonfamily households > Householder living alone (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11001Ae8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am8"'
+    population_group: A
+- name: household_type_including_living_alone_white_alone_nonfamily_households_householder_not_living_alone_b11001ae9
+  title: 'Household Type (Including Living Alone) (White Alone): Nonfamily households > Householder not
+    living alone'
+  description: 'Household Type (Including Living Alone) (White Alone). Universe: Households with a householder
+    who is White alone. Nonfamily households > Householder not living alone (White alone; also called
+    White).'
+  sql: '"2019_CBG_B11"."B11001Ae9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11001Am9"'
+    population_group: A
+- name: household_type_including_living_alone_black_or_african_american_alone_b11001be1
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Total'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Total (Black or African American alone;
+    also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm1"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_family_households_b11001be2
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Family households'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Family households (Black or African American
+    alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm2"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_family_households_married_couple_family_b11001be3
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Family households
+    > Married-couple family'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Family households > Married-couple family
+    (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm3"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_family_households_other_family_b11001be4
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Family households
+    > Other family'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Family households > Other family (Black
+    or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm4"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_family_households_other_family_male_householder_no_spouse_present_b11001be5
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Family households
+    > Other family > Male householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Family households > Other family > Male
+    householder no spouse present (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm5"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_family_households_other_family_female_householder_no_spouse_present_b11001be6
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Family households
+    > Other family > Female householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Family households > Other family > Female
+    householder no spouse present (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm6"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_nonfamily_households_b11001be7
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Nonfamily households (Black or African
+    American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm7"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_nonfamily_households_householder_living_alone_b11001be8
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Nonfamily households
+    > Householder living alone'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Nonfamily households > Householder living
+    alone (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm8"'
+    population_group: B
+- name: household_type_including_living_alone_black_or_african_american_alone_nonfamily_households_householder_not_living_alone_b11001be9
+  title: 'Household Type (Including Living Alone) (Black Or African American Alone): Nonfamily households
+    > Householder not living alone'
+  description: 'Household Type (Including Living Alone) (Black Or African American Alone). Universe: Households
+    with a householder who is Black or African American alone. Nonfamily households > Householder not
+    living alone (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11001Be9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11001Bm9"'
+    population_group: B
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_b11001ce1
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Total'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Total (American Indian
+    and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm1"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_family_households_b11001ce2
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Family households'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Family households (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm2"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_family_households_married_couple_family_b11001ce3
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Family households
+    > Married-couple family'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Family households >
+    Married-couple family (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm3"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_family_households_other_family_b11001ce4
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Family households
+    > Other family'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Family households >
+    Other family (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm4"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_family_households_other_family_male_householder_no_spouse_present_b11001ce5
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Family households
+    > Other family > Male householder no spouse present'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Family households >
+    Other family > Male householder no spouse present (American Indian and Alaska Native alone; also called
+    Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm5"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_family_households_other_family_female_householder_no_spouse_present_b11001ce6
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Family households
+    > Other family > Female householder no spouse present'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Family households >
+    Other family > Female householder no spouse present (American Indian and Alaska Native alone; also
+    called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm6"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_nonfamily_households_b11001ce7
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Nonfamily
+    households'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Nonfamily households
+    (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm7"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_nonfamily_households_householder_living_alone_b11001ce8
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Nonfamily
+    households > Householder living alone'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Nonfamily households
+    > Householder living alone (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm8"'
+    population_group: C
+- name: household_type_including_living_alone_american_indian_and_alaska_native_alone_nonfamily_households_householder_not_living_alone_b11001ce9
+  title: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone): Nonfamily
+    households > Householder not living alone'
+  description: 'Household Type (Including Living Alone) (American Indian And Alaska Native Alone). Universe:
+    Households with a householder who is American Indian and Alaska Native alone. Nonfamily households
+    > Householder not living alone (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11001Ce9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11001Cm9"'
+    population_group: C
+- name: household_type_including_living_alone_asian_alone_b11001de1
+  title: 'Household Type (Including Living Alone) (Asian Alone): Total'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Total (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm1"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_family_households_b11001de2
+  title: 'Household Type (Including Living Alone) (Asian Alone): Family households'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Family households (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm2"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_family_households_married_couple_family_b11001de3
+  title: 'Household Type (Including Living Alone) (Asian Alone): Family households > Married-couple family'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Family households > Married-couple family (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm3"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_family_households_other_family_b11001de4
+  title: 'Household Type (Including Living Alone) (Asian Alone): Family households > Other family'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Family households > Other family (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm4"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_family_households_other_family_male_householder_no_spouse_present_b11001de5
+  title: 'Household Type (Including Living Alone) (Asian Alone): Family households > Other family > Male
+    householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Family households > Other family > Male householder no spouse present (Asian alone;
+    also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm5"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_family_households_other_family_female_householder_no_spouse_present_b11001de6
+  title: 'Household Type (Including Living Alone) (Asian Alone): Family households > Other family > Female
+    householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Family households > Other family > Female householder no spouse present (Asian
+    alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm6"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_nonfamily_households_b11001de7
+  title: 'Household Type (Including Living Alone) (Asian Alone): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Nonfamily households (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm7"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_nonfamily_households_householder_living_alone_b11001de8
+  title: 'Household Type (Including Living Alone) (Asian Alone): Nonfamily households > Householder living
+    alone'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Nonfamily households > Householder living alone (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11001De8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm8"'
+    population_group: D
+- name: household_type_including_living_alone_asian_alone_nonfamily_households_householder_not_living_alone_b11001de9
+  title: 'Household Type (Including Living Alone) (Asian Alone): Nonfamily households > Householder not
+    living alone'
+  description: 'Household Type (Including Living Alone) (Asian Alone). Universe: Households with a householder
+    who is Asian alone. Nonfamily households > Householder not living alone (Asian alone; also called
+    Asian).'
+  sql: '"2019_CBG_B11"."B11001De9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11001Dm9"'
+    population_group: D
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_b11001ee1
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Total'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Total
+    (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em1"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_family_households_b11001ee2
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Family households'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Family
+    households (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native
+    Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em2"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_family_households_married_couple_family_b11001ee3
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Family households > Married-couple family'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Family
+    households > Married-couple family (Native Hawaiian and Other Pacific Islander alone; also called
+    Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em3"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_family_households_other_family_b11001ee4
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Family households > Other family'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Family
+    households > Other family (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander,
+    Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em4"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_family_households_other_family_male_householder_no_spouse_prese_b11001ee5
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Family households > Other family > Male householder, no spouse present'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Family
+    households > Other family > Male householder, no spouse present (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em5"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_family_households_other_family_female_householder_no_spouse_pre_b11001ee6
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Family households > Other family > Female householder, no spouse present'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Family
+    households > Other family > Female householder, no spouse present (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em6"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_nonfamily_households_b11001ee7
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Nonfamily households'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Nonfamily
+    households (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native
+    Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em7"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_nonfamily_households_householder_living_alone_b11001ee8
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Nonfamily households > Householder living alone'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Nonfamily
+    households > Householder living alone (Native Hawaiian and Other Pacific Islander alone; also called
+    Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em8"'
+    population_group: E
+- name: household_type_including_living_alone_native_hawaiian_and_other_pacific_islander_alone_nonfamily_households_householder_not_living_alone_b11001ee9
+  title: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone):
+    Nonfamily households > Householder not living alone'
+  description: 'Household Type (Including Living Alone) (Native Hawaiian And Other Pacific Islander Alone).
+    Universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone. Nonfamily
+    households > Householder not living alone (Native Hawaiian and Other Pacific Islander alone; also
+    called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11001Ee9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Native Hawaiian and Other Pacific Islander alone
+    moe_sql: '"2019_CBG_B11"."B11001Em9"'
+    population_group: E
+- name: household_type_including_living_alone_some_other_race_alone_b11001fe1
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Total'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Total (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm1"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_family_households_b11001fe2
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Family households'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Family households (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm2"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_family_households_married_couple_family_b11001fe3
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Family households > Married-couple
+    family'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Family households > Married-couple family (Some other
+    race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm3"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_family_households_other_family_b11001fe4
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Family households > Other family'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Family households > Other family (Some other race
+    alone).'
+  sql: '"2019_CBG_B11"."B11001Fe4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm4"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_family_households_other_family_male_householder_no_spouse_present_b11001fe5
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Family households > Other family
+    > Male householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Family households > Other family > Male householder
+    no spouse present (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm5"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_family_households_other_family_female_householder_no_spouse_present_b11001fe6
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Family households > Other family
+    > Female householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Family households > Other family > Female householder
+    no spouse present (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm6"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_nonfamily_households_b11001fe7
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Nonfamily households (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm7"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_nonfamily_households_householder_living_alone_b11001fe8
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Nonfamily households > Householder
+    living alone'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Nonfamily households > Householder living alone (Some
+    other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm8"'
+    population_group: F
+- name: household_type_including_living_alone_some_other_race_alone_nonfamily_households_householder_not_living_alone_b11001fe9
+  title: 'Household Type (Including Living Alone) (Some Other Race Alone): Nonfamily households > Householder
+    not living alone'
+  description: 'Household Type (Including Living Alone) (Some Other Race Alone). Universe: Households
+    with a householder who is Some other race alone. Nonfamily households > Householder not living alone
+    (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11001Fe9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11001Fm9"'
+    population_group: F
+- name: household_type_including_living_alone_two_or_more_races_b11001ge1
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Total'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Total (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm1"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_family_households_b11001ge2
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Family households'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Family households (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm2"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_family_households_married_couple_family_b11001ge3
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Family households > Married-couple
+    family'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Family households > Married-couple family (Two or more races;
+    also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm3"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_family_households_other_family_b11001ge4
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Family households > Other family'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Family households > Other family (Two or more races; also
+    called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm4"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_family_households_other_family_male_householder_no_spouse_present_b11001ge5
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Family households > Other family
+    > Male householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Family households > Other family > Male householder no spouse
+    present (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm5"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_family_households_other_family_female_householder_no_spouse_present_b11001ge6
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Family households > Other family
+    > Female householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Family households > Other family > Female householder no spouse
+    present (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm6"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_nonfamily_households_b11001ge7
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Nonfamily households (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm7"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_nonfamily_households_householder_living_alone_b11001ge8
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Nonfamily households > Householder
+    living alone'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Nonfamily households > Householder living alone (Two or more
+    races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm8"'
+    population_group: G
+- name: household_type_including_living_alone_two_or_more_races_nonfamily_households_householder_not_living_alone_b11001ge9
+  title: 'Household Type (Including Living Alone) (Two Or More Races): Nonfamily households > Householder
+    not living alone'
+  description: 'Household Type (Including Living Alone) (Two Or More Races). Universe: Households with
+    a householder who is Two or more races. Nonfamily households > Householder not living alone (Two or
+    more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11001Ge9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11001Gm9"'
+    population_group: G
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_b11001he1
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Total'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Total (White alone, not
+    Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm1"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_family_households_b11001he2
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Family households'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Family households (White
+    alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm2"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_family_households_married_couple_family_b11001he3
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Family households
+    > Married-couple family'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Family households > Married-couple
+    family (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm3"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_family_households_other_family_b11001he4
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Family households
+    > Other family'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Family households > Other
+    family (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm4"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_family_households_other_family_male_householder_no_spouse_present_b11001he5
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Family households
+    > Other family > Male householder no spouse present'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Family households > Other
+    family > Male householder no spouse present (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2019_CBG_B11"."B11001He5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm5"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_family_households_other_family_female_householder_no_spouse_present_b11001he6
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Family households
+    > Other family > Female householder no spouse present'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Family households > Other
+    family > Female householder no spouse present (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2019_CBG_B11"."B11001He6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm6"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_nonfamily_households_b11001he7
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Nonfamily households (White
+    alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm7"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_nonfamily_households_householder_living_alone_b11001he8
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Nonfamily households
+    > Householder living alone'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Nonfamily households > Householder
+    living alone (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm8"'
+    population_group: H
+- name: household_type_including_living_alone_white_alone_not_hispanic_or_latino_nonfamily_households_householder_not_living_alone_b11001he9
+  title: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino): Nonfamily households
+    > Householder not living alone'
+  description: 'Household Type (Including Living Alone) (White Alone, Not Hispanic Or Latino). Universe:
+    Households with a householder who is White alone, not Hispanic or Latino. Nonfamily households > Householder
+    not living alone (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11001He9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Hm9"'
+    population_group: H
+- name: household_type_including_living_alone_hispanic_or_latino_b11001ie1
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Total'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Total (Hispanic or Latino; also called Hispanic, Latino,
+    Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im1"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_family_households_b11001ie2
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Family households'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Family households (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im2"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_family_households_married_couple_family_b11001ie3
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Family households > Married-couple
+    family'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Family households > Married-couple family (Hispanic or Latino;
+    also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im3"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_family_households_other_family_b11001ie4
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Family households > Other family'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Family households > Other family (Hispanic or Latino; also
+    called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im4"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_family_households_other_family_male_householder_no_spouse_present_b11001ie5
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Family households > Other family
+    > Male householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Family households > Other family > Male householder no spouse
+    present (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im5"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_family_households_other_family_female_householder_no_spouse_present_b11001ie6
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Family households > Other family
+    > Female householder no spouse present'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Family households > Other family > Female householder no
+    spouse present (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im6"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_nonfamily_households_b11001ie7
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Nonfamily households'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Nonfamily households (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im7"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_nonfamily_households_householder_living_alone_b11001ie8
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Nonfamily households > Householder
+    living alone'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Nonfamily households > Householder living alone (Hispanic
+    or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im8"'
+    population_group: I
+- name: household_type_including_living_alone_hispanic_or_latino_nonfamily_households_householder_not_living_alone_b11001ie9
+  title: 'Household Type (Including Living Alone) (Hispanic Or Latino): Nonfamily households > Householder
+    not living alone'
+  description: 'Household Type (Including Living Alone) (Hispanic Or Latino). Universe: Households with
+    a householder who is Hispanic or Latino. Nonfamily households > Householder not living alone (Hispanic
+    or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11001Ie9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11001Im9"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_b11002e1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. Total.'
+  sql: '"2019_CBG_B11"."B11002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m1"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_b11002e2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households.'
+  sql: '"2019_CBG_B11"."B11002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m2"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_married_couple_family_b11002e3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In married-couple family.'
+  sql: '"2019_CBG_B11"."B11002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m3"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_married_couple_family_relatives_b11002e4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In married-couple family > Relatives.'
+  sql: '"2019_CBG_B11"."B11002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m4"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_married_couple_family_nonrelatives_b11002e5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In married-couple family > Nonrelatives.'
+  sql: '"2019_CBG_B11"."B11002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m5"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_male_householder_no_spouse_present_family_b11002e6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In male householder no spouse present family.'
+  sql: '"2019_CBG_B11"."B11002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m6"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_male_householder_no_spouse_present_family_relatives_b11002e7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In male householder no spouse present family > Relatives.'
+  sql: '"2019_CBG_B11"."B11002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m7"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_male_householder_no_spouse_present_family_nonrelativ_b11002e8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In male householder no spouse present family > Nonrelatives.'
+  sql: '"2019_CBG_B11"."B11002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m8"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_female_householder_no_spouse_present_family_b11002e9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In female householder no spouse present family.'
+  sql: '"2019_CBG_B11"."B11002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m9"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_female_householder_no_spouse_present_family_relative_b11002e10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In female householder no spouse present family > Relatives.'
+  sql: '"2019_CBG_B11"."B11002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m10"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_family_households_in_female_householder_no_spouse_present_family_nonrelat_b11002e11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In family households
+    > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In family households > In female householder no spouse present family > Nonrelatives.'
+  sql: '"2019_CBG_B11"."B11002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m11"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_in_nonfamily_households_b11002e12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households: In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households. Universe: Population
+    in households. In nonfamily households.'
+  sql: '"2019_CBG_B11"."B11002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households
+    moe_sql: '"2019_CBG_B11"."B11002m12"'
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_b11002ae1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. Total (White alone; also
+    called White).'
+  sql: '"2019_CBG_B11"."B11002Ae1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am1"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_b11002ae2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households (White
+    alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am2"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_married_couple_family_b11002ae3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    married-couple family (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am3"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_married_couple_family_relatives_b11002ae4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    married-couple family > Relatives (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am4"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_married_couple_family_nonrelatives_b11002ae5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    married-couple family > Nonrelatives (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am5"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_male_householder_no_spouse_present_famil_b11002ae6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    male householder no spouse present family (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am6"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_male_householder_no_spouse_present_famil_b11002ae7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    male householder no spouse present family > Relatives (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am7"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_male_householder_no_spouse_present_famil_b11002ae8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    male householder no spouse present family > Nonrelatives (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am8"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_female_householder_no_spouse_present_fam_b11002ae9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    female householder no spouse present family (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am9"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_female_householder_no_spouse_present_fam_b11002ae10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    female householder no spouse present family > Relatives (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am10"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_family_households_in_female_householder_no_spouse_present_fam_b11002ae11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In family households > In
+    female householder no spouse present family > Nonrelatives (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am11"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_in_nonfamily_households_b11002ae12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone): In
+    nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone).
+    Universe: Population in households with a householder who is White alone. In nonfamily households
+    (White alone; also called White).'
+  sql: '"2019_CBG_B11"."B11002Ae12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone
+    moe_sql: '"2019_CBG_B11"."B11002Am12"'
+    population_group: A
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_b11002be1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. Total (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm1"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_b11002be2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm2"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_married_couple_famil_b11002be3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In married-couple family (Black or African American alone; also called
+    Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm3"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_married_couple_famil_b11002be4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In married-couple family > Relatives (Black or African American alone;
+    also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm4"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_married_couple_famil_b11002be5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In married-couple family > Nonrelatives (Black or African American alone;
+    also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm5"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_male_householder_no__b11002be6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In male householder no spouse present family (Black or African American
+    alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm6"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_male_householder_no__b11002be7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In male householder no spouse present family > Relatives (Black or African
+    American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm7"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_male_householder_no__b11002be8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In male householder no spouse present family > Nonrelatives (Black or
+    African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm8"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_female_householder_n_b11002be9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In female householder no spouse present family (Black or African American
+    alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm9"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_female_householder_n_b11002be10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In female householder no spouse present family > Relatives (Black or
+    African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm10"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_family_households_in_female_householder_n_b11002be11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In family households > In female householder no spouse present family > Nonrelatives (Black
+    or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm11"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_black_or_african_american_alone_in_nonfamily_households_b11002be12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone): In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Black Or African
+    American Alone). Universe: Population in households with a householder who is Black or African American
+    alone. In nonfamily households (Black or African American alone; also called Black, African American).'
+  sql: '"2019_CBG_B11"."B11002Be12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Black or African American alone
+    moe_sql: '"2019_CBG_B11"."B11002Bm12"'
+    population_group: B
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_b11002ce1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. Total (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm1"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_b11002ce2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households (American Indian and Alaska Native alone; also called
+    Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm2"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_married_coup_b11002ce3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In married-couple family (American Indian and Alaska
+    Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm3"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_married_coup_b11002ce4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In married-couple family > Relatives (American Indian
+    and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm4"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_married_coup_b11002ce5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In married-couple family > Nonrelatives (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm5"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_male_househo_b11002ce6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In male householder no spouse present family (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm6"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_male_househo_b11002ce7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In male householder no spouse present family > Relatives
+    (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm7"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_male_househo_b11002ce8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In male householder no spouse present family > Nonrelatives
+    (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm8"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_female_house_b11002ce9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In female householder no spouse present family (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm9"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_female_house_b11002ce10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In female householder no spouse present family > Relatives
+    (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm10"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_family_households_in_female_house_b11002ce11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In family households > In female householder no spouse present family > Nonrelatives
+    (American Indian and Alaska Native alone; also called Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm11"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_american_indian_and_alaska_native_alone_in_nonfamily_households_b11002ce12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian And
+    Alaska Native Alone): In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (American Indian
+    And Alaska Native Alone). Universe: Population in households with a householder who is American Indian
+    and Alaska Native alone. In nonfamily households (American Indian and Alaska Native alone; also called
+    Native American).'
+  sql: '"2019_CBG_B11"."B11002Ce12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2019_CBG_B11"."B11002Cm12"'
+    population_group: C
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_b11002de1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. Total (Asian alone; also
+    called Asian).'
+  sql: '"2019_CBG_B11"."B11002De1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm1"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_b11002de2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households (Asian
+    alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm2"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_married_couple_family_b11002de3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    married-couple family (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm3"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_married_couple_family_relatives_b11002de4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    married-couple family > Relatives (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm4"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_married_couple_family_nonrelatives_b11002de5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    married-couple family > Nonrelatives (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm5"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_male_householder_no_spouse_present_famil_b11002de6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    male householder no spouse present family (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm6"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_male_householder_no_spouse_present_famil_b11002de7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    male householder no spouse present family > Relatives (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm7"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_male_householder_no_spouse_present_famil_b11002de8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    male householder no spouse present family > Nonrelatives (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm8"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_female_householder_no_spouse_present_fam_b11002de9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    female householder no spouse present family (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm9"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_female_householder_no_spouse_present_fam_b11002de10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    female householder no spouse present family > Relatives (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm10"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_family_households_in_female_householder_no_spouse_present_fam_b11002de11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In family households > In
+    female householder no spouse present family > Nonrelatives (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm11"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_asian_alone_in_nonfamily_households_b11002de12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone): In
+    nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Asian Alone).
+    Universe: Population in households with a householder who is Asian alone. In nonfamily households
+    (Asian alone; also called Asian).'
+  sql: '"2019_CBG_B11"."B11002De12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Asian alone
+    moe_sql: '"2019_CBG_B11"."B11002Dm12"'
+    population_group: D
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_b11002ee1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. Total (Native Hawaiian and Other Pacific Islander alone;
+    also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em1"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_b11002ee2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em2"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_mar_b11002ee3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In married-couple family (Native
+    Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em3"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_mar_b11002ee4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In married-couple family > Relatives
+    (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em4"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_mar_b11002ee5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In married-couple family > Nonrelatives
+    (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em5"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_mal_b11002ee6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In male householder, no spouse present, family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In male householder, no spouse present,
+    family (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em6"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_mal_b11002ee7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In male householder, no spouse present, family
+    > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In male householder, no spouse present,
+    family > Relatives (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander,
+    Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em7"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_mal_b11002ee8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In male householder, no spouse present, family
+    > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In male householder, no spouse present,
+    family > Nonrelatives (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander,
+    Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em8"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_fem_b11002ee9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In female householder, no spouse present, family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In female householder, no spouse
+    present, family (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native
+    Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em9"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_fem_b11002ee10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In female householder, no spouse present, family
+    > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In female householder, no spouse
+    present, family > Relatives (Native Hawaiian and Other Pacific Islander alone; also called Pacific
+    Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em10"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_family_households_in_fem_b11002ee11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In family households > In female householder, no spouse present, family
+    > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In family households > In female householder, no spouse
+    present, family > Nonrelatives (Native Hawaiian and Other Pacific Islander alone; also called Pacific
+    Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em11"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_native_hawaiian_and_other_pacific_islander_alone_in_nonfamily_households_b11002ee12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian And
+    Other Pacific Islander Alone): In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Population in households with a householder who is Native
+    Hawaiian and Other Pacific Islander alone. In nonfamily households (Native Hawaiian and Other Pacific
+    Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2019_CBG_B11"."B11002Ee12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2019_CBG_B11"."B11002Em12"'
+    population_group: E
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_b11002fe1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. Total
+    (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm1"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_b11002fe2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm2"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_married_couple_family_b11002fe3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In married-couple family (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm3"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_married_couple_family_relative_b11002fe4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In married-couple family > Relatives (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm4"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_married_couple_family_nonrelat_b11002fe5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In married-couple family > Nonrelatives (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm5"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_male_householder_no_spouse_pre_b11002fe6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In male householder no spouse present family (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm6"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_male_householder_no_spouse_pre_b11002fe7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In male householder no spouse present family > Relatives (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm7"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_male_householder_no_spouse_pre_b11002fe8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In male householder no spouse present family > Nonrelatives (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm8"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_female_householder_no_spouse_p_b11002fe9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In female householder no spouse present family (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm9"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_female_householder_no_spouse_p_b11002fe10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In female householder no spouse present family > Relatives (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm10"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_family_households_in_female_householder_no_spouse_p_b11002fe11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    family households > In female householder no spouse present family > Nonrelatives (Some other race
+    alone).'
+  sql: '"2019_CBG_B11"."B11002Fe11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm11"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_some_other_race_alone_in_nonfamily_households_b11002fe12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other Race Alone):
+    In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Some Other
+    Race Alone). Universe: Population in households with a householder who is Some other race alone. In
+    nonfamily households (Some other race alone).'
+  sql: '"2019_CBG_B11"."B11002Fe12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Some other race alone
+    moe_sql: '"2019_CBG_B11"."B11002Fm12"'
+    population_group: F
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_b11002ge1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. Total (Two
+    or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm1"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_b11002ge2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm2"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_married_couple_family_b11002ge3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In married-couple family (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm3"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_married_couple_family_relatives_b11002ge4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In married-couple family > Relatives (Two or more races; also called multiracial, mixed
+    race).'
+  sql: '"2019_CBG_B11"."B11002Ge4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm4"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_married_couple_family_nonrelatives_b11002ge5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In married-couple family > Nonrelatives (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm5"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_male_householder_no_spouse_present_b11002ge6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In male householder no spouse present family (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm6"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_male_householder_no_spouse_present_b11002ge7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In male householder no spouse present family > Relatives (Two or more races; also called
+    multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm7"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_male_householder_no_spouse_present_b11002ge8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In male householder no spouse present family > Nonrelatives (Two or more races; also
+    called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm8"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_female_householder_no_spouse_prese_b11002ge9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In female householder no spouse present family (Two or more races; also called multiracial,
+    mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm9"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_female_householder_no_spouse_prese_b11002ge10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In female householder no spouse present family > Relatives (Two or more races; also called
+    multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm10"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_family_households_in_female_householder_no_spouse_prese_b11002ge11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In family
+    households > In female householder no spouse present family > Nonrelatives (Two or more races; also
+    called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm11"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_two_or_more_races_in_nonfamily_households_b11002ge12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More Races):
+    In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Two Or More
+    Races). Universe: Population in households with a householder who is Two or more races. In nonfamily
+    households (Two or more races; also called multiracial, mixed race).'
+  sql: '"2019_CBG_B11"."B11002Ge12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Two or more races
+    moe_sql: '"2019_CBG_B11"."B11002Gm12"'
+    population_group: G
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_b11002he1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. Total (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm1"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_b11002he2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households (White alone, not Hispanic or Latino; also called non-Hispanic
+    White).'
+  sql: '"2019_CBG_B11"."B11002He2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm2"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_married_couple_fa_b11002he3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In married-couple family (White alone, not Hispanic
+    or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm3"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_married_couple_fa_b11002he4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In married-couple family > Relatives (White alone,
+    not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm4"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_married_couple_fa_b11002he5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In married-couple family > Nonrelatives (White alone,
+    not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm5"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_male_householder__b11002he6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In male householder no spouse present family (White
+    alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm6"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_male_householder__b11002he7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In male householder no spouse present family > Relatives
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm7"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_male_householder__b11002he8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In male householder no spouse present family > Nonrelatives
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm8"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_female_householde_b11002he9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In female householder no spouse present family (White
+    alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm9"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_female_householde_b11002he10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In female householder no spouse present family > Relatives
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm10"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_family_households_in_female_householde_b11002he11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In family households > In female householder no spouse present family > Nonrelatives
+    (White alone, not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm11"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_white_alone_not_hispanic_or_latino_in_nonfamily_households_b11002he12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone, Not
+    Hispanic Or Latino): In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (White Alone,
+    Not Hispanic Or Latino). Universe: Population in households with a householder who is White alone,
+    not Hispanic or Latino. In nonfamily households (White alone, not Hispanic or Latino; also called
+    non-Hispanic White).'
+  sql: '"2019_CBG_B11"."B11002He12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Hm12"'
+    population_group: H
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_b11002ie1
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    Total'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. Total (Hispanic
+    or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im1"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_b11002ie2
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im2"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_married_couple_family_b11002ie3
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In married-couple family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In married-couple family (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im3"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_married_couple_family_relatives_b11002ie4
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In married-couple family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In married-couple family > Relatives (Hispanic or Latino; also called Hispanic, Latino,
+    Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im4"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_married_couple_family_nonrelative_b11002ie5
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In married-couple family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In married-couple family > Nonrelatives (Hispanic or Latino; also called Hispanic, Latino,
+    Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im5"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_male_householder_no_spouse_presen_b11002ie6
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In male householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In male householder no spouse present family (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im6"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_male_householder_no_spouse_presen_b11002ie7
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In male householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In male householder no spouse present family > Relatives (Hispanic or Latino; also called
+    Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im7"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_male_householder_no_spouse_presen_b11002ie8
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In male householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In male householder no spouse present family > Nonrelatives (Hispanic or Latino; also
+    called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im8"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_female_householder_no_spouse_pres_b11002ie9
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In female householder no spouse present family'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In female householder no spouse present family (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im9"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_female_householder_no_spouse_pres_b11002ie10
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In female householder no spouse present family > Relatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In female householder no spouse present family > Relatives (Hispanic or Latino; also
+    called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im10"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_family_households_in_female_householder_no_spouse_pres_b11002ie11
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In family households > In female householder no spouse present family > Nonrelatives'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In family
+    households > In female householder no spouse present family > Nonrelatives (Hispanic or Latino; also
+    called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im11"'
+    population_group: I
+- name: household_type_by_relatives_and_nonrelatives_for_population_in_households_hispanic_or_latino_in_nonfamily_households_b11002ie12
+  title: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or Latino):
+    In nonfamily households'
+  description: 'Household Type By Relatives And Nonrelatives For Population In Households (Hispanic Or
+    Latino). Universe: Population in households with a householder who is Hispanic or Latino. In nonfamily
+    households (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2019_CBG_B11"."B11002Ie12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population in households with a householder who is Hispanic or Latino
+    moe_sql: '"2019_CBG_B11"."B11002Im12"'
+    population_group: I
+- name: households_by_type_b11012e1
+  title: 'Households By Type: Total'
+  description: 'Households By Type. Universe: Households. Total.'
+  sql: '"2019_CBG_B11"."B11012e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m1"'
+- name: households_by_type_married_couple_household_b11012e2
+  title: 'Households By Type: Married-couple household'
+  description: 'Households By Type. Universe: Households. Married-couple household.'
+  sql: '"2019_CBG_B11"."B11012e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m2"'
+- name: households_by_type_married_couple_household_with_own_children_under_18_years_b11012e3
+  title: 'Households By Type: Married-couple household > With own children under 18 years'
+  description: 'Households By Type. Universe: Households. Married-couple household > With own children
+    under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m3"'
+- name: households_by_type_married_couple_household_with_no_own_children_under_18_years_b11012e4
+  title: 'Households By Type: Married-couple household > With no own children under 18 years'
+  description: 'Households By Type. Universe: Households. Married-couple household > With no own children
+    under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m4"'
+- name: households_by_type_cohabiting_couple_household_b11012e5
+  title: 'Households By Type: Cohabiting couple household'
+  description: 'Households By Type. Universe: Households. Cohabiting couple household.'
+  sql: '"2019_CBG_B11"."B11012e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m5"'
+- name: households_by_type_cohabiting_couple_household_with_own_children_of_the_householder_under_18_years_b11012e6
+  title: 'Households By Type: Cohabiting couple household > With own children of the householder under
+    18 years'
+  description: 'Households By Type. Universe: Households. Cohabiting couple household > With own children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m6"'
+- name: households_by_type_cohabiting_couple_household_with_no_own_children_of_the_householder_under_18_years_b11012e7
+  title: 'Households By Type: Cohabiting couple household > With no own children of the householder under
+    18 years'
+  description: 'Households By Type. Universe: Households. Cohabiting couple household > With no own children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m7"'
+- name: households_by_type_female_householder_no_spouse_or_partner_present_b11012e8
+  title: 'Households By Type: Female householder no spouse or partner present'
+  description: 'Households By Type. Universe: Households. Female householder no spouse or partner present.'
+  sql: '"2019_CBG_B11"."B11012e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m8"'
+- name: households_by_type_female_householder_no_spouse_or_partner_present_living_alone_b11012e9
+  title: 'Households By Type: Female householder no spouse or partner present > Living alone'
+  description: 'Households By Type. Universe: Households. Female householder no spouse or partner present
+    > Living alone.'
+  sql: '"2019_CBG_B11"."B11012e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m9"'
+- name: households_by_type_female_householder_no_spouse_or_partner_present_with_own_children_under_18_years_b11012e10
+  title: 'Households By Type: Female householder no spouse or partner present > With own children under
+    18 years'
+  description: 'Households By Type. Universe: Households. Female householder no spouse or partner present
+    > With own children under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m10"'
+- name: households_by_type_female_householder_no_spouse_or_partner_present_with_relatives_no_own_children_under_18_years_b11012e11
+  title: 'Households By Type: Female householder no spouse or partner present > With relatives no own
+    children under 18 years'
+  description: 'Households By Type. Universe: Households. Female householder no spouse or partner present
+    > With relatives no own children under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m11"'
+- name: households_by_type_female_householder_no_spouse_or_partner_present_with_only_nonrelatives_present_b11012e12
+  title: 'Households By Type: Female householder no spouse or partner present > With only nonrelatives
+    present'
+  description: 'Households By Type. Universe: Households. Female householder no spouse or partner present
+    > With only nonrelatives present.'
+  sql: '"2019_CBG_B11"."B11012e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m12"'
+- name: households_by_type_male_householder_no_spouse_or_partner_present_b11012e13
+  title: 'Households By Type: Male householder no spouse or partner present'
+  description: 'Households By Type. Universe: Households. Male householder no spouse or partner present.'
+  sql: '"2019_CBG_B11"."B11012e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m13"'
+- name: households_by_type_male_householder_no_spouse_or_partner_present_living_alone_b11012e14
+  title: 'Households By Type: Male householder no spouse or partner present > Living alone'
+  description: 'Households By Type. Universe: Households. Male householder no spouse or partner present
+    > Living alone.'
+  sql: '"2019_CBG_B11"."B11012e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m14"'
+- name: households_by_type_male_householder_no_spouse_or_partner_present_with_own_children_under_18_years_b11012e15
+  title: 'Households By Type: Male householder no spouse or partner present > With own children under
+    18 years'
+  description: 'Households By Type. Universe: Households. Male householder no spouse or partner present
+    > With own children under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m15"'
+- name: households_by_type_male_householder_no_spouse_or_partner_present_with_relatives_no_own_children_under_18_years_b11012e16
+  title: 'Households By Type: Male householder no spouse or partner present > With relatives no own children
+    under 18 years'
+  description: 'Households By Type. Universe: Households. Male householder no spouse or partner present
+    > With relatives no own children under 18 years.'
+  sql: '"2019_CBG_B11"."B11012e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m16"'
+- name: households_by_type_male_householder_no_spouse_or_partner_present_with_only_nonrelatives_present_b11012e17
+  title: 'Households By Type: Male householder no spouse or partner present > With only nonrelatives present'
+  description: 'Households By Type. Universe: Households. Male householder no spouse or partner present
+    > With only nonrelatives present.'
+  sql: '"2019_CBG_B11"."B11012e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11012m17"'
+- name: households_by_presence_of_nonrelatives_b11015e1
+  title: 'Households By Presence Of Nonrelatives: Total'
+  description: 'Households By Presence Of Nonrelatives. Universe: Households. Total.'
+  sql: '"2019_CBG_B11"."B11015e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11015m1"'
+- name: households_by_presence_of_nonrelatives_households_with_one_or_more_nonrelatives_b11015e2
+  title: 'Households By Presence Of Nonrelatives: Households with one or more nonrelatives'
+  description: 'Households By Presence Of Nonrelatives. Universe: Households. Households with one or more
+    nonrelatives.'
+  sql: '"2019_CBG_B11"."B11015e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11015m2"'
+- name: households_by_presence_of_nonrelatives_households_with_no_nonrelatives_b11015e3
+  title: 'Households By Presence Of Nonrelatives: Households with no nonrelatives'
+  description: 'Households By Presence Of Nonrelatives. Universe: Households. Households with no nonrelatives.'
+  sql: '"2019_CBG_B11"."B11015e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11015m3"'
+- name: household_type_by_household_size_b11016e1
+  title: 'Household Type By Household Size: Total'
+  description: 'Household Type By Household Size. Universe: Households. Total.'
+  sql: '"2019_CBG_B11"."B11016e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m1"'
+- name: household_type_by_household_size_family_households_b11016e2
+  title: 'Household Type By Household Size: Family households'
+  description: 'Household Type By Household Size. Universe: Households. Family households.'
+  sql: '"2019_CBG_B11"."B11016e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m2"'
+- name: household_type_by_household_size_family_households_2_person_household_b11016e3
+  title: 'Household Type By Household Size: Family households > 2-person household'
+  description: 'Household Type By Household Size. Universe: Households. Family households > 2-person household.'
+  sql: '"2019_CBG_B11"."B11016e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m3"'
+- name: household_type_by_household_size_family_households_3_person_household_b11016e4
+  title: 'Household Type By Household Size: Family households > 3-person household'
+  description: 'Household Type By Household Size. Universe: Households. Family households > 3-person household.'
+  sql: '"2019_CBG_B11"."B11016e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m4"'
+- name: household_type_by_household_size_family_households_4_person_household_b11016e5
+  title: 'Household Type By Household Size: Family households > 4-person household'
+  description: 'Household Type By Household Size. Universe: Households. Family households > 4-person household.'
+  sql: '"2019_CBG_B11"."B11016e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m5"'
+- name: household_type_by_household_size_family_households_5_person_household_b11016e6
+  title: 'Household Type By Household Size: Family households > 5-person household'
+  description: 'Household Type By Household Size. Universe: Households. Family households > 5-person household.'
+  sql: '"2019_CBG_B11"."B11016e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m6"'
+- name: household_type_by_household_size_family_households_6_person_household_b11016e7
+  title: 'Household Type By Household Size: Family households > 6-person household'
+  description: 'Household Type By Household Size. Universe: Households. Family households > 6-person household.'
+  sql: '"2019_CBG_B11"."B11016e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m7"'
+- name: household_type_by_household_size_family_households_7_or_more_person_household_b11016e8
+  title: 'Household Type By Household Size: Family households > 7-or-more person household'
+  description: 'Household Type By Household Size. Universe: Households. Family households > 7-or-more
+    person household.'
+  sql: '"2019_CBG_B11"."B11016e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m8"'
+- name: household_type_by_household_size_nonfamily_households_b11016e9
+  title: 'Household Type By Household Size: Nonfamily households'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households.'
+  sql: '"2019_CBG_B11"."B11016e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m9"'
+- name: household_type_by_household_size_nonfamily_households_1_person_household_b11016e10
+  title: 'Household Type By Household Size: Nonfamily households > 1-person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 1-person
+    household.'
+  sql: '"2019_CBG_B11"."B11016e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m10"'
+- name: household_type_by_household_size_nonfamily_households_2_person_household_b11016e11
+  title: 'Household Type By Household Size: Nonfamily households > 2-person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 2-person
+    household.'
+  sql: '"2019_CBG_B11"."B11016e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m11"'
+- name: household_type_by_household_size_nonfamily_households_3_person_household_b11016e12
+  title: 'Household Type By Household Size: Nonfamily households > 3-person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 3-person
+    household.'
+  sql: '"2019_CBG_B11"."B11016e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m12"'
+- name: household_type_by_household_size_nonfamily_households_4_person_household_b11016e13
+  title: 'Household Type By Household Size: Nonfamily households > 4-person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 4-person
+    household.'
+  sql: '"2019_CBG_B11"."B11016e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m13"'
+- name: household_type_by_household_size_nonfamily_households_5_person_household_b11016e14
+  title: 'Household Type By Household Size: Nonfamily households > 5-person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 5-person
+    household.'
+  sql: '"2019_CBG_B11"."B11016e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m14"'
+- name: household_type_by_household_size_nonfamily_households_6_person_household_b11016e15
+  title: 'Household Type By Household Size: Nonfamily households > 6-person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 6-person
+    household.'
+  sql: '"2019_CBG_B11"."B11016e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m15"'
+- name: household_type_by_household_size_nonfamily_households_7_or_more_person_household_b11016e16
+  title: 'Household Type By Household Size: Nonfamily households > 7-or-more person household'
+  description: 'Household Type By Household Size. Universe: Households. Nonfamily households > 7-or-more
+    person household.'
+  sql: '"2019_CBG_B11"."B11016e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B11"."B11016m16"'

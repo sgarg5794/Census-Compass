@@ -1,0 +1,809 @@
+name: earnings_2019
+title: Individual earnings by sex and work experience (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by earnings for the population 16 years and over with earnings; median earnings by sex for the population
+  16 years and over with earnings; aggregate earnings by sex by work experience for the population 16
+  years and over with earnings; median earnings by sex by work experience for the population 16 years
+  and over with earnings.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B20"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B20"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_for_the_population_16_years_and_over_with_earnings_in_the_past_12_mont_b20002e1
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Median earnings in the past 12 months (in 2019
+    inflation-adjusted dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex For
+    The Population 16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years
+    and over with earnings. Median earnings in the past 12 months (in 2019 inflation-adjusted dollars).'
+  sql: '"2019_CBG_B20"."B20002e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20002m1"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_for_the_population_16_years_and_over_with_earnings_in_the_past_12_mont_b20002e2
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Median earnings in the past 12 months (in 2019
+    inflation-adjusted dollars) > Male'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex For
+    The Population 16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years
+    and over with earnings. Median earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Male.'
+  sql: '"2019_CBG_B20"."B20002e2"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20002m2"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_for_the_population_16_years_and_over_with_earnings_in_the_past_12_mont_b20002e3
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Median earnings in the past 12 months (in 2019
+    inflation-adjusted dollars) > Female'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex For
+    The Population 16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years
+    and over with earnings. Median earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Female.'
+  sql: '"2019_CBG_B20"."B20002e3"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20002m3"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e1
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars).'
+  sql: '"2019_CBG_B20"."B20017e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m1"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e2
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars) > Male > Total
+    (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars) > Male > Total (dollars).'
+  sql: '"2019_CBG_B20"."B20017e2"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m2"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e3
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars) > Male > Total
+    (dollars) > Worked full-time year-round in the past 12 months (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars) > Male > Total (dollars) > Worked full-time
+    year-round in the past 12 months (dollars).'
+  sql: '"2019_CBG_B20"."B20017e3"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m3"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e4
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars) > Male > Total
+    (dollars) > Other (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars) > Male > Total (dollars) > Other (dollars).'
+  sql: '"2019_CBG_B20"."B20017e4"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m4"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e5
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars) > Female > Total
+    (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars) > Female > Total (dollars).'
+  sql: '"2019_CBG_B20"."B20017e5"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m5"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e6
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars) > Female > Total
+    (dollars) > Worked full-time year-round in the past 12 months (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars) > Female > Total (dollars) > Worked full-time
+    year-round in the past 12 months (dollars).'
+  sql: '"2019_CBG_B20"."B20017e6"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m6"'
+- name: median_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_in_the_past_12_months_for_the_population_16_years_a_b20017e7
+  title: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work Experience
+    In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months: Median
+    earnings in the past 12 months (in 2019 inflation-adjusted dollars) > Total (dollars) > Female > Total
+    (dollars) > Other (dollars)'
+  description: 'Median Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12
+    Months. Universe: Population 16 years and over with earnings. Median earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Total (dollars) > Female > Total (dollars) > Other (dollars).'
+  sql: '"2019_CBG_B20"."B20017e7"'
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20017m7"'
+measures:
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_b20001e1
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Total'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Total.'
+  sql: '"2019_CBG_B20"."B20001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m1"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e2
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male.'
+  sql: '"2019_CBG_B20"."B20001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m2"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e3
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $1 to $2 499 or loss'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $1 to $2 499 or loss.'
+  sql: '"2019_CBG_B20"."B20001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m3"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e4
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $2 500 to $4 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $2 500 to $4 999.'
+  sql: '"2019_CBG_B20"."B20001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m4"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e5
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $5 000 to $7 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $5 000 to $7 499.'
+  sql: '"2019_CBG_B20"."B20001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m5"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e6
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $7 500 to $9 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $7 500 to $9 999.'
+  sql: '"2019_CBG_B20"."B20001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m6"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e7
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $10 000 to $12 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $10 000 to $12 499.'
+  sql: '"2019_CBG_B20"."B20001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m7"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e8
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $12 500 to $14 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $12 500 to $14 999.'
+  sql: '"2019_CBG_B20"."B20001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m8"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e9
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $15 000 to $17 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $15 000 to $17 499.'
+  sql: '"2019_CBG_B20"."B20001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m9"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e10
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $17 500 to $19 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $17 500 to $19 999.'
+  sql: '"2019_CBG_B20"."B20001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m10"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e11
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $20 000 to $22 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $20 000 to $22 499.'
+  sql: '"2019_CBG_B20"."B20001e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m11"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e12
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $22 500 to $24 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $22 500 to $24 999.'
+  sql: '"2019_CBG_B20"."B20001e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m12"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e13
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $25 000 to $29 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $25 000 to $29 999.'
+  sql: '"2019_CBG_B20"."B20001e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m13"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e14
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $30 000 to $34 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $30 000 to $34 999.'
+  sql: '"2019_CBG_B20"."B20001e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m14"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e15
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $35 000 to $39 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $35 000 to $39 999.'
+  sql: '"2019_CBG_B20"."B20001e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m15"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e16
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $40 000 to $44 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $40 000 to $44 999.'
+  sql: '"2019_CBG_B20"."B20001e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m16"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e17
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $45 000 to $49 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $45 000 to $49 999.'
+  sql: '"2019_CBG_B20"."B20001e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m17"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e18
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $50 000 to $54 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $50 000 to $54 999.'
+  sql: '"2019_CBG_B20"."B20001e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m18"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e19
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $55 000 to $64 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $55 000 to $64 999.'
+  sql: '"2019_CBG_B20"."B20001e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m19"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e20
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $65 000 to $74 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $65 000 to $74 999.'
+  sql: '"2019_CBG_B20"."B20001e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m20"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e21
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $75 000 to $99 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $75 000 to $99 999.'
+  sql: '"2019_CBG_B20"."B20001e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m21"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_male_b20001e22
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Male > $100 000 or more'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Male > $100 000 or more.'
+  sql: '"2019_CBG_B20"."B20001e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m22"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e23
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female.'
+  sql: '"2019_CBG_B20"."B20001e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m23"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e24
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $1 to $2 499 or loss'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $1 to $2 499 or loss.'
+  sql: '"2019_CBG_B20"."B20001e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m24"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e25
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $2 500 to $4 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $2 500 to $4 999.'
+  sql: '"2019_CBG_B20"."B20001e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m25"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e26
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $5 000 to $7 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $5 000 to $7 499.'
+  sql: '"2019_CBG_B20"."B20001e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m26"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e27
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $7 500 to $9 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $7 500 to $9 999.'
+  sql: '"2019_CBG_B20"."B20001e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m27"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e28
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $10 000 to $12 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $10 000 to $12 499.'
+  sql: '"2019_CBG_B20"."B20001e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m28"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e29
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $12 500 to $14 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $12 500 to $14 999.'
+  sql: '"2019_CBG_B20"."B20001e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m29"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e30
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $15 000 to $17 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $15 000 to $17 499.'
+  sql: '"2019_CBG_B20"."B20001e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m30"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e31
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $17 500 to $19 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $17 500 to $19 999.'
+  sql: '"2019_CBG_B20"."B20001e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m31"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e32
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $20 000 to $22 499'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $20 000 to $22 499.'
+  sql: '"2019_CBG_B20"."B20001e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m32"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e33
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $22 500 to $24 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $22 500 to $24 999.'
+  sql: '"2019_CBG_B20"."B20001e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m33"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e34
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $25 000 to $29 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $25 000 to $29 999.'
+  sql: '"2019_CBG_B20"."B20001e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m34"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e35
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $30 000 to $34 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $30 000 to $34 999.'
+  sql: '"2019_CBG_B20"."B20001e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m35"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e36
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $35 000 to $39 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $35 000 to $39 999.'
+  sql: '"2019_CBG_B20"."B20001e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m36"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e37
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $40 000 to $44 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $40 000 to $44 999.'
+  sql: '"2019_CBG_B20"."B20001e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m37"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e38
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $45 000 to $49 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $45 000 to $49 999.'
+  sql: '"2019_CBG_B20"."B20001e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m38"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e39
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $50 000 to $54 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $50 000 to $54 999.'
+  sql: '"2019_CBG_B20"."B20001e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m39"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e40
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $55 000 to $64 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $55 000 to $64 999.'
+  sql: '"2019_CBG_B20"."B20001e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m40"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e41
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $65 000 to $74 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $65 000 to $74 999.'
+  sql: '"2019_CBG_B20"."B20001e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m41"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e42
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $75 000 to $99 999'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $75 000 to $99 999.'
+  sql: '"2019_CBG_B20"."B20001e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m42"'
+- name: sex_by_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_for_the_population_16_years_and_over_with_earnings_in_the_past_12_months_fema_b20001e43
+  title: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months: Female > $100 000 or more'
+  description: 'Sex By Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) For The Population
+    16 Years And Over With Earnings In The Past 12 Months. Universe: Population 16 years and over with
+    earnings. Female > $100 000 or more.'
+  sql: '"2019_CBG_B20"."B20001e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20001m43"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e1
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars)'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars).'
+  sql: '"2019_CBG_B20"."B20003e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m1"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e2
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Male'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Male.'
+  sql: '"2019_CBG_B20"."B20003e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m2"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e3
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Male > Worked full-time year-round in the past 12 months'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Male > Worked full-time year-round in the past 12 months.'
+  sql: '"2019_CBG_B20"."B20003e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m3"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e4
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Male > Other'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Male > Other.'
+  sql: '"2019_CBG_B20"."B20003e4"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m4"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e5
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Female'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Female.'
+  sql: '"2019_CBG_B20"."B20003e5"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m5"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e6
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Female > Worked full-time year-round in the past 12 months'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Female > Worked full-time year-round in the past 12 months.'
+  sql: '"2019_CBG_B20"."B20003e6"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m6"'
+- name: aggregate_earnings_in_the_past_12_months_in_2019_inflation_adjusted_dollars_by_sex_by_work_experience_for_the_population_16_years_and_over_with_earnin_b20003e7
+  title: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By Work
+    Experience For The Population 16 Years And Over With Earnings: Aggregate earnings in the past 12 months
+    (in 2019 inflation-adjusted dollars) > Female > Other'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2019 Inflation-Adjusted Dollars) By Sex By
+    Work Experience For The Population 16 Years And Over With Earnings. Universe: Population 16 years
+    and over with earnings. Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars)
+    > Female > Other.'
+  sql: '"2019_CBG_B20"."B20003e7"'
+  type: sum
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+    moe_sql: '"2019_CBG_B20"."B20003m7"'
+- name: mean_earnings
+  title: Mean earnings
+  description: 'Average earnings in the past 12 months of people 16 years and over who had earnings: their
+    total earnings divided by their number.'
+  sql: SUM(IFF("2019_CBG_B20"."B20003e1" IS NULL OR "2019_CBG_B20"."B20001e1" IS NULL, NULL, "2019_CBG_B20"."B20003e1"))
+    / NULLIF(SUM(IFF("2019_CBG_B20"."B20003e1" IS NULL OR "2019_CBG_B20"."B20001e1" IS NULL, NULL, "2019_CBG_B20"."B20001e1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Population 16 years and over with earnings
+- name: mean_earnings_male
+  title: Mean earnings (men)
+  description: 'Average earnings in the past 12 months of males 16 years and over who had earnings: their
+    total earnings divided by their number.'
+  sql: SUM(IFF("2019_CBG_B20"."B20003e2" IS NULL OR "2019_CBG_B20"."B20001e2" IS NULL, NULL, "2019_CBG_B20"."B20003e2"))
+    / NULLIF(SUM(IFF("2019_CBG_B20"."B20003e2" IS NULL OR "2019_CBG_B20"."B20001e2" IS NULL, NULL, "2019_CBG_B20"."B20001e2")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Males 16 years and over with earnings
+- name: mean_earnings_female
+  title: Mean earnings (women)
+  description: 'Average earnings in the past 12 months of females 16 years and over who had earnings:
+    their total earnings divided by their number.'
+  sql: SUM(IFF("2019_CBG_B20"."B20003e5" IS NULL OR "2019_CBG_B20"."B20001e23" IS NULL, NULL, "2019_CBG_B20"."B20003e5"))
+    / NULLIF(SUM(IFF("2019_CBG_B20"."B20003e5" IS NULL OR "2019_CBG_B20"."B20001e23" IS NULL, NULL, "2019_CBG_B20"."B20001e23")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Females 16 years and over with earnings

@@ -1,0 +1,683 @@
+name: family_and_nonfamily_income_2020
+title: Family and nonfamily household income (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: family
+  income; median family income; family size by cash public assistance income or households receiving food
+  stamps/SNAP benefits; aggregate family income; nonfamily household income; median nonfamily household
+  income; aggregate nonfamily household income.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B19"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B19"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: median_family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_median_family_income_in_the_past_12_months_in_2020_inflation_adjusted_do_b19113e1
+  title: 'Median Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Median Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Families. Total.'
+  sql: '"2020_CBG_B19"."B19113e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19113m1"'
+- name: median_nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_median_nonfamily_household_income_in_the_past_12_months_in__b19202e1
+  title: 'Median Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Total'
+  description: 'Median Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. Total.'
+  sql: '"2020_CBG_B19"."B19202e1"'
+  type: number
+  format: currency
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19202m1"'
+measures:
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_b19101e1
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    Total.'
+  sql: '"2020_CBG_B19"."B19101e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m1"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_less_than_10_000_b19101e2
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Less than $10 000'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19101e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m2"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_10_000_to_14_999_b19101e3
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $10 000 to $14 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19101e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m3"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_15_000_to_19_999_b19101e4
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $15 000 to $19 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19101e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m4"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_20_000_to_24_999_b19101e5
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $20 000 to $24 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19101e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m5"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_25_000_to_29_999_b19101e6
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $25 000 to $29 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19101e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m6"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_30_000_to_34_999_b19101e7
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $30 000 to $34 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19101e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m7"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_35_000_to_39_999_b19101e8
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $35 000 to $39 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19101e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m8"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_40_000_to_44_999_b19101e9
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $40 000 to $44 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19101e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m9"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_45_000_to_49_999_b19101e10
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $45 000 to $49 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19101e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m10"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_50_000_to_59_999_b19101e11
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $50 000 to $59 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19101e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m11"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_60_000_to_74_999_b19101e12
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $60 000 to $74 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19101e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m12"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_75_000_to_99_999_b19101e13
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $75 000 to $99 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19101e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m13"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_100_000_to_124_999_b19101e14
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $100 000 to $124 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19101e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m14"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_125_000_to_149_999_b19101e15
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $125 000 to $149 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19101e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m15"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_150_000_to_199_999_b19101e16
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $150 000 to $199 999'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19101e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m16"'
+- name: family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_200_000_or_more_b19101e17
+  title: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $200 000 or more'
+  description: 'Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe: Families.
+    $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19101e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19101m17"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_b19123e1
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: Total'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. Total.'
+  sql: '"2020_CBG_B19"."B19123e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m1"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_with_cash_public_assistance_incom_b19123e2
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: With cash public assistance income or households receiving Food Stamps/SNAP
+    benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. With cash public assistance income or households
+    receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m2"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_no_cash_public_assistance_income__b19123e3
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: No cash public assistance income or household Food Stamps/SNAP benefits in
+    the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. No cash public assistance income or household
+    Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m3"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_2_person_families_b19123e4
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 2-person families'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 2-person families.'
+  sql: '"2020_CBG_B19"."B19123e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m4"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_2_person_families_with_cash_publi_b19123e5
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 2-person families > With cash public assistance income or households receiving
+    Food Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 2-person families > With cash public assistance
+    income or households receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m5"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_2_person_families_no_cash_public__b19123e6
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 2-person families > No cash public assistance income or household Food Stamps/SNAP
+    benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 2-person families > No cash public assistance
+    income or household Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m6"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_3_person_families_b19123e7
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 3-person families'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 3-person families.'
+  sql: '"2020_CBG_B19"."B19123e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m7"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_3_person_families_with_cash_publi_b19123e8
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 3-person families > With cash public assistance income or households receiving
+    Food Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 3-person families > With cash public assistance
+    income or households receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m8"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_3_person_families_no_cash_public__b19123e9
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 3-person families > No cash public assistance income or household Food Stamps/SNAP
+    benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 3-person families > No cash public assistance
+    income or household Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m9"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_4_person_families_b19123e10
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 4-person families'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 4-person families.'
+  sql: '"2020_CBG_B19"."B19123e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m10"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_4_person_families_with_cash_publi_b19123e11
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 4-person families > With cash public assistance income or households receiving
+    Food Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 4-person families > With cash public assistance
+    income or households receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m11"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_4_person_families_no_cash_public__b19123e12
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 4-person families > No cash public assistance income or household Food Stamps/SNAP
+    benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 4-person families > No cash public assistance
+    income or household Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m12"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_5_person_families_b19123e13
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 5-person families'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 5-person families.'
+  sql: '"2020_CBG_B19"."B19123e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m13"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_5_person_families_with_cash_publi_b19123e14
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 5-person families > With cash public assistance income or households receiving
+    Food Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 5-person families > With cash public assistance
+    income or households receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m14"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_5_person_families_no_cash_public__b19123e15
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 5-person families > No cash public assistance income or household Food Stamps/SNAP
+    benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 5-person families > No cash public assistance
+    income or household Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m15"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_6_person_families_b19123e16
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 6-person families'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 6-person families.'
+  sql: '"2020_CBG_B19"."B19123e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m16"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_6_person_families_with_cash_publi_b19123e17
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 6-person families > With cash public assistance income or households receiving
+    Food Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 6-person families > With cash public assistance
+    income or households receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m17"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_6_person_families_no_cash_public__b19123e18
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 6-person families > No cash public assistance income or household Food Stamps/SNAP
+    benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 6-person families > No cash public assistance
+    income or household Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m18"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_7_or_more_person_families_b19123e19
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 7-or-more-person families'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 7-or-more-person families.'
+  sql: '"2020_CBG_B19"."B19123e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m19"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_7_or_more_person_families_with_ca_b19123e20
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 7-or-more-person families > With cash public assistance income or households
+    receiving Food Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 7-or-more-person families > With cash public assistance
+    income or households receiving Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m20"'
+- name: family_size_by_cash_public_assistance_income_or_households_receiving_food_stamps_snap_benefits_in_the_past_12_months_7_or_more_person_families_no_cash_b19123e21
+  title: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits
+    In The Past 12 Months: 7-or-more-person families > No cash public assistance income or household Food
+    Stamps/SNAP benefits in the past 12 months'
+  description: 'Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap
+    Benefits In The Past 12 Months. Universe: Families. 7-or-more-person families > No cash public assistance
+    income or household Food Stamps/SNAP benefits in the past 12 months.'
+  sql: '"2020_CBG_B19"."B19123e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19123m21"'
+- name: aggregate_family_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_aggregate_family_income_in_the_past_12_months_in_2020_inflation_adjus_b19127e1
+  title: 'Aggregate Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Aggregate Family Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars). Universe:
+    Families. Total.'
+  sql: '"2020_CBG_B19"."B19127e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B19"."B19127m1"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_b19201e1
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Total'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. Total.'
+  sql: '"2020_CBG_B19"."B19201e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m1"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_less_than_10_000_b19201e2
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): Less
+    than $10 000'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. Less than $10 000.'
+  sql: '"2020_CBG_B19"."B19201e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m2"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_10_000_to_14_999_b19201e3
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $10 000
+    to $14 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $10 000 to $14 999.'
+  sql: '"2020_CBG_B19"."B19201e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m3"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_15_000_to_19_999_b19201e4
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $15 000
+    to $19 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $15 000 to $19 999.'
+  sql: '"2020_CBG_B19"."B19201e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m4"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_20_000_to_24_999_b19201e5
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $20 000
+    to $24 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $20 000 to $24 999.'
+  sql: '"2020_CBG_B19"."B19201e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m5"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_25_000_to_29_999_b19201e6
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $25 000
+    to $29 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $25 000 to $29 999.'
+  sql: '"2020_CBG_B19"."B19201e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m6"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_30_000_to_34_999_b19201e7
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $30 000
+    to $34 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $30 000 to $34 999.'
+  sql: '"2020_CBG_B19"."B19201e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m7"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_35_000_to_39_999_b19201e8
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $35 000
+    to $39 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $35 000 to $39 999.'
+  sql: '"2020_CBG_B19"."B19201e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m8"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_40_000_to_44_999_b19201e9
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $40 000
+    to $44 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $40 000 to $44 999.'
+  sql: '"2020_CBG_B19"."B19201e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m9"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_45_000_to_49_999_b19201e10
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $45 000
+    to $49 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $45 000 to $49 999.'
+  sql: '"2020_CBG_B19"."B19201e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m10"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_50_000_to_59_999_b19201e11
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $50 000
+    to $59 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $50 000 to $59 999.'
+  sql: '"2020_CBG_B19"."B19201e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m11"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_60_000_to_74_999_b19201e12
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $60 000
+    to $74 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $60 000 to $74 999.'
+  sql: '"2020_CBG_B19"."B19201e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m12"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_75_000_to_99_999_b19201e13
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $75 000
+    to $99 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $75 000 to $99 999.'
+  sql: '"2020_CBG_B19"."B19201e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m13"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_100_000_to_124_999_b19201e14
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $100
+    000 to $124 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $100 000 to $124 999.'
+  sql: '"2020_CBG_B19"."B19201e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m14"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_125_000_to_149_999_b19201e15
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $125
+    000 to $149 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $125 000 to $149 999.'
+  sql: '"2020_CBG_B19"."B19201e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m15"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_150_000_to_199_999_b19201e16
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $150
+    000 to $199 999'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $150 000 to $199 999.'
+  sql: '"2020_CBG_B19"."B19201e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m16"'
+- name: nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_200_000_or_more_b19201e17
+  title: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars): $200
+    000 or more'
+  description: 'Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars).
+    Universe: Nonfamily households. $200 000 or more.'
+  sql: '"2020_CBG_B19"."B19201e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19201m17"'
+- name: aggregate_nonfamily_household_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_aggregate_nonfamily_household_income_in_the_past_12_mont_b19214e1
+  title: 'Aggregate Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars):
+    Total'
+  description: 'Aggregate Nonfamily Household Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars). Universe: Nonfamily households. Total.'
+  sql: '"2020_CBG_B19"."B19214e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Nonfamily households
+    moe_sql: '"2020_CBG_B19"."B19214m1"'
+- name: mean_family_income
+  title: Mean family income
+  description: 'Average family income in the past 12 months: total income of all families divided by the
+    number of families.'
+  sql: SUM(IFF("2020_CBG_B19"."B19127e1" IS NULL OR "2020_CBG_B19"."B19101e1" IS NULL, NULL, "2020_CBG_B19"."B19127e1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19127e1" IS NULL OR "2020_CBG_B19"."B19101e1" IS NULL, NULL, "2020_CBG_B19"."B19101e1")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Families

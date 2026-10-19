@@ -1,0 +1,1118 @@
+name: children_and_living_arrangements_2019
+title: Children, older adults and living arrangements (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: own
+  children under 18 years by family type and age; relationship to householder for children under 18 years
+  in households; household type (including living alone) by relationship; relationship by household type
+  (including living alone) for the population 65 years and over; living arrangements of adults 18 years
+  and over by age.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B09"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B09"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: own_children_under_18_years_by_family_type_and_age_b09002e1
+  title: 'Own Children Under 18 Years By Family Type And Age: Total'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    Total.'
+  sql: '"2019_CBG_B09"."B09002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m1"'
+- name: own_children_under_18_years_by_family_type_and_age_in_married_couple_families_b09002e2
+  title: 'Own Children Under 18 Years By Family Type And Age: In married-couple families'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In married-couple families.'
+  sql: '"2019_CBG_B09"."B09002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m2"'
+- name: own_children_under_18_years_by_family_type_and_age_in_married_couple_families_under_3_years_b09002e3
+  title: 'Own Children Under 18 Years By Family Type And Age: In married-couple families > Under 3 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In married-couple families > Under 3 years.'
+  sql: '"2019_CBG_B09"."B09002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m3"'
+- name: own_children_under_18_years_by_family_type_and_age_in_married_couple_families_3_and_4_years_b09002e4
+  title: 'Own Children Under 18 Years By Family Type And Age: In married-couple families > 3 and 4 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In married-couple families > 3 and 4 years.'
+  sql: '"2019_CBG_B09"."B09002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m4"'
+- name: own_children_under_18_years_by_family_type_and_age_in_married_couple_families_5_years_b09002e5
+  title: 'Own Children Under 18 Years By Family Type And Age: In married-couple families > 5 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In married-couple families > 5 years.'
+  sql: '"2019_CBG_B09"."B09002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m5"'
+- name: own_children_under_18_years_by_family_type_and_age_in_married_couple_families_6_to_11_years_b09002e6
+  title: 'Own Children Under 18 Years By Family Type And Age: In married-couple families > 6 to 11 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In married-couple families > 6 to 11 years.'
+  sql: '"2019_CBG_B09"."B09002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m6"'
+- name: own_children_under_18_years_by_family_type_and_age_in_married_couple_families_12_to_17_years_b09002e7
+  title: 'Own Children Under 18 Years By Family Type And Age: In married-couple families > 12 to 17 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In married-couple families > 12 to 17 years.'
+  sql: '"2019_CBG_B09"."B09002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m7"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_b09002e8
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families.'
+  sql: '"2019_CBG_B09"."B09002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m8"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_male_householder_no_spouse_present_b09002e9
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Male householder no
+    spouse present'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Male householder no spouse present.'
+  sql: '"2019_CBG_B09"."B09002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m9"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_male_householder_no_spouse_present_under_3_years_b09002e10
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Male householder no
+    spouse present > Under 3 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Male householder no spouse present > Under 3 years.'
+  sql: '"2019_CBG_B09"."B09002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m10"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_male_householder_no_spouse_present_3_and_4_years_b09002e11
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Male householder no
+    spouse present > 3 and 4 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Male householder no spouse present > 3 and 4 years.'
+  sql: '"2019_CBG_B09"."B09002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m11"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_male_householder_no_spouse_present_5_years_b09002e12
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Male householder no
+    spouse present > 5 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Male householder no spouse present > 5 years.'
+  sql: '"2019_CBG_B09"."B09002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m12"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_male_householder_no_spouse_present_6_to_11_years_b09002e13
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Male householder no
+    spouse present > 6 to 11 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Male householder no spouse present > 6 to 11 years.'
+  sql: '"2019_CBG_B09"."B09002e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m13"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_male_householder_no_spouse_present_12_to_17_years_b09002e14
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Male householder no
+    spouse present > 12 to 17 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Male householder no spouse present > 12 to 17 years.'
+  sql: '"2019_CBG_B09"."B09002e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m14"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_female_householder_no_spouse_present_b09002e15
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Female householder no
+    spouse present'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Female householder no spouse present.'
+  sql: '"2019_CBG_B09"."B09002e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m15"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_female_householder_no_spouse_present_under_3_years_b09002e16
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Female householder no
+    spouse present > Under 3 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Female householder no spouse present > Under 3 years.'
+  sql: '"2019_CBG_B09"."B09002e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m16"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_female_householder_no_spouse_present_3_and_4_years_b09002e17
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Female householder no
+    spouse present > 3 and 4 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Female householder no spouse present > 3 and 4 years.'
+  sql: '"2019_CBG_B09"."B09002e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m17"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_female_householder_no_spouse_present_5_years_b09002e18
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Female householder no
+    spouse present > 5 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Female householder no spouse present > 5 years.'
+  sql: '"2019_CBG_B09"."B09002e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m18"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_female_householder_no_spouse_present_6_to_11_years_b09002e19
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Female householder no
+    spouse present > 6 to 11 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Female householder no spouse present > 6 to 11 years.'
+  sql: '"2019_CBG_B09"."B09002e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m19"'
+- name: own_children_under_18_years_by_family_type_and_age_in_other_families_female_householder_no_spouse_present_12_to_17_years_b09002e20
+  title: 'Own Children Under 18 Years By Family Type And Age: In other families > Female householder no
+    spouse present > 12 to 17 years'
+  description: 'Own Children Under 18 Years By Family Type And Age. Universe: Own children under 18 years.
+    In other families > Female householder no spouse present > 12 to 17 years.'
+  sql: '"2019_CBG_B09"."B09002e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years
+    moe_sql: '"2019_CBG_B09"."B09002m20"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_b09018e1
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Total'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Total.'
+  sql: '"2019_CBG_B09"."B09018e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m1"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_own_child_b09018e2
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Own child'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Own child.'
+  sql: '"2019_CBG_B09"."B09018e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m2"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_own_child_biological_child_b09018e3
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Own child > Biological
+    child'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Own child
+    > Biological child.'
+  sql: '"2019_CBG_B09"."B09018e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m3"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_own_child_adopted_child_b09018e4
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Own child > Adopted child'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Own child
+    > Adopted child.'
+  sql: '"2019_CBG_B09"."B09018e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m4"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_own_child_stepchild_b09018e5
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Own child > Stepchild'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Own child
+    > Stepchild.'
+  sql: '"2019_CBG_B09"."B09018e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m5"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_grandchild_b09018e6
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Grandchild'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Grandchild.'
+  sql: '"2019_CBG_B09"."B09018e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m6"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_other_relatives_b09018e7
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Other relatives'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Other relatives.'
+  sql: '"2019_CBG_B09"."B09018e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m7"'
+- name: relationship_to_householder_for_children_under_18_years_in_households_foster_child_or_other_unrelated_child_b09018e8
+  title: 'Relationship To Householder For Children Under 18 Years In Households: Foster child or other
+    unrelated child'
+  description: 'Relationship To Householder For Children Under 18 Years In Households. Universe: Population
+    under 18 years in households (excluding householders, spouses, and unmarried partners). Foster child
+    or other unrelated child.'
+  sql: '"2019_CBG_B09"."B09018e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population under 18 years in households (excluding householders, spouses, and unmarried
+      partners)
+    moe_sql: '"2019_CBG_B09"."B09018m8"'
+- name: household_type_including_living_alone_by_relationship_b09019e1
+  title: 'Household Type (Including Living Alone) By Relationship: Total'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. Total.'
+  sql: '"2019_CBG_B09"."B09019e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m1"'
+- name: household_type_including_living_alone_by_relationship_in_households_b09019e2
+  title: 'Household Type (Including Living Alone) By Relationship: In households'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households.'
+  sql: '"2019_CBG_B09"."B09019e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m2"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_b09019e3
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder.'
+  sql: '"2019_CBG_B09"."B09019e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m3"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_male_b09019e4
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder > Male'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder > Male.'
+  sql: '"2019_CBG_B09"."B09019e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m4"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_male_living_alone_b09019e5
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder > Male
+    > Living alone'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder > Male > Living alone.'
+  sql: '"2019_CBG_B09"."B09019e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m5"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_male_not_living_alone_b09019e6
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder > Male
+    > Not living alone'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder > Male > Not living alone.'
+  sql: '"2019_CBG_B09"."B09019e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m6"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_female_b09019e7
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder > Female'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder > Female.'
+  sql: '"2019_CBG_B09"."B09019e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m7"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_female_living_alone_b09019e8
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder > Female
+    > Living alone'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder > Female > Living alone.'
+  sql: '"2019_CBG_B09"."B09019e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m8"'
+- name: household_type_including_living_alone_by_relationship_in_households_householder_female_not_living_alone_b09019e9
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Householder > Female
+    > Not living alone'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Householder > Female > Not living alone.'
+  sql: '"2019_CBG_B09"."B09019e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m9"'
+- name: household_type_including_living_alone_by_relationship_in_households_opposite_sex_spouse_b09019e10
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Opposite-sex spouse'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Opposite-sex spouse.'
+  sql: '"2019_CBG_B09"."B09019e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m10"'
+- name: household_type_including_living_alone_by_relationship_in_households_same_sex_spouse_b09019e11
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Same-sex spouse'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Same-sex spouse.'
+  sql: '"2019_CBG_B09"."B09019e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m11"'
+- name: household_type_including_living_alone_by_relationship_in_households_opposite_sex_unmarried_partner_b09019e12
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Opposite-sex unmarried
+    partner'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Opposite-sex unmarried partner.'
+  sql: '"2019_CBG_B09"."B09019e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m12"'
+- name: household_type_including_living_alone_by_relationship_in_households_same_sex_unmarried_partner_b09019e13
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Same-sex unmarried
+    partner'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Same-sex unmarried partner.'
+  sql: '"2019_CBG_B09"."B09019e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m13"'
+- name: household_type_including_living_alone_by_relationship_in_households_child_b09019e14
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Child'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Child.'
+  sql: '"2019_CBG_B09"."B09019e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m14"'
+- name: household_type_including_living_alone_by_relationship_in_households_child_biological_child_b09019e15
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Child > Biological
+    child'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Child > Biological child.'
+  sql: '"2019_CBG_B09"."B09019e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m15"'
+- name: household_type_including_living_alone_by_relationship_in_households_child_adopted_child_b09019e16
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Child > Adopted child'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Child > Adopted child.'
+  sql: '"2019_CBG_B09"."B09019e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m16"'
+- name: household_type_including_living_alone_by_relationship_in_households_child_stepchild_b09019e17
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Child > Stepchild'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Child > Stepchild.'
+  sql: '"2019_CBG_B09"."B09019e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m17"'
+- name: household_type_including_living_alone_by_relationship_in_households_grandchild_b09019e18
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Grandchild'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Grandchild.'
+  sql: '"2019_CBG_B09"."B09019e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m18"'
+- name: household_type_including_living_alone_by_relationship_in_households_brother_or_sister_b09019e19
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Brother or sister'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Brother or sister.'
+  sql: '"2019_CBG_B09"."B09019e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m19"'
+- name: household_type_including_living_alone_by_relationship_in_households_parent_b09019e20
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Parent'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Parent.'
+  sql: '"2019_CBG_B09"."B09019e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m20"'
+- name: household_type_including_living_alone_by_relationship_in_households_parent_in_law_b09019e21
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Parent-in-law'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Parent-in-law.'
+  sql: '"2019_CBG_B09"."B09019e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m21"'
+- name: household_type_including_living_alone_by_relationship_in_households_son_in_law_or_daughter_in_law_b09019e22
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Son-in-law or daughter-in-law'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Son-in-law or daughter-in-law.'
+  sql: '"2019_CBG_B09"."B09019e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m22"'
+- name: household_type_including_living_alone_by_relationship_in_households_other_relatives_b09019e23
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Other relatives'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Other relatives.'
+  sql: '"2019_CBG_B09"."B09019e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m23"'
+- name: household_type_including_living_alone_by_relationship_in_households_foster_child_b09019e24
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Foster child'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Foster child.'
+  sql: '"2019_CBG_B09"."B09019e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m24"'
+- name: household_type_including_living_alone_by_relationship_in_households_other_nonrelatives_b09019e25
+  title: 'Household Type (Including Living Alone) By Relationship: In households > Other nonrelatives'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    households > Other nonrelatives.'
+  sql: '"2019_CBG_B09"."B09019e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m25"'
+- name: household_type_including_living_alone_by_relationship_in_group_quarters_b09019e26
+  title: 'Household Type (Including Living Alone) By Relationship: In group quarters'
+  description: 'Household Type (Including Living Alone) By Relationship. Universe: Total population. In
+    group quarters.'
+  sql: '"2019_CBG_B09"."B09019e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2019_CBG_B09"."B09019m26"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_b09020e1
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    Total'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. Total.'
+  sql: '"2019_CBG_B09"."B09020e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m1"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_b09020e2
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households.'
+  sql: '"2019_CBG_B09"."B09020e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m2"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_b09020e3
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households.'
+  sql: '"2019_CBG_B09"."B09020e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m3"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_householder_b09020e4
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Householder'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Householder.'
+  sql: '"2019_CBG_B09"."B09020e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m4"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_householder_male_b09020e5
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Householder > Male'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Householder >
+    Male.'
+  sql: '"2019_CBG_B09"."B09020e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m5"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_householder_female_b09020e6
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Householder > Female'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Householder >
+    Female.'
+  sql: '"2019_CBG_B09"."B09020e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m6"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_spouse_b09020e7
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Spouse'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Spouse.'
+  sql: '"2019_CBG_B09"."B09020e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m7"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_parent_b09020e8
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Parent'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Parent.'
+  sql: '"2019_CBG_B09"."B09020e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m8"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_parent_in_law_b09020e9
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Parent-in-law'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Parent-in-law.'
+  sql: '"2019_CBG_B09"."B09020e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m9"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_other_relatives_b09020e10
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Other relatives'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Other relatives.'
+  sql: '"2019_CBG_B09"."B09020e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m10"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_family_households_nonrelatives_b09020e11
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In family households > Nonrelatives'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In family households > Nonrelatives.'
+  sql: '"2019_CBG_B09"."B09020e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m11"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_b09020e12
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households.'
+  sql: '"2019_CBG_B09"."B09020e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m12"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_b09020e13
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder.'
+  sql: '"2019_CBG_B09"."B09020e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m13"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_male_b09020e14
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder > Male'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder
+    > Male.'
+  sql: '"2019_CBG_B09"."B09020e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m14"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_male_livi_b09020e15
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder > Male > Living alone'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder
+    > Male > Living alone.'
+  sql: '"2019_CBG_B09"."B09020e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m15"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_male_not__b09020e16
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder > Male > Not living alone'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder
+    > Male > Not living alone.'
+  sql: '"2019_CBG_B09"."B09020e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m16"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_female_b09020e17
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder > Female'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder
+    > Female.'
+  sql: '"2019_CBG_B09"."B09020e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m17"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_female_li_b09020e18
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder > Female > Living alone'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder
+    > Female > Living alone.'
+  sql: '"2019_CBG_B09"."B09020e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m18"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_householder_female_no_b09020e19
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Householder > Female > Not living alone'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Householder
+    > Female > Not living alone.'
+  sql: '"2019_CBG_B09"."B09020e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m19"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_households_in_nonfamily_households_nonrelatives_b09020e20
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In households > In nonfamily households > Nonrelatives'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In households > In nonfamily households > Nonrelatives.'
+  sql: '"2019_CBG_B09"."B09020e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m20"'
+- name: relationship_by_household_type_including_living_alone_for_the_population_65_years_and_over_in_group_quarters_b09020e21
+  title: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over:
+    In group quarters'
+  description: 'Relationship By Household Type (Including Living Alone) For The Population 65 Years And
+    Over. Universe: Population 65 years and over. In group quarters.'
+  sql: '"2019_CBG_B09"."B09020e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 65 years and over
+    moe_sql: '"2019_CBG_B09"."B09020m21"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_b09021e1
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Total'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Total.'
+  sql: '"2019_CBG_B09"."B09021e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m1"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_lives_alone_b09021e2
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Lives alone'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Lives alone.'
+  sql: '"2019_CBG_B09"."B09021e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m2"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_householder_living_with_spouse_or_spouse_of_householder_b09021e3
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Householder living with spouse or spouse
+    of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Householder living with spouse or spouse of householder.'
+  sql: '"2019_CBG_B09"."B09021e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m3"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_householder_living_with_unmarried_partner_or_unmarried_partner_of_householder_b09021e4
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Householder living with unmarried partner
+    or unmarried partner of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Householder living with unmarried partner or unmarried partner of householder.'
+  sql: '"2019_CBG_B09"."B09021e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m4"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_child_of_householder_b09021e5
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Child of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Child of householder.'
+  sql: '"2019_CBG_B09"."B09021e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m5"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_other_relatives_b09021e6
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Other relatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Other relatives.'
+  sql: '"2019_CBG_B09"."B09021e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m6"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_other_nonrelatives_b09021e7
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: Other nonrelatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. Other nonrelatives.'
+  sql: '"2019_CBG_B09"."B09021e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m7"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_b09021e8
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years.'
+  sql: '"2019_CBG_B09"."B09021e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m8"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_lives_alone_b09021e9
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years > Lives alone'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years > Lives alone.'
+  sql: '"2019_CBG_B09"."B09021e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m9"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_householder_living_with_spouse_or_spouse_of_householder_b09021e10
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years > Householder living
+    with spouse or spouse of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years > Householder living with spouse or spouse of householder.'
+  sql: '"2019_CBG_B09"."B09021e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m10"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_householder_living_with_unmarried_partner_or_unmarried_partner_of_householder_b09021e11
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years > Householder living
+    with unmarried partner or unmarried partner of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years > Householder living with unmarried partner or unmarried partner
+    of householder.'
+  sql: '"2019_CBG_B09"."B09021e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m11"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_child_of_householder_b09021e12
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years > Child of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years > Child of householder.'
+  sql: '"2019_CBG_B09"."B09021e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m12"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_other_relatives_b09021e13
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years > Other relatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years > Other relatives.'
+  sql: '"2019_CBG_B09"."B09021e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m13"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_18_to_34_years_other_nonrelatives_b09021e14
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 18 to 34 years > Other nonrelatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 18 to 34 years > Other nonrelatives.'
+  sql: '"2019_CBG_B09"."B09021e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m14"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_b09021e15
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years.'
+  sql: '"2019_CBG_B09"."B09021e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m15"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_lives_alone_b09021e16
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years > Lives alone'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years > Lives alone.'
+  sql: '"2019_CBG_B09"."B09021e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m16"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_householder_living_with_spouse_or_spouse_of_householder_b09021e17
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years > Householder living
+    with spouse or spouse of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years > Householder living with spouse or spouse of householder.'
+  sql: '"2019_CBG_B09"."B09021e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m17"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_householder_living_with_unmarried_partner_or_unmarried_partner_of_householder_b09021e18
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years > Householder living
+    with unmarried partner or unmarried partner of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years > Householder living with unmarried partner or unmarried partner
+    of householder.'
+  sql: '"2019_CBG_B09"."B09021e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m18"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_child_of_householder_b09021e19
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years > Child of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years > Child of householder.'
+  sql: '"2019_CBG_B09"."B09021e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m19"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_other_relatives_b09021e20
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years > Other relatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years > Other relatives.'
+  sql: '"2019_CBG_B09"."B09021e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m20"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_35_to_64_years_other_nonrelatives_b09021e21
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 35 to 64 years > Other nonrelatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 35 to 64 years > Other nonrelatives.'
+  sql: '"2019_CBG_B09"."B09021e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m21"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_b09021e22
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over.'
+  sql: '"2019_CBG_B09"."B09021e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m22"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_lives_alone_b09021e23
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over > Lives alone'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over > Lives alone.'
+  sql: '"2019_CBG_B09"."B09021e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m23"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_householder_living_with_spouse_or_spouse_of_householder_b09021e24
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over > Householder living
+    with spouse or spouse of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over > Householder living with spouse or spouse of householder.'
+  sql: '"2019_CBG_B09"."B09021e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m24"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_householder_living_with_unmarried_partner_or_unmarried_partner_of_householder_b09021e25
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over > Householder living
+    with unmarried partner or unmarried partner of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over > Householder living with unmarried partner or unmarried
+    partner of householder.'
+  sql: '"2019_CBG_B09"."B09021e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m25"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_child_of_householder_b09021e26
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over > Child of householder'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over > Child of householder.'
+  sql: '"2019_CBG_B09"."B09021e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m26"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_other_relatives_b09021e27
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over > Other relatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over > Other relatives.'
+  sql: '"2019_CBG_B09"."B09021e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m27"'
+- name: living_arrangements_of_adults_18_years_and_over_by_age_65_years_and_over_other_nonrelatives_b09021e28
+  title: 'Living Arrangements Of Adults 18 Years And Over By Age: 65 years and over > Other nonrelatives'
+  description: 'Living Arrangements Of Adults 18 Years And Over By Age. Universe: Population 18 years
+    and over in households. 65 years and over > Other nonrelatives.'
+  sql: '"2019_CBG_B09"."B09021e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 18 years and over in households
+    moe_sql: '"2019_CBG_B09"."B09021m28"'

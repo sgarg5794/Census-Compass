@@ -1,0 +1,441 @@
+name: household_income_by_source_2020
+title: Household income by source (earnings, Social Security, retirement, public assistance…) (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: earnings
+  for households; wage or salary income for households; self-employment income for households; interest,
+  dividends, or net rental income for households; Social Security income for households; supplemental
+  security income (SSI) for households; public assistance income for households; public assistance income
+  or food stamps/SNAP for households; retirement income for households; other types of income for households;
+  aggregate earnings for households; aggregate wage or salary income for households; aggregate self-employment
+  income for households; aggregate interest, dividends, or net rental income for households; aggregate
+  Social Security income for households; aggregate supplemental security income (SSI) for households;
+  aggregate public assistance income for households; aggregate retirement income for households; aggregate
+  other types of income for households.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B19"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B19"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: earnings_in_the_past_12_months_for_households_b19051e1
+  title: 'Earnings In The Past 12 Months For Households: Total'
+  description: 'Earnings In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19051e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19051m1"'
+- name: earnings_in_the_past_12_months_for_households_with_earnings_b19051e2
+  title: 'Earnings In The Past 12 Months For Households: With earnings'
+  description: 'Earnings In The Past 12 Months For Households. Universe: Households. With earnings.'
+  sql: '"2020_CBG_B19"."B19051e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19051m2"'
+- name: earnings_in_the_past_12_months_for_households_no_earnings_b19051e3
+  title: 'Earnings In The Past 12 Months For Households: No earnings'
+  description: 'Earnings In The Past 12 Months For Households. Universe: Households. No earnings.'
+  sql: '"2020_CBG_B19"."B19051e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19051m3"'
+- name: wage_or_salary_income_in_the_past_12_months_for_households_b19052e1
+  title: 'Wage Or Salary Income In The Past 12 Months For Households: Total'
+  description: 'Wage Or Salary Income In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19052e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19052m1"'
+- name: wage_or_salary_income_in_the_past_12_months_for_households_with_wage_or_salary_income_b19052e2
+  title: 'Wage Or Salary Income In The Past 12 Months For Households: With wage or salary income'
+  description: 'Wage Or Salary Income In The Past 12 Months For Households. Universe: Households. With
+    wage or salary income.'
+  sql: '"2020_CBG_B19"."B19052e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19052m2"'
+- name: wage_or_salary_income_in_the_past_12_months_for_households_no_wage_or_salary_income_b19052e3
+  title: 'Wage Or Salary Income In The Past 12 Months For Households: No wage or salary income'
+  description: 'Wage Or Salary Income In The Past 12 Months For Households. Universe: Households. No wage
+    or salary income.'
+  sql: '"2020_CBG_B19"."B19052e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19052m3"'
+- name: self_employment_income_in_the_past_12_months_for_households_b19053e1
+  title: 'Self-Employment Income In The Past 12 Months For Households: Total'
+  description: 'Self-Employment Income In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19053e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19053m1"'
+- name: self_employment_income_in_the_past_12_months_for_households_with_self_employment_income_b19053e2
+  title: 'Self-Employment Income In The Past 12 Months For Households: With self-employment income'
+  description: 'Self-Employment Income In The Past 12 Months For Households. Universe: Households. With
+    self-employment income.'
+  sql: '"2020_CBG_B19"."B19053e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19053m2"'
+- name: self_employment_income_in_the_past_12_months_for_households_no_self_employment_income_b19053e3
+  title: 'Self-Employment Income In The Past 12 Months For Households: No self-employment income'
+  description: 'Self-Employment Income In The Past 12 Months For Households. Universe: Households. No
+    self-employment income.'
+  sql: '"2020_CBG_B19"."B19053e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19053m3"'
+- name: interest_dividends_or_net_rental_income_in_the_past_12_months_for_households_b19054e1
+  title: 'Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households: Total'
+  description: 'Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households. Universe:
+    Households. Total.'
+  sql: '"2020_CBG_B19"."B19054e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19054m1"'
+- name: interest_dividends_or_net_rental_income_in_the_past_12_months_for_households_with_interest_dividends_or_net_rental_income_b19054e2
+  title: 'Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households: With interest
+    dividends or net rental income'
+  description: 'Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households. Universe:
+    Households. With interest dividends or net rental income.'
+  sql: '"2020_CBG_B19"."B19054e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19054m2"'
+- name: interest_dividends_or_net_rental_income_in_the_past_12_months_for_households_no_interest_dividends_or_net_rental_income_b19054e3
+  title: 'Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households: No interest
+    dividends or net rental income'
+  description: 'Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households. Universe:
+    Households. No interest dividends or net rental income.'
+  sql: '"2020_CBG_B19"."B19054e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19054m3"'
+- name: social_security_income_in_the_past_12_months_for_households_b19055e1
+  title: 'Social Security Income In The Past 12 Months For Households: Total'
+  description: 'Social Security Income In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19055e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19055m1"'
+- name: social_security_income_in_the_past_12_months_for_households_with_social_security_income_b19055e2
+  title: 'Social Security Income In The Past 12 Months For Households: With Social Security income'
+  description: 'Social Security Income In The Past 12 Months For Households. Universe: Households. With
+    Social Security income.'
+  sql: '"2020_CBG_B19"."B19055e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19055m2"'
+- name: social_security_income_in_the_past_12_months_for_households_no_social_security_income_b19055e3
+  title: 'Social Security Income In The Past 12 Months For Households: No Social Security income'
+  description: 'Social Security Income In The Past 12 Months For Households. Universe: Households. No
+    Social Security income.'
+  sql: '"2020_CBG_B19"."B19055e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19055m3"'
+- name: supplemental_security_income_ssi_in_the_past_12_months_for_households_b19056e1
+  title: 'Supplemental Security Income (Ssi) In The Past 12 Months For Households: Total'
+  description: 'Supplemental Security Income (Ssi) In The Past 12 Months For Households. Universe: Households.
+    Total.'
+  sql: '"2020_CBG_B19"."B19056e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19056m1"'
+- name: supplemental_security_income_ssi_in_the_past_12_months_for_households_with_supplemental_security_income_ssi_b19056e2
+  title: 'Supplemental Security Income (Ssi) In The Past 12 Months For Households: With Supplemental Security
+    Income (SSI)'
+  description: 'Supplemental Security Income (Ssi) In The Past 12 Months For Households. Universe: Households.
+    With Supplemental Security Income (SSI).'
+  sql: '"2020_CBG_B19"."B19056e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19056m2"'
+- name: supplemental_security_income_ssi_in_the_past_12_months_for_households_no_supplemental_security_income_ssi_b19056e3
+  title: 'Supplemental Security Income (Ssi) In The Past 12 Months For Households: No Supplemental Security
+    Income (SSI)'
+  description: 'Supplemental Security Income (Ssi) In The Past 12 Months For Households. Universe: Households.
+    No Supplemental Security Income (SSI).'
+  sql: '"2020_CBG_B19"."B19056e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19056m3"'
+- name: public_assistance_income_in_the_past_12_months_for_households_b19057e1
+  title: 'Public Assistance Income In The Past 12 Months For Households: Total'
+  description: 'Public Assistance Income In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19057e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19057m1"'
+- name: public_assistance_income_in_the_past_12_months_for_households_with_public_assistance_income_b19057e2
+  title: 'Public Assistance Income In The Past 12 Months For Households: With public assistance income'
+  description: 'Public Assistance Income In The Past 12 Months For Households. Universe: Households. With
+    public assistance income.'
+  sql: '"2020_CBG_B19"."B19057e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19057m2"'
+- name: public_assistance_income_in_the_past_12_months_for_households_no_public_assistance_income_b19057e3
+  title: 'Public Assistance Income In The Past 12 Months For Households: No public assistance income'
+  description: 'Public Assistance Income In The Past 12 Months For Households. Universe: Households. No
+    public assistance income.'
+  sql: '"2020_CBG_B19"."B19057e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19057m3"'
+- name: public_assistance_income_or_food_stamps_snap_in_the_past_12_months_for_households_b19058e1
+  title: 'Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households: Total'
+  description: 'Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households. Universe:
+    Households. Total.'
+  sql: '"2020_CBG_B19"."B19058e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19058m1"'
+- name: public_assistance_income_or_food_stamps_snap_in_the_past_12_months_for_households_with_cash_public_assistance_or_food_stamps_snap_b19058e2
+  title: 'Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households: With cash
+    public assistance or Food Stamps/SNAP'
+  description: 'Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households. Universe:
+    Households. With cash public assistance or Food Stamps/SNAP.'
+  sql: '"2020_CBG_B19"."B19058e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19058m2"'
+- name: public_assistance_income_or_food_stamps_snap_in_the_past_12_months_for_households_no_cash_public_assistance_or_food_stamps_snap_b19058e3
+  title: 'Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households: No cash public
+    assistance or Food Stamps/SNAP'
+  description: 'Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households. Universe:
+    Households. No cash public assistance or Food Stamps/SNAP.'
+  sql: '"2020_CBG_B19"."B19058e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19058m3"'
+- name: retirement_income_in_the_past_12_months_for_households_b19059e1
+  title: 'Retirement Income In The Past 12 Months For Households: Total'
+  description: 'Retirement Income In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19059e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19059m1"'
+- name: retirement_income_in_the_past_12_months_for_households_with_retirement_income_b19059e2
+  title: 'Retirement Income In The Past 12 Months For Households: With retirement income'
+  description: 'Retirement Income In The Past 12 Months For Households. Universe: Households. With retirement
+    income.'
+  sql: '"2020_CBG_B19"."B19059e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19059m2"'
+- name: retirement_income_in_the_past_12_months_for_households_no_retirement_income_b19059e3
+  title: 'Retirement Income In The Past 12 Months For Households: No retirement income'
+  description: 'Retirement Income In The Past 12 Months For Households. Universe: Households. No retirement
+    income.'
+  sql: '"2020_CBG_B19"."B19059e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19059m3"'
+- name: other_types_of_income_in_the_past_12_months_for_households_b19060e1
+  title: 'Other Types Of Income In The Past 12 Months For Households: Total'
+  description: 'Other Types Of Income In The Past 12 Months For Households. Universe: Households. Total.'
+  sql: '"2020_CBG_B19"."B19060e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19060m1"'
+- name: other_types_of_income_in_the_past_12_months_for_households_with_other_types_of_income_b19060e2
+  title: 'Other Types Of Income In The Past 12 Months For Households: With other types of income'
+  description: 'Other Types Of Income In The Past 12 Months For Households. Universe: Households. With
+    other types of income.'
+  sql: '"2020_CBG_B19"."B19060e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19060m2"'
+- name: other_types_of_income_in_the_past_12_months_for_households_no_other_types_of_income_b19060e3
+  title: 'Other Types Of Income In The Past 12 Months For Households: No other types of income'
+  description: 'Other Types Of Income In The Past 12 Months For Households. Universe: Households. No other
+    types of income.'
+  sql: '"2020_CBG_B19"."B19060e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19060m3"'
+- name: aggregate_earnings_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_earnings_in_the_past_12_months_in_2020_inflation__b19061e1
+  title: 'Aggregate Earnings In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For Households:
+    Aggregate earnings in the past 12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Earnings In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For Households.
+    Universe: Households. Aggregate earnings in the past 12 months (in 2020 inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19061e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19061m1"'
+- name: aggregate_wage_or_salary_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_wage_or_salary_income_in_the_past_12_b19062e1
+  title: 'Aggregate Wage Or Salary Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For
+    Households: Aggregate wage or salary income in the past 12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Wage Or Salary Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households. Universe: Households. Aggregate wage or salary income in the past 12 months (in 2020
+    inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19062e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19062m1"'
+- name: aggregate_self_employment_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_self_employment_income_in_the_past__b19063e1
+  title: 'Aggregate Self-Employment Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households: Aggregate self-employment income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Self-Employment Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households. Universe: Households. Aggregate self-employment income in the past 12 months (in 2020
+    inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19063e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19063m1"'
+- name: aggregate_interest_dividends_or_net_rental_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_interest_dividends_b19064e1
+  title: 'Aggregate Interest, Dividends, Or Net Rental Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars) For Households: Aggregate interest dividends or net rental income in the past 12 months (in
+    2020 inflation-adjusted dollars)'
+  description: 'Aggregate Interest, Dividends, Or Net Rental Income In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars) For Households. Universe: Households. Aggregate interest dividends or net rental income in
+    the past 12 months (in 2020 inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19064e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19064m1"'
+- name: aggregate_social_security_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_social_security_income_in_the_past__b19065e1
+  title: 'Aggregate Social Security Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households: Aggregate Social Security income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Social Security Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households. Universe: Households. Aggregate Social Security income in the past 12 months (in 2020
+    inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19065e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19065m1"'
+- name: aggregate_supplemental_security_income_ssi_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_supplemental_security_inc_b19066e1
+  title: 'Aggregate Supplemental Security Income (Ssi) In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars) For Households: Aggregate Supplemental Security Income (SSI) in the past 12 months (in 2020
+    inflation-adjusted dollars)'
+  description: 'Aggregate Supplemental Security Income (Ssi) In The Past 12 Months (In 2020 Inflation-Adjusted
+    Dollars) For Households. Universe: Households. Aggregate Supplemental Security Income (SSI) in the
+    past 12 months (in 2020 inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19066e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19066m1"'
+- name: aggregate_public_assistance_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_public_assistance_income_in_the_p_b19067e1
+  title: 'Aggregate Public Assistance Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households: Aggregate public assistance income in the past 12 months (in 2020 inflation-adjusted
+    dollars)'
+  description: 'Aggregate Public Assistance Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households. Universe: Households. Aggregate public assistance income in the past 12 months (in
+    2020 inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19067e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19067m1"'
+- name: aggregate_retirement_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_retirement_income_in_the_past_12_months__b19069e1
+  title: 'Aggregate Retirement Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For Households:
+    Aggregate retirement income in the past 12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Retirement Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households. Universe: Households. Aggregate retirement income in the past 12 months (in 2020 inflation-adjusted
+    dollars).'
+  sql: '"2020_CBG_B19"."B19069e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19069m1"'
+- name: aggregate_other_types_of_income_in_the_past_12_months_in_2020_inflation_adjusted_dollars_for_households_aggregate_other_types_of_income_in_the_past_12_b19070e1
+  title: 'Aggregate Other Types Of Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars) For
+    Households: Aggregate other types of income in the past 12 months (in 2020 inflation-adjusted dollars)'
+  description: 'Aggregate Other Types Of Income In The Past 12 Months (In 2020 Inflation-Adjusted Dollars)
+    For Households. Universe: Households. Aggregate other types of income in the past 12 months (in 2020
+    inflation-adjusted dollars).'
+  sql: '"2020_CBG_B19"."B19070e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B19"."B19070m1"'
+- name: mean_household_earnings
+  title: Mean household earnings
+  description: 'Average earnings in the past 12 months of households that had earnings: their total earnings
+    divided by the number of households with earnings.'
+  sql: SUM(IFF("2020_CBG_B19"."B19061e1" IS NULL OR "2020_CBG_B19"."B19051e2" IS NULL, NULL, "2020_CBG_B19"."B19061e1"))
+    / NULLIF(SUM(IFF("2020_CBG_B19"."B19061e1" IS NULL OR "2020_CBG_B19"."B19051e2" IS NULL, NULL, "2020_CBG_B19"."B19051e2")),
+    0)
+  type: number
+  format: currency
+  meta:
+    universe: Households with earnings

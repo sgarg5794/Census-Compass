@@ -1,0 +1,1064 @@
+name: housing_occupancy_and_tenure_2020
+title: Housing units, occupancy, vacancy, owners and renters, household size (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: housing
+  units; occupancy status; tenure; vacancy status; race of householder; tenure by age of householder;
+  total population in occupied housing units by tenure; tenure by household size; average household size
+  of occupied housing units by tenure. Some of these are also given by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: block_group_average_household_size_of_occupied_housing_units_by_tenure_average_household_size_b25010e1
+  title: 'Average Household Size Of Occupied Housing Units By Tenure: Average household size'
+  description: 'Average Household Size Of Occupied Housing Units By Tenure. Universe: Occupied housing
+    units. Average household size.'
+  sql: '"2020_CBG_B25"."B25010e1"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25010m1"'
+- name: block_group_average_household_size_of_occupied_housing_units_by_tenure_average_household_size_owner_occupied_b25010e2
+  title: 'Average Household Size Of Occupied Housing Units By Tenure: Average household size > Owner occupied'
+  description: 'Average Household Size Of Occupied Housing Units By Tenure. Universe: Occupied housing
+    units. Average household size > Owner occupied.'
+  sql: '"2020_CBG_B25"."B25010e2"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25010m2"'
+- name: block_group_average_household_size_of_occupied_housing_units_by_tenure_average_household_size_renter_occupied_b25010e3
+  title: 'Average Household Size Of Occupied Housing Units By Tenure: Average household size > Renter
+    occupied'
+  description: 'Average Household Size Of Occupied Housing Units By Tenure. Universe: Occupied housing
+    units. Average household size > Renter occupied.'
+  sql: '"2020_CBG_B25"."B25010e3"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25010m3"'
+measures:
+- name: housing_units_b25001e1
+  title: 'Housing Units: Total'
+  description: 'Housing Units. Universe: Housing units. Total.'
+  sql: '"2020_CBG_B25"."B25001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2020_CBG_B25"."B25001m1"'
+- name: occupancy_status_b25002e1
+  title: 'Occupancy Status: Total'
+  description: 'Occupancy Status. Universe: Housing units. Total.'
+  sql: '"2020_CBG_B25"."B25002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2020_CBG_B25"."B25002m1"'
+- name: occupancy_status_occupied_b25002e2
+  title: 'Occupancy Status: Occupied'
+  description: 'Occupancy Status. Universe: Housing units. Occupied.'
+  sql: '"2020_CBG_B25"."B25002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2020_CBG_B25"."B25002m2"'
+- name: occupancy_status_vacant_b25002e3
+  title: 'Occupancy Status: Vacant'
+  description: 'Occupancy Status. Universe: Housing units. Vacant.'
+  sql: '"2020_CBG_B25"."B25002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2020_CBG_B25"."B25002m3"'
+- name: tenure_b25003e1
+  title: 'Tenure: Total'
+  description: 'Tenure. Universe: Occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25003m1"'
+- name: tenure_owner_occupied_b25003e2
+  title: 'Tenure: Owner occupied'
+  description: 'Tenure. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2020_CBG_B25"."B25003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25003m2"'
+- name: tenure_renter_occupied_b25003e3
+  title: 'Tenure: Renter occupied'
+  description: 'Tenure. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2020_CBG_B25"."B25003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25003m3"'
+- name: tenure_white_alone_householder_b25003ae1
+  title: 'Tenure (White Alone Householder): Total'
+  description: 'Tenure (White Alone Householder). Universe: Occupied housing units with a householder
+    who is White alone. Total (White alone; also called White).'
+  sql: '"2020_CBG_B25"."B25003Ae1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is White alone
+    moe_sql: '"2020_CBG_B25"."B25003Am1"'
+    population_group: A
+- name: tenure_white_alone_householder_owner_occupied_b25003ae2
+  title: 'Tenure (White Alone Householder): Owner occupied'
+  description: 'Tenure (White Alone Householder). Universe: Occupied housing units with a householder
+    who is White alone. Owner occupied (White alone; also called White).'
+  sql: '"2020_CBG_B25"."B25003Ae2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is White alone
+    moe_sql: '"2020_CBG_B25"."B25003Am2"'
+    population_group: A
+- name: tenure_white_alone_householder_renter_occupied_b25003ae3
+  title: 'Tenure (White Alone Householder): Renter occupied'
+  description: 'Tenure (White Alone Householder). Universe: Occupied housing units with a householder
+    who is White alone. Renter occupied (White alone; also called White).'
+  sql: '"2020_CBG_B25"."B25003Ae3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is White alone
+    moe_sql: '"2020_CBG_B25"."B25003Am3"'
+    population_group: A
+- name: tenure_black_or_african_american_alone_householder_b25003be1
+  title: 'Tenure (Black Or African American Alone Householder): Total'
+  description: 'Tenure (Black Or African American Alone Householder). Universe: Occupied housing units
+    with a householder who is Black or African American alone. Total (Black or African American alone;
+    also called Black, African American).'
+  sql: '"2020_CBG_B25"."B25003Be1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Black or African American alone
+    moe_sql: '"2020_CBG_B25"."B25003Bm1"'
+    population_group: B
+- name: tenure_black_or_african_american_alone_householder_owner_occupied_b25003be2
+  title: 'Tenure (Black Or African American Alone Householder): Owner occupied'
+  description: 'Tenure (Black Or African American Alone Householder). Universe: Occupied housing units
+    with a householder who is Black or African American alone. Owner occupied (Black or African American
+    alone; also called Black, African American).'
+  sql: '"2020_CBG_B25"."B25003Be2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Black or African American alone
+    moe_sql: '"2020_CBG_B25"."B25003Bm2"'
+    population_group: B
+- name: tenure_black_or_african_american_alone_householder_renter_occupied_b25003be3
+  title: 'Tenure (Black Or African American Alone Householder): Renter occupied'
+  description: 'Tenure (Black Or African American Alone Householder). Universe: Occupied housing units
+    with a householder who is Black or African American alone. Renter occupied (Black or African American
+    alone; also called Black, African American).'
+  sql: '"2020_CBG_B25"."B25003Be3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Black or African American alone
+    moe_sql: '"2020_CBG_B25"."B25003Bm3"'
+    population_group: B
+- name: tenure_american_indian_and_alaska_native_alone_householder_b25003ce1
+  title: 'Tenure (American Indian And Alaska Native Alone Householder): Total'
+  description: 'Tenure (American Indian And Alaska Native Alone Householder). Universe: Occupied housing
+    units with a householder who is American Indian and Alaska Native alone. Total (American Indian and
+    Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B25"."B25003Ce1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2020_CBG_B25"."B25003Cm1"'
+    population_group: C
+- name: tenure_american_indian_and_alaska_native_alone_householder_owner_occupied_b25003ce2
+  title: 'Tenure (American Indian And Alaska Native Alone Householder): Owner occupied'
+  description: 'Tenure (American Indian And Alaska Native Alone Householder). Universe: Occupied housing
+    units with a householder who is American Indian and Alaska Native alone. Owner occupied (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B25"."B25003Ce2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2020_CBG_B25"."B25003Cm2"'
+    population_group: C
+- name: tenure_american_indian_and_alaska_native_alone_householder_renter_occupied_b25003ce3
+  title: 'Tenure (American Indian And Alaska Native Alone Householder): Renter occupied'
+  description: 'Tenure (American Indian And Alaska Native Alone Householder). Universe: Occupied housing
+    units with a householder who is American Indian and Alaska Native alone. Renter occupied (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_B25"."B25003Ce3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is American Indian and Alaska Native alone
+    moe_sql: '"2020_CBG_B25"."B25003Cm3"'
+    population_group: C
+- name: tenure_asian_alone_householder_b25003de1
+  title: 'Tenure (Asian Alone Householder): Total'
+  description: 'Tenure (Asian Alone Householder). Universe: Occupied housing units with a householder
+    who is Asian alone. Total (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B25"."B25003De1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Asian alone
+    moe_sql: '"2020_CBG_B25"."B25003Dm1"'
+    population_group: D
+- name: tenure_asian_alone_householder_owner_occupied_b25003de2
+  title: 'Tenure (Asian Alone Householder): Owner occupied'
+  description: 'Tenure (Asian Alone Householder). Universe: Occupied housing units with a householder
+    who is Asian alone. Owner occupied (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B25"."B25003De2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Asian alone
+    moe_sql: '"2020_CBG_B25"."B25003Dm2"'
+    population_group: D
+- name: tenure_asian_alone_householder_renter_occupied_b25003de3
+  title: 'Tenure (Asian Alone Householder): Renter occupied'
+  description: 'Tenure (Asian Alone Householder). Universe: Occupied housing units with a householder
+    who is Asian alone. Renter occupied (Asian alone; also called Asian).'
+  sql: '"2020_CBG_B25"."B25003De3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Asian alone
+    moe_sql: '"2020_CBG_B25"."B25003Dm3"'
+    population_group: D
+- name: tenure_native_hawaiian_and_other_pacific_islander_alone_householder_b25003ee1
+  title: 'Tenure (Native Hawaiian And Other Pacific Islander Alone Householder): Total'
+  description: 'Tenure (Native Hawaiian And Other Pacific Islander Alone Householder). Universe: Occupied
+    housing units with a householder who is Native Hawaiian and Other Pacific Islander alone. Total (Native
+    Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B25"."B25003Ee1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2020_CBG_B25"."B25003Em1"'
+    population_group: E
+- name: tenure_native_hawaiian_and_other_pacific_islander_alone_householder_owner_occupied_b25003ee2
+  title: 'Tenure (Native Hawaiian And Other Pacific Islander Alone Householder): Owner occupied'
+  description: 'Tenure (Native Hawaiian And Other Pacific Islander Alone Householder). Universe: Occupied
+    housing units with a householder who is Native Hawaiian and Other Pacific Islander alone. Owner occupied
+    (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B25"."B25003Ee2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2020_CBG_B25"."B25003Em2"'
+    population_group: E
+- name: tenure_native_hawaiian_and_other_pacific_islander_alone_householder_renter_occupied_b25003ee3
+  title: 'Tenure (Native Hawaiian And Other Pacific Islander Alone Householder): Renter occupied'
+  description: 'Tenure (Native Hawaiian And Other Pacific Islander Alone Householder). Universe: Occupied
+    housing units with a householder who is Native Hawaiian and Other Pacific Islander alone. Renter occupied
+    (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_B25"."B25003Ee3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Native Hawaiian and Other Pacific Islander
+      alone
+    moe_sql: '"2020_CBG_B25"."B25003Em3"'
+    population_group: E
+- name: tenure_some_other_race_alone_householder_b25003fe1
+  title: 'Tenure (Some Other Race Alone Householder): Total'
+  description: 'Tenure (Some Other Race Alone Householder). Universe: Occupied housing units with a householder
+    who is Some other race alone. Total (Some other race alone).'
+  sql: '"2020_CBG_B25"."B25003Fe1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Some other race alone
+    moe_sql: '"2020_CBG_B25"."B25003Fm1"'
+    population_group: F
+- name: tenure_some_other_race_alone_householder_owner_occupied_b25003fe2
+  title: 'Tenure (Some Other Race Alone Householder): Owner occupied'
+  description: 'Tenure (Some Other Race Alone Householder). Universe: Occupied housing units with a householder
+    who is Some other race alone. Owner occupied (Some other race alone).'
+  sql: '"2020_CBG_B25"."B25003Fe2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Some other race alone
+    moe_sql: '"2020_CBG_B25"."B25003Fm2"'
+    population_group: F
+- name: tenure_some_other_race_alone_householder_renter_occupied_b25003fe3
+  title: 'Tenure (Some Other Race Alone Householder): Renter occupied'
+  description: 'Tenure (Some Other Race Alone Householder). Universe: Occupied housing units with a householder
+    who is Some other race alone. Renter occupied (Some other race alone).'
+  sql: '"2020_CBG_B25"."B25003Fe3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Some other race alone
+    moe_sql: '"2020_CBG_B25"."B25003Fm3"'
+    population_group: F
+- name: tenure_two_or_more_races_householder_b25003ge1
+  title: 'Tenure (Two Or More Races Householder): Total'
+  description: 'Tenure (Two Or More Races Householder). Universe: Occupied housing units with a householder
+    who is Two or more races. Total (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B25"."B25003Ge1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Two or more races
+    moe_sql: '"2020_CBG_B25"."B25003Gm1"'
+    population_group: G
+- name: tenure_two_or_more_races_householder_owner_occupied_b25003ge2
+  title: 'Tenure (Two Or More Races Householder): Owner occupied'
+  description: 'Tenure (Two Or More Races Householder). Universe: Occupied housing units with a householder
+    who is Two or more races. Owner occupied (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B25"."B25003Ge2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Two or more races
+    moe_sql: '"2020_CBG_B25"."B25003Gm2"'
+    population_group: G
+- name: tenure_two_or_more_races_householder_renter_occupied_b25003ge3
+  title: 'Tenure (Two Or More Races Householder): Renter occupied'
+  description: 'Tenure (Two Or More Races Householder). Universe: Occupied housing units with a householder
+    who is Two or more races. Renter occupied (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_B25"."B25003Ge3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Two or more races
+    moe_sql: '"2020_CBG_B25"."B25003Gm3"'
+    population_group: G
+- name: tenure_white_alone_not_hispanic_or_latino_householder_b25003he1
+  title: 'Tenure (White Alone, Not Hispanic Or Latino Householder): Total'
+  description: 'Tenure (White Alone, Not Hispanic Or Latino Householder). Universe: Occupied housing units
+    with a householder who is White alone, not Hispanic or Latino. Total (White alone, not Hispanic or
+    Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B25"."B25003He1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2020_CBG_B25"."B25003Hm1"'
+    population_group: H
+- name: tenure_white_alone_not_hispanic_or_latino_householder_owner_occupied_b25003he2
+  title: 'Tenure (White Alone, Not Hispanic Or Latino Householder): Owner occupied'
+  description: 'Tenure (White Alone, Not Hispanic Or Latino Householder). Universe: Occupied housing units
+    with a householder who is White alone, not Hispanic or Latino. Owner occupied (White alone, not Hispanic
+    or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B25"."B25003He2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2020_CBG_B25"."B25003Hm2"'
+    population_group: H
+- name: tenure_white_alone_not_hispanic_or_latino_householder_renter_occupied_b25003he3
+  title: 'Tenure (White Alone, Not Hispanic Or Latino Householder): Renter occupied'
+  description: 'Tenure (White Alone, Not Hispanic Or Latino Householder). Universe: Occupied housing units
+    with a householder who is White alone, not Hispanic or Latino. Renter occupied (White alone, not Hispanic
+    or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_B25"."B25003He3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is White alone, not Hispanic or Latino
+    moe_sql: '"2020_CBG_B25"."B25003Hm3"'
+    population_group: H
+- name: tenure_hispanic_or_latino_householder_b25003ie1
+  title: 'Tenure (Hispanic Or Latino Householder): Total'
+  description: 'Tenure (Hispanic Or Latino Householder). Universe: Occupied housing units with a householder
+    who is Hispanic or Latino. Total (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B25"."B25003Ie1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Hispanic or Latino
+    moe_sql: '"2020_CBG_B25"."B25003Im1"'
+    population_group: I
+- name: tenure_hispanic_or_latino_householder_owner_occupied_b25003ie2
+  title: 'Tenure (Hispanic Or Latino Householder): Owner occupied'
+  description: 'Tenure (Hispanic Or Latino Householder). Universe: Occupied housing units with a householder
+    who is Hispanic or Latino. Owner occupied (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B25"."B25003Ie2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Hispanic or Latino
+    moe_sql: '"2020_CBG_B25"."B25003Im2"'
+    population_group: I
+- name: tenure_hispanic_or_latino_householder_renter_occupied_b25003ie3
+  title: 'Tenure (Hispanic Or Latino Householder): Renter occupied'
+  description: 'Tenure (Hispanic Or Latino Householder). Universe: Occupied housing units with a householder
+    who is Hispanic or Latino. Renter occupied (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_B25"."B25003Ie3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units with a householder who is Hispanic or Latino
+    moe_sql: '"2020_CBG_B25"."B25003Im3"'
+    population_group: I
+- name: vacancy_status_b25004e1
+  title: 'Vacancy Status: Total'
+  description: 'Vacancy Status. Universe: Vacant housing units. Total.'
+  sql: '"2020_CBG_B25"."B25004e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m1"'
+- name: vacancy_status_for_rent_b25004e2
+  title: 'Vacancy Status: For rent'
+  description: 'Vacancy Status. Universe: Vacant housing units. For rent.'
+  sql: '"2020_CBG_B25"."B25004e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m2"'
+- name: vacancy_status_rented_not_occupied_b25004e3
+  title: 'Vacancy Status: Rented not occupied'
+  description: 'Vacancy Status. Universe: Vacant housing units. Rented not occupied.'
+  sql: '"2020_CBG_B25"."B25004e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m3"'
+- name: vacancy_status_for_sale_only_b25004e4
+  title: 'Vacancy Status: For sale only'
+  description: 'Vacancy Status. Universe: Vacant housing units. For sale only.'
+  sql: '"2020_CBG_B25"."B25004e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m4"'
+- name: vacancy_status_sold_not_occupied_b25004e5
+  title: 'Vacancy Status: Sold not occupied'
+  description: 'Vacancy Status. Universe: Vacant housing units. Sold not occupied.'
+  sql: '"2020_CBG_B25"."B25004e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m5"'
+- name: vacancy_status_for_seasonal_recreational_or_occasional_use_b25004e6
+  title: 'Vacancy Status: For seasonal recreational or occasional use'
+  description: 'Vacancy Status. Universe: Vacant housing units. For seasonal recreational or occasional
+    use.'
+  sql: '"2020_CBG_B25"."B25004e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m6"'
+- name: vacancy_status_for_migrant_workers_b25004e7
+  title: 'Vacancy Status: For migrant workers'
+  description: 'Vacancy Status. Universe: Vacant housing units. For migrant workers.'
+  sql: '"2020_CBG_B25"."B25004e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m7"'
+- name: vacancy_status_other_vacant_b25004e8
+  title: 'Vacancy Status: Other vacant'
+  description: 'Vacancy Status. Universe: Vacant housing units. Other vacant.'
+  sql: '"2020_CBG_B25"."B25004e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Vacant housing units
+    moe_sql: '"2020_CBG_B25"."B25004m8"'
+- name: race_of_householder_b25006e1
+  title: 'Race Of Householder: Total'
+  description: 'Race Of Householder. Universe: Occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25006e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m1"'
+- name: race_of_householder_householder_who_is_white_alone_b25006e2
+  title: 'Race Of Householder: Householder who is White alone'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is White alone.'
+  sql: '"2020_CBG_B25"."B25006e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m2"'
+- name: race_of_householder_householder_who_is_black_or_african_american_alone_b25006e3
+  title: 'Race Of Householder: Householder who is Black or African American alone'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Black or African
+    American alone.'
+  sql: '"2020_CBG_B25"."B25006e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m3"'
+- name: race_of_householder_householder_who_is_american_indian_and_alaska_native_alone_b25006e4
+  title: 'Race Of Householder: Householder who is American Indian and Alaska Native alone'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is American Indian
+    and Alaska Native alone.'
+  sql: '"2020_CBG_B25"."B25006e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m4"'
+- name: race_of_householder_householder_who_is_asian_alone_b25006e5
+  title: 'Race Of Householder: Householder who is Asian alone'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Asian alone.'
+  sql: '"2020_CBG_B25"."B25006e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m5"'
+- name: race_of_householder_householder_who_is_native_hawaiian_and_other_pacific_islander_alone_b25006e6
+  title: 'Race Of Householder: Householder who is Native Hawaiian and Other Pacific Islander alone'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Native Hawaiian
+    and Other Pacific Islander alone.'
+  sql: '"2020_CBG_B25"."B25006e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m6"'
+- name: race_of_householder_householder_who_is_some_other_race_alone_b25006e7
+  title: 'Race Of Householder: Householder who is Some other race alone'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Some other race
+    alone.'
+  sql: '"2020_CBG_B25"."B25006e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m7"'
+- name: race_of_householder_householder_who_is_two_or_more_races_b25006e8
+  title: 'Race Of Householder: Householder who is Two or more races'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Two or more
+    races.'
+  sql: '"2020_CBG_B25"."B25006e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m8"'
+- name: race_of_householder_householder_who_is_two_or_more_races_householder_who_is_two_races_including_some_other_race_b25006e9
+  title: 'Race Of Householder: Householder who is Two or more races > Householder who is Two races including
+    Some other race'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Two or more
+    races > Householder who is Two races including Some other race.'
+  sql: '"2020_CBG_B25"."B25006e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m9"'
+- name: race_of_householder_householder_who_is_two_or_more_races_householder_who_is_two_races_excluding_some_other_race_and_three_or_more_races_b25006e10
+  title: 'Race Of Householder: Householder who is Two or more races > Householder who is Two races excluding
+    Some other race and three or more races'
+  description: 'Race Of Householder. Universe: Occupied housing units. Householder who is Two or more
+    races > Householder who is Two races excluding Some other race and three or more races.'
+  sql: '"2020_CBG_B25"."B25006e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25006m10"'
+- name: tenure_by_age_of_householder_b25007e1
+  title: 'Tenure By Age Of Householder: Total'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25007e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m1"'
+- name: tenure_by_age_of_householder_owner_occupied_b25007e2
+  title: 'Tenure By Age Of Householder: Owner occupied'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2020_CBG_B25"."B25007e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m2"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_15_to_24_years_b25007e3
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 15 to 24 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    15 to 24 years.'
+  sql: '"2020_CBG_B25"."B25007e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m3"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_25_to_34_years_b25007e4
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 25 to 34 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    25 to 34 years.'
+  sql: '"2020_CBG_B25"."B25007e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m4"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_35_to_44_years_b25007e5
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 35 to 44 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    35 to 44 years.'
+  sql: '"2020_CBG_B25"."B25007e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m5"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_45_to_54_years_b25007e6
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 45 to 54 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    45 to 54 years.'
+  sql: '"2020_CBG_B25"."B25007e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m6"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_55_to_59_years_b25007e7
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 55 to 59 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    55 to 59 years.'
+  sql: '"2020_CBG_B25"."B25007e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m7"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_60_to_64_years_b25007e8
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 60 to 64 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    60 to 64 years.'
+  sql: '"2020_CBG_B25"."B25007e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m8"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_65_to_74_years_b25007e9
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 65 to 74 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    65 to 74 years.'
+  sql: '"2020_CBG_B25"."B25007e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m9"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_75_to_84_years_b25007e10
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 75 to 84 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    75 to 84 years.'
+  sql: '"2020_CBG_B25"."B25007e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m10"'
+- name: tenure_by_age_of_householder_owner_occupied_householder_85_years_and_over_b25007e11
+  title: 'Tenure By Age Of Householder: Owner occupied > Householder 85 years and over'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Owner occupied > Householder
+    85 years and over.'
+  sql: '"2020_CBG_B25"."B25007e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m11"'
+- name: tenure_by_age_of_householder_renter_occupied_b25007e12
+  title: 'Tenure By Age Of Householder: Renter occupied'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2020_CBG_B25"."B25007e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m12"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_15_to_24_years_b25007e13
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 15 to 24 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    15 to 24 years.'
+  sql: '"2020_CBG_B25"."B25007e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m13"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_25_to_34_years_b25007e14
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 25 to 34 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    25 to 34 years.'
+  sql: '"2020_CBG_B25"."B25007e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m14"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_35_to_44_years_b25007e15
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 35 to 44 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    35 to 44 years.'
+  sql: '"2020_CBG_B25"."B25007e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m15"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_45_to_54_years_b25007e16
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 45 to 54 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    45 to 54 years.'
+  sql: '"2020_CBG_B25"."B25007e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m16"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_55_to_59_years_b25007e17
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 55 to 59 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    55 to 59 years.'
+  sql: '"2020_CBG_B25"."B25007e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m17"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_60_to_64_years_b25007e18
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 60 to 64 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    60 to 64 years.'
+  sql: '"2020_CBG_B25"."B25007e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m18"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_65_to_74_years_b25007e19
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 65 to 74 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    65 to 74 years.'
+  sql: '"2020_CBG_B25"."B25007e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m19"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_75_to_84_years_b25007e20
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 75 to 84 years'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    75 to 84 years.'
+  sql: '"2020_CBG_B25"."B25007e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m20"'
+- name: tenure_by_age_of_householder_renter_occupied_householder_85_years_and_over_b25007e21
+  title: 'Tenure By Age Of Householder: Renter occupied > Householder 85 years and over'
+  description: 'Tenure By Age Of Householder. Universe: Occupied housing units. Renter occupied > Householder
+    85 years and over.'
+  sql: '"2020_CBG_B25"."B25007e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25007m21"'
+- name: total_population_in_occupied_housing_units_by_tenure_b25008e1
+  title: 'Total Population In Occupied Housing Units By Tenure: Total'
+  description: 'Total Population In Occupied Housing Units By Tenure. Universe: Total population in occupied
+    housing units. Total.'
+  sql: '"2020_CBG_B25"."B25008e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25008m1"'
+- name: total_population_in_occupied_housing_units_by_tenure_owner_occupied_b25008e2
+  title: 'Total Population In Occupied Housing Units By Tenure: Owner occupied'
+  description: 'Total Population In Occupied Housing Units By Tenure. Universe: Total population in occupied
+    housing units. Owner occupied.'
+  sql: '"2020_CBG_B25"."B25008e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25008m2"'
+- name: total_population_in_occupied_housing_units_by_tenure_renter_occupied_b25008e3
+  title: 'Total Population In Occupied Housing Units By Tenure: Renter occupied'
+  description: 'Total Population In Occupied Housing Units By Tenure. Universe: Total population in occupied
+    housing units. Renter occupied.'
+  sql: '"2020_CBG_B25"."B25008e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25008m3"'
+- name: tenure_by_household_size_b25009e1
+  title: 'Tenure By Household Size: Total'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Total.'
+  sql: '"2020_CBG_B25"."B25009e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m1"'
+- name: tenure_by_household_size_owner_occupied_b25009e2
+  title: 'Tenure By Household Size: Owner occupied'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2020_CBG_B25"."B25009e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m2"'
+- name: tenure_by_household_size_owner_occupied_1_person_household_b25009e3
+  title: 'Tenure By Household Size: Owner occupied > 1-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 1-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m3"'
+- name: tenure_by_household_size_owner_occupied_2_person_household_b25009e4
+  title: 'Tenure By Household Size: Owner occupied > 2-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 2-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m4"'
+- name: tenure_by_household_size_owner_occupied_3_person_household_b25009e5
+  title: 'Tenure By Household Size: Owner occupied > 3-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 3-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m5"'
+- name: tenure_by_household_size_owner_occupied_4_person_household_b25009e6
+  title: 'Tenure By Household Size: Owner occupied > 4-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 4-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m6"'
+- name: tenure_by_household_size_owner_occupied_5_person_household_b25009e7
+  title: 'Tenure By Household Size: Owner occupied > 5-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 5-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m7"'
+- name: tenure_by_household_size_owner_occupied_6_person_household_b25009e8
+  title: 'Tenure By Household Size: Owner occupied > 6-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 6-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m8"'
+- name: tenure_by_household_size_owner_occupied_7_or_more_person_household_b25009e9
+  title: 'Tenure By Household Size: Owner occupied > 7-or-more person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Owner occupied > 7-or-more
+    person household.'
+  sql: '"2020_CBG_B25"."B25009e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m9"'
+- name: tenure_by_household_size_renter_occupied_b25009e10
+  title: 'Tenure By Household Size: Renter occupied'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2020_CBG_B25"."B25009e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m10"'
+- name: tenure_by_household_size_renter_occupied_1_person_household_b25009e11
+  title: 'Tenure By Household Size: Renter occupied > 1-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 1-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m11"'
+- name: tenure_by_household_size_renter_occupied_2_person_household_b25009e12
+  title: 'Tenure By Household Size: Renter occupied > 2-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 2-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m12"'
+- name: tenure_by_household_size_renter_occupied_3_person_household_b25009e13
+  title: 'Tenure By Household Size: Renter occupied > 3-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 3-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m13"'
+- name: tenure_by_household_size_renter_occupied_4_person_household_b25009e14
+  title: 'Tenure By Household Size: Renter occupied > 4-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 4-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m14"'
+- name: tenure_by_household_size_renter_occupied_5_person_household_b25009e15
+  title: 'Tenure By Household Size: Renter occupied > 5-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 5-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m15"'
+- name: tenure_by_household_size_renter_occupied_6_person_household_b25009e16
+  title: 'Tenure By Household Size: Renter occupied > 6-person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 6-person
+    household.'
+  sql: '"2020_CBG_B25"."B25009e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m16"'
+- name: tenure_by_household_size_renter_occupied_7_or_more_person_household_b25009e17
+  title: 'Tenure By Household Size: Renter occupied > 7-or-more person household'
+  description: 'Tenure By Household Size. Universe: Occupied housing units. Renter occupied > 7-or-more
+    person household.'
+  sql: '"2020_CBG_B25"."B25009e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2020_CBG_B25"."B25009m17"'
+- name: homeowner_vacancy_rate
+  title: Homeowner vacancy rate
+  description: 'Share of the homeowner housing stock that is vacant and for sale: vacant "for sale only"
+    homes divided by owner-occupied homes plus vacant "for sale only" plus "sold, not yet occupied" homes.'
+  sql: 100 * SUM(IFF("2020_CBG_B25"."B25004e4" IS NULL OR "2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25004e5"
+    IS NULL, NULL, "2020_CBG_B25"."B25004e4")) / NULLIF(SUM(IFF("2020_CBG_B25"."B25004e4" IS NULL OR "2020_CBG_B25"."B25003e2"
+    IS NULL OR "2020_CBG_B25"."B25004e5" IS NULL, NULL, "2020_CBG_B25"."B25003e2" + "2020_CBG_B25"."B25004e4"
+    + "2020_CBG_B25"."B25004e5")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Owner-occupied and for-sale housing units
+- name: rental_vacancy_rate
+  title: Rental vacancy rate
+  description: 'Share of the rental housing stock that is vacant and for rent: vacant "for rent" homes
+    divided by renter-occupied homes plus vacant "for rent" plus "rented, not yet occupied" homes.'
+  sql: 100 * SUM(IFF("2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25003e3" IS NULL OR "2020_CBG_B25"."B25004e3"
+    IS NULL, NULL, "2020_CBG_B25"."B25004e2")) / NULLIF(SUM(IFF("2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25003e3"
+    IS NULL OR "2020_CBG_B25"."B25004e3" IS NULL, NULL, "2020_CBG_B25"."B25003e3" + "2020_CBG_B25"."B25004e2"
+    + "2020_CBG_B25"."B25004e3")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Renter-occupied and for-rent housing units
+- name: average_household_size
+  title: Average household size
+  description: 'Average number of people per occupied home: people living in occupied homes divided by
+    the number of occupied homes.'
+  sql: SUM(IFF("2020_CBG_B25"."B25008e1" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25008e1"))
+    / NULLIF(SUM(IFF("2020_CBG_B25"."B25008e1" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")),
+    0)
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+- name: average_household_size_owner
+  title: Average household size (owner-occupied homes)
+  description: 'Average number of people per owner-occupied home: people living in owner-occupied homes
+    divided by the number of owner-occupied homes.'
+  sql: SUM(IFF("2020_CBG_B25"."B25008e2" IS NULL OR "2020_CBG_B25"."B25003e2" IS NULL, NULL, "2020_CBG_B25"."B25008e2"))
+    / NULLIF(SUM(IFF("2020_CBG_B25"."B25008e2" IS NULL OR "2020_CBG_B25"."B25003e2" IS NULL, NULL, "2020_CBG_B25"."B25003e2")),
+    0)
+  type: number
+  format: number
+  meta:
+    universe: Owner-occupied housing units
+- name: average_household_size_renter
+  title: Average household size (renter-occupied homes)
+  description: 'Average number of people per renter-occupied home: people living in renter-occupied homes
+    divided by the number of renter-occupied homes.'
+  sql: SUM(IFF("2020_CBG_B25"."B25008e3" IS NULL OR "2020_CBG_B25"."B25003e3" IS NULL, NULL, "2020_CBG_B25"."B25008e3"))
+    / NULLIF(SUM(IFF("2020_CBG_B25"."B25008e3" IS NULL OR "2020_CBG_B25"."B25003e3" IS NULL, NULL, "2020_CBG_B25"."B25003e3")),
+    0)
+  type: number
+  format: number
+  meta:
+    universe: Renter-occupied housing units
+- name: homeownership_rate
+  title: Homeownership rate
+  description: Owner-occupied homes as a percentage of all occupied homes.
+  sql: 100 * SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e2"))
+    / NULLIF(SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Occupied housing units

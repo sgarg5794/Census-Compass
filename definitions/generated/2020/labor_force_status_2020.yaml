@@ -1,0 +1,508 @@
+name: labor_force_status_2020
+title: Employment status, unemployment and labor force (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: poverty
+  status by disability status by employment status for the population 20 to 64 years; employment status
+  for the population 16 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B23"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B23"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_b23024e1
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Total'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Total.'
+  sql: '"2020_CBG_B23"."B23024e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m1"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e2
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level.'
+  sql: '"2020_CBG_B23"."B23024e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m2"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e3
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability.'
+  sql: '"2020_CBG_B23"."B23024e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m3"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e4
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability > In labor force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability > In labor force.'
+  sql: '"2020_CBG_B23"."B23024e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m4"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e5
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability > In labor force
+    > In Armed Forces'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability > In labor force > In Armed Forces.'
+  sql: '"2020_CBG_B23"."B23024e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m5"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e6
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability > In labor force
+    > Civilian'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23024e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m6"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e7
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability > In labor force
+    > Civilian > Employed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability > In labor force > Civilian >
+    Employed.'
+  sql: '"2020_CBG_B23"."B23024e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m7"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e8
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability > In labor force
+    > Civilian > Unemployed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability > In labor force > Civilian >
+    Unemployed.'
+  sql: '"2020_CBG_B23"."B23024e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m8"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e9
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > With a disability > Not in labor
+    force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > With a disability > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23024e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m9"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e10
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability.'
+  sql: '"2020_CBG_B23"."B23024e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m10"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e11
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability > In labor force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability > In labor force.'
+  sql: '"2020_CBG_B23"."B23024e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m11"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e12
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability > In labor force
+    > In Armed Forces'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability > In labor force > In Armed Forces.'
+  sql: '"2020_CBG_B23"."B23024e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m12"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e13
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability > In labor force
+    > Civilian'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23024e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m13"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e14
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability > In labor force
+    > Civilian > Employed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability > In labor force > Civilian > Employed.'
+  sql: '"2020_CBG_B23"."B23024e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m14"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e15
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability > In labor force
+    > Civilian > Unemployed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability > In labor force > Civilian > Unemployed.'
+  sql: '"2020_CBG_B23"."B23024e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m15"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_below_po_b23024e16
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months below poverty level > No disability > Not in labor force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months below poverty level > No disability > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23024e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m16"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e17
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level.'
+  sql: '"2020_CBG_B23"."B23024e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m17"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e18
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability.'
+  sql: '"2020_CBG_B23"."B23024e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m18"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e19
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability > In labor
+    force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability > In labor force.'
+  sql: '"2020_CBG_B23"."B23024e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m19"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e20
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability > In labor
+    force > In Armed Forces'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability > In labor force > In Armed
+    Forces.'
+  sql: '"2020_CBG_B23"."B23024e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m20"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e21
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability > In labor
+    force > Civilian'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23024e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m21"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e22
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability > In labor
+    force > Civilian > Employed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability > In labor force > Civilian
+    > Employed.'
+  sql: '"2020_CBG_B23"."B23024e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m22"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e23
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability > In labor
+    force > Civilian > Unemployed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability > In labor force > Civilian
+    > Unemployed.'
+  sql: '"2020_CBG_B23"."B23024e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m23"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e24
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > With a disability > Not in
+    labor force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > With a disability > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23024e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m24"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e25
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability.'
+  sql: '"2020_CBG_B23"."B23024e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m25"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e26
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability > In labor
+    force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability > In labor force.'
+  sql: '"2020_CBG_B23"."B23024e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m26"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e27
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability > In labor
+    force > In Armed Forces'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability > In labor force > In Armed
+    Forces.'
+  sql: '"2020_CBG_B23"."B23024e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m27"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e28
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability > In labor
+    force > Civilian'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23024e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m28"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e29
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability > In labor
+    force > Civilian > Employed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability > In labor force > Civilian
+    > Employed.'
+  sql: '"2020_CBG_B23"."B23024e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m29"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e30
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability > In labor
+    force > Civilian > Unemployed'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability > In labor force > Civilian
+    > Unemployed.'
+  sql: '"2020_CBG_B23"."B23024e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m30"'
+- name: poverty_status_in_the_past_12_months_by_disability_status_by_employment_status_for_the_population_20_to_64_years_income_in_the_past_12_months_at_or_ab_b23024e31
+  title: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population
+    20 To 64 Years: Income in the past 12 months at or above poverty level > No disability > Not in labor
+    force'
+  description: 'Poverty Status In The Past 12 Months By Disability Status By Employment Status For The
+    Population 20 To 64 Years. Universe: Population 20 to 64 years for whom poverty status is determined.
+    Income in the past 12 months at or above poverty level > No disability > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23024e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 20 to 64 years for whom poverty status is determined
+    moe_sql: '"2020_CBG_B23"."B23024m31"'
+- name: employment_status_for_the_population_16_years_and_over_b23025e1
+  title: 'Employment Status For The Population 16 Years And Over: Total'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. Total.'
+  sql: '"2020_CBG_B23"."B23025e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m1"'
+- name: employment_status_for_the_population_16_years_and_over_in_labor_force_b23025e2
+  title: 'Employment Status For The Population 16 Years And Over: In labor force'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. In labor force.'
+  sql: '"2020_CBG_B23"."B23025e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m2"'
+- name: employment_status_for_the_population_16_years_and_over_in_labor_force_civilian_labor_force_b23025e3
+  title: 'Employment Status For The Population 16 Years And Over: In labor force > Civilian labor force'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. In labor force > Civilian labor force.'
+  sql: '"2020_CBG_B23"."B23025e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m3"'
+- name: employment_status_for_the_population_16_years_and_over_in_labor_force_civilian_labor_force_employed_b23025e4
+  title: 'Employment Status For The Population 16 Years And Over: In labor force > Civilian labor force
+    > Employed'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. In labor force > Civilian labor force > Employed.'
+  sql: '"2020_CBG_B23"."B23025e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m4"'
+- name: employment_status_for_the_population_16_years_and_over_in_labor_force_civilian_labor_force_unemployed_b23025e5
+  title: 'Employment Status For The Population 16 Years And Over: In labor force > Civilian labor force
+    > Unemployed'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. In labor force > Civilian labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23025e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m5"'
+- name: employment_status_for_the_population_16_years_and_over_in_labor_force_armed_forces_b23025e6
+  title: 'Employment Status For The Population 16 Years And Over: In labor force > Armed Forces'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. In labor force > Armed Forces.'
+  sql: '"2020_CBG_B23"."B23025e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m6"'
+- name: employment_status_for_the_population_16_years_and_over_not_in_labor_force_b23025e7
+  title: 'Employment Status For The Population 16 Years And Over: Not in labor force'
+  description: 'Employment Status For The Population 16 Years And Over. Universe: Population 16 years
+    and over. Not in labor force.'
+  sql: '"2020_CBG_B23"."B23025e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 16 years and over
+    moe_sql: '"2020_CBG_B23"."B23025m7"'
+- name: unemployment_rate
+  title: Unemployment rate
+  description: Unemployed people as a percentage of the civilian labor force.
+  sql: 100 * SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e5"))
+    / NULLIF(SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e3")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Civilian labor force
+- name: labor_force_participation_rate
+  title: Labor force participation rate
+  description: People in the labor force, including the Armed Forces, as a percentage of all people 16
+    years and over.
+  sql: 100 * SUM(IFF("2020_CBG_B23"."B23025e2" IS NULL OR "2020_CBG_B23"."B23025e1" IS NULL, NULL, "2020_CBG_B23"."B23025e2"))
+    / NULLIF(SUM(IFF("2020_CBG_B23"."B23025e2" IS NULL OR "2020_CBG_B23"."B23025e1" IS NULL, NULL, "2020_CBG_B23"."B23025e1")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Population 16 years and over

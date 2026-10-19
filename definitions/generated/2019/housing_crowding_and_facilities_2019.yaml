@@ -1,0 +1,1352 @@
+name: housing_crowding_and_facilities_2019
+title: Crowding, plumbing, kitchen, telephone and heating fuel (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: tenure
+  by occupants per room; tenure by age of householder by occupants per room; tenure by plumbing facilities
+  by occupants per room; house heating fuel; tenure by telephone service available by age of householder;
+  plumbing facilities for all housing units; tenure by plumbing facilities; plumbing facilities by occupants
+  per room by year structure built; kitchen facilities for all housing units; tenure by kitchen facilities.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: tenure_by_occupants_per_room_b25014e1
+  title: 'Tenure By Occupants Per Room: Total'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25014e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m1"'
+- name: tenure_by_occupants_per_room_owner_occupied_b25014e2
+  title: 'Tenure By Occupants Per Room: Owner occupied'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25014e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m2"'
+- name: tenure_by_occupants_per_room_owner_occupied_0_50_or_less_occupants_per_room_b25014e3
+  title: 'Tenure By Occupants Per Room: Owner occupied > 0.50 or less occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Owner occupied > 0.50
+    or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m3"'
+- name: tenure_by_occupants_per_room_owner_occupied_0_51_to_1_00_occupants_per_room_b25014e4
+  title: 'Tenure By Occupants Per Room: Owner occupied > 0.51 to 1.00 occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Owner occupied > 0.51
+    to 1.00 occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m4"'
+- name: tenure_by_occupants_per_room_owner_occupied_1_01_to_1_50_occupants_per_room_b25014e5
+  title: 'Tenure By Occupants Per Room: Owner occupied > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Owner occupied > 1.01
+    to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m5"'
+- name: tenure_by_occupants_per_room_owner_occupied_1_51_to_2_00_occupants_per_room_b25014e6
+  title: 'Tenure By Occupants Per Room: Owner occupied > 1.51 to 2.00 occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Owner occupied > 1.51
+    to 2.00 occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m6"'
+- name: tenure_by_occupants_per_room_owner_occupied_2_01_or_more_occupants_per_room_b25014e7
+  title: 'Tenure By Occupants Per Room: Owner occupied > 2.01 or more occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Owner occupied > 2.01
+    or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m7"'
+- name: tenure_by_occupants_per_room_renter_occupied_b25014e8
+  title: 'Tenure By Occupants Per Room: Renter occupied'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25014e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m8"'
+- name: tenure_by_occupants_per_room_renter_occupied_0_50_or_less_occupants_per_room_b25014e9
+  title: 'Tenure By Occupants Per Room: Renter occupied > 0.50 or less occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Renter occupied > 0.50
+    or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m9"'
+- name: tenure_by_occupants_per_room_renter_occupied_0_51_to_1_00_occupants_per_room_b25014e10
+  title: 'Tenure By Occupants Per Room: Renter occupied > 0.51 to 1.00 occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Renter occupied > 0.51
+    to 1.00 occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m10"'
+- name: tenure_by_occupants_per_room_renter_occupied_1_01_to_1_50_occupants_per_room_b25014e11
+  title: 'Tenure By Occupants Per Room: Renter occupied > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Renter occupied > 1.01
+    to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m11"'
+- name: tenure_by_occupants_per_room_renter_occupied_1_51_to_2_00_occupants_per_room_b25014e12
+  title: 'Tenure By Occupants Per Room: Renter occupied > 1.51 to 2.00 occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Renter occupied > 1.51
+    to 2.00 occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m12"'
+- name: tenure_by_occupants_per_room_renter_occupied_2_01_or_more_occupants_per_room_b25014e13
+  title: 'Tenure By Occupants Per Room: Renter occupied > 2.01 or more occupants per room'
+  description: 'Tenure By Occupants Per Room. Universe: Occupied housing units. Renter occupied > 2.01
+    or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25014e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25014m13"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_b25015e1
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Total'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Total.'
+  sql: '"2019_CBG_B25"."B25015e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m1"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_b25015e2
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied.'
+  sql: '"2019_CBG_B25"."B25015e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m2"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_15_to_34_years_b25015e3
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 15 to 34 years'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25015e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m3"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_15_to_34_years_1_00_or_less_occupants_per_room_b25015e4
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 15 to 34 years
+    > 1.00 or less occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 15 to 34 years > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m4"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_15_to_34_years_1_01_to_1_50_occupants_per_room_b25015e5
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 15 to 34 years
+    > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 15 to 34 years > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m5"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_15_to_34_years_1_51_or_more_occupants_per_room_b25015e6
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 15 to 34 years
+    > 1.51 or more occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 15 to 34 years > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m6"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_35_to_64_years_b25015e7
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 35 to 64 years'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25015e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m7"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_35_to_64_years_1_00_or_less_occupants_per_room_b25015e8
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 35 to 64 years
+    > 1.00 or less occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 35 to 64 years > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m8"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_35_to_64_years_1_01_to_1_50_occupants_per_room_b25015e9
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 35 to 64 years
+    > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 35 to 64 years > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m9"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_35_to_64_years_1_51_or_more_occupants_per_room_b25015e10
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 35 to 64 years
+    > 1.51 or more occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 35 to 64 years > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m10"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_65_years_and_over_b25015e11
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 65 years and
+    over'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25015e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m11"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_65_years_and_over_1_00_or_less_occupants_per_room_b25015e12
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 65 years and
+    over > 1.00 or less occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 65 years and over > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m12"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_65_years_and_over_1_01_to_1_50_occupants_per_room_b25015e13
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 65 years and
+    over > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 65 years and over > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m13"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_owner_occupied_householder_65_years_and_over_1_51_or_more_occupants_per_room_b25015e14
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Owner occupied > Householder 65 years and
+    over > 1.51 or more occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Householder 65 years and over > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m14"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_b25015e15
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied.'
+  sql: '"2019_CBG_B25"."B25015e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m15"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_15_to_34_years_b25015e16
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 15 to 34 years'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25015e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m16"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_15_to_34_years_1_00_or_less_occupants_per_room_b25015e17
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 15 to 34 years
+    > 1.00 or less occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 15 to 34 years > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m17"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_15_to_34_years_1_01_to_1_50_occupants_per_room_b25015e18
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 15 to 34 years
+    > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 15 to 34 years > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m18"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_15_to_34_years_1_51_or_more_occupants_per_room_b25015e19
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 15 to 34 years
+    > 1.51 or more occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 15 to 34 years > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m19"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_35_to_64_years_b25015e20
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 35 to 64 years'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25015e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m20"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_35_to_64_years_1_00_or_less_occupants_per_room_b25015e21
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 35 to 64 years
+    > 1.00 or less occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 35 to 64 years > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m21"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_35_to_64_years_1_01_to_1_50_occupants_per_room_b25015e22
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 35 to 64 years
+    > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 35 to 64 years > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m22"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_35_to_64_years_1_51_or_more_occupants_per_room_b25015e23
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 35 to 64 years
+    > 1.51 or more occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 35 to 64 years > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m23"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_65_years_and_over_b25015e24
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 65 years and
+    over'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25015e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m24"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_65_years_and_over_1_00_or_less_occupants_per_room_b25015e25
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 65 years and
+    over > 1.00 or less occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 65 years and over > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m25"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_65_years_and_over_1_01_to_1_50_occupants_per_room_b25015e26
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 65 years and
+    over > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 65 years and over > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m26"'
+- name: tenure_by_age_of_householder_by_occupants_per_room_renter_occupied_householder_65_years_and_over_1_51_or_more_occupants_per_room_b25015e27
+  title: 'Tenure By Age Of Householder By Occupants Per Room: Renter occupied > Householder 65 years and
+    over > 1.51 or more occupants per room'
+  description: 'Tenure By Age Of Householder By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Householder 65 years and over > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25015e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25015m27"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_b25016e1
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Total'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Total.'
+  sql: '"2019_CBG_B25"."B25016e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m1"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_b25016e2
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied.'
+  sql: '"2019_CBG_B25"."B25016e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m2"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_complete_plumbing_facilities_b25016e3
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Complete plumbing facilities'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Complete plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25016e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m3"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_complete_plumbing_facilities_1_00_or_less_occupants_per_room_b25016e4
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Complete plumbing facilities
+    > 1.00 or less occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Complete plumbing facilities > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m4"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_complete_plumbing_facilities_1_01_to_1_50_occupants_per_room_b25016e5
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Complete plumbing facilities
+    > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Complete plumbing facilities > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m5"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_complete_plumbing_facilities_1_51_or_more_occupants_per_room_b25016e6
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Complete plumbing facilities
+    > 1.51 or more occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Complete plumbing facilities > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m6"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_lacking_complete_plumbing_facilities_b25016e7
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Lacking complete plumbing
+    facilities'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Lacking complete plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25016e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m7"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_lacking_complete_plumbing_facilities_1_00_or_less_occupants_per_room_b25016e8
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Lacking complete plumbing
+    facilities > 1.00 or less occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Lacking complete plumbing facilities > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m8"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_lacking_complete_plumbing_facilities_1_01_to_1_50_occupants_per_room_b25016e9
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Lacking complete plumbing
+    facilities > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Lacking complete plumbing facilities > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m9"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_owner_occupied_lacking_complete_plumbing_facilities_1_51_or_more_occupants_per_room_b25016e10
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Owner occupied > Lacking complete plumbing
+    facilities > 1.51 or more occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Owner occupied > Lacking complete plumbing facilities > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m10"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_b25016e11
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied.'
+  sql: '"2019_CBG_B25"."B25016e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m11"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_complete_plumbing_facilities_b25016e12
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Complete plumbing facilities'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Complete plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25016e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m12"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_complete_plumbing_facilities_1_00_or_less_occupants_per_room_b25016e13
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Complete plumbing facilities
+    > 1.00 or less occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Complete plumbing facilities > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m13"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_complete_plumbing_facilities_1_01_to_1_50_occupants_per_room_b25016e14
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Complete plumbing facilities
+    > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Complete plumbing facilities > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m14"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_complete_plumbing_facilities_1_51_or_more_occupants_per_room_b25016e15
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Complete plumbing facilities
+    > 1.51 or more occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Complete plumbing facilities > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m15"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_lacking_complete_plumbing_facilities_b25016e16
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Lacking complete plumbing
+    facilities'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Lacking complete plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25016e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m16"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_lacking_complete_plumbing_facilities_1_00_or_less_occupants_per_room_b25016e17
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Lacking complete plumbing
+    facilities > 1.00 or less occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Lacking complete plumbing facilities > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m17"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_lacking_complete_plumbing_facilities_1_01_to_1_50_occupants_per_room_b25016e18
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Lacking complete plumbing
+    facilities > 1.01 to 1.50 occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Lacking complete plumbing facilities > 1.01 to 1.50 occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m18"'
+- name: tenure_by_plumbing_facilities_by_occupants_per_room_renter_occupied_lacking_complete_plumbing_facilities_1_51_or_more_occupants_per_room_b25016e19
+  title: 'Tenure By Plumbing Facilities By Occupants Per Room: Renter occupied > Lacking complete plumbing
+    facilities > 1.51 or more occupants per room'
+  description: 'Tenure By Plumbing Facilities By Occupants Per Room. Universe: Occupied housing units.
+    Renter occupied > Lacking complete plumbing facilities > 1.51 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25016e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25016m19"'
+- name: house_heating_fuel_b25040e1
+  title: 'House Heating Fuel: Total'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25040e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m1"'
+- name: house_heating_fuel_utility_gas_b25040e2
+  title: 'House Heating Fuel: Utility gas'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Utility gas.'
+  sql: '"2019_CBG_B25"."B25040e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m2"'
+- name: house_heating_fuel_bottled_tank_or_lp_gas_b25040e3
+  title: 'House Heating Fuel: Bottled tank or LP gas'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Bottled tank or LP gas.'
+  sql: '"2019_CBG_B25"."B25040e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m3"'
+- name: house_heating_fuel_electricity_b25040e4
+  title: 'House Heating Fuel: Electricity'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Electricity.'
+  sql: '"2019_CBG_B25"."B25040e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m4"'
+- name: house_heating_fuel_fuel_oil_kerosene_etc_b25040e5
+  title: 'House Heating Fuel: Fuel oil kerosene etc.'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Fuel oil kerosene etc..'
+  sql: '"2019_CBG_B25"."B25040e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m5"'
+- name: house_heating_fuel_coal_or_coke_b25040e6
+  title: 'House Heating Fuel: Coal or coke'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Coal or coke.'
+  sql: '"2019_CBG_B25"."B25040e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m6"'
+- name: house_heating_fuel_wood_b25040e7
+  title: 'House Heating Fuel: Wood'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Wood.'
+  sql: '"2019_CBG_B25"."B25040e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m7"'
+- name: house_heating_fuel_solar_energy_b25040e8
+  title: 'House Heating Fuel: Solar energy'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Solar energy.'
+  sql: '"2019_CBG_B25"."B25040e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m8"'
+- name: house_heating_fuel_other_fuel_b25040e9
+  title: 'House Heating Fuel: Other fuel'
+  description: 'House Heating Fuel. Universe: Occupied housing units. Other fuel.'
+  sql: '"2019_CBG_B25"."B25040e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m9"'
+- name: house_heating_fuel_no_fuel_used_b25040e10
+  title: 'House Heating Fuel: No fuel used'
+  description: 'House Heating Fuel. Universe: Occupied housing units. No fuel used.'
+  sql: '"2019_CBG_B25"."B25040e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25040m10"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_b25043e1
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Total'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Total.'
+  sql: '"2019_CBG_B25"."B25043e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m1"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_b25043e2
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25043e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m2"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_with_telephone_service_available_b25043e3
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > With telephone
+    service available'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > With telephone service available.'
+  sql: '"2019_CBG_B25"."B25043e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m3"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_with_telephone_service_available_householder_15_to_34_years_b25043e4
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > With telephone
+    service available > Householder 15 to 34 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > With telephone service available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25043e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m4"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_with_telephone_service_available_householder_35_to_64_years_b25043e5
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > With telephone
+    service available > Householder 35 to 64 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > With telephone service available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25043e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m5"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_with_telephone_service_available_householder_65_years_and_over_b25043e6
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > With telephone
+    service available > Householder 65 years and over'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > With telephone service available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25043e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m6"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_no_telephone_service_available_b25043e7
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > No telephone service
+    available'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > No telephone service available.'
+  sql: '"2019_CBG_B25"."B25043e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m7"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_no_telephone_service_available_householder_15_to_34_years_b25043e8
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > No telephone service
+    available > Householder 15 to 34 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > No telephone service available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25043e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m8"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_no_telephone_service_available_householder_35_to_64_years_b25043e9
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > No telephone service
+    available > Householder 35 to 64 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > No telephone service available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25043e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m9"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_owner_occupied_no_telephone_service_available_householder_65_years_and_over_b25043e10
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Owner occupied > No telephone service
+    available > Householder 65 years and over'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Owner occupied > No telephone service available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25043e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m10"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_b25043e11
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25043e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m11"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_with_telephone_service_available_b25043e12
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > With telephone
+    service available'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > With telephone service available.'
+  sql: '"2019_CBG_B25"."B25043e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m12"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_with_telephone_service_available_householder_15_to_34_years_b25043e13
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > With telephone
+    service available > Householder 15 to 34 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > With telephone service available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25043e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m13"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_with_telephone_service_available_householder_35_to_64_years_b25043e14
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > With telephone
+    service available > Householder 35 to 64 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > With telephone service available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25043e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m14"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_with_telephone_service_available_householder_65_years_and_over_b25043e15
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > With telephone
+    service available > Householder 65 years and over'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > With telephone service available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25043e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m15"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_no_telephone_service_available_b25043e16
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > No telephone
+    service available'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > No telephone service available.'
+  sql: '"2019_CBG_B25"."B25043e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m16"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_no_telephone_service_available_householder_15_to_34_years_b25043e17
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > No telephone
+    service available > Householder 15 to 34 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > No telephone service available > Householder 15 to 34 years.'
+  sql: '"2019_CBG_B25"."B25043e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m17"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_no_telephone_service_available_householder_35_to_64_years_b25043e18
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > No telephone
+    service available > Householder 35 to 64 years'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > No telephone service available > Householder 35 to 64 years.'
+  sql: '"2019_CBG_B25"."B25043e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m18"'
+- name: tenure_by_telephone_service_available_by_age_of_householder_renter_occupied_no_telephone_service_available_householder_65_years_and_over_b25043e19
+  title: 'Tenure By Telephone Service Available By Age Of Householder: Renter occupied > No telephone
+    service available > Householder 65 years and over'
+  description: 'Tenure By Telephone Service Available By Age Of Householder. Universe: Occupied housing
+    units. Renter occupied > No telephone service available > Householder 65 years and over.'
+  sql: '"2019_CBG_B25"."B25043e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25043m19"'
+- name: plumbing_facilities_for_all_housing_units_b25047e1
+  title: 'Plumbing Facilities For All Housing Units: Total'
+  description: 'Plumbing Facilities For All Housing Units. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25047e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25047m1"'
+- name: plumbing_facilities_for_all_housing_units_complete_plumbing_facilities_b25047e2
+  title: 'Plumbing Facilities For All Housing Units: Complete plumbing facilities'
+  description: 'Plumbing Facilities For All Housing Units. Universe: Housing units. Complete plumbing
+    facilities.'
+  sql: '"2019_CBG_B25"."B25047e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25047m2"'
+- name: plumbing_facilities_for_all_housing_units_lacking_complete_plumbing_facilities_b25047e3
+  title: 'Plumbing Facilities For All Housing Units: Lacking complete plumbing facilities'
+  description: 'Plumbing Facilities For All Housing Units. Universe: Housing units. Lacking complete plumbing
+    facilities.'
+  sql: '"2019_CBG_B25"."B25047e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25047m3"'
+- name: tenure_by_plumbing_facilities_b25049e1
+  title: 'Tenure By Plumbing Facilities: Total'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25049e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m1"'
+- name: tenure_by_plumbing_facilities_owner_occupied_b25049e2
+  title: 'Tenure By Plumbing Facilities: Owner occupied'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25049e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m2"'
+- name: tenure_by_plumbing_facilities_owner_occupied_complete_plumbing_facilities_b25049e3
+  title: 'Tenure By Plumbing Facilities: Owner occupied > Complete plumbing facilities'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Owner occupied > Complete
+    plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25049e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m3"'
+- name: tenure_by_plumbing_facilities_owner_occupied_lacking_plumbing_facilities_b25049e4
+  title: 'Tenure By Plumbing Facilities: Owner occupied > Lacking plumbing facilities'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Owner occupied > Lacking
+    plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25049e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m4"'
+- name: tenure_by_plumbing_facilities_renter_occupied_b25049e5
+  title: 'Tenure By Plumbing Facilities: Renter occupied'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25049e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m5"'
+- name: tenure_by_plumbing_facilities_renter_occupied_complete_plumbing_facilities_b25049e6
+  title: 'Tenure By Plumbing Facilities: Renter occupied > Complete plumbing facilities'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Renter occupied > Complete
+    plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25049e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m6"'
+- name: tenure_by_plumbing_facilities_renter_occupied_lacking_plumbing_facilities_b25049e7
+  title: 'Tenure By Plumbing Facilities: Renter occupied > Lacking plumbing facilities'
+  description: 'Tenure By Plumbing Facilities. Universe: Occupied housing units. Renter occupied > Lacking
+    plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25049e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25049m7"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_b25050e1
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Total'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Total.'
+  sql: '"2019_CBG_B25"."B25050e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m1"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_b25050e2
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25050e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m2"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_00_or_less_occupants_per_room_b25050e3
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.00 or less occupants per room'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25050e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m3"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_00_or_less_occupants_per_room_built_1950_or_later_b25050e4
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.00 or less occupants per room > Built 1950 or later'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.00 or less occupants per room > Built 1950 or later.'
+  sql: '"2019_CBG_B25"."B25050e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m4"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_00_or_less_occupants_per_room_built_1940_to_1949_b25050e5
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.00 or less occupants per room > Built 1940 to 1949'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.00 or less occupants per room > Built 1940 to 1949.'
+  sql: '"2019_CBG_B25"."B25050e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m5"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_00_or_less_occupants_per_room_built_1939_or_earlier_b25050e6
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.00 or less occupants per room > Built 1939 or earlier'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.00 or less occupants per room > Built 1939 or earlier.'
+  sql: '"2019_CBG_B25"."B25050e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m6"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_01_or_more_occupants_per_room_b25050e7
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.01 or more occupants per room'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.01 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25050e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m7"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_01_or_more_occupants_per_room_built_1950_or_later_b25050e8
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.01 or more occupants per room > Built 1950 or later'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.01 or more occupants per room > Built 1950 or later.'
+  sql: '"2019_CBG_B25"."B25050e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m8"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_01_or_more_occupants_per_room_built_1940_to_1949_b25050e9
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.01 or more occupants per room > Built 1940 to 1949'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.01 or more occupants per room > Built 1940 to 1949.'
+  sql: '"2019_CBG_B25"."B25050e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m9"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_complete_plumbing_facilities_1_01_or_more_occupants_per_room_built_1939_or_earlier_b25050e10
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Complete plumbing facilities
+    > 1.01 or more occupants per room > Built 1939 or earlier'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Complete plumbing facilities > 1.01 or more occupants per room > Built 1939 or earlier.'
+  sql: '"2019_CBG_B25"."B25050e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m10"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_b25050e11
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities.'
+  sql: '"2019_CBG_B25"."B25050e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m11"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_00_or_less_occupants_per_room_b25050e12
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.00 or less occupants per room'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.00 or less occupants per room.'
+  sql: '"2019_CBG_B25"."B25050e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m12"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_00_or_less_occupants_per_room_built_1950_or_l_b25050e13
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.00 or less occupants per room > Built 1950 or later'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.00 or less occupants per room > Built 1950
+    or later.'
+  sql: '"2019_CBG_B25"."B25050e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m13"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_00_or_less_occupants_per_room_built_1940_to_1_b25050e14
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.00 or less occupants per room > Built 1940 to 1949'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.00 or less occupants per room > Built 1940
+    to 1949.'
+  sql: '"2019_CBG_B25"."B25050e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m14"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_00_or_less_occupants_per_room_built_1939_or_e_b25050e15
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.00 or less occupants per room > Built 1939 or earlier'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.00 or less occupants per room > Built 1939
+    or earlier.'
+  sql: '"2019_CBG_B25"."B25050e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m15"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_01_or_more_occupants_per_room_b25050e16
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.01 or more occupants per room'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.01 or more occupants per room.'
+  sql: '"2019_CBG_B25"."B25050e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m16"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_01_or_more_occupants_per_room_built_1950_or_l_b25050e17
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.01 or more occupants per room > Built 1950 or later'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.01 or more occupants per room > Built 1950
+    or later.'
+  sql: '"2019_CBG_B25"."B25050e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m17"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_01_or_more_occupants_per_room_built_1940_to_1_b25050e18
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.01 or more occupants per room > Built 1940 to 1949'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.01 or more occupants per room > Built 1940
+    to 1949.'
+  sql: '"2019_CBG_B25"."B25050e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m18"'
+- name: plumbing_facilities_by_occupants_per_room_by_year_structure_built_lacking_complete_plumbing_facilities_1_01_or_more_occupants_per_room_built_1939_or_e_b25050e19
+  title: 'Plumbing Facilities By Occupants Per Room By Year Structure Built: Lacking complete plumbing
+    facilities > 1.01 or more occupants per room > Built 1939 or earlier'
+  description: 'Plumbing Facilities By Occupants Per Room By Year Structure Built. Universe: Occupied
+    housing units. Lacking complete plumbing facilities > 1.01 or more occupants per room > Built 1939
+    or earlier.'
+  sql: '"2019_CBG_B25"."B25050e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25050m19"'
+- name: kitchen_facilities_for_all_housing_units_b25051e1
+  title: 'Kitchen Facilities For All Housing Units: Total'
+  description: 'Kitchen Facilities For All Housing Units. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25051e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25051m1"'
+- name: kitchen_facilities_for_all_housing_units_complete_kitchen_facilities_b25051e2
+  title: 'Kitchen Facilities For All Housing Units: Complete kitchen facilities'
+  description: 'Kitchen Facilities For All Housing Units. Universe: Housing units. Complete kitchen facilities.'
+  sql: '"2019_CBG_B25"."B25051e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25051m2"'
+- name: kitchen_facilities_for_all_housing_units_lacking_complete_kitchen_facilities_b25051e3
+  title: 'Kitchen Facilities For All Housing Units: Lacking complete kitchen facilities'
+  description: 'Kitchen Facilities For All Housing Units. Universe: Housing units. Lacking complete kitchen
+    facilities.'
+  sql: '"2019_CBG_B25"."B25051e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25051m3"'
+- name: tenure_by_kitchen_facilities_b25053e1
+  title: 'Tenure By Kitchen Facilities: Total'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25053e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m1"'
+- name: tenure_by_kitchen_facilities_owner_occupied_b25053e2
+  title: 'Tenure By Kitchen Facilities: Owner occupied'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25053e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m2"'
+- name: tenure_by_kitchen_facilities_owner_occupied_complete_kitchen_facilities_b25053e3
+  title: 'Tenure By Kitchen Facilities: Owner occupied > Complete kitchen facilities'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Owner occupied > Complete
+    kitchen facilities.'
+  sql: '"2019_CBG_B25"."B25053e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m3"'
+- name: tenure_by_kitchen_facilities_owner_occupied_lacking_complete_kitchen_facilities_b25053e4
+  title: 'Tenure By Kitchen Facilities: Owner occupied > Lacking complete kitchen facilities'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Owner occupied > Lacking
+    complete kitchen facilities.'
+  sql: '"2019_CBG_B25"."B25053e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m4"'
+- name: tenure_by_kitchen_facilities_renter_occupied_b25053e5
+  title: 'Tenure By Kitchen Facilities: Renter occupied'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25053e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m5"'
+- name: tenure_by_kitchen_facilities_renter_occupied_complete_kitchen_facilities_b25053e6
+  title: 'Tenure By Kitchen Facilities: Renter occupied > Complete kitchen facilities'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Renter occupied > Complete
+    kitchen facilities.'
+  sql: '"2019_CBG_B25"."B25053e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m6"'
+- name: tenure_by_kitchen_facilities_renter_occupied_lacking_complete_kitchen_facilities_b25053e7
+  title: 'Tenure By Kitchen Facilities: Renter occupied > Lacking complete kitchen facilities'
+  description: 'Tenure By Kitchen Facilities. Universe: Occupied housing units. Renter occupied > Lacking
+    complete kitchen facilities.'
+  sql: '"2019_CBG_B25"."B25053e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25053m7"'
+- name: crowded_homes_pct
+  title: Crowded homes (%)
+  description: Percentage of occupied homes with more than one person per room (1.01 or more occupants
+    per room), owners and renters together.
+  sql: 100 * SUM(IFF("2019_CBG_B25"."B25014e5" IS NULL OR "2019_CBG_B25"."B25014e6" IS NULL OR "2019_CBG_B25"."B25014e7"
+    IS NULL OR "2019_CBG_B25"."B25014e11" IS NULL OR "2019_CBG_B25"."B25014e12" IS NULL OR "2019_CBG_B25"."B25014e13"
+    IS NULL OR "2019_CBG_B25"."B25014e1" IS NULL, NULL, "2019_CBG_B25"."B25014e5" + "2019_CBG_B25"."B25014e6"
+    + "2019_CBG_B25"."B25014e7" + "2019_CBG_B25"."B25014e11" + "2019_CBG_B25"."B25014e12" + "2019_CBG_B25"."B25014e13"))
+    / NULLIF(SUM(IFF("2019_CBG_B25"."B25014e5" IS NULL OR "2019_CBG_B25"."B25014e6" IS NULL OR "2019_CBG_B25"."B25014e7"
+    IS NULL OR "2019_CBG_B25"."B25014e11" IS NULL OR "2019_CBG_B25"."B25014e12" IS NULL OR "2019_CBG_B25"."B25014e13"
+    IS NULL OR "2019_CBG_B25"."B25014e1" IS NULL, NULL, "2019_CBG_B25"."B25014e1")), 0)
+  type: number
+  format: percent
+  meta:
+    universe: Occupied housing units

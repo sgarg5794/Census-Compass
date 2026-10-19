@@ -1,0 +1,1846 @@
+name: poverty_2019
+title: Poverty status of people, families and households (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: poverty
+  status of families by family type by presence of related children under 18 years by age of related children;
+  aggregate income deficit (dollars) for families by family type; poverty status by household type by
+  age of householder; poverty status of individuals by living arrangement.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B17"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B17"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_b17010e1
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Total'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Total.'
+  sql: '"2019_CBG_B17"."B17010e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m1"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e2
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level.'
+  sql: '"2019_CBG_B17"."B17010e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m2"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e3
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Married-couple
+    family'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Married-couple family.'
+  sql: '"2019_CBG_B17"."B17010e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m3"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e4
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Married-couple
+    family > With related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Married-couple family > With related children of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m4"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e5
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Married-couple
+    family > With related children of the householder under 18 years > Under 5 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Married-couple family > With related children of the householder under 18 years
+    > Under 5 years only.'
+  sql: '"2019_CBG_B17"."B17010e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m5"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e6
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Married-couple
+    family > With related children of the householder under 18 years > Under 5 years and 5 to 17 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Married-couple family > With related children of the householder under 18 years
+    > Under 5 years and 5 to 17 years.'
+  sql: '"2019_CBG_B17"."B17010e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m6"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e7
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Married-couple
+    family > With related children of the householder under 18 years > 5 to 17 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Married-couple family > With related children of the householder under 18 years
+    > 5 to 17 years only.'
+  sql: '"2019_CBG_B17"."B17010e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m7"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e8
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Married-couple
+    family > No related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Married-couple family > No related children of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m8"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e9
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family.'
+  sql: '"2019_CBG_B17"."B17010e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m9"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e10
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Male householder no spouse present'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17010e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m10"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e11
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Male householder no spouse present > With related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Male householder no spouse present > With related children of
+    the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m11"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e12
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Male householder no spouse present > With related children of the householder under 18 years
+    > Under 5 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Male householder no spouse present > With related children of
+    the householder under 18 years > Under 5 years only.'
+  sql: '"2019_CBG_B17"."B17010e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m12"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e13
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Male householder no spouse present > With related children of the householder under 18 years
+    > Under 5 years and 5 to 17 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Male householder no spouse present > With related children of
+    the householder under 18 years > Under 5 years and 5 to 17 years.'
+  sql: '"2019_CBG_B17"."B17010e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m13"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e14
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Male householder no spouse present > With related children of the householder under 18 years
+    > 5 to 17 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Male householder no spouse present > With related children of
+    the householder under 18 years > 5 to 17 years only.'
+  sql: '"2019_CBG_B17"."B17010e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m14"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e15
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Male householder no spouse present > No related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Male householder no spouse present > No related children of the
+    householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m15"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e16
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Female householder no spouse present'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17010e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m16"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e17
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Female householder no spouse present > With related children of the householder under 18
+    years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m17"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e18
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Female householder no spouse present > With related children of the householder under 18
+    years > Under 5 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years > Under 5 years only.'
+  sql: '"2019_CBG_B17"."B17010e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m18"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e19
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Female householder no spouse present > With related children of the householder under 18
+    years > Under 5 years and 5 to 17 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years > Under 5 years and 5 to 17 years.'
+  sql: '"2019_CBG_B17"."B17010e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m19"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e20
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Female householder no spouse present > With related children of the householder under 18
+    years > 5 to 17 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years > 5 to 17 years only.'
+  sql: '"2019_CBG_B17"."B17010e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m20"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e21
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months below poverty level > Other
+    family > Female householder no spouse present > No related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    below poverty level > Other family > Female householder no spouse present > No related children of
+    the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m21"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e22
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level.'
+  sql: '"2019_CBG_B17"."B17010e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m22"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e23
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Married-couple family'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Married-couple family.'
+  sql: '"2019_CBG_B17"."B17010e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m23"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e24
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Married-couple family > With related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Married-couple family > With related children of the householder under
+    18 years.'
+  sql: '"2019_CBG_B17"."B17010e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m24"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e25
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Married-couple family > With related children of the householder under 18 years > Under 5 years
+    only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Married-couple family > With related children of the householder under
+    18 years > Under 5 years only.'
+  sql: '"2019_CBG_B17"."B17010e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m25"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e26
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Married-couple family > With related children of the householder under 18 years > Under 5 years
+    and 5 to 17 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Married-couple family > With related children of the householder under
+    18 years > Under 5 years and 5 to 17 years.'
+  sql: '"2019_CBG_B17"."B17010e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m26"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e27
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Married-couple family > With related children of the householder under 18 years > 5 to 17 years
+    only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Married-couple family > With related children of the householder under
+    18 years > 5 to 17 years only.'
+  sql: '"2019_CBG_B17"."B17010e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m27"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e28
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Married-couple family > No related children of the householder under 18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Married-couple family > No related children of the householder under 18
+    years.'
+  sql: '"2019_CBG_B17"."B17010e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m28"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e29
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family.'
+  sql: '"2019_CBG_B17"."B17010e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m29"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e30
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Male householder no spouse present'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17010e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m30"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e31
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Male householder no spouse present > With related children of the householder under
+    18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Male householder no spouse present > With related children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m31"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e32
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Male householder no spouse present > With related children of the householder under
+    18 years > Under 5 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Male householder no spouse present > With related children
+    of the householder under 18 years > Under 5 years only.'
+  sql: '"2019_CBG_B17"."B17010e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m32"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e33
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Male householder no spouse present > With related children of the householder under
+    18 years > Under 5 years and 5 to 17 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Male householder no spouse present > With related children
+    of the householder under 18 years > Under 5 years and 5 to 17 years.'
+  sql: '"2019_CBG_B17"."B17010e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m33"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e34
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Male householder no spouse present > With related children of the householder under
+    18 years > 5 to 17 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Male householder no spouse present > With related children
+    of the householder under 18 years > 5 to 17 years only.'
+  sql: '"2019_CBG_B17"."B17010e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m34"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e35
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Male householder no spouse present > No related children of the householder under
+    18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Male householder no spouse present > No related children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m35"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e36
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Female householder no spouse present'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17010e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m36"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e37
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Female householder no spouse present > With related children of the householder under
+    18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m37"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e38
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Female householder no spouse present > With related children of the householder under
+    18 years > Under 5 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years > Under 5 years only.'
+  sql: '"2019_CBG_B17"."B17010e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m38"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e39
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Female householder no spouse present > With related children of the householder under
+    18 years > Under 5 years and 5 to 17 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years > Under 5 years and 5 to 17 years.'
+  sql: '"2019_CBG_B17"."B17010e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m39"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e40
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Female householder no spouse present > With related children of the householder under
+    18 years > 5 to 17 years only'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Female householder no spouse present > With related children
+    of the householder under 18 years > 5 to 17 years only.'
+  sql: '"2019_CBG_B17"."B17010e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m40"'
+- name: poverty_status_in_the_past_12_months_of_families_by_family_type_by_presence_of_related_children_under_18_years_by_age_of_related_children_income_in_th_b17010e41
+  title: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children
+    Under 18 Years By Age Of Related Children: Income in the past 12 months at or above poverty level
+    > Other family > Female householder no spouse present > No related children of the householder under
+    18 years'
+  description: 'Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related
+    Children Under 18 Years By Age Of Related Children. Universe: Families. Income in the past 12 months
+    at or above poverty level > Other family > Female householder no spouse present > No related children
+    of the householder under 18 years.'
+  sql: '"2019_CBG_B17"."B17010e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2019_CBG_B17"."B17010m41"'
+- name: aggregate_income_deficit_dollars_in_the_past_12_months_for_families_by_family_type_aggregate_income_deficit_in_the_past_12_months_b17011e1
+  title: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type: Aggregate
+    income deficit in the past 12 months'
+  description: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type.
+    Universe: Families with income in the past 12 months below the poverty level. Aggregate income deficit
+    in the past 12 months.'
+  sql: '"2019_CBG_B17"."B17011e1"'
+  type: sum
+  format: currency
+  meta:
+    universe: Families with income in the past 12 months below the poverty level
+    moe_sql: '"2019_CBG_B17"."B17011m1"'
+- name: aggregate_income_deficit_dollars_in_the_past_12_months_for_families_by_family_type_aggregate_income_deficit_in_the_past_12_months_married_couple_famil_b17011e2
+  title: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type: Aggregate
+    income deficit in the past 12 months > Married-couple family'
+  description: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type.
+    Universe: Families with income in the past 12 months below the poverty level. Aggregate income deficit
+    in the past 12 months > Married-couple family.'
+  sql: '"2019_CBG_B17"."B17011e2"'
+  type: sum
+  format: currency
+  meta:
+    universe: Families with income in the past 12 months below the poverty level
+    moe_sql: '"2019_CBG_B17"."B17011m2"'
+- name: aggregate_income_deficit_dollars_in_the_past_12_months_for_families_by_family_type_aggregate_income_deficit_in_the_past_12_months_other_family_b17011e3
+  title: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type: Aggregate
+    income deficit in the past 12 months > Other family'
+  description: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type.
+    Universe: Families with income in the past 12 months below the poverty level. Aggregate income deficit
+    in the past 12 months > Other family.'
+  sql: '"2019_CBG_B17"."B17011e3"'
+  type: sum
+  format: currency
+  meta:
+    universe: Families with income in the past 12 months below the poverty level
+    moe_sql: '"2019_CBG_B17"."B17011m3"'
+- name: aggregate_income_deficit_dollars_in_the_past_12_months_for_families_by_family_type_aggregate_income_deficit_in_the_past_12_months_other_family_male_ho_b17011e4
+  title: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type: Aggregate
+    income deficit in the past 12 months > Other family > Male householder no spouse present'
+  description: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type.
+    Universe: Families with income in the past 12 months below the poverty level. Aggregate income deficit
+    in the past 12 months > Other family > Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17011e4"'
+  type: sum
+  format: currency
+  meta:
+    universe: Families with income in the past 12 months below the poverty level
+    moe_sql: '"2019_CBG_B17"."B17011m4"'
+- name: aggregate_income_deficit_dollars_in_the_past_12_months_for_families_by_family_type_aggregate_income_deficit_in_the_past_12_months_other_family_female__b17011e5
+  title: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type: Aggregate
+    income deficit in the past 12 months > Other family > Female householder no spouse present'
+  description: 'Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type.
+    Universe: Families with income in the past 12 months below the poverty level. Aggregate income deficit
+    in the past 12 months > Other family > Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17011e5"'
+  type: sum
+  format: currency
+  meta:
+    universe: Families with income in the past 12 months below the poverty level
+    moe_sql: '"2019_CBG_B17"."B17011m5"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_b17017e1
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Total'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Total.'
+  sql: '"2019_CBG_B17"."B17017e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m1"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_b17017e2
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level.'
+  sql: '"2019_CBG_B17"."B17017e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m2"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_b17017e3
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households.'
+  sql: '"2019_CBG_B17"."B17017e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m3"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_marrie_b17017e4
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Married-couple family'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Married-couple
+    family.'
+  sql: '"2019_CBG_B17"."B17017e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m4"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_marrie_b17017e5
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Married-couple family > Householder under
+    25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Married-couple
+    family > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m5"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_marrie_b17017e6
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Married-couple family > Householder 25 to
+    44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Married-couple
+    family > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m6"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_marrie_b17017e7
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Married-couple family > Householder 45 to
+    64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Married-couple
+    family > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m7"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_marrie_b17017e8
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Married-couple family > Householder 65 years
+    and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Married-couple
+    family > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m8"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e9
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family.'
+  sql: '"2019_CBG_B17"."B17017e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m9"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e10
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Male householder no spouse
+    present'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17017e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m10"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e11
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Male householder no spouse
+    present > Householder under 25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Male householder no spouse present > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m11"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e12
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Male householder no spouse
+    present > Householder 25 to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Male householder no spouse present > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m12"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e13
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Male householder no spouse
+    present > Householder 45 to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Male householder no spouse present > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m13"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e14
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Male householder no spouse
+    present > Householder 65 years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Male householder no spouse present > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m14"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e15
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Female householder no spouse
+    present'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17017e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m15"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e16
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Female householder no spouse
+    present > Householder under 25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Female householder no spouse present > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m16"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e17
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Female householder no spouse
+    present > Householder 25 to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Female householder no spouse present > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m17"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e18
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Female householder no spouse
+    present > Householder 45 to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Female householder no spouse present > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m18"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_family_households_other__b17017e19
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Family households > Other family > Female householder no spouse
+    present > Householder 65 years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Family households > Other family >
+    Female householder no spouse present > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m19"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_b17017e20
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households.'
+  sql: '"2019_CBG_B17"."B17017e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m20"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_mal_b17017e21
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Male householder'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Male householder.'
+  sql: '"2019_CBG_B17"."B17017e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m21"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_mal_b17017e22
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Male householder > Householder under 25
+    years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Male householder
+    > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m22"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_mal_b17017e23
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Male householder > Householder 25 to 44
+    years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Male householder
+    > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m23"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_mal_b17017e24
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Male householder > Householder 45 to 64
+    years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Male householder
+    > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m24"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_mal_b17017e25
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Male householder > Householder 65 years
+    and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Male householder
+    > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m25"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_fem_b17017e26
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Female householder'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Female householder.'
+  sql: '"2019_CBG_B17"."B17017e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m26"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_fem_b17017e27
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Female householder > Householder under
+    25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Female householder
+    > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m27"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_fem_b17017e28
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Female householder > Householder 25 to
+    44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Female householder
+    > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m28"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_fem_b17017e29
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Female householder > Householder 45 to
+    64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Female householder
+    > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m29"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_below_poverty_level_nonfamily_households_fem_b17017e30
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months below poverty level > Nonfamily households > Female householder > Householder 65 years
+    and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months below poverty level > Nonfamily households > Female householder
+    > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m30"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_b17017e31
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level.'
+  sql: '"2019_CBG_B17"."B17017e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m31"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households_b17017e32
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households.'
+  sql: '"2019_CBG_B17"."B17017e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m32"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e33
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Married-couple family'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Married-couple
+    family.'
+  sql: '"2019_CBG_B17"."B17017e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m33"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e34
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Married-couple family > Householder
+    under 25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Married-couple
+    family > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m34"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e35
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Married-couple family > Householder
+    25 to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Married-couple
+    family > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m35"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e36
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Married-couple family > Householder
+    45 to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Married-couple
+    family > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m36"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e37
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Married-couple family > Householder
+    65 years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Married-couple
+    family > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m37"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e38
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family.'
+  sql: '"2019_CBG_B17"."B17017e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m38"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e39
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Male householder no
+    spouse present'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17017e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m39"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e40
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Male householder no
+    spouse present > Householder under 25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Male householder no spouse present > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m40"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e41
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Male householder no
+    spouse present > Householder 25 to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Male householder no spouse present > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m41"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e42
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Male householder no
+    spouse present > Householder 45 to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Male householder no spouse present > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m42"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e43
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Male householder no
+    spouse present > Householder 65 years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Male householder no spouse present > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m43"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e44
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Female householder no
+    spouse present'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17017e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m44"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e45
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Female householder no
+    spouse present > Householder under 25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Female householder no spouse present > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m45"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e46
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Female householder no
+    spouse present > Householder 25 to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Female householder no spouse present > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m46"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e47
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Female householder no
+    spouse present > Householder 45 to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Female householder no spouse present > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m47"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_family_households__b17017e48
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Family households > Other family > Female householder no
+    spouse present > Householder 65 years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Family households > Other family
+    > Female householder no spouse present > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m48"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e49
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households.'
+  sql: '"2019_CBG_B17"."B17017e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m49"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e50
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Male householder'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Male householder.'
+  sql: '"2019_CBG_B17"."B17017e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m50"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e51
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Male householder > Householder under
+    25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Male householder
+    > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m51"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e52
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Male householder > Householder 25
+    to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Male householder
+    > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m52"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e53
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Male householder > Householder 45
+    to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Male householder
+    > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m53"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e54
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Male householder > Householder 65
+    years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Male householder
+    > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m54"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e55
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Female householder'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Female
+    householder.'
+  sql: '"2019_CBG_B17"."B17017e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m55"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e56
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Female householder > Householder
+    under 25 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Female
+    householder > Householder under 25 years.'
+  sql: '"2019_CBG_B17"."B17017e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m56"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e57
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Female householder > Householder
+    25 to 44 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Female
+    householder > Householder 25 to 44 years.'
+  sql: '"2019_CBG_B17"."B17017e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m57"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e58
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Female householder > Householder
+    45 to 64 years'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Female
+    householder > Householder 45 to 64 years.'
+  sql: '"2019_CBG_B17"."B17017e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m58"'
+- name: poverty_status_in_the_past_12_months_by_household_type_by_age_of_householder_income_in_the_past_12_months_at_or_above_poverty_level_nonfamily_househol_b17017e59
+  title: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder: Income in the
+    past 12 months at or above poverty level > Nonfamily households > Female householder > Householder
+    65 years and over'
+  description: 'Poverty Status In The Past 12 Months By Household Type By Age Of Householder. Universe:
+    Households. Income in the past 12 months at or above poverty level > Nonfamily households > Female
+    householder > Householder 65 years and over.'
+  sql: '"2019_CBG_B17"."B17017e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2019_CBG_B17"."B17017m59"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_b17021e1
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Total'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Total.'
+  sql: '"2019_CBG_B17"."B17021e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m1"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_b17021e2
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level.'
+  sql: '"2019_CBG_B17"."B17021e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m2"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_b17021e3
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households.'
+  sql: '"2019_CBG_B17"."B17021e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m3"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_mar_b17021e4
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In married couple families'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In married couple families.'
+  sql: '"2019_CBG_B17"."B17021e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m4"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_mar_b17021e5
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In married couple families > All relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In married couple families > All relatives.'
+  sql: '"2019_CBG_B17"."B17021e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m5"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_mar_b17021e6
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In married couple families > Non-relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In married couple families > Non-relatives.'
+  sql: '"2019_CBG_B17"."B17021e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m6"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e7
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families.'
+  sql: '"2019_CBG_B17"."B17021e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m7"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e8
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families > Male householder no spouse
+    present'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families > Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17021e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m8"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e9
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families > Male householder no spouse
+    present > All relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families > Male householder no spouse present > All relatives.'
+  sql: '"2019_CBG_B17"."B17021e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m9"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e10
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families > Male householder no spouse
+    present > Non-relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families > Male householder no spouse present > Non-relatives.'
+  sql: '"2019_CBG_B17"."B17021e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m10"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e11
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families > Female householder no spouse
+    present'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families > Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17021e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m11"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e12
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families > Female householder no spouse
+    present > All relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families > Female householder no spouse present > All relatives.'
+  sql: '"2019_CBG_B17"."B17021e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m12"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_family_households_in_oth_b17021e13
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In family households > In other families > Female householder no spouse
+    present > Non-relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In family
+    households > In other families > Female householder no spouse present > Non-relatives.'
+  sql: '"2019_CBG_B17"."B17021e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m13"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_non_family_households_an_b17021e14
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In non-family households and other living arrangement'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In non-family
+    households and other living arrangement.'
+  sql: '"2019_CBG_B17"."B17021e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m14"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_non_family_households_an_b17021e15
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In non-family households and other living arrangement > Householder'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In non-family
+    households and other living arrangement > Householder.'
+  sql: '"2019_CBG_B17"."B17021e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m15"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_non_family_households_an_b17021e16
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In non-family households and other living arrangement > Householder
+    > Living alone'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In non-family
+    households and other living arrangement > Householder > Living alone.'
+  sql: '"2019_CBG_B17"."B17021e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m16"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_non_family_households_an_b17021e17
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In non-family households and other living arrangement > Householder
+    > Not living alone'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In non-family
+    households and other living arrangement > Householder > Not living alone.'
+  sql: '"2019_CBG_B17"."B17021e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m17"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_below_poverty_level_in_non_family_households_an_b17021e18
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months below poverty level > In non-family households and other living arrangement > Other living
+    arrangement'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months below poverty level > In non-family
+    households and other living arrangement > Other living arrangement.'
+  sql: '"2019_CBG_B17"."B17021e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m18"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_b17021e19
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level.'
+  sql: '"2019_CBG_B17"."B17021e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m19"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households_b17021e20
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households.'
+  sql: '"2019_CBG_B17"."B17021e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m20"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e21
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In married couple families'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In married couple families.'
+  sql: '"2019_CBG_B17"."B17021e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m21"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e22
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In married couple families > All relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In married couple families > All relatives.'
+  sql: '"2019_CBG_B17"."B17021e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m22"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e23
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In married couple families > Non-relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In married couple families > Non-relatives.'
+  sql: '"2019_CBG_B17"."B17021e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m23"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e24
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families.'
+  sql: '"2019_CBG_B17"."B17021e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m24"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e25
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families > Male householder
+    no spouse present'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families > Male householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17021e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m25"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e26
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families > Male householder
+    no spouse present > All relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families > Male householder no spouse present > All relatives.'
+  sql: '"2019_CBG_B17"."B17021e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m26"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e27
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families > Male householder
+    no spouse present > Non-relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families > Male householder no spouse present > Non-relatives.'
+  sql: '"2019_CBG_B17"."B17021e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m27"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e28
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families > Female householder
+    no spouse present'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families > Female householder no spouse present.'
+  sql: '"2019_CBG_B17"."B17021e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m28"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e29
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families > Female householder
+    no spouse present > All relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families > Female householder no spouse present > All relatives.'
+  sql: '"2019_CBG_B17"."B17021e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m29"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_family_households__b17021e30
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In family households > In other families > Female householder
+    no spouse present > Non-relatives'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    family households > In other families > Female householder no spouse present > Non-relatives.'
+  sql: '"2019_CBG_B17"."B17021e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m30"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_non_family_househo_b17021e31
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In non-family households and other living arrangement'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    non-family households and other living arrangement.'
+  sql: '"2019_CBG_B17"."B17021e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m31"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_non_family_househo_b17021e32
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In non-family households and other living arrangement > Householder'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    non-family households and other living arrangement > Householder.'
+  sql: '"2019_CBG_B17"."B17021e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m32"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_non_family_househo_b17021e33
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In non-family households and other living arrangement > Householder
+    > Living alone'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    non-family households and other living arrangement > Householder > Living alone.'
+  sql: '"2019_CBG_B17"."B17021e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m33"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_non_family_househo_b17021e34
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In non-family households and other living arrangement > Householder
+    > Not living alone'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    non-family households and other living arrangement > Householder > Not living alone.'
+  sql: '"2019_CBG_B17"."B17021e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m34"'
+- name: poverty_status_of_individuals_in_the_past_12_months_by_living_arrangement_income_in_the_past_12_months_at_or_above_poverty_level_in_non_family_househo_b17021e35
+  title: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement: Income in the past
+    12 months at or above poverty level > In non-family households and other living arrangement > Other
+    living arrangement'
+  description: 'Poverty Status Of Individuals In The Past 12 Months By Living Arrangement. Universe: Population
+    for whom poverty status is determined. Income in the past 12 months at or above poverty level > In
+    non-family households and other living arrangement > Other living arrangement.'
+  sql: '"2019_CBG_B17"."B17021e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Population for whom poverty status is determined
+    moe_sql: '"2019_CBG_B17"."B17021m35"'
+- name: poverty_rate
+  title: Poverty rate (people)
+  description: Percentage of people whose income in the past 12 months was below the poverty level, out
+    of all people for whom poverty status is determined.
+  sql: 100 * SUM(IFF("2019_CBG_B17"."B17021e2" IS NULL OR "2019_CBG_B17"."B17021e1" IS NULL, NULL, "2019_CBG_B17"."B17021e2"))
+    / NULLIF(SUM(IFF("2019_CBG_B17"."B17021e2" IS NULL OR "2019_CBG_B17"."B17021e1" IS NULL, NULL, "2019_CBG_B17"."B17021e1")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Population for whom poverty status is determined
+- name: family_poverty_rate
+  title: Family poverty rate
+  description: Percentage of families whose income in the past 12 months was below the poverty level.
+  sql: 100 * SUM(IFF("2019_CBG_B17"."B17010e2" IS NULL OR "2019_CBG_B17"."B17010e1" IS NULL, NULL, "2019_CBG_B17"."B17010e2"))
+    / NULLIF(SUM(IFF("2019_CBG_B17"."B17010e2" IS NULL OR "2019_CBG_B17"."B17010e1" IS NULL, NULL, "2019_CBG_B17"."B17010e1")),
+    0)
+  type: number
+  format: percent
+  meta:
+    universe: Families

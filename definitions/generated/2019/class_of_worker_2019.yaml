@@ -1,0 +1,247 @@
+name: class_of_worker_2019
+title: Class of worker (private, government, self-employed) (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by class of worker for the civilian employed population 16 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B24"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B24"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_b24080e1
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Total'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Total.'
+  sql: '"2019_CBG_B24"."B24080e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m1"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_b24080e2
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male.'
+  sql: '"2019_CBG_B24"."B24080e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m2"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_for_profit_wage_and_salary_workers_b24080e3
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Private
+    for-profit wage and salary workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Private for-profit wage and salary workers.'
+  sql: '"2019_CBG_B24"."B24080e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m3"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_for_profit_wage_and_salary_workers_employee_of_private_comp_b24080e4
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Private
+    for-profit wage and salary workers > Employee of private company workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Private for-profit wage and salary workers
+    > Employee of private company workers.'
+  sql: '"2019_CBG_B24"."B24080e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m4"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_for_profit_wage_and_salary_workers_self_employed_in_own_inc_b24080e5
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Private
+    for-profit wage and salary workers > Self-employed in own incorporated business workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Private for-profit wage and salary workers
+    > Self-employed in own incorporated business workers.'
+  sql: '"2019_CBG_B24"."B24080e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m5"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_private_not_for_profit_wage_and_salary_workers_b24080e6
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Private
+    not-for-profit wage and salary workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Private not-for-profit wage and salary workers.'
+  sql: '"2019_CBG_B24"."B24080e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m6"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_local_government_workers_b24080e7
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Local
+    government workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Local government workers.'
+  sql: '"2019_CBG_B24"."B24080e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m7"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_state_government_workers_b24080e8
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > State
+    government workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > State government workers.'
+  sql: '"2019_CBG_B24"."B24080e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m8"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_federal_government_workers_b24080e9
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Federal
+    government workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Federal government workers.'
+  sql: '"2019_CBG_B24"."B24080e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m9"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_self_employed_in_own_not_incorporated_business_workers_b24080e10
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Self-employed
+    in own not incorporated business workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Self-employed in own not incorporated business
+    workers.'
+  sql: '"2019_CBG_B24"."B24080e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m10"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_male_unpaid_family_workers_b24080e11
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Male > Unpaid
+    family workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Male > Unpaid family workers.'
+  sql: '"2019_CBG_B24"."B24080e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m11"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_b24080e12
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female.'
+  sql: '"2019_CBG_B24"."B24080e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m12"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_for_profit_wage_and_salary_workers_b24080e13
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Private
+    for-profit wage and salary workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Private for-profit wage and salary workers.'
+  sql: '"2019_CBG_B24"."B24080e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m13"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_for_profit_wage_and_salary_workers_employee_of_private_co_b24080e14
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Private
+    for-profit wage and salary workers > Employee of private company workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Private for-profit wage and salary workers
+    > Employee of private company workers.'
+  sql: '"2019_CBG_B24"."B24080e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m14"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_for_profit_wage_and_salary_workers_self_employed_in_own_i_b24080e15
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Private
+    for-profit wage and salary workers > Self-employed in own incorporated business workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Private for-profit wage and salary workers
+    > Self-employed in own incorporated business workers.'
+  sql: '"2019_CBG_B24"."B24080e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m15"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_private_not_for_profit_wage_and_salary_workers_b24080e16
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Private
+    not-for-profit wage and salary workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Private not-for-profit wage and salary workers.'
+  sql: '"2019_CBG_B24"."B24080e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m16"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_local_government_workers_b24080e17
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Local
+    government workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Local government workers.'
+  sql: '"2019_CBG_B24"."B24080e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m17"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_state_government_workers_b24080e18
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > State
+    government workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > State government workers.'
+  sql: '"2019_CBG_B24"."B24080e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m18"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_federal_government_workers_b24080e19
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Federal
+    government workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Federal government workers.'
+  sql: '"2019_CBG_B24"."B24080e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m19"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_self_employed_in_own_not_incorporated_business_workers_b24080e20
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Self-employed
+    in own not incorporated business workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Self-employed in own not incorporated business
+    workers.'
+  sql: '"2019_CBG_B24"."B24080e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m20"'
+- name: sex_by_class_of_worker_for_the_civilian_employed_population_16_years_and_over_female_unpaid_family_workers_b24080e21
+  title: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over: Female > Unpaid
+    family workers'
+  description: 'Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over. Universe:
+    Civilian employed population 16 years and over. Female > Unpaid family workers.'
+  sql: '"2019_CBG_B24"."B24080e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian employed population 16 years and over
+    moe_sql: '"2019_CBG_B24"."B24080m21"'

@@ -1,0 +1,797 @@
+name: language_and_english_ability_2020
+title: Language spoken at home and ability to speak English (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: age
+  by language spoken at home by ability to speak English for the population 5 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B16"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B16"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_b16004e1
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    Total'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. Total.'
+  sql: '"2020_CBG_B16"."B16004e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m1"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_b16004e2
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years.'
+  sql: '"2020_CBG_B16"."B16004e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m2"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_only_english_b16004e3
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak only English'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak only English.'
+  sql: '"2020_CBG_B16"."B16004e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m3"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_spanish_b16004e4
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Spanish'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Spanish.'
+  sql: '"2020_CBG_B16"."B16004e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m4"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_spanish_speak_english_very_well_b16004e5
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Spanish > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Spanish > Speak English very
+    well.'
+  sql: '"2020_CBG_B16"."B16004e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m5"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_spanish_speak_english_well_b16004e6
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Spanish > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Spanish > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m6"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_spanish_speak_english_not_well_b16004e7
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Spanish > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Spanish > Speak English not
+    well.'
+  sql: '"2020_CBG_B16"."B16004e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m7"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_spanish_speak_english_not_at_all_b16004e8
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Spanish > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Spanish > Speak English not
+    at all.'
+  sql: '"2020_CBG_B16"."B16004e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m8"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_indo_european_languages_b16004e9
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other Indo-European languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other Indo-European languages.'
+  sql: '"2020_CBG_B16"."B16004e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m9"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_indo_european_languages_speak_b16004e10
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other Indo-European languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other Indo-European languages
+    > Speak English very well.'
+  sql: '"2020_CBG_B16"."B16004e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m10"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_indo_european_languages_speak_b16004e11
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other Indo-European languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other Indo-European languages
+    > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m11"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_indo_european_languages_speak_b16004e12
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other Indo-European languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other Indo-European languages
+    > Speak English not well.'
+  sql: '"2020_CBG_B16"."B16004e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m12"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_indo_european_languages_speak_b16004e13
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other Indo-European languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other Indo-European languages
+    > Speak English not at all.'
+  sql: '"2020_CBG_B16"."B16004e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m13"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_asian_and_pacific_island_languages_b16004e14
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Asian and Pacific Island languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Asian and Pacific Island languages.'
+  sql: '"2020_CBG_B16"."B16004e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m14"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_asian_and_pacific_island_languages__b16004e15
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Asian and Pacific Island languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Asian and Pacific Island languages
+    > Speak English very well.'
+  sql: '"2020_CBG_B16"."B16004e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m15"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_asian_and_pacific_island_languages__b16004e16
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Asian and Pacific Island languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Asian and Pacific Island languages
+    > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m16"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_asian_and_pacific_island_languages__b16004e17
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Asian and Pacific Island languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Asian and Pacific Island languages
+    > Speak English not well.'
+  sql: '"2020_CBG_B16"."B16004e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m17"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_asian_and_pacific_island_languages__b16004e18
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak Asian and Pacific Island languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak Asian and Pacific Island languages
+    > Speak English not at all.'
+  sql: '"2020_CBG_B16"."B16004e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m18"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_languages_b16004e19
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other languages.'
+  sql: '"2020_CBG_B16"."B16004e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m19"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_languages_speak_english_very__b16004e20
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other languages > Speak English
+    very well.'
+  sql: '"2020_CBG_B16"."B16004e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m20"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_languages_speak_english_well_b16004e21
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other languages > Speak English
+    well.'
+  sql: '"2020_CBG_B16"."B16004e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m21"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_languages_speak_english_not_w_b16004e22
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other languages > Speak English
+    not well.'
+  sql: '"2020_CBG_B16"."B16004e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m22"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_5_to_17_years_speak_other_languages_speak_english_not_a_b16004e23
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    5 to 17 years > Speak other languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 5 to 17 years > Speak other languages > Speak English
+    not at all.'
+  sql: '"2020_CBG_B16"."B16004e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m23"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_b16004e24
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years.'
+  sql: '"2020_CBG_B16"."B16004e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m24"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_only_english_b16004e25
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak only English'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak only English.'
+  sql: '"2020_CBG_B16"."B16004e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m25"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_spanish_b16004e26
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Spanish'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Spanish.'
+  sql: '"2020_CBG_B16"."B16004e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m26"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_spanish_speak_english_very_well_b16004e27
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Spanish > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Spanish > Speak English very
+    well.'
+  sql: '"2020_CBG_B16"."B16004e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m27"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_spanish_speak_english_well_b16004e28
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Spanish > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Spanish > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m28"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_spanish_speak_english_not_well_b16004e29
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Spanish > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Spanish > Speak English not
+    well.'
+  sql: '"2020_CBG_B16"."B16004e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m29"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_spanish_speak_english_not_at_all_b16004e30
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Spanish > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Spanish > Speak English not
+    at all.'
+  sql: '"2020_CBG_B16"."B16004e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m30"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_indo_european_languages_b16004e31
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other Indo-European languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other Indo-European languages.'
+  sql: '"2020_CBG_B16"."B16004e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m31"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_indo_european_languages_spea_b16004e32
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other Indo-European languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other Indo-European languages
+    > Speak English very well.'
+  sql: '"2020_CBG_B16"."B16004e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m32"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_indo_european_languages_spea_b16004e33
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other Indo-European languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other Indo-European languages
+    > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m33"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_indo_european_languages_spea_b16004e34
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other Indo-European languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other Indo-European languages
+    > Speak English not well.'
+  sql: '"2020_CBG_B16"."B16004e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m34"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_indo_european_languages_spea_b16004e35
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other Indo-European languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other Indo-European languages
+    > Speak English not at all.'
+  sql: '"2020_CBG_B16"."B16004e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m35"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_asian_and_pacific_island_languages_b16004e36
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Asian and Pacific Island languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Asian and Pacific Island languages.'
+  sql: '"2020_CBG_B16"."B16004e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m36"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_asian_and_pacific_island_languages_b16004e37
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Asian and Pacific Island languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Asian and Pacific Island languages
+    > Speak English very well.'
+  sql: '"2020_CBG_B16"."B16004e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m37"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_asian_and_pacific_island_languages_b16004e38
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Asian and Pacific Island languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Asian and Pacific Island languages
+    > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m38"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_asian_and_pacific_island_languages_b16004e39
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Asian and Pacific Island languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Asian and Pacific Island languages
+    > Speak English not well.'
+  sql: '"2020_CBG_B16"."B16004e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m39"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_asian_and_pacific_island_languages_b16004e40
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak Asian and Pacific Island languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak Asian and Pacific Island languages
+    > Speak English not at all.'
+  sql: '"2020_CBG_B16"."B16004e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m40"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_languages_b16004e41
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other languages.'
+  sql: '"2020_CBG_B16"."B16004e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m41"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_languages_speak_english_very_b16004e42
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other languages > Speak English
+    very well.'
+  sql: '"2020_CBG_B16"."B16004e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m42"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_languages_speak_english_well_b16004e43
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other languages > Speak English
+    well.'
+  sql: '"2020_CBG_B16"."B16004e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m43"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_languages_speak_english_not__b16004e44
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other languages > Speak English
+    not well.'
+  sql: '"2020_CBG_B16"."B16004e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m44"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_18_to_64_years_speak_other_languages_speak_english_not__b16004e45
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    18 to 64 years > Speak other languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 18 to 64 years > Speak other languages > Speak English
+    not at all.'
+  sql: '"2020_CBG_B16"."B16004e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m45"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_b16004e46
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over.'
+  sql: '"2020_CBG_B16"."B16004e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m46"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_only_english_b16004e47
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak only English'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak only English.'
+  sql: '"2020_CBG_B16"."B16004e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m47"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_spanish_b16004e48
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Spanish'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Spanish.'
+  sql: '"2020_CBG_B16"."B16004e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m48"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_spanish_speak_english_very_well_b16004e49
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Spanish > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Spanish > Speak English
+    very well.'
+  sql: '"2020_CBG_B16"."B16004e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m49"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_spanish_speak_english_well_b16004e50
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Spanish > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Spanish > Speak English
+    well.'
+  sql: '"2020_CBG_B16"."B16004e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m50"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_spanish_speak_english_not_well_b16004e51
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Spanish > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Spanish > Speak English
+    not well.'
+  sql: '"2020_CBG_B16"."B16004e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m51"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_spanish_speak_english_not_at_al_b16004e52
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Spanish > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Spanish > Speak English
+    not at all.'
+  sql: '"2020_CBG_B16"."B16004e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m52"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_indo_european_languages_b16004e53
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other Indo-European languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other Indo-European languages.'
+  sql: '"2020_CBG_B16"."B16004e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m53"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_indo_european_languages_s_b16004e54
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other Indo-European languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other Indo-European languages
+    > Speak English very well.'
+  sql: '"2020_CBG_B16"."B16004e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m54"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_indo_european_languages_s_b16004e55
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other Indo-European languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other Indo-European languages
+    > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m55"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_indo_european_languages_s_b16004e56
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other Indo-European languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other Indo-European languages
+    > Speak English not well.'
+  sql: '"2020_CBG_B16"."B16004e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m56"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_indo_european_languages_s_b16004e57
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other Indo-European languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other Indo-European languages
+    > Speak English not at all.'
+  sql: '"2020_CBG_B16"."B16004e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m57"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_asian_and_pacific_island_langua_b16004e58
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Asian and Pacific Island languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Asian and Pacific Island
+    languages.'
+  sql: '"2020_CBG_B16"."B16004e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m58"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_asian_and_pacific_island_langua_b16004e59
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Asian and Pacific Island languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Asian and Pacific Island
+    languages > Speak English very well.'
+  sql: '"2020_CBG_B16"."B16004e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m59"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_asian_and_pacific_island_langua_b16004e60
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Asian and Pacific Island languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Asian and Pacific Island
+    languages > Speak English well.'
+  sql: '"2020_CBG_B16"."B16004e60"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m60"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_asian_and_pacific_island_langua_b16004e61
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Asian and Pacific Island languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Asian and Pacific Island
+    languages > Speak English not well.'
+  sql: '"2020_CBG_B16"."B16004e61"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m61"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_asian_and_pacific_island_langua_b16004e62
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak Asian and Pacific Island languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak Asian and Pacific Island
+    languages > Speak English not at all.'
+  sql: '"2020_CBG_B16"."B16004e62"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m62"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_languages_b16004e63
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other languages'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other languages.'
+  sql: '"2020_CBG_B16"."B16004e63"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m63"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_languages_speak_english_v_b16004e64
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other languages > Speak English very well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other languages > Speak
+    English very well.'
+  sql: '"2020_CBG_B16"."B16004e64"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m64"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_languages_speak_english_w_b16004e65
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other languages > Speak English well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other languages > Speak
+    English well.'
+  sql: '"2020_CBG_B16"."B16004e65"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m65"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_languages_speak_english_n_b16004e66
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other languages > Speak English not well'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other languages > Speak
+    English not well.'
+  sql: '"2020_CBG_B16"."B16004e66"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m66"'
+- name: age_by_language_spoken_at_home_by_ability_to_speak_english_for_the_population_5_years_and_over_65_years_and_over_speak_other_languages_speak_english_n_b16004e67
+  title: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over:
+    65 years and over > Speak other languages > Speak English not at all'
+  description: 'Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years
+    And Over. Universe: Population 5 years and over. 65 years and over > Speak other languages > Speak
+    English not at all.'
+  sql: '"2020_CBG_B16"."B16004e67"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 5 years and over
+    moe_sql: '"2020_CBG_B16"."B16004m67"'

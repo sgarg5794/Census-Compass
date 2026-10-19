@@ -1,0 +1,254 @@
+name: hispanic_origin_2020
+title: Hispanic or Latino origin (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: Hispanic
+  or Latino origin by race; Hispanic or Latino origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B03"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B03"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: hispanic_or_latino_origin_by_race_b03002e1
+  title: 'Hispanic Or Latino Origin By Race: Total'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Total.'
+  sql: '"2020_CBG_B03"."B03002e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m1"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_b03002e2
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino.'
+  sql: '"2020_CBG_B03"."B03002e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m2"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_white_alone_b03002e3
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > White alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > White alone.'
+  sql: '"2020_CBG_B03"."B03002e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m3"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_black_or_african_american_alone_b03002e4
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Black or African American alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Black or African American alone.'
+  sql: '"2020_CBG_B03"."B03002e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m4"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_american_indian_and_alaska_native_alone_b03002e5
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > American Indian and Alaska Native
+    alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > American Indian and Alaska Native alone.'
+  sql: '"2020_CBG_B03"."B03002e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m5"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_asian_alone_b03002e6
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Asian alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Asian alone.'
+  sql: '"2020_CBG_B03"."B03002e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m6"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_native_hawaiian_and_other_pacific_islander_alone_b03002e7
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Native Hawaiian and Other Pacific
+    Islander alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Native Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_CBG_B03"."B03002e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m7"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_some_other_race_alone_b03002e8
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Some other race alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Some other race alone.'
+  sql: '"2020_CBG_B03"."B03002e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m8"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_two_or_more_races_b03002e9
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Two or more races'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Two or more races.'
+  sql: '"2020_CBG_B03"."B03002e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m9"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_two_or_more_races_two_races_including_some_other_race_b03002e10
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Two or more races > Two races including
+    Some other race'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Two or more races > Two races including Some other race.'
+  sql: '"2020_CBG_B03"."B03002e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m10"'
+- name: hispanic_or_latino_origin_by_race_not_hispanic_or_latino_two_or_more_races_two_races_excluding_some_other_race_and_three_or_more_races_b03002e11
+  title: 'Hispanic Or Latino Origin By Race: Not Hispanic or Latino > Two or more races > Two races excluding
+    Some other race and three or more races'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Not Hispanic or Latino
+    > Two or more races > Two races excluding Some other race and three or more races.'
+  sql: '"2020_CBG_B03"."B03002e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m11"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_b03002e12
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino.'
+  sql: '"2020_CBG_B03"."B03002e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m12"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_white_alone_b03002e13
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > White alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > White
+    alone.'
+  sql: '"2020_CBG_B03"."B03002e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m13"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_black_or_african_american_alone_b03002e14
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Black or African American alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Black
+    or African American alone.'
+  sql: '"2020_CBG_B03"."B03002e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m14"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_american_indian_and_alaska_native_alone_b03002e15
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > American Indian and Alaska Native alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > American
+    Indian and Alaska Native alone.'
+  sql: '"2020_CBG_B03"."B03002e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m15"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_asian_alone_b03002e16
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Asian alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Asian
+    alone.'
+  sql: '"2020_CBG_B03"."B03002e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m16"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_native_hawaiian_and_other_pacific_islander_alone_b03002e17
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Native Hawaiian and Other Pacific Islander
+    alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Native
+    Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_CBG_B03"."B03002e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m17"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_some_other_race_alone_b03002e18
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Some other race alone'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Some
+    other race alone.'
+  sql: '"2020_CBG_B03"."B03002e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m18"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_two_or_more_races_b03002e19
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Two or more races'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Two
+    or more races.'
+  sql: '"2020_CBG_B03"."B03002e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m19"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_two_or_more_races_two_races_including_some_other_race_b03002e20
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Two or more races > Two races including
+    Some other race'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Two
+    or more races > Two races including Some other race.'
+  sql: '"2020_CBG_B03"."B03002e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m20"'
+- name: hispanic_or_latino_origin_by_race_hispanic_or_latino_two_or_more_races_two_races_excluding_some_other_race_and_three_or_more_races_b03002e21
+  title: 'Hispanic Or Latino Origin By Race: Hispanic or Latino > Two or more races > Two races excluding
+    Some other race and three or more races'
+  description: 'Hispanic Or Latino Origin By Race. Universe: Total population. Hispanic or Latino > Two
+    or more races > Two races excluding Some other race and three or more races.'
+  sql: '"2020_CBG_B03"."B03002e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03002m21"'
+- name: hispanic_or_latino_origin_b03003e1
+  title: 'Hispanic Or Latino Origin: Total'
+  description: 'Hispanic Or Latino Origin. Universe: Total population. Total.'
+  sql: '"2020_CBG_B03"."B03003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03003m1"'
+- name: hispanic_or_latino_origin_not_hispanic_or_latino_b03003e2
+  title: 'Hispanic Or Latino Origin: Not Hispanic or Latino'
+  description: 'Hispanic Or Latino Origin. Universe: Total population. Not Hispanic or Latino.'
+  sql: '"2020_CBG_B03"."B03003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03003m2"'
+- name: hispanic_or_latino_origin_hispanic_or_latino_b03003e3
+  title: 'Hispanic Or Latino Origin: Hispanic or Latino'
+  description: 'Hispanic Or Latino Origin. Universe: Total population. Hispanic or Latino.'
+  sql: '"2020_CBG_B03"."B03003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B03"."B03003m3"'

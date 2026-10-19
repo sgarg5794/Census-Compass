@@ -1,0 +1,1158 @@
+name: place_of_work_2019
+title: Where workers work (state, county, place, metro area) (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  of workers by place of work--state and county level; sex of workers by place of work--place level; sex
+  of workers by place of work--minor civil division level for 12 selected states (CT, ME, MA, MI, MN,
+  NH, NJ, NY, PA, RI, VT, WI); place of work for workers 16 years and over--metropolitan statistical area
+  level; place of work for workers 16 years and over--micropolitan statistical area level; place of work
+  for workers 16 years and over--not metropolitan or micropolitan statistical area level.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B08"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B08"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_of_workers_by_place_of_work_state_and_county_level_b08007e1
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Total'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Total.'
+  sql: '"2019_CBG_B08"."B08007e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m1"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_worked_in_state_of_residence_b08007e2
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Worked in state of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Worked in state of residence.'
+  sql: '"2019_CBG_B08"."B08007e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m2"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_worked_in_state_of_residence_worked_in_county_of_residence_b08007e3
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Worked in state of residence > Worked
+    in county of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Worked in state of residence > Worked in county of residence.'
+  sql: '"2019_CBG_B08"."B08007e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m3"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_worked_in_state_of_residence_worked_outside_county_of_residence_b08007e4
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Worked in state of residence > Worked
+    outside county of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Worked in state of residence > Worked outside county of residence.'
+  sql: '"2019_CBG_B08"."B08007e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m4"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_worked_outside_state_of_residence_b08007e5
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Worked outside state of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Worked outside state of residence.'
+  sql: '"2019_CBG_B08"."B08007e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m5"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_male_b08007e6
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Male'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Male.'
+  sql: '"2019_CBG_B08"."B08007e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m6"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_male_worked_in_state_of_residence_b08007e7
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Male > Worked in state of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Male > Worked in state of residence.'
+  sql: '"2019_CBG_B08"."B08007e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m7"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_male_worked_in_state_of_residence_worked_in_county_of_residence_b08007e8
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Male > Worked in state of residence
+    > Worked in county of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Male > Worked in state of residence > Worked in county of residence.'
+  sql: '"2019_CBG_B08"."B08007e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m8"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_male_worked_in_state_of_residence_worked_outside_county_of_residence_b08007e9
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Male > Worked in state of residence
+    > Worked outside county of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Male > Worked in state of residence > Worked outside county of residence.'
+  sql: '"2019_CBG_B08"."B08007e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m9"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_male_worked_outside_state_of_residence_b08007e10
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Male > Worked outside state of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Male > Worked outside state of residence.'
+  sql: '"2019_CBG_B08"."B08007e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m10"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_female_b08007e11
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Female'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Female.'
+  sql: '"2019_CBG_B08"."B08007e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m11"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_female_worked_in_state_of_residence_b08007e12
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Female > Worked in state of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Female > Worked in state of residence.'
+  sql: '"2019_CBG_B08"."B08007e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m12"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_female_worked_in_state_of_residence_worked_in_county_of_residence_b08007e13
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Female > Worked in state of residence
+    > Worked in county of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Female > Worked in state of residence > Worked in county of residence.'
+  sql: '"2019_CBG_B08"."B08007e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m13"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_female_worked_in_state_of_residence_worked_outside_county_of_residence_b08007e14
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Female > Worked in state of residence
+    > Worked outside county of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Female > Worked in state of residence > Worked outside county of residence.'
+  sql: '"2019_CBG_B08"."B08007e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m14"'
+- name: sex_of_workers_by_place_of_work_state_and_county_level_female_worked_outside_state_of_residence_b08007e15
+  title: 'Sex Of Workers By Place Of Work--State And County Level: Female > Worked outside state of residence'
+  description: 'Sex Of Workers By Place Of Work--State And County Level. Universe: Workers 16 years and
+    over. Female > Worked outside state of residence.'
+  sql: '"2019_CBG_B08"."B08007e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08007m15"'
+- name: sex_of_workers_by_place_of_work_place_level_b08008e1
+  title: 'Sex Of Workers By Place Of Work--Place Level: Total'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Total.'
+  sql: '"2019_CBG_B08"."B08008e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m1"'
+- name: sex_of_workers_by_place_of_work_place_level_living_in_a_place_b08008e2
+  title: 'Sex Of Workers By Place Of Work--Place Level: Living in a place'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Living
+    in a place.'
+  sql: '"2019_CBG_B08"."B08008e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m2"'
+- name: sex_of_workers_by_place_of_work_place_level_living_in_a_place_worked_in_place_of_residence_b08008e3
+  title: 'Sex Of Workers By Place Of Work--Place Level: Living in a place > Worked in place of residence'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Living
+    in a place > Worked in place of residence.'
+  sql: '"2019_CBG_B08"."B08008e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m3"'
+- name: sex_of_workers_by_place_of_work_place_level_living_in_a_place_worked_outside_place_of_residence_b08008e4
+  title: 'Sex Of Workers By Place Of Work--Place Level: Living in a place > Worked outside place of residence'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Living
+    in a place > Worked outside place of residence.'
+  sql: '"2019_CBG_B08"."B08008e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m4"'
+- name: sex_of_workers_by_place_of_work_place_level_not_living_in_a_place_b08008e5
+  title: 'Sex Of Workers By Place Of Work--Place Level: Not living in a place'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Not
+    living in a place.'
+  sql: '"2019_CBG_B08"."B08008e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m5"'
+- name: sex_of_workers_by_place_of_work_place_level_male_b08008e6
+  title: 'Sex Of Workers By Place Of Work--Place Level: Male'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Male.'
+  sql: '"2019_CBG_B08"."B08008e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m6"'
+- name: sex_of_workers_by_place_of_work_place_level_male_living_in_a_place_b08008e7
+  title: 'Sex Of Workers By Place Of Work--Place Level: Male > Living in a place'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Male
+    > Living in a place.'
+  sql: '"2019_CBG_B08"."B08008e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m7"'
+- name: sex_of_workers_by_place_of_work_place_level_male_living_in_a_place_worked_in_place_of_residence_b08008e8
+  title: 'Sex Of Workers By Place Of Work--Place Level: Male > Living in a place > Worked in place of
+    residence'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Male
+    > Living in a place > Worked in place of residence.'
+  sql: '"2019_CBG_B08"."B08008e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m8"'
+- name: sex_of_workers_by_place_of_work_place_level_male_living_in_a_place_worked_outside_place_of_residence_b08008e9
+  title: 'Sex Of Workers By Place Of Work--Place Level: Male > Living in a place > Worked outside place
+    of residence'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Male
+    > Living in a place > Worked outside place of residence.'
+  sql: '"2019_CBG_B08"."B08008e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m9"'
+- name: sex_of_workers_by_place_of_work_place_level_male_not_living_in_a_place_b08008e10
+  title: 'Sex Of Workers By Place Of Work--Place Level: Male > Not living in a place'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Male
+    > Not living in a place.'
+  sql: '"2019_CBG_B08"."B08008e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m10"'
+- name: sex_of_workers_by_place_of_work_place_level_female_b08008e11
+  title: 'Sex Of Workers By Place Of Work--Place Level: Female'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Female.'
+  sql: '"2019_CBG_B08"."B08008e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m11"'
+- name: sex_of_workers_by_place_of_work_place_level_female_living_in_a_place_b08008e12
+  title: 'Sex Of Workers By Place Of Work--Place Level: Female > Living in a place'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Female
+    > Living in a place.'
+  sql: '"2019_CBG_B08"."B08008e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m12"'
+- name: sex_of_workers_by_place_of_work_place_level_female_living_in_a_place_worked_in_place_of_residence_b08008e13
+  title: 'Sex Of Workers By Place Of Work--Place Level: Female > Living in a place > Worked in place of
+    residence'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Female
+    > Living in a place > Worked in place of residence.'
+  sql: '"2019_CBG_B08"."B08008e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m13"'
+- name: sex_of_workers_by_place_of_work_place_level_female_living_in_a_place_worked_outside_place_of_residence_b08008e14
+  title: 'Sex Of Workers By Place Of Work--Place Level: Female > Living in a place > Worked outside place
+    of residence'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Female
+    > Living in a place > Worked outside place of residence.'
+  sql: '"2019_CBG_B08"."B08008e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m14"'
+- name: sex_of_workers_by_place_of_work_place_level_female_not_living_in_a_place_b08008e15
+  title: 'Sex Of Workers By Place Of Work--Place Level: Female > Not living in a place'
+  description: 'Sex Of Workers By Place Of Work--Place Level. Universe: Workers 16 years and over. Female
+    > Not living in a place.'
+  sql: '"2019_CBG_B08"."B08008e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08008m15"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_b08009e1
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Total'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Total.'
+  sql: '"2019_CBG_B08"."B08009e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m1"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_living_in_the_12_selected_states_b08009e2
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Living in the 12 selected states'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Living in the 12
+    selected states.'
+  sql: '"2019_CBG_B08"."B08009e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m2"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_living_in_the_12_selected_states_b08009e3
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Living in the 12 selected states > Worked in MCD of residence'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Living in the 12
+    selected states > Worked in MCD of residence.'
+  sql: '"2019_CBG_B08"."B08009e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m3"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_living_in_the_12_selected_states_b08009e4
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Living in the 12 selected states > Worked outside MCD of
+    residence'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Living in the 12
+    selected states > Worked outside MCD of residence.'
+  sql: '"2019_CBG_B08"."B08009e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m4"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_not_living_in_the_12_selected_st_b08009e5
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Not living in the 12 selected states'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Not living in the
+    12 selected states.'
+  sql: '"2019_CBG_B08"."B08009e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m5"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_male_b08009e6
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Male'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Male.'
+  sql: '"2019_CBG_B08"."B08009e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m6"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_male_living_in_the_12_selected_s_b08009e7
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Male > Living in the 12 selected states'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Male > Living in
+    the 12 selected states.'
+  sql: '"2019_CBG_B08"."B08009e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m7"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_male_living_in_the_12_selected_s_b08009e8
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Male > Living in the 12 selected states > Worked in MCD of
+    residence'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Male > Living in
+    the 12 selected states > Worked in MCD of residence.'
+  sql: '"2019_CBG_B08"."B08009e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m8"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_male_living_in_the_12_selected_s_b08009e9
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Male > Living in the 12 selected states > Worked outside
+    MCD of residence'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Male > Living in
+    the 12 selected states > Worked outside MCD of residence.'
+  sql: '"2019_CBG_B08"."B08009e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m9"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_male_not_living_in_the_12_select_b08009e10
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Male > Not living in the 12 selected states'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Male > Not living
+    in the 12 selected states.'
+  sql: '"2019_CBG_B08"."B08009e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m10"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_female_b08009e11
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Female'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Female.'
+  sql: '"2019_CBG_B08"."B08009e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m11"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_female_living_in_the_12_selected_b08009e12
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Female > Living in the 12 selected states'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Female > Living
+    in the 12 selected states.'
+  sql: '"2019_CBG_B08"."B08009e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m12"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_female_living_in_the_12_selected_b08009e13
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Female > Living in the 12 selected states > Worked in MCD
+    of residence'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Female > Living
+    in the 12 selected states > Worked in MCD of residence.'
+  sql: '"2019_CBG_B08"."B08009e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m13"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_female_living_in_the_12_selected_b08009e14
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Female > Living in the 12 selected states > Worked outside
+    MCD of residence'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Female > Living
+    in the 12 selected states > Worked outside MCD of residence.'
+  sql: '"2019_CBG_B08"."B08009e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m14"'
+- name: sex_of_workers_by_place_of_work_minor_civil_division_level_for_12_selected_states_ct_me_ma_mi_mn_nh_nj_ny_pa_ri_vt_wi_female_not_living_in_the_12_sele_b08009e15
+  title: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me,
+    Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi): Female > Not living in the 12 selected states'
+  description: 'Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct,
+    Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi). Universe: Workers 16 years and over. Female > Not living
+    in the 12 selected states.'
+  sql: '"2019_CBG_B08"."B08009e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over
+    moe_sql: '"2019_CBG_B08"."B08009m15"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_b08016e1
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Total'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Total.'
+  sql: '"2019_CBG_B08"."B08016e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m1"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_b08016e2
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m2"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_metropolitan_statistical_area_of__b08016e3
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in Metropolitan Statistical Area of residence'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in Metropolitan Statistical Area of residence.'
+  sql: '"2019_CBG_B08"."B08016e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m3"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_metropolitan_statistical_area_of__b08016e4
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in Metropolitan Statistical Area of residence > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in Metropolitan Statistical Area of residence > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m4"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_metropolitan_statistical_area_of__b08016e5
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in Metropolitan Statistical Area of residence > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in Metropolitan Statistical Area of residence > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08016e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m5"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_different_metropolitan_statisti_b08016e6
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in a different Metropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in a different Metropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08016e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m6"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_different_metropolitan_statisti_b08016e7
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in a different Metropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in a different Metropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m7"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_different_metropolitan_statisti_b08016e8
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in a different Metropolitan Statistical Area > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in a different Metropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08016e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m8"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_micropolitan_statistical_area_b08016e9
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in a Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in a Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08016e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m9"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_micropolitan_statistical_area_w_b08016e10
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in a Micropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in a Micropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m10"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_micropolitan_statistical_area_w_b08016e11
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked in a Micropolitan Statistical Area > Worked outside any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked in a Micropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08016e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m11"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_in_a_principal_city_worked_outside_any_metropolitan_or_micropol_b08016e12
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living in
+    a principal city > Worked outside any Metropolitan or Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living in a principal city >
+    Worked outside any Metropolitan or Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08016e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m12"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_b08016e13
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city.'
+  sql: '"2019_CBG_B08"."B08016e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m13"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_metropolitan_statistical_a_b08016e14
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in Metropolitan Statistical Area of residence'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in Metropolitan Statistical Area of residence.'
+  sql: '"2019_CBG_B08"."B08016e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m14"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_metropolitan_statistical_a_b08016e15
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in Metropolitan Statistical Area of residence > Worked in a principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in Metropolitan Statistical Area of residence > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m15"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_metropolitan_statistical_a_b08016e16
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in Metropolitan Statistical Area of residence > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in Metropolitan Statistical Area of residence > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08016e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m16"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_different_metropolitan_s_b08016e17
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a different Metropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in a different Metropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08016e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m17"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_different_metropolitan_s_b08016e18
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a different Metropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in a different Metropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m18"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_different_metropolitan_s_b08016e19
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a different Metropolitan Statistical Area > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in a different Metropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08016e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m19"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_micropolitan_statistical_b08016e20
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in a Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08016e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m20"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_micropolitan_statistical_b08016e21
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a Micropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in a Micropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08016e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m21"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_micropolitan_statistical_b08016e22
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a Micropolitan Statistical Area > Worked outside any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked in a Micropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08016e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m22"'
+- name: place_of_work_for_workers_16_years_and_over_metropolitan_statistical_area_level_living_outside_any_principal_city_worked_outside_any_metropolitan_or_m_b08016e23
+  title: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level: Living outside
+    any principal city > Worked outside any Metropolitan or Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Metropolitan Statistical Area. Living outside any principal
+    city > Worked outside any Metropolitan or Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08016e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Metropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08016m23"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_b08017e1
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Total'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Total.'
+  sql: '"2019_CBG_B08"."B08017e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m1"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_b08017e2
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m2"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_micropolitan_statistical_area_of__b08017e3
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in Micropolitan Statistical Area of residence'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in Micropolitan Statistical Area of residence.'
+  sql: '"2019_CBG_B08"."B08017e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m3"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_micropolitan_statistical_area_of__b08017e4
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in Micropolitan Statistical Area of residence > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in Micropolitan Statistical Area of residence > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m4"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_micropolitan_statistical_area_of__b08017e5
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in Micropolitan Statistical Area of residence > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in Micropolitan Statistical Area of residence > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08017e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m5"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_different_micropolitan_statisti_b08017e6
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in a different Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in a different Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08017e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m6"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_different_micropolitan_statisti_b08017e7
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in a different Micropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in a different Micropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m7"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_different_micropolitan_statisti_b08017e8
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in a different Micropolitan Statistical Area > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in a different Micropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08017e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m8"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_metropolitan_statistical_area_b08017e9
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in a Metropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in a Metropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08017e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m9"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_metropolitan_statistical_area_w_b08017e10
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in a Metropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in a Metropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m10"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_in_a_metropolitan_statistical_area_w_b08017e11
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked in a Metropolitan Statistical Area > Worked outside any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked in a Metropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08017e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m11"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_in_a_principal_city_worked_outside_any_metropolitan_or_micropol_b08017e12
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living in
+    a principal city > Worked outside any Metropolitan or Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living in a principal city >
+    Worked outside any Metropolitan or Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08017e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m12"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_b08017e13
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city.'
+  sql: '"2019_CBG_B08"."B08017e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m13"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_micropolitan_statistical_a_b08017e14
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in Micropolitan Statistical Area of residence'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in Micropolitan Statistical Area of residence.'
+  sql: '"2019_CBG_B08"."B08017e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m14"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_micropolitan_statistical_a_b08017e15
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in Micropolitan Statistical Area of residence > Worked in a principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in Micropolitan Statistical Area of residence > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m15"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_micropolitan_statistical_a_b08017e16
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in Micropolitan Statistical Area of residence > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in Micropolitan Statistical Area of residence > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08017e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m16"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_different_micropolitan_s_b08017e17
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a different Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in a different Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08017e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m17"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_different_micropolitan_s_b08017e18
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a different Micropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in a different Micropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m18"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_different_micropolitan_s_b08017e19
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a different Micropolitan Statistical Area > Worked outside any principal
+    city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in a different Micropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08017e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m19"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_metropolitan_statistical_b08017e20
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a Metropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in a Metropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08017e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m20"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_metropolitan_statistical_b08017e21
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a Metropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in a Metropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08017e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m21"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_in_a_metropolitan_statistical_b08017e22
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked in a Metropolitan Statistical Area > Worked outside any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked in a Metropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08017e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m22"'
+- name: place_of_work_for_workers_16_years_and_over_micropolitan_statistical_area_level_living_outside_any_principal_city_worked_outside_any_metropolitan_or_m_b08017e23
+  title: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level: Living outside
+    any principal city > Worked outside any Metropolitan or Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level. Universe:
+    Workers 16 years and over living in a Micropolitan Statistical Area. Living outside any principal
+    city > Worked outside any Metropolitan or Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08017e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over living in a Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08017m23"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_b08018e1
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Total'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Total.'
+  sql: '"2019_CBG_B08"."B08018e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m1"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_in_a_metropolitan_statistical_area_b08018e2
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked in a Metropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked in a Metropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08018e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m2"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_in_a_metropolitan_statistical_area_worked_i_b08018e3
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked in a Metropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked in a Metropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08018e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m3"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_in_a_metropolitan_statistical_area_worked_o_b08018e4
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked in a Metropolitan Statistical Area > Worked outside any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked in a Metropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08018e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m4"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_in_a_micropolitan_statistical_area_b08018e5
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked in a Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked in a Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08018e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m5"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_in_a_micropolitan_statistical_area_worked_i_b08018e6
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked in a Micropolitan Statistical Area > Worked in a principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked in a Micropolitan Statistical Area > Worked in a principal city.'
+  sql: '"2019_CBG_B08"."B08018e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m6"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_in_a_micropolitan_statistical_area_worked_o_b08018e7
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked in a Micropolitan Statistical Area > Worked outside any principal city'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked in a Micropolitan Statistical Area > Worked outside any principal city.'
+  sql: '"2019_CBG_B08"."B08018e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m7"'
+- name: place_of_work_for_workers_16_years_and_over_not_metropolitan_or_micropolitan_statistical_area_level_worked_outside_any_metropolitan_or_micropolitan_st_b08018e8
+  title: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area
+    Level: Worked outside any Metropolitan or Micropolitan Statistical Area'
+  description: 'Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical
+    Area Level. Universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical
+    Area. Worked outside any Metropolitan or Micropolitan Statistical Area.'
+  sql: '"2019_CBG_B08"."B08018e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Workers 16 years and over not living in a Metropolitan or Micropolitan Statistical Area
+    moe_sql: '"2019_CBG_B08"."B08018m8"'

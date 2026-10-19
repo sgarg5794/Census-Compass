@@ -1,0 +1,94 @@
+name: snap_and_disability_2020
+title: Food stamps/SNAP receipt and disability in households (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: receipt
+  of food stamps/SNAP by disability status for households.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B22"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B22"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_b22010e1
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Total'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Total.'
+  sql: '"2020_CBG_B22"."B22010e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m1"'
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_household_received_food_stamps_snap_in_the_past_12_months_b22010e2
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Household
+    received Food Stamps/SNAP in the past 12 months'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Household received Food Stamps/SNAP in the past 12 months.'
+  sql: '"2020_CBG_B22"."B22010e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m2"'
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_household_received_food_stamps_snap_in_the_past_12_months_househ_b22010e3
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Household
+    received Food Stamps/SNAP in the past 12 months > Households with 1 or more persons with a disability'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Household received Food Stamps/SNAP in the past 12 months > Households with
+    1 or more persons with a disability.'
+  sql: '"2020_CBG_B22"."B22010e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m3"'
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_household_received_food_stamps_snap_in_the_past_12_months_househ_b22010e4
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Household
+    received Food Stamps/SNAP in the past 12 months > Households with no persons with a disability'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Household received Food Stamps/SNAP in the past 12 months > Households with
+    no persons with a disability.'
+  sql: '"2020_CBG_B22"."B22010e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m4"'
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_household_did_not_receive_food_stamps_snap_in_the_past_12_months_b22010e5
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Household
+    did not receive Food Stamps/SNAP in the past 12 months'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Household did not receive Food Stamps/SNAP in the past 12 months.'
+  sql: '"2020_CBG_B22"."B22010e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m5"'
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_household_did_not_receive_food_stamps_snap_in_the_past_12_months_b22010e6
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Household
+    did not receive Food Stamps/SNAP in the past 12 months > Households with 1 or more persons with a
+    disability'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Household did not receive Food Stamps/SNAP in the past 12 months > Households
+    with 1 or more persons with a disability.'
+  sql: '"2020_CBG_B22"."B22010e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m6"'
+- name: receipt_of_food_stamps_snap_in_the_past_12_months_by_disability_status_for_households_household_did_not_receive_food_stamps_snap_in_the_past_12_months_b22010e7
+  title: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households: Household
+    did not receive Food Stamps/SNAP in the past 12 months > Households with no persons with a disability'
+  description: 'Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households.
+    Universe: Households. Household did not receive Food Stamps/SNAP in the past 12 months > Households
+    with no persons with a disability.'
+  sql: '"2020_CBG_B22"."B22010e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Households
+    moe_sql: '"2020_CBG_B22"."B22010m7"'

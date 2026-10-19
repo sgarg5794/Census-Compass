@@ -1,0 +1,568 @@
+name: housing_rooms_and_bedrooms_2019
+title: Rooms and bedrooms (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: rooms;
+  median number of rooms; aggregate number of rooms; tenure by rooms; median number of rooms by tenure;
+  aggregate number of rooms by tenure; bedrooms; tenure by bedrooms.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: median_number_of_rooms_median_number_of_rooms_b25018e1
+  title: 'Median Number Of Rooms: Total'
+  description: 'Median Number Of Rooms. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25018e1"'
+  type: number
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25018m1"'
+- name: median_number_of_rooms_by_tenure_median_number_of_rooms_b25021e1
+  title: 'Median Number Of Rooms By Tenure: Median number of rooms'
+  description: 'Median Number Of Rooms By Tenure. Universe: Occupied housing units. Median number of rooms.'
+  sql: '"2019_CBG_B25"."B25021e1"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25021m1"'
+- name: median_number_of_rooms_by_tenure_median_number_of_rooms_owner_occupied_b25021e2
+  title: 'Median Number Of Rooms By Tenure: Median number of rooms > Owner occupied'
+  description: 'Median Number Of Rooms By Tenure. Universe: Occupied housing units. Median number of rooms
+    > Owner occupied.'
+  sql: '"2019_CBG_B25"."B25021e2"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25021m2"'
+- name: median_number_of_rooms_by_tenure_median_number_of_rooms_renter_occupied_b25021e3
+  title: 'Median Number Of Rooms By Tenure: Median number of rooms > Renter occupied'
+  description: 'Median Number Of Rooms By Tenure. Universe: Occupied housing units. Median number of rooms
+    > Renter occupied.'
+  sql: '"2019_CBG_B25"."B25021e3"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25021m3"'
+measures:
+- name: rooms_b25017e1
+  title: 'Rooms: Total'
+  description: 'Rooms. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25017e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m1"'
+- name: rooms_1_room_b25017e2
+  title: 'Rooms: 1 room'
+  description: 'Rooms. Universe: Housing units. 1 room.'
+  sql: '"2019_CBG_B25"."B25017e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m2"'
+- name: rooms_2_rooms_b25017e3
+  title: 'Rooms: 2 rooms'
+  description: 'Rooms. Universe: Housing units. 2 rooms.'
+  sql: '"2019_CBG_B25"."B25017e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m3"'
+- name: rooms_3_rooms_b25017e4
+  title: 'Rooms: 3 rooms'
+  description: 'Rooms. Universe: Housing units. 3 rooms.'
+  sql: '"2019_CBG_B25"."B25017e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m4"'
+- name: rooms_4_rooms_b25017e5
+  title: 'Rooms: 4 rooms'
+  description: 'Rooms. Universe: Housing units. 4 rooms.'
+  sql: '"2019_CBG_B25"."B25017e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m5"'
+- name: rooms_5_rooms_b25017e6
+  title: 'Rooms: 5 rooms'
+  description: 'Rooms. Universe: Housing units. 5 rooms.'
+  sql: '"2019_CBG_B25"."B25017e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m6"'
+- name: rooms_6_rooms_b25017e7
+  title: 'Rooms: 6 rooms'
+  description: 'Rooms. Universe: Housing units. 6 rooms.'
+  sql: '"2019_CBG_B25"."B25017e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m7"'
+- name: rooms_7_rooms_b25017e8
+  title: 'Rooms: 7 rooms'
+  description: 'Rooms. Universe: Housing units. 7 rooms.'
+  sql: '"2019_CBG_B25"."B25017e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m8"'
+- name: rooms_8_rooms_b25017e9
+  title: 'Rooms: 8 rooms'
+  description: 'Rooms. Universe: Housing units. 8 rooms.'
+  sql: '"2019_CBG_B25"."B25017e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m9"'
+- name: rooms_9_or_more_rooms_b25017e10
+  title: 'Rooms: 9 or more rooms'
+  description: 'Rooms. Universe: Housing units. 9 or more rooms.'
+  sql: '"2019_CBG_B25"."B25017e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25017m10"'
+- name: aggregate_number_of_rooms_aggregate_number_of_rooms_b25019e1
+  title: 'Aggregate Number Of Rooms: Total'
+  description: 'Aggregate Number Of Rooms. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25019e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25019m1"'
+- name: tenure_by_rooms_b25020e1
+  title: 'Tenure By Rooms: Total'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25020e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m1"'
+- name: tenure_by_rooms_owner_occupied_b25020e2
+  title: 'Tenure By Rooms: Owner occupied'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25020e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m2"'
+- name: tenure_by_rooms_owner_occupied_1_room_b25020e3
+  title: 'Tenure By Rooms: Owner occupied > 1 room'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 1 room.'
+  sql: '"2019_CBG_B25"."B25020e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m3"'
+- name: tenure_by_rooms_owner_occupied_2_rooms_b25020e4
+  title: 'Tenure By Rooms: Owner occupied > 2 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 2 rooms.'
+  sql: '"2019_CBG_B25"."B25020e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m4"'
+- name: tenure_by_rooms_owner_occupied_3_rooms_b25020e5
+  title: 'Tenure By Rooms: Owner occupied > 3 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 3 rooms.'
+  sql: '"2019_CBG_B25"."B25020e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m5"'
+- name: tenure_by_rooms_owner_occupied_4_rooms_b25020e6
+  title: 'Tenure By Rooms: Owner occupied > 4 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 4 rooms.'
+  sql: '"2019_CBG_B25"."B25020e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m6"'
+- name: tenure_by_rooms_owner_occupied_5_rooms_b25020e7
+  title: 'Tenure By Rooms: Owner occupied > 5 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 5 rooms.'
+  sql: '"2019_CBG_B25"."B25020e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m7"'
+- name: tenure_by_rooms_owner_occupied_6_rooms_b25020e8
+  title: 'Tenure By Rooms: Owner occupied > 6 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 6 rooms.'
+  sql: '"2019_CBG_B25"."B25020e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m8"'
+- name: tenure_by_rooms_owner_occupied_7_rooms_b25020e9
+  title: 'Tenure By Rooms: Owner occupied > 7 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 7 rooms.'
+  sql: '"2019_CBG_B25"."B25020e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m9"'
+- name: tenure_by_rooms_owner_occupied_8_rooms_b25020e10
+  title: 'Tenure By Rooms: Owner occupied > 8 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 8 rooms.'
+  sql: '"2019_CBG_B25"."B25020e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m10"'
+- name: tenure_by_rooms_owner_occupied_9_or_more_rooms_b25020e11
+  title: 'Tenure By Rooms: Owner occupied > 9 or more rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Owner occupied > 9 or more rooms.'
+  sql: '"2019_CBG_B25"."B25020e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m11"'
+- name: tenure_by_rooms_renter_occupied_b25020e12
+  title: 'Tenure By Rooms: Renter occupied'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25020e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m12"'
+- name: tenure_by_rooms_renter_occupied_1_room_b25020e13
+  title: 'Tenure By Rooms: Renter occupied > 1 room'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 1 room.'
+  sql: '"2019_CBG_B25"."B25020e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m13"'
+- name: tenure_by_rooms_renter_occupied_2_rooms_b25020e14
+  title: 'Tenure By Rooms: Renter occupied > 2 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 2 rooms.'
+  sql: '"2019_CBG_B25"."B25020e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m14"'
+- name: tenure_by_rooms_renter_occupied_3_rooms_b25020e15
+  title: 'Tenure By Rooms: Renter occupied > 3 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 3 rooms.'
+  sql: '"2019_CBG_B25"."B25020e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m15"'
+- name: tenure_by_rooms_renter_occupied_4_rooms_b25020e16
+  title: 'Tenure By Rooms: Renter occupied > 4 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 4 rooms.'
+  sql: '"2019_CBG_B25"."B25020e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m16"'
+- name: tenure_by_rooms_renter_occupied_5_rooms_b25020e17
+  title: 'Tenure By Rooms: Renter occupied > 5 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 5 rooms.'
+  sql: '"2019_CBG_B25"."B25020e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m17"'
+- name: tenure_by_rooms_renter_occupied_6_rooms_b25020e18
+  title: 'Tenure By Rooms: Renter occupied > 6 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 6 rooms.'
+  sql: '"2019_CBG_B25"."B25020e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m18"'
+- name: tenure_by_rooms_renter_occupied_7_rooms_b25020e19
+  title: 'Tenure By Rooms: Renter occupied > 7 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 7 rooms.'
+  sql: '"2019_CBG_B25"."B25020e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m19"'
+- name: tenure_by_rooms_renter_occupied_8_rooms_b25020e20
+  title: 'Tenure By Rooms: Renter occupied > 8 rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 8 rooms.'
+  sql: '"2019_CBG_B25"."B25020e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m20"'
+- name: tenure_by_rooms_renter_occupied_9_or_more_rooms_b25020e21
+  title: 'Tenure By Rooms: Renter occupied > 9 or more rooms'
+  description: 'Tenure By Rooms. Universe: Occupied housing units. Renter occupied > 9 or more rooms.'
+  sql: '"2019_CBG_B25"."B25020e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25020m21"'
+- name: aggregate_number_of_rooms_by_tenure_aggregate_number_of_rooms_b25022e1
+  title: 'Aggregate Number Of Rooms By Tenure: Aggregate number of rooms'
+  description: 'Aggregate Number Of Rooms By Tenure. Universe: Occupied housing units. Aggregate number
+    of rooms.'
+  sql: '"2019_CBG_B25"."B25022e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25022m1"'
+- name: aggregate_number_of_rooms_by_tenure_aggregate_number_of_rooms_owner_occupied_b25022e2
+  title: 'Aggregate Number Of Rooms By Tenure: Aggregate number of rooms > Owner occupied'
+  description: 'Aggregate Number Of Rooms By Tenure. Universe: Occupied housing units. Aggregate number
+    of rooms > Owner occupied.'
+  sql: '"2019_CBG_B25"."B25022e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25022m2"'
+- name: aggregate_number_of_rooms_by_tenure_aggregate_number_of_rooms_renter_occupied_b25022e3
+  title: 'Aggregate Number Of Rooms By Tenure: Aggregate number of rooms > Renter occupied'
+  description: 'Aggregate Number Of Rooms By Tenure. Universe: Occupied housing units. Aggregate number
+    of rooms > Renter occupied.'
+  sql: '"2019_CBG_B25"."B25022e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25022m3"'
+- name: bedrooms_b25041e1
+  title: 'Bedrooms: Total'
+  description: 'Bedrooms. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25041e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m1"'
+- name: bedrooms_no_bedroom_b25041e2
+  title: 'Bedrooms: No bedroom'
+  description: 'Bedrooms. Universe: Housing units. No bedroom.'
+  sql: '"2019_CBG_B25"."B25041e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m2"'
+- name: bedrooms_1_bedroom_b25041e3
+  title: 'Bedrooms: 1 bedroom'
+  description: 'Bedrooms. Universe: Housing units. 1 bedroom.'
+  sql: '"2019_CBG_B25"."B25041e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m3"'
+- name: bedrooms_2_bedrooms_b25041e4
+  title: 'Bedrooms: 2 bedrooms'
+  description: 'Bedrooms. Universe: Housing units. 2 bedrooms.'
+  sql: '"2019_CBG_B25"."B25041e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m4"'
+- name: bedrooms_3_bedrooms_b25041e5
+  title: 'Bedrooms: 3 bedrooms'
+  description: 'Bedrooms. Universe: Housing units. 3 bedrooms.'
+  sql: '"2019_CBG_B25"."B25041e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m5"'
+- name: bedrooms_4_bedrooms_b25041e6
+  title: 'Bedrooms: 4 bedrooms'
+  description: 'Bedrooms. Universe: Housing units. 4 bedrooms.'
+  sql: '"2019_CBG_B25"."B25041e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m6"'
+- name: bedrooms_5_or_more_bedrooms_b25041e7
+  title: 'Bedrooms: 5 or more bedrooms'
+  description: 'Bedrooms. Universe: Housing units. 5 or more bedrooms.'
+  sql: '"2019_CBG_B25"."B25041e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25041m7"'
+- name: tenure_by_bedrooms_b25042e1
+  title: 'Tenure By Bedrooms: Total'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25042e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m1"'
+- name: tenure_by_bedrooms_owner_occupied_b25042e2
+  title: 'Tenure By Bedrooms: Owner occupied'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25042e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m2"'
+- name: tenure_by_bedrooms_owner_occupied_no_bedroom_b25042e3
+  title: 'Tenure By Bedrooms: Owner occupied > No bedroom'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied > No bedroom.'
+  sql: '"2019_CBG_B25"."B25042e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m3"'
+- name: tenure_by_bedrooms_owner_occupied_1_bedroom_b25042e4
+  title: 'Tenure By Bedrooms: Owner occupied > 1 bedroom'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied > 1 bedroom.'
+  sql: '"2019_CBG_B25"."B25042e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m4"'
+- name: tenure_by_bedrooms_owner_occupied_2_bedrooms_b25042e5
+  title: 'Tenure By Bedrooms: Owner occupied > 2 bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied > 2 bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m5"'
+- name: tenure_by_bedrooms_owner_occupied_3_bedrooms_b25042e6
+  title: 'Tenure By Bedrooms: Owner occupied > 3 bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied > 3 bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m6"'
+- name: tenure_by_bedrooms_owner_occupied_4_bedrooms_b25042e7
+  title: 'Tenure By Bedrooms: Owner occupied > 4 bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied > 4 bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m7"'
+- name: tenure_by_bedrooms_owner_occupied_5_or_more_bedrooms_b25042e8
+  title: 'Tenure By Bedrooms: Owner occupied > 5 or more bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Owner occupied > 5 or more bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m8"'
+- name: tenure_by_bedrooms_renter_occupied_b25042e9
+  title: 'Tenure By Bedrooms: Renter occupied'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25042e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m9"'
+- name: tenure_by_bedrooms_renter_occupied_no_bedroom_b25042e10
+  title: 'Tenure By Bedrooms: Renter occupied > No bedroom'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied > No bedroom.'
+  sql: '"2019_CBG_B25"."B25042e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m10"'
+- name: tenure_by_bedrooms_renter_occupied_1_bedroom_b25042e11
+  title: 'Tenure By Bedrooms: Renter occupied > 1 bedroom'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied > 1 bedroom.'
+  sql: '"2019_CBG_B25"."B25042e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m11"'
+- name: tenure_by_bedrooms_renter_occupied_2_bedrooms_b25042e12
+  title: 'Tenure By Bedrooms: Renter occupied > 2 bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied > 2 bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m12"'
+- name: tenure_by_bedrooms_renter_occupied_3_bedrooms_b25042e13
+  title: 'Tenure By Bedrooms: Renter occupied > 3 bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied > 3 bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m13"'
+- name: tenure_by_bedrooms_renter_occupied_4_bedrooms_b25042e14
+  title: 'Tenure By Bedrooms: Renter occupied > 4 bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied > 4 bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m14"'
+- name: tenure_by_bedrooms_renter_occupied_5_or_more_bedrooms_b25042e15
+  title: 'Tenure By Bedrooms: Renter occupied > 5 or more bedrooms'
+  description: 'Tenure By Bedrooms. Universe: Occupied housing units. Renter occupied > 5 or more bedrooms.'
+  sql: '"2019_CBG_B25"."B25042e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25042m15"'

@@ -1,0 +1,1028 @@
+name: housing_structure_age_and_move_in_2019
+title: Building type, year built and year moved in (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: units
+  in structure; tenure by units in structure; total population in occupied housing units by tenure by
+  units in structure; year structure built; median year structure built; tenure by year structure built;
+  median year structure built by tenure; tenure by year householder moved into unit; median year householder
+  moved into unit by tenure.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B25"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B25"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: median_year_structure_built_median_year_structure_built_b25035e1
+  title: 'Median Year Structure Built: Total'
+  description: 'Median Year Structure Built. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25035e1"'
+  type: number
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25035m1"'
+- name: median_year_structure_built_by_tenure_median_year_structure_built_b25037e1
+  title: 'Median Year Structure Built By Tenure: Median year structure built'
+  description: 'Median Year Structure Built By Tenure. Universe: Occupied housing units. Median year structure
+    built.'
+  sql: '"2019_CBG_B25"."B25037e1"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25037m1"'
+- name: median_year_structure_built_by_tenure_median_year_structure_built_owner_occupied_b25037e2
+  title: 'Median Year Structure Built By Tenure: Median year structure built > Owner occupied'
+  description: 'Median Year Structure Built By Tenure. Universe: Occupied housing units. Median year structure
+    built > Owner occupied.'
+  sql: '"2019_CBG_B25"."B25037e2"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25037m2"'
+- name: median_year_structure_built_by_tenure_median_year_structure_built_renter_occupied_b25037e3
+  title: 'Median Year Structure Built By Tenure: Median year structure built > Renter occupied'
+  description: 'Median Year Structure Built By Tenure. Universe: Occupied housing units. Median year structure
+    built > Renter occupied.'
+  sql: '"2019_CBG_B25"."B25037e3"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25037m3"'
+- name: median_year_householder_moved_into_unit_by_tenure_median_year_householder_moved_into_unit_b25039e1
+  title: 'Median Year Householder Moved Into Unit By Tenure: Median year householder moved into unit'
+  description: 'Median Year Householder Moved Into Unit By Tenure. Universe: Occupied housing units. Median
+    year householder moved into unit.'
+  sql: '"2019_CBG_B25"."B25039e1"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25039m1"'
+- name: median_year_householder_moved_into_unit_by_tenure_median_year_householder_moved_into_unit_owner_occupied_b25039e2
+  title: 'Median Year Householder Moved Into Unit By Tenure: Median year householder moved into unit >
+    Owner occupied'
+  description: 'Median Year Householder Moved Into Unit By Tenure. Universe: Occupied housing units. Median
+    year householder moved into unit > Owner occupied.'
+  sql: '"2019_CBG_B25"."B25039e2"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25039m2"'
+- name: median_year_householder_moved_into_unit_by_tenure_median_year_householder_moved_into_unit_renter_occupied_b25039e3
+  title: 'Median Year Householder Moved Into Unit By Tenure: Median year householder moved into unit >
+    Renter occupied'
+  description: 'Median Year Householder Moved Into Unit By Tenure. Universe: Occupied housing units. Median
+    year householder moved into unit > Renter occupied.'
+  sql: '"2019_CBG_B25"."B25039e3"'
+  type: number
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25039m3"'
+measures:
+- name: units_in_structure_b25024e1
+  title: 'Units In Structure: Total'
+  description: 'Units In Structure. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25024e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m1"'
+- name: units_in_structure_1_detached_b25024e2
+  title: 'Units In Structure: 1 detached'
+  description: 'Units In Structure. Universe: Housing units. 1 detached.'
+  sql: '"2019_CBG_B25"."B25024e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m2"'
+- name: units_in_structure_1_attached_b25024e3
+  title: 'Units In Structure: 1 attached'
+  description: 'Units In Structure. Universe: Housing units. 1 attached.'
+  sql: '"2019_CBG_B25"."B25024e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m3"'
+- name: units_in_structure_2_b25024e4
+  title: 'Units In Structure: 2'
+  description: 'Units In Structure. Universe: Housing units. 2.'
+  sql: '"2019_CBG_B25"."B25024e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m4"'
+- name: units_in_structure_3_or_4_b25024e5
+  title: 'Units In Structure: 3 or 4'
+  description: 'Units In Structure. Universe: Housing units. 3 or 4.'
+  sql: '"2019_CBG_B25"."B25024e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m5"'
+- name: units_in_structure_5_to_9_b25024e6
+  title: 'Units In Structure: 5 to 9'
+  description: 'Units In Structure. Universe: Housing units. 5 to 9.'
+  sql: '"2019_CBG_B25"."B25024e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m6"'
+- name: units_in_structure_10_to_19_b25024e7
+  title: 'Units In Structure: 10 to 19'
+  description: 'Units In Structure. Universe: Housing units. 10 to 19.'
+  sql: '"2019_CBG_B25"."B25024e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m7"'
+- name: units_in_structure_20_to_49_b25024e8
+  title: 'Units In Structure: 20 to 49'
+  description: 'Units In Structure. Universe: Housing units. 20 to 49.'
+  sql: '"2019_CBG_B25"."B25024e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m8"'
+- name: units_in_structure_50_or_more_b25024e9
+  title: 'Units In Structure: 50 or more'
+  description: 'Units In Structure. Universe: Housing units. 50 or more.'
+  sql: '"2019_CBG_B25"."B25024e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m9"'
+- name: units_in_structure_mobile_home_b25024e10
+  title: 'Units In Structure: Mobile home'
+  description: 'Units In Structure. Universe: Housing units. Mobile home.'
+  sql: '"2019_CBG_B25"."B25024e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m10"'
+- name: units_in_structure_boat_rv_van_etc_b25024e11
+  title: 'Units In Structure: Boat RV van etc.'
+  description: 'Units In Structure. Universe: Housing units. Boat RV van etc..'
+  sql: '"2019_CBG_B25"."B25024e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25024m11"'
+- name: tenure_by_units_in_structure_b25032e1
+  title: 'Tenure By Units In Structure: Total'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25032e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m1"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_b25032e2
+  title: 'Tenure By Units In Structure: Owner-occupied housing units'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units.'
+  sql: '"2019_CBG_B25"."B25032e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m2"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_1_detached_b25032e3
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 1 detached'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 1 detached.'
+  sql: '"2019_CBG_B25"."B25032e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m3"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_1_attached_b25032e4
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 1 attached'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 1 attached.'
+  sql: '"2019_CBG_B25"."B25032e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m4"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_2_b25032e5
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 2'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 2.'
+  sql: '"2019_CBG_B25"."B25032e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m5"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_3_or_4_b25032e6
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 3 or 4'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 3 or 4.'
+  sql: '"2019_CBG_B25"."B25032e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m6"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_5_to_9_b25032e7
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 5 to 9'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 5 to 9.'
+  sql: '"2019_CBG_B25"."B25032e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m7"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_10_to_19_b25032e8
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 10 to 19'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 10 to 19.'
+  sql: '"2019_CBG_B25"."B25032e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m8"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_20_to_49_b25032e9
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 20 to 49'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 20 to 49.'
+  sql: '"2019_CBG_B25"."B25032e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m9"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_50_or_more_b25032e10
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > 50 or more'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > 50 or more.'
+  sql: '"2019_CBG_B25"."B25032e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m10"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_mobile_home_b25032e11
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > Mobile home'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > Mobile home.'
+  sql: '"2019_CBG_B25"."B25032e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m11"'
+- name: tenure_by_units_in_structure_owner_occupied_housing_units_boat_rv_van_etc_b25032e12
+  title: 'Tenure By Units In Structure: Owner-occupied housing units > Boat RV van etc.'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Owner-occupied housing
+    units > Boat RV van etc..'
+  sql: '"2019_CBG_B25"."B25032e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m12"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_b25032e13
+  title: 'Tenure By Units In Structure: Renter-occupied housing units'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units.'
+  sql: '"2019_CBG_B25"."B25032e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m13"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_1_detached_b25032e14
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 1 detached'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 1 detached.'
+  sql: '"2019_CBG_B25"."B25032e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m14"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_1_attached_b25032e15
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 1 attached'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 1 attached.'
+  sql: '"2019_CBG_B25"."B25032e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m15"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_2_b25032e16
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 2'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 2.'
+  sql: '"2019_CBG_B25"."B25032e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m16"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_3_or_4_b25032e17
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 3 or 4'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 3 or 4.'
+  sql: '"2019_CBG_B25"."B25032e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m17"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_5_to_9_b25032e18
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 5 to 9'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 5 to 9.'
+  sql: '"2019_CBG_B25"."B25032e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m18"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_10_to_19_b25032e19
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 10 to 19'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 10 to 19.'
+  sql: '"2019_CBG_B25"."B25032e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m19"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_20_to_49_b25032e20
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 20 to 49'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 20 to 49.'
+  sql: '"2019_CBG_B25"."B25032e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m20"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_50_or_more_b25032e21
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > 50 or more'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > 50 or more.'
+  sql: '"2019_CBG_B25"."B25032e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m21"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_mobile_home_b25032e22
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > Mobile home'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > Mobile home.'
+  sql: '"2019_CBG_B25"."B25032e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m22"'
+- name: tenure_by_units_in_structure_renter_occupied_housing_units_boat_rv_van_etc_b25032e23
+  title: 'Tenure By Units In Structure: Renter-occupied housing units > Boat RV van etc.'
+  description: 'Tenure By Units In Structure. Universe: Occupied housing units. Renter-occupied housing
+    units > Boat RV van etc..'
+  sql: '"2019_CBG_B25"."B25032e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25032m23"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_b25033e1
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Total'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25033e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m1"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_owner_occupied_b25033e2
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Owner occupied'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25033e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m2"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_owner_occupied_1_detached_or_attached_b25033e3
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Owner occupied >
+    1 detached or attached'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Owner occupied > 1 detached or attached.'
+  sql: '"2019_CBG_B25"."B25033e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m3"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_owner_occupied_2_to_4_b25033e4
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Owner occupied >
+    2 to 4'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Owner occupied > 2 to 4.'
+  sql: '"2019_CBG_B25"."B25033e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m4"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_owner_occupied_5_or_more_b25033e5
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Owner occupied >
+    5 or more'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Owner occupied > 5 or more.'
+  sql: '"2019_CBG_B25"."B25033e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m5"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_owner_occupied_mobile_home_b25033e6
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Owner occupied >
+    Mobile home'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Owner occupied > Mobile home.'
+  sql: '"2019_CBG_B25"."B25033e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m6"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_owner_occupied_boat_rv_van_etc_b25033e7
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Owner occupied >
+    Boat RV van etc.'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Owner occupied > Boat RV van etc..'
+  sql: '"2019_CBG_B25"."B25033e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m7"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_renter_occupied_b25033e8
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Renter occupied'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25033e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m8"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_renter_occupied_1_detached_or_attached_b25033e9
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Renter occupied
+    > 1 detached or attached'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Renter occupied > 1 detached or attached.'
+  sql: '"2019_CBG_B25"."B25033e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m9"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_renter_occupied_2_to_4_b25033e10
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Renter occupied
+    > 2 to 4'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Renter occupied > 2 to 4.'
+  sql: '"2019_CBG_B25"."B25033e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m10"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_renter_occupied_5_or_more_b25033e11
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Renter occupied
+    > 5 or more'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Renter occupied > 5 or more.'
+  sql: '"2019_CBG_B25"."B25033e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m11"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_renter_occupied_mobile_home_b25033e12
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Renter occupied
+    > Mobile home'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Renter occupied > Mobile home.'
+  sql: '"2019_CBG_B25"."B25033e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m12"'
+- name: total_population_in_occupied_housing_units_by_tenure_by_units_in_structure_renter_occupied_boat_rv_van_etc_b25033e13
+  title: 'Total Population In Occupied Housing Units By Tenure By Units In Structure: Renter occupied
+    > Boat RV van etc.'
+  description: 'Total Population In Occupied Housing Units By Tenure By Units In Structure. Universe:
+    Total population in occupied housing units. Renter occupied > Boat RV van etc..'
+  sql: '"2019_CBG_B25"."B25033e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population in occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25033m13"'
+- name: year_structure_built_b25034e1
+  title: 'Year Structure Built: Total'
+  description: 'Year Structure Built. Universe: Housing units. Total.'
+  sql: '"2019_CBG_B25"."B25034e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m1"'
+- name: year_structure_built_built_2014_or_later_b25034e2
+  title: 'Year Structure Built: Built 2014 or later'
+  description: 'Year Structure Built. Universe: Housing units. Built 2014 or later.'
+  sql: '"2019_CBG_B25"."B25034e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m2"'
+- name: year_structure_built_built_2010_to_2013_b25034e3
+  title: 'Year Structure Built: Built 2010 to 2013'
+  description: 'Year Structure Built. Universe: Housing units. Built 2010 to 2013.'
+  sql: '"2019_CBG_B25"."B25034e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m3"'
+- name: year_structure_built_built_2000_to_2009_b25034e4
+  title: 'Year Structure Built: Built 2000 to 2009'
+  description: 'Year Structure Built. Universe: Housing units. Built 2000 to 2009.'
+  sql: '"2019_CBG_B25"."B25034e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m4"'
+- name: year_structure_built_built_1990_to_1999_b25034e5
+  title: 'Year Structure Built: Built 1990 to 1999'
+  description: 'Year Structure Built. Universe: Housing units. Built 1990 to 1999.'
+  sql: '"2019_CBG_B25"."B25034e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m5"'
+- name: year_structure_built_built_1980_to_1989_b25034e6
+  title: 'Year Structure Built: Built 1980 to 1989'
+  description: 'Year Structure Built. Universe: Housing units. Built 1980 to 1989.'
+  sql: '"2019_CBG_B25"."B25034e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m6"'
+- name: year_structure_built_built_1970_to_1979_b25034e7
+  title: 'Year Structure Built: Built 1970 to 1979'
+  description: 'Year Structure Built. Universe: Housing units. Built 1970 to 1979.'
+  sql: '"2019_CBG_B25"."B25034e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m7"'
+- name: year_structure_built_built_1960_to_1969_b25034e8
+  title: 'Year Structure Built: Built 1960 to 1969'
+  description: 'Year Structure Built. Universe: Housing units. Built 1960 to 1969.'
+  sql: '"2019_CBG_B25"."B25034e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m8"'
+- name: year_structure_built_built_1950_to_1959_b25034e9
+  title: 'Year Structure Built: Built 1950 to 1959'
+  description: 'Year Structure Built. Universe: Housing units. Built 1950 to 1959.'
+  sql: '"2019_CBG_B25"."B25034e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m9"'
+- name: year_structure_built_built_1940_to_1949_b25034e10
+  title: 'Year Structure Built: Built 1940 to 1949'
+  description: 'Year Structure Built. Universe: Housing units. Built 1940 to 1949.'
+  sql: '"2019_CBG_B25"."B25034e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m10"'
+- name: year_structure_built_built_1939_or_earlier_b25034e11
+  title: 'Year Structure Built: Built 1939 or earlier'
+  description: 'Year Structure Built. Universe: Housing units. Built 1939 or earlier.'
+  sql: '"2019_CBG_B25"."B25034e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Housing units
+    moe_sql: '"2019_CBG_B25"."B25034m11"'
+- name: tenure_by_year_structure_built_b25036e1
+  title: 'Tenure By Year Structure Built: Total'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25036e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m1"'
+- name: tenure_by_year_structure_built_owner_occupied_b25036e2
+  title: 'Tenure By Year Structure Built: Owner occupied'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25036e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m2"'
+- name: tenure_by_year_structure_built_owner_occupied_built_2014_or_later_b25036e3
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 2014 or later'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    2014 or later.'
+  sql: '"2019_CBG_B25"."B25036e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m3"'
+- name: tenure_by_year_structure_built_owner_occupied_built_2010_to_2013_b25036e4
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 2010 to 2013'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    2010 to 2013.'
+  sql: '"2019_CBG_B25"."B25036e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m4"'
+- name: tenure_by_year_structure_built_owner_occupied_built_2000_to_2009_b25036e5
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 2000 to 2009'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    2000 to 2009.'
+  sql: '"2019_CBG_B25"."B25036e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m5"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1990_to_1999_b25036e6
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1990 to 1999'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1990 to 1999.'
+  sql: '"2019_CBG_B25"."B25036e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m6"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1980_to_1989_b25036e7
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1980 to 1989'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1980 to 1989.'
+  sql: '"2019_CBG_B25"."B25036e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m7"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1970_to_1979_b25036e8
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1970 to 1979'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1970 to 1979.'
+  sql: '"2019_CBG_B25"."B25036e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m8"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1960_to_1969_b25036e9
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1960 to 1969'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1960 to 1969.'
+  sql: '"2019_CBG_B25"."B25036e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m9"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1950_to_1959_b25036e10
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1950 to 1959'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1950 to 1959.'
+  sql: '"2019_CBG_B25"."B25036e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m10"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1940_to_1949_b25036e11
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1940 to 1949'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1940 to 1949.'
+  sql: '"2019_CBG_B25"."B25036e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m11"'
+- name: tenure_by_year_structure_built_owner_occupied_built_1939_or_earlier_b25036e12
+  title: 'Tenure By Year Structure Built: Owner occupied > Built 1939 or earlier'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Owner occupied > Built
+    1939 or earlier.'
+  sql: '"2019_CBG_B25"."B25036e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m12"'
+- name: tenure_by_year_structure_built_renter_occupied_b25036e13
+  title: 'Tenure By Year Structure Built: Renter occupied'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25036e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m13"'
+- name: tenure_by_year_structure_built_renter_occupied_built_2014_or_later_b25036e14
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 2014 or later'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    2014 or later.'
+  sql: '"2019_CBG_B25"."B25036e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m14"'
+- name: tenure_by_year_structure_built_renter_occupied_built_2010_to_2013_b25036e15
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 2010 to 2013'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    2010 to 2013.'
+  sql: '"2019_CBG_B25"."B25036e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m15"'
+- name: tenure_by_year_structure_built_renter_occupied_built_2000_to_2009_b25036e16
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 2000 to 2009'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    2000 to 2009.'
+  sql: '"2019_CBG_B25"."B25036e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m16"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1990_to_1999_b25036e17
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1990 to 1999'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1990 to 1999.'
+  sql: '"2019_CBG_B25"."B25036e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m17"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1980_to_1989_b25036e18
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1980 to 1989'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1980 to 1989.'
+  sql: '"2019_CBG_B25"."B25036e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m18"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1970_to_1979_b25036e19
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1970 to 1979'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1970 to 1979.'
+  sql: '"2019_CBG_B25"."B25036e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m19"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1960_to_1969_b25036e20
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1960 to 1969'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1960 to 1969.'
+  sql: '"2019_CBG_B25"."B25036e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m20"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1950_to_1959_b25036e21
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1950 to 1959'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1950 to 1959.'
+  sql: '"2019_CBG_B25"."B25036e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m21"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1940_to_1949_b25036e22
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1940 to 1949'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1940 to 1949.'
+  sql: '"2019_CBG_B25"."B25036e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m22"'
+- name: tenure_by_year_structure_built_renter_occupied_built_1939_or_earlier_b25036e23
+  title: 'Tenure By Year Structure Built: Renter occupied > Built 1939 or earlier'
+  description: 'Tenure By Year Structure Built. Universe: Occupied housing units. Renter occupied > Built
+    1939 or earlier.'
+  sql: '"2019_CBG_B25"."B25036e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25036m23"'
+- name: tenure_by_year_householder_moved_into_unit_b25038e1
+  title: 'Tenure By Year Householder Moved Into Unit: Total'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Total.'
+  sql: '"2019_CBG_B25"."B25038e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m1"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_b25038e2
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied.'
+  sql: '"2019_CBG_B25"."B25038e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m2"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_moved_in_2017_or_later_b25038e3
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied > Moved in 2017 or later'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied
+    > Moved in 2017 or later.'
+  sql: '"2019_CBG_B25"."B25038e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m3"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_moved_in_2015_to_2016_b25038e4
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied > Moved in 2015 to 2016'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied
+    > Moved in 2015 to 2016.'
+  sql: '"2019_CBG_B25"."B25038e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m4"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_moved_in_2010_to_2014_b25038e5
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied > Moved in 2010 to 2014'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied
+    > Moved in 2010 to 2014.'
+  sql: '"2019_CBG_B25"."B25038e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m5"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_moved_in_2000_to_2009_b25038e6
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied > Moved in 2000 to 2009'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied
+    > Moved in 2000 to 2009.'
+  sql: '"2019_CBG_B25"."B25038e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m6"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_moved_in_1990_to_1999_b25038e7
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied > Moved in 1990 to 1999'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied
+    > Moved in 1990 to 1999.'
+  sql: '"2019_CBG_B25"."B25038e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m7"'
+- name: tenure_by_year_householder_moved_into_unit_owner_occupied_moved_in_1989_or_earlier_b25038e8
+  title: 'Tenure By Year Householder Moved Into Unit: Owner occupied > Moved in 1989 or earlier'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Owner occupied
+    > Moved in 1989 or earlier.'
+  sql: '"2019_CBG_B25"."B25038e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m8"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_b25038e9
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied.'
+  sql: '"2019_CBG_B25"."B25038e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m9"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_moved_in_2017_or_later_b25038e10
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied > Moved in 2017 or later'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied
+    > Moved in 2017 or later.'
+  sql: '"2019_CBG_B25"."B25038e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m10"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_moved_in_2015_to_2016_b25038e11
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied > Moved in 2015 to 2016'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied
+    > Moved in 2015 to 2016.'
+  sql: '"2019_CBG_B25"."B25038e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m11"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_moved_in_2010_to_2014_b25038e12
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied > Moved in 2010 to 2014'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied
+    > Moved in 2010 to 2014.'
+  sql: '"2019_CBG_B25"."B25038e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m12"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_moved_in_2000_to_2009_b25038e13
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied > Moved in 2000 to 2009'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied
+    > Moved in 2000 to 2009.'
+  sql: '"2019_CBG_B25"."B25038e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m13"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_moved_in_1990_to_1999_b25038e14
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied > Moved in 1990 to 1999'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied
+    > Moved in 1990 to 1999.'
+  sql: '"2019_CBG_B25"."B25038e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m14"'
+- name: tenure_by_year_householder_moved_into_unit_renter_occupied_moved_in_1989_or_earlier_b25038e15
+  title: 'Tenure By Year Householder Moved Into Unit: Renter occupied > Moved in 1989 or earlier'
+  description: 'Tenure By Year Householder Moved Into Unit. Universe: Occupied housing units. Renter occupied
+    > Moved in 1989 or earlier.'
+  sql: '"2019_CBG_B25"."B25038e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Occupied housing units
+    moe_sql: '"2019_CBG_B25"."B25038m15"'

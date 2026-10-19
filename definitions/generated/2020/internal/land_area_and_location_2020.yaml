@@ -1,0 +1,33 @@
+name: land_area_and_location_2020
+title: Land area, water area and coordinates of block groups (2020)
+description: Land area, water area and coordinates of each Census block group for 2020. Used by the tools
+  only.
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_METADATA_CBG_GEOGRAPHIC_DATA"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_METADATA_CBG_GEOGRAPHIC_DATA"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+- name: land_area
+  title: Land area
+  description: Land area of the block group as published (the source does not document the unit).
+  sql: '"2020_METADATA_CBG_GEOGRAPHIC_DATA"."AMOUNT_LAND"'
+  type: number
+- name: water_area
+  title: Water area
+  description: Water area of the block group as published (the source does not document the unit).
+  sql: '"2020_METADATA_CBG_GEOGRAPHIC_DATA"."AMOUNT_WATER"'
+  type: number
+- name: latitude
+  title: Latitude
+  description: Latitude of a point inside the block group.
+  sql: '"2020_METADATA_CBG_GEOGRAPHIC_DATA"."LATITUDE"'
+  type: number
+- name: longitude
+  title: Longitude
+  description: Longitude of a point inside the block group.
+  sql: '"2020_METADATA_CBG_GEOGRAPHIC_DATA"."LONGITUDE"'
+  type: number
+measures: []

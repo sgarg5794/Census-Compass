@@ -1,0 +1,433 @@
+name: veterans_poverty_and_disability_2020
+title: Veterans by age, poverty and disability (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: age
+  by veteran status by poverty status by disability status for the civilian population 18 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_C21"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_C21"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_c21007e1
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: Total'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. Total.'
+  sql: '"2020_CBG_C21"."C21007e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m1"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_c21007e2
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years.'
+  sql: '"2020_CBG_C21"."C21007e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m2"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e3
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran.'
+  sql: '"2020_CBG_C21"."C21007e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m3"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e4
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran > Income in the past 12 months below poverty
+    level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran > Income in the past 12 months below poverty
+    level.'
+  sql: '"2020_CBG_C21"."C21007e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m4"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e5
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran > Income in the past 12 months below poverty
+    level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran > Income in the past 12 months below poverty
+    level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m5"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e6
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran > Income in the past 12 months below poverty
+    level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran > Income in the past 12 months below poverty
+    level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m6"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e7
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran > Income in the past 12 months at or above
+    poverty level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran > Income in the past 12 months at or above
+    poverty level.'
+  sql: '"2020_CBG_C21"."C21007e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m7"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e8
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran > Income in the past 12 months at or above
+    poverty level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran > Income in the past 12 months at or above
+    poverty level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m8"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_vetera_c21007e9
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Veteran > Income in the past 12 months at or above
+    poverty level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Veteran > Income in the past 12 months at or above
+    poverty level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m9"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e10
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran.'
+  sql: '"2020_CBG_C21"."C21007e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m10"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e11
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran > Income in the past 12 months below poverty
+    level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran > Income in the past 12 months below poverty
+    level.'
+  sql: '"2020_CBG_C21"."C21007e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m11"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e12
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran > Income in the past 12 months below poverty
+    level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran > Income in the past 12 months below poverty
+    level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m12"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e13
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran > Income in the past 12 months below poverty
+    level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran > Income in the past 12 months below poverty
+    level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m13"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e14
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran > Income in the past 12 months at or above
+    poverty level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran > Income in the past 12 months at or above
+    poverty level.'
+  sql: '"2020_CBG_C21"."C21007e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m14"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e15
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran > Income in the past 12 months at or above
+    poverty level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran > Income in the past 12 months at or above
+    poverty level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m15"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_18_to_64_years_nonvet_c21007e16
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 18 to 64 years > Nonveteran > Income in the past 12 months at or above
+    poverty level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 18 to 64 years > Nonveteran > Income in the past 12 months at or above
+    poverty level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m16"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_c21007e17
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over.'
+  sql: '"2020_CBG_C21"."C21007e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m17"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e18
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran.'
+  sql: '"2020_CBG_C21"."C21007e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m18"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e19
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran > Income in the past 12 months below poverty
+    level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran > Income in the past 12 months below poverty
+    level.'
+  sql: '"2020_CBG_C21"."C21007e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m19"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e20
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran > Income in the past 12 months below poverty
+    level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran > Income in the past 12 months below poverty
+    level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m20"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e21
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran > Income in the past 12 months below poverty
+    level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran > Income in the past 12 months below poverty
+    level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m21"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e22
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran > Income in the past 12 months at or above
+    poverty level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran > Income in the past 12 months at or above
+    poverty level.'
+  sql: '"2020_CBG_C21"."C21007e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m22"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e23
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran > Income in the past 12 months at or above
+    poverty level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran > Income in the past 12 months at or above
+    poverty level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m23"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_vet_c21007e24
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Veteran > Income in the past 12 months at or above
+    poverty level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Veteran > Income in the past 12 months at or above
+    poverty level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m24"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e25
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran.'
+  sql: '"2020_CBG_C21"."C21007e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m25"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e26
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran > Income in the past 12 months below
+    poverty level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran > Income in the past 12 months below
+    poverty level.'
+  sql: '"2020_CBG_C21"."C21007e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m26"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e27
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran > Income in the past 12 months below
+    poverty level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran > Income in the past 12 months below
+    poverty level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m27"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e28
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran > Income in the past 12 months below
+    poverty level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran > Income in the past 12 months below
+    poverty level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m28"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e29
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran > Income in the past 12 months at or
+    above poverty level'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran > Income in the past 12 months at or
+    above poverty level.'
+  sql: '"2020_CBG_C21"."C21007e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m29"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e30
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran > Income in the past 12 months at or
+    above poverty level > With a disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran > Income in the past 12 months at or
+    above poverty level > With a disability.'
+  sql: '"2020_CBG_C21"."C21007e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m30"'
+- name: age_by_veteran_status_by_poverty_status_in_the_past_12_months_by_disability_status_for_the_civilian_population_18_years_and_over_65_years_and_over_non_c21007e31
+  title: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian
+    Population 18 Years And Over: 65 years and over > Nonveteran > Income in the past 12 months at or
+    above poverty level > No disability'
+  description: 'Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For
+    The Civilian Population 18 Years And Over. Universe: Civilian population 18 years and over for whom
+    poverty status is determined. 65 years and over > Nonveteran > Income in the past 12 months at or
+    above poverty level > No disability.'
+  sql: '"2020_CBG_C21"."C21007e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Civilian population 18 years and over for whom poverty status is determined
+    moe_sql: '"2020_CBG_C21"."C21007m31"'

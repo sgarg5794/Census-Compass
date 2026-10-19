@@ -1,0 +1,1348 @@
+name: census_count_race_and_hispanic_2020
+title: 2020 Census count — total population, race and Hispanic origin
+description: 'Official 2020 Census count as of April 1, 2020, for each Census block group: race; Hispanic
+  or Latino, and not Hispanic or Latino by race. The preferred source for 2020 population, race and Hispanic
+  origin counts.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_REDISTRICTING_CBG_DATA"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_REDISTRICTING_CBG_DATA"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: total_p0010001
+  title: 'Race: Total'
+  description: 'Race. Universe: Total population. Total.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010001"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_one_race_p0010002
+  title: 'Race: Population of one race'
+  description: 'Race. Universe: Total population. Population of one race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010002"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_alone_p0010003
+  title: 'Race: White alone'
+  description: 'Race. Universe: Total population. White alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010003"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_alone_p0010004
+  title: 'Race: Black or African American alone'
+  description: 'Race. Universe: Total population. Black or African American alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010004"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_alone_p0010005
+  title: 'Race: American Indian and Alaska Native alone'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010005"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_alone_p0010006
+  title: 'Race: Asian alone'
+  description: 'Race. Universe: Total population. Asian alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010006"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: native_hawaiian_and_other_pacific_islander_alone_p0010007
+  title: 'Race: Native Hawaiian and Other Pacific Islander alone'
+  description: 'Race. Universe: Total population. Native Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010007"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: some_other_race_alone_p0010008
+  title: 'Race: Some Other Race alone'
+  description: 'Race. Universe: Total population. Some Other Race alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010008"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_two_or_more_races_p0010009
+  title: 'Race: Population of two or more races'
+  description: 'Race. Universe: Total population. Population of two or more races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010009"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_two_races_p0010010
+  title: 'Race: Population of two races'
+  description: 'Race. Universe: Total population. Population of two races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010010"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_p0010011
+  title: 'Race: White; Black or African American'
+  description: 'Race. Universe: Total population. White; Black or African American.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010011"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_p0010012
+  title: 'Race: White; American Indian and Alaska Native'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010012"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_p0010013
+  title: 'Race: White; Asian'
+  description: 'Race. Universe: Total population. White; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010013"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_native_hawaiian_and_other_pacific_islander_p0010014
+  title: 'Race: White; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010014"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_some_other_race_p0010015
+  title: 'Race: White; Some Other Race'
+  description: 'Race. Universe: Total population. White; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010015"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_p0010016
+  title: 'Race: Black or African American; American Indian and Alaska Native'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010016"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_p0010017
+  title: 'Race: Black or African American; Asian'
+  description: 'Race. Universe: Total population. Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010017"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_p0010018
+  title: 'Race: Black or African American; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. Black or African American; Native Hawaiian and Other
+    Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010018"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_some_other_race_p0010019
+  title: 'Race: Black or African American; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010019"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_p0010020
+  title: 'Race: American Indian and Alaska Native; Asian'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010020"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0010021
+  title: 'Race: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Native Hawaiian and
+    Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010021"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_some_other_race_p0010022
+  title: 'Race: American Indian and Alaska Native; Some Other Race'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010022"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_native_hawaiian_and_other_pacific_islander_p0010023
+  title: 'Race: Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010023"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_some_other_race_p0010024
+  title: 'Race: Asian; Some Other Race'
+  description: 'Race. Universe: Total population. Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010024"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: native_hawaiian_and_other_pacific_islander_some_other_race_p0010025
+  title: 'Race: Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. Native Hawaiian and Other Pacific Islander; Some Other
+    Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010025"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_three_races_p0010026
+  title: 'Race: Population of three races'
+  description: 'Race. Universe: Total population. Population of three races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010026"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_p0010027
+  title: 'Race: White; Black or African American; American Indian and Alaska Native'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010027"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_p0010028
+  title: 'Race: White; Black or African American; Asian'
+  description: 'Race. Universe: Total population. White; Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010028"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_p0010029
+  title: 'Race: White; Black or African American; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; Black or African American; Native Hawaiian and
+    Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010029"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_some_other_race_p0010030
+  title: 'Race: White; Black or African American; Some Other Race'
+  description: 'Race. Universe: Total population. White; Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010030"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_p0010031
+  title: 'Race: White; American Indian and Alaska Native; Asian'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010031"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0010032
+  title: 'Race: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Native Hawaiian
+    and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010032"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_some_other_race_p0010033
+  title: 'Race: White; American Indian and Alaska Native; Some Other Race'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Some Other
+    Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010033"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_native_hawaiian_and_other_pacific_islander_p0010034
+  title: 'Race: White; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010034"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_some_other_race_p0010035
+  title: 'Race: White; Asian; Some Other Race'
+  description: 'Race. Universe: Total population. White; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010035"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_native_hawaiian_and_other_pacific_islander_some_other_race_p0010036
+  title: 'Race: White; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. White; Native Hawaiian and Other Pacific Islander; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010036"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_p0010037
+  title: 'Race: Black or African American; American Indian and Alaska Native; Asian'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010037"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0010038
+  title: 'Race: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other
+    Pacific Islander'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010038"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_some_other_race_p0010039
+  title: 'Race: Black or African American; American Indian and Alaska Native; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010039"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0010040
+  title: 'Race: Black or African American; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. Black or African American; Asian; Native Hawaiian and
+    Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010040"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_some_other_race_p0010041
+  title: 'Race: Black or African American; Asian; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010041"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0010042
+  title: 'Race: Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; Native Hawaiian and Other
+    Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010042"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0010043
+  title: 'Race: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Asian; Native Hawaiian
+    and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010043"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_some_other_race_p0010044
+  title: 'Race: American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Asian; Some Other
+    Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010044"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0010045
+  title: 'Race: American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other
+    Race'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Native Hawaiian and
+    Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010045"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010046
+  title: 'Race: Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. Asian; Native Hawaiian and Other Pacific Islander; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010046"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_four_races_p0010047
+  title: 'Race: Population of four races'
+  description: 'Race. Universe: Total population. Population of four races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010047"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_p0010048
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Asian'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010048"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0010049
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and
+    Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010049"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_some_other_race_p0010050
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Some Other Race'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010050"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0010051
+  title: 'Race: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010051"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_some_other_race_p0010052
+  title: 'Race: White; Black or African American; Asian; Some Other Race'
+  description: 'Race. Universe: Total population. White; Black or African American; Asian; Some Other
+    Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010052"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0010053
+  title: 'Race: White; Black or African American; Native Hawaiian and Other Pacific Islander; Some Other
+    Race'
+  description: 'Race. Universe: Total population. White; Black or African American; Native Hawaiian and
+    Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010053"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0010054
+  title: 'Race: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Asian; Native
+    Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010054"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_some_other_race_p0010055
+  title: 'Race: White; American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Asian; Some
+    Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010055"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0010056
+  title: 'Race: White; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Native Hawaiian
+    and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010056"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010057
+  title: 'Race: White; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. White; Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010057"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0010058
+  title: 'Race: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and
+    Other Pacific Islander'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010058"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0010059
+  title: 'Race: Black or African American; American Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010059"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0010060
+  title: 'Race: Black or African American; American Indian and Alaska Native; Native Hawaiian and Other
+    Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010060"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010061
+  title: 'Race: Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other
+    Race'
+  description: 'Race. Universe: Total population. Black or African American; Asian; Native Hawaiian and
+    Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010061"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010062
+  title: 'Race: American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native; Asian; Native Hawaiian
+    and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010062"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_five_races_p0010063
+  title: 'Race: Population of five races'
+  description: 'Race. Universe: Total population. Population of five races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010063"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0010064
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian
+    and Other Pacific Islander'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010064"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0010065
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Asian; Some Other
+    Race'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010065"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0010066
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Native Hawaiian and
+    Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010066"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010067
+  title: 'Race: White; Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some
+    Other Race'
+  description: 'Race. Universe: Total population. White; Black or African American; Asian; Native Hawaiian
+    and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010067"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010068
+  title: 'Race: White; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Race. Universe: Total population. White; American Indian and Alaska Native; Asian; Native
+    Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010068"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010069
+  title: 'Race: Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and
+    Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. Black or African American; American Indian and Alaska
+    Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010069"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_six_races_p0010070
+  title: 'Race: Population of six races'
+  description: 'Race. Universe: Total population. Population of six races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010070"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0010071
+  title: 'Race: White; Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian
+    and Other Pacific Islander; Some Other Race'
+  description: 'Race. Universe: Total population. White; Black or African American; American Indian and
+    Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0010071"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: total_p0020001
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Total'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Total.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020001"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: hispanic_or_latino_p0020002
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Hispanic or Latino'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Hispanic
+    or Latino.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020002"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: not_hispanic_or_latino_p0020003
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Not Hispanic or Latino'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Not
+    Hispanic or Latino.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020003"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_one_race_p0020004
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of one race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of one race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020004"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_alone_p0020005
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White
+    alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020005"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_alone_p0020006
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020006"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_alone_p0020007
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020007"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_alone_p0020008
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Asian alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Asian
+    alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020008"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: native_hawaiian_and_other_pacific_islander_alone_p0020009
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Native Hawaiian and Other Pacific Islander
+    alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Native
+    Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020009"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: some_other_race_alone_p0020010
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Some Other Race alone'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Some
+    Other Race alone.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020010"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_two_or_more_races_p0020011
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of two or more races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of two or more races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020011"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_two_races_p0020012
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of two races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of two races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020012"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_p0020013
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020013"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_p0020014
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020014"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_p0020015
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020015"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_native_hawaiian_and_other_pacific_islander_p0020016
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Native Hawaiian and Other Pacific
+    Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020016"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_some_other_race_p0020017
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020017"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_p0020018
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020018"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_p0020019
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020019"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_p0020020
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Native Hawaiian
+    and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020020"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_some_other_race_p0020021
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Some Other
+    Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020021"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_p0020022
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020022"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0020023
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Native
+    Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020023"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_some_other_race_p0020024
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Some
+    Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020024"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_native_hawaiian_and_other_pacific_islander_p0020025
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Asian; Native Hawaiian and Other Pacific
+    Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Asian;
+    Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020025"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_some_other_race_p0020026
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Asian;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020026"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: native_hawaiian_and_other_pacific_islander_some_other_race_p0020027
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Native Hawaiian and Other Pacific Islander;
+    Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Native
+    Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020027"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_three_races_p0020028
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of three races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of three races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020028"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_p0020029
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020029"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_p0020030
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020030"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_p0020031
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Native
+    Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020031"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_some_other_race_p0020032
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Some
+    Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020032"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_p0020033
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020033"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0020034
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020034"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_some_other_race_p0020035
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020035"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_native_hawaiian_and_other_pacific_islander_p0020036
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Asian; Native Hawaiian and Other
+    Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020036"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_some_other_race_p0020037
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020037"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_native_hawaiian_and_other_pacific_islander_some_other_race_p0020038
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Native Hawaiian and Other Pacific
+    Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020038"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_p0020039
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020039"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0020040
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020040"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_some_other_race_p0020041
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020041"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0020042
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Asian; Native
+    Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020042"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_some_other_race_p0020043
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Asian; Some
+    Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020043"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0020044
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Native Hawaiian
+    and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020044"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0020045
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Asian;
+    Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020045"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_some_other_race_p0020046
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Asian;
+    Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020046"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0020047
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Native
+    Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020047"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020048
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Asian; Native Hawaiian and Other Pacific
+    Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Asian;
+    Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020048"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_four_races_p0020049
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of four races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of four races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020049"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_p0020050
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Asian'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Asian.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020050"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_p0020051
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020051"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_some_other_race_p0020052
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020052"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_p0020053
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Asian;
+    Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020053"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_some_other_race_p0020054
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Asian;
+    Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020054"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_native_hawaiian_and_other_pacific_islander_some_other_race_p0020055
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Native
+    Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020055"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0020056
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020056"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_some_other_race_p0020057
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020057"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0020058
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020058"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020059
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Asian; Native Hawaiian and Other
+    Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020059"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0020060
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020060"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0020061
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020061"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0020062
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020062"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020063
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; Asian; Native
+    Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020063"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020064
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: American Indian and Alaska Native; Asian;
+    Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. American
+    Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020064"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_five_races_p0020065
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of five races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of five races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020065"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_p0020066
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific
+    Islander.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020066"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_some_other_race_p0020067
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Asian; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Asian; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020067"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_native_hawaiian_and_other_pacific_islander_some_other_race_p0020068
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020068"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020069
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; Asian;
+    Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020069"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020070
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; American Indian and Alaska Native;
+    Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020070"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020071
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Black or African American; American
+    Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Black
+    or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander;
+    Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020071"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: population_of_six_races_p0020072
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: Population of six races'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. Population
+    of six races.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020072"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+- name: white_black_or_african_american_american_indian_and_alaska_native_asian_native_hawaiian_and_other_pacific_islander_some_other_race_p0020073
+  title: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race: White; Black or African American; American
+    Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific Islander; Some Other Race'
+  description: 'Hispanic Or Latino, And Not Hispanic Or Latino By Race. Universe: Total population. White;
+    Black or African American; American Indian and Alaska Native; Asian; Native Hawaiian and Other Pacific
+    Islander; Some Other Race.'
+  sql: '"2020_REDISTRICTING_CBG_DATA"."P0020073"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population

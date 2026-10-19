@@ -1,0 +1,2099 @@
+name: working_parents_and_families_2020
+title: Employment of parents and workers in families (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: presence
+  of own children under 18 years by age of own children under 18 years by employment status for females
+  20 to 64 years; presence of own children under 18 years by family type by employment status; age of
+  own children under 18 years in families and subfamilies by living arrangements by employment status
+  of parents; presence of own children under 18 years by family type by number of workers in family.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B23"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B23"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_b23003e1
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: Total'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. Total.'
+  sql: '"2020_CBG_B23"."B23003e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m1"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e2
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years.'
+  sql: '"2020_CBG_B23"."B23003e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m2"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e3
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only.'
+  sql: '"2020_CBG_B23"."B23003e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m3"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e4
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only > In labor force.'
+  sql: '"2020_CBG_B23"."B23003e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m4"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e5
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only > In labor force > In Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only > In labor force > In Armed Forces.'
+  sql: '"2020_CBG_B23"."B23003e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m5"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e6
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only > In labor force > Civilian'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23003e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m6"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e7
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only > In labor force > Civilian > Employed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only > In labor force > Civilian > Employed.'
+  sql: '"2020_CBG_B23"."B23003e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m7"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e8
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only > In labor force > Civilian > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only > In labor force > Civilian > Unemployed.'
+  sql: '"2020_CBG_B23"."B23003e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m8"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e9
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    only > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years only > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23003e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m9"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e10
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years.'
+  sql: '"2020_CBG_B23"."B23003e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m10"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e11
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years > In labor force.'
+  sql: '"2020_CBG_B23"."B23003e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m11"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e12
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years > In labor force > In Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years > In labor force > In Armed Forces.'
+  sql: '"2020_CBG_B23"."B23003e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m12"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e13
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years > In labor force > Civilian'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23003e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m13"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e14
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years > In labor force > Civilian > Employed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years > In labor force > Civilian >
+    Employed.'
+  sql: '"2020_CBG_B23"."B23003e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m14"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e15
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years > In labor force > Civilian > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years > In labor force > Civilian >
+    Unemployed.'
+  sql: '"2020_CBG_B23"."B23003e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m15"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e16
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > Under 6 years
+    and 6 to 17 years > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > Under 6 years and 6 to 17 years > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23003e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m16"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e17
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only.'
+  sql: '"2020_CBG_B23"."B23003e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m17"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e18
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only > In labor force.'
+  sql: '"2020_CBG_B23"."B23003e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m18"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e19
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only > In labor force > In Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only > In labor force > In Armed Forces.'
+  sql: '"2020_CBG_B23"."B23003e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m19"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e20
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only > In labor force > Civilian'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23003e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m20"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e21
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only > In labor force > Civilian > Employed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only > In labor force > Civilian > Employed.'
+  sql: '"2020_CBG_B23"."B23003e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m21"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e22
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only > In labor force > Civilian > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only > In labor force > Civilian > Unemployed.'
+  sql: '"2020_CBG_B23"."B23003e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m22"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_with_own_children_of_the_b23003e23
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: With own children of the householder under 18 years > 6 to 17 years
+    only > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. With own children
+    of the householder under 18 years > 6 to 17 years only > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23003e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m23"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e24
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years.'
+  sql: '"2020_CBG_B23"."B23003e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m24"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e25
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years > In labor force.'
+  sql: '"2020_CBG_B23"."B23003e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m25"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e26
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years > In labor force
+    > In Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years > In labor force > In Armed Forces.'
+  sql: '"2020_CBG_B23"."B23003e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m26"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e27
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years > In labor force
+    > Civilian'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years > In labor force > Civilian.'
+  sql: '"2020_CBG_B23"."B23003e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m27"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e28
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years > In labor force
+    > Civilian > Employed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years > In labor force > Civilian > Employed.'
+  sql: '"2020_CBG_B23"."B23003e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m28"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e29
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years > In labor force
+    > Civilian > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years > In labor force > Civilian > Unemployed.'
+  sql: '"2020_CBG_B23"."B23003e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m29"'
+- name: presence_of_own_children_under_18_years_by_age_of_own_children_under_18_years_by_employment_status_for_females_20_to_64_years_no_own_children_of_the_h_b23003e30
+  title: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years: No own children of the householder under 18 years > Not in labor
+    force'
+  description: 'Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment
+    Status For Females 20 To 64 Years. Universe: Females 20 to 64 years in households. No own children
+    of the householder under 18 years > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23003e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Females 20 to 64 years in households
+    moe_sql: '"2020_CBG_B23"."B23003m30"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_b23007e1
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: Total'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    Total.'
+  sql: '"2020_CBG_B23"."B23007e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m1"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_b23007e2
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years.'
+  sql: '"2020_CBG_B23"."B23007e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m2"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_b23007e3
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family.'
+  sql: '"2020_CBG_B23"."B23007e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m3"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e4
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force.'
+  sql: '"2020_CBG_B23"."B23007e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m4"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e5
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed
+    Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m5"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e6
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed
+    Forces > Wife in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife in labor force.'
+  sql: '"2020_CBG_B23"."B23007e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m6"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e7
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed
+    Forces > Wife in labor force > Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife in labor force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m7"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e8
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed
+    Forces > Wife in labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m8"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e9
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed
+    Forces > Wife not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m9"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e10
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m10"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e11
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife in
+    labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife in labor force.'
+  sql: '"2020_CBG_B23"."B23007e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m11"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e12
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife in
+    labor force > Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife in labor force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m12"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e13
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife in
+    labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m13"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e14
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife not
+    in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m14"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e15
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m15"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e16
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband not in labor force
+    > Wife in labor force.'
+  sql: '"2020_CBG_B23"."B23007e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m16"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e17
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife in labor force
+    > Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband not in labor force
+    > Wife in labor force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m17"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e18
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife in labor force
+    > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband not in labor force
+    > Wife in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m18"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_opposite_sex_married_couple_family_husban_b23007e19
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife not in labor
+    force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Opposite-sex married-couple family > Husband not in labor force
+    > Wife not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m19"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_b23007e20
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family.'
+  sql: '"2020_CBG_B23"."B23007e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m20"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_male_householder_no_spouse_p_b23007e21
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Male householder no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Male householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23007e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m21"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_male_householder_no_spouse_p_b23007e22
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Male householder no spouse present > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Male householder no spouse present > In labor force.'
+  sql: '"2020_CBG_B23"."B23007e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m22"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_male_householder_no_spouse_p_b23007e23
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Male householder no spouse present > In labor force > Employed or
+    in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Male householder no spouse present > In labor force
+    > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m23"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_male_householder_no_spouse_p_b23007e24
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Male householder no spouse present > In labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Male householder no spouse present > In labor force
+    > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m24"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_male_householder_no_spouse_p_b23007e25
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Male householder no spouse present > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Male householder no spouse present > Not in labor
+    force.'
+  sql: '"2020_CBG_B23"."B23007e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m25"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_female_householder_no_spouse_b23007e26
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Female householder no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Female householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23007e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m26"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_female_householder_no_spouse_b23007e27
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Female householder no spouse present > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Female householder no spouse present > In labor
+    force.'
+  sql: '"2020_CBG_B23"."B23007e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m27"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_female_householder_no_spouse_b23007e28
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Female householder no spouse present > In labor force > Employed or
+    in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Female householder no spouse present > In labor
+    force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m28"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_female_householder_no_spouse_b23007e29
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Female householder no spouse present > In labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Female householder no spouse present > In labor
+    force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m29"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_with_own_children_under_18_years_other_family_female_householder_no_spouse_b23007e30
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: With own children
+    under 18 years > Other family > Female householder no spouse present > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    With own children under 18 years > Other family > Female householder no spouse present > Not in labor
+    force.'
+  sql: '"2020_CBG_B23"."B23007e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m30"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_b23007e31
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years.'
+  sql: '"2020_CBG_B23"."B23007e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m31"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_b23007e32
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family.'
+  sql: '"2020_CBG_B23"."B23007e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m32"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e33
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force.'
+  sql: '"2020_CBG_B23"."B23007e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m33"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e34
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m34"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e35
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed Forces
+    > Wife in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife in labor force.'
+  sql: '"2020_CBG_B23"."B23007e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m35"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e36
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed Forces
+    > Wife in labor force > Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife in labor force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m36"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e37
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed Forces
+    > Wife in labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m37"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e38
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Employed or in Armed Forces
+    > Wife not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Employed
+    or in Armed Forces > Wife not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m38"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e39
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m39"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e40
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife in labor
+    force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife in labor force.'
+  sql: '"2020_CBG_B23"."B23007e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m40"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e41
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife in labor
+    force > Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife in labor force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m41"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e42
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife in labor
+    force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m42"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_in_l_b23007e43
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed > Wife not in
+    labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband in labor force > Unemployed
+    > Wife not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m43"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_not__b23007e44
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e44"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m44"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_not__b23007e45
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband not in labor force > Wife in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife
+    in labor force.'
+  sql: '"2020_CBG_B23"."B23007e45"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m45"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_not__b23007e46
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband not in labor force > Wife in labor force >
+    Employed or in Armed Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife
+    in labor force > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e46"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m46"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_not__b23007e47
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband not in labor force > Wife in labor force >
+    Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife
+    in labor force > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e47"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m47"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_opposite_sex_married_couple_family_husband_not__b23007e48
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Opposite-sex married-couple family > Husband not in labor force > Wife not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Opposite-sex married-couple family > Husband not in labor force > Wife
+    not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e48"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m48"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_b23007e49
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family.'
+  sql: '"2020_CBG_B23"."B23007e49"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m49"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_male_householder_no_spouse_present_b23007e50
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Male householder no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Male householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23007e50"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m50"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_male_householder_no_spouse_present_b23007e51
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Male householder no spouse present > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Male householder no spouse present > In labor force.'
+  sql: '"2020_CBG_B23"."B23007e51"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m51"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_male_householder_no_spouse_present_b23007e52
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Male householder no spouse present > In labor force > Employed or in Armed
+    Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Male householder no spouse present > In labor force >
+    Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e52"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m52"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_male_householder_no_spouse_present_b23007e53
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Male householder no spouse present > In labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Male householder no spouse present > In labor force >
+    Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e53"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m53"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_male_householder_no_spouse_present_b23007e54
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Male householder no spouse present > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Male householder no spouse present > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e54"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m54"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_female_householder_no_spouse_prese_b23007e55
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Female householder no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Female householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23007e55"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m55"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_female_householder_no_spouse_prese_b23007e56
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Female householder no spouse present > In labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Female householder no spouse present > In labor force.'
+  sql: '"2020_CBG_B23"."B23007e56"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m56"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_female_householder_no_spouse_prese_b23007e57
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Female householder no spouse present > In labor force > Employed or in Armed
+    Forces'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Female householder no spouse present > In labor force
+    > Employed or in Armed Forces.'
+  sql: '"2020_CBG_B23"."B23007e57"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m57"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_female_householder_no_spouse_prese_b23007e58
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Female householder no spouse present > In labor force > Unemployed'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Female householder no spouse present > In labor force
+    > Unemployed.'
+  sql: '"2020_CBG_B23"."B23007e58"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m58"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_employment_status_no_children_under_18_years_other_family_female_householder_no_spouse_prese_b23007e59
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status: No children under
+    18 years > Other family > Female householder no spouse present > Not in labor force'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Employment Status. Universe:
+    Opposite-sex married-couple families and families maintained by women and men with no spouse present.
+    No children under 18 years > Other family > Female householder no spouse present > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23007e59"'
+  type: sum
+  format: number
+  meta:
+    universe: Opposite-sex married-couple families and families maintained by women and men with no spouse
+      present
+    moe_sql: '"2020_CBG_B23"."B23007m59"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_b23008e1
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Total'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Total.'
+  sql: '"2020_CBG_B23"."B23008e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m1"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_b23008e2
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years.'
+  sql: '"2020_CBG_B23"."B23008e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m2"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_two_pa_b23008e3
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with two parents'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with two parents.'
+  sql: '"2020_CBG_B23"."B23008e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m3"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_two_pa_b23008e4
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with two parents > Both parents in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with two parents > Both parents in labor force.'
+  sql: '"2020_CBG_B23"."B23008e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m4"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_two_pa_b23008e5
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with two parents > Father only in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with two parents > Father only in labor force.'
+  sql: '"2020_CBG_B23"."B23008e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m5"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_two_pa_b23008e6
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with two parents > Mother only in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with two parents > Mother only in labor force.'
+  sql: '"2020_CBG_B23"."B23008e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m6"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_two_pa_b23008e7
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with two parents > Neither parent in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with two parents > Neither parent in labor force.'
+  sql: '"2020_CBG_B23"."B23008e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m7"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e8
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent.'
+  sql: '"2020_CBG_B23"."B23008e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m8"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e9
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent > Living with father'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent > Living with father.'
+  sql: '"2020_CBG_B23"."B23008e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m9"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e10
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent > Living with father > In labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent > Living with father > In labor force.'
+  sql: '"2020_CBG_B23"."B23008e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m10"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e11
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent > Living with father > Not in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent > Living with father > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23008e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m11"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e12
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent > Living with mother'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent > Living with mother.'
+  sql: '"2020_CBG_B23"."B23008e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m12"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e13
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent > Living with mother > In labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent > Living with mother > In labor force.'
+  sql: '"2020_CBG_B23"."B23008e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m13"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_under_6_years_living_with_one_pa_b23008e14
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: Under 6 years > Living with one parent > Living with mother > Not in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    Under 6 years > Living with one parent > Living with mother > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23008e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m14"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_b23008e15
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years.'
+  sql: '"2020_CBG_B23"."B23008e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m15"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_two_pa_b23008e16
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with two parents'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with two parents.'
+  sql: '"2020_CBG_B23"."B23008e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m16"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_two_pa_b23008e17
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with two parents > Both parents in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with two parents > Both parents in labor force.'
+  sql: '"2020_CBG_B23"."B23008e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m17"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_two_pa_b23008e18
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with two parents > Father only in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with two parents > Father only in labor force.'
+  sql: '"2020_CBG_B23"."B23008e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m18"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_two_pa_b23008e19
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with two parents > Mother only in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with two parents > Mother only in labor force.'
+  sql: '"2020_CBG_B23"."B23008e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m19"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_two_pa_b23008e20
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with two parents > Neither parent in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with two parents > Neither parent in labor force.'
+  sql: '"2020_CBG_B23"."B23008e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m20"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e21
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent.'
+  sql: '"2020_CBG_B23"."B23008e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m21"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e22
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent > Living with father'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent > Living with father.'
+  sql: '"2020_CBG_B23"."B23008e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m22"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e23
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent > Living with father > In labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent > Living with father > In labor force.'
+  sql: '"2020_CBG_B23"."B23008e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m23"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e24
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent > Living with father > Not in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent > Living with father > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23008e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m24"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e25
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent > Living with mother'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent > Living with mother.'
+  sql: '"2020_CBG_B23"."B23008e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m25"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e26
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent > Living with mother > In labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent > Living with mother > In labor force.'
+  sql: '"2020_CBG_B23"."B23008e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m26"'
+- name: age_of_own_children_under_18_years_in_families_and_subfamilies_by_living_arrangements_by_employment_status_of_parents_6_to_17_years_living_with_one_pa_b23008e27
+  title: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment
+    Status Of Parents: 6 to 17 years > Living with one parent > Living with mother > Not in labor force'
+  description: 'Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements
+    By Employment Status Of Parents. Universe: Own children under 18 years in families and subfamilies.
+    6 to 17 years > Living with one parent > Living with mother > Not in labor force.'
+  sql: '"2020_CBG_B23"."B23008e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Own children under 18 years in families and subfamilies
+    moe_sql: '"2020_CBG_B23"."B23008m27"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_b23009e1
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: Total'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. Total.'
+  sql: '"2020_CBG_B23"."B23009e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m1"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e2
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years.'
+  sql: '"2020_CBG_B23"."B23009e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m2"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e3
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family.'
+  sql: '"2020_CBG_B23"."B23009e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m3"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e4
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > No workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > No workers.'
+  sql: '"2020_CBG_B23"."B23009e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m4"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e5
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 1 worker'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 1 worker.'
+  sql: '"2020_CBG_B23"."B23009e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m5"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e6
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 2 workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 2 workers.'
+  sql: '"2020_CBG_B23"."B23009e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m6"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e7
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 2 workers
+    > Both spouses worked'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 2 workers > Both spouses worked.'
+  sql: '"2020_CBG_B23"."B23009e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m7"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e8
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 2 workers
+    > Other'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 2 workers > Other.'
+  sql: '"2020_CBG_B23"."B23009e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m8"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e9
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 3 or
+    more workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 3 or more workers.'
+  sql: '"2020_CBG_B23"."B23009e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m9"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e10
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 3 or
+    more workers > Both spouses worked'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 3 or more workers > Both spouses worked.'
+  sql: '"2020_CBG_B23"."B23009e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m10"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e11
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Married-couple family > 3 or
+    more workers > Other'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Married-couple
+    family > 3 or more workers > Other.'
+  sql: '"2020_CBG_B23"."B23009e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m11"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e12
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family.'
+  sql: '"2020_CBG_B23"."B23009e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m12"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e13
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Male householder
+    no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Male householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23009e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m13"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e14
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Male householder
+    no spouse present > No workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Male householder no spouse present > No workers.'
+  sql: '"2020_CBG_B23"."B23009e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m14"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e15
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Male householder
+    no spouse present > 1 worker'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Male householder no spouse present > 1 worker.'
+  sql: '"2020_CBG_B23"."B23009e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m15"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e16
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Male householder
+    no spouse present > 2 workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Male householder no spouse present > 2 workers.'
+  sql: '"2020_CBG_B23"."B23009e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m16"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e17
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Male householder
+    no spouse present > 3 or more workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Male householder no spouse present > 3 or more workers.'
+  sql: '"2020_CBG_B23"."B23009e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m17"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e18
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Female householder
+    no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Female householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23009e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m18"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e19
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Female householder
+    no spouse present > No workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Female householder no spouse present > No workers.'
+  sql: '"2020_CBG_B23"."B23009e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m19"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e20
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Female householder
+    no spouse present > 1 worker'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Female householder no spouse present > 1 worker.'
+  sql: '"2020_CBG_B23"."B23009e20"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m20"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e21
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Female householder
+    no spouse present > 2 workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Female householder no spouse present > 2 workers.'
+  sql: '"2020_CBG_B23"."B23009e21"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m21"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_with_own_children_of_the_householder_under_b23009e22
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: With own children of the householder under 18 years > Other family > Female householder
+    no spouse present > 3 or more workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. With own children of the householder under 18 years > Other
+    family > Female householder no spouse present > 3 or more workers.'
+  sql: '"2020_CBG_B23"."B23009e22"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m22"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e23
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years.'
+  sql: '"2020_CBG_B23"."B23009e23"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m23"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e24
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family.'
+  sql: '"2020_CBG_B23"."B23009e24"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m24"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e25
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > No workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > No workers.'
+  sql: '"2020_CBG_B23"."B23009e25"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m25"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e26
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 1 worker'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 1 worker.'
+  sql: '"2020_CBG_B23"."B23009e26"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m26"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e27
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 2 workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 2 workers.'
+  sql: '"2020_CBG_B23"."B23009e27"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m27"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e28
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 2 workers
+    > Both spouses worked'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 2 workers > Both spouses worked.'
+  sql: '"2020_CBG_B23"."B23009e28"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m28"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e29
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 2 workers
+    > Other'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 2 workers > Other.'
+  sql: '"2020_CBG_B23"."B23009e29"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m29"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e30
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 3 or more
+    workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 3 or more workers.'
+  sql: '"2020_CBG_B23"."B23009e30"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m30"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e31
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 3 or more
+    workers > Both spouses worked'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 3 or more workers > Both spouses worked.'
+  sql: '"2020_CBG_B23"."B23009e31"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m31"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e32
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Married-couple family > 3 or more
+    workers > Other'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Married-couple
+    family > 3 or more workers > Other.'
+  sql: '"2020_CBG_B23"."B23009e32"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m32"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e33
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family.'
+  sql: '"2020_CBG_B23"."B23009e33"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m33"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e34
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Male householder
+    no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Male householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23009e34"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m34"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e35
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Male householder
+    no spouse present > No workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Male householder no spouse present > No workers.'
+  sql: '"2020_CBG_B23"."B23009e35"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m35"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e36
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Male householder
+    no spouse present > 1 worker'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Male householder no spouse present > 1 worker.'
+  sql: '"2020_CBG_B23"."B23009e36"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m36"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e37
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Male householder
+    no spouse present > 2 workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Male householder no spouse present > 2 workers.'
+  sql: '"2020_CBG_B23"."B23009e37"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m37"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e38
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Male householder
+    no spouse present > 3 or more workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Male householder no spouse present > 3 or more workers.'
+  sql: '"2020_CBG_B23"."B23009e38"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m38"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e39
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Female householder
+    no spouse present'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Female householder no spouse present.'
+  sql: '"2020_CBG_B23"."B23009e39"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m39"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e40
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Female householder
+    no spouse present > No workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Female householder no spouse present > No workers.'
+  sql: '"2020_CBG_B23"."B23009e40"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m40"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e41
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Female householder
+    no spouse present > 1 worker'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Female householder no spouse present > 1 worker.'
+  sql: '"2020_CBG_B23"."B23009e41"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m41"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e42
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Female householder
+    no spouse present > 2 workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Female householder no spouse present > 2 workers.'
+  sql: '"2020_CBG_B23"."B23009e42"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m42"'
+- name: presence_of_own_children_under_18_years_by_family_type_by_number_of_workers_in_family_in_the_past_12_months_no_own_children_of_the_householder_under_1_b23009e43
+  title: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The
+    Past 12 Months: No own children of the householder under 18 years > Other family > Female householder
+    no spouse present > 3 or more workers'
+  description: 'Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family
+    In The Past 12 Months. Universe: Families. No own children of the householder under 18 years > Other
+    family > Female householder no spouse present > 3 or more workers.'
+  sql: '"2020_CBG_B23"."B23009e43"'
+  type: sum
+  format: number
+  meta:
+    universe: Families
+    moe_sql: '"2020_CBG_B23"."B23009m43"'

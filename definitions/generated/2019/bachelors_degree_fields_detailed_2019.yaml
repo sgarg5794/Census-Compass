@@ -1,0 +1,672 @@
+name: bachelors_degree_fields_detailed_2019
+title: Field of bachelor's degree, by sex and age (2019)
+description: 'ACS 5-year estimates, survey answers collected 2015–2019, for each Census block group: sex
+  by age by field of bachelor''s degree for first major for the population 25 years and over; total fields
+  of bachelor''s degrees reported.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2019_CBG_B15"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2019_CBG_B15"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_b15011e1
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Total'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total.'
+  sql: '"2019_CBG_B15"."B15011e1"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m1"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_b15011e2
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male.'
+  sql: '"2019_CBG_B15"."B15011e2"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m2"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_25_to_39_years_b15011e3
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 25 to 39 years'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 25 to 39 years.'
+  sql: '"2019_CBG_B15"."B15011e3"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m3"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_25_to_39_years_science_and_engineering_b15011e4
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 25 to 39 years > Science and Engineering'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 25 to 39 years > Science and Engineering.'
+  sql: '"2019_CBG_B15"."B15011e4"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m4"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_25_to_39_years_science_and_engineering_related_fiel_b15011e5
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 25 to 39 years > Science and Engineering Related Fields'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 25 to 39 years > Science and Engineering Related Fields.'
+  sql: '"2019_CBG_B15"."B15011e5"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m5"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_25_to_39_years_business_b15011e6
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 25 to 39 years > Business'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 25 to 39 years > Business.'
+  sql: '"2019_CBG_B15"."B15011e6"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m6"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_25_to_39_years_education_b15011e7
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 25 to 39 years > Education'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 25 to 39 years > Education.'
+  sql: '"2019_CBG_B15"."B15011e7"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m7"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_25_to_39_years_arts_humanities_and_other_b15011e8
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 25 to 39 years > Arts Humanities and Other'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 25 to 39 years > Arts Humanities and Other.'
+  sql: '"2019_CBG_B15"."B15011e8"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m8"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_40_to_64_years_b15011e9
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 40 to 64 years'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 40 to 64 years.'
+  sql: '"2019_CBG_B15"."B15011e9"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m9"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_40_to_64_years_science_and_engineering_b15011e10
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 40 to 64 years > Science and Engineering'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 40 to 64 years > Science and Engineering.'
+  sql: '"2019_CBG_B15"."B15011e10"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m10"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_40_to_64_years_science_and_engineering_related_fiel_b15011e11
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 40 to 64 years > Science and Engineering Related Fields'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 40 to 64 years > Science and Engineering Related Fields.'
+  sql: '"2019_CBG_B15"."B15011e11"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m11"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_40_to_64_years_business_b15011e12
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 40 to 64 years > Business'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 40 to 64 years > Business.'
+  sql: '"2019_CBG_B15"."B15011e12"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m12"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_40_to_64_years_education_b15011e13
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 40 to 64 years > Education'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 40 to 64 years > Education.'
+  sql: '"2019_CBG_B15"."B15011e13"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m13"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_40_to_64_years_arts_humanities_and_other_b15011e14
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 40 to 64 years > Arts Humanities and Other'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 40 to 64 years > Arts Humanities and Other.'
+  sql: '"2019_CBG_B15"."B15011e14"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m14"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_65_years_and_over_b15011e15
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 65 years and over'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 65 years and over.'
+  sql: '"2019_CBG_B15"."B15011e15"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m15"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_65_years_and_over_science_and_engineering_b15011e16
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 65 years and over > Science and Engineering'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 65 years and over > Science and Engineering.'
+  sql: '"2019_CBG_B15"."B15011e16"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m16"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_65_years_and_over_science_and_engineering_related_f_b15011e17
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 65 years and over > Science and Engineering Related Fields'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 65 years and over > Science and Engineering Related Fields.'
+  sql: '"2019_CBG_B15"."B15011e17"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m17"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_65_years_and_over_business_b15011e18
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 65 years and over > Business'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 65 years and over > Business.'
+  sql: '"2019_CBG_B15"."B15011e18"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m18"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_65_years_and_over_education_b15011e19
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 65 years and over > Education'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 65 years and over > Education.'
+  sql: '"2019_CBG_B15"."B15011e19"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m19"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_male_65_years_and_over_arts_humanities_and_other_b15011e20
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Male > 65 years and over > Arts Humanities and Other'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Male
+    > 65 years and over > Arts Humanities and Other.'
+  sql: '"2019_CBG_B15"."B15011e20"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m20"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_b15011e21
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female.'
+  sql: '"2019_CBG_B15"."B15011e21"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m21"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_25_to_39_years_b15011e22
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 25 to 39 years'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 25 to 39 years.'
+  sql: '"2019_CBG_B15"."B15011e22"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m22"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_25_to_39_years_science_and_engineering_b15011e23
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 25 to 39 years > Science and Engineering'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 25 to 39 years > Science and Engineering.'
+  sql: '"2019_CBG_B15"."B15011e23"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m23"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_25_to_39_years_science_and_engineering_related_fi_b15011e24
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 25 to 39 years > Science and Engineering Related Fields'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 25 to 39 years > Science and Engineering Related Fields.'
+  sql: '"2019_CBG_B15"."B15011e24"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m24"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_25_to_39_years_business_b15011e25
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 25 to 39 years > Business'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 25 to 39 years > Business.'
+  sql: '"2019_CBG_B15"."B15011e25"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m25"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_25_to_39_years_education_b15011e26
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 25 to 39 years > Education'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 25 to 39 years > Education.'
+  sql: '"2019_CBG_B15"."B15011e26"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m26"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_25_to_39_years_arts_humanities_and_other_b15011e27
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 25 to 39 years > Arts Humanities and Other'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 25 to 39 years > Arts Humanities and Other.'
+  sql: '"2019_CBG_B15"."B15011e27"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m27"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_40_to_64_years_b15011e28
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 40 to 64 years'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 40 to 64 years.'
+  sql: '"2019_CBG_B15"."B15011e28"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m28"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_40_to_64_years_science_and_engineering_b15011e29
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 40 to 64 years > Science and Engineering'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 40 to 64 years > Science and Engineering.'
+  sql: '"2019_CBG_B15"."B15011e29"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m29"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_40_to_64_years_science_and_engineering_related_fi_b15011e30
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 40 to 64 years > Science and Engineering Related Fields'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 40 to 64 years > Science and Engineering Related Fields.'
+  sql: '"2019_CBG_B15"."B15011e30"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m30"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_40_to_64_years_business_b15011e31
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 40 to 64 years > Business'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 40 to 64 years > Business.'
+  sql: '"2019_CBG_B15"."B15011e31"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m31"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_40_to_64_years_education_b15011e32
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 40 to 64 years > Education'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 40 to 64 years > Education.'
+  sql: '"2019_CBG_B15"."B15011e32"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m32"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_40_to_64_years_arts_humanities_and_other_b15011e33
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 40 to 64 years > Arts Humanities and Other'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 40 to 64 years > Arts Humanities and Other.'
+  sql: '"2019_CBG_B15"."B15011e33"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m33"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_65_years_and_over_b15011e34
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 65 years and over'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 65 years and over.'
+  sql: '"2019_CBG_B15"."B15011e34"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m34"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_65_years_and_over_science_and_engineering_b15011e35
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 65 years and over > Science and Engineering'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 65 years and over > Science and Engineering.'
+  sql: '"2019_CBG_B15"."B15011e35"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m35"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_65_years_and_over_science_and_engineering_related_b15011e36
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 65 years and over > Science and Engineering Related Fields'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 65 years and over > Science and Engineering Related Fields.'
+  sql: '"2019_CBG_B15"."B15011e36"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m36"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_65_years_and_over_business_b15011e37
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 65 years and over > Business'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 65 years and over > Business.'
+  sql: '"2019_CBG_B15"."B15011e37"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m37"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_65_years_and_over_education_b15011e38
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 65 years and over > Education'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 65 years and over > Education.'
+  sql: '"2019_CBG_B15"."B15011e38"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m38"'
+- name: sex_by_age_by_field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_female_65_years_and_over_arts_humanities_and_other_b15011e39
+  title: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over:
+    Female > 65 years and over > Arts Humanities and Other'
+  description: 'Sex By Age By Field Of Bachelor''s Degree For First Major For The Population 25 Years
+    And Over. Universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Female
+    > 65 years and over > Arts Humanities and Other.'
+  sql: '"2019_CBG_B15"."B15011e39"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15011m39"'
+- name: total_fields_of_bachelor_s_degrees_reported_b15012e1
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Total'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total.'
+  sql: '"2019_CBG_B15"."B15012e1"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m1"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_computers_mathematics_and_statistics_b15012e2
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Computers Mathematics
+    and Statistics'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Computers Mathematics and Statistics.'
+  sql: '"2019_CBG_B15"."B15012e2"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m2"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_biological_agricultural_and_environmental_sciences_b15012e3
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Biological Agricultural
+    and Environmental Sciences'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Biological Agricultural and Environmental Sciences.'
+  sql: '"2019_CBG_B15"."B15012e3"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m3"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_physical_and_related_sciences_b15012e4
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Physical and Related
+    Sciences'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Physical and Related Sciences.'
+  sql: '"2019_CBG_B15"."B15012e4"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m4"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_psychology_b15012e5
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Psychology'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Psychology.'
+  sql: '"2019_CBG_B15"."B15012e5"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m5"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_social_sciences_b15012e6
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Social Sciences'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Social Sciences.'
+  sql: '"2019_CBG_B15"."B15012e6"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m6"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_engineering_b15012e7
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Engineering'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Engineering.'
+  sql: '"2019_CBG_B15"."B15012e7"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m7"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_multidisciplinary_studies_b15012e8
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering > Multidisciplinary Studies'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    > Multidisciplinary Studies.'
+  sql: '"2019_CBG_B15"."B15012e8"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m8"'
+- name: total_fields_of_bachelor_s_degrees_reported_science_and_engineering_related_fields_b15012e9
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Science and Engineering Related Fields'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    Related Fields.'
+  sql: '"2019_CBG_B15"."B15012e9"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m9"'
+- name: total_fields_of_bachelor_s_degrees_reported_business_b15012e10
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Business'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Business.'
+  sql: '"2019_CBG_B15"."B15012e10"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m10"'
+- name: total_fields_of_bachelor_s_degrees_reported_education_b15012e11
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Education'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Education.'
+  sql: '"2019_CBG_B15"."B15012e11"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m11"'
+- name: total_fields_of_bachelor_s_degrees_reported_arts_humanities_and_other_literature_and_languages_b15012e12
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Arts Humanities and Other > Literature and Languages'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities
+    and Other > Literature and Languages.'
+  sql: '"2019_CBG_B15"."B15012e12"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m12"'
+- name: total_fields_of_bachelor_s_degrees_reported_arts_humanities_and_other_liberal_arts_and_history_b15012e13
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Arts Humanities and Other > Liberal Arts and History'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities
+    and Other > Liberal Arts and History.'
+  sql: '"2019_CBG_B15"."B15012e13"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m13"'
+- name: total_fields_of_bachelor_s_degrees_reported_arts_humanities_and_other_visual_and_performing_arts_b15012e14
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Arts Humanities and Other > Visual and Performing
+    Arts'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities
+    and Other > Visual and Performing Arts.'
+  sql: '"2019_CBG_B15"."B15012e14"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m14"'
+- name: total_fields_of_bachelor_s_degrees_reported_arts_humanities_and_other_communications_b15012e15
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Arts Humanities and Other > Communications'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities
+    and Other > Communications.'
+  sql: '"2019_CBG_B15"."B15012e15"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m15"'
+- name: total_fields_of_bachelor_s_degrees_reported_arts_humanities_and_other_other_b15012e16
+  title: 'Total Fields Of Bachelor''s Degrees Reported: Arts Humanities and Other > Other'
+  description: 'Total Fields Of Bachelor''s Degrees Reported. Universe: TOTAL BACHELOR''S DEGREE MAJORS
+    TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities
+    and Other > Other.'
+  sql: '"2019_CBG_B15"."B15012e16"'
+  type: sum
+  format: number
+  meta:
+    universe: TOTAL BACHELOR'S DEGREE MAJORS TALLIED FOR PEOPLE 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2019_CBG_B15"."B15012m16"'

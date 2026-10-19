@@ -1,0 +1,830 @@
+name: bachelors_degree_field_2020
+title: Field of bachelor's degree (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: field
+  of bachelor''s degree for first major for the population 25 years and over. Some of these are also given
+  by race and Hispanic origin.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_C15"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_C15"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_c15010e1
+  title: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over: Total'
+  description: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over. Universe:
+    POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total.'
+  sql: '"2020_CBG_C15"."C15010e1"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010m1"'
+- name: field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_science_and_engineering_c15010e2
+  title: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over: Science and
+    Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over. Universe:
+    POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering.'
+  sql: '"2020_CBG_C15"."C15010e2"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010m2"'
+- name: field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_science_and_engineering_related_fields_c15010e3
+  title: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over: Science and
+    Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over. Universe:
+    POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering
+    Related Fields.'
+  sql: '"2020_CBG_C15"."C15010e3"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010m3"'
+- name: field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_business_c15010e4
+  title: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over: Business'
+  description: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over. Universe:
+    POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Business.'
+  sql: '"2020_CBG_C15"."C15010e4"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010m4"'
+- name: field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_education_c15010e5
+  title: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over: Education'
+  description: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over. Universe:
+    POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Education.'
+  sql: '"2020_CBG_C15"."C15010e5"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010m5"'
+- name: field_of_bachelor_s_degree_for_first_major_for_the_population_25_years_and_over_arts_humanities_and_other_c15010e6
+  title: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over: Arts Humanities
+    and Other'
+  description: 'Field Of Bachelor''s Degree For First Major For The Population 25 Years And Over. Universe:
+    POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities and Other.'
+  sql: '"2020_CBG_C15"."C15010e6"'
+  type: sum
+  format: number
+  meta:
+    universe: POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010m6"'
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_c15010ae1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone):
+    Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone).
+    Universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Total (White alone; also called White).'
+  sql: '"2020_CBG_C15"."C15010Ae1"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Am1"'
+    population_group: A
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_science_and_engineering_c15010ae2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone):
+    Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone).
+    Universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Science and Engineering (White alone; also called White).'
+  sql: '"2020_CBG_C15"."C15010Ae2"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Am2"'
+    population_group: A
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_science_and_engineering_related_fields_c15010ae3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone):
+    Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone).
+    Universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Science and Engineering Related Fields (White alone; also called White).'
+  sql: '"2020_CBG_C15"."C15010Ae3"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Am3"'
+    population_group: A
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_business_c15010ae4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone):
+    Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone).
+    Universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Business (White alone; also called White).'
+  sql: '"2020_CBG_C15"."C15010Ae4"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Am4"'
+    population_group: A
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_education_c15010ae5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone):
+    Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone).
+    Universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Education (White alone; also called White).'
+  sql: '"2020_CBG_C15"."C15010Ae5"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Am5"'
+    population_group: A
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_arts_humanities_and_other_c15010ae6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone):
+    Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone).
+    Universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Arts Humanities and Other (White alone; also called White).'
+  sql: '"2020_CBG_C15"."C15010Ae6"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Am6"'
+    population_group: A
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_black_or_african_american_alone_c15010be1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or African
+    American Alone): Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or
+    African American Alone). Universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH
+    A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total (Black or African American alone; also called Black,
+    African American).'
+  sql: '"2020_CBG_C15"."C15010Be1"'
+  type: sum
+  format: number
+  meta:
+    universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR
+      HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Bm1"'
+    population_group: B
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_black_or_african_american_alone_science_and_engineering_c15010be2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or African
+    American Alone): Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or
+    African American Alone). Universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH
+    A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering (Black or African American alone;
+    also called Black, African American).'
+  sql: '"2020_CBG_C15"."C15010Be2"'
+  type: sum
+  format: number
+  meta:
+    universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR
+      HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Bm2"'
+    population_group: B
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_black_or_african_american_alone_science_and_engineering_related_fields_c15010be3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or African
+    American Alone): Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or
+    African American Alone). Universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH
+    A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering Related Fields (Black or African
+    American alone; also called Black, African American).'
+  sql: '"2020_CBG_C15"."C15010Be3"'
+  type: sum
+  format: number
+  meta:
+    universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR
+      HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Bm3"'
+    population_group: B
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_black_or_african_american_alone_business_c15010be4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or African
+    American Alone): Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or
+    African American Alone). Universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH
+    A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Business (Black or African American alone; also called
+    Black, African American).'
+  sql: '"2020_CBG_C15"."C15010Be4"'
+  type: sum
+  format: number
+  meta:
+    universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR
+      HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Bm4"'
+    population_group: B
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_black_or_african_american_alone_education_c15010be5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or African
+    American Alone): Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or
+    African American Alone). Universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH
+    A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Education (Black or African American alone; also called
+    Black, African American).'
+  sql: '"2020_CBG_C15"."C15010Be5"'
+  type: sum
+  format: number
+  meta:
+    universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR
+      HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Bm5"'
+    population_group: B
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_black_or_african_american_alone_arts_humanities_and_other_c15010be6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or African
+    American Alone): Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Black Or
+    African American Alone). Universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH
+    A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities and Other (Black or African American alone;
+    also called Black, African American).'
+  sql: '"2020_CBG_C15"."C15010Be6"'
+  type: sum
+  format: number
+  meta:
+    universe: BLACK OR AFRICAN AMERICAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR
+      HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Bm6"'
+    population_group: B
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_american_indian_and_alaska_native_alone_c15010ce1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American Indian
+    And Alaska Native Alone): Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American
+    Indian And Alaska Native Alone). Universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS
+    AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total (American Indian and Alaska Native
+    alone; also called Native American).'
+  sql: '"2020_CBG_C15"."C15010Ce1"'
+  type: sum
+  format: number
+  meta:
+    universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Cm1"'
+    population_group: C
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_american_indian_and_alaska_native_alone_science_and_engineering_c15010ce2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American Indian
+    And Alaska Native Alone): Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American
+    Indian And Alaska Native Alone). Universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS
+    AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering (American Indian
+    and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_C15"."C15010Ce2"'
+  type: sum
+  format: number
+  meta:
+    universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Cm2"'
+    population_group: C
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_american_indian_and_alaska_native_alone_science_and_engineering_related_fi_c15010ce3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American Indian
+    And Alaska Native Alone): Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American
+    Indian And Alaska Native Alone). Universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS
+    AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering Related Fields (American
+    Indian and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_C15"."C15010Ce3"'
+  type: sum
+  format: number
+  meta:
+    universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Cm3"'
+    population_group: C
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_american_indian_and_alaska_native_alone_business_c15010ce4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American Indian
+    And Alaska Native Alone): Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American
+    Indian And Alaska Native Alone). Universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS
+    AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Business (American Indian and Alaska Native
+    alone; also called Native American).'
+  sql: '"2020_CBG_C15"."C15010Ce4"'
+  type: sum
+  format: number
+  meta:
+    universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Cm4"'
+    population_group: C
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_american_indian_and_alaska_native_alone_education_c15010ce5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American Indian
+    And Alaska Native Alone): Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American
+    Indian And Alaska Native Alone). Universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS
+    AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Education (American Indian and Alaska Native
+    alone; also called Native American).'
+  sql: '"2020_CBG_C15"."C15010Ce5"'
+  type: sum
+  format: number
+  meta:
+    universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Cm5"'
+    population_group: C
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_american_indian_and_alaska_native_alone_arts_humanities_and_other_c15010ce6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American Indian
+    And Alaska Native Alone): Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (American
+    Indian And Alaska Native Alone). Universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS
+    AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities and Other (American Indian
+    and Alaska Native alone; also called Native American).'
+  sql: '"2020_CBG_C15"."C15010Ce6"'
+  type: sum
+  format: number
+  meta:
+    universe: AMERICAN INDIAN AND ALASKA NATIVE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Cm6"'
+    population_group: C
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_asian_alone_c15010de1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone):
+    Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone).
+    Universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Total (Asian alone; also called Asian).'
+  sql: '"2020_CBG_C15"."C15010De1"'
+  type: sum
+  format: number
+  meta:
+    universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Dm1"'
+    population_group: D
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_asian_alone_science_and_engineering_c15010de2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone):
+    Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone).
+    Universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Science and Engineering (Asian alone; also called Asian).'
+  sql: '"2020_CBG_C15"."C15010De2"'
+  type: sum
+  format: number
+  meta:
+    universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Dm2"'
+    population_group: D
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_asian_alone_science_and_engineering_related_fields_c15010de3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone):
+    Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone).
+    Universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Science and Engineering Related Fields (Asian alone; also called Asian).'
+  sql: '"2020_CBG_C15"."C15010De3"'
+  type: sum
+  format: number
+  meta:
+    universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Dm3"'
+    population_group: D
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_asian_alone_business_c15010de4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone):
+    Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone).
+    Universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Business (Asian alone; also called Asian).'
+  sql: '"2020_CBG_C15"."C15010De4"'
+  type: sum
+  format: number
+  meta:
+    universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Dm4"'
+    population_group: D
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_asian_alone_education_c15010de5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone):
+    Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone).
+    Universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Education (Asian alone; also called Asian).'
+  sql: '"2020_CBG_C15"."C15010De5"'
+  type: sum
+  format: number
+  meta:
+    universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Dm5"'
+    population_group: D
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_asian_alone_arts_humanities_and_other_c15010de6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone):
+    Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Asian Alone).
+    Universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT.
+    Arts Humanities and Other (Asian alone; also called Asian).'
+  sql: '"2020_CBG_C15"."C15010De6"'
+  type: sum
+  format: number
+  meta:
+    universe: ASIAN ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Dm6"'
+    population_group: D
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_native_hawaiian_and_other_pacific_islander_alone_c15010ee1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone): Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian And Other Pacific Islander Alone POPULATION
+    25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total (Native Hawaiian and Other
+    Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_C15"."C15010Ee1"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian And Other Pacific Islander Alone POPULATION 25 YEARS AND OVER WITH A BACHELOR'S
+      DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Em1"'
+    population_group: E
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_native_hawaiian_and_other_pacific_islander_alone_science_and_engineering_c15010ee2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone): Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian And Other Pacific Islander Alone POPULATION
+    25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering (Native
+    Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_C15"."C15010Ee2"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian And Other Pacific Islander Alone POPULATION 25 YEARS AND OVER WITH A BACHELOR'S
+      DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Em2"'
+    population_group: E
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_native_hawaiian_and_other_pacific_islander_alone_science_and_engineering_r_c15010ee3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone): Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian And Other Pacific Islander Alone POPULATION
+    25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering Related
+    Fields (Native Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_C15"."C15010Ee3"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian And Other Pacific Islander Alone POPULATION 25 YEARS AND OVER WITH A BACHELOR'S
+      DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Em3"'
+    population_group: E
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_native_hawaiian_and_other_pacific_islander_alone_business_c15010ee4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone): Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian And Other Pacific Islander Alone POPULATION
+    25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Business (Native Hawaiian and Other
+    Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_C15"."C15010Ee4"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian And Other Pacific Islander Alone POPULATION 25 YEARS AND OVER WITH A BACHELOR'S
+      DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Em4"'
+    population_group: E
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_native_hawaiian_and_other_pacific_islander_alone_education_c15010ee5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone): Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian And Other Pacific Islander Alone POPULATION
+    25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Education (Native Hawaiian and Other
+    Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_C15"."C15010Ee5"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian And Other Pacific Islander Alone POPULATION 25 YEARS AND OVER WITH A BACHELOR'S
+      DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Em5"'
+    population_group: E
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_native_hawaiian_and_other_pacific_islander_alone_arts_humanities_and_other_c15010ee6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone): Arts, Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Native Hawaiian
+    And Other Pacific Islander Alone). Universe: Native Hawaiian And Other Pacific Islander Alone POPULATION
+    25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts, Humanities and Other (Native
+    Hawaiian and Other Pacific Islander alone; also called Pacific Islander, Native Hawaiian).'
+  sql: '"2020_CBG_C15"."C15010Ee6"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian And Other Pacific Islander Alone POPULATION 25 YEARS AND OVER WITH A BACHELOR'S
+      DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Em6"'
+    population_group: E
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_some_other_race_alone_c15010fe1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other Race
+    Alone): Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other
+    Race Alone). Universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE
+    OR HIGHER ATTAINMENT. Total (Some other race alone).'
+  sql: '"2020_CBG_C15"."C15010Fe1"'
+  type: sum
+  format: number
+  meta:
+    universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Fm1"'
+    population_group: F
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_some_other_race_alone_science_and_engineering_c15010fe2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other Race
+    Alone): Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other
+    Race Alone). Universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE
+    OR HIGHER ATTAINMENT. Science and Engineering (Some other race alone).'
+  sql: '"2020_CBG_C15"."C15010Fe2"'
+  type: sum
+  format: number
+  meta:
+    universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Fm2"'
+    population_group: F
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_some_other_race_alone_science_and_engineering_related_fields_c15010fe3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other Race
+    Alone): Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other
+    Race Alone). Universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE
+    OR HIGHER ATTAINMENT. Science and Engineering Related Fields (Some other race alone).'
+  sql: '"2020_CBG_C15"."C15010Fe3"'
+  type: sum
+  format: number
+  meta:
+    universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Fm3"'
+    population_group: F
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_some_other_race_alone_business_c15010fe4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other Race
+    Alone): Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other
+    Race Alone). Universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE
+    OR HIGHER ATTAINMENT. Business (Some other race alone).'
+  sql: '"2020_CBG_C15"."C15010Fe4"'
+  type: sum
+  format: number
+  meta:
+    universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Fm4"'
+    population_group: F
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_some_other_race_alone_education_c15010fe5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other Race
+    Alone): Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other
+    Race Alone). Universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE
+    OR HIGHER ATTAINMENT. Education (Some other race alone).'
+  sql: '"2020_CBG_C15"."C15010Fe5"'
+  type: sum
+  format: number
+  meta:
+    universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Fm5"'
+    population_group: F
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_some_other_race_alone_arts_humanities_and_other_c15010fe6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other Race
+    Alone): Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Some Other
+    Race Alone). Universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE
+    OR HIGHER ATTAINMENT. Arts Humanities and Other (Some other race alone).'
+  sql: '"2020_CBG_C15"."C15010Fe6"'
+  type: sum
+  format: number
+  meta:
+    universe: SOME OTHER RACE ALONE POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Fm6"'
+    population_group: F
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_two_or_more_races_c15010ge1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More Races):
+    Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More
+    Races). Universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER
+    ATTAINMENT. Total (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_C15"."C15010Ge1"'
+  type: sum
+  format: number
+  meta:
+    universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Gm1"'
+    population_group: G
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_two_or_more_races_science_and_engineering_c15010ge2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More Races):
+    Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More
+    Races). Universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER
+    ATTAINMENT. Science and Engineering (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_C15"."C15010Ge2"'
+  type: sum
+  format: number
+  meta:
+    universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Gm2"'
+    population_group: G
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_two_or_more_races_science_and_engineering_related_fields_c15010ge3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More Races):
+    Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More
+    Races). Universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER
+    ATTAINMENT. Science and Engineering Related Fields (Two or more races; also called multiracial, mixed
+    race).'
+  sql: '"2020_CBG_C15"."C15010Ge3"'
+  type: sum
+  format: number
+  meta:
+    universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Gm3"'
+    population_group: G
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_two_or_more_races_business_c15010ge4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More Races):
+    Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More
+    Races). Universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER
+    ATTAINMENT. Business (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_C15"."C15010Ge4"'
+  type: sum
+  format: number
+  meta:
+    universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Gm4"'
+    population_group: G
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_two_or_more_races_education_c15010ge5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More Races):
+    Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More
+    Races). Universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER
+    ATTAINMENT. Education (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_C15"."C15010Ge5"'
+  type: sum
+  format: number
+  meta:
+    universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Gm5"'
+    population_group: G
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_two_or_more_races_arts_humanities_and_other_c15010ge6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More Races):
+    Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Two Or More
+    Races). Universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR HIGHER
+    ATTAINMENT. Arts Humanities and Other (Two or more races; also called multiracial, mixed race).'
+  sql: '"2020_CBG_C15"."C15010Ge6"'
+  type: sum
+  format: number
+  meta:
+    universe: TWO OR MORE RACES POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Gm6"'
+    population_group: G
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_not_hispanic_or_latino_c15010he1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone, Not
+    Hispanic Or Latino): Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone,
+    Not Hispanic Or Latino). Universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER
+    WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Total (White alone, not Hispanic or Latino; also called
+    non-Hispanic White).'
+  sql: '"2020_CBG_C15"."C15010He1"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Hm1"'
+    population_group: H
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_not_hispanic_or_latino_science_and_engineering_c15010he2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone, Not
+    Hispanic Or Latino): Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone,
+    Not Hispanic Or Latino). Universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER
+    WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering (White alone, not Hispanic
+    or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_C15"."C15010He2"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Hm2"'
+    population_group: H
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_not_hispanic_or_latino_science_and_engineering_related_fields_c15010he3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone, Not
+    Hispanic Or Latino): Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone,
+    Not Hispanic Or Latino). Universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER
+    WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Science and Engineering Related Fields (White alone,
+    not Hispanic or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_C15"."C15010He3"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Hm3"'
+    population_group: H
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_not_hispanic_or_latino_business_c15010he4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone, Not
+    Hispanic Or Latino): Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone,
+    Not Hispanic Or Latino). Universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER
+    WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Business (White alone, not Hispanic or Latino; also
+    called non-Hispanic White).'
+  sql: '"2020_CBG_C15"."C15010He4"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Hm4"'
+    population_group: H
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_not_hispanic_or_latino_education_c15010he5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone, Not
+    Hispanic Or Latino): Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone,
+    Not Hispanic Or Latino). Universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER
+    WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Education (White alone, not Hispanic or Latino; also
+    called non-Hispanic White).'
+  sql: '"2020_CBG_C15"."C15010He5"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Hm5"'
+    population_group: H
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_white_alone_not_hispanic_or_latino_arts_humanities_and_other_c15010he6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone, Not
+    Hispanic Or Latino): Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (White Alone,
+    Not Hispanic Or Latino). Universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER
+    WITH A BACHELOR''S DEGREE OR HIGHER ATTAINMENT. Arts Humanities and Other (White alone, not Hispanic
+    or Latino; also called non-Hispanic White).'
+  sql: '"2020_CBG_C15"."C15010He6"'
+  type: sum
+  format: number
+  meta:
+    universe: WHITE ALONE, NOT HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE
+      OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Hm6"'
+    population_group: H
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_hispanic_or_latino_c15010ie1
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic Or Latino):
+    Total'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic
+    Or Latino). Universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR
+    HIGHER ATTAINMENT. Total (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_C15"."C15010Ie1"'
+  type: sum
+  format: number
+  meta:
+    universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Im1"'
+    population_group: I
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_hispanic_or_latino_science_and_engineering_c15010ie2
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic Or Latino):
+    Science and Engineering'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic
+    Or Latino). Universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR
+    HIGHER ATTAINMENT. Science and Engineering (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_C15"."C15010Ie2"'
+  type: sum
+  format: number
+  meta:
+    universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Im2"'
+    population_group: I
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_hispanic_or_latino_science_and_engineering_related_fields_c15010ie3
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic Or Latino):
+    Science and Engineering Related Fields'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic
+    Or Latino). Universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR
+    HIGHER ATTAINMENT. Science and Engineering Related Fields (Hispanic or Latino; also called Hispanic,
+    Latino, Latinx).'
+  sql: '"2020_CBG_C15"."C15010Ie3"'
+  type: sum
+  format: number
+  meta:
+    universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Im3"'
+    population_group: I
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_hispanic_or_latino_business_c15010ie4
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic Or Latino):
+    Business'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic
+    Or Latino). Universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR
+    HIGHER ATTAINMENT. Business (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_C15"."C15010Ie4"'
+  type: sum
+  format: number
+  meta:
+    universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Im4"'
+    population_group: I
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_hispanic_or_latino_education_c15010ie5
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic Or Latino):
+    Education'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic
+    Or Latino). Universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR
+    HIGHER ATTAINMENT. Education (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_C15"."C15010Ie5"'
+  type: sum
+  format: number
+  meta:
+    universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Im5"'
+    population_group: I
+- name: field_of_bachelor_s_degree_for_first_major_the_population_25_years_and_over_hispanic_or_latino_arts_humanities_and_other_c15010ie6
+  title: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic Or Latino):
+    Arts Humanities and Other'
+  description: 'Field Of Bachelor''s Degree For First Major The Population 25 Years And Over (Hispanic
+    Or Latino). Universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR''S DEGREE OR
+    HIGHER ATTAINMENT. Arts Humanities and Other (Hispanic or Latino; also called Hispanic, Latino, Latinx).'
+  sql: '"2020_CBG_C15"."C15010Ie6"'
+  type: sum
+  format: number
+  meta:
+    universe: HISPANIC OR LATINO POPULATION 25 YEARS AND OVER WITH A BACHELOR'S DEGREE OR HIGHER ATTAINMENT
+    moe_sql: '"2020_CBG_C15"."C15010Im6"'
+    population_group: I

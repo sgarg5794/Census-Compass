@@ -1,0 +1,211 @@
+name: marital_status_2020
+title: Marital status (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: sex
+  by marital status for the population 15 years and over.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B12"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B12"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: sex_by_marital_status_for_the_population_15_years_and_over_b12001e1
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Total'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Total.'
+  sql: '"2020_CBG_B12"."B12001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m1"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_b12001e2
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male.'
+  sql: '"2020_CBG_B12"."B12001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m2"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_never_married_b12001e3
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Never married'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Never married.'
+  sql: '"2020_CBG_B12"."B12001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m3"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_b12001e4
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Now married'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Now married.'
+  sql: '"2020_CBG_B12"."B12001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m4"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_present_b12001e5
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Now married > Married spouse
+    present'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Now married > Married spouse present.'
+  sql: '"2020_CBG_B12"."B12001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m5"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_absent_b12001e6
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Now married > Married spouse
+    absent'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Now married > Married spouse absent.'
+  sql: '"2020_CBG_B12"."B12001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m6"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_absent_separated_b12001e7
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Now married > Married spouse
+    absent > Separated'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Now married > Married spouse absent > Separated.'
+  sql: '"2020_CBG_B12"."B12001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m7"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_now_married_married_spouse_absent_other_b12001e8
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Now married > Married spouse
+    absent > Other'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Now married > Married spouse absent > Other.'
+  sql: '"2020_CBG_B12"."B12001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m8"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_widowed_b12001e9
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Widowed'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Widowed.'
+  sql: '"2020_CBG_B12"."B12001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m9"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_male_divorced_b12001e10
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Male > Divorced'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Male > Divorced.'
+  sql: '"2020_CBG_B12"."B12001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m10"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_b12001e11
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female.'
+  sql: '"2020_CBG_B12"."B12001e11"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m11"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_never_married_b12001e12
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Never married'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Never married.'
+  sql: '"2020_CBG_B12"."B12001e12"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m12"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_b12001e13
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Now married'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Now married.'
+  sql: '"2020_CBG_B12"."B12001e13"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m13"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_present_b12001e14
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Now married > Married spouse
+    present'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Now married > Married spouse present.'
+  sql: '"2020_CBG_B12"."B12001e14"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m14"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_absent_b12001e15
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Now married > Married spouse
+    absent'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Now married > Married spouse absent.'
+  sql: '"2020_CBG_B12"."B12001e15"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m15"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_absent_separated_b12001e16
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Now married > Married spouse
+    absent > Separated'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Now married > Married spouse absent > Separated.'
+  sql: '"2020_CBG_B12"."B12001e16"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m16"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_now_married_married_spouse_absent_other_b12001e17
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Now married > Married spouse
+    absent > Other'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Now married > Married spouse absent > Other.'
+  sql: '"2020_CBG_B12"."B12001e17"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m17"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_widowed_b12001e18
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Widowed'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Widowed.'
+  sql: '"2020_CBG_B12"."B12001e18"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m18"'
+- name: sex_by_marital_status_for_the_population_15_years_and_over_female_divorced_b12001e19
+  title: 'Sex By Marital Status For The Population 15 Years And Over: Female > Divorced'
+  description: 'Sex By Marital Status For The Population 15 Years And Over. Universe: Population 15 years
+    and over. Female > Divorced.'
+  sql: '"2020_CBG_B12"."B12001e19"'
+  type: sum
+  format: number
+  meta:
+    universe: Population 15 years and over
+    moe_sql: '"2020_CBG_B12"."B12001m19"'

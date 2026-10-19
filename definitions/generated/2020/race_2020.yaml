@@ -1,0 +1,173 @@
+name: race_2020
+title: Race (2020)
+description: 'ACS 5-year estimates, survey answers collected 2016–2020, for each Census block group: race;
+  White alone or in combination with one or more other races; Black or African American alone or in combination
+  with one or more other races; American Indian and Alaska Native alone or in combination with one or
+  more other races; Asian alone or in combination with one or more other races; Native Hawaiian and other
+  Pacific Islander alone or in combination with one or more other races; some other race alone or in combination
+  with one or more other races.'
+sql_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B02"'
+dimensions:
+- name: census_block_group
+  title: Census block group
+  description: Census block group identifier; one row per block group.
+  sql: '"2020_CBG_B02"."CENSUS_BLOCK_GROUP"'
+  type: string
+  primary_key: true
+measures:
+- name: race_b02001e1
+  title: 'Race: Total'
+  description: 'Race. Universe: Total population. Total.'
+  sql: '"2020_CBG_B02"."B02001e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m1"'
+- name: race_white_alone_b02001e2
+  title: 'Race: White alone'
+  description: 'Race. Universe: Total population. White alone.'
+  sql: '"2020_CBG_B02"."B02001e2"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m2"'
+- name: race_black_or_african_american_alone_b02001e3
+  title: 'Race: Black or African American alone'
+  description: 'Race. Universe: Total population. Black or African American alone.'
+  sql: '"2020_CBG_B02"."B02001e3"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m3"'
+- name: race_american_indian_and_alaska_native_alone_b02001e4
+  title: 'Race: American Indian and Alaska Native alone'
+  description: 'Race. Universe: Total population. American Indian and Alaska Native alone.'
+  sql: '"2020_CBG_B02"."B02001e4"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m4"'
+- name: race_asian_alone_b02001e5
+  title: 'Race: Asian alone'
+  description: 'Race. Universe: Total population. Asian alone.'
+  sql: '"2020_CBG_B02"."B02001e5"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m5"'
+- name: race_native_hawaiian_and_other_pacific_islander_alone_b02001e6
+  title: 'Race: Native Hawaiian and Other Pacific Islander alone'
+  description: 'Race. Universe: Total population. Native Hawaiian and Other Pacific Islander alone.'
+  sql: '"2020_CBG_B02"."B02001e6"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m6"'
+- name: race_some_other_race_alone_b02001e7
+  title: 'Race: Some other race alone'
+  description: 'Race. Universe: Total population. Some other race alone.'
+  sql: '"2020_CBG_B02"."B02001e7"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m7"'
+- name: race_two_or_more_races_b02001e8
+  title: 'Race: Two or more races'
+  description: 'Race. Universe: Total population. Two or more races.'
+  sql: '"2020_CBG_B02"."B02001e8"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m8"'
+- name: race_two_or_more_races_two_races_including_some_other_race_b02001e9
+  title: 'Race: Two or more races > Two races including Some other race'
+  description: 'Race. Universe: Total population. Two or more races > Two races including Some other race.'
+  sql: '"2020_CBG_B02"."B02001e9"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m9"'
+- name: race_two_or_more_races_two_races_excluding_some_other_race_and_three_or_more_races_b02001e10
+  title: 'Race: Two or more races > Two races excluding Some other race and three or more races'
+  description: 'Race. Universe: Total population. Two or more races > Two races excluding Some other race
+    and three or more races.'
+  sql: '"2020_CBG_B02"."B02001e10"'
+  type: sum
+  format: number
+  meta:
+    universe: Total population
+    moe_sql: '"2020_CBG_B02"."B02001m10"'
+- name: white_alone_or_in_combination_with_one_or_more_other_races_b02008e1
+  title: 'White Alone Or In Combination With One Or More Other Races: Total'
+  description: 'White Alone Or In Combination With One Or More Other Races. Universe: White alone or in
+    combination with one or more other races. Total.'
+  sql: '"2020_CBG_B02"."B02008e1"'
+  type: sum
+  format: number
+  meta:
+    universe: White alone or in combination with one or more other races
+    moe_sql: '"2020_CBG_B02"."B02008m1"'
+- name: black_or_african_american_alone_or_in_combination_with_one_or_more_other_races_b02009e1
+  title: 'Black Or African American Alone Or In Combination With One Or More Other Races: Total'
+  description: 'Black Or African American Alone Or In Combination With One Or More Other Races. Universe:
+    Black or African American alone or in combination with one or more other races. Total.'
+  sql: '"2020_CBG_B02"."B02009e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Black or African American alone or in combination with one or more other races
+    moe_sql: '"2020_CBG_B02"."B02009m1"'
+- name: american_indian_and_alaska_native_alone_or_in_combination_with_one_or_more_other_races_b02010e1
+  title: 'American Indian And Alaska Native Alone Or In Combination With One Or More Other Races: Total'
+  description: 'American Indian And Alaska Native Alone Or In Combination With One Or More Other Races.
+    Universe: People who are American Indian or Alaska Native alone or in combination with one or more
+    other races. Total.'
+  sql: '"2020_CBG_B02"."B02010e1"'
+  type: sum
+  format: number
+  meta:
+    universe: People who are American Indian or Alaska Native alone or in combination with one or more
+      other races
+    moe_sql: '"2020_CBG_B02"."B02010m1"'
+- name: asian_alone_or_in_combination_with_one_or_more_other_races_b02011e1
+  title: 'Asian Alone Or In Combination With One Or More Other Races: Total'
+  description: 'Asian Alone Or In Combination With One Or More Other Races. Universe: Asian alone or in
+    combination with one or more other races. Total.'
+  sql: '"2020_CBG_B02"."B02011e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Asian alone or in combination with one or more other races
+    moe_sql: '"2020_CBG_B02"."B02011m1"'
+- name: native_hawaiian_and_other_pacific_islander_alone_or_in_combination_with_one_or_more_other_races_b02012e1
+  title: 'Native Hawaiian And Other Pacific Islander Alone Or In Combination With One Or More Other Races:
+    Total'
+  description: 'Native Hawaiian And Other Pacific Islander Alone Or In Combination With One Or More Other
+    Races. Universe: Native Hawaiian and Other Pacific Islander alone or in combination with one or more
+    other races. Total.'
+  sql: '"2020_CBG_B02"."B02012e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Native Hawaiian and Other Pacific Islander alone or in combination with one or more other
+      races
+    moe_sql: '"2020_CBG_B02"."B02012m1"'
+- name: some_other_race_alone_or_in_combination_with_one_or_more_other_races_b02013e1
+  title: 'Some Other Race Alone Or In Combination With One Or More Other Races: Total'
+  description: 'Some Other Race Alone Or In Combination With One Or More Other Races. Universe: Some other
+    race alone or in combination with one or more other races. Total.'
+  sql: '"2020_CBG_B02"."B02013e1"'
+  type: sum
+  format: number
+  meta:
+    universe: Some other race alone or in combination with one or more other races
+    moe_sql: '"2020_CBG_B02"."B02013m1"'
