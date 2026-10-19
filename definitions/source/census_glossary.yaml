@@ -1,0 +1,413 @@
+- term: "Median"
+  aliases: ["medians", "middle value"]
+  definition: "The median is the middle value in an ordered list of data values, or the average of the two middle values when there is an even number of values. It divides the distribution into two equal parts, with half of the cases falling below the median and half above it. In data.census.gov, a median that falls in the open-ended top category is shown with a plus sign, and one that falls in the open-ended lowest category is shown with a minus sign."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 141
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Mean"
+  aliases: ["means", "average", "averages"]
+  definition: "The mean is the arithmetic average of a set of values. It is found by dividing the sum (the aggregate) of the values by the number of values in the group. For example, mean household earnings is the aggregate of all earnings reported by individuals with earnings living in households, divided by the total number of households with earnings."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "139-140"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Aggregate"
+  aliases: ["aggregates"]
+  definition: "An aggregate is the sum of the values for each of the elements in the universe. For example, aggregate household income is the sum of the incomes of all households in a given geographic area. Means are found by dividing an aggregate by the appropriate universe. Aggregates for many dollar subjects, such as gross rent and income, are rounded to the nearest hundred dollars to protect the confidentiality of responses."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 140
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Margin of error"
+  aliases: ["margins of error", "MOE", "MOEs"]
+  definition: "The margin of error (MOE) is the amount added to and subtracted from an estimate to get its 90 percent confidence interval. For example, an estimate of 61,393,366 with a margin of error of 202,289 has a 90 percent confidence interval of 61,191,077 to 61,595,655. The margin of error can also be used to calculate the standard error and the coefficient of variation of an estimate."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 8"
+    page: 66
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+- term: "Confidence level"
+  aliases: ["confidence levels", "90 percent confidence", "90% confidence", "90 percent confidence interval"]
+  definition: "The margin of error is used to build a 90 percent confidence interval around an ACS estimate. To get the interval, the margin of error is added to and subtracted from the estimate to find the upper and lower bounds. For example, an estimate of 61,393,366 with a margin of error of 202,289 has a 90 percent confidence interval of 61,191,077 to 61,595,655."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 8"
+    page: 66
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+- term: "Confidence interval"
+  aliases: ["confidence intervals", "range of uncertainty", "ranges of uncertainty"]
+  definition: "A confidence interval is a range of uncertainty around an estimate. For example, the 2018 1-year estimate of the child poverty rate in Bay County, Michigan, had a confidence interval from 23.5 percent to 36.9 percent, a range of 13 percentage points. The interval for the 2014–2018 5-year estimate was narrower, from 22.7 percent to 27.7 percent, or 5 percentage points."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 3"
+    page: 13
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+- term: "Standard error"
+  aliases: ["standard errors", "SE", "SEs"]
+  definition: "The standard error (SE) of an estimate can be calculated from its margin of error by dividing the margin of error by 1.645. For example, a margin of error of ±3,860 gives a standard error of 2,347. Standard errors of component estimates are used to calculate the standard error of a derived estimate."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 8"
+    page: 60
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+- term: "Coefficient of variation"
+  aliases: ["coefficients of variation", "CV", "CVs"]
+  definition: "The coefficient of variation (CV) is the standard error divided by the estimate, multiplied by 100 and expressed as a percent. A lower CV means the standard error is small relative to the estimate. For example, combining two income categories lowered the CV from 30 percent for one category alone to 18 percent for the combined estimate."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 8"
+    page: 63
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+- term: "Estimate"
+  aliases: ["estimates", "ACS estimate", "ACS estimates", "period estimate", "period estimates"]
+  definition: "Single-year and multiyear estimates from the ACS are all \"period\" estimates, derived from a sample collected over a period of time. This is different from the \"point-in-time\" estimates of past decennial censuses, such as the 2000 Census long form, which sampled the resident population as of April 1, 2000. Uncertainty around an estimate is shown by a confidence interval, a range of uncertainty around it."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 3"
+    page: 13
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+- term: "American Community Survey"
+  aliases: ["ACS", "American Community Survey data"]
+  definition: "Each year the Census Bureau publishes American Community Survey (ACS) 1-year estimates for geographic areas with populations of 65,000 or more. For areas with smaller populations, the ACS samples too few housing units for reliable single-year estimates, so several years of data are pooled to create more precise multiyear estimates. Since 2010, the ACS has published 5-year data for all geographic areas down to the census tract and block group levels."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 3"
+    page: 13
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+- term: "5-year estimates"
+  aliases: ["5-year estimate", "5-year data", "5-year ACS", "multiyear estimates", "multiyear estimate"]
+  definition: "An ACS 5-year estimate includes data collected over a 60-month period. For example, the 2014–2018 estimates cover January 2014 through December 2018, and should be labeled with the full period rather than a single year such as 2016. The main advantage of multiyear estimates is increased statistical reliability compared with single-year estimates, particularly for small geographic areas and small population subgroups. Consecutive 5-year estimates share 4 years of data."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 3"
+    page: 13
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+- term: "1-year estimates"
+  aliases: ["1-year estimate", "1-year data", "single-year estimates", "single-year estimate"]
+  definition: "An ACS 1-year estimate includes information collected over a 12-month period, which is the calendar year. For example, the 2018 ACS covers January 2018 through December 2018. Standard 1-year estimates are published for geographic areas with populations of 65,000 or more, and less populous areas receive only 5-year estimates."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 3"
+    page: 13
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+- term: "1-year versus 5-year estimates"
+  aliases: ["1-year vs 5-year", "1-year or 5-year", "difference between 1-year and 5-year", "which estimate to use"]
+  definition: "The 1-year estimates for an area reflect the most current data, but they have larger margins of error than the 5-year estimates because they are based on a smaller sample. The 5-year estimates have larger samples and smaller margins of error, but they are less current because the larger samples include data collected in earlier years. For areas with fewer than 65,000 residents, 5-year estimates are the only option for detailed data."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 3"
+    page: 15
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+- term: "Overlapping 5-year estimates"
+  aliases: ["overlapping estimates", "compare 5-year estimates", "comparing 5-year estimates"]
+  definition: "Consecutive 5-year estimates share most of their data. For example, the 2013–2017 and 2014–2018 estimates both include data collected from 2014 through 2017, so a comparison between them is unlikely to show much difference. The Census Bureau suggests comparing 5-year estimates that do not overlap, such as 2009–2013 with 2014–2018."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 4"
+    page: "17-18"
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch04.pdf"
+- term: "Decennial Census"
+  aliases: ["decennial censuses", "2020 Census", "2010 Census"]
+  definition: "The 2010 Census and 2020 Census were short-form-only censuses, so they do not include all of the detailed social, economic, and housing data available from previous censuses. Valid comparisons can be made between ACS estimates and basic characteristics from these censuses, including age, sex, race, Hispanic origin, household relationship, and homeowner status. For basic counts of the population between censuses, the Census Bureau encourages use of its official population estimates."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 4"
+    page: 19
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch04.pdf"
+- term: "Universe"
+  aliases: ["universes", "base reference total"]
+  definition: "A universe is the base reference total against which all other characteristics are compared. When comparing ACS data with the 2000 Census, differences in residence rules, universes, and reference periods between the two surveys should be considered."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 4"
+    page: 18
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch04.pdf"
+- term: "Inflation-adjusted dollars"
+  aliases: ["inflation adjustment", "inflation-adjusted", "adjusted for inflation"]
+  definition: "ACS multiyear estimates with dollar values are adjusted for inflation to the final year of the period. For example, the 2014–2018 ACS 5-year estimates are tabulated using dollars adjusted to 2018. To compare dollar data across years, such as the most recent year with the 2010 ACS, data users need to adjust the earlier data for inflation using a national-level consumer price index. Inflation adjustment does not account for differences in costs of living across geographic areas."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 4"
+    page: 19
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch04.pdf"
+- term: "Response rate"
+  aliases: ["response rates", "survey response rate"]
+  definition: "The survey response rate is the ratio of the estimate of units interviewed after data collection is complete to the estimate of all units that should have been interviewed. Separate rates are calculated for housing unit response and group quarters person response. Interviews include complete and partial interviews with enough information to be processed."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 144
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Rate"
+  aliases: ["rates"]
+  definition: "A rate is a measure of occurrences in a given period of time divided by the possible number of occurrences during that period. For example, the homeowner vacancy rate is calculated by dividing the number of vacant units \"for sale only\" by the sum of owner-occupied units and vacant units that are \"for sale only,\" and then multiplying by 100. Rates are sometimes presented as percentages."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 142
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Ratio"
+  aliases: ["ratios"]
+  definition: "A ratio is a measure of the relative size of one number to a second number, expressed as the quotient of the first number divided by the second. For example, the sex ratio is calculated by dividing the total number of males by the total number of females and then multiplying by 100."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 142
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Group quarters"
+  aliases: ["group quarter", "GQ", "GQs"]
+  definition: "A group quarters is a place where people live or stay in a group living arrangement that is owned or managed by an organization providing housing and/or services for the residents. Group quarters include college residence halls, residential treatment centers, skilled nursing facilities, group homes, military barracks, correctional facilities, workers' dormitories, and facilities for people experiencing homelessness. People living in group quarters usually are not related to each other, and this is not a typical household-type living arrangement."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 8
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Housing unit"
+  aliases: ["housing units"]
+  definition: "A housing unit may be a house, an apartment, a mobile home, a group of rooms, or a single room that is occupied (or, if vacant, intended for occupancy) as separate living quarters. Separate living quarters are those in which the occupants live separately from any other individuals in the building and which have direct access from outside the building or through a common hall."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 7
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Occupied housing unit"
+  aliases: ["occupied housing units", "occupied unit", "occupied units"]
+  definition: "A housing unit is classified as occupied if it is the current place of residence of the people living in it at the time of interview, or if the occupants are only temporarily absent for two months or less. If all the people staying in the unit are staying there for two months or less, the unit is considered temporarily occupied and is classified as vacant."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 7
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Vacant housing unit"
+  aliases: ["vacant housing units", "vacant unit", "vacant units"]
+  definition: "A housing unit is vacant if no one is living in it at the time of interview. Units occupied entirely by people who are staying two months or less and who have a more permanent residence elsewhere are classified as vacant. New units not yet occupied are classified as vacant once construction has reached the point where all exterior windows and doors are installed and final usable floors are in place."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 8
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Household"
+  aliases: ["households"]
+  definition: "A household includes all the people who occupy a housing unit. People not living in households are classified as living in group quarters. The occupants may be a single family, one person living alone, two or more families living together, or any other group of related or unrelated people who share living arrangements."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 80
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Household size"
+  aliases: ["average household size"]
+  definition: "Household size counts all the people occupying an occupied housing unit, including the householder, occupants related to the householder, and roommates, housemates, and so forth. Average household size is obtained by dividing the number of people living in occupied housing units by the total number of occupied housing units. It is rounded to the nearest hundredth."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 22
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Family"
+  aliases: ["families", "family household", "family households"]
+  definition: "A family consists of a householder and one or more other people living in the same household who are related to the householder by birth, marriage, or adoption. All people in a household who are related to the householder are regarded as members of his or her family. People in the household who are not related to the householder are not part of the householder's family in tabulations. Not all households contain families, since a household may be a group of unrelated people or one person living alone, which are called nonfamily households."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "82-83"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Householder"
+  aliases: ["householders"]
+  definition: "One person in each household is designated as the householder. In most cases this is the person, or one of the people, in whose name the home is owned, being bought, or rented and who is listed on line one of the survey questionnaire. If there is no such person, any adult household member 15 years old and over could be designated as the householder. A family householder lives with one or more people related to him or her by birth, marriage, or adoption, while a nonfamily householder lives alone or with non-relatives only."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "80-81"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Tenure"
+  aliases: ["housing tenure"]
+  definition: "Tenure is a measurement of home ownership, collected for occupied housing units. Occupied housing units are classified as either owner-occupied or renter-occupied."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 40
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Owner-occupied housing unit"
+  aliases: ["owner-occupied", "owner-occupied housing units", "owner-occupied units", "owner-occupied unit"]
+  definition: "A housing unit is owner-occupied if the owner or co-owner lives in the unit, even if it is mortgaged or not fully paid for. The owner or co-owner must live in the unit and usually is Person 1 on the questionnaire. A unit is owned with a mortgage if it is being purchased with a mortgage or other debt arrangement or has a home equity line of credit on it, and it is owned free and clear if there is no mortgage or similar debt."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 40
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Renter-occupied housing unit"
+  aliases: ["renter-occupied", "renter-occupied housing units", "renter-occupied units", "renter-occupied unit"]
+  definition: "All occupied housing units that are not owner-occupied are classified as renter-occupied, whether they are rented or occupied without payment of rent. Units with \"No rent paid\" are separately identified in the rent tabulations. Such units are generally provided free by friends or relatives or in exchange for services such as resident manager, caretaker, minister, or tenant farmer."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "40-41"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Vacancy rate"
+  aliases: ["vacancy rates"]
+  definition: "Vacancy rates measure the proportion of a housing inventory that is vacant. The homeowner vacancy rate is the proportion of the homeowner inventory that is vacant \"for sale,\" and the rental vacancy rate is the proportion of the rental inventory that is vacant \"for rent.\" Both are computed by multiplying a ratio by 100 and are rounded to the nearest tenth."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 44
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Homeowner vacancy rate"
+  aliases: ["homeowner vacancy rates"]
+  definition: "The homeowner vacancy rate is the proportion of the homeowner inventory that is vacant \"for sale.\" It is computed by dividing the number of vacant units \"for sale only\" by the sum of the owner-occupied units, vacant units that are \"for sale only,\" and vacant units that have been \"sold but not yet occupied,\" and then multiplying by 100. The measure is rounded to the nearest tenth."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 44
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Rental vacancy rate"
+  aliases: ["rental vacancy rates"]
+  definition: "The rental vacancy rate is the proportion of the rental inventory that is vacant \"for rent.\" It is computed by dividing the number of vacant units \"for rent\" by the sum of the renter-occupied units, vacant units that are \"for rent,\" and vacant units that have been \"rented but not yet occupied,\" and then multiplying by 100. The measure is rounded to the nearest tenth."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 44
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Gross rent"
+  aliases: ["gross rents"]
+  definition: "Gross rent is the contract rent plus the estimated average monthly cost of utilities (electricity, gas, and water and sewer) and fuels (oil, coal, kerosene, wood, and so on) if these are paid by the renter or paid for the renter by someone else. It is intended to eliminate differences that result from varying practices on whether utilities and fuels are included in the rental payment. Renter units occupied without payment of rent are shown separately as \"No rent paid.\""
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 19
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Median gross rent"
+  aliases: []
+  definition: "Median gross rent divides the gross rent distribution into two equal parts, with one-half of the cases falling below the median gross rent and one-half above it. Units reported as \"No rent paid\" are excluded when computing it. Median gross rent is rounded to the nearest whole dollar."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "19-20"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Gross rent as a percentage of household income"
+  aliases: ["gross rent as percentage of income", "gross rent percentage of household income"]
+  definition: "Gross rent as a percentage of household income is a computed ratio of monthly gross rent to monthly household income, which is total household income divided by 12. The ratio is computed separately for each unit and is rounded to the nearest tenth. Units for which no rent is paid and units occupied by households that reported no income or a net loss make up the category \"Not computed.\""
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 20
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Occupants per room"
+  aliases: ["occupants per rooms"]
+  definition: "Occupants per room is obtained by dividing the reported number of current residents in each occupied housing unit by the number of rooms in the unit. The figures show the number of occupied units having the specified ratio of current residents per room. Occupants per room is rounded to the nearest hundredth."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 28
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Household income"
+  aliases: ["household incomes", "income of households"]
+  definition: "Household income includes the income of the householder and all other individuals 15 years old and over in the household, whether or not they are related to the householder. Because many households consist of only one person, average household income is usually less than average family income. The income statistics cover the past 12 months, but the composition of households refers to the time of interview."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 88
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Median income"
+  aliases: ["median household income", "median family income", "median incomes"]
+  definition: "Median income divides the income distribution into two equal parts, with one-half of the cases falling below the median and one-half above it. For households and families, it is based on the distribution of the total number of households and families, including those with no income. The median income for individuals is based on individuals 15 years old and over with income. Median income is rounded to the nearest whole dollar."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "88-89"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Mean income"
+  aliases: ["mean household income", "average income", "average household income"]
+  definition: "Mean income is the aggregate income of a particular statistical universe divided by the number of units in that universe. For example, mean household income is obtained by dividing total household income by the total number of households. Because the mean is influenced strongly by extreme values, it is especially susceptible to the effects of sampling variability, misreporting, and processing errors, so the median is a better measure when the population base is small."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 89
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Per capita income"
+  aliases: ["per capita incomes"]
+  definition: "Per capita income is the mean income computed for every man, woman, and child in a particular group, including those living in group quarters. It is derived by dividing the aggregate income of a particular group by the total population in that group. Per capita income is rounded to the nearest whole dollar."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 90
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Total income"
+  aliases: ["income", "income in the past 12 months"]
+  definition: "Total income is the sum of the amounts reported separately for wage or salary income; net self-employment income; interest, dividends, or net rental or royalty income or income from estates and trusts; Social Security or Railroad Retirement income; Supplemental Security Income; public assistance or welfare payments; retirement, survivor, or disability pensions; and all other income. Receipts that are not included as income are capital gains, money received from the sale of property, the value of in-kind income such as food stamps or public housing subsidies, withdrawals of bank deposits, borrowed money, tax refunds, gifts and lump-sum inheritances, and insurance payments. The income questions were asked of the population 15 years old and over."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 85
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Earnings"
+  aliases: ["earnings in the past 12 months"]
+  definition: "Earnings are the sum of wage or salary income and net income from self-employment. They represent the amount of income received regularly by people 16 years old and over, before deductions for personal income taxes, Social Security, bond purchases, union dues, Medicare deductions, and so on. An individual with earnings has wage or salary income, self-employment income, or both, and people who break even in self-employment are also counted as individuals with earnings."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 90
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Poverty status"
+  aliases: ["poverty", "in poverty", "poverty level", "below the poverty level"]
+  definition: "The Census Bureau uses a set of dollar value thresholds that vary by family size and composition to determine who is in poverty. If a family's total income is less than the dollar value of the appropriate threshold, that family and every individual in it are considered to be in poverty. Similarly, if an unrelated individual's total income is less than the appropriate threshold, that individual is considered to be in poverty."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 112
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Poverty threshold"
+  aliases: ["poverty thresholds"]
+  definition: "Poverty thresholds are income cutoffs arranged in a two-dimensional matrix of family size (from one person to nine or more people) by the presence and number of family members under 18 years old. Thresholds for unrelated individuals and two-person families are further differentiated by the age of the householder, under 65 years old or 65 years old and over. Because the income questions cover the last 12 months, the appropriate thresholds are the base-year (1982) thresholds multiplied by the average of the monthly inflation factors for the 12 months preceding data collection."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 112
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Employed"
+  aliases: ["employment", "employment status", "civilian employed"]
+  definition: "Employed includes all civilians 16 years old and over who either were \"at work,\" meaning they did any work at all during the reference week as paid employees, in their own business or profession, or on their own farm, or worked 15 hours or more as unpaid workers on a family farm or in a family business, or who were \"with a job but not at work,\" meaning they had a job or business from which they were temporarily absent because of illness, bad weather, industrial dispute, vacation, or other personal reasons. People whose only activity was work around the house or unpaid volunteer work for religious, charitable, and similar organizations are excluded, as are all institutionalized people and people on active duty in the United States Armed Forces."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "67-68"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Unemployed"
+  aliases: ["unemployment"]
+  definition: "All civilians 16 years old and over are classified as unemployed if they were neither \"at work\" nor \"with a job but not at work\" during the reference week, were actively looking for work during the last 4 weeks, and were available to start a job. Also included as unemployed are civilians who did not work at all during the reference week, were waiting to be called back to a job from which they had been laid off, and were available for work except for temporary illness. Examples of job-seeking activities are registering at an employment office, meeting with prospective employers, placing or answering advertisements, and writing letters of application."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 68
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Civilian labor force"
+  aliases: ["civilian labor forces"]
+  definition: "The civilian labor force consists of people classified as employed or unemployed according to the Census Bureau's criteria. Members of the United States Armed Forces are not part of it, but they are added to it to obtain the labor force."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 68
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Labor force"
+  aliases: ["in the labor force"]
+  definition: "The labor force is made up of all people classified in the civilian labor force plus members of the United States Armed Forces. Members of the Armed Forces are people on active duty with the United States Army, Air Force, Navy, Marine Corps, or Coast Guard."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 68
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Not in labor force"
+  aliases: ["not in the labor force"]
+  definition: "This category includes all people 16 years old and over who are not classified as members of the labor force. It consists mainly of students, homemakers, retired workers, seasonal workers interviewed in an off season who were not looking for work, institutionalized people, and people doing only incidental unpaid family work of less than 15 hours during the reference week."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 68
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Unemployment rate"
+  aliases: ["unemployment rates"]
+  definition: "The unemployment rate represents the number of unemployed people as a percentage of the civilian labor force. For example, if the civilian labor force equals 100 people and 7 people are unemployed, then the unemployment rate would be 7 percent."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 68
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Labor force participation rate"
+  aliases: ["labor force participation rates", "labor force participation", "participation rate"]
+  definition: "The labor force participation rate represents the proportion of the population that is in the labor force. For example, if there are 100 people in the population 16 years and over, and 64 of them are in the labor force, then the labor force participation rate for the population 16 years and over would be 64 percent."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 68
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Reference week"
+  aliases: ["reference weeks"]
+  definition: "The data on employment status and journey to work relate to the reference week, which is the calendar week preceding the date on which respondents completed their questionnaires or were interviewed. This week is not the same for all respondents, since the interviewing was conducted over a 12-month period."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 124
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Hispanic or Latino origin"
+  aliases: ["Hispanic", "Latino", "Hispanic origin", "Hispanic or Latino", "Spanish origin"]
+  definition: "Data on Hispanic or Latino origin come from a question asked of all people, with checkboxes for Mexican, Puerto Rican, Cuban, and another Hispanic, Latino, or Spanish origin. The terms Hispanic, Latino, and Spanish are used interchangeably. Origin can be viewed as the heritage, nationality group, lineage, or country of birth of the person or the person's parents or ancestors before their arrival in the United States. People who identify their origin as Hispanic, Latino, or Spanish may be of any race."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "77-78"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Race"
+  aliases: ["races", "racial categories"]
+  definition: "Data on race come from a question asked of all people and are based on self-identification. The racial categories generally reflect a social definition of race recognized in this country and are not an attempt to define race biologically, anthropologically, or genetically. People may choose to report more than one race. The Office of Management and Budget requires five minimum categories (White, Black or African American, American Indian or Alaska Native, Asian, and Native Hawaiian or Other Pacific Islander), and a sixth, \"Some Other Race,\" was added with its approval."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 115
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Educational attainment"
+  aliases: ["education level", "educational attainments"]
+  definition: "Educational attainment data are tabulated for people 18 years old and over. Respondents are classified according to the highest degree or the highest level of school completed. If more than one box was filled, the response was edited to the highest level or degree reported. Schooling completed in foreign or ungraded school systems is reported as the equivalent level in the regular American system, and trade or vocational certificates and honorary degrees are not to be reported."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 65
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Health insurance coverage"
+  aliases: ["health insurance", "health coverage", "insured", "uninsured"]
+  definition: "People were considered insured if they reported at least one \"yes\" to coverage through an employer or union, direct purchase, Medicare, Medicaid or another government-assistance plan, TRICARE or other military health care, or VA health care. People with no reported coverage, or whose only coverage was Indian Health Service, were considered uninsured. The Census Bureau broadly classifies coverage as private health insurance (employer, directly purchased, or TRICARE or other military) or public coverage (Medicare, Medicaid, VA health care, the Children's Health Insurance Program, and individual state health plans). These classifications are not mutually exclusive, because people may be covered by more than one at the same time."
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: "74-76"
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Limited English speaking household"
+  aliases: ["limited English speaking households", "linguistic isolation"]
+  definition: "A limited English speaking household is one in which no member 14 years old and over speaks only English at home, or speaks a language other than English at home and speaks English \"Very well.\" The variable identifies households that may need English-language assistance. All members of such a household are included in the group, including members under 14 years old who may speak only English or speak English \"Very well.\" The concept has sometimes been termed \"Linguistic Isolation.\""
+  source:
+    title: "ACS Subject Definitions 2020"
+    page: 50
+    url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
