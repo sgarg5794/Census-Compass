@@ -411,3 +411,38 @@
     title: "ACS Subject Definitions 2020"
     page: 50
     url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Census tract"
+  aliases: ["census tracts", "tract", "tracts"]
+  definition: "Census tracts are small geographic areas, with an average of about 4,000 people each, that are commonly used to present information for small towns, rural areas, and neighborhoods. Block groups are subdivisions of census tracts. For example, in Vermont there are currently 184 census tracts with data available through the ACS 5-year data products."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 2"
+    page: 12
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch02.pdf"
+- term: "Block group"
+  aliases: ["block groups"]
+  definition: "Block groups are subdivisions of census tracts that include between 600 and 3,000 people each. In the ACS, block groups are the lowest (smallest) level of geography published. Block group data are only available in the ACS 5-year data products, and more than 300 ACS data tables are available for block groups."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 2"
+    page: 12
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch02.pdf"
+- term: "County"
+  aliases: ["counties"]
+  definition: "Counties are the primary legal subdivision within each state. For example, ACS 1-year estimates are available for 10 of Iowa's 99 counties, those with populations of 65,000 or more in 2018. Iowa has 35 counties with at least 20,000 people that receive 1-year Supplemental Estimates, and its 64 counties with fewer than 20,000 people receive only 5-year estimates."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 2"
+    page: 10
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch02.pdf"
+- term: "FIPS code"
+  aliases: ["FIPS codes", "FIPS", "Federal Information Processing Standards"]
+  definition: "The Federal Government uses a unique two-digit numeric code to identify each state and state equivalent entity, and these state codes are part of the Federal Information Processing Standards (FIPS). The state codes parallel the alphabetic sequence of state names. Another FIPS coding scheme identifies the counties alphabetically within each state by assigning each county a three-digit numeric code, with gaps in the numbering to allow for additions and revisions."
+  source:
+    title: "Geographic Areas Reference Manual — Chapter 4"
+    page: "4-15"
+    url: "https://www2.census.gov/geo/pdfs/reference/GARM/Ch4GARM.pdf"
+- term: "Top-coded"
+  aliases: ["top-coding", "topcoded", "topcoding"]
+  definition: "Top-coding is a method of disclosure avoidance in which all cases in or above a certain percentage of the distribution are placed into a single category. The Census Bureau uses it for Public Use Microdata Sample (PUMS) data, in addition to data swapping, geographic population thresholds, and age perturbation."
+  source:
+    title: "ACS Design and Methodology (January 2014) — Chapter 13"
+    page: 9
+    url: "https://www2.census.gov/programs-surveys/acs/methodology/design_and_methodology/2014/acs_design_methodology_ch13_2014.pdf"
