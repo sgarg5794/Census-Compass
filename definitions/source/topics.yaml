@@ -5,7 +5,8 @@
 #   - a topic reads from one physical table only (`table`; year prefix added per year: 2020_CBG_B25)
 #   - every hand-written (derived) measure uses only columns from its own topic, except
 #     measures that declare a join: per_capita_income (→ population_age_and_sex) and the
-#     nine mean_household_income_<race> measures (→ housing_occupancy_and_tenure)
+#     nine mean_household_income_<race> measures (→ housing_occupancy_and_tenure).
+#     A hand-written measure's topic is set only by its `topic:` in measures.yaml.
 #   - race versions (A–I) stay with their base group. E (Native Hawaiian and Other Pacific
 #     Islander alone) is missing from the database dictionary; its descriptions come from the
 #     official Census API (api.census.gov/data/{year}/acs/acs5/groups/{group}.json), verified:
@@ -22,9 +23,6 @@
     - B01001  # Sex By Age
     - B01002  # Median Age By Sex  (+ race versions A, B, C, D, E, F, G, H, I)
     - B01003  # Total Population
-  derived_measures:
-    - sex_ratio
-    - age_dependency_ratio
 
 - name: race
   title: "Race"
@@ -66,8 +64,6 @@
     - B08301  # Means Of Transportation To Work
     - B08302  # Time Of Departure To Go To Work
     - B08303  # Travel Time To Work
-  derived_measures:
-    - mean_travel_time_to_work
 
 - name: place_of_work
   title: "Where workers work (state, county, place, metro area)"
@@ -136,9 +132,6 @@
   groups:
     - B15002  # Sex By Educational Attainment For The Population 25 Years And Over
     - B15003  # Educational Attainment For The Population 25 Years And Over
-  derived_measures:
-    - high_school_or_higher_pct
-    - bachelors_or_higher_pct
 
 - name: bachelors_degree_fields_detailed
   title: "Field of bachelor's degree, by sex and age"
@@ -161,9 +154,6 @@
     - B17011  # Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type
     - B17017  # Poverty Status In The Past 12 Months By Household Type By Age Of Householder
     - B17021  # Poverty Status Of Individuals In The Past 12 Months By Living Arrangement
-  derived_measures:
-    - poverty_rate
-    - family_poverty_rate
 
 - name: household_income
   title: "Household income: distribution, median and mean"
@@ -175,8 +165,6 @@
     - B19037  # Age Of Householder By Household Income In The Past 12 Months
     - B19049  # Median Household Income In The Past 12 Months By Age Of Householder
     - B19050  # Aggregate Household Income In The Past 12 Months By Age Of Householder
-  derived_measures:
-    - mean_household_income
 
 - name: household_income_by_source
   title: "Household income by source (earnings, Social Security, retirement, public assistance…)"
@@ -201,8 +189,6 @@
     - B19067  # Aggregate Public Assistance Income In The Past 12 Months For Households
     - B19069  # Aggregate Retirement Income In The Past 12 Months For Households
     - B19070  # Aggregate Other Types Of Income In The Past 12 Months For Households
-  derived_measures:
-    - mean_household_earnings
 
 - name: family_and_nonfamily_income
   title: "Family and nonfamily household income"
@@ -215,8 +201,6 @@
     - B19201  # Nonfamily Household Income In The Past 12 Months
     - B19202  # Median Nonfamily Household Income In The Past 12 Months
     - B19214  # Aggregate Nonfamily Household Income In The Past 12 Months
-  derived_measures:
-    - mean_family_income
 
 - name: per_capita_income
   title: "Per capita income and total personal income"
@@ -224,8 +208,6 @@
   groups:
     - B19301  # Per Capita Income In The Past 12 Months  (+ race versions A, B, C, D, E, F, G, H, I)
     - B19313  # Aggregate Income In The Past 12 Months  (+ race versions A, B, C, D, E, F, G, H, I)
-  derived_measures:
-    - per_capita_income  # joins population_age_and_sex for total population
 
 - name: earnings
   title: "Individual earnings by sex and work experience"
@@ -235,8 +217,6 @@
     - B20002  # Median Earnings In The Past 12 Months By Sex For The Population 16 Years And Over With Earnings In The Past 12 Months
     - B20003  # Aggregate Earnings In The Past 12 Months By Sex By Work Experience For The Population 16 Years And Over With Earnings
     - B20017  # Median Earnings In The Past 12 Months By Sex By Work Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months
-  derived_measures:
-    - mean_earnings
 
 - name: veterans
   title: "Veteran status and period of service"
@@ -257,9 +237,6 @@
   groups:
     - B23024  # Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population 20 To 64 Years
     - B23025  # Employment Status For The Population 16 Years And Over
-  derived_measures:
-    - unemployment_rate
-    - labor_force_participation_rate
 
 - name: work_hours_and_weeks
   title: "Hours and weeks worked, full-time year-round work"
@@ -297,11 +274,6 @@
     - B25008  # Total Population In Occupied Housing Units By Tenure
     - B25009  # Tenure By Household Size
     - B25010  # Average Household Size Of Occupied Housing Units By Tenure
-  derived_measures:
-    - homeowner_vacancy_rate
-    - rental_vacancy_rate
-    - homeownership_rate
-    - average_household_size
 
 - name: housing_crowding_and_facilities
   title: "Crowding, plumbing, kitchen, telephone and heating fuel"
@@ -317,8 +289,6 @@
     - B25050  # Plumbing Facilities By Occupants Per Room By Year Structure Built
     - B25051  # Kitchen Facilities For All Housing Units
     - B25053  # Tenure By Kitchen Facilities
-  derived_measures:
-    - crowded_homes_pct
 
 - name: housing_rooms_and_bedrooms
   title: "Rooms and bedrooms"
@@ -379,8 +349,6 @@
     - B25071  # Median Gross Rent As A Percentage Of Household Income In The Past 12 Months (Dollars)
     - B25072  # Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months
     - B25074  # Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months
-  derived_measures:
-    - renters_paying_30_percent_or_more
 
 - name: home_value_and_owner_costs
   title: "Home value, price asked, mortgages and owner costs"
@@ -409,8 +377,6 @@
   table: CBG_B27
   groups:
     - B27010  # Types Of Health Insurance Coverage By Age
-  derived_measures:
-    - uninsured_pct
 
 - name: computers_and_internet
   title: "Computers and internet subscriptions"
@@ -428,8 +394,6 @@
     - B28010  # Computers In Household
     - B28011  # Internet Subscriptions In Household
     - B28012  # Age And Enrollment Status By Computer Ownership And Internet Subscription Status
-  derived_measures:
-    - no_internet_pct
 
 - name: citizen_voting_age_population
   title: "Citizen voting-age population"
@@ -457,8 +421,6 @@
   table: CBG_C16
   groups:
     - C16002  # Household Language By Household Limited English Speaking Status
-  derived_measures:
-    - limited_english_households_pct
 
 - name: income_to_poverty_ratio
   title: "Income relative to the poverty line"
