@@ -1,0 +1,420 @@
+# Hand-written measure templates (spec section 6.1), consumed by the builder.
+#
+# Columns are bare codes; the builder finds each column's physical table for the year and adds
+# a one-to-one join on CENSUS_BLOCK_GROUP for any table other than the topic's own table.
+# "-CODE" in a denominator subtracts that column. The builder generates the validity predicate
+# (every numerator and denominator input present) and coverage SQL; never write them here.
+# `for_each: race_groups` expands into one measure per race group A-I; "{race}" is replaced in
+# column codes, "{slug}" and "{label}" in name, title, description and universe.
+# `page` is the 2020 ACS Subject Definitions page (identical in 2019); builder metadata only.
+
+- name: sex_ratio
+  topic: population_age_and_sex
+  title: Sex ratio (males per 100 females)
+  description: Number of males for every 100 females.
+  numerator: [B01001e2]
+  denominator: [B01001e26]
+  scale: 100
+  format: ratio
+  universe: Total population
+  page: "129"
+
+- name: age_dependency_ratio
+  topic: population_age_and_sex
+  title: Age dependency ratio
+  description: >-
+    People under 18 years plus people 65 years and over, for every 100 people aged 18 to 64.
+  numerator: [B01001e3, B01001e4, B01001e5, B01001e6,
+              B01001e20, B01001e21, B01001e22, B01001e23, B01001e24, B01001e25,
+              B01001e27, B01001e28, B01001e29, B01001e30,
+              B01001e44, B01001e45, B01001e46, B01001e47, B01001e48, B01001e49]
+  denominator: [B01001e7, B01001e8, B01001e9, B01001e10, B01001e11, B01001e12, B01001e13,
+                B01001e14, B01001e15, B01001e16, B01001e17, B01001e18, B01001e19,
+                B01001e31, B01001e32, B01001e33, B01001e34, B01001e35, B01001e36, B01001e37,
+                B01001e38, B01001e39, B01001e40, B01001e41, B01001e42, B01001e43]
+  scale: 100
+  format: ratio
+  universe: Total population
+  page: "52"
+
+- name: child_dependency_ratio
+  topic: population_age_and_sex
+  title: Child dependency ratio
+  description: People under 18 years for every 100 people aged 18 to 64.
+  numerator: [B01001e3, B01001e4, B01001e5, B01001e6,
+              B01001e27, B01001e28, B01001e29, B01001e30]
+  denominator: [B01001e7, B01001e8, B01001e9, B01001e10, B01001e11, B01001e12, B01001e13,
+                B01001e14, B01001e15, B01001e16, B01001e17, B01001e18, B01001e19,
+                B01001e31, B01001e32, B01001e33, B01001e34, B01001e35, B01001e36, B01001e37,
+                B01001e38, B01001e39, B01001e40, B01001e41, B01001e42, B01001e43]
+  scale: 100
+  format: ratio
+  universe: Total population
+  page: "52"
+
+- name: old_age_dependency_ratio
+  topic: population_age_and_sex
+  title: Old-age dependency ratio
+  description: People 65 years and over for every 100 people aged 18 to 64.
+  numerator: [B01001e20, B01001e21, B01001e22, B01001e23, B01001e24, B01001e25,
+              B01001e44, B01001e45, B01001e46, B01001e47, B01001e48, B01001e49]
+  denominator: [B01001e7, B01001e8, B01001e9, B01001e10, B01001e11, B01001e12, B01001e13,
+                B01001e14, B01001e15, B01001e16, B01001e17, B01001e18, B01001e19,
+                B01001e31, B01001e32, B01001e33, B01001e34, B01001e35, B01001e36, B01001e37,
+                B01001e38, B01001e39, B01001e40, B01001e41, B01001e42, B01001e43]
+  scale: 100
+  format: ratio
+  universe: Total population
+  page: "52"
+
+- name: mean_travel_time_to_work
+  topic: commuting
+  title: Mean travel time to work (minutes)
+  description: >-
+    Average one-way commute in minutes: total travel time to work of all workers divided by
+    the number of workers 16 years and over who did not work from home.
+  numerator: [B08135e1]
+  denominator: [B08303e1]
+  scale: 1
+  format: minutes
+  universe: Workers 16 years and over who did not work from home
+  page: "99–100"
+
+- name: high_school_or_higher_pct
+  topic: educational_attainment
+  title: High school graduate or higher (%)
+  description: >-
+    Percentage of adults 25 years and over who finished high school or more: a regular high
+    school diploma, a GED or alternative credential, some college, or an associate's,
+    bachelor's, master's, professional school or doctorate degree.
+  numerator: [B15003e17, B15003e18, B15003e19, B15003e20, B15003e21,
+              B15003e22, B15003e23, B15003e24, B15003e25]
+  denominator: [B15003e1]
+  scale: 100
+  format: percent
+  universe: Population 25 years and over
+  page: "65–66"
+
+- name: bachelors_or_higher_pct
+  topic: educational_attainment
+  title: Bachelor's degree or higher (%)
+  description: >-
+    Percentage of adults 25 years and over with a bachelor's, master's, professional school
+    or doctorate degree.
+  numerator: [B15003e22, B15003e23, B15003e24, B15003e25]
+  denominator: [B15003e1]
+  scale: 100
+  format: percent
+  universe: Population 25 years and over
+  page: "65"
+
+- name: poverty_rate
+  topic: poverty
+  title: Poverty rate (people)
+  description: >-
+    Percentage of people whose income in the past 12 months was below the poverty level, out
+    of all people for whom poverty status is determined.
+  numerator: [B17021e2]
+  denominator: [B17021e1]
+  scale: 100
+  format: percent
+  universe: Population for whom poverty status is determined
+  page: "113"
+
+- name: family_poverty_rate
+  topic: poverty
+  title: Family poverty rate
+  description: >-
+    Percentage of families whose income in the past 12 months was below the poverty level.
+  numerator: [B17010e2]
+  denominator: [B17010e1]
+  scale: 100
+  format: percent
+  universe: Families
+  page: "112, 141"
+
+- name: mean_household_income
+  topic: household_income
+  title: Mean household income
+  description: >-
+    Average household income in the past 12 months: total income of all households divided
+    by the number of households.
+  numerator: [B19025e1]
+  denominator: [B19001e1]
+  scale: 1
+  format: currency
+  universe: Households
+  page: "89"
+
+- name: mean_household_income_{slug}
+  topic: household_income
+  title: Mean household income ({label} householder)
+  description: >-
+    Average household income in the past 12 months of households whose householder is
+    {label}: their total household income divided by the number of such households.
+  numerator: ["B19025{race}e1"]
+  denominator: ["B25003{race}e1"]
+  scale: 1
+  format: currency
+  universe: Households whose householder is {label}
+  page: "89"
+  for_each: race_groups
+  sparse: true
+
+- name: mean_family_income
+  topic: family_and_nonfamily_income
+  title: Mean family income
+  description: >-
+    Average family income in the past 12 months: total income of all families divided by
+    the number of families.
+  numerator: [B19127e1]
+  denominator: [B19101e1]
+  scale: 1
+  format: currency
+  universe: Families
+  page: "89"
+
+- name: per_capita_income
+  topic: per_capita_income
+  title: Per capita income
+  description: >-
+    Average income per person in the past 12 months: total income of people 15 years and over
+    divided by the total population, children included.
+  numerator: [B19313e1]
+  denominator: [B01003e1]
+  scale: 1
+  format: currency
+  universe: Total population
+  page: "90"
+
+- name: mean_household_earnings
+  topic: household_income_by_source
+  title: Mean household earnings
+  description: >-
+    Average earnings in the past 12 months of households that had earnings: their total
+    earnings divided by the number of households with earnings.
+  numerator: [B19061e1]
+  denominator: [B19051e2]
+  scale: 1
+  format: currency
+  universe: Households with earnings
+  page: "139–140"
+
+- name: mean_earnings
+  topic: earnings
+  title: Mean earnings
+  description: >-
+    Average earnings in the past 12 months of people 16 years and over who had earnings:
+    their total earnings divided by their number.
+  numerator: [B20003e1]
+  denominator: [B20001e1]
+  scale: 1
+  format: currency
+  universe: Population 16 years and over with earnings
+  page: "90"
+
+- name: mean_earnings_male
+  topic: earnings
+  title: Mean earnings (men)
+  description: >-
+    Average earnings in the past 12 months of males 16 years and over who had earnings:
+    their total earnings divided by their number.
+  numerator: [B20003e2]
+  denominator: [B20001e2]
+  scale: 1
+  format: currency
+  universe: Males 16 years and over with earnings
+  page: "90"
+
+- name: mean_earnings_female
+  topic: earnings
+  title: Mean earnings (women)
+  description: >-
+    Average earnings in the past 12 months of females 16 years and over who had earnings:
+    their total earnings divided by their number.
+  numerator: [B20003e5]
+  denominator: [B20001e23]
+  scale: 1
+  format: currency
+  universe: Females 16 years and over with earnings
+  page: "90"
+
+- name: unemployment_rate
+  topic: labor_force_status
+  title: Unemployment rate
+  description: Unemployed people as a percentage of the civilian labor force.
+  numerator: [B23025e5]
+  denominator: [B23025e3]
+  scale: 100
+  format: percent
+  universe: Civilian labor force
+  page: "68"
+
+- name: labor_force_participation_rate
+  topic: labor_force_status
+  title: Labor force participation rate
+  description: >-
+    People in the labor force, including the Armed Forces, as a percentage of all people 16
+    years and over.
+  numerator: [B23025e2]
+  denominator: [B23025e1]
+  scale: 100
+  format: percent
+  universe: Population 16 years and over
+  page: "68"
+
+- name: homeowner_vacancy_rate
+  topic: housing_occupancy_and_tenure
+  title: Homeowner vacancy rate
+  description: >-
+    Share of the homeowner housing stock that is vacant and for sale: vacant "for sale only"
+    homes divided by owner-occupied homes plus vacant "for sale only" plus "sold, not yet
+    occupied" homes.
+  numerator: [B25004e4]
+  denominator: [B25003e2, B25004e4, B25004e5]
+  scale: 100
+  format: percent
+  universe: Owner-occupied and for-sale housing units
+  page: "44"
+
+- name: rental_vacancy_rate
+  topic: housing_occupancy_and_tenure
+  title: Rental vacancy rate
+  description: >-
+    Share of the rental housing stock that is vacant and for rent: vacant "for rent" homes
+    divided by renter-occupied homes plus vacant "for rent" plus "rented, not yet occupied"
+    homes.
+  numerator: [B25004e2]
+  denominator: [B25003e3, B25004e2, B25004e3]
+  scale: 100
+  format: percent
+  universe: Renter-occupied and for-rent housing units
+  page: "44"
+
+- name: average_household_size
+  topic: housing_occupancy_and_tenure
+  title: Average household size
+  description: >-
+    Average number of people per occupied home: people living in occupied homes divided by
+    the number of occupied homes.
+  numerator: [B25008e1]
+  denominator: [B25003e1]
+  scale: 1
+  format: number
+  universe: Occupied housing units
+  page: "22"
+
+- name: average_household_size_owner
+  topic: housing_occupancy_and_tenure
+  title: Average household size (owner-occupied homes)
+  description: >-
+    Average number of people per owner-occupied home: people living in owner-occupied homes
+    divided by the number of owner-occupied homes.
+  numerator: [B25008e2]
+  denominator: [B25003e2]
+  scale: 1
+  format: number
+  universe: Owner-occupied housing units
+  page: "22"
+
+- name: average_household_size_renter
+  topic: housing_occupancy_and_tenure
+  title: Average household size (renter-occupied homes)
+  description: >-
+    Average number of people per renter-occupied home: people living in renter-occupied homes
+    divided by the number of renter-occupied homes.
+  numerator: [B25008e3]
+  denominator: [B25003e3]
+  scale: 1
+  format: number
+  universe: Renter-occupied housing units
+  page: "22"
+
+- name: homeownership_rate
+  topic: housing_occupancy_and_tenure
+  title: Homeownership rate
+  description: Owner-occupied homes as a percentage of all occupied homes.
+  numerator: [B25003e2]
+  denominator: [B25003e1]
+  scale: 100
+  format: percent
+  universe: Occupied housing units
+  page: "40, 141"
+
+- name: renters_paying_30_percent_or_more
+  topic: rent_and_rent_burden
+  title: Renters paying 30% or more of income on rent
+  description: >-
+    Percentage of renter households whose gross rent is 30% or more of their household income
+    in the past 12 months, out of renter households for which this share can be computed
+    (households with no income, a loss, or no cash rent are left out).
+  numerator: [B25070e7, B25070e8, B25070e9, B25070e10]
+  denominator: [B25070e1, -B25070e11]
+  scale: 100
+  format: percent
+  universe: Renter-occupied housing units where rent as a share of income is computed
+  page: "20, 34"
+
+- name: crowded_homes_pct
+  topic: housing_crowding_and_facilities
+  title: Crowded homes (%)
+  description: >-
+    Percentage of occupied homes with more than one person per room (1.01 or more occupants
+    per room), owners and renters together.
+  numerator: [B25014e5, B25014e6, B25014e7, B25014e11, B25014e12, B25014e13]
+  denominator: [B25014e1]
+  scale: 100
+  format: percent
+  universe: Occupied housing units
+  page: "28, 34"
+
+- name: uninsured_pct
+  topic: health_insurance
+  title: Uninsured (%)
+  description: >-
+    Percentage of the civilian population not living in institutions that has no health
+    insurance coverage, all ages.
+  numerator: [B27010e17, B27010e33, B27010e50, B27010e66]
+  denominator: [B27010e1]
+  scale: 100
+  format: percent
+  universe: Civilian noninstitutionalized population
+  page: "76, 141"
+
+- name: limited_english_households_pct
+  topic: household_language
+  title: Limited-English-speaking households (%)
+  description: >-
+    Percentage of households in which no one 14 years and over speaks only English or speaks
+    English "very well", across Spanish, other Indo-European, Asian and Pacific Island, and
+    other languages.
+  numerator: [C16002e4, C16002e7, C16002e10, C16002e13]
+  denominator: [C16002e1]
+  scale: 100
+  format: percent
+  universe: Households
+  page: "50"
+
+- name: no_internet_access_pct
+  topic: computers_and_internet
+  title: Households with no internet access (%)
+  description: Percentage of households with no internet access at home.
+  numerator: [B28002e13]
+  denominator: [B28002e1]
+  scale: 100
+  format: percent
+  universe: Households
+  page: "13–14"
+
+- name: no_internet_subscription_pct
+  topic: computers_and_internet
+  title: Households without an internet subscription (%)
+  description: >-
+    Percentage of households without an internet subscription: households with internet
+    access but no paid subscription plus households with no internet access.
+  numerator: [B28002e12, B28002e13]
+  denominator: [B28002e1]
+  scale: 100
+  format: percent
+  universe: Households
+  page: "13–14"
