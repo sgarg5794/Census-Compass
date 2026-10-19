@@ -19,6 +19,8 @@ from google.adk.models.llm_response import LlmResponse
 from google.genai import types
 
 from census_compass.config import get_settings
+from census_compass.guardrails.contracts import ROUTE_STATE_KEY
+from census_compass.guardrails.gate import guardrail_callback, routing_hint
 from census_compass.tools.geography import resolve_geography
 from census_compass.tools.population_group import resolve_population_group
 from census_compass.tools.query import DEADLINE_KEY, REJECTIONS_KEY, execute_query
@@ -42,10 +44,11 @@ INSTRUCTION = (
 )
 
 
-def instruction(_ctx: ReadonlyContext) -> str:
+def instruction(ctx: ReadonlyContext) -> str:
     """Instruction provider: ADK skips `{state}` templating for providers, so the
     literal `{table}` placeholder in the domain rules reaches the model unchanged."""
-    return INSTRUCTION
+    hint = routing_hint(ctx.state.get(ROUTE_STATE_KEY))
+    return INSTRUCTION + "\n\n" + hint if hint else INSTRUCTION
 
 
 def start_turn(callback_context: CallbackContext) -> None:
@@ -80,6 +83,6 @@ root_agent = LlmAgent(
         get_schema,
         execute_query,
     ],
-    before_agent_callback=start_turn,
+    before_agent_callback=[start_turn, guardrail_callback],
     on_model_error_callback=on_model_error,
 )
