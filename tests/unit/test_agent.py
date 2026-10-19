@@ -29,10 +29,10 @@ from census_compass.guardrails.gate import guardrail_callback
 from census_compass.tools.query import DEADLINE_KEY, REJECTIONS_KEY
 
 TOOLS = ["resolve_year", "resolve_population_group", "resolve_geography",
-         "search_schema", "get_schema", "execute_query"]
+         "search_schema", "get_schema", "execute_query", "lookup_glossary"]
 
 
-def test_root_agent_has_exactly_the_six_tools():
+def test_root_agent_has_exactly_the_seven_tools():
     assert sorted(t.__name__ for t in root_agent.tools) == sorted(TOOLS)
     assert root_agent.name == "census_compass"
 
