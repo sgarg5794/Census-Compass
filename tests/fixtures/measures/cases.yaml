@@ -1,0 +1,66 @@
+# Block-group rows for SQL-on-fixture tests of hand-written measures (2020 tables).
+# Each row maps input column codes to values (null = not published for that block group).
+# `value` and `coverage` are the expected results of the measure SQL and its coverage SQL.
+
+- case: per_capita_income_without_published_income_is_not_zero
+  measure: per_capita_income
+  rows:
+    - {B19313e1: null, B01003e1: 25}
+  value: null
+  coverage: null
+
+- case: per_capita_income_skips_block_group_without_income
+  measure: per_capita_income
+  rows:
+    - {B19313e1: null, B01003e1: 25}
+    - {B19313e1: 50000, B01003e1: 100}
+  value: 500.0
+  coverage: 0.8
+
+- case: renters_paying_30_percent_subtracts_not_computed
+  measure: renters_paying_30_percent_or_more
+  rows:
+    - {B25070e7: 1, B25070e8: 2, B25070e9: 3, B25070e10: 4, B25070e1: 30, B25070e11: 10}
+    - {B25070e7: 1, B25070e8: 1, B25070e9: 1, B25070e10: 1, B25070e1: 50, B25070e11: null}
+    - {B25070e7: 5, B25070e8: 5, B25070e9: null, B25070e10: 5, B25070e1: 40, B25070e11: 0}
+  value: 50.0
+  coverage: 0.3333333333
+
+- case: homeowner_vacancy_rate_composite_denominator
+  measure: homeowner_vacancy_rate
+  rows:
+    - {B25004e4: 5, B25003e2: 90, B25004e5: 5}
+    - {B25004e4: 7, B25003e2: null, B25004e5: 3}
+  value: 5.0
+  coverage: 1.0
+
+- case: composite_numerator_needs_every_component
+  measure: crowded_homes_pct
+  rows:
+    - {B25014e5: 1, B25014e6: 1, B25014e7: 0, B25014e11: 1, B25014e12: 1, B25014e13: 0, B25014e1: 40}
+    - {B25014e5: 9, B25014e6: null, B25014e7: 9, B25014e11: 9, B25014e12: 9, B25014e13: 9, B25014e1: 60}
+  value: 10.0
+  coverage: 0.4
+
+- case: race_measure_joins_housing_table
+  measure: mean_household_income_asian_alone
+  rows:
+    - {B19025De1: 300000, B25003De1: 3}
+    - {B19025De1: null, B25003De1: 0}
+  value: 100000.0
+  coverage: 1.0
+
+- case: pacific_islander_measure_uses_e_columns
+  measure: mean_household_income_pacific_islander_alone
+  rows:
+    - {B19025Ee1: 120000, B25003Ee1: 2}
+  value: 60000.0
+  coverage: 1.0
+
+- case: sex_ratio
+  measure: sex_ratio
+  rows:
+    - {B01001e2: 48, B01001e26: 52}
+    - {B01001e2: 52, B01001e26: 48}
+  value: 100.0
+  coverage: 1.0
