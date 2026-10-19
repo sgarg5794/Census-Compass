@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Census Compass v1 table semantic definition",
+  "type": "object",
+  "required": [
+    "version",
+    "name",
+    "description",
+    "source_table",
+    "grain",
+    "dimensions",
+    "measures",
+    "relationships",
+    "constraints",
+    "unresolved_columns",
+    "metadata"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "source_table": {
+      "type": "string"
+    },
+    "grain": {
+      "type": "object",
+      "required": [
+        "description",
+        "primary_key"
+      ],
+      "properties": {
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "primary_key": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "description",
+          "data_type",
+          "sql",
+          "metadata"
+        ],
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "data_type": {
+            "type": "string"
+          },
+          "source_data_type": {
+            "type": "string"
+          },
+          "sql": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "required": [
+              "source_column",
+              "metadata_status"
+            ],
+            "properties": {
+              "source_column": {
+                "type": "string"
+              },
+              "metadata_status": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "measures": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "description",
+          "data_type",
+          "sql",
+          "aggregation",
+          "constraints",
+          "metadata"
+        ],
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "data_type": {
+            "type": "string"
+          },
+          "source_data_type": {
+            "type": "string"
+          },
+          "sql": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "required": [
+              "source_column",
+              "metadata_status"
+            ],
+            "properties": {
+              "source_column": {
+                "type": "string"
+              },
+              "metadata_status": {
+                "type": "string"
+              }
+            }
+          },
+          "aggregation": {
+            "type": "object",
+            "required": [
+              "allowed"
+            ],
+            "properties": {
+              "allowed": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "required": [
+                    "meaning"
+                  ],
+                  "properties": {
+                    "meaning": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "margin_of_error": {
+            "type": "object",
+            "required": [
+              "description",
+              "sql",
+              "aggregation",
+              "metadata"
+            ],
+            "properties": {
+              "description": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "data_type": {
+                "type": "string"
+              },
+              "source_data_type": {
+                "type": "string"
+              },
+              "sql": {
+                "type": "string"
+              },
+              "metadata": {
+                "type": "object",
+                "required": [
+                  "source_column",
+                  "metadata_status"
+                ],
+                "properties": {
+                  "source_column": {
+                    "type": "string"
+                  },
+                  "metadata_status": {
+                    "type": "string"
+                  }
+                }
+              },
+              "aggregation": {
+                "type": "object",
+                "required": [
+                  "allowed"
+                ],
+                "properties": {
+                  "allowed": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "required": [
+                        "meaning"
+                      ],
+                      "properties": {
+                        "meaning": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "target_table",
+          "join_on",
+          "cardinality"
+        ],
+        "properties": {
+          "target_table": {
+            "type": "string"
+          },
+          "cardinality": {
+            "enum": [
+              "one_to_one",
+              "many_to_one",
+              "one_to_many"
+            ]
+          },
+          "join_on": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "source_dimension",
+                "target_column"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unresolved_columns": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "sql",
+          "description",
+          "queryable",
+          "embedding_eligible"
+        ],
+        "properties": {
+          "description": {
+            "type": "null"
+          },
+          "queryable": {
+            "const": false
+          },
+          "embedding_eligible": {
+            "const": false
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "physical_table",
+        "physical_column_count"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

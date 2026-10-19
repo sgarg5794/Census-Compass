@@ -1,0 +1,748 @@
+version: 1
+name: cbg_geometry_wkt_2020
+description: BASE TABLE 2020_CBG_GEOMETRY_WKT, classified by its schema name as geometry. Contains 9 columns. No
+  table-level semantic definition was supplied; column names alone are not verified meanings.
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_GEOMETRY_WKT"'
+grain:
+  description: One row per Census block group.
+  primary_key:
+  - census_block_group
+  verification: Unique non-null key confirmed in the earlier live join audit.
+dimensions:
+  state_fips:
+    description: State geographic code; preserve leading zeros.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"STATE_FIPS"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: STATE_FIPS
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+  county_fips:
+    description: County geographic code used together with STATE_FIPS to identify a county.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"COUNTY_FIPS"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: COUNTY_FIPS
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+  tract_code:
+    description: Source Census tract identifier within its state and county.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"TRACT_CODE"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: TRACT_CODE
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+  block_group:
+    description: Source block-group code within its Census tract.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"BLOCK_GROUP"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: BLOCK_GROUP
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+  census_block_group:
+    description: Census block-group geographic identifier for the area summarized by this row.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"CENSUS_BLOCK_GROUP"'
+    constraints:
+    - Preserve identifier formatting and leading zeros.
+    metadata:
+      source_column: CENSUS_BLOCK_GROUP
+      metadata_status: missing
+      statistic_kind: null
+      field_path: []
+      definition_source: null
+      source_metadata: null
+      nullable: true
+      embedding_eligible: false
+      description_source: project_identifier_interpretation
+measures: {}
+relationships:
+  population_age_and_sex_2020:
+    target_table: 2020_CBG_B01
+    target_model: population_age_and_sex_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  race_2020:
+    target_table: 2020_CBG_B02
+    target_model: race_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  hispanic_latino_origin_2020:
+    target_table: 2020_CBG_B03
+    target_model: hispanic_latino_origin_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  geographic_mobility_2020:
+    target_table: 2020_CBG_B07
+    target_model: geographic_mobility_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  work_location_and_commuting_2020:
+    target_table: 2020_CBG_B08
+    target_model: work_location_and_commuting_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  children_and_household_relationships_2020:
+    target_table: 2020_CBG_B09
+    target_model: children_and_household_relationships_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  households_and_families_2020:
+    target_table: 2020_CBG_B11
+    target_model: households_and_families_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  marital_status_2020:
+    target_table: 2020_CBG_B12
+    target_model: marital_status_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  school_enrollment_2020:
+    target_table: 2020_CBG_B14
+    target_model: school_enrollment_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  educational_attainment_2020:
+    target_table: 2020_CBG_B15
+    target_model: educational_attainment_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  language_and_english_proficiency_2020:
+    target_table: 2020_CBG_B16
+    target_model: language_and_english_proficiency_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  poverty_2020:
+    target_table: 2020_CBG_B17
+    target_model: poverty_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  household_income_2020:
+    target_table: 2020_CBG_B19
+    target_model: household_income_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  earnings_2020:
+    target_table: 2020_CBG_B20
+    target_model: earnings_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  veteran_status_2020:
+    target_table: 2020_CBG_B21
+    target_model: veteran_status_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  snap_and_disability_2020:
+    target_table: 2020_CBG_B22
+    target_model: snap_and_disability_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  employment_and_labor_force_2020:
+    target_table: 2020_CBG_B23
+    target_model: employment_and_labor_force_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  class_of_worker_2020:
+    target_table: 2020_CBG_B24
+    target_model: class_of_worker_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  housing_2020:
+    target_table: 2020_CBG_B25
+    target_model: housing_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  health_insurance_2020:
+    target_table: 2020_CBG_B27
+    target_model: health_insurance_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  computers_and_internet_2020:
+    target_table: 2020_CBG_B28
+    target_model: computers_and_internet_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  citizen_voting_age_population_2020:
+    target_table: 2020_CBG_B29
+    target_model: citizen_voting_age_population_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  response_allocation_2020:
+    target_table: 2020_CBG_B99
+    target_model: response_allocation_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  detailed_race_2020:
+    target_table: 2020_CBG_C02
+    target_model: detailed_race_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  bachelors_degree_fields_2020:
+    target_table: 2020_CBG_C15
+    target_model: bachelors_degree_fields_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  household_language_2020:
+    target_table: 2020_CBG_C16
+    target_model: household_language_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  income_to_poverty_ratio_2020:
+    target_table: 2020_CBG_C17
+    target_model: income_to_poverty_ratio_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  veterans_poverty_and_disability_2020:
+    target_table: 2020_CBG_C21
+    target_model: veterans_poverty_and_disability_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  occupation_2020:
+    target_table: 2020_CBG_C24
+    target_model: occupation_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  metadata_cbg_geographic_data_2020:
+    target_table: 2020_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: metadata_cbg_geographic_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  redistricting_cbg_data_2020:
+    target_table: 2020_REDISTRICTING_CBG_DATA
+    target_model: redistricting_cbg_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  redistricting_metadata_cbg_geographic_data_2020:
+    target_table: 2020_REDISTRICTING_METADATA_CBG_GEOGRAPHIC_DATA
+    target_model: redistricting_metadata_cbg_geographic_data_2020
+    description: Audited same-year join using CENSUS_BLOCK_GROUP. Cardinality applies to matching non-null keys;
+      inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 0
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 242335
+        inner_join_rows: 242335
+  metadata_cbg_fips_codes_2020:
+    target_table: 2020_METADATA_CBG_FIPS_CODES
+    target_model: metadata_cbg_fips_codes_2020
+    description: Audited same-year join using STATE_FIPS + COUNTY_FIPS. Cardinality applies to matching non-null
+      keys; inspect coverage before choosing a join type.
+    join_on:
+    - source_dimension: state_fips
+      target_column: STATE_FIPS
+    - source_dimension: county_fips
+      target_column: COUNTY_FIPS
+    cardinality: many_to_one
+    metadata:
+      verification_status: verified_by_database_query
+      coverage:
+        source_keys_without_target: 0
+        target_keys_without_source: 13
+        source_null_key_rows: 0
+        target_null_key_rows: 0
+        matching_distinct_keys: 3221
+        inner_join_rows: 242335
+constraints:
+- Choose an allowed aggregation explicitly; there is no default.
+- Direct retrieval and sorting do not themselves require aggregation.
+- Do not treat NULL or unverified numeric sentinel codes as zero.
+- Do not combine overlapping categories or duplicate records introduced by joins.
+- Check geographic coverage, compatible universes, reporting periods, and uncertainty before combining values.
+unresolved_columns:
+  STATE:
+    sql: '"STATE"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  COUNTY:
+    sql: '"COUNTY"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  MTFCC:
+    sql: '"MTFCC"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+  GEOMETRY:
+    sql: '"GEOMETRY"'
+    data_type: string
+    source_data_type: TEXT
+    description: null
+    reason: No supplied field-dictionary definition or column comment.
+    queryable: false
+    embedding_eligible: false
+metadata:
+  schema_status: v1
+  physical_table: 2020_CBG_GEOMETRY_WKT
+  object_type: BASE TABLE
+  family: geometry
+  year_label: 2020
+  reporting_period: null
+  description_source: schema_structure
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 9
+  aggregation_policy: Population count operations are approved. Other statistical concepts require individual review;
+    empty allowed operations do not authorize rollup.
+  source_dictionary_gap_count: 9
+  documented_measure_count: 0
+  unresolved_column_count: 4

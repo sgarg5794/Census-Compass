@@ -1,0 +1,730 @@
+[
+  {
+    "measure": "sex_ratio",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP05_0004E",
+    "label": "Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+    "value": 97.0
+  },
+  {
+    "measure": "age_dependency_ratio",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S0101_C01_034E",
+    "label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Age dependency ratio",
+    "value": 62.0
+  },
+  {
+    "measure": "child_dependency_ratio",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S0101_C01_036E",
+    "label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Child dependency ratio",
+    "value": 36.6
+  },
+  {
+    "measure": "old_age_dependency_ratio",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S0101_C01_035E",
+    "label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Old-age dependency ratio",
+    "value": 25.3
+  },
+  {
+    "measure": "mean_travel_time_to_work",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0025E",
+    "label": "Estimate!!COMMUTING TO WORK!!Workers 16 years and over!!Mean travel time to work (minutes)",
+    "value": 26.9
+  },
+  {
+    "measure": "high_school_or_higher_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP02_0067PE",
+    "label": "Percent!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate or higher",
+    "value": 88.0
+  },
+  {
+    "measure": "bachelors_or_higher_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP02_0068PE",
+    "label": "Percent!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree or higher",
+    "value": 32.1
+  },
+  {
+    "measure": "poverty_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S1701_C03_001E",
+    "label": "Estimate!!Percent below poverty level!!Population for whom poverty status is determined",
+    "value": 13.4
+  },
+  {
+    "measure": "family_poverty_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0119PE",
+    "label": "Percent!!PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL!!All families",
+    "value": 9.5
+  },
+  {
+    "measure": "mean_household_income",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0063E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Total households!!Mean household income (dollars)",
+    "value": 88607.0
+  },
+  {
+    "measure": "mean_family_income",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0087E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Families!!Mean family income (dollars)",
+    "value": 103863.0
+  },
+  {
+    "measure": "per_capita_income",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0088E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Per capita income (dollars)",
+    "value": 34103.0
+  },
+  {
+    "measure": "mean_household_earnings",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0065E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Total households!!With earnings!!Mean earnings (dollars)",
+    "value": 90514.0
+  },
+  {
+    "measure": "mean_earnings",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "(B20003_001E) / (B20001_001E)",
+    "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars): | Estimate!!Total:",
+    "value": 51349.4264,
+    "derived": true,
+    "reason": "No profile or subject table publishes mean earnings for all people 16+ with earnings (S2001 has it only for full-time, year-round workers); derived from the published aggregate earnings and earner count.",
+    "components": [
+      {
+        "variable": "B20003_001E",
+        "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):",
+        "value": 8784771957500.0
+      },
+      {
+        "variable": "B20001_001E",
+        "label": "Estimate!!Total:",
+        "value": 171078288.0
+      }
+    ]
+  },
+  {
+    "measure": "mean_earnings_male",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "(B20003_002E) / (B20001_002E)",
+    "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Male: | Estimate!!Total:!!Male:",
+    "value": 60802.8912,
+    "derived": true,
+    "reason": "No profile or subject table publishes mean earnings for all male earners 16+; derived from the published aggregate earnings and earner count.",
+    "components": [
+      {
+        "variable": "B20003_002E",
+        "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Male:",
+        "value": 5468960009500.0
+      },
+      {
+        "variable": "B20001_002E",
+        "label": "Estimate!!Total:!!Male:",
+        "value": 89945723.0
+      }
+    ]
+  },
+  {
+    "measure": "mean_earnings_female",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "(B20003_005E) / (B20001_023E)",
+    "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Female: | Estimate!!Total:!!Female:",
+    "value": 40869.0635,
+    "derived": true,
+    "reason": "No profile or subject table publishes mean earnings for all female earners 16+; derived from the published aggregate earnings and earner count.",
+    "components": [
+      {
+        "variable": "B20003_005E",
+        "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Female:",
+        "value": 3315811948000.0
+      },
+      {
+        "variable": "B20001_023E",
+        "label": "Estimate!!Total:!!Female:",
+        "value": 81132565.0
+      }
+    ]
+  },
+  {
+    "measure": "unemployment_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0009PE",
+    "label": "Percent!!EMPLOYMENT STATUS!!Civilian labor force!!Unemployment Rate",
+    "value": 5.3
+  },
+  {
+    "measure": "labor_force_participation_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0002PE",
+    "label": "Percent!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force",
+    "value": 63.4
+  },
+  {
+    "measure": "homeowner_vacancy_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0004E",
+    "label": "Estimate!!HOUSING OCCUPANCY!!Total housing units!!Homeowner vacancy rate",
+    "value": 1.6
+  },
+  {
+    "measure": "rental_vacancy_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0005E",
+    "label": "Estimate!!HOUSING OCCUPANCY!!Total housing units!!Rental vacancy rate",
+    "value": 6.0
+  },
+  {
+    "measure": "average_household_size",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP02_0016E",
+    "label": "Estimate!!HOUSEHOLDS BY TYPE!!Total households!!Average household size",
+    "value": 2.62
+  },
+  {
+    "measure": "average_household_size_owner",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0048E",
+    "label": "Estimate!!HOUSING TENURE!!Occupied housing units!!Average household size of owner-occupied unit",
+    "value": 2.7
+  },
+  {
+    "measure": "average_household_size_renter",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0049E",
+    "label": "Estimate!!HOUSING TENURE!!Occupied housing units!!Average household size of renter-occupied unit",
+    "value": 2.49
+  },
+  {
+    "measure": "homeownership_rate",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0046PE",
+    "label": "Percent!!HOUSING TENURE!!Occupied housing units!!Owner-occupied",
+    "value": 64.0
+  },
+  {
+    "measure": "renters_paying_30_percent_or_more",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "100 * (DP04_0141E + DP04_0142E) / (DP04_0136E)",
+    "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!30.0 to 34.9 percent | Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!35.0 percent or more | Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)",
+    "value": 49.5535,
+    "derived": true,
+    "reason": "DP04 publishes the 30.0-34.9% and 35.0%+ bands separately; their estimates are summed and divided by units paying rent where GRAPI is computed.",
+    "components": [
+      {
+        "variable": "DP04_0141E",
+        "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!30.0 to 34.9 percent",
+        "value": 3674673.0
+      },
+      {
+        "variable": "DP04_0142E",
+        "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!35.0 percent or more",
+        "value": 16328272.0
+      },
+      {
+        "variable": "DP04_0136E",
+        "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)",
+        "value": 40366338.0
+      }
+    ]
+  },
+  {
+    "measure": "crowded_homes_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "100 * (DP04_0078E + DP04_0079E) / (DP04_0076E)",
+    "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.01 to 1.50 | Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.51 or more | Estimate!!OCCUPANTS PER ROOM!!Occupied housing units",
+    "value": 3.3505,
+    "derived": true,
+    "reason": "DP04 publishes the 1.01-1.50 and 1.51+ occupants-per-room bands separately; their estimates are summed and divided by occupied housing units.",
+    "components": [
+      {
+        "variable": "DP04_0078E",
+        "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.01 to 1.50",
+        "value": 2744718.0
+      },
+      {
+        "variable": "DP04_0079E",
+        "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.51 or more",
+        "value": 1301261.0
+      },
+      {
+        "variable": "DP04_0076E",
+        "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units",
+        "value": 120756048.0
+      }
+    ]
+  },
+  {
+    "measure": "uninsured_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S2701_C05_001E",
+    "label": "Estimate!!Percent Uninsured!!Civilian noninstitutionalized population",
+    "value": 8.8
+  },
+  {
+    "measure": "limited_english_households_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S1602_C04_001E",
+    "label": "Estimate!!Percent limited English-speaking households!!All households",
+    "value": 4.4
+  },
+  {
+    "measure": "no_internet_access_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "100 * (B28002_013E) / (B28002_001E)",
+    "label": "Estimate!!Total:!!No Internet access | Estimate!!Total:",
+    "value": 13.9332,
+    "derived": true,
+    "reason": "No profile or subject table publishes the share of households with no Internet access (S2801 combines it with access without a subscription); derived from the published household counts.",
+    "components": [
+      {
+        "variable": "B28002_013E",
+        "label": "Estimate!!Total:!!No Internet access",
+        "value": 16825155.0
+      },
+      {
+        "variable": "B28002_001E",
+        "label": "Estimate!!Total:",
+        "value": 120756048.0
+      }
+    ]
+  },
+  {
+    "measure": "no_internet_subscription_pct",
+    "geography": "us_excluding_pr",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S2801_C02_019E",
+    "label": "Estimate!!Percent!!Total households!!TYPE OF INTERNET SUBSCRIPTIONS!!Without an Internet subscription",
+    "value": 17.0
+  },
+  {
+    "measure": "sex_ratio",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP05_0004E",
+    "label": "Estimate!!SEX AND AGE!!Total population!!Sex ratio (males per 100 females)",
+    "value": 98.8
+  },
+  {
+    "measure": "age_dependency_ratio",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S0101_C01_034E",
+    "label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Age dependency ratio",
+    "value": 58.6
+  },
+  {
+    "measure": "child_dependency_ratio",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S0101_C01_036E",
+    "label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Child dependency ratio",
+    "value": 36.4
+  },
+  {
+    "measure": "old_age_dependency_ratio",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S0101_C01_035E",
+    "label": "Estimate!!Total!!Total population!!SUMMARY INDICATORS!!Old-age dependency ratio",
+    "value": 22.1
+  },
+  {
+    "measure": "mean_travel_time_to_work",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0025E",
+    "label": "Estimate!!COMMUTING TO WORK!!Workers 16 years and over!!Mean travel time to work (minutes)",
+    "value": 29.8
+  },
+  {
+    "measure": "high_school_or_higher_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP02_0067PE",
+    "label": "Percent!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!High school graduate or higher",
+    "value": 83.3
+  },
+  {
+    "measure": "bachelors_or_higher_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP02_0068PE",
+    "label": "Percent!!EDUCATIONAL ATTAINMENT!!Population 25 years and over!!Bachelor's degree or higher",
+    "value": 33.9
+  },
+  {
+    "measure": "poverty_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S1701_C03_001E",
+    "label": "Estimate!!Percent below poverty level!!Population for whom poverty status is determined",
+    "value": 13.4
+  },
+  {
+    "measure": "family_poverty_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0119PE",
+    "label": "Percent!!PERCENTAGE OF FAMILIES AND PEOPLE WHOSE INCOME IN THE PAST 12 MONTHS IS BELOW THE POVERTY LEVEL!!All families",
+    "value": 9.6
+  },
+  {
+    "measure": "mean_household_income",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0063E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Total households!!Mean household income (dollars)",
+    "value": 106916.0
+  },
+  {
+    "measure": "mean_family_income",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0087E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Families!!Mean family income (dollars)",
+    "value": 119126.0
+  },
+  {
+    "measure": "per_capita_income",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0088E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Per capita income (dollars)",
+    "value": 36955.0
+  },
+  {
+    "measure": "mean_household_earnings",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0065E",
+    "label": "Estimate!!INCOME AND BENEFITS (IN 2019 INFLATION-ADJUSTED DOLLARS)!!Total households!!With earnings!!Mean earnings (dollars)",
+    "value": 107340.0
+  },
+  {
+    "measure": "mean_earnings",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "(B20003_001E) / (B20001_001E)",
+    "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars): | Estimate!!Total:",
+    "value": 57778.7054,
+    "derived": true,
+    "reason": "No profile or subject table publishes mean earnings for all people 16+ with earnings (S2001 has it only for full-time, year-round workers); derived from the published aggregate earnings and earner count.",
+    "components": [
+      {
+        "variable": "B20003_001E",
+        "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):",
+        "value": 1177593572200.0
+      },
+      {
+        "variable": "B20001_001E",
+        "label": "Estimate!!Total:",
+        "value": 20381100.0
+      }
+    ]
+  },
+  {
+    "measure": "mean_earnings_male",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "(B20003_002E) / (B20001_002E)",
+    "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Male: | Estimate!!Total:!!Male:",
+    "value": 66978.8835,
+    "derived": true,
+    "reason": "No profile or subject table publishes mean earnings for all male earners 16+; derived from the published aggregate earnings and earner count.",
+    "components": [
+      {
+        "variable": "B20003_002E",
+        "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Male:",
+        "value": 736644142500.0
+      },
+      {
+        "variable": "B20001_002E",
+        "label": "Estimate!!Total:!!Male:",
+        "value": 10998155.0
+      }
+    ]
+  },
+  {
+    "measure": "mean_earnings_female",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "(B20003_005E) / (B20001_023E)",
+    "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Female: | Estimate!!Total:!!Female:",
+    "value": 46994.7793,
+    "derived": true,
+    "reason": "No profile or subject table publishes mean earnings for all female earners 16+; derived from the published aggregate earnings and earner count.",
+    "components": [
+      {
+        "variable": "B20003_005E",
+        "label": "Estimate!!Aggregate earnings in the past 12 months (in 2019 inflation-adjusted dollars):!!Female:",
+        "value": 440949429700.0
+      },
+      {
+        "variable": "B20001_023E",
+        "label": "Estimate!!Total:!!Female:",
+        "value": 9382945.0
+      }
+    ]
+  },
+  {
+    "measure": "unemployment_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0009PE",
+    "label": "Percent!!EMPLOYMENT STATUS!!Civilian labor force!!Unemployment Rate",
+    "value": 6.1
+  },
+  {
+    "measure": "labor_force_participation_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP03_0002PE",
+    "label": "Percent!!EMPLOYMENT STATUS!!Population 16 years and over!!In labor force",
+    "value": 63.7
+  },
+  {
+    "measure": "homeowner_vacancy_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0004E",
+    "label": "Estimate!!HOUSING OCCUPANCY!!Total housing units!!Homeowner vacancy rate",
+    "value": 1.1
+  },
+  {
+    "measure": "rental_vacancy_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0005E",
+    "label": "Estimate!!HOUSING OCCUPANCY!!Total housing units!!Rental vacancy rate",
+    "value": 3.6
+  },
+  {
+    "measure": "average_household_size",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP02_0016E",
+    "label": "Estimate!!HOUSEHOLDS BY TYPE!!Total households!!Average household size",
+    "value": 2.95
+  },
+  {
+    "measure": "average_household_size_owner",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0048E",
+    "label": "Estimate!!HOUSING TENURE!!Occupied housing units!!Average household size of owner-occupied unit",
+    "value": 3.01
+  },
+  {
+    "measure": "average_household_size_renter",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0049E",
+    "label": "Estimate!!HOUSING TENURE!!Occupied housing units!!Average household size of renter-occupied unit",
+    "value": 2.88
+  },
+  {
+    "measure": "homeownership_rate",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "DP04_0046PE",
+    "label": "Percent!!HOUSING TENURE!!Occupied housing units!!Owner-occupied",
+    "value": 54.8
+  },
+  {
+    "measure": "renters_paying_30_percent_or_more",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "100 * (DP04_0141E + DP04_0142E) / (DP04_0136E)",
+    "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!30.0 to 34.9 percent | Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!35.0 percent or more | Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)",
+    "value": 54.7746,
+    "derived": true,
+    "reason": "DP04 publishes the 30.0-34.9% and 35.0%+ bands separately; their estimates are summed and divided by units paying rent where GRAPI is computed.",
+    "components": [
+      {
+        "variable": "DP04_0141E",
+        "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!30.0 to 34.9 percent",
+        "value": 534670.0
+      },
+      {
+        "variable": "DP04_0142E",
+        "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)!!35.0 percent or more",
+        "value": 2531764.0
+      },
+      {
+        "variable": "DP04_0136E",
+        "label": "Estimate!!GROSS RENT AS A PERCENTAGE OF HOUSEHOLD INCOME (GRAPI)!!Occupied units paying rent (excluding units where GRAPI cannot be computed)",
+        "value": 5598274.0
+      }
+    ]
+  },
+  {
+    "measure": "crowded_homes_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/profile",
+    "variable": "100 * (DP04_0078E + DP04_0079E) / (DP04_0076E)",
+    "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.01 to 1.50 | Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.51 or more | Estimate!!OCCUPANTS PER ROOM!!Occupied housing units",
+    "value": 8.2319,
+    "derived": true,
+    "reason": "DP04 publishes the 1.01-1.50 and 1.51+ occupants-per-room bands separately; their estimates are summed and divided by occupied housing units.",
+    "components": [
+      {
+        "variable": "DP04_0078E",
+        "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.01 to 1.50",
+        "value": 688128.0
+      },
+      {
+        "variable": "DP04_0079E",
+        "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units!!1.51 or more",
+        "value": 385660.0
+      },
+      {
+        "variable": "DP04_0076E",
+        "label": "Estimate!!OCCUPANTS PER ROOM!!Occupied housing units",
+        "value": 13044266.0
+      }
+    ]
+  },
+  {
+    "measure": "uninsured_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S2701_C05_001E",
+    "label": "Estimate!!Percent Uninsured!!Civilian noninstitutionalized population",
+    "value": 7.5
+  },
+  {
+    "measure": "limited_english_households_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S1602_C04_001E",
+    "label": "Estimate!!Percent limited English-speaking households!!All households",
+    "value": 8.9
+  },
+  {
+    "measure": "no_internet_access_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5",
+    "variable": "100 * (B28002_013E) / (B28002_001E)",
+    "label": "Estimate!!Total:!!No Internet access | Estimate!!Total:",
+    "value": 10.6397,
+    "derived": true,
+    "reason": "No profile or subject table publishes the share of households with no Internet access (S2801 combines it with access without a subscription); derived from the published household counts.",
+    "components": [
+      {
+        "variable": "B28002_013E",
+        "label": "Estimate!!Total:!!No Internet access",
+        "value": 1387875.0
+      },
+      {
+        "variable": "B28002_001E",
+        "label": "Estimate!!Total:",
+        "value": 13044266.0
+      }
+    ]
+  },
+  {
+    "measure": "no_internet_subscription_pct",
+    "geography": "state:06",
+    "year": 2019,
+    "endpoint": "/data/2019/acs/acs5/subject",
+    "variable": "S2801_C02_019E",
+    "label": "Estimate!!Percent!!Total households!!TYPE OF INTERNET SUBSCRIPTIONS!!Without an Internet subscription",
+    "value": 13.1
+  }
+]

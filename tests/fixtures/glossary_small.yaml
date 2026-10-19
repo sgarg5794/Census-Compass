@@ -1,0 +1,21 @@
+- term: Median
+  aliases: [middle value]
+  definition: The median divides a distribution into two equal parts. Half of the cases fall below the median and half above it.
+  source:
+    title: ACS General Handbook 2020
+    page: 7
+    url: https://www.census.gov/programs-surveys/acs/library/handbooks/general.html
+- term: Margin of error
+  aliases: [MOE]
+  definition: A margin of error describes the precision of an estimate. Adding and subtracting it gives a 90 percent confidence interval.
+  source:
+    title: ACS General Handbook 2020
+    page: 49
+    url: https://www.census.gov/programs-surveys/acs/library/handbooks/general.html
+- term: Median household income
+  aliases: []
+  definition: Median household income divides households into two equal groups by income. Half have income above it and half below.
+  source:
+    title: ACS Subject Definitions 2020
+    page: "81"
+    url: https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf

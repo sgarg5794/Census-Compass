@@ -1,0 +1,484 @@
+# Approved topic mapping for LLM-facing semantic files (consumed by the builder).
+#
+# Rules (checked automatically against data/tables/*.yaml for 2019 and 2020):
+#   - every Census group is assigned to exactly one topic (2019 lacks B28012; otherwise identical)
+#   - a topic reads from one physical table only (`table`; year prefix added per year: 2020_CBG_B25)
+#   - every hand-written (derived) measure uses only columns from its own topic, except
+#     measures that declare a join: per_capita_income (→ population_age_and_sex) and the
+#     nine mean_household_income_<race> measures (→ housing_occupancy_and_tenure).
+#     A hand-written measure's topic is set only by its `topic:` in measures.yaml.
+#   - race versions (A–I) stay with their base group. E (Native Hawaiian and Other Pacific
+#     Islander alone) is missing from the database dictionary; its descriptions come from the
+#     official Census API (api.census.gov/data/{year}/acs/acs5/groups/{group}.json), verified:
+#     148/148 columns per year match; naming rule checked 148/148 on documented A groups.
+#   - excluded physical tables: 2019_CBG_PATTERNS, 2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME,
+#     2019_TOTAL_RENTAL_GEO, 2019_CBG_B99, 2020_CBG_B99 (geometry tables are never queried)
+#
+# Group codes are listed only so the builder can use them; the comment gives the meaning.
+
+- name: population_age_and_sex
+  title: "Population by age and sex"
+  table: CBG_B01
+  groups:
+    - B01001  # Sex By Age
+    - B01002  # Median Age By Sex  (+ race versions A, B, C, D, E, F, G, H, I)
+    - B01003  # Total Population
+
+- name: race
+  title: "Race"
+  table: CBG_B02
+  groups:
+    - B02001  # Race
+    - B02008  # White Alone Or In Combination With One Or More Other Races
+    - B02009  # Black Or African American Alone Or In Combination With One Or More Other Races
+    - B02010  # American Indian And Alaska Native Alone Or In Combination With One Or More Other Races
+    - B02011  # Asian Alone Or In Combination With One Or More Other Races
+    - B02012  # Native Hawaiian And Other Pacific Islander Alone Or In Combination With One Or More Other Races
+    - B02013  # Some Other Race Alone Or In Combination With One Or More Other Races
+
+- name: hispanic_origin
+  title: "Hispanic or Latino origin"
+  table: CBG_B03
+  groups:
+    - B03002  # Hispanic Or Latino Origin By Race
+    - B03003  # Hispanic Or Latino Origin
+
+- name: moved_in_past_year
+  title: "People who moved in the past year"
+  table: CBG_B07
+  groups:
+    - B07201  # Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area Level In The United States
+    - B07201PR  # Geographical Mobility In The Past Year For Current Residence--Metropolitan Statistical Area Level In Puerto Rico
+    - B07202  # Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area Level In The United States
+    - B07202PR  # Geographical Mobility In The Past Year For Current Residence--Micropolitan Statistical Area Level In Puerto Rico
+    - B07203  # Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan Statistical Area Level In The United States
+    - B07203PR  # Geographical Mobility In The Past Year For Current Residence--Not Metropolitan Or Micropolitan Statistical Area Level In Puerto Rico
+
+- name: commuting
+  title: "Getting to work: transport mode, travel time and departure time"
+  table: CBG_B08
+  groups:
+    - B08134  # Means Of Transportation To Work By Travel Time To Work
+    - B08135  # Aggregate Travel Time To Work (In Minutes) Of Workers By Travel Time To Work
+    - B08136  # Aggregate Travel Time To Work (In Minutes) Of Workers By Means Of Transportation To Work
+    - B08301  # Means Of Transportation To Work
+    - B08302  # Time Of Departure To Go To Work
+    - B08303  # Travel Time To Work
+
+- name: place_of_work
+  title: "Where workers work (state, county, place, metro area)"
+  table: CBG_B08
+  groups:
+    - B08007  # Sex Of Workers By Place Of Work--State And County Level
+    - B08008  # Sex Of Workers By Place Of Work--Place Level
+    - B08009  # Sex Of Workers By Place Of Work--Minor Civil Division Level For 12 Selected States (Ct, Me, Ma, Mi, Mn, Nh, Nj, Ny, Pa, Ri, Vt, Wi)
+    - B08016  # Place Of Work For Workers 16 Years And Over--Metropolitan Statistical Area Level
+    - B08017  # Place Of Work For Workers 16 Years And Over--Micropolitan Statistical Area Level
+    - B08018  # Place Of Work For Workers 16 Years And Over--Not Metropolitan Or Micropolitan Statistical Area Level
+
+- name: children_and_living_arrangements
+  title: "Children, older adults and living arrangements"
+  table: CBG_B09
+  groups:
+    - B09002  # Own Children Under 18 Years By Family Type And Age
+    - B09018  # Relationship To Householder For Children Under 18 Years In Households
+    - B09019  # Household Type (Including Living Alone) By Relationship
+    - B09020  # Relationship By Household Type (Including Living Alone) For The Population 65 Years And Over
+    - B09021  # Living Arrangements Of Adults 18 Years And Over By Age
+
+- name: household_types_and_size
+  title: "Household types and household size"
+  table: CBG_B11
+  groups:
+    - B11001  # Household Type (Including Living Alone)  (+ race versions A, B, C, D, E, F, G, H, I)
+    - B11002  # Household Type By Relatives And Nonrelatives For Population In Households  (+ race versions A, B, C, D, E, F, G, H, I)
+    - B11012  # Households By Type
+    - B11015  # Households By Presence Of Nonrelatives
+    - B11016  # Household Type By Household Size
+
+- name: families_and_children
+  title: "Families and households with children"
+  table: CBG_B11
+  groups:
+    - B11003  # Family Type By Presence And Age Of Own Children Under 18 Years
+    - B11004  # Family Type By Presence And Age Of Related Children Under 18 Years
+    - B11005  # Households By Presence Of People Under 18 Years By Household Type
+    - B11008  # Cohabiting Couple Households By Presence And Age Of Own Children Under 18 Years
+
+- name: households_with_older_people
+  title: "Households with people 60 or 65 and over"
+  table: CBG_B11
+  groups:
+    - B11006  # Households By Presence Of People 60 Years And Over By Household Type
+    - B11007  # Households By Presence Of People 65 Years And Over, Household Size And Household Type
+
+- name: marital_status
+  title: "Marital status"
+  table: CBG_B12
+  groups:
+    - B12001  # Sex By Marital Status For The Population 15 Years And Over
+
+- name: school_enrollment
+  title: "School enrollment"
+  table: CBG_B14
+  groups:
+    - B14002  # Sex By School Enrollment By Level Of School By Type Of School For The Population 3 Years And Over
+    - B14005  # Sex By School Enrollment By Educational Attainment By Employment Status For The Population 16 To 19 Years
+    - B14007  # School Enrollment By Detailed  Level Of School For The Population 3 Years And Over  (+ race versions A, B, C, D, E, F, G, H, I)
+
+- name: educational_attainment
+  title: "Educational attainment (adults 25 and over)"
+  table: CBG_B15
+  groups:
+    - B15002  # Sex By Educational Attainment For The Population 25 Years And Over
+    - B15003  # Educational Attainment For The Population 25 Years And Over
+
+- name: bachelors_degree_fields_detailed
+  title: "Field of bachelor's degree, by sex and age"
+  table: CBG_B15
+  groups:
+    - B15011  # Sex By Age By Field Of Bachelor's Degree For First Major For The Population 25 Years And Over
+    - B15012  # Total Fields Of Bachelor's Degrees Reported
+
+- name: language_and_english_ability
+  title: "Language spoken at home and ability to speak English"
+  table: CBG_B16
+  groups:
+    - B16004  # Age By Language Spoken At Home By Ability To Speak English For The Population 5 Years And Over
+
+- name: poverty
+  title: "Poverty status of people, families and households"
+  table: CBG_B17
+  groups:
+    - B17010  # Poverty Status In The Past 12 Months Of Families By Family Type By Presence Of Related Children Under 18 Years By Age Of Related Children
+    - B17011  # Aggregate Income Deficit (Dollars) In The Past 12 Months For Families By Family Type
+    - B17017  # Poverty Status In The Past 12 Months By Household Type By Age Of Householder
+    - B17021  # Poverty Status Of Individuals In The Past 12 Months By Living Arrangement
+
+- name: household_income
+  title: "Household income: distribution, median and mean"
+  table: CBG_B19
+  groups:
+    - B19001  # Household Income In The Past 12 Months
+    - B19013  # Median Household Income In The Past 12 Months
+    - B19025  # Aggregate Household Income In The Past 12 Months  (+ race versions A, B, C, D, E, F, G, H, I)
+    - B19037  # Age Of Householder By Household Income In The Past 12 Months
+    - B19049  # Median Household Income In The Past 12 Months By Age Of Householder
+    - B19050  # Aggregate Household Income In The Past 12 Months By Age Of Householder
+
+- name: household_income_by_source
+  title: "Household income by source (earnings, Social Security, retirement, public assistance…)"
+  table: CBG_B19
+  groups:
+    - B19051  # Earnings In The Past 12 Months For Households
+    - B19052  # Wage Or Salary Income In The Past 12 Months For Households
+    - B19053  # Self-Employment Income In The Past 12 Months For Households
+    - B19054  # Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households
+    - B19055  # Social Security Income In The Past 12 Months For Households
+    - B19056  # Supplemental Security Income (Ssi) In The Past 12 Months For Households
+    - B19057  # Public Assistance Income In The Past 12 Months For Households
+    - B19058  # Public Assistance Income Or Food Stamps/Snap In The Past 12 Months For Households
+    - B19059  # Retirement Income In The Past 12 Months For Households
+    - B19060  # Other Types Of Income In The Past 12 Months For Households
+    - B19061  # Aggregate Earnings In The Past 12 Months For Households
+    - B19062  # Aggregate Wage Or Salary Income In The Past 12 Months For Households
+    - B19063  # Aggregate Self-Employment Income In The Past 12 Months For Households
+    - B19064  # Aggregate Interest, Dividends, Or Net Rental Income In The Past 12 Months For Households
+    - B19065  # Aggregate Social Security Income In The Past 12 Months For Households
+    - B19066  # Aggregate Supplemental Security Income (Ssi) In The Past 12 Months For Households
+    - B19067  # Aggregate Public Assistance Income In The Past 12 Months For Households
+    - B19069  # Aggregate Retirement Income In The Past 12 Months For Households
+    - B19070  # Aggregate Other Types Of Income In The Past 12 Months For Households
+
+- name: family_and_nonfamily_income
+  title: "Family and nonfamily household income"
+  table: CBG_B19
+  groups:
+    - B19101  # Family Income In The Past 12 Months
+    - B19113  # Median Family Income In The Past 12 Months
+    - B19123  # Family Size By Cash Public Assistance Income Or Households Receiving Food Stamps/Snap Benefits In The Past 12 Months
+    - B19127  # Aggregate Family Income In The Past 12 Months
+    - B19201  # Nonfamily Household Income In The Past 12 Months
+    - B19202  # Median Nonfamily Household Income In The Past 12 Months
+    - B19214  # Aggregate Nonfamily Household Income In The Past 12 Months
+
+- name: per_capita_income
+  title: "Per capita income and total personal income"
+  table: CBG_B19
+  groups:
+    - B19301  # Per Capita Income In The Past 12 Months  (+ race versions A, B, C, D, E, F, G, H, I)
+    - B19313  # Aggregate Income In The Past 12 Months  (+ race versions A, B, C, D, E, F, G, H, I)
+
+- name: earnings
+  title: "Individual earnings by sex and work experience"
+  table: CBG_B20
+  groups:
+    - B20001  # Sex By Earnings In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months
+    - B20002  # Median Earnings In The Past 12 Months By Sex For The Population 16 Years And Over With Earnings In The Past 12 Months
+    - B20003  # Aggregate Earnings In The Past 12 Months By Sex By Work Experience For The Population 16 Years And Over With Earnings
+    - B20017  # Median Earnings In The Past 12 Months By Sex By Work Experience In The Past 12 Months For The Population 16 Years And Over With Earnings In The Past 12 Months
+
+- name: veterans
+  title: "Veteran status and period of service"
+  table: CBG_B21
+  groups:
+    - B21001  # Sex By Age By Veteran Status For The Civilian Population 18 Years And Over
+    - B21002  # Period Of Military Service For Civilian Veterans 18 Years And Over
+
+- name: snap_and_disability
+  title: "Food stamps/SNAP receipt and disability in households"
+  table: CBG_B22
+  groups:
+    - B22010  # Receipt Of Food Stamps/Snap In The Past 12 Months By Disability Status For Households
+
+- name: labor_force_status
+  title: "Employment status, unemployment and labor force"
+  table: CBG_B23
+  groups:
+    - B23024  # Poverty Status In The Past 12 Months By Disability Status By Employment Status For The Population 20 To 64 Years
+    - B23025  # Employment Status For The Population 16 Years And Over
+
+- name: work_hours_and_weeks
+  title: "Hours and weeks worked, full-time year-round work"
+  table: CBG_B23
+  groups:
+    - B23022  # Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months By Weeks Worked In The Past 12 Months For The Population 16 To 64 Years
+    - B23026  # Sex By Work Status In The Past 12 Months By Usual Hours Worked Per Week In The Past 12 Months By Weeks Worked In The Past 12 Months For The Population 65 Years And Over
+    - B23027  # Full-Time, Year-Round Work Status In The Past 12 Months By Age For The Population 16 Years And Over
+
+- name: working_parents_and_families
+  title: "Employment of parents and workers in families"
+  table: CBG_B23
+  groups:
+    - B23003  # Presence Of Own Children Under 18 Years By Age Of Own Children Under 18 Years By Employment Status For Females 20 To 64 Years
+    - B23007  # Presence Of Own Children Under 18 Years By Family Type By Employment Status
+    - B23008  # Age Of Own Children Under 18 Years In Families And Subfamilies By Living Arrangements By Employment Status Of Parents
+    - B23009  # Presence Of Own Children Under 18 Years By Family Type By Number Of Workers In Family In The Past 12 Months
+
+- name: class_of_worker
+  title: "Class of worker (private, government, self-employed)"
+  table: CBG_B24
+  groups:
+    - B24080  # Sex By Class Of Worker For The Civilian Employed Population 16 Years And Over
+
+- name: housing_occupancy_and_tenure
+  title: "Housing units, occupancy, vacancy, owners and renters, household size"
+  table: CBG_B25
+  groups:
+    - B25001  # Housing Units
+    - B25002  # Occupancy Status
+    - B25003  # Tenure  (+ race versions A, B, C, D, E, F, G, H, I)
+    - B25004  # Vacancy Status
+    - B25006  # Race Of Householder
+    - B25007  # Tenure By Age Of Householder
+    - B25008  # Total Population In Occupied Housing Units By Tenure
+    - B25009  # Tenure By Household Size
+    - B25010  # Average Household Size Of Occupied Housing Units By Tenure
+
+- name: housing_crowding_and_facilities
+  title: "Crowding, plumbing, kitchen, telephone and heating fuel"
+  table: CBG_B25
+  groups:
+    - B25014  # Tenure By Occupants Per Room
+    - B25015  # Tenure By Age Of Householder By Occupants Per Room
+    - B25016  # Tenure By Plumbing Facilities By Occupants Per Room
+    - B25040  # House Heating Fuel
+    - B25043  # Tenure By Telephone Service Available By Age Of Householder
+    - B25047  # Plumbing Facilities For All Housing Units
+    - B25049  # Tenure By Plumbing Facilities
+    - B25050  # Plumbing Facilities By Occupants Per Room By Year Structure Built
+    - B25051  # Kitchen Facilities For All Housing Units
+    - B25053  # Tenure By Kitchen Facilities
+
+- name: housing_rooms_and_bedrooms
+  title: "Rooms and bedrooms"
+  table: CBG_B25
+  groups:
+    - B25017  # Rooms
+    - B25018  # Median Number Of Rooms
+    - B25019  # Aggregate Number Of Rooms
+    - B25020  # Tenure By Rooms
+    - B25021  # Median Number Of Rooms By Tenure
+    - B25022  # Aggregate Number Of Rooms By Tenure
+    - B25041  # Bedrooms
+    - B25042  # Tenure By Bedrooms
+
+- name: housing_structure_age_and_move_in
+  title: "Building type, year built and year moved in"
+  table: CBG_B25
+  groups:
+    - B25024  # Units In Structure
+    - B25032  # Tenure By Units In Structure
+    - B25033  # Total Population In Occupied Housing Units By Tenure By Units In Structure
+    - B25034  # Year Structure Built
+    - B25035  # Median Year Structure Built
+    - B25036  # Tenure By Year Structure Built
+    - B25037  # Median Year Structure Built By Tenure
+    - B25038  # Tenure By Year Householder Moved Into Unit
+    - B25039  # Median Year Householder Moved Into Unit By Tenure
+
+- name: vehicles_available
+  title: "Vehicles available to households"
+  table: CBG_B25
+  groups:
+    - B25044  # Tenure By Vehicles Available
+    - B25045  # Tenure By Vehicles Available By Age Of Householder
+    - B25046  # Aggregate Number Of Vehicles Available By Tenure
+
+- name: rent_and_rent_burden
+  title: "Rent, rent asked and rent as a percentage of income"
+  table: CBG_B25
+  groups:
+    - B25054  # Kitchen Facilities By Meals Included In Rent
+    - B25055  # Age Of Householder By Meals Included In Rent
+    - B25056  # Contract Rent
+    - B25057  # Lower Contract Rent Quartile (Dollars)
+    - B25058  # Median Contract Rent (Dollars)
+    - B25059  # Upper Contract Rent Quartile (Dollars)
+    - B25060  # Aggregate Contract Rent (Dollars)
+    - B25061  # Rent Asked
+    - B25062  # Aggregate Rent Asked (Dollars)
+    - B25063  # Gross Rent
+    - B25064  # Median Gross Rent (Dollars)
+    - B25065  # Aggregate Gross Rent (Dollars)
+    - B25066  # Aggregate Gross Rent (Dollars) By Units In Structure
+    - B25067  # Aggregate Gross Rent (Dollars) By Meals Included In Rent
+    - B25068  # Bedrooms By Gross Rent
+    - B25069  # Inclusion Of Utilities In Rent
+    - B25070  # Gross Rent As A Percentage Of Household Income In The Past 12 Months
+    - B25071  # Median Gross Rent As A Percentage Of Household Income In The Past 12 Months (Dollars)
+    - B25072  # Age Of Householder By Gross Rent As A Percentage Of Household Income In The Past 12 Months
+    - B25074  # Household Income By Gross Rent As A Percentage Of Household Income In The Past 12 Months
+
+- name: home_value_and_owner_costs
+  title: "Home value, price asked, mortgages and owner costs"
+  table: CBG_B25
+  groups:
+    - B25075  # Value
+    - B25076  # Lower Value Quartile (Dollars)
+    - B25077  # Median Value (Dollars)
+    - B25078  # Upper Value Quartile (Dollars)
+    - B25079  # Aggregate Value (Dollars) By Age Of Householder
+    - B25080  # Aggregate Value (Dollars) By Units In Structure
+    - B25081  # Mortgage Status
+    - B25082  # Aggregate Value (Dollars) By Mortgage Status
+    - B25083  # Median Value (Dollars) For Mobile Homes
+    - B25085  # Price Asked
+    - B25086  # Aggregate Price Asked (Dollars)
+    - B25087  # Mortgage Status And Selected Monthly Owner Costs
+    - B25088  # Median Selected Monthly Owner Costs (Dollars) By Mortgage Status
+    - B25089  # Aggregate Selected Monthly Owner Costs (Dollars) By Mortgage Status
+    - B25091  # Mortgage Status By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12 Months
+    - B25092  # Median Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12 Months
+    - B25093  # Age Of Householder By Selected Monthly Owner Costs As A Percentage Of Household Income In The Past 12 Months
+
+- name: health_insurance
+  title: "Health insurance coverage by age"
+  table: CBG_B27
+  groups:
+    - B27010  # Types Of Health Insurance Coverage By Age
+
+- name: computers_and_internet
+  title: "Computers and internet subscriptions"
+  table: CBG_B28
+  groups:
+    - B28001  # Types Of Computers In Household
+    - B28002  # Presence And Types Of Internet Subscriptions In Household
+    - B28003  # Presence Of A Computer And Type Of Internet Subscription In Household
+    - B28004  # Household Income In The Last 12 Months By Presence And Type Of Internet Subscription In Household
+    - B28005  # Age By Presence Of A Computer And Types Of Internet Subscription In Household
+    - B28006  # Educational Attainment By Presence Of A Computer And Types Of Internet Subscription In Household
+    - B28007  # Labor Force Status By Presence Of A Computer And Types Of Internet Subscription In Household
+    - B28008  # Presence Of A Computer And Type Of Internet Subscription In Household
+    - B28009  #   (+ race versions A, B, C, D, E, F, G, H, I)
+    - B28010  # Computers In Household
+    - B28011  # Internet Subscriptions In Household
+    - B28012  # Age And Enrollment Status By Computer Ownership And Internet Subscription Status
+
+- name: citizen_voting_age_population
+  title: "Citizen voting-age population"
+  table: CBG_B29
+  groups:
+    - B29001  # Citizen, Voting-Age Population By Age
+    - B29002  # Citizen, Voting-Age Population By Educational Attainment
+    - B29003  # Citizen, Voting-Age Population By Poverty Status
+    - B29004  # Median Household Income For Households With A Citizen, Voting-Age Householder
+
+- name: detailed_race
+  title: "Detailed race"
+  table: CBG_C02
+  groups:
+    - C02003  # Detailed Race
+
+- name: bachelors_degree_field
+  title: "Field of bachelor's degree"
+  table: CBG_C15
+  groups:
+    - C15010  # Field Of Bachelor's Degree For First Major For The Population 25 Years And Over  (+ race versions A, B, C, D, E, F, G, H, I)
+
+- name: household_language
+  title: "Household language and limited-English households"
+  table: CBG_C16
+  groups:
+    - C16002  # Household Language By Household Limited English Speaking Status
+
+- name: income_to_poverty_ratio
+  title: "Income relative to the poverty line"
+  table: CBG_C17
+  groups:
+    - C17002  # Ratio Of Income To Poverty Level In The Past 12 Months
+
+- name: veterans_poverty_and_disability
+  title: "Veterans by age, poverty and disability"
+  table: CBG_C21
+  groups:
+    - C21007  # Age By Veteran Status By Poverty Status In The Past 12 Months By Disability Status For The Civilian Population 18 Years And Over
+
+- name: occupation
+  title: "Occupation by sex"
+  table: CBG_C24
+  groups:
+    - C24010  # Sex By Occupation For The Civilian Employed Population 16 Years And Over  (+ race versions A, B, C, D, E, F, G, H, I)
+    - C24020  # Sex By Occupation For The Full-Time, Year-Round Civilian Employed Population 16 Years And Over
+
+- name: industry
+  title: "Industry by sex"
+  table: CBG_C24
+  groups:
+    - C24030  # Sex By Industry For The Civilian Employed Population 16 Years And Over
+
+# ---- 2020 only: official 2020 Census count (2020_REDISTRICTING_CBG_DATA) ----
+- name: census_count_race_and_hispanic_2020
+  title: "2020 Census count — total population, race and Hispanic origin"
+  table: REDISTRICTING_CBG_DATA
+  groups:
+    - P001  # Race
+    - P002  # Hispanic or Latino, and not Hispanic or Latino by race
+
+- name: census_count_adults_race_and_hispanic_2020
+  title: "2020 Census count — adults 18 and over by race and Hispanic origin"
+  table: REDISTRICTING_CBG_DATA
+  groups:
+    - P003  # Race for the population 18 years and over
+    - P004  # Hispanic or Latino by race for the population 18 years and over
+
+- name: census_count_group_quarters_2020
+  title: "2020 Census count — people living in group quarters (prisons, dorms, nursing homes…)"
+  table: REDISTRICTING_CBG_DATA
+  groups:
+    - P005  # Group quarters population by major group quarters type
+
+# ---- both years: INTERNAL files (not embedded, not returned by search_schema) ----
+- name: geography
+  title: "States and counties"
+  table: METADATA_CBG_FIPS_CODES
+  internal: true
+  groups: []   # dimensions only: state, state code, county code, county name
+  # join: LEFT(<table>."CENSUS_BLOCK_GROUP", 5) = STATE_FIPS || COUNTY_FIPS
+  # verified: every county prefix matches exactly one row (2019: 3,220; 2020: 3,221)
+
+- name: land_area_and_location
+  title: "Land area, water area and coordinates of block groups"
+  table: METADATA_CBG_GEOGRAPHIC_DATA
+  internal: true
+  groups: []   # used by tools only; future population-density measure would join here

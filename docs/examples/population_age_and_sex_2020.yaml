@@ -1,0 +1,3600 @@
+# User-approved v1 design example. Active generated definition: data/tables/2020_CBG_B01.yaml.
+version: 1
+name: population_age_and_sex_2020
+description: 2020-labeled Census block-group population estimates, sex-by-age counts, and published median ages.
+  Includes total population and male/female age categories, plus median age by sex for the total population and
+  available race/ethnicity groups. Source definitions come from the same-year field dictionary. The exact reporting
+  period remains to be verified for this physical table; the year label alone is not a single-date population count.
+source_table: '"US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"."PUBLIC"."2020_CBG_B01"'
+grain:
+  description: One row per Census block group.
+  primary_key:
+  - census_block_group
+  verification: Unique, non-null identifiers confirmed in the earlier live join audit.
+dimensions:
+  census_block_group:
+    description: Census block-group geographic identifier for the area summarized by this row.
+    data_type: string
+    source_data_type: TEXT
+    sql: '"CENSUS_BLOCK_GROUP"'
+    constraints:
+    - Preserve leading zeros; treat as an identifier, not a number.
+    metadata:
+      source_column: CENSUS_BLOCK_GROUP
+      description_source: Project geographic interpretation; absent from field dictionary.
+      embedding_eligible: false
+measures:
+  population:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e1"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m1"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m1
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e1
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  population_male:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e2"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m2"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m2
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e2
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  population_male_under_5_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > Under 5 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e3"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m3"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > Under 5 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m3
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e3
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - Under 5 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_5_to_9_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 5 to 9 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e4"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m4"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 5 to 9 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m4
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e4
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 5 to 9 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_10_to_14_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 10 to 14 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e5"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m5"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 10 to 14 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m5
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e5
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 10 to 14 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_15_to_17_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 15 to 17 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e6"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m6"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 15 to 17 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m6
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e6
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 15 to 17 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_18_and_19_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 18 and 19 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e7"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m7"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 18 and 19 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m7
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e7
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 18 and 19 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_20_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 20 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e8"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m8"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 20 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m8
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e8
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 20 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_21_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 21 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e9"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m9"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 21 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m9
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e9
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 21 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_22_to_24_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 22 to 24 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e10"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m10"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 22 to 24 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m10
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e10
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 22 to 24 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_25_to_29_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 25 to 29 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e11"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m11"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 25 to 29 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m11
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e11
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 25 to 29 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_30_to_34_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 30 to 34 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e12"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m12"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 30 to 34 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m12
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e12
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 30 to 34 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_35_to_39_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 35 to 39 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e13"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m13"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 35 to 39 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m13
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e13
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 35 to 39 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_40_to_44_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 40 to 44 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e14"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m14"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 40 to 44 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m14
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e14
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 40 to 44 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_45_to_49_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 45 to 49 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e15"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m15"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 45 to 49 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m15
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e15
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 45 to 49 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_50_to_54_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 50 to 54 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e16"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m16"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 50 to 54 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m16
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e16
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 50 to 54 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_55_to_59_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 55 to 59 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e17"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m17"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 55 to 59 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m17
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e17
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 55 to 59 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_60_and_61_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 60 and 61 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e18"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m18"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 60 and 61 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m18
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e18
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 60 and 61 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_62_to_64_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 62 to 64 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e19"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m19"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 62 to 64 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m19
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e19
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 62 to 64 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_65_and_66_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 65 and 66 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e20"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m20"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 65 and 66 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m20
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e20
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 65 and 66 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_67_to_69_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 67 to 69 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e21"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m21"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 67 to 69 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m21
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e21
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 67 to 69 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_70_to_74_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 70 to 74 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e22"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m22"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 70 to 74 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m22
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e22
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 70 to 74 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_75_to_79_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 75 to 79 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e23"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m23"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 75 to 79 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m23
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e23
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 75 to 79 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_80_to_84_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 80 to 84 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e24"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m24"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 80 to 84 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m24
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e24
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 80 to 84 years
+      metadata_status: available
+      embedding_eligible: true
+  population_male_85_years_and_over:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Male > 85 years and over.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e25"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m25"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Male > 85 years and
+        over.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m25
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e25
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Male
+      - 85 years and over
+      metadata_status: available
+      embedding_eligible: true
+  population_female:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e26"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m26"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m26
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e26
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  population_female_under_5_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > Under 5 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e27"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m27"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > Under 5 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m27
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e27
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - Under 5 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_5_to_9_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 5 to 9 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e28"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m28"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 5 to 9 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m28
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e28
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 5 to 9 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_10_to_14_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 10 to 14 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e29"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m29"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 10 to 14
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m29
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e29
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 10 to 14 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_15_to_17_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 15 to 17 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e30"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m30"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 15 to 17
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m30
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e30
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 15 to 17 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_18_and_19_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 18 and 19 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e31"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m31"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 18 and 19
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m31
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e31
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 18 and 19 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_20_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 20 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e32"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m32"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 20 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m32
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e32
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 20 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_21_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 21 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e33"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m33"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 21 years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m33
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e33
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 21 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_22_to_24_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 22 to 24 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e34"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m34"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 22 to 24
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m34
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e34
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 22 to 24 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_25_to_29_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 25 to 29 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e35"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m35"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 25 to 29
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m35
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e35
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 25 to 29 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_30_to_34_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 30 to 34 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e36"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m36"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 30 to 34
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m36
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e36
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 30 to 34 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_35_to_39_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 35 to 39 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e37"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m37"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 35 to 39
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m37
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e37
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 35 to 39 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_40_to_44_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 40 to 44 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e38"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m38"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 40 to 44
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m38
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e38
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 40 to 44 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_45_to_49_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 45 to 49 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e39"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m39"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 45 to 49
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m39
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e39
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 45 to 49 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_50_to_54_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 50 to 54 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e40"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m40"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 50 to 54
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m40
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e40
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 50 to 54 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_55_to_59_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 55 to 59 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e41"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m41"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 55 to 59
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m41
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e41
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 55 to 59 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_60_and_61_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 60 and 61 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e42"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m42"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 60 and 61
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m42
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e42
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 60 and 61 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_62_to_64_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 62 to 64 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e43"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m43"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 62 to 64
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m43
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e43
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 62 to 64 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_65_and_66_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 65 and 66 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e44"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m44"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 65 and 66
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m44
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e44
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 65 and 66 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_67_to_69_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 67 to 69 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e45"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m45"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 67 to 69
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m45
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e45
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 67 to 69 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_70_to_74_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 70 to 74 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e46"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m46"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 70 to 74
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m46
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e46
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 70 to 74 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_75_to_79_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 75 to 79 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e47"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m47"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 75 to 79
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m47
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e47
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 75 to 79 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_80_to_84_years:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 80 to 84 years.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e48"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m48"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 80 to 84
+        years.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m48
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e48
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 80 to 84 years
+      metadata_status: available
+      embedding_eligible: true
+  population_female_85_years_and_over:
+    description: 'Estimate. Sex By Age. Universe: Total population. Breakdown: Total > Female > 85 years and over.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01001e49"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01001m49"'
+      description: 'MarginOfError. Sex By Age. Universe: Total population. Breakdown: Total > Female > 85 years
+        and over.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01001m49
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01001e49
+      census_table_code: B01001
+      census_table_title: Sex By Age
+      field_path:
+      - Estimate
+      - SEX BY AGE
+      - Total population
+      - Total
+      - Female
+      - 85 years and over
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex:
+    description: 'Estimate. Median Age By Sex. Universe: Total population. Breakdown: Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Total population
+    sql: '"B01002e1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002m1"'
+      description: 'MarginOfError. Median Age By Sex. Universe: Total population. Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002m1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002e1
+      census_table_code: B01002
+      census_table_title: Median Age By Sex
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX
+      - Total population
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_male:
+    description: 'Estimate. Median Age By Sex. Universe: Total population. Breakdown: Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Total population
+    sql: '"B01002e2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002m2"'
+      description: 'MarginOfError. Median Age By Sex. Universe: Total population. Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002m2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002e2
+      census_table_code: B01002
+      census_table_title: Median Age By Sex
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX
+      - Total population
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_female:
+    description: 'Estimate. Median Age By Sex. Universe: Total population. Breakdown: Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Total population
+    sql: '"B01002e3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002m3"'
+      description: 'MarginOfError. Median Age By Sex. Universe: Total population. Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002m3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002e3
+      census_table_code: B01002
+      census_table_title: Median Age By Sex
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX
+      - Total population
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_white_alone:
+    description: 'Estimate. Median Age By Sex (White Alone). Universe: People who are White alone. Breakdown: Median
+      age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are White alone
+    sql: '"B01002Ae1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Am1"'
+      description: 'MarginOfError. Median Age By Sex (White Alone). Universe: People who are White alone. Breakdown:
+        Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Am1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ae1
+      census_table_code: B01002A
+      census_table_title: Median Age By Sex (White Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (WHITE ALONE)
+      - People who are White alone
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_white_alone_male:
+    description: 'Estimate. Median Age By Sex (White Alone). Universe: People who are White alone. Breakdown: Median
+      age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are White alone
+    sql: '"B01002Ae2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Am2"'
+      description: 'MarginOfError. Median Age By Sex (White Alone). Universe: People who are White alone. Breakdown:
+        Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Am2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ae2
+      census_table_code: B01002A
+      census_table_title: Median Age By Sex (White Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (WHITE ALONE)
+      - People who are White alone
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_white_alone_female:
+    description: 'Estimate. Median Age By Sex (White Alone). Universe: People who are White alone. Breakdown: Median
+      age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are White alone
+    sql: '"B01002Ae3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Am3"'
+      description: 'MarginOfError. Median Age By Sex (White Alone). Universe: People who are White alone. Breakdown:
+        Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Am3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ae3
+      census_table_code: B01002A
+      census_table_title: Median Age By Sex (White Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (WHITE ALONE)
+      - People who are White alone
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_black_or_african_american_alone:
+    description: 'Estimate. Median Age By Sex (Black Or African American Alone). Universe: Black or African American
+      alone. Breakdown: Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Black or African American alone
+    sql: '"B01002Be1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Bm1"'
+      description: 'MarginOfError. Median Age By Sex (Black Or African American Alone). Universe: Black or African
+        American alone. Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Bm1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Be1
+      census_table_code: B01002B
+      census_table_title: Median Age By Sex (Black Or African American Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (BLACK OR AFRICAN AMERICAN ALONE)
+      - Black or African American alone
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_black_or_african_american_alone_male:
+    description: 'Estimate. Median Age By Sex (Black Or African American Alone). Universe: Black or African American
+      alone. Breakdown: Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Black or African American alone
+    sql: '"B01002Be2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Bm2"'
+      description: 'MarginOfError. Median Age By Sex (Black Or African American Alone). Universe: Black or African
+        American alone. Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Bm2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Be2
+      census_table_code: B01002B
+      census_table_title: Median Age By Sex (Black Or African American Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (BLACK OR AFRICAN AMERICAN ALONE)
+      - Black or African American alone
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_black_or_african_american_alone_female:
+    description: 'Estimate. Median Age By Sex (Black Or African American Alone). Universe: Black or African American
+      alone. Breakdown: Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Black or African American alone
+    sql: '"B01002Be3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Bm3"'
+      description: 'MarginOfError. Median Age By Sex (Black Or African American Alone). Universe: Black or African
+        American alone. Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Bm3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Be3
+      census_table_code: B01002B
+      census_table_title: Median Age By Sex (Black Or African American Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (BLACK OR AFRICAN AMERICAN ALONE)
+      - Black or African American alone
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_american_indian_and_alaska_native_alone:
+    description: 'Estimate. Median Age By Sex (American Indian And Alaska Native Alone). Universe: People who are
+      American Indian and Alaska Native alone. Breakdown: Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are American Indian and Alaska Native alone
+    sql: '"B01002Ce1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Cm1"'
+      description: 'MarginOfError. Median Age By Sex (American Indian And Alaska Native Alone). Universe: People
+        who are American Indian and Alaska Native alone. Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Cm1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ce1
+      census_table_code: B01002C
+      census_table_title: Median Age By Sex (American Indian And Alaska Native Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (AMERICAN INDIAN AND ALASKA NATIVE ALONE)
+      - People who are American Indian and Alaska Native alone
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_american_indian_and_alaska_native_alone_male:
+    description: 'Estimate. Median Age By Sex (American Indian And Alaska Native Alone). Universe: People who are
+      American Indian and Alaska Native alone. Breakdown: Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are American Indian and Alaska Native alone
+    sql: '"B01002Ce2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Cm2"'
+      description: 'MarginOfError. Median Age By Sex (American Indian And Alaska Native Alone). Universe: People
+        who are American Indian and Alaska Native alone. Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Cm2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ce2
+      census_table_code: B01002C
+      census_table_title: Median Age By Sex (American Indian And Alaska Native Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (AMERICAN INDIAN AND ALASKA NATIVE ALONE)
+      - People who are American Indian and Alaska Native alone
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_american_indian_and_alaska_native_alone_female:
+    description: 'Estimate. Median Age By Sex (American Indian And Alaska Native Alone). Universe: People who are
+      American Indian and Alaska Native alone. Breakdown: Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are American Indian and Alaska Native alone
+    sql: '"B01002Ce3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Cm3"'
+      description: 'MarginOfError. Median Age By Sex (American Indian And Alaska Native Alone). Universe: People
+        who are American Indian and Alaska Native alone. Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Cm3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ce3
+      census_table_code: B01002C
+      census_table_title: Median Age By Sex (American Indian And Alaska Native Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (AMERICAN INDIAN AND ALASKA NATIVE ALONE)
+      - People who are American Indian and Alaska Native alone
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_asian_alone:
+    description: 'Estimate. Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Breakdown: Median
+      age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Asian alone
+    sql: '"B01002De1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Dm1"'
+      description: 'MarginOfError. Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Breakdown:
+        Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Dm1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002De1
+      census_table_code: B01002D
+      census_table_title: Median Age By Sex (Asian Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (ASIAN ALONE)
+      - People who are Asian alone
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_asian_alone_male:
+    description: 'Estimate. Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Breakdown: Median
+      age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Asian alone
+    sql: '"B01002De2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Dm2"'
+      description: 'MarginOfError. Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Breakdown:
+        Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Dm2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002De2
+      census_table_code: B01002D
+      census_table_title: Median Age By Sex (Asian Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (ASIAN ALONE)
+      - People who are Asian alone
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_asian_alone_female:
+    description: 'Estimate. Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Breakdown: Median
+      age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Asian alone
+    sql: '"B01002De3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Dm3"'
+      description: 'MarginOfError. Median Age By Sex (Asian Alone). Universe: People who are Asian alone. Breakdown:
+        Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Dm3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002De3
+      census_table_code: B01002D
+      census_table_title: Median Age By Sex (Asian Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (ASIAN ALONE)
+      - People who are Asian alone
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_some_other_race_alone:
+    description: 'Estimate. Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other Race
+      alone. Breakdown: Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Some Other Race alone
+    sql: '"B01002Fe1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Fm1"'
+      description: 'MarginOfError. Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other
+        Race alone. Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Fm1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Fe1
+      census_table_code: B01002F
+      census_table_title: Median Age By Sex (Some Other Race Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (SOME OTHER RACE ALONE)
+      - People who are Some Other Race alone
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_some_other_race_alone_male:
+    description: 'Estimate. Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other Race
+      alone. Breakdown: Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Some Other Race alone
+    sql: '"B01002Fe2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Fm2"'
+      description: 'MarginOfError. Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other
+        Race alone. Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Fm2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Fe2
+      census_table_code: B01002F
+      census_table_title: Median Age By Sex (Some Other Race Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (SOME OTHER RACE ALONE)
+      - People who are Some Other Race alone
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_some_other_race_alone_female:
+    description: 'Estimate. Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other Race
+      alone. Breakdown: Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Some Other Race alone
+    sql: '"B01002Fe3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Fm3"'
+      description: 'MarginOfError. Median Age By Sex (Some Other Race Alone). Universe: People who are Some Other
+        Race alone. Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Fm3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Fe3
+      census_table_code: B01002F
+      census_table_title: Median Age By Sex (Some Other Race Alone)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (SOME OTHER RACE ALONE)
+      - People who are Some Other Race alone
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_two_or_more_races:
+    description: 'Estimate. Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races. Breakdown:
+      Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Two or More Races
+    sql: '"B01002Ge1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Gm1"'
+      description: 'MarginOfError. Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races.
+        Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Gm1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ge1
+      census_table_code: B01002G
+      census_table_title: Median Age By Sex (Two Or More Races)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (TWO OR MORE RACES)
+      - People who are Two or More Races
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_two_or_more_races_male:
+    description: 'Estimate. Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races. Breakdown:
+      Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Two or More Races
+    sql: '"B01002Ge2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Gm2"'
+      description: 'MarginOfError. Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races.
+        Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Gm2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ge2
+      census_table_code: B01002G
+      census_table_title: Median Age By Sex (Two Or More Races)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (TWO OR MORE RACES)
+      - People who are Two or More Races
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_two_or_more_races_female:
+    description: 'Estimate. Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races. Breakdown:
+      Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: People who are Two or More Races
+    sql: '"B01002Ge3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Gm3"'
+      description: 'MarginOfError. Median Age By Sex (Two Or More Races). Universe: People who are Two or More Races.
+        Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Gm3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ge3
+      census_table_code: B01002G
+      census_table_title: Median Age By Sex (Two Or More Races)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (TWO OR MORE RACES)
+      - People who are Two or More Races
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_white_alone_not_hispanic_or_latino:
+    description: 'Estimate. Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone, not
+      Hispanic or Latino population. Breakdown: Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: White alone, not Hispanic or Latino population
+    sql: '"B01002He1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Hm1"'
+      description: 'MarginOfError. Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone,
+        not Hispanic or Latino population. Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Hm1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002He1
+      census_table_code: B01002H
+      census_table_title: Median Age By Sex (White Alone, Not Hispanic Or Latino)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (WHITE ALONE, NOT HISPANIC OR LATINO)
+      - White alone, not Hispanic or Latino population
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_white_alone_not_hispanic_or_latino_male:
+    description: 'Estimate. Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone, not
+      Hispanic or Latino population. Breakdown: Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: White alone, not Hispanic or Latino population
+    sql: '"B01002He2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Hm2"'
+      description: 'MarginOfError. Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone,
+        not Hispanic or Latino population. Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Hm2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002He2
+      census_table_code: B01002H
+      census_table_title: Median Age By Sex (White Alone, Not Hispanic Or Latino)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (WHITE ALONE, NOT HISPANIC OR LATINO)
+      - White alone, not Hispanic or Latino population
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_white_alone_not_hispanic_or_latino_female:
+    description: 'Estimate. Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone, not
+      Hispanic or Latino population. Breakdown: Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: White alone, not Hispanic or Latino population
+    sql: '"B01002He3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Hm3"'
+      description: 'MarginOfError. Median Age By Sex (White Alone, Not Hispanic Or Latino). Universe: White alone,
+        not Hispanic or Latino population. Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Hm3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002He3
+      census_table_code: B01002H
+      census_table_title: Median Age By Sex (White Alone, Not Hispanic Or Latino)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (WHITE ALONE, NOT HISPANIC OR LATINO)
+      - White alone, not Hispanic or Latino population
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_hispanic_or_latino:
+    description: 'Estimate. Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population. Breakdown:
+      Median age > Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Hispanic or Latino population
+    sql: '"B01002Ie1"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Im1"'
+      description: 'MarginOfError. Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population.
+        Breakdown: Median age > Total.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Im1
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ie1
+      census_table_code: B01002I
+      census_table_title: Median Age By Sex (Hispanic Or Latino)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (HISPANIC OR LATINO)
+      - Hispanic or Latino population
+      - Median age
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_hispanic_or_latino_male:
+    description: 'Estimate. Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population. Breakdown:
+      Median age > Male.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Hispanic or Latino population
+    sql: '"B01002Ie2"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Im2"'
+      description: 'MarginOfError. Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population.
+        Breakdown: Median age > Male.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Im2
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ie2
+      census_table_code: B01002I
+      census_table_title: Median Age By Sex (Hispanic Or Latino)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (HISPANIC OR LATINO)
+      - Hispanic or Latino population
+      - Median age
+      - Male
+      metadata_status: available
+      embedding_eligible: true
+  median_age_by_sex_hispanic_or_latino_female:
+    description: 'Estimate. Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population. Breakdown:
+      Median age > Female.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: years
+    universe: Hispanic or Latino population
+    sql: '"B01002Ie3"'
+    aggregation:
+      allowed: {}
+    margin_of_error:
+      sql: '"B01002Im3"'
+      description: 'MarginOfError. Median Age By Sex (Hispanic Or Latino). Universe: Hispanic or Latino population.
+        Breakdown: Median age > Female.'
+      data_type: number
+      unit: years
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01002Im3
+        metadata_status: available
+    constraints:
+      allowed_result_grains:
+      - census_block_group
+      explanation: This is a published block-group median age. Do not SUM, AVG, or weight these medians to claim
+        a combined county/state median age. Filter, retrieve, compare, or sort the individual published values instead.
+    metadata:
+      source_column: B01002Ie3
+      census_table_code: B01002I
+      census_table_title: Median Age By Sex (Hispanic Or Latino)
+      field_path:
+      - Estimate
+      - MEDIAN AGE BY SEX (HISPANIC OR LATINO)
+      - Hispanic or Latino population
+      - Median age
+      - Female
+      metadata_status: available
+      embedding_eligible: true
+  total_population_b01003:
+    description: 'Estimate. Total Population. Universe: Total population. Breakdown: Total.'
+    data_type: number
+    source_data_type: FLOAT
+    unit: people
+    universe: Total population
+    sql: '"B01003e1"'
+    aggregation:
+      allowed:
+        sum:
+          meaning: Total for this population category across the selected block groups.
+        avg:
+          meaning: Average count for this category per selected block group; not average age.
+        min:
+          meaning: Smallest block-group estimate for this category among selected block groups.
+        max:
+          meaning: Largest block-group estimate for this category among selected block groups.
+    margin_of_error:
+      sql: '"B01003m1"'
+      description: 'MarginOfError. Total Population. Universe: Total population. Breakdown: Total.'
+      data_type: number
+      unit: people
+      aggregation:
+        allowed: {}
+      constraints:
+      - Do not apply the estimate aggregation to this margin of error.
+      - Combined uncertainty requires a separately verified statistical method; none is configured.
+      - An available estimate does not guarantee an available margin of error.
+      metadata:
+        source_column: B01003m1
+        metadata_status: available
+    constraints:
+      explanation: SUM combines the same category across distinct block groups. AVG describes the average block-group
+        count. MIN/MAX describe extrema of block-group estimates, not the population total of a larger geography.
+    metadata:
+      source_column: B01003e1
+      census_table_code: B01003
+      census_table_title: Total Population
+      field_path:
+      - Estimate
+      - TOTAL POPULATION
+      - Total population
+      - Total
+      metadata_status: available
+      embedding_eligible: true
+relationships:
+  geography:
+    target_table: 2020_CBG_GEOMETRY_WKT
+    description: Attach state/county identifiers, names, and geometry for the block group.
+    join_on:
+    - source_dimension: census_block_group
+      target_column: CENSUS_BLOCK_GROUP
+    cardinality: one_to_one
+    metadata:
+      verification: 'Earlier live join audit: complete matching sets of 242335 unique block-group IDs.'
+      target_reference: Existing physical-table catalog ID; logical-name mapping remains to be finalized.
+constraints:
+- Select an allowed aggregation explicitly when aggregation is needed; there is no default.
+- Direct retrieval and sorting of published block-group values do not require aggregation.
+- 'Population categories overlap: do not add totals, subtotals, and their component categories together.'
+- Do not add population and total_population_b01003; choose the appropriate total-population source.
+- Do not treat NULL or unverified special numeric codes as zero.
+- For aggregates, check missing values and geographic completeness and report incomplete coverage.
+- Aggregate only compatible, non-overlapping geographic records within the same reporting period.
+- County/state filters require verified geographic relationships; ZIP/city mappings are not supplied here.
+- Do not infer current population, single-year change, or cross-year comparability from the 2020 label.
+unresolved_columns:
+  B01002Ee1:
+    sql: '"B01002Ee1"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No matching entry in the supplied 2020 field-description dictionary.
+    queryable: false
+    embedding_eligible: false
+  B01002Em1:
+    sql: '"B01002Em1"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No matching entry in the supplied 2020 field-description dictionary.
+    queryable: false
+    embedding_eligible: false
+  B01002Ee2:
+    sql: '"B01002Ee2"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No matching entry in the supplied 2020 field-description dictionary.
+    queryable: false
+    embedding_eligible: false
+  B01002Em2:
+    sql: '"B01002Em2"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No matching entry in the supplied 2020 field-description dictionary.
+    queryable: false
+    embedding_eligible: false
+  B01002Ee3:
+    sql: '"B01002Ee3"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No matching entry in the supplied 2020 field-description dictionary.
+    queryable: false
+    embedding_eligible: false
+  B01002Em3:
+    sql: '"B01002Em3"'
+    data_type: number
+    source_data_type: FLOAT
+    description: null
+    reason: No matching entry in the supplied 2020 field-description dictionary.
+    queryable: false
+    embedding_eligible: false
+metadata:
+  status: draft_for_review
+  physical_table: 2020_CBG_B01
+  year_label: 2020
+  reporting_period: null
+  description_source: 2020_METADATA_CBG_FIELD_DESCRIPTIONS
+  source_extracted_at: '2026-10-18T20:10:53.638381+00:00'
+  physical_column_count: 161
+  documented_measure_count: 77
+  unresolved_column_count: 6
+  rule_status: Descriptions are source-derived; aggregation permissions and schema layout are proposals.
+  scope: Complete physical column coverage; does not add derived metrics or calculated age bands.

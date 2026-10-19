@@ -1,0 +1,753 @@
+{
+  "extracted_at": "2026-10-18T20:10:53.638381+00:00",
+  "table_count": 73,
+  "column_count": 17052,
+  "documented_columns": 16582,
+  "missing_columns": 470,
+  "missing_by_reason": {
+    "identifier_not_documented_by_field_dictionary": 89,
+    "missing_demographic_dictionary_entry": 296,
+    "no_field_dictionary_for_table": 85
+  },
+  "missing_by_table": {
+    "2019_CBG_B01": 7,
+    "2019_CBG_B02": 1,
+    "2019_CBG_B03": 1,
+    "2019_CBG_B07": 1,
+    "2019_CBG_B08": 1,
+    "2019_CBG_B09": 1,
+    "2019_CBG_B11": 43,
+    "2019_CBG_B12": 1,
+    "2019_CBG_B14": 39,
+    "2019_CBG_B15": 1,
+    "2019_CBG_B16": 1,
+    "2019_CBG_B17": 1,
+    "2019_CBG_B19": 7,
+    "2019_CBG_B20": 1,
+    "2019_CBG_B21": 1,
+    "2019_CBG_B22": 1,
+    "2019_CBG_B23": 1,
+    "2019_CBG_B24": 1,
+    "2019_CBG_B25": 7,
+    "2019_CBG_B27": 1,
+    "2019_CBG_B28": 13,
+    "2019_CBG_B29": 1,
+    "2019_CBG_B99": 1,
+    "2019_CBG_C02": 1,
+    "2019_CBG_C15": 13,
+    "2019_CBG_C16": 1,
+    "2019_CBG_C17": 1,
+    "2019_CBG_C21": 1,
+    "2019_CBG_C24": 27,
+    "2019_CBG_GEOMETRY": 9,
+    "2019_CBG_GEOMETRY_WKT": 9,
+    "2019_CBG_PATTERNS": 13,
+    "2019_METADATA_CBG_FIELD_DESCRIPTIONS": 15,
+    "2019_METADATA_CBG_FIPS_CODES": 5,
+    "2019_METADATA_CBG_GEOGRAPHIC_DATA": 5,
+    "2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME": 12,
+    "2019_TOTAL_RENTAL_GEO": 4,
+    "2020_CBG_B01": 7,
+    "2020_CBG_B02": 1,
+    "2020_CBG_B03": 1,
+    "2020_CBG_B07": 1,
+    "2020_CBG_B08": 1,
+    "2020_CBG_B09": 1,
+    "2020_CBG_B11": 43,
+    "2020_CBG_B12": 1,
+    "2020_CBG_B14": 39,
+    "2020_CBG_B15": 1,
+    "2020_CBG_B16": 1,
+    "2020_CBG_B17": 1,
+    "2020_CBG_B19": 7,
+    "2020_CBG_B20": 1,
+    "2020_CBG_B21": 1,
+    "2020_CBG_B22": 1,
+    "2020_CBG_B23": 1,
+    "2020_CBG_B24": 1,
+    "2020_CBG_B25": 7,
+    "2020_CBG_B27": 1,
+    "2020_CBG_B28": 13,
+    "2020_CBG_B29": 1,
+    "2020_CBG_B99": 1,
+    "2020_CBG_C02": 1,
+    "2020_CBG_C15": 13,
+    "2020_CBG_C16": 1,
+    "2020_CBG_C17": 1,
+    "2020_CBG_C21": 1,
+    "2020_CBG_C24": 27,
+    "2020_CBG_GEOMETRY_WKT": 9,
+    "2020_METADATA_CBG_FIELD_DESCRIPTIONS": 15,
+    "2020_METADATA_CBG_FIPS_CODES": 5,
+    "2020_METADATA_CBG_GEOGRAPHIC_DATA": 5,
+    "2020_REDISTRICTING_CBG_DATA": 1,
+    "2020_REDISTRICTING_METADATA_CBG_FIELD_DESCRIPTIONS": 4,
+    "2020_REDISTRICTING_METADATA_CBG_GEOGRAPHIC_DATA": 5
+  },
+  "table_coverage": [
+    {
+      "table_name": "2019_CBG_B01",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 161,
+      "documented_columns": 154,
+      "missing_columns": 7,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B02",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 33,
+      "documented_columns": 32,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B03",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 49,
+      "documented_columns": 48,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B07",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 161,
+      "documented_columns": 160,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B08",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 581,
+      "documented_columns": 580,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B09",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 207,
+      "documented_columns": 206,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B11",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 679,
+      "documented_columns": 636,
+      "missing_columns": 43,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B12",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 39,
+      "documented_columns": 38,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B14",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 537,
+      "documented_columns": 498,
+      "missing_columns": 39,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B15",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 231,
+      "documented_columns": 230,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B16",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 135,
+      "documented_columns": 134,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B17",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 281,
+      "documented_columns": 280,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B19",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 451,
+      "documented_columns": 444,
+      "missing_columns": 7,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B20",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 121,
+      "documented_columns": 120,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B21",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 111,
+      "documented_columns": 110,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B22",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 15,
+      "documented_columns": 14,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B23",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 663,
+      "documented_columns": 662,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B24",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 43,
+      "documented_columns": 42,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B25",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 1739,
+      "documented_columns": 1732,
+      "missing_columns": 7,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B27",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 133,
+      "documented_columns": 132,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B28",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 385,
+      "documented_columns": 372,
+      "missing_columns": 13,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B29",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 35,
+      "documented_columns": 34,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_B99",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 601,
+      "documented_columns": 600,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_C02",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 39,
+      "documented_columns": 38,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_C15",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 121,
+      "documented_columns": 108,
+      "missing_columns": 13,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_C16",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 29,
+      "documented_columns": 28,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_C17",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 17,
+      "documented_columns": 16,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_C21",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 63,
+      "documented_columns": 62,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_C24",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 637,
+      "documented_columns": 610,
+      "missing_columns": 27,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2019_CBG_GEOMETRY",
+      "object_type": "BASE TABLE",
+      "family": "geometry",
+      "column_count": 9,
+      "documented_columns": 0,
+      "missing_columns": 9,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2019_CBG_GEOMETRY_WKT",
+      "object_type": "BASE TABLE",
+      "family": "geometry",
+      "column_count": 9,
+      "documented_columns": 0,
+      "missing_columns": 9,
+      "description_source": "table_comment"
+    },
+    {
+      "table_name": "2019_CBG_PATTERNS",
+      "object_type": "BASE TABLE",
+      "family": "supporting_data",
+      "column_count": 13,
+      "documented_columns": 0,
+      "missing_columns": 13,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2019_METADATA_CBG_FIELD_DESCRIPTIONS",
+      "object_type": "BASE TABLE",
+      "family": "field_dictionary",
+      "column_count": 15,
+      "documented_columns": 0,
+      "missing_columns": 15,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2019_METADATA_CBG_FIPS_CODES",
+      "object_type": "BASE TABLE",
+      "family": "geographic_lookup",
+      "column_count": 5,
+      "documented_columns": 0,
+      "missing_columns": 5,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2019_METADATA_CBG_GEOGRAPHIC_DATA",
+      "object_type": "BASE TABLE",
+      "family": "geographic_attributes",
+      "column_count": 5,
+      "documented_columns": 0,
+      "missing_columns": 5,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME",
+      "object_type": "VIEW",
+      "family": "supporting_data",
+      "column_count": 12,
+      "documented_columns": 0,
+      "missing_columns": 12,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2019_TOTAL_RENTAL_GEO",
+      "object_type": "VIEW",
+      "family": "supporting_data",
+      "column_count": 4,
+      "documented_columns": 0,
+      "missing_columns": 4,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2020_CBG_B01",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 161,
+      "documented_columns": 154,
+      "missing_columns": 7,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B02",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 33,
+      "documented_columns": 32,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B03",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 49,
+      "documented_columns": 48,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B07",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 161,
+      "documented_columns": 160,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B08",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 581,
+      "documented_columns": 580,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B09",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 207,
+      "documented_columns": 206,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B11",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 679,
+      "documented_columns": 636,
+      "missing_columns": 43,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B12",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 39,
+      "documented_columns": 38,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B14",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 537,
+      "documented_columns": 498,
+      "missing_columns": 39,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B15",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 231,
+      "documented_columns": 230,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B16",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 135,
+      "documented_columns": 134,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B17",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 281,
+      "documented_columns": 280,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B19",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 451,
+      "documented_columns": 444,
+      "missing_columns": 7,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B20",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 121,
+      "documented_columns": 120,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B21",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 111,
+      "documented_columns": 110,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B22",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 15,
+      "documented_columns": 14,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B23",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 663,
+      "documented_columns": 662,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B24",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 43,
+      "documented_columns": 42,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B25",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 1741,
+      "documented_columns": 1734,
+      "missing_columns": 7,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B27",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 133,
+      "documented_columns": 132,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B28",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 427,
+      "documented_columns": 414,
+      "missing_columns": 13,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B29",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 35,
+      "documented_columns": 34,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_B99",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 601,
+      "documented_columns": 600,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_C02",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 39,
+      "documented_columns": 38,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_C15",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 121,
+      "documented_columns": 108,
+      "missing_columns": 13,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_C16",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 29,
+      "documented_columns": 28,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_C17",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 17,
+      "documented_columns": 16,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_C21",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 63,
+      "documented_columns": 62,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_C24",
+      "object_type": "BASE TABLE",
+      "family": "demographic",
+      "column_count": 637,
+      "documented_columns": 610,
+      "missing_columns": 27,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_CBG_GEOMETRY_WKT",
+      "object_type": "BASE TABLE",
+      "family": "geometry",
+      "column_count": 9,
+      "documented_columns": 0,
+      "missing_columns": 9,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2020_METADATA_CBG_FIELD_DESCRIPTIONS",
+      "object_type": "BASE TABLE",
+      "family": "field_dictionary",
+      "column_count": 15,
+      "documented_columns": 0,
+      "missing_columns": 15,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2020_METADATA_CBG_FIPS_CODES",
+      "object_type": "BASE TABLE",
+      "family": "geographic_lookup",
+      "column_count": 5,
+      "documented_columns": 0,
+      "missing_columns": 5,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2020_METADATA_CBG_GEOGRAPHIC_DATA",
+      "object_type": "BASE TABLE",
+      "family": "geographic_attributes",
+      "column_count": 5,
+      "documented_columns": 0,
+      "missing_columns": 5,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2020_REDISTRICTING_CBG_DATA",
+      "object_type": "BASE TABLE",
+      "family": "redistricting",
+      "column_count": 299,
+      "documented_columns": 298,
+      "missing_columns": 1,
+      "description_source": "field_dictionary_summary"
+    },
+    {
+      "table_name": "2020_REDISTRICTING_METADATA_CBG_FIELD_DESCRIPTIONS",
+      "object_type": "BASE TABLE",
+      "family": "field_dictionary",
+      "column_count": 4,
+      "documented_columns": 0,
+      "missing_columns": 4,
+      "description_source": "schema_structure"
+    },
+    {
+      "table_name": "2020_REDISTRICTING_METADATA_CBG_GEOGRAPHIC_DATA",
+      "object_type": "BASE TABLE",
+      "family": "geographic_attributes",
+      "column_count": 5,
+      "documented_columns": 0,
+      "missing_columns": 5,
+      "description_source": "schema_structure"
+    }
+  ],
+  "semantic_format": "v1_dimensions_measures",
+  "dimensions": 89,
+  "measures": 8440,
+  "paired_margins_of_error": 8142,
+  "unresolved_columns": 381,
+  "directed_relationships": 2252,
+  "table_schema_files": 73
+}
