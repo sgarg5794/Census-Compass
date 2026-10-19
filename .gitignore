@@ -21,3 +21,4 @@ data/tables/*.tmp
 .secrets/
 *.p8
 *.pem
+evaluations/reports/
