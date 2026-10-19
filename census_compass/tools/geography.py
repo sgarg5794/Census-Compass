@@ -65,6 +65,7 @@ _WORD_FORMS = {"st": "saint", "ste": "sainte", "cnty": "county", "cty": "county"
 _CO_PERIOD_RE = re.compile(r"(?i)\b(?:co|cnty|cty)\.")
 _CO_COMMA_RE = re.compile(r"(?i)(?<=[a-z])\s+co\s*,")
 _LA_COUNTY_RE = re.compile(r"^la county\b")
+_COMMA_CO_RE = re.compile(r"(?i),\s*co\s*$")  # "Denver, CO": the state only
 
 
 def _normalize(text: str) -> str:
@@ -320,6 +321,7 @@ def _resolve_block_group(year: int, place: str, digits: str, index: _Index) -> d
 
 
 def _resolve_county(year: int, place: str, query: str, index: _Index) -> dict:
+    comma_co = bool(_COMMA_CO_RE.search(place))
     county_of = _COUNTY_OF_RE.match(query)
     if county_of:  # "county of Cook, IL" -> "cook county il"
         rest = county_of.group(1)
@@ -329,7 +331,8 @@ def _resolve_county(year: int, place: str, query: str, index: _Index) -> dict:
     query = _LA_COUNTY_RE.sub("los angeles county", query)  # "LA County", "L.A. County"
 
     # A bare trailing "co" is either the word county or Colorado: try both, merge.
-    readings = [_co_to_county(query), query] if query.endswith(" co") else [query]
+    both = query.endswith(" co") and not comma_co
+    readings = [_co_to_county(query), query] if both else [query]
     found = [_find(index, q) for q in readings]
     records = list({id(r): r for f in found for r in f[0]}.values())
     bare = all(f[1] for f in found if f[0])

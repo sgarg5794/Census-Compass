@@ -442,6 +442,16 @@ def test_el_paso_co_lists_texas_and_colorado():
     assert sorted(r["candidates"]) == ["El Paso County, CO", "El Paso County, TX"]
 
 
+@pytest.mark.parametrize(
+    "place,candidates",
+    [("Washington, CO", ["Washington County, CO"]), ("El Paso, CO", ["El Paso County, CO"])],
+)
+def test_comma_co_is_colorado_and_bare_name_still_confirms(place, candidates):
+    r = resolve_geography(place, 2020)
+    assert r["status"] == "ambiguous"
+    assert r["candidates"] == candidates
+
+
 def test_trailing_co_state_still_means_colorado():
     r = resolve_geography("El Paso County, CO", 2020)
     assert r["sql_filter"] == county_filter("08041")
