@@ -25,6 +25,7 @@ from census_compass.agent import (
     start_turn,
 )
 from census_compass.config import get_settings
+from census_compass.guardrails.gate import guardrail_callback
 from census_compass.tools.query import DEADLINE_KEY, REJECTIONS_KEY
 
 TOOLS = ["resolve_year", "resolve_population_group", "resolve_geography",
@@ -34,6 +35,10 @@ TOOLS = ["resolve_year", "resolve_population_group", "resolve_geography",
 def test_root_agent_has_exactly_the_six_tools():
     assert sorted(t.__name__ for t in root_agent.tools) == sorted(TOOLS)
     assert root_agent.name == "census_compass"
+
+
+def test_before_agent_callbacks_are_budget_then_guardrail():
+    assert root_agent.before_agent_callback == [start_turn, guardrail_callback]
 
 
 def test_model_is_litellm_with_configured_model():
