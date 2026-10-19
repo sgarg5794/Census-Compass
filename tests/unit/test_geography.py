@@ -11,7 +11,7 @@ from census_compass.tools import geography
 from census_compass.tools.geography import resolve_geography, resolve_geography_from
 
 FIXTURE_SOURCE = Path(__file__).resolve().parent.parent / "fixtures"
-FIXTURE_TOTAL = 17580
+FIXTURE_TOTAL = 21186
 
 
 def county_filter(code: str) -> str:
@@ -44,7 +44,7 @@ def test_state():
     r = resolve_geography("Texas", 2020)
     assert r["sql_filter"] == "LEFT({table}.\"CENSUS_BLOCK_GROUP\", 2) = '48'"
     assert (r["status"], r["level"], r["name"]) == ("ok", "state", "Texas")
-    assert r["block_groups"] == 68 + 768 + 2588
+    assert r["block_groups"] == 68 + 768 + 2588 + 574
 
 
 def test_nation():
@@ -407,3 +407,108 @@ def test_real_states_sum_their_counties(year):
         r = resolve_geography_from(s.name, year, source_dir=source)
         assert (r["status"], r["sql_filter"]) == ("ok", state_filter(s.fips))
         assert r["block_groups"] == sum(c.block_groups for c in records if c.state_fips == s.fips)
+
+
+# --- fix round 1: county abbreviations, city hint, LA ---------------------------------
+
+
+@pytest.mark.parametrize(
+    "place,code",
+    [
+        ("Cook Co, IL", "17031"),
+        ("Cook Co IL", "17031"),
+        ("Cook Co., Illinois", "17031"),
+        ("Cook Co.", "17031"),
+        ("cook cnty il", "17031"),
+        ("Cook Cty, IL", "17031"),
+        ("Travis Co", "48453"),
+    ],
+)
+def test_county_abbreviations(place, code):
+    r = resolve_geography(place, 2020)
+    assert (r["status"], r["sql_filter"]) == ("ok", county_filter(code)), r
+
+
+@pytest.mark.parametrize("place", ["Washington Co", "Washington Co."])
+def test_washington_co_lists_all_washington_counties(place):
+    r = resolve_geography(place, 2020)
+    assert r["status"] == "ambiguous"
+    assert sorted(r["candidates"]) == ["Washington County, AL", "Washington County, CO"]
+
+
+def test_el_paso_co_lists_texas_and_colorado():
+    r = resolve_geography("El Paso Co", 2020)
+    assert r["status"] == "ambiguous"
+    assert sorted(r["candidates"]) == ["El Paso County, CO", "El Paso County, TX"]
+
+
+def test_trailing_co_state_still_means_colorado():
+    r = resolve_geography("El Paso County, CO", 2020)
+    assert r["sql_filter"] == county_filter("08041")
+    assert resolve_geography("Colorado", 2020)["sql_filter"] == state_filter("08")
+    assert resolve_geography("CO", 2020)["sql_filter"] == state_filter("08")
+
+
+def test_unknown_county_abbreviation_not_reported_in_colorado():
+    r = resolve_geography("Montgomery Co", 2020)
+    assert r["status"] == "not_found"
+    assert "Colorado" not in r["message"]
+
+
+def test_city_name_with_distant_county_match_explains_cities():
+    # "Chicago" is ~0.86 similar to "Chisago", so it is not_found (0.85 rule), but the
+    # message must say cities are not supported.
+    r = resolve_geography("Chicago", 2020)
+    assert r["status"] == "not_found"
+    assert "Chisago County, MN" in r["candidates"]
+    assert "city" in r["message"] and "not in the data" in r["message"]
+    assert "block group" in r["message"]
+
+
+def test_not_found_with_county_word_has_no_city_hint():
+    r = resolve_geography("Cok County, Illinois", 2020)
+    assert "city or town" not in r["message"]
+
+
+@pytest.mark.parametrize("place", ["LA", "L.A.", "la"])
+def test_la_is_louisiana_or_los_angeles(place):
+    r = resolve_geography(place, 2020)
+    assert r["status"] == "ambiguous"
+    assert r["candidates"] == ["Louisiana", "Los Angeles County, CA"]
+
+
+@pytest.mark.parametrize("place", ["LA County", "L.A. County", "LA County, CA"])
+def test_la_county_is_los_angeles(place):
+    r = resolve_geography(place, 2020)
+    assert (r["status"], r["sql_filter"]) == ("ok", county_filter("06037"))
+
+
+def test_la_as_trailing_state_is_louisiana():
+    assert resolve_geography("Orleans Parish LA", 2020)["sql_filter"] == county_filter("22071")
+
+
+@pytest.mark.parametrize("year", [2019, 2020])
+def test_real_city_names_not_found_mention_cities(year):
+    source, _ = _real(year)
+    r = resolve_geography_from("Chicago", year, source_dir=source)
+    assert r["status"] in ("not_found", "unsupported")
+    assert "city" in r["message"] and "block group" in r["message"]
+
+
+@pytest.mark.parametrize("year", [2019, 2020])
+def test_real_co_abbreviations(year):
+    source, records = _real(year)
+    r = resolve_geography_from("Cook Co, IL", year, source_dir=source)
+    assert r["sql_filter"] == county_filter("17031")
+    r = resolve_geography_from("Washington Co", year, source_dir=source)
+    washingtons = sorted(
+        f"{c.county}, {c.state_abbr}" for c in records if c.county == "Washington County"
+    )
+    assert r["status"] == "ambiguous" and sorted(r["candidates"]) == washingtons
+    assert "Washington County, CO" in r["candidates"]
+    r = resolve_geography_from("El Paso Co", year, source_dir=source)
+    assert {"El Paso County, CO", "El Paso County, TX"} <= set(r["candidates"])
+    r = resolve_geography_from("LA County", year, source_dir=source)
+    assert r["sql_filter"] == county_filter("06037")
+    r = resolve_geography_from("LA", year, source_dir=source)
+    assert r["candidates"] == ["Louisiana", "Los Angeles County, CA"]

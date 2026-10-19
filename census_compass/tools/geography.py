@@ -60,6 +60,11 @@ _BG_LABEL_RE = re.compile(
     r"^(?:census )?(?:block group|blockgroup|cbg|bg|geoid)(?: id| number| no)?\s*"
 )
 _ZIP_RE = re.compile(r"^\d{5}(?:-\d{4})?$")
+_WORD_FORMS = {"st": "saint", "ste": "sainte", "cnty": "county", "cty": "county"}
+# "Co." (with a period) or "Co," after a name is always the word county, never Colorado.
+_CO_PERIOD_RE = re.compile(r"(?i)\b(?:co|cnty|cty)\.")
+_CO_COMMA_RE = re.compile(r"(?i)(?<=[a-z])\s+co\s*,")
+_LA_COUNTY_RE = re.compile(r"^la county\b")
 
 
 def _normalize(text: str) -> str:
@@ -69,8 +74,14 @@ def _normalize(text: str) -> str:
     s = s.lower().replace("&", " and ")
     s = re.sub(r"[.'’`]", "", s)
     s = re.sub(r"[^a-z0-9]+", " ", s)
-    words = ["saint" if w == "st" else "sainte" if w == "ste" else w for w in s.split()]
+    words = [_WORD_FORMS.get(w, w) for w in s.split()]
     return " ".join(words)
+
+
+def _expand_county_abbreviations(raw: str) -> str:
+    """Spell out "Co." / "Cnty." and "Co," ("Cook Co, IL"); a bare "co" stays ambiguous."""
+    s = _CO_PERIOD_RE.sub(" county ", raw)
+    return _CO_COMMA_RE.sub(" county,", s)
 
 
 def _split_type(key: str) -> tuple[str | None, str]:
@@ -249,9 +260,28 @@ def _as_state(query: str) -> StateName | None:
     return _STATE_LOOKUP.get(query) or _STATE_LOOKUP.get(stripped)
 
 
+def _co_to_county(head: str) -> str:
+    return head[:-3] + " county" if head.endswith(" co") else head
+
+
 def _attempts(query: str) -> list[tuple[str, str | None]]:
-    """(name, state abbreviation) readings of a query: with a trailing state, then without."""
-    return [(head, s.abbr) for head, s in _parse_state_tail(query)] + [(query, None)]
+    """(name, state abbreviation) readings of a query: with a trailing state, then without.
+
+    Before a state, a trailing "co" is the word county ("cook co il").
+    """
+    splits = [(_co_to_county(head), s.abbr) for head, s in _parse_state_tail(query)]
+    return splits + [(query, None)]
+
+
+def _find(index: _Index, query: str) -> tuple[list[CountyRecord], bool, str, str | None]:
+    """First reading of the query that matches: (records, bare, name, state abbreviation)."""
+    attempts = _attempts(query)
+    for head, state in attempts:
+        records, bare = _match(index, head, state)
+        if records:
+            return records, bare, head, state
+    head, state = attempts[0]
+    return [], False, head, state
 
 
 def _resolve_block_group(year: int, place: str, digits: str, index: _Index) -> dict:
@@ -296,15 +326,14 @@ def _resolve_county(year: int, place: str, query: str, index: _Index) -> dict:
         splits = _parse_state_tail(rest)
         query = f"{splits[0][0]} county {splits[0][1].abbr.lower()}" if splits else f"{rest} county"
 
-    attempts = _attempts(query)
-    records: list[CountyRecord] = []
-    bare = False
-    for head, state in attempts:
-        records, bare = _match(index, head, state)
-        if records:
-            break
-    else:
-        head, state = attempts[0]
+    query = _LA_COUNTY_RE.sub("los angeles county", query)  # "LA County", "L.A. County"
+
+    # A bare trailing "co" is either the word county or Colorado: try both, merge.
+    readings = [_co_to_county(query), query] if query.endswith(" co") else [query]
+    found = [_find(index, q) for q in readings]
+    records = list({id(r): r for f in found for r in f[0]}.values())
+    bare = all(f[1] for f in found if f[0])
+    _, _, head, state = found[0]
 
     if records and bare:
         candidates = [_display(r) for r in records]
@@ -334,12 +363,14 @@ def _resolve_county(year: int, place: str, query: str, index: _Index) -> dict:
     candidates = [_display(r) for r in _match(index, head, None)[0]] if state else []
     candidates += [c for c in _suggest(index, head, state) if c not in candidates]
     where = f" in {_STATE_NAME_BY_ABBR[state]}" if state else ""
+    city_hint = f" It may be a city or town. {_SUPPORTED}" if kind is None else ""
     return _result(
         year,
         status="not_found",
         candidates=candidates[:3],
         message=f"No county matching '{place}' was found{where} in the {year} lookup."
-        + (" The closest names are listed as candidates." if candidates else ""),
+        + city_hint
+        + (" The closest county names are listed as candidates." if candidates else ""),
     )
 
 
@@ -375,7 +406,7 @@ def resolve_geography_from(place: str, year: int, *, source_dir: Path | None = N
 
     source = Path(source_dir) if source_dir is not None else Path(get_settings().source_dir)
     index = _load_index(source, year)
-    query = _normalize(raw)
+    query = _normalize(_expand_county_abbreviations(raw))
 
     # Numbers: ZIP codes, and block group IDs with an optional "block group" label.
     if _ZIP_RE.match(re.sub(r"\s+", "", raw)):
@@ -400,6 +431,16 @@ def resolve_geography_from(place: str, year: int, *, source_dir: Path | None = N
             level="nation",
             block_groups=index.total,
             message="National figures include Puerto Rico.",
+        )
+    if query == "la":  # "LA" / "L.A.": Louisiana or Los Angeles (controller ruling)
+        candidates = ["Louisiana"] + [
+            _display(r) for r in _match(index, "los angeles county", "CA")[0]
+        ]
+        return _result(
+            year,
+            status="ambiguous",
+            candidates=candidates,
+            message="'LA' may mean Louisiana or Los Angeles County, CA. Ask the user which.",
         )
     state = _as_state(query)
     if state:
@@ -439,6 +480,10 @@ def resolve_geography(place: str, year: int) -> dict:
       municipality, city and borough, independent city) match ignoring case,
       punctuation, accents ("Dona Ana" = "Doña Ana") and "St."/"Saint". Add the state,
       with or without a comma: "Cook County, Illinois", "cook county il".
+      "Co.", "Cnty" and "Cty" mean County ("Cook Co, IL"); a bare trailing "Co" may
+      mean County or Colorado, so both readings are offered ("El Paso Co").
+      "LA" alone is "ambiguous" (Louisiana or Los Angeles County, CA);
+      "LA County" is Los Angeles County.
       "St. Louis city, MO" is the independent city (29510), "St. Louis County, MO" the
       county (29189).
     - A county name found in several states, without a state ("Orange County"), is
@@ -455,7 +500,9 @@ def resolve_geography(place: str, year: int) -> dict:
       "town of ...", "... neighborhood", "... City" that is not an independent city,
       and any name without a county word that matches no state or county and is not
       at least 85% similar to a county name ("Austin", "Brooklyn"). Explain this to the
-      user and offer the county or state instead.
+      user and offer the county or state instead. A name without a county word that
+      is close to a county name ("Chicago" ~ "Chisago County") is "not_found"; its
+      message says it may be a city, which is not supported.
     - A 12-digit ID is a block group: "ok" when its first 5 digits are a county with
       data that year, "no_data" when that county has none, "not_found" when the county
       is not in the lookup. Whether the individual ID exists cannot be checked in

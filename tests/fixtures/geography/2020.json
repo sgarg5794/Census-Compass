@@ -28,6 +28,13 @@
   "block_groups": 1844
  },
  {
+  "state_abbr": "CA",
+  "state_fips": "06",
+  "county_fips": "037",
+  "county": "Los Angeles County",
+  "block_groups": 2498
+ },
+ {
   "state_abbr": "FL",
   "state_fips": "12",
   "county_fips": "095",
@@ -187,5 +194,40 @@
   "county_fips": "010",
   "county": "St. Croix Island",
   "block_groups": 0
+ },
+ {
+  "state_abbr": "CO",
+  "state_fips": "08",
+  "county_fips": "121",
+  "county": "Washington County",
+  "block_groups": 4
+ },
+ {
+  "state_abbr": "AL",
+  "state_fips": "01",
+  "county_fips": "129",
+  "county": "Washington County",
+  "block_groups": 14
+ },
+ {
+  "state_abbr": "CO",
+  "state_fips": "08",
+  "county_fips": "041",
+  "county": "El Paso County",
+  "block_groups": 479
+ },
+ {
+  "state_abbr": "TX",
+  "state_fips": "48",
+  "county_fips": "141",
+  "county": "El Paso County",
+  "block_groups": 574
+ },
+ {
+  "state_abbr": "MN",
+  "state_fips": "27",
+  "county_fips": "025",
+  "county": "Chisago County",
+  "block_groups": 37
  }
 ]
