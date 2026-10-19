@@ -14,7 +14,9 @@ OFFICIAL_TITLES = {
     "ACS General Handbook 2020 — Chapter 2",
     "ACS General Handbook 2020 — Chapter 3",
     "ACS General Handbook 2020 — Chapter 4",
+    "ACS General Handbook 2020 — Chapter 7",
     "ACS General Handbook 2020 — Chapter 8",
+    "ACS General Handbook 2020 — Chapter 9",
     "Geographic Areas Reference Manual — Chapter 4",
     "ACS Design and Methodology (January 2014) — Chapter 13",
 }
