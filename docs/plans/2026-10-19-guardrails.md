@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.12, google-adk 2.12 (callbacks; returning `types.Content` from a before-agent callback ends the invocation), litellm 1.106, pydantic 2, PyYAML, pytest.
 
-**Spec:** `docs/superpowers/specs/2026-10-18-guardrails-design.md` (approved). Related: `docs/superpowers/specs/2026-10-18-schema-selection-design.md` (data agent, unchanged).
+**Spec:** `docs/specs/2026-10-18-guardrails-design.md` (approved). Related: `docs/specs/2026-10-18-schema-selection-design.md` (data agent, unchanged).
 
 ## Global Constraints
 

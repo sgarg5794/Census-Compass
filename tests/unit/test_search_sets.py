@@ -7,7 +7,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 DEV = ROOT / "evaluations" / "search_dev.yaml"
 HELD = ROOT / "evaluations" / "search_heldout.yaml"
-TOPICS = ROOT / "docs" / "superpowers" / "specs" / "2026-10-18-topics-draft.yaml"
+TOPICS = ROOT / "docs" / "specs" / "2026-10-18-topics-draft.yaml"
 LETTERS = set("ABCDEFGHI")
 
 

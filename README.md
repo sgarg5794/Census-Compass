@@ -40,7 +40,7 @@ Google ADK agent running Claude (Sonnet) through LiteLLM, with internal Python t
 | `execute_query` | Validate (sqlglot, fail-closed) and run read-only SQL with a 60-second budget |
 | `lookup_glossary` | Answer Census concept questions from the reviewed glossary |
 
-Design documents are in `docs/design.md` and `docs/superpowers/specs/`.
+Design documents are in `docs/design.md` and `docs/specs/`.
 
 ## Run it locally
 

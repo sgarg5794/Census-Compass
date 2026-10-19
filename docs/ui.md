@@ -1,6 +1,6 @@
 # Census Compass UI
 
-The Streamlit UI follows the approved design in `docs/superpowers/specs/2026-10-18-streamlit-ui-design.md`.
+The Streamlit UI follows the approved design in `docs/specs/2026-10-18-streamlit-ui-design.md`.
 
 ## Run
 

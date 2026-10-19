@@ -8,7 +8,7 @@
 
 **Tech Stack:** Existing Python 3.12 environment, Streamlit, Pydantic 2, Google ADK, pytest and Streamlit AppTest. Reuse existing dependencies; no React, FastAPI or new database dependency.
 
-**Spec:** `docs/superpowers/specs/2026-10-18-streamlit-ui-design.md`. Approved preview: `docs/superpowers/specs/census-compass-ui-preview.html`.
+**Spec:** `docs/specs/2026-10-18-streamlit-ui-design.md`. Approved preview: `docs/specs/census-compass-ui-preview.html`.
 
 ## Global Constraints
 

@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.12, google-adk 2.12, litellm 1.106, sqlglot 30.23, lancedb 0.40 (native FTS + RRFReranker), sentence-transformers (new), snowflake-connector-python 5.0, pydantic 2, pytest 9.
 
-**Spec:** `docs/superpowers/specs/2026-10-18-schema-selection-design.md` (approved). Topic mapping: `docs/superpowers/specs/2026-10-18-topics-draft.yaml`.
+**Spec:** `docs/specs/2026-10-18-schema-selection-design.md` (approved). Topic mapping: `docs/specs/2026-10-18-topics-draft.yaml`.
 
 ## Global Constraints
 
