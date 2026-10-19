@@ -1,0 +1,430 @@
+# Search questions (held). Plain English; required_files must all appear in the top 5.
+- id: held_01
+  question: What is the average age of residents?
+  year: 2020
+  population_group: null
+  required_files:
+  - population_age_and_sex_2020
+- id: held_02
+  question: Population broken down by age group and gender
+  year: 2019
+  population_group: null
+  required_files:
+  - population_age_and_sex_2019
+- id: held_03
+  question: How many Asian residents are there?
+  year: 2019
+  population_group: D
+  required_files:
+  - race_2019
+- id: held_04
+  question: Racial makeup of the area
+  year: 2020
+  population_group: null
+  required_files:
+  - census_count_race_and_hispanic_2020
+- id: held_05
+  question: What portion of people identify as more than one race?
+  year: 2019
+  population_group: G
+  required_files:
+  - race_2019
+- id: held_06
+  question: Share of residents who are of Hispanic or Latino background
+  year: 2020
+  population_group: I
+  required_files:
+  - census_count_race_and_hispanic_2020
+- id: held_07
+  question: How many people are Latino versus non-Hispanic white?
+  year: 2019
+  population_group: H
+  required_files:
+  - hispanic_origin_2019
+- id: held_08
+  question: People who relocated from another state recently
+  year: 2020
+  population_group: null
+  required_files:
+  - moved_in_past_year_2020
+- id: held_09
+  question: What percent of workers take public transit?
+  year: 2019
+  population_group: null
+  required_files:
+  - commuting_2019
+- id: held_10
+  question: Do people leave for work early in the morning?
+  year: 2020
+  population_group: null
+  required_files:
+  - commuting_2020
+- id: held_11
+  question: How many people work outside the state where they live?
+  year: 2019
+  population_group: null
+  required_files:
+  - place_of_work_2019
+- id: held_12
+  question: Where do residents of this area go to work, which city or metro?
+  year: 2020
+  population_group: null
+  required_files:
+  - place_of_work_2020
+- id: held_13
+  question: How many kids live with grandparents?
+  year: 2019
+  population_group: null
+  required_files:
+  - children_and_living_arrangements_2019
+- id: held_14
+  question: How many seniors live alone?
+  year: 2020
+  population_group: null
+  required_files:
+  - children_and_living_arrangements_2020
+- id: held_15
+  question: What is the average household size?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_occupancy_and_tenure_2019
+- id: held_16
+  question: How many married couple households are there?
+  year: 2020
+  population_group: null
+  required_files:
+  - household_types_and_size_2020
+- id: held_17
+  question: Number of single mothers raising children
+  year: 2019
+  population_group: null
+  required_files:
+  - families_and_children_2019
+- id: held_18
+  question: Unmarried couples living together with children
+  year: 2020
+  population_group: null
+  required_files:
+  - families_and_children_2020
+- id: held_19
+  question: How many homes have someone over 60 living in them?
+  year: 2019
+  population_group: null
+  required_files:
+  - households_with_older_people_2019
+- id: held_20
+  question: What share of adults have never been married?
+  year: 2020
+  population_group: null
+  required_files:
+  - marital_status_2020
+- id: held_21
+  question: How many teenagers are enrolled in school and also working?
+  year: 2019
+  population_group: null
+  required_files:
+  - school_enrollment_2019
+- id: held_22
+  question: How many people are in college or graduate school?
+  year: 2020
+  population_group: null
+  required_files:
+  - school_enrollment_2020
+- id: held_23
+  question: How many adults did not finish high school?
+  year: 2019
+  population_group: null
+  required_files:
+  - educational_attainment_2019
+- id: held_24
+  question: Bachelor's degree attainment among Black residents
+  year: 2020
+  population_group: B
+  required_files:
+  - educational_attainment_2020
+- id: held_25
+  question: Which college majors are most common among graduates, like engineering or education?
+  year: 2019
+  population_group: null
+  required_files:
+  - bachelors_degree_field_2019
+- id: held_26
+  question: Women versus men with science degrees by age
+  year: 2020
+  population_group: null
+  required_files:
+  - bachelors_degree_fields_detailed_2020
+- id: held_27
+  question: What languages are spoken at home other than English?
+  year: 2019
+  population_group: null
+  required_files:
+  - language_and_english_ability_2019
+- id: held_28
+  question: How many homes have nobody who speaks English well?
+  year: 2020
+  population_group: null
+  required_files:
+  - household_language_2020
+- id: held_29
+  question: How many families live below the poverty line?
+  year: 2019
+  population_group: null
+  required_files:
+  - poverty_2019
+- id: held_30
+  question: How many seniors are poor?
+  year: 2020
+  population_group: null
+  required_files:
+  - poverty_2020
+- id: held_31
+  question: How many people earn less than twice the poverty level?
+  year: 2019
+  population_group: null
+  required_files:
+  - income_to_poverty_ratio_2019
+- id: held_32
+  question: What is the median household income for Asian households?
+  year: 2020
+  population_group: D
+  required_files:
+  - household_income_2020
+- id: held_33
+  question: Distribution of household income in brackets
+  year: 2019
+  population_group: null
+  required_files:
+  - household_income_2019
+- id: held_34
+  question: How many households get public assistance or SSI?
+  year: 2020
+  population_group: null
+  required_files:
+  - household_income_by_source_2020
+- id: held_35
+  question: How many households make money from wages versus rental income?
+  year: 2019
+  population_group: null
+  required_files:
+  - household_income_by_source_2019
+- id: held_36
+  question: Median income of married-couple families versus people living alone
+  year: 2020
+  population_group: null
+  required_files:
+  - family_and_nonfamily_income_2020
+- id: held_37
+  question: Average income per person for Hispanic residents
+  year: 2019
+  population_group: I
+  required_files:
+  - per_capita_income_2019
+- id: held_38
+  question: Total income of everyone combined
+  year: 2020
+  population_group: null
+  required_files:
+  - per_capita_income_2020
+- id: held_39
+  question: Typical annual pay for women who work
+  year: 2019
+  population_group: null
+  required_files:
+  - earnings_2019
+- id: held_40
+  question: What percent of men are veterans?
+  year: 2020
+  population_group: null
+  required_files:
+  - veterans_2020
+- id: held_41
+  question: Veterans living in poverty with a disability
+  year: 2019
+  population_group: null
+  required_files:
+  - veterans_poverty_and_disability_2019
+- id: held_42
+  question: Do households that receive SNAP include people with disabilities?
+  year: 2020
+  population_group: null
+  required_files:
+  - snap_and_disability_2020
+- id: held_43
+  question: How many people are out of work and looking for a job?
+  year: 2019
+  population_group: null
+  required_files:
+  - labor_force_status_2019
+- id: held_44
+  question: What is the unemployment rate among Black workers?
+  year: 2020
+  population_group: B
+  required_files:
+  - labor_force_status_2020
+- id: held_45
+  question: How many people work part-time or fewer than 35 hours?
+  year: 2019
+  population_group: null
+  required_files:
+  - work_hours_and_weeks_2019
+- id: held_46
+  question: How many families have both parents working?
+  year: 2020
+  population_group: null
+  required_files:
+  - working_parents_and_families_2020
+- id: held_47
+  question: How many people are self-employed?
+  year: 2019
+  population_group: null
+  required_files:
+  - class_of_worker_2019
+- id: held_48
+  question: Which industries employ the most people, like health care or retail?
+  year: 2020
+  population_group: null
+  required_files:
+  - industry_2020
+- id: held_49
+  question: What jobs do people have, such as managers, teachers or nurses?
+  year: 2019
+  population_group: null
+  required_files:
+  - occupation_2019
+- id: held_50
+  question: What is the homeownership rate for white non-Hispanic households?
+  year: 2020
+  population_group: H
+  required_files:
+  - housing_occupancy_and_tenure_2020
+- id: held_51
+  question: How many homes are vacant or sitting empty?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_occupancy_and_tenure_2019
+- id: held_52
+  question: How many people live more than one per room?
+  year: 2020
+  population_group: null
+  required_files:
+  - housing_crowding_and_facilities_2020
+- id: held_53
+  question: What do people use to heat their homes?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_crowding_and_facilities_2019
+- id: held_54
+  question: What is the median number of rooms in a house?
+  year: 2020
+  population_group: null
+  required_files:
+  - housing_rooms_and_bedrooms_2020
+- id: held_55
+  question: How many houses were built before 1950?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_structure_age_and_move_in_2019
+- id: held_56
+  question: When did current residents move into their homes?
+  year: 2020
+  population_group: null
+  required_files:
+  - housing_structure_age_and_move_in_2020
+- id: held_57
+  question: How many cars do households own?
+  year: 2019
+  population_group: null
+  required_files:
+  - vehicles_available_2019
+- id: held_58
+  question: Share of income renters spend on rent
+  year: 2020
+  population_group: null
+  required_files:
+  - rent_and_rent_burden_2020
+- id: held_59
+  question: What is the median home value?
+  year: 2019
+  population_group: null
+  required_files:
+  - home_value_and_owner_costs_2019
+- id: held_60
+  question: What is the vacancy rate and how much is the median rent?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_occupancy_and_tenure_2019
+  - rent_and_rent_burden_2019
+- id: held_61
+  question: How many kids and seniors lack medical coverage?
+  year: 2020
+  population_group: null
+  required_files:
+  - health_insurance_2020
+- id: held_62
+  question: How many households have a laptop or smartphone but no broadband?
+  year: 2019
+  population_group: null
+  required_files:
+  - computers_and_internet_2019
+- id: held_63
+  question: How many eligible voters are there who are citizens and college educated?
+  year: 2020
+  population_group: null
+  required_files:
+  - citizen_voting_age_population_2020
+- id: held_64
+  question: Detailed breakdown of Asian subgroups like Chinese, Indian, Vietnamese
+  year: 2019
+  population_group: D
+  required_files:
+  - detailed_race_2019
+- id: held_65
+  question: How many Pacific Islander people were counted in the 2020 census?
+  year: 2020
+  population_group: E
+  required_files:
+  - census_count_race_and_hispanic_2020
+- id: held_66
+  question: How many Hispanic people lived here in 2020?
+  year: 2020
+  population_group: I
+  required_files:
+  - census_count_race_and_hispanic_2020
+- id: held_67
+  question: How many adult Black residents were counted in 2020?
+  year: 2020
+  population_group: B
+  required_files:
+  - census_count_adults_race_and_hispanic_2020
+- id: held_68
+  question: How many people lived in group housing like barracks or shelters in 2020?
+  year: 2020
+  population_group: null
+  required_files:
+  - census_count_group_quarters_2020
+- id: held_69
+  question: Unemployment rate and median household income
+  year: 2019
+  population_group: null
+  required_files:
+  - labor_force_status_2019
+  - household_income_2019
+- id: held_70
+  question: What percent of people are uninsured, and what is the poverty rate?
+  year: 2020
+  population_group: null
+  required_files:
+  - health_insurance_2020
+  - poverty_2020
+- id: held_71
+  question: According to the American Community Survey, how many Hispanic residents are there?
+  year: 2020
+  population_group: I
+  required_files:
+  - hispanic_origin_2020
