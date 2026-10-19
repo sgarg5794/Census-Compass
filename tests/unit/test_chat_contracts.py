@@ -7,7 +7,6 @@ from census_compass.chat.contracts import (
     Evidence,
     ResultEvent,
     StatusEvent,
-    StatusStage,
     parse_chat_event,
 )
 from census_compass.chat.service import UnavailableChatService
