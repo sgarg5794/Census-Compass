@@ -11,9 +11,14 @@ GLOSSARY = Path(__file__).parents[2] / "definitions" / "source" / "census_glossa
 
 OFFICIAL_TITLES = {
     "ACS Subject Definitions 2020",
+    "ACS General Handbook 2020 — Chapter 2",
     "ACS General Handbook 2020 — Chapter 3",
     "ACS General Handbook 2020 — Chapter 4",
+    "ACS General Handbook 2020 — Chapter 7",
     "ACS General Handbook 2020 — Chapter 8",
+    "ACS General Handbook 2020 — Chapter 9",
+    "Geographic Areas Reference Manual — Chapter 4",
+    "ACS Design and Methodology (January 2014) — Chapter 13",
 }
 
 REQUIRED_TERMS = [
@@ -53,12 +58,12 @@ REQUIRED_TERMS = [
     "educational attainment",
     "health insurance coverage",
     "limited English speaking household",
+    "block group",
+    "census tract",
+    "county",
+    "FIPS code",
+    "top-coded",
 ]
-
-# Spec section 5 topics that the permitted sources (ACS Subject Definitions 2020 and
-# General Handbook 2020 chapters 3, 4, 8) do not define. They are deliberately left out
-# rather than written from memory; adding them needs an additional official source.
-UNSUPPORTED_BY_SOURCES = ["block group", "census tract", "county", "FIPS code", "top-coded"]
 
 
 @pytest.fixture(autouse=True)
@@ -84,14 +89,6 @@ def test_required_terms_covered():
         phrases.update(a.casefold() for a in entry.aliases)
     missing = [t for t in REQUIRED_TERMS if t.casefold() not in phrases]
     assert missing == []
-
-
-def test_unsupported_terms_are_not_invented():
-    phrases = set()
-    for entry in load_glossary(GLOSSARY):
-        phrases.add(entry.term.casefold())
-        phrases.update(a.casefold() for a in entry.aliases)
-    assert not [t for t in UNSUPPORTED_BY_SOURCES if t.casefold() in phrases]
 
 
 def test_sources_are_official_documents():

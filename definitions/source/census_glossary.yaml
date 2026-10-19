@@ -21,18 +21,18 @@
     url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
 - term: "Margin of error"
   aliases: ["margins of error", "MOE", "MOEs"]
-  definition: "The margin of error (MOE) is the amount added to and subtracted from an estimate to get its 90 percent confidence interval. For example, an estimate of 61,393,366 with a margin of error of 202,289 has a 90 percent confidence interval of 61,191,077 to 61,595,655. The margin of error can also be used to calculate the standard error and the coefficient of variation of an estimate."
+  definition: "A margin of error (MOE) describes the precision of an ACS estimate at a given level of confidence, and the MOEs for published ACS estimates are provided at a 90 percent confidence level. Adding and subtracting the MOE from the estimate gives a 90 percent confidence interval. For example, 564,757 one-person households in Colorado in 2015 with an MOE of 10,127 gives an interval from 554,630 to 574,884. Estimates with smaller MOEs relative to the value of the estimate have narrower confidence intervals, which means the estimate is more precise."
   source:
-    title: "ACS General Handbook 2020 — Chapter 8"
-    page: 66
-    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+    title: "ACS General Handbook 2020 — Chapter 7"
+    page: "53-54"
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch07.pdf"
 - term: "Confidence level"
   aliases: ["confidence levels", "90 percent confidence", "90% confidence", "90 percent confidence interval"]
-  definition: "The margin of error is used to build a 90 percent confidence interval around an ACS estimate. To get the interval, the margin of error is added to and subtracted from the estimate to find the upper and lower bounds. For example, an estimate of 61,393,366 with a margin of error of 202,289 has a 90 percent confidence interval of 61,191,077 to 61,595,655."
+  definition: "The confidence level associated with a margin of error indicates the likelihood that the ACS sample estimate is within a certain range (the margin of error) of the population value. The margins of error for published ACS estimates are provided at a 90 percent confidence level. A 90 percent confidence interval defines a range expected to contain the true value of an estimate 90 percent of the time. Put another way, if the ACS were independently conducted 100 times, sampling theory suggests that 90 times the estimate would fall in the confidence interval."
   source:
-    title: "ACS General Handbook 2020 — Chapter 8"
-    page: 66
-    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+    title: "ACS General Handbook 2020 — Chapter 7"
+    page: "53-54"
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch07.pdf"
 - term: "Confidence interval"
   aliases: ["confidence intervals", "range of uncertainty", "ranges of uncertainty"]
   definition: "A confidence interval is a range of uncertainty around an estimate. For example, the 2018 1-year estimate of the child poverty rate in Bay County, Michigan, had a confidence interval from 23.5 percent to 36.9 percent, a range of 13 percentage points. The interval for the 2014–2018 5-year estimate was narrower, from 22.7 percent to 27.7 percent, or 5 percentage points."
@@ -42,18 +42,18 @@
     url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
 - term: "Standard error"
   aliases: ["standard errors", "SE", "SEs"]
-  definition: "The standard error (SE) of an estimate can be calculated from its margin of error by dividing the margin of error by 1.645. For example, a margin of error of ±3,860 gives a standard error of 2,347. Standard errors of component estimates are used to calculate the standard error of a derived estimate."
+  definition: "A standard error (SE) measures the variability of an estimate due to sampling and provides the basis for calculating the margin of error. The SE of an ACS estimate can be calculated by dividing the positive value of its margin of error by 1.645. In general, the larger the sample size, the smaller the SE of the estimates produced from the sample data."
   source:
-    title: "ACS General Handbook 2020 — Chapter 8"
-    page: 60
-    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+    title: "ACS General Handbook 2020 — Chapter 7"
+    page: "54-55"
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch07.pdf"
 - term: "Coefficient of variation"
   aliases: ["coefficients of variation", "CV", "CVs"]
-  definition: "The coefficient of variation (CV) is the standard error divided by the estimate, multiplied by 100 and expressed as a percent. A lower CV means the standard error is small relative to the estimate. For example, combining two income categories lowered the CV from 30 percent for one category alone to 18 percent for the combined estimate."
+  definition: "A coefficient of variation (CV) measures the relative amount of sampling error associated with a sample estimate. It is calculated as the ratio of the standard error for an estimate to the estimate itself and is usually expressed as a percent. A small CV indicates that the standard error is small relative to the estimate, and a data user can be more confident that the estimate is close to the population value."
   source:
-    title: "ACS General Handbook 2020 — Chapter 8"
-    page: 63
-    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch08.pdf"
+    title: "ACS General Handbook 2020 — Chapter 7"
+    page: 55
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch07.pdf"
 - term: "Estimate"
   aliases: ["estimates", "ACS estimate", "ACS estimates", "period estimate", "period estimates"]
   definition: "Single-year and multiyear estimates from the ACS are all \"period\" estimates, derived from a sample collected over a period of time. This is different from the \"point-in-time\" estimates of past decennial censuses, such as the 2000 Census long form, which sampled the resident population as of April 1, 2000. Uncertainty around an estimate is shown by a confidence interval, a range of uncertainty around it."
@@ -63,11 +63,11 @@
     url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
 - term: "American Community Survey"
   aliases: ["ACS", "American Community Survey data"]
-  definition: "Each year the Census Bureau publishes American Community Survey (ACS) 1-year estimates for geographic areas with populations of 65,000 or more. For areas with smaller populations, the ACS samples too few housing units for reliable single-year estimates, so several years of data are pooled to create more precise multiyear estimates. Since 2010, the ACS has published 5-year data for all geographic areas down to the census tract and block group levels."
+  definition: "The American Community Survey (ACS) is a nationwide, continuous survey designed to provide communities with reliable and timely social, economic, housing, and demographic data every year. Its primary purpose is to measure the changing social and economic characteristics of the nation's population, such as education, housing, and jobs. After the 2000 Census, the ACS replaced the decennial census long form and continued to collect long-form type information throughout the decade."
   source:
-    title: "ACS General Handbook 2020 — Chapter 3"
-    page: 13
-    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
+    title: "ACS General Handbook 2020 — Chapter 9"
+    page: 68
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch09.pdf"
 - term: "5-year estimates"
   aliases: ["5-year estimate", "5-year data", "5-year ACS", "multiyear estimates", "multiyear estimate"]
   definition: "An ACS 5-year estimate includes data collected over a 60-month period. For example, the 2014–2018 estimates cover January 2014 through December 2018, and should be labeled with the full period rather than a single year such as 2016. The main advantage of multiyear estimates is increased statistical reliability compared with single-year estimates, particularly for small geographic areas and small population subgroups. Consecutive 5-year estimates share 4 years of data."
@@ -77,7 +77,7 @@
     url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch03.pdf"
 - term: "1-year estimates"
   aliases: ["1-year estimate", "1-year data", "single-year estimates", "single-year estimate"]
-  definition: "An ACS 1-year estimate includes information collected over a 12-month period, which is the calendar year. For example, the 2018 ACS covers January 2018 through December 2018. Standard 1-year estimates are published for geographic areas with populations of 65,000 or more, and less populous areas receive only 5-year estimates."
+  definition: "An ACS 1-year estimate includes information collected over a 12-month period, which is the calendar year. For example, the 2018 ACS covers January 2018 through December 2018. Standard 1-year estimates are published for geographic areas with populations of 65,000 or more, and 1-year Supplemental Estimates, simplified versions of popular ACS tables, are available for areas with at least 20,000 people. Areas with smaller populations receive only 5-year estimates."
   source:
     title: "ACS General Handbook 2020 — Chapter 3"
     page: 13
@@ -97,12 +97,26 @@
     page: "17-18"
     url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch04.pdf"
 - term: "Decennial Census"
-  aliases: ["decennial censuses", "2020 Census", "2010 Census"]
+  aliases: ["decennial censuses", "decennial", "2020 Census", "2010 Census"]
+  definition: "Every 10 years since 1790, Congress has authorized the government to conduct a national census of the population, as required by the Constitution. The main function of the decennial census is to provide counts of people for the purpose of congressional apportionment. After the 2000 Census, the long-form questionnaire it had used for detailed social, economic, and housing questions was replaced by the ACS."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 9"
+    page: 68
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch09.pdf"
+- term: "Comparing the Decennial Census with the ACS"
+  aliases: ["ACS versus decennial census", "ACS vs decennial census", "comparing ACS with the census"]
   definition: "The 2010 Census and 2020 Census were short-form-only censuses, so they do not include all of the detailed social, economic, and housing data available from previous censuses. Valid comparisons can be made between ACS estimates and basic characteristics from these censuses, including age, sex, race, Hispanic origin, household relationship, and homeowner status. For basic counts of the population between censuses, the Census Bureau encourages use of its official population estimates."
   source:
     title: "ACS General Handbook 2020 — Chapter 4"
     page: 19
     url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch04.pdf"
+- term: "Estimate versus count"
+  aliases: ["estimate vs count", "estimates and counts"]
+  definition: "The data in ACS products are estimates of the actual figures that would have been obtained if the entire population, rather than the chosen ACS sample, had been interviewed using the same methodology. Because estimates are based on a sample, they have uncertainty called sampling error, and they will likely differ from the values that would have been obtained if the entire population had been included in the survey. The margin of error is the measure of the magnitude of sampling error provided with all published ACS estimates."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 7"
+    page: 53
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch07.pdf"
 - term: "Universe"
   aliases: ["universes", "base reference total"]
   definition: "A universe is the base reference total against which all other characteristics are compared. When comparing ACS data with the 2000 Census, differences in residence rules, universes, and reference periods between the two surveys should be considered."
@@ -126,7 +140,7 @@
     url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
 - term: "Rate"
   aliases: ["rates"]
-  definition: "A rate is a measure of occurrences in a given period of time divided by the possible number of occurrences during that period. For example, the homeowner vacancy rate is calculated by dividing the number of vacant units \"for sale only\" by the sum of owner-occupied units and vacant units that are \"for sale only,\" and then multiplying by 100. Rates are sometimes presented as percentages."
+  definition: "A rate is a measure of occurrences in a given period of time divided by the possible number of occurrences during that period. Rates are sometimes presented as percentages. The homeowner vacancy rate is one example, calculated from the number of vacant units \"for sale only\" and then multiplied by 100."
   source:
     title: "ACS Subject Definitions 2020"
     page: 142
@@ -411,3 +425,38 @@
     title: "ACS Subject Definitions 2020"
     page: 50
     url: "https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2020_ACSSubjectDefinitions.pdf"
+- term: "Census tract"
+  aliases: ["census tracts", "tract", "tracts"]
+  definition: "Census tracts are small geographic areas, with an average of about 4,000 people each, that are commonly used to present information for small towns, rural areas, and neighborhoods. Block groups are subdivisions of census tracts. For example, in Vermont there are currently 184 census tracts with data available through the ACS 5-year data products."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 2"
+    page: 12
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch02.pdf"
+- term: "Block group"
+  aliases: ["block groups"]
+  definition: "Block groups are subdivisions of census tracts that include between 600 and 3,000 people each. In the ACS, block groups are the lowest (smallest) level of geography published. Block group data are only available in the ACS 5-year data products, and more than 300 ACS data tables are available for block groups."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 2"
+    page: 12
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch02.pdf"
+- term: "County"
+  aliases: ["counties"]
+  definition: "Counties are the primary legal subdivision within each state. For example, ACS 1-year estimates are available for 10 of Iowa's 99 counties, those with populations of 65,000 or more in 2018. In 2018, Iowa had 35 counties with at least 20,000 people that received 1-year Supplemental Estimates, and its 64 counties with fewer than 20,000 people received only 5-year estimates."
+  source:
+    title: "ACS General Handbook 2020 — Chapter 2"
+    page: 10
+    url: "https://www.census.gov/content/dam/Census/library/publications/2020/acs/acs_general_handbook_2020_ch02.pdf"
+- term: "FIPS code"
+  aliases: ["FIPS codes", "FIPS", "Federal Information Processing Standards"]
+  definition: "The Federal Government uses a unique two-digit numeric code to identify each state and state equivalent entity, and these state codes are part of the Federal Information Processing Standards (FIPS). The state codes parallel the alphabetic sequence of state names. Another FIPS coding scheme identifies the counties alphabetically within each state by assigning each county a three-digit numeric code, with gaps in the numbering to allow for additions and revisions."
+  source:
+    title: "Geographic Areas Reference Manual — Chapter 4"
+    page: "4-15"
+    url: "https://www2.census.gov/geo/pdfs/reference/GARM/Ch4GARM.pdf"
+- term: "Top-coded"
+  aliases: ["top-coding", "topcoded", "topcoding"]
+  definition: "Top-coding is a method of disclosure avoidance in which all cases in or above a certain percentage of the distribution are placed into a single category. The Census Bureau uses it for Public Use Microdata Sample (PUMS) data, in addition to data swapping, geographic population thresholds, and age perturbation."
+  source:
+    title: "ACS Design and Methodology (January 2014) — Chapter 13"
+    page: 9
+    url: "https://www2.census.gov/programs-surveys/acs/methodology/design_and_methodology/2014/acs_design_methodology_ch13_2014.pdf"
