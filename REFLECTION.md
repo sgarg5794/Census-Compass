@@ -1,5 +1,7 @@
 # Reflection
 
+A running instance of the service is at https://census-compass-342695199442.us-east1.run.app/
+
 ## Architectural Blueprint & Technical Decisions
 
 I worked from specs. First I clarified the behavior I wanted, then wrote a design and an implementation plan, then split the work into tasks that could be built in separate worktrees once their interfaces were clear. That made parallel work easier to review and integrate. It still needed coordination around contracts and integration issues.

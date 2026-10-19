@@ -4,6 +4,10 @@ A conversational agent that answers plain-language questions about US demographi
 using the US Census data in Snowflake. Every answer says which survey period it
 comes from, how complete the data is, and what the agent could not tell you.
 
+**Live demo:** https://census-compass-342695199442.us-east1.run.app/
+
+The demo answers from the 2015–2019 and 2016–2020 ACS 5-year estimates and the 2020 Census count, so figures are not current. The first question after a quiet period can take longer than later ones. To run it on your own machine, see [Run it locally](#run-it-locally-general-setup) or the [one-click setup](#one-click-setup-with-claude-code).
+
 ## What it does
 
 Ask a question such as *"What is the unemployment rate in Cook County, Illinois?"*
