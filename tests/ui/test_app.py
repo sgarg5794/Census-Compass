@@ -212,6 +212,26 @@ def test_typed_submission_uses_same_path_and_history_selection_does_not_replay()
     assert len(service.requests) == 1
 
 
+def test_off_topic_question_displays_census_redirect_and_keeps_history_usable():
+    question = "What is the weather in New York today?"
+    redirect = "I can help with Census population, housing, and employment data. Try asking about a state or county."
+    service = ScriptedChatService(
+        [ResultEvent(result=_answer(outcome=Outcome.UNSUPPORTED, answer=redirect))]
+    )
+    at = _run(service)
+    at.chat_input[0].set_value(question).run()
+    assert not at.exception, at.exception
+    assert [request.text for request in service.requests] == [question]
+    assert at.chat_message[-1].markdown[0].value == redirect
+    assert at.chat_input[0].disabled is False
+    at.sidebar.button[0].click().run()
+    assert not at.exception, at.exception
+    at.sidebar.button[1].click().run()
+    assert not at.exception, at.exception
+    assert at.chat_message[-1].markdown[0].value == redirect
+    assert len(service.requests) == 1
+
+
 @pytest.mark.parametrize(
     "events,failure",
     [
