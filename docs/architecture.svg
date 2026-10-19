@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title description">
   <title id="title">Census Compass architecture</title>
-  <desc id="description">A visual architecture diagram showing the Streamlit visitor experience, pre-agent rule-based scope gate, ADK Census data agent, resolver and semantic schema tools, SQLGlot validation, and Snowflake query path. General Census document retrieval is marked as not connected in the current MVP.</desc>
+  <desc id="description">A visual architecture diagram showing the Streamlit visitor experience, pre-agent classifier-based guardrail, ADK Census data agent, resolver and semantic schema tools, SQLGlot validation, and Snowflake query path. General Census questions are answered from a reviewed glossary; document retrieval is marked as future work.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L10,5 L0,10 z" fill="#53657d"/>
@@ -43,10 +43,10 @@
     <circle cx="386" cy="211" r="14" fill="#fff0ca"/>
     <path d="M386 201l9 4v6c0 6-4 10-9 12-5-2-9-6-9-12v-6z" fill="none" stroke="#9b6c17" stroke-width="1.7" stroke-linejoin="round"/>
     <path d="M382 211l3 3 5-6" fill="none" stroke="#9b6c17" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="410" y="216" fill="#3c2d12" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Pre-agent scope gate</text>
-    <text x="380" y="254" fill="#5a4928" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Rule-based request routing</text>
+    <text x="410" y="216" fill="#3c2d12" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">Pre-agent guardrail</text>
+    <text x="380" y="254" fill="#5a4928" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="600">Classifier screens each message</text>
     <text x="380" y="279" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Runs before ADK / tool calls</text>
-    <text x="380" y="302" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Dataset questions continue to agent</text>
+    <text x="380" y="302" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Allowed messages continue to agent</text>
   </g>
 
   <g filter="url(#shadow)">
@@ -94,24 +94,26 @@
   <!-- Gate outcomes -->
   <path d="M492 339v45" fill="none" stroke="#c18a27" stroke-width="1.8" marker-end="url(#arrow)"/>
   <text x="510" y="366" fill="#9b6c17" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="600">other routes</text>
-  <text x="56" y="459" fill="#78869a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">NON-DATASET ROUTES</text>
+  <text x="56" y="459" fill="#78869a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1.4">OTHER OUTCOMES</text>
   <g>
     <rect x="55" y="482" width="250" height="95" rx="14" fill="#ffffff" stroke="#dce2e9" stroke-width="1.2"/>
     <circle cx="81" cy="512" r="7" fill="#97a2b0"/>
-    <text x="99" y="517" fill="#33455d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Off-topic</text>
-    <text x="77" y="546" fill="#6c7a8d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Fixed redirect; no agent or data tools</text>
+    <text x="99" y="517" fill="#33455d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Blocked messages</text>
+    <text x="77" y="541" fill="#6c7a8d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Off-topic, unsafe or prompt injection</text>
+    <text x="77" y="561" fill="#6c7a8d" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Fixed reply; no agent or data tools</text>
   </g>
   <g>
     <rect x="325" y="482" width="250" height="95" rx="14" fill="#ffffff" stroke="#ecd8a9" stroke-width="1.2"/>
     <circle cx="351" cy="512" r="7" fill="#c18a27"/>
-    <text x="369" y="517" fill="#5a4928" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Unclear request</text>
-    <text x="347" y="546" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Ask the visitor to clarify the data question</text>
+    <text x="369" y="517" fill="#5a4928" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">Small talk</text>
+    <text x="347" y="546" fill="#766644" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Brief reply from the agent; no data tools</text>
   </g>
   <g>
     <rect x="595" y="482" width="290" height="95" rx="14" fill="#ffffff" stroke="#e7d9d8" stroke-width="1.2"/>
     <circle cx="621" cy="512" r="7" fill="#b46a61"/>
-    <text x="639" y="517" fill="#563632" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">General Census explanation</text>
-    <text x="617" y="546" fill="#806662" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Currently unsupported; docs RAG is not connected</text>
+    <text x="639" y="517" fill="#563632" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700">General Census question</text>
+    <text x="617" y="541" fill="#806662" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Answered only from the reviewed glossary,</text>
+    <text x="617" y="561" fill="#806662" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">with the source and page named</text>
   </g>
   <path d="M430 339v104H180v32" fill="none" stroke="#a2adba" stroke-width="1.4" marker-end="url(#arrow)"/>
   <path d="M492 339v104H450v32" fill="none" stroke="#c18a27" stroke-width="1.4" marker-end="url(#arrow)"/>
@@ -162,7 +164,7 @@
     <rect x="78" y="674" width="118" height="27" rx="13.5" fill="#eef0f3"/>
     <text x="137" y="692" text-anchor="middle" fill="#596879" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="11" font-weight="700" letter-spacing="0.7">FUTURE WORK</text>
     <text x="78" y="735" fill="#35465a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="700">Approved Census documentation retrieval</text>
-    <text x="78" y="763" fill="#6b788a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Planned for general Census questions. Not connected to the current MVP, so these questions receive a limitation response.</text>
+    <text x="78" y="763" fill="#6b788a" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="13">Planned to replace the glossary for general Census questions.</text>
     <text x="78" y="787" fill="#8793a1" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="12">When built: reviewed Census Bureau sources → hybrid retrieval → cited, evidence-grounded explanation</text>
   </g>
 
