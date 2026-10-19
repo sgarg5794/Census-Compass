@@ -89,10 +89,22 @@ def _clean(part: str) -> str:
     return part.strip().rstrip(":").removesuffix(" --").strip()
 
 
-def _breakdown(group_title: str, path: list[str]) -> list[str]:
-    """Breakdown below the universe, without 'Total' and parts repeating the title."""
-    title = group_title.lower()
-    parts = [p for p in (_clean(p) for p in path) if p and p != "Total" and p.lower() not in title]
+def _normalized(text: str) -> str:
+    return " ".join(text.lower().rstrip(":").split())
+
+
+def _breakdown(group_title: str, universe: str, path: list[str]) -> list[str]:
+    """Breakdown path without pure restatements, every other segment kept in order.
+
+    Dropped: "Total" segments, and leading segments exactly equal (after normalising case,
+    whitespace and a trailing colon) to the group title, the title without its race
+    parenthetical, or the universe. Never dropped by substring containment.
+    """
+    base_title = re.sub(r"\s*\([^()]*\)$", "", group_title)
+    restatements = {_normalized(group_title), _normalized(base_title), _normalized(universe)}
+    parts = [p for p in (_clean(p) for p in path) if p and _normalized(p) != "total"]
+    while parts and _normalized(parts[0]) in restatements:
+        parts.pop(0)
     return parts or ["Total"]
 
 
@@ -104,15 +116,15 @@ def _with_race(text: str, label: str) -> str:
 
 
 def _row(physical, column, name, group_title, universe, path, race, moe, classification,
-         definition_source):
-    breakdown = _breakdown(group_title, path)
+         definition_source, heading=None):
+    breakdown = _breakdown(group_title, universe, path)
     meta = {"universe": universe}
     if moe:
         meta["moe_sql"] = _qualified(physical, moe)
     if race:
         meta["population_group"] = race
     member = {
-        "name": name, "title": f"{group_title}: {' > '.join(breakdown)}",
+        "name": name, "title": f"{heading or group_title}: {' > '.join(breakdown)}",
         "description": describe(group_title, universe, breakdown, race),
         "sql": _qualified(physical, column),
         "format": _format(group_title, universe, classification), "meta": meta,
@@ -126,9 +138,21 @@ def _row(physical, column, name, group_title, universe, path, race, moe, classif
     return built, metadata
 
 
+def _shared_titles(v1_table: dict) -> set[str]:
+    """Group titles the Census uses for more than one group in this table (e.g. B28003 and
+    B28008, households vs people); their member titles also name the universe."""
+    groups: dict[str, set[str]] = {}
+    for field in v1_table["measures"].values():
+        title = (field["metadata"]["source_metadata"] or {}).get("TABLE_TITLE")
+        if title:
+            groups.setdefault(title, set()).add(_group_of(field))
+    return {title for title, codes in groups.items() if len(codes) > 1}
+
+
 def _documented(v1_table: dict, physical: str, version: str, race: str | None,
                 prefix: str) -> list[tuple]:
     rows = []
+    shared = _shared_titles(v1_table)
     for v1_name, field in v1_table["measures"].items():
         if _group_of(field) != version:
             continue
@@ -144,8 +168,9 @@ def _documented(v1_table: dict, physical: str, version: str, race: str | None,
             path = [source["FIELD_NAME"]]
         moe = (field.get("margin_of_error") or {}).get("metadata", {}).get("source_column")
         classification = classify_group(title)
+        heading = f"{title} ({universe})" if title in shared else None
         rows.append(_row(physical, column, prefix + v1_name, title, universe, path, race, moe,
-                         classification, "dictionary"))
+                         classification, "dictionary", heading))
     return rows
 
 

@@ -204,3 +204,57 @@ def test_puerto_rico_group_codes():
     _, ms, _ = convert_group(table, "B07201PR", 2020, {})
     assert ms and all('"2020_CBG_B07"."B07201PRe' in m.sql for m in ms)
     assert not any("population_group" in m.meta for m in ms)
+
+
+def _member(table, group, column, labels=None):
+    dims, ms, _ = convert_group(table, group, 2020, labels or {})
+    return next(m for m in [*dims, *ms] if m.sql.endswith(f'."{column}"'))
+
+
+def test_breakdown_keeps_meaningful_segments():
+    b03 = _table("2020_CBG_B03")
+    total, hispanic = _member(b03, "B03003", "B03003e1"), _member(b03, "B03003", "B03003e3")
+    assert "Hispanic or Latino" in hispanic.title and "Hispanic or Latino" in hispanic.description
+    assert (hispanic.title, hispanic.description) != (total.title, total.description)
+    hispanic_white = _member(b03, "B03002", "B03002e13")
+    for text in (hispanic_white.title, hispanic_white.description):
+        assert "Hispanic or Latino" in text and "White alone" in text
+    alone = _member(_table("2020_CBG_B09"), "B09019", "B09019e5")
+    assert "Living alone" in alone.title and "Living alone" in alone.description
+
+
+def test_breakdown_drops_only_restatements(v1_b19_2020):
+    member = _member(v1_b19_2020, "B19301", "B19301e1")
+    assert member.title.endswith(": Total") and member.description.endswith(". Total.")
+    race = _member(v1_b19_2020, "B19301", "B19301Ae1")
+    assert race.title.endswith(": Total")
+
+
+@pytest.mark.parametrize("year", [2019, 2020])
+def test_titles_and_descriptions_unique_within_every_topic(year):
+    labels = load_census_api_labels(API, year)
+    problems = []
+    for topic in load_topics(Path("definitions/source/topics.yaml")):
+        path = TABLES / f"{year}_{topic.table}.yaml"
+        if topic.internal or not path.exists():
+            continue
+        table = yaml.safe_load(path.read_text())
+        members = []
+        for group in topic.groups:
+            if group == "B28012" and year == 2019:  # absent in 2019 (topics.yaml)
+                continue
+            dims, ms, _ = convert_group(table, group, year, labels)
+            members += [*dims, *ms]
+        for field in ("title", "description"):
+            counts = Counter(getattr(m, field) for m in members)
+            problems += [(topic.name, field, v) for v, c in counts.items() if c > 1]
+    assert problems == []
+
+
+def test_shared_group_titles_are_told_apart_by_universe():
+    b28 = _table("2020_CBG_B28")
+    households, people = _member(b28, "B28003", "B28003e2"), _member(b28, "B28008", "B28008e2")
+    assert households.title != people.title
+    assert "(Households)" in households.title and "(Population in Households)" in people.title
+    unique = _member(b28, "B28002", "B28002e1")
+    assert "(Households)" not in unique.title
