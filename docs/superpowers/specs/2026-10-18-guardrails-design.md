@@ -86,7 +86,7 @@ ethnicity, sex, age, poverty or income, at any supported geography.
 
 - File: `definitions/source/census_glossary.yaml`, ~40–60 entries:
   `{term, aliases[], definition (2–4 plain sentences), source {title, page, url}}`.
-- Sources: ACS Subject Definitions 2020 and the ACS General Handbook 2020 (official Census
+- **Deliverable of this work** (created by the implementer, not pre-existing). Sources: ACS Subject Definitions 2020 and the ACS General Handbook 2020 (official Census
   Bureau documents); every entry cites a page. Drafted by the implementer, reviewed by the user
   before use.
 - Coverage: statistical terms (median, mean, aggregate, margin of error, 90% confidence,
@@ -147,6 +147,10 @@ acceptance criteria.
 
 ## 11. Acceptance criteria
 
+0. **The glossary is created as part of this work:** `definitions/source/census_glossary.yaml`
+   exists with at least 40 entries covering every topic listed in §5; every entry cites an
+   official Census Bureau document with page and URL, and each definition was checked against
+   that page; the user has reviewed and approved the file before the guardrails are enabled.
 1. 0 sensitive-but-legitimate questions blocked.
 2. ≥ 95% of off-topic, inappropriate and manipulation messages blocked before the agent runs.
 3. ≥ 95% of the label set classified correctly.
