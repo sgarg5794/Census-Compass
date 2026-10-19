@@ -361,7 +361,10 @@ def test_real_counts(year):
     count, total = _REAL_FACTS[year]
     assert len(records) == count
     r = resolve_geography_from("United States", year, source_dir=source)
-    assert r["block_groups"] == total == sum(c.block_groups for c in records)
+    pr = resolve_geography_from("Puerto Rico", year, source_dir=source)
+    # National excludes Puerto Rico (user decision); nation + PR = every block group.
+    assert total == sum(c.block_groups for c in records)
+    assert r["block_groups"] + pr["block_groups"] == total
     zero = [c for c in records if c.block_groups == 0]
     assert {c.state_abbr for c in zero} <= {"AS", "GU", "MP", "VI"}
 
