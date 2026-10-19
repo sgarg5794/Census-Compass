@@ -17,3 +17,34 @@ def test_instructions_name_all_tools():
     text = (PROMPTS / "agent_instructions.md").read_text()
     for tool in TOOLS:
         assert tool in text
+
+
+OUTCOMES = ["answered", "clarification_needed", "not_available", "unsupported",
+            "query_rejected", "timed_out", "database_failure", "model_failure", "truncated"]
+FIELDS = ["block_groups", "missing_inputs", "unknown_denominator", "coverage", "missing_moe"]
+
+
+def _read(name):
+    return (PROMPTS / name).read_text()
+
+
+def test_instructions_outcomes_and_fields():
+    text = _read("agent_instructions.md")
+    for item in OUTCOMES + FIELDS:
+        assert item in text
+
+
+def test_instructions_resolver_behaviours():
+    text = _read("agent_instructions.md")
+    for phrase in ["not a current figure", "that year only", "offer them", "Run no query"]:
+        assert phrase in text
+
+
+def test_domain_rules_joins_table_and_completeness():
+    text = _read("domain_rules.md")
+    assert '"A"."CENSUS_BLOCK_GROUP" = "B"."CENSUS_BLOCK_GROUP"' in text
+    assert 'LEFT("A"."CENSUS_BLOCK_GROUP", 5)' in text
+    assert "{table}" in text and "2020_CBG_B01" in text
+    for phrase in ["unknown denominators", "missing block groups", "show no ±", "coverage below 90%"]:
+        assert phrase in text
+    assert len(text) / 4 <= 1500
