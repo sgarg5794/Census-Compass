@@ -4,9 +4,10 @@ Census Compass runs as a Google ADK agent backed by Claude through LiteLLM.
 
 ## Prerequisites
 
-1. **Generated definitions and search index.** Run the build command so that
-   `definitions/generated/` (semantic definitions) and `data/index/` (the LanceDB
-   search index) exist.
+1. **Generated definitions and search index.** `definitions/generated/` (semantic
+   definitions) and `data/index/` (the LanceDB search index) are committed, so a
+   fresh checkout already has them. Rebuild only after changing the sources or the
+   embedding model.
 2. **`.env` in the repository root** containing your Anthropic key:
 
    ```
