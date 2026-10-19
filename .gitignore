@@ -23,3 +23,4 @@ data/tables/*.tmp
 *.pem
 evaluations/reports/
 !data/index/
+!data/index/**
