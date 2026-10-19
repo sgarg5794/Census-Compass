@@ -1,20 +1,1258 @@
-# Evaluation scenarios to expand with verified expected answers and assertions.
-version: 1
+# End-to-end evaluation set (spec section 12, criterion 12).
+#
+# Each case: id, turns (user messages in order), expected (for the last turn), traps (spec trap ids
+# and multi-turn ids), optional intermediate (expectations for earlier turns) and notes.
+# expected.kind: number | refusal | clarification. Numbers carry unit, tolerance (counts exact,
+# rates 0.2 percentage points, dollars and minutes 0.5%, ratios and household size 0.01) and their
+# source: reference_sql (run read-only against the dataset; ratios use the spec 6.2 validity
+# predicate) or a fixture reference into tests/fixtures/published. Values are 2016-2020 ACS unless
+# the case says otherwise; "average income" questions map to the mean-income measures.
+# must_mention / must_not are concepts for the grader, not exact substrings (except quoted numbers).
+version: 2
 cases:
-  - id: explain_field
-    question: What does B01001e3 mean?
-    expected_behavior: Explain the estimated male population under five, with source context.
-  - id: ambiguous_county
-    question: What is the population of Orange County?
-    expected_behavior: Ask which state unless conversation context resolves it.
-  - id: unsupported_zip
-    question: What is the population of ZIP code 10001?
-    expected_behavior: Explain the absence of verified ZIP/ZCTA support.
-  - id: invalid_median_rollup
-    question: What is the median household income of California?
-    expected_behavior: Do not average block-group medians; explain if no valid source exists.
-  - id: follow_up
+  - id: "population_texas_acs"
     turns:
-      - What is the population of California in 2020?
-      - And Texas?
-    expected_behavior: Preserve the selected measure and source period when resolving the follow-up.
+      - "According to the 2016–2020 American Community Survey, how many people lived in Texas?"
+    expected:
+      kind: "number"
+      value: 28635442
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '48'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "Texas"
+      must_not:
+        - "29,145,505"
+    traps: []
+  - id: "population_texas_census_count"
+    turns:
+      - "How many people were counted in Texas in the 2020 Census?"
+    expected:
+      kind: "number"
+      value: 29145505
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("P0010001") AS VALUE
+        FROM "2020_REDISTRICTING_CBG_DATA"
+        WHERE LEFT("2020_REDISTRICTING_CBG_DATA"."CENSUS_BLOCK_GROUP", 2) = '48'
+      must_mention:
+        - "2020 Census count"
+        - "April 1, 2020"
+      must_not:
+        - "the ACS estimate 28,635,442 given as the answer"
+    traps:
+      - "census_count_vs_acs"
+  - id: "population_and_poverty_texas_2020"
+    turns:
+      - "In 2020, how many people lived in Texas, and what share of them were below the poverty line?"
+    expected:
+      kind: "number"
+      value: 28635442
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '48'
+      also:
+        - label: "Poverty rate, Texas"
+          value: 14.22
+          unit: "percent"
+          tolerance:
+            kind: "absolute"
+            amount: 0.2
+          reference_sql: |-
+            SELECT 100 * SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e2"))
+                   / NULLIF(SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e1")), 0) AS VALUE,
+                   SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e1")) / NULLIF(SUM("2020_CBG_B17"."B17021e1"), 0) AS COVERAGE
+            FROM "2020_CBG_B17"
+            WHERE LEFT("2020_CBG_B17"."CENSUS_BLOCK_GROUP", 2) = '48'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "poverty"
+      must_not:
+        - "29,145,505"
+    traps:
+      - "census_count_vs_acs"
+    notes: "The poverty share needs ACS, so every number in the answer comes from ACS 2016–2020 (rule C); the 2020 Census count must not be mixed in."
+  - id: "population_change_texas"
+    turns:
+      - "How much did the population of Texas change from 2019 to 2020?"
+    expected:
+      kind: "number"
+      value: 28635442
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '48'
+      also:
+        - label: "Texas population, ACS 2015–2019"
+          value: 28260856
+          unit: "count"
+          tolerance:
+            kind: "exact"
+          reference_sql: |-
+            SELECT SUM("2019_CBG_B01"."B01003e1") AS VALUE,
+                   COUNT(*) AS BLOCK_GROUPS,
+                   COUNT_IF("2019_CBG_B01"."B01003e1" IS NULL) AS MISSING
+            FROM "2019_CBG_B01"
+            WHERE LEFT("2019_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '48'
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "ACS 2016–2020 5-year estimates"
+        - "4 of 5"
+        - "not a measured change"
+      must_not:
+        - "29,145,505"
+    traps:
+      - "change_2019_2020"
+      - "census_count_vs_acs"
+    notes: "ACS for both periods by default; the 2020 Census count is a different product."
+  - id: "population_us_2015_2019"
+    turns:
+      - "What was the total population of the United States in the 2015–2019 survey?"
+    expected:
+      kind: "number"
+      value: 328016242
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2019_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2019_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2019_CBG_B01"
+        WHERE TRUE
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "including Puerto Rico"
+      must_not: []
+    traps: []
+  - id: "males_under_five_california"
+    turns:
+      - "How many boys under 5 years old lived in California, and what exactly does that figure count?"
+    expected:
+      kind: "number"
+      value: 1233088
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B01"."B01001e3") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B01"."B01001e3" IS NULL) AS MISSING
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '06'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "male"
+        - "under 5 years"
+      must_not: []
+    traps: []
+    notes: "Converted from the v1 explain_field case: the answer explains the field (males under 5, ACS 2016–2020 estimate) without the user naming a Census code."
+  - id: "population_wyoming_2015"
+    turns:
+      - "What was the population of Wyoming in 2015?"
+    expected:
+      kind: "number"
+      value: 581024
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2019_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2019_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2019_CBG_B01"
+        WHERE LEFT("2019_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '56'
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "2015"
+      must_not: []
+    traps: []
+    notes: "resolve_year maps 2015 to the 2015–2019 period and the answer explains it."
+  - id: "population_ohio_2010"
+    turns:
+      - "What was the population of Ohio in 2010?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "not available"
+        - "2015–2019"
+        - "2016–2020"
+      must_not:
+        - "a number presented as the 2010 population"
+    traps: []
+  - id: "population_texas_forecast"
+    turns:
+      - "What will the population of Texas be in 2030?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "forecast"
+        - "not available"
+      must_not:
+        - "a projected number"
+    traps: []
+  - id: "population_chicago_city"
+    turns:
+      - "How many people live in the city of Chicago?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "cities"
+        - "county"
+      must_not:
+        - "a number presented as the population of Chicago"
+    traps: []
+  - id: "population_unknown_block_group"
+    turns:
+      - "What is the population of block group 999999999999?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "not found"
+      must_not:
+        - "0"
+    traps: []
+  - id: "population_ohio_2017"
+    turns:
+      - "What was the population of Ohio in 2017?"
+    expected:
+      kind: "clarification"
+      must_mention:
+        - "2015–2019"
+        - "2016–2020"
+      must_not:
+        - "a population number before the user chooses"
+    traps:
+      - "year_2016_2018"
+  - id: "population_ohio_2017_answered"
+    turns:
+      - "What was the population of Ohio in 2017?"
+      - "Use the 2015–2019 survey."
+    expected:
+      kind: "number"
+      value: 11655397
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2019_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2019_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2019_CBG_B01"
+        WHERE LEFT("2019_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '39'
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "Ohio"
+      must_not: []
+    traps:
+      - "year_2016_2018"
+      - "answer_clarification"
+    intermediate:
+      - kind: "clarification"
+        must_mention:
+          - "2015–2019"
+          - "2016–2020"
+  - id: "income_illinois_2018"
+    turns:
+      - "What was the average household income in Illinois in 2018?"
+    expected:
+      kind: "clarification"
+      must_mention:
+        - "2015–2019"
+        - "2016–2020"
+      must_not:
+        - "a dollar figure before the user chooses"
+    traps:
+      - "year_2016_2018"
+  - id: "income_colorado_current"
+    turns:
+      - "What is the current average household income in Colorado?"
+    expected:
+      kind: "number"
+      value: 100936
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19025e1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")) / NULLIF(SUM("2020_CBG_B19"."B19001e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 2) = '08'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "2020 dollars"
+        - "not a current figure"
+        - "mean"
+      must_not: []
+    traps: []
+  - id: "poverty_ohio_change_year"
+    turns:
+      - "What was the poverty rate in Ohio in the 2016–2020 survey?"
+      - "What about 2019?"
+    expected:
+      kind: "number"
+      value: 14.02
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2019_CBG_B17"."B17021e2" IS NULL OR "2019_CBG_B17"."B17021e1" IS NULL, NULL, "2019_CBG_B17"."B17021e2"))
+               / NULLIF(SUM(IFF("2019_CBG_B17"."B17021e2" IS NULL OR "2019_CBG_B17"."B17021e1" IS NULL, NULL, "2019_CBG_B17"."B17021e1")), 0) AS VALUE,
+               SUM(IFF("2019_CBG_B17"."B17021e2" IS NULL OR "2019_CBG_B17"."B17021e1" IS NULL, NULL, "2019_CBG_B17"."B17021e1")) / NULLIF(SUM("2019_CBG_B17"."B17021e1"), 0) AS COVERAGE
+        FROM "2019_CBG_B17"
+        WHERE LEFT("2019_CBG_B17"."CENSUS_BLOCK_GROUP", 2) = '39'
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "Ohio"
+        - "poverty"
+      must_not:
+        - "13.62%"
+    traps:
+      - "change_year"
+    intermediate:
+      - kind: "number"
+        value: 13.62
+        unit: "percent"
+        tolerance:
+          kind: "absolute"
+          amount: 0.2
+        reference_sql: |-
+          SELECT 100 * SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e2"))
+                 / NULLIF(SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e1")), 0) AS VALUE,
+                 SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e1")) / NULLIF(SUM("2020_CBG_B17"."B17021e1"), 0) AS COVERAGE
+          FROM "2020_CBG_B17"
+          WHERE LEFT("2020_CBG_B17"."CENSUS_BLOCK_GROUP", 2) = '39'
+        must_mention:
+          - "ACS 2016–2020 5-year estimates"
+  - id: "population_follow_up_texas"
+    turns:
+      - "According to the 2016–2020 American Community Survey, what was the population of California?"
+      - "And Texas?"
+    expected:
+      kind: "number"
+      value: 28635442
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B01"."B01003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B01"."B01003e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '48'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "Texas"
+      must_not:
+        - "29,145,505"
+    traps:
+      - "change_place"
+    intermediate:
+      - kind: "number"
+        value: 39346023
+        unit: "count"
+        tolerance:
+          kind: "exact"
+        reference_sql: |-
+          SELECT SUM("2020_CBG_B01"."B01003e1") AS VALUE,
+                 COUNT(*) AS BLOCK_GROUPS,
+                 COUNT_IF("2020_CBG_B01"."B01003e1" IS NULL) AS MISSING
+          FROM "2020_CBG_B01"
+          WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '06'
+        must_mention:
+          - "ACS 2016–2020 5-year estimates"
+          - "California"
+    notes: "Converted from the v1 follow_up case: the measure and period carry over; only the place changes."
+  - id: "orange_county_income"
+    turns:
+      - "What is the average household income in Orange County?"
+    expected:
+      kind: "clarification"
+      must_mention:
+        - "California"
+        - "Florida"
+        - "Indiana"
+        - "New York"
+        - "North Carolina"
+        - "Texas"
+        - "Vermont"
+        - "Virginia"
+      must_not:
+        - "a dollar figure before the user chooses"
+    traps:
+      - "orange_county"
+  - id: "orange_county_florida_income"
+    turns:
+      - "What is the average household income in Orange County?"
+      - "The one in Florida."
+    expected:
+      kind: "number"
+      value: 86889
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19025e1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")) / NULLIF(SUM("2020_CBG_B19"."B19001e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 5) = '12095'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "Orange County, Florida"
+        - "2020 dollars"
+      must_not: []
+    traps:
+      - "orange_county"
+      - "answer_clarification"
+    intermediate:
+      - kind: "clarification"
+        must_mention:
+          - "California"
+          - "Florida"
+          - "New York"
+  - id: "population_zip_code"
+    turns:
+      - "What is the population of ZIP code 10001?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "ZIP code"
+        - "not supported"
+      must_not:
+        - "a number presented as the ZIP code's population"
+    traps:
+      - "zip_code"
+  - id: "income_zip_code"
+    turns:
+      - "What's the average household income in the 90210 zip code?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "ZIP code"
+        - "not supported"
+      must_not:
+        - "a dollar figure presented for the ZIP code"
+    traps:
+      - "zip_code"
+  - id: "median_income_single_block_group"
+    turns:
+      - "What is the median household income in block group 170310101002?"
+    expected:
+      kind: "number"
+      value: 22190
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT "2020_CBG_B19"."B19013e1" AS VALUE
+        FROM "2020_CBG_B19"
+        WHERE "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = '170310101002'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "median"
+        - "2020 dollars"
+      must_not: []
+    traps: []
+    notes: "A median is valid for a single block group; it is used as-is, not aggregated."
+  - id: "poverty_rate_california"
+    turns:
+      - "What percentage of Californians lived below the poverty level?"
+    expected:
+      kind: "number"
+      value: 12.58
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e2"))
+               / NULLIF(SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B17"."B17021e2" IS NULL OR "2020_CBG_B17"."B17021e1" IS NULL, NULL, "2020_CBG_B17"."B17021e1")) / NULLIF(SUM("2020_CBG_B17"."B17021e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B17"
+        WHERE LEFT("2020_CBG_B17"."CENSUS_BLOCK_GROUP", 2) = '06'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "poverty status is determined"
+      must_not:
+        - "12.3%"
+    traps:
+      - "wrong_denominator"
+    notes: "Denominator is people for whom poverty status is determined, not total population (which would give 12.34%)."
+  - id: "unemployment_illinois"
+    turns:
+      - "What is the unemployment rate in Illinois?"
+    expected:
+      kind: "number"
+      value: 5.96
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e5"))
+               / NULLIF(SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e3")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e3")) / NULLIF(SUM("2020_CBG_B23"."B23025e3"), 0) AS COVERAGE
+        FROM "2020_CBG_B23"
+        WHERE LEFT("2020_CBG_B23"."CENSUS_BLOCK_GROUP", 2) = '17'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "civilian labor force"
+      must_not:
+        - "3.9%"
+    traps:
+      - "wrong_denominator"
+    notes: "Wrong denominator (people 16+) would give 3.88%."
+  - id: "rent_burden_florida"
+    turns:
+      - "What share of renters in Florida spend 30% or more of their income on rent?"
+    expected:
+      kind: "number"
+      value: 56.35
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B25"."B25070e7" IS NULL OR "2020_CBG_B25"."B25070e8" IS NULL OR "2020_CBG_B25"."B25070e9" IS NULL OR "2020_CBG_B25"."B25070e10" IS NULL OR "2020_CBG_B25"."B25070e1" IS NULL OR "2020_CBG_B25"."B25070e11" IS NULL, NULL, "2020_CBG_B25"."B25070e7" + "2020_CBG_B25"."B25070e8" + "2020_CBG_B25"."B25070e9" + "2020_CBG_B25"."B25070e10"))
+               / NULLIF(SUM(IFF("2020_CBG_B25"."B25070e7" IS NULL OR "2020_CBG_B25"."B25070e8" IS NULL OR "2020_CBG_B25"."B25070e9" IS NULL OR "2020_CBG_B25"."B25070e10" IS NULL OR "2020_CBG_B25"."B25070e1" IS NULL OR "2020_CBG_B25"."B25070e11" IS NULL, NULL, "2020_CBG_B25"."B25070e1" - "2020_CBG_B25"."B25070e11")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B25"."B25070e7" IS NULL OR "2020_CBG_B25"."B25070e8" IS NULL OR "2020_CBG_B25"."B25070e9" IS NULL OR "2020_CBG_B25"."B25070e10" IS NULL OR "2020_CBG_B25"."B25070e1" IS NULL OR "2020_CBG_B25"."B25070e11" IS NULL, NULL, "2020_CBG_B25"."B25070e1" - "2020_CBG_B25"."B25070e11")) / NULLIF(SUM("2020_CBG_B25"."B25070e1" - "2020_CBG_B25"."B25070e11"), 0) AS COVERAGE
+        FROM "2020_CBG_B25"
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 2) = '12'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "renters"
+        - "not computed"
+      must_not:
+        - "52.6%"
+    traps:
+      - "wrong_denominator"
+    notes: "Renters whose rent burden is not computed are excluded; keeping them gives 52.64%."
+  - id: "high_school_ohio"
+    turns:
+      - "What percentage of adults in Ohio have at least a high school diploma?"
+    expected:
+      kind: "number"
+      value: 90.78
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B15"."B15003e17" IS NULL OR "2020_CBG_B15"."B15003e18" IS NULL OR "2020_CBG_B15"."B15003e19" IS NULL OR "2020_CBG_B15"."B15003e20" IS NULL OR "2020_CBG_B15"."B15003e21" IS NULL OR "2020_CBG_B15"."B15003e22" IS NULL OR "2020_CBG_B15"."B15003e23" IS NULL OR "2020_CBG_B15"."B15003e24" IS NULL OR "2020_CBG_B15"."B15003e25" IS NULL OR "2020_CBG_B15"."B15003e1" IS NULL, NULL, "2020_CBG_B15"."B15003e17" + "2020_CBG_B15"."B15003e18" + "2020_CBG_B15"."B15003e19" + "2020_CBG_B15"."B15003e20" + "2020_CBG_B15"."B15003e21" + "2020_CBG_B15"."B15003e22" + "2020_CBG_B15"."B15003e23" + "2020_CBG_B15"."B15003e24" + "2020_CBG_B15"."B15003e25"))
+               / NULLIF(SUM(IFF("2020_CBG_B15"."B15003e17" IS NULL OR "2020_CBG_B15"."B15003e18" IS NULL OR "2020_CBG_B15"."B15003e19" IS NULL OR "2020_CBG_B15"."B15003e20" IS NULL OR "2020_CBG_B15"."B15003e21" IS NULL OR "2020_CBG_B15"."B15003e22" IS NULL OR "2020_CBG_B15"."B15003e23" IS NULL OR "2020_CBG_B15"."B15003e24" IS NULL OR "2020_CBG_B15"."B15003e25" IS NULL OR "2020_CBG_B15"."B15003e1" IS NULL, NULL, "2020_CBG_B15"."B15003e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B15"."B15003e17" IS NULL OR "2020_CBG_B15"."B15003e18" IS NULL OR "2020_CBG_B15"."B15003e19" IS NULL OR "2020_CBG_B15"."B15003e20" IS NULL OR "2020_CBG_B15"."B15003e21" IS NULL OR "2020_CBG_B15"."B15003e22" IS NULL OR "2020_CBG_B15"."B15003e23" IS NULL OR "2020_CBG_B15"."B15003e24" IS NULL OR "2020_CBG_B15"."B15003e25" IS NULL OR "2020_CBG_B15"."B15003e1" IS NULL, NULL, "2020_CBG_B15"."B15003e1")) / NULLIF(SUM("2020_CBG_B15"."B15003e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B15"
+        WHERE LEFT("2020_CBG_B15"."CENSUS_BLOCK_GROUP", 2) = '39'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "25 years and over"
+      must_not: []
+    traps:
+      - "wrong_denominator"
+  - id: "rental_vacancy_nevada"
+    turns:
+      - "What is the rental vacancy rate in Nevada?"
+    expected:
+      kind: "number"
+      value: 7.23
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25003e3" IS NULL OR "2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25004e3" IS NULL, NULL, "2020_CBG_B25"."B25004e2"))
+               / NULLIF(SUM(IFF("2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25003e3" IS NULL OR "2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25004e3" IS NULL, NULL, "2020_CBG_B25"."B25003e3" + "2020_CBG_B25"."B25004e2" + "2020_CBG_B25"."B25004e3")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25003e3" IS NULL OR "2020_CBG_B25"."B25004e2" IS NULL OR "2020_CBG_B25"."B25004e3" IS NULL, NULL, "2020_CBG_B25"."B25003e3" + "2020_CBG_B25"."B25004e2" + "2020_CBG_B25"."B25004e3")) / NULLIF(SUM("2020_CBG_B25"."B25003e3" + "2020_CBG_B25"."B25004e2" + "2020_CBG_B25"."B25004e3"), 0) AS COVERAGE
+        FROM "2020_CBG_B25"
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 2) = '32'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "for rent"
+      must_not: []
+    traps:
+      - "wrong_denominator"
+    notes: "Denominator is renter-occupied + for rent + rented not occupied, not all housing units."
+  - id: "median_income_california"
+    turns:
+      - "What is the median household income of California?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "median"
+        - "block group"
+        - "mean household income"
+      must_not:
+        - "an average or sum of block-group medians presented as the state median"
+    traps:
+      - "median_rollup"
+  - id: "median_age_cook_county"
+    turns:
+      - "What is the median age in Cook County, Illinois?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "median"
+        - "block group"
+      must_not:
+        - "an average of block-group median ages presented as the county median"
+    traps:
+      - "median_rollup"
+  - id: "veterans_in_poverty_ohio"
+    turns:
+      - "How many veterans in Ohio had incomes below the poverty level?"
+    expected:
+      kind: "number"
+      value: 47963
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_C21"."C21007e4" + "2020_CBG_C21"."C21007e19") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_C21"."C21007e4" IS NULL OR "2020_CBG_C21"."C21007e19" IS NULL) AS MISSING
+        FROM "2020_CBG_C21"
+        WHERE LEFT("2020_CBG_C21"."CENSUS_BLOCK_GROUP", 2) = '39'
+      block_groups: 9472
+      missing_block_groups: 0
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "veterans"
+        - "poverty"
+      must_not: []
+    traps:
+      - "combined_characteristic"
+    notes: "One breakdown (veteran status by poverty status) contains both characteristics."
+  - id: "uninsured_with_degree_ohio"
+    turns:
+      - "How many people in Ohio without health insurance have a bachelor's degree?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "not available"
+        - "separate"
+      must_not:
+        - "a number estimated by multiplying separate rates"
+    traps:
+      - "combined_characteristic"
+  - id: "unemployed_women_over_65_arizona"
+    turns:
+      - "How many women over 65 in Arizona are unemployed?"
+    expected:
+      kind: "refusal"
+      must_mention:
+        - "not available"
+        - "separate"
+      must_not:
+        - "a number estimated by combining separate tables"
+    traps:
+      - "combined_characteristic"
+  - id: "income_pacific_islander_us"
+    turns:
+      - "What is the average household income of Pacific Islander households in the United States?"
+    expected:
+      kind: "number"
+      value: 81536
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19025Ee1" IS NULL OR "2020_CBG_B25"."B25003Ee1" IS NULL, NULL, "2020_CBG_B19"."B19025Ee1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Ee1" IS NULL OR "2020_CBG_B25"."B25003Ee1" IS NULL, NULL, "2020_CBG_B25"."B25003Ee1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19025Ee1" IS NULL OR "2020_CBG_B25"."B25003Ee1" IS NULL, NULL, "2020_CBG_B25"."B25003Ee1")) / NULLIF(SUM("2020_CBG_B25"."B25003Ee1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        JOIN "2020_CBG_B25" ON "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B25"."CENSUS_BLOCK_GROUP"
+        WHERE TRUE
+      coverage: 0.207
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "Native Hawaiian and Other Pacific Islander"
+        - "coverage"
+        - "21%"
+        - "including Puerto Rico"
+      must_not: []
+    traps:
+      - "race_low_coverage"
+  - id: "income_cook_county_change_race"
+    turns:
+      - "What is the average household income of Black households in Cook County, Illinois?"
+      - "And for Asian households?"
+    expected:
+      kind: "number"
+      value: 119948
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19025De1" IS NULL OR "2020_CBG_B25"."B25003De1" IS NULL, NULL, "2020_CBG_B19"."B19025De1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19025De1" IS NULL OR "2020_CBG_B25"."B25003De1" IS NULL, NULL, "2020_CBG_B25"."B25003De1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19025De1" IS NULL OR "2020_CBG_B25"."B25003De1" IS NULL, NULL, "2020_CBG_B25"."B25003De1")) / NULLIF(SUM("2020_CBG_B25"."B25003De1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        JOIN "2020_CBG_B25" ON "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B25"."CENSUS_BLOCK_GROUP"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 5) = '17031'
+      coverage: 0.8196
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "Asian alone"
+        - "coverage"
+        - "82%"
+      must_not: []
+    traps:
+      - "change_race"
+      - "race_low_coverage"
+    intermediate:
+      - kind: "number"
+        value: 58836
+        unit: "dollars"
+        tolerance:
+          kind: "relative"
+          amount: 0.005
+        reference_sql: |-
+          SELECT SUM(IFF("2020_CBG_B19"."B19025Be1" IS NULL OR "2020_CBG_B25"."B25003Be1" IS NULL, NULL, "2020_CBG_B19"."B19025Be1"))
+                 / NULLIF(SUM(IFF("2020_CBG_B19"."B19025Be1" IS NULL OR "2020_CBG_B25"."B25003Be1" IS NULL, NULL, "2020_CBG_B25"."B25003Be1")), 0) AS VALUE,
+                 SUM(IFF("2020_CBG_B19"."B19025Be1" IS NULL OR "2020_CBG_B25"."B25003Be1" IS NULL, NULL, "2020_CBG_B25"."B25003Be1")) / NULLIF(SUM("2020_CBG_B25"."B25003Be1"), 0) AS COVERAGE
+          FROM "2020_CBG_B19"
+          JOIN "2020_CBG_B25" ON "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B25"."CENSUS_BLOCK_GROUP"
+          WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 5) = '17031'
+        coverage: 0.9457
+        must_mention:
+          - "ACS 2016–2020 5-year estimates"
+          - "Black"
+  - id: "income_white_harris_ambiguous"
+    turns:
+      - "What is the average household income of White households in Harris County, Texas?"
+    expected:
+      kind: "clarification"
+      must_mention:
+        - "White alone"
+        - "not Hispanic"
+      must_not:
+        - "a dollar figure before the user chooses"
+    traps: []
+  - id: "income_white_harris_answered"
+    turns:
+      - "What is the average household income of White households in Harris County, Texas?"
+      - "Non-Hispanic White, please."
+    expected:
+      kind: "number"
+      value: 132905
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19025He1" IS NULL OR "2020_CBG_B25"."B25003He1" IS NULL, NULL, "2020_CBG_B19"."B19025He1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19025He1" IS NULL OR "2020_CBG_B25"."B25003He1" IS NULL, NULL, "2020_CBG_B25"."B25003He1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19025He1" IS NULL OR "2020_CBG_B25"."B25003He1" IS NULL, NULL, "2020_CBG_B25"."B25003He1")) / NULLIF(SUM("2020_CBG_B25"."B25003He1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        JOIN "2020_CBG_B25" ON "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B25"."CENSUS_BLOCK_GROUP"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 5) = '48201'
+      coverage: 0.9757
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "White alone, not Hispanic or Latino"
+        - "2020 dollars"
+      must_not: []
+    traps:
+      - "answer_clarification"
+    intermediate:
+      - kind: "clarification"
+        must_mention:
+          - "White alone"
+          - "not Hispanic"
+  - id: "unemployment_change_michigan"
+    turns:
+      - "How did the unemployment rate in Michigan change between 2019 and 2020?"
+    expected:
+      kind: "number"
+      value: 6.02
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e5"))
+               / NULLIF(SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e3")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B23"."B23025e5" IS NULL OR "2020_CBG_B23"."B23025e3" IS NULL, NULL, "2020_CBG_B23"."B23025e3")) / NULLIF(SUM("2020_CBG_B23"."B23025e3"), 0) AS COVERAGE
+        FROM "2020_CBG_B23"
+        WHERE LEFT("2020_CBG_B23"."CENSUS_BLOCK_GROUP", 2) = '26'
+      also:
+        - label: "Michigan, ACS 2015–2019"
+          value: 5.94
+          unit: "percent"
+          tolerance:
+            kind: "absolute"
+            amount: 0.2
+          reference_sql: |-
+            SELECT 100 * SUM(IFF("2019_CBG_B23"."B23025e5" IS NULL OR "2019_CBG_B23"."B23025e3" IS NULL, NULL, "2019_CBG_B23"."B23025e5"))
+                   / NULLIF(SUM(IFF("2019_CBG_B23"."B23025e5" IS NULL OR "2019_CBG_B23"."B23025e3" IS NULL, NULL, "2019_CBG_B23"."B23025e3")), 0) AS VALUE,
+                   SUM(IFF("2019_CBG_B23"."B23025e5" IS NULL OR "2019_CBG_B23"."B23025e3" IS NULL, NULL, "2019_CBG_B23"."B23025e3")) / NULLIF(SUM("2019_CBG_B23"."B23025e3"), 0) AS COVERAGE
+            FROM "2019_CBG_B23"
+            WHERE LEFT("2019_CBG_B23"."CENSUS_BLOCK_GROUP", 2) = '26'
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "ACS 2016–2020 5-year estimates"
+        - "4 of 5"
+        - "not a measured change"
+      must_not:
+        - "a block-group-by-block-group comparison"
+    traps:
+      - "change_2019_2020"
+  - id: "income_change_california"
+    turns:
+      - "How much did average household income in California change from 2019 to 2020?"
+    expected:
+      kind: "number"
+      value: 111625
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19025e1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19025e1" IS NULL OR "2020_CBG_B19"."B19001e1" IS NULL, NULL, "2020_CBG_B19"."B19001e1")) / NULLIF(SUM("2020_CBG_B19"."B19001e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 2) = '06'
+      also:
+        - label: "California, ACS 2015–2019"
+          value: 106916
+          unit: "dollars"
+          tolerance:
+            kind: "relative"
+            amount: 0.005
+          reference_sql: |-
+            SELECT SUM(IFF("2019_CBG_B19"."B19025e1" IS NULL OR "2019_CBG_B19"."B19001e1" IS NULL, NULL, "2019_CBG_B19"."B19025e1"))
+                   / NULLIF(SUM(IFF("2019_CBG_B19"."B19025e1" IS NULL OR "2019_CBG_B19"."B19001e1" IS NULL, NULL, "2019_CBG_B19"."B19001e1")), 0) AS VALUE,
+                   SUM(IFF("2019_CBG_B19"."B19025e1" IS NULL OR "2019_CBG_B19"."B19001e1" IS NULL, NULL, "2019_CBG_B19"."B19001e1")) / NULLIF(SUM("2019_CBG_B19"."B19001e1"), 0) AS COVERAGE
+            FROM "2019_CBG_B19"
+            WHERE LEFT("2019_CBG_B19"."CENSUS_BLOCK_GROUP", 2) = '06'
+      must_mention:
+        - "ACS 2015–2019 5-year estimates"
+        - "ACS 2016–2020 5-year estimates"
+        - "not adjusted for inflation"
+        - "2019 dollars"
+        - "2020 dollars"
+      must_not:
+        - "inflation-adjusted change"
+    traps:
+      - "change_2019_2020"
+  - id: "total_household_income_new_york"
+    turns:
+      - "What is the total income of all households in New York State?"
+    expected:
+      kind: "number"
+      value: 780960040500
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B19"."B19025e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B19"."B19025e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B19"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 2) = '36'
+      block_groups: 16070
+      missing_block_groups: 588
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "2020 dollars"
+        - "15,482 of 16,070 block groups"
+      must_not:
+        - "a complete state total"
+    traps:
+      - "missing_data_total"
+    notes: "588 block groups have no published aggregate income; the total covers the rest only."
+  - id: "total_household_income_texas"
+    turns:
+      - "Add up the income of every household in Texas."
+    expected:
+      kind: "number"
+      value: 886449311500
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B19"."B19025e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B19"."B19025e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B19"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 2) = '48'
+      block_groups: 18638
+      missing_block_groups: 240
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "18,398 of 18,638 block groups"
+      must_not:
+        - "a complete state total"
+    traps:
+      - "missing_data_total"
+  - id: "travel_time_maryland"
+    turns:
+      - "How long is the average commute to work in Maryland?"
+    expected:
+      kind: "number"
+      value: 32.51
+      unit: "minutes"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B08"."B08135e1" IS NULL OR "2020_CBG_B08"."B08303e1" IS NULL, NULL, "2020_CBG_B08"."B08135e1"))
+               / NULLIF(SUM(IFF("2020_CBG_B08"."B08135e1" IS NULL OR "2020_CBG_B08"."B08303e1" IS NULL, NULL, "2020_CBG_B08"."B08303e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B08"."B08135e1" IS NULL OR "2020_CBG_B08"."B08303e1" IS NULL, NULL, "2020_CBG_B08"."B08303e1")) / NULLIF(SUM("2020_CBG_B08"."B08303e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B08"
+        WHERE LEFT("2020_CBG_B08"."CENSUS_BLOCK_GROUP", 2) = '24'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "minutes"
+      must_not: []
+    traps: []
+  - id: "bachelors_massachusetts"
+    turns:
+      - "What share of adults in Massachusetts have a bachelor's degree or higher?"
+    expected:
+      kind: "number"
+      value: 44.53
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B15"."B15003e22" IS NULL OR "2020_CBG_B15"."B15003e23" IS NULL OR "2020_CBG_B15"."B15003e24" IS NULL OR "2020_CBG_B15"."B15003e25" IS NULL OR "2020_CBG_B15"."B15003e1" IS NULL, NULL, "2020_CBG_B15"."B15003e22" + "2020_CBG_B15"."B15003e23" + "2020_CBG_B15"."B15003e24" + "2020_CBG_B15"."B15003e25"))
+               / NULLIF(SUM(IFF("2020_CBG_B15"."B15003e22" IS NULL OR "2020_CBG_B15"."B15003e23" IS NULL OR "2020_CBG_B15"."B15003e24" IS NULL OR "2020_CBG_B15"."B15003e25" IS NULL OR "2020_CBG_B15"."B15003e1" IS NULL, NULL, "2020_CBG_B15"."B15003e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B15"."B15003e22" IS NULL OR "2020_CBG_B15"."B15003e23" IS NULL OR "2020_CBG_B15"."B15003e24" IS NULL OR "2020_CBG_B15"."B15003e25" IS NULL OR "2020_CBG_B15"."B15003e1" IS NULL, NULL, "2020_CBG_B15"."B15003e1")) / NULLIF(SUM("2020_CBG_B15"."B15003e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B15"
+        WHERE LEFT("2020_CBG_B15"."CENSUS_BLOCK_GROUP", 2) = '25'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "25 years and over"
+      must_not: []
+    traps: []
+  - id: "homeownership_us"
+    turns:
+      - "What is the homeownership rate in the United States?"
+    expected:
+      kind: "number"
+      value: 64.44
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e2"))
+               / NULLIF(SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")) / NULLIF(SUM("2020_CBG_B25"."B25003e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B25"
+        WHERE TRUE
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "including Puerto Rico"
+      must_not: []
+    traps: []
+  - id: "household_size_utah"
+    turns:
+      - "What is the average household size in Utah?"
+    expected:
+      kind: "number"
+      value: 3.09
+      unit: "people_per_household"
+      tolerance:
+        kind: "absolute"
+        amount: 0.01
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B25"."B25008e1" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25008e1"))
+               / NULLIF(SUM(IFF("2020_CBG_B25"."B25008e1" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B25"."B25008e1" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")) / NULLIF(SUM("2020_CBG_B25"."B25003e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B25"
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 2) = '49'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "people"
+      must_not: []
+    traps: []
+  - id: "uninsured_texas"
+    turns:
+      - "What percentage of people in Texas have no health insurance?"
+    expected:
+      kind: "number"
+      value: 17.31
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B27"."B27010e17" IS NULL OR "2020_CBG_B27"."B27010e33" IS NULL OR "2020_CBG_B27"."B27010e50" IS NULL OR "2020_CBG_B27"."B27010e66" IS NULL OR "2020_CBG_B27"."B27010e1" IS NULL, NULL, "2020_CBG_B27"."B27010e17" + "2020_CBG_B27"."B27010e33" + "2020_CBG_B27"."B27010e50" + "2020_CBG_B27"."B27010e66"))
+               / NULLIF(SUM(IFF("2020_CBG_B27"."B27010e17" IS NULL OR "2020_CBG_B27"."B27010e33" IS NULL OR "2020_CBG_B27"."B27010e50" IS NULL OR "2020_CBG_B27"."B27010e66" IS NULL OR "2020_CBG_B27"."B27010e1" IS NULL, NULL, "2020_CBG_B27"."B27010e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B27"."B27010e17" IS NULL OR "2020_CBG_B27"."B27010e33" IS NULL OR "2020_CBG_B27"."B27010e50" IS NULL OR "2020_CBG_B27"."B27010e66" IS NULL OR "2020_CBG_B27"."B27010e1" IS NULL, NULL, "2020_CBG_B27"."B27010e1")) / NULLIF(SUM("2020_CBG_B27"."B27010e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B27"
+        WHERE LEFT("2020_CBG_B27"."CENSUS_BLOCK_GROUP", 2) = '48'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "civilian noninstitutionalized"
+      must_not: []
+    traps: []
+  - id: "no_internet_subscription_mississippi"
+    turns:
+      - "What share of households in Mississippi don't have an internet subscription?"
+    expected:
+      kind: "number"
+      value: 23.89
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B28"."B28002e12" IS NULL OR "2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1" IS NULL, NULL, "2020_CBG_B28"."B28002e12" + "2020_CBG_B28"."B28002e13"))
+               / NULLIF(SUM(IFF("2020_CBG_B28"."B28002e12" IS NULL OR "2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1" IS NULL, NULL, "2020_CBG_B28"."B28002e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B28"."B28002e12" IS NULL OR "2020_CBG_B28"."B28002e13" IS NULL OR "2020_CBG_B28"."B28002e1" IS NULL, NULL, "2020_CBG_B28"."B28002e1")) / NULLIF(SUM("2020_CBG_B28"."B28002e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B28"
+        WHERE LEFT("2020_CBG_B28"."CENSUS_BLOCK_GROUP", 2) = '28'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "households"
+      must_not: []
+    traps: []
+  - id: "sex_ratio_alaska"
+    turns:
+      - "How many men are there per 100 women in Alaska?"
+    expected:
+      kind: "number"
+      value: 109.17
+      unit: "ratio"
+      tolerance:
+        kind: "absolute"
+        amount: 0.01
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B01"."B01001e2" IS NULL OR "2020_CBG_B01"."B01001e26" IS NULL, NULL, "2020_CBG_B01"."B01001e2"))
+               / NULLIF(SUM(IFF("2020_CBG_B01"."B01001e2" IS NULL OR "2020_CBG_B01"."B01001e26" IS NULL, NULL, "2020_CBG_B01"."B01001e26")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B01"."B01001e2" IS NULL OR "2020_CBG_B01"."B01001e26" IS NULL, NULL, "2020_CBG_B01"."B01001e26")) / NULLIF(SUM("2020_CBG_B01"."B01001e26"), 0) AS COVERAGE
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '02'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "100 females"
+      must_not: []
+    traps: []
+  - id: "old_age_dependency_florida"
+    turns:
+      - "What is the old-age dependency ratio in Florida?"
+    expected:
+      kind: "number"
+      value: 34.36
+      unit: "ratio"
+      tolerance:
+        kind: "absolute"
+        amount: 0.01
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B01"."B01001e20" IS NULL OR "2020_CBG_B01"."B01001e21" IS NULL OR "2020_CBG_B01"."B01001e22" IS NULL OR "2020_CBG_B01"."B01001e23" IS NULL OR "2020_CBG_B01"."B01001e24" IS NULL OR "2020_CBG_B01"."B01001e25" IS NULL OR "2020_CBG_B01"."B01001e44" IS NULL OR "2020_CBG_B01"."B01001e45" IS NULL OR "2020_CBG_B01"."B01001e46" IS NULL OR "2020_CBG_B01"."B01001e47" IS NULL OR "2020_CBG_B01"."B01001e48" IS NULL OR "2020_CBG_B01"."B01001e49" IS NULL OR "2020_CBG_B01"."B01001e7" IS NULL OR "2020_CBG_B01"."B01001e8" IS NULL OR "2020_CBG_B01"."B01001e9" IS NULL OR "2020_CBG_B01"."B01001e10" IS NULL OR "2020_CBG_B01"."B01001e11" IS NULL OR "2020_CBG_B01"."B01001e12" IS NULL OR "2020_CBG_B01"."B01001e13" IS NULL OR "2020_CBG_B01"."B01001e14" IS NULL OR "2020_CBG_B01"."B01001e15" IS NULL OR "2020_CBG_B01"."B01001e16" IS NULL OR "2020_CBG_B01"."B01001e17" IS NULL OR "2020_CBG_B01"."B01001e18" IS NULL OR "2020_CBG_B01"."B01001e19" IS NULL OR "2020_CBG_B01"."B01001e31" IS NULL OR "2020_CBG_B01"."B01001e32" IS NULL OR "2020_CBG_B01"."B01001e33" IS NULL OR "2020_CBG_B01"."B01001e34" IS NULL OR "2020_CBG_B01"."B01001e35" IS NULL OR "2020_CBG_B01"."B01001e36" IS NULL OR "2020_CBG_B01"."B01001e37" IS NULL OR "2020_CBG_B01"."B01001e38" IS NULL OR "2020_CBG_B01"."B01001e39" IS NULL OR "2020_CBG_B01"."B01001e40" IS NULL OR "2020_CBG_B01"."B01001e41" IS NULL OR "2020_CBG_B01"."B01001e42" IS NULL OR "2020_CBG_B01"."B01001e43" IS NULL, NULL, "2020_CBG_B01"."B01001e20" + "2020_CBG_B01"."B01001e21" + "2020_CBG_B01"."B01001e22" + "2020_CBG_B01"."B01001e23" + "2020_CBG_B01"."B01001e24" + "2020_CBG_B01"."B01001e25" + "2020_CBG_B01"."B01001e44" + "2020_CBG_B01"."B01001e45" + "2020_CBG_B01"."B01001e46" + "2020_CBG_B01"."B01001e47" + "2020_CBG_B01"."B01001e48" + "2020_CBG_B01"."B01001e49"))
+               / NULLIF(SUM(IFF("2020_CBG_B01"."B01001e20" IS NULL OR "2020_CBG_B01"."B01001e21" IS NULL OR "2020_CBG_B01"."B01001e22" IS NULL OR "2020_CBG_B01"."B01001e23" IS NULL OR "2020_CBG_B01"."B01001e24" IS NULL OR "2020_CBG_B01"."B01001e25" IS NULL OR "2020_CBG_B01"."B01001e44" IS NULL OR "2020_CBG_B01"."B01001e45" IS NULL OR "2020_CBG_B01"."B01001e46" IS NULL OR "2020_CBG_B01"."B01001e47" IS NULL OR "2020_CBG_B01"."B01001e48" IS NULL OR "2020_CBG_B01"."B01001e49" IS NULL OR "2020_CBG_B01"."B01001e7" IS NULL OR "2020_CBG_B01"."B01001e8" IS NULL OR "2020_CBG_B01"."B01001e9" IS NULL OR "2020_CBG_B01"."B01001e10" IS NULL OR "2020_CBG_B01"."B01001e11" IS NULL OR "2020_CBG_B01"."B01001e12" IS NULL OR "2020_CBG_B01"."B01001e13" IS NULL OR "2020_CBG_B01"."B01001e14" IS NULL OR "2020_CBG_B01"."B01001e15" IS NULL OR "2020_CBG_B01"."B01001e16" IS NULL OR "2020_CBG_B01"."B01001e17" IS NULL OR "2020_CBG_B01"."B01001e18" IS NULL OR "2020_CBG_B01"."B01001e19" IS NULL OR "2020_CBG_B01"."B01001e31" IS NULL OR "2020_CBG_B01"."B01001e32" IS NULL OR "2020_CBG_B01"."B01001e33" IS NULL OR "2020_CBG_B01"."B01001e34" IS NULL OR "2020_CBG_B01"."B01001e35" IS NULL OR "2020_CBG_B01"."B01001e36" IS NULL OR "2020_CBG_B01"."B01001e37" IS NULL OR "2020_CBG_B01"."B01001e38" IS NULL OR "2020_CBG_B01"."B01001e39" IS NULL OR "2020_CBG_B01"."B01001e40" IS NULL OR "2020_CBG_B01"."B01001e41" IS NULL OR "2020_CBG_B01"."B01001e42" IS NULL OR "2020_CBG_B01"."B01001e43" IS NULL, NULL, "2020_CBG_B01"."B01001e7" + "2020_CBG_B01"."B01001e8" + "2020_CBG_B01"."B01001e9" + "2020_CBG_B01"."B01001e10" + "2020_CBG_B01"."B01001e11" + "2020_CBG_B01"."B01001e12" + "2020_CBG_B01"."B01001e13" + "2020_CBG_B01"."B01001e14" + "2020_CBG_B01"."B01001e15" + "2020_CBG_B01"."B01001e16" + "2020_CBG_B01"."B01001e17" + "2020_CBG_B01"."B01001e18" + "2020_CBG_B01"."B01001e19" + "2020_CBG_B01"."B01001e31" + "2020_CBG_B01"."B01001e32" + "2020_CBG_B01"."B01001e33" + "2020_CBG_B01"."B01001e34" + "2020_CBG_B01"."B01001e35" + "2020_CBG_B01"."B01001e36" + "2020_CBG_B01"."B01001e37" + "2020_CBG_B01"."B01001e38" + "2020_CBG_B01"."B01001e39" + "2020_CBG_B01"."B01001e40" + "2020_CBG_B01"."B01001e41" + "2020_CBG_B01"."B01001e42" + "2020_CBG_B01"."B01001e43")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B01"."B01001e20" IS NULL OR "2020_CBG_B01"."B01001e21" IS NULL OR "2020_CBG_B01"."B01001e22" IS NULL OR "2020_CBG_B01"."B01001e23" IS NULL OR "2020_CBG_B01"."B01001e24" IS NULL OR "2020_CBG_B01"."B01001e25" IS NULL OR "2020_CBG_B01"."B01001e44" IS NULL OR "2020_CBG_B01"."B01001e45" IS NULL OR "2020_CBG_B01"."B01001e46" IS NULL OR "2020_CBG_B01"."B01001e47" IS NULL OR "2020_CBG_B01"."B01001e48" IS NULL OR "2020_CBG_B01"."B01001e49" IS NULL OR "2020_CBG_B01"."B01001e7" IS NULL OR "2020_CBG_B01"."B01001e8" IS NULL OR "2020_CBG_B01"."B01001e9" IS NULL OR "2020_CBG_B01"."B01001e10" IS NULL OR "2020_CBG_B01"."B01001e11" IS NULL OR "2020_CBG_B01"."B01001e12" IS NULL OR "2020_CBG_B01"."B01001e13" IS NULL OR "2020_CBG_B01"."B01001e14" IS NULL OR "2020_CBG_B01"."B01001e15" IS NULL OR "2020_CBG_B01"."B01001e16" IS NULL OR "2020_CBG_B01"."B01001e17" IS NULL OR "2020_CBG_B01"."B01001e18" IS NULL OR "2020_CBG_B01"."B01001e19" IS NULL OR "2020_CBG_B01"."B01001e31" IS NULL OR "2020_CBG_B01"."B01001e32" IS NULL OR "2020_CBG_B01"."B01001e33" IS NULL OR "2020_CBG_B01"."B01001e34" IS NULL OR "2020_CBG_B01"."B01001e35" IS NULL OR "2020_CBG_B01"."B01001e36" IS NULL OR "2020_CBG_B01"."B01001e37" IS NULL OR "2020_CBG_B01"."B01001e38" IS NULL OR "2020_CBG_B01"."B01001e39" IS NULL OR "2020_CBG_B01"."B01001e40" IS NULL OR "2020_CBG_B01"."B01001e41" IS NULL OR "2020_CBG_B01"."B01001e42" IS NULL OR "2020_CBG_B01"."B01001e43" IS NULL, NULL, "2020_CBG_B01"."B01001e7" + "2020_CBG_B01"."B01001e8" + "2020_CBG_B01"."B01001e9" + "2020_CBG_B01"."B01001e10" + "2020_CBG_B01"."B01001e11" + "2020_CBG_B01"."B01001e12" + "2020_CBG_B01"."B01001e13" + "2020_CBG_B01"."B01001e14" + "2020_CBG_B01"."B01001e15" + "2020_CBG_B01"."B01001e16" + "2020_CBG_B01"."B01001e17" + "2020_CBG_B01"."B01001e18" + "2020_CBG_B01"."B01001e19" + "2020_CBG_B01"."B01001e31" + "2020_CBG_B01"."B01001e32" + "2020_CBG_B01"."B01001e33" + "2020_CBG_B01"."B01001e34" + "2020_CBG_B01"."B01001e35" + "2020_CBG_B01"."B01001e36" + "2020_CBG_B01"."B01001e37" + "2020_CBG_B01"."B01001e38" + "2020_CBG_B01"."B01001e39" + "2020_CBG_B01"."B01001e40" + "2020_CBG_B01"."B01001e41" + "2020_CBG_B01"."B01001e42" + "2020_CBG_B01"."B01001e43")) / NULLIF(SUM("2020_CBG_B01"."B01001e7" + "2020_CBG_B01"."B01001e8" + "2020_CBG_B01"."B01001e9" + "2020_CBG_B01"."B01001e10" + "2020_CBG_B01"."B01001e11" + "2020_CBG_B01"."B01001e12" + "2020_CBG_B01"."B01001e13" + "2020_CBG_B01"."B01001e14" + "2020_CBG_B01"."B01001e15" + "2020_CBG_B01"."B01001e16" + "2020_CBG_B01"."B01001e17" + "2020_CBG_B01"."B01001e18" + "2020_CBG_B01"."B01001e19" + "2020_CBG_B01"."B01001e31" + "2020_CBG_B01"."B01001e32" + "2020_CBG_B01"."B01001e33" + "2020_CBG_B01"."B01001e34" + "2020_CBG_B01"."B01001e35" + "2020_CBG_B01"."B01001e36" + "2020_CBG_B01"."B01001e37" + "2020_CBG_B01"."B01001e38" + "2020_CBG_B01"."B01001e39" + "2020_CBG_B01"."B01001e40" + "2020_CBG_B01"."B01001e41" + "2020_CBG_B01"."B01001e42" + "2020_CBG_B01"."B01001e43"), 0) AS COVERAGE
+        FROM "2020_CBG_B01"
+        WHERE LEFT("2020_CBG_B01"."CENSUS_BLOCK_GROUP", 2) = '12'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "65 years and over"
+        - "18 to 64"
+      must_not: []
+    traps: []
+  - id: "per_capita_income_connecticut"
+    turns:
+      - "What is the per capita income in Connecticut?"
+    expected:
+      kind: "number"
+      value: 45668
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B19"."B19313e1" IS NULL OR "2020_CBG_B01"."B01003e1" IS NULL, NULL, "2020_CBG_B19"."B19313e1"))
+               / NULLIF(SUM(IFF("2020_CBG_B19"."B19313e1" IS NULL OR "2020_CBG_B01"."B01003e1" IS NULL, NULL, "2020_CBG_B01"."B01003e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B19"."B19313e1" IS NULL OR "2020_CBG_B01"."B01003e1" IS NULL, NULL, "2020_CBG_B01"."B01003e1")) / NULLIF(SUM("2020_CBG_B01"."B01003e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B19"
+        JOIN "2020_CBG_B01" ON "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B01"."CENSUS_BLOCK_GROUP"
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 2) = '09'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "2020 dollars"
+      must_not: []
+    traps: []
+  - id: "limited_english_california"
+    turns:
+      - "What percentage of households in California are limited-English-speaking?"
+    expected:
+      kind: "number"
+      value: 8.66
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_C16"."C16002e4" IS NULL OR "2020_CBG_C16"."C16002e7" IS NULL OR "2020_CBG_C16"."C16002e10" IS NULL OR "2020_CBG_C16"."C16002e13" IS NULL OR "2020_CBG_C16"."C16002e1" IS NULL, NULL, "2020_CBG_C16"."C16002e4" + "2020_CBG_C16"."C16002e7" + "2020_CBG_C16"."C16002e10" + "2020_CBG_C16"."C16002e13"))
+               / NULLIF(SUM(IFF("2020_CBG_C16"."C16002e4" IS NULL OR "2020_CBG_C16"."C16002e7" IS NULL OR "2020_CBG_C16"."C16002e10" IS NULL OR "2020_CBG_C16"."C16002e13" IS NULL OR "2020_CBG_C16"."C16002e1" IS NULL, NULL, "2020_CBG_C16"."C16002e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_C16"."C16002e4" IS NULL OR "2020_CBG_C16"."C16002e7" IS NULL OR "2020_CBG_C16"."C16002e10" IS NULL OR "2020_CBG_C16"."C16002e13" IS NULL OR "2020_CBG_C16"."C16002e1" IS NULL, NULL, "2020_CBG_C16"."C16002e1")) / NULLIF(SUM("2020_CBG_C16"."C16002e1"), 0) AS COVERAGE
+        FROM "2020_CBG_C16"
+        WHERE LEFT("2020_CBG_C16"."CENSUS_BLOCK_GROUP", 2) = '06'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "households"
+      must_not: []
+    traps: []
+  - id: "crowded_homes_hawaii"
+    turns:
+      - "What share of homes in Hawaii are overcrowded?"
+    expected:
+      kind: "number"
+      value: 8.69
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B25"."B25014e5" IS NULL OR "2020_CBG_B25"."B25014e6" IS NULL OR "2020_CBG_B25"."B25014e7" IS NULL OR "2020_CBG_B25"."B25014e11" IS NULL OR "2020_CBG_B25"."B25014e12" IS NULL OR "2020_CBG_B25"."B25014e13" IS NULL OR "2020_CBG_B25"."B25014e1" IS NULL, NULL, "2020_CBG_B25"."B25014e5" + "2020_CBG_B25"."B25014e6" + "2020_CBG_B25"."B25014e7" + "2020_CBG_B25"."B25014e11" + "2020_CBG_B25"."B25014e12" + "2020_CBG_B25"."B25014e13"))
+               / NULLIF(SUM(IFF("2020_CBG_B25"."B25014e5" IS NULL OR "2020_CBG_B25"."B25014e6" IS NULL OR "2020_CBG_B25"."B25014e7" IS NULL OR "2020_CBG_B25"."B25014e11" IS NULL OR "2020_CBG_B25"."B25014e12" IS NULL OR "2020_CBG_B25"."B25014e13" IS NULL OR "2020_CBG_B25"."B25014e1" IS NULL, NULL, "2020_CBG_B25"."B25014e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B25"."B25014e5" IS NULL OR "2020_CBG_B25"."B25014e6" IS NULL OR "2020_CBG_B25"."B25014e7" IS NULL OR "2020_CBG_B25"."B25014e11" IS NULL OR "2020_CBG_B25"."B25014e12" IS NULL OR "2020_CBG_B25"."B25014e13" IS NULL OR "2020_CBG_B25"."B25014e1" IS NULL, NULL, "2020_CBG_B25"."B25014e1")) / NULLIF(SUM("2020_CBG_B25"."B25014e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B25"
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 2) = '15'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "more than 1"
+      must_not: []
+    traps: []
+  - id: "family_poverty_new_mexico"
+    turns:
+      - "What percentage of families in New Mexico live below the poverty level?"
+    expected:
+      kind: "number"
+      value: 14.18
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B17"."B17010e2" IS NULL OR "2020_CBG_B17"."B17010e1" IS NULL, NULL, "2020_CBG_B17"."B17010e2"))
+               / NULLIF(SUM(IFF("2020_CBG_B17"."B17010e2" IS NULL OR "2020_CBG_B17"."B17010e1" IS NULL, NULL, "2020_CBG_B17"."B17010e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B17"."B17010e2" IS NULL OR "2020_CBG_B17"."B17010e1" IS NULL, NULL, "2020_CBG_B17"."B17010e1")) / NULLIF(SUM("2020_CBG_B17"."B17010e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B17"
+        WHERE LEFT("2020_CBG_B17"."CENSUS_BLOCK_GROUP", 2) = '35'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "families"
+      must_not: []
+    traps: []
+  - id: "labor_force_nevada"
+    turns:
+      - "What is the labor force participation rate in Nevada?"
+    expected:
+      kind: "number"
+      value: 63.43
+      unit: "percent"
+      tolerance:
+        kind: "absolute"
+        amount: 0.2
+      reference_sql: |-
+        SELECT 100 * SUM(IFF("2020_CBG_B23"."B23025e2" IS NULL OR "2020_CBG_B23"."B23025e1" IS NULL, NULL, "2020_CBG_B23"."B23025e2"))
+               / NULLIF(SUM(IFF("2020_CBG_B23"."B23025e2" IS NULL OR "2020_CBG_B23"."B23025e1" IS NULL, NULL, "2020_CBG_B23"."B23025e1")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B23"."B23025e2" IS NULL OR "2020_CBG_B23"."B23025e1" IS NULL, NULL, "2020_CBG_B23"."B23025e1")) / NULLIF(SUM("2020_CBG_B23"."B23025e1"), 0) AS COVERAGE
+        FROM "2020_CBG_B23"
+        WHERE LEFT("2020_CBG_B23"."CENSUS_BLOCK_GROUP", 2) = '32'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "16 years and over"
+      must_not: []
+    traps: []
+  - id: "women_earnings_maryland"
+    turns:
+      - "How much do working women in Maryland earn on average?"
+    expected:
+      kind: "number"
+      value: 53336
+      unit: "dollars"
+      tolerance:
+        kind: "relative"
+        amount: 0.005
+      reference_sql: |-
+        SELECT SUM(IFF("2020_CBG_B20"."B20003e5" IS NULL OR "2020_CBG_B20"."B20001e23" IS NULL, NULL, "2020_CBG_B20"."B20003e5"))
+               / NULLIF(SUM(IFF("2020_CBG_B20"."B20003e5" IS NULL OR "2020_CBG_B20"."B20001e23" IS NULL, NULL, "2020_CBG_B20"."B20001e23")), 0) AS VALUE,
+               SUM(IFF("2020_CBG_B20"."B20003e5" IS NULL OR "2020_CBG_B20"."B20001e23" IS NULL, NULL, "2020_CBG_B20"."B20001e23")) / NULLIF(SUM("2020_CBG_B20"."B20001e23"), 0) AS COVERAGE
+        FROM "2020_CBG_B20"
+        WHERE LEFT("2020_CBG_B20"."CENSUS_BLOCK_GROUP", 2) = '24'
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "2020 dollars"
+        - "with earnings"
+      must_not: []
+    traps: []
+  - id: "housing_units_wyoming"
+    turns:
+      - "How many housing units are there in Wyoming?"
+    expected:
+      kind: "number"
+      value: 278495
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B25"."B25001e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B25"."B25001e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B25"
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 2) = '56'
+      block_groups: 457
+      missing_block_groups: 0
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+      must_not: []
+    traps: []
+  - id: "households_cook_county"
+    turns:
+      - "How many households are there in Cook County, Illinois?"
+    expected:
+      kind: "number"
+      value: 1991474
+      unit: "count"
+      tolerance:
+        kind: "exact"
+      reference_sql: |-
+        SELECT SUM("2020_CBG_B25"."B25003e1") AS VALUE,
+               COUNT(*) AS BLOCK_GROUPS,
+               COUNT_IF("2020_CBG_B25"."B25003e1" IS NULL) AS MISSING
+        FROM "2020_CBG_B25"
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 5) = '17031'
+      block_groups: 4002
+      missing_block_groups: 0
+      must_mention:
+        - "ACS 2016–2020 5-year estimates"
+        - "Cook County"
+      must_not: []
+    traps: []
