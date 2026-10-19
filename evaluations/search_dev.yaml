@@ -1,0 +1,278 @@
+# Search questions (dev). Plain English; required_files must all appear in the top 5.
+- id: dev_01
+  question: What is the median age of people living here?
+  year: 2019
+  population_group: null
+  required_files:
+  - population_age_and_sex_2019
+- id: dev_02
+  question: How many men and women are there?
+  year: 2020
+  population_group: null
+  required_files:
+  - population_age_and_sex_2020
+- id: dev_03
+  question: Share of the population that is Black
+  year: 2019
+  population_group: B
+  required_files:
+  - race_2019
+- id: dev_04
+  question: How many Hispanic or Latino residents are there?
+  year: 2020
+  population_group: I
+  required_files:
+  - hispanic_origin_2020
+- id: dev_05
+  question: How many people moved to a new home in the last year?
+  year: 2019
+  population_group: null
+  required_files:
+  - moved_in_past_year_2019
+- id: dev_06
+  question: What share of workers drive alone versus take the bus or subway?
+  year: 2020
+  population_group: null
+  required_files:
+  - commuting_2020
+- id: dev_07
+  question: How long is the average commute to work?
+  year: 2019
+  population_group: null
+  required_files:
+  - commuting_2019
+- id: dev_08
+  question: Do people work in the same county where they live?
+  year: 2020
+  population_group: null
+  required_files:
+  - place_of_work_2020
+- id: dev_09
+  question: How many children live with a single parent?
+  year: 2019
+  population_group: null
+  required_files:
+  - children_and_living_arrangements_2019
+- id: dev_10
+  question: How many households are made up of people living alone?
+  year: 2020
+  population_group: null
+  required_files:
+  - household_types_and_size_2020
+- id: dev_11
+  question: How many families have kids under 18 at home?
+  year: 2019
+  population_group: null
+  required_files:
+  - families_and_children_2019
+- id: dev_12
+  question: Households with someone aged 65 or older
+  year: 2020
+  population_group: null
+  required_files:
+  - households_with_older_people_2020
+- id: dev_13
+  question: How many adults are divorced or widowed?
+  year: 2019
+  population_group: null
+  required_files:
+  - marital_status_2019
+- id: dev_14
+  question: How many kids are enrolled in school, public versus private?
+  year: 2020
+  population_group: null
+  required_files:
+  - school_enrollment_2020
+- id: dev_15
+  question: What percent of adults have a college degree?
+  year: 2019
+  population_group: null
+  required_files:
+  - educational_attainment_2019
+- id: dev_16
+  question: What do people with bachelor's degrees tend to major in, split by age and sex?
+  year: 2020
+  population_group: null
+  required_files:
+  - bachelors_degree_fields_detailed_2020
+- id: dev_17
+  question: How many residents speak Spanish at home and speak English poorly?
+  year: 2019
+  population_group: null
+  required_files:
+  - language_and_english_ability_2019
+- id: dev_18
+  question: What is the poverty rate?
+  year: 2020
+  population_group: null
+  required_files:
+  - poverty_2020
+- id: dev_19
+  question: Poverty rate among Hispanic residents
+  year: 2019
+  population_group: I
+  required_files:
+  - poverty_2019
+- id: dev_20
+  question: What is the typical household income?
+  year: 2020
+  population_group: null
+  required_files:
+  - household_income_2020
+- id: dev_21
+  question: How many households earn more than $200,000 a year?
+  year: 2019
+  population_group: null
+  required_files:
+  - household_income_2019
+- id: dev_22
+  question: How many households rely on Social Security or pension income?
+  year: 2020
+  population_group: null
+  required_files:
+  - household_income_by_source_2020
+- id: dev_23
+  question: Median income for families
+  year: 2019
+  population_group: null
+  required_files:
+  - family_and_nonfamily_income_2019
+- id: dev_24
+  question: What is the per capita income?
+  year: 2020
+  population_group: null
+  required_files:
+  - per_capita_income_2020
+- id: dev_25
+  question: What do men and women earn at their jobs?
+  year: 2019
+  population_group: null
+  required_files:
+  - earnings_2019
+- id: dev_26
+  question: How many veterans live here and in which wars did they serve?
+  year: 2020
+  population_group: null
+  required_files:
+  - veterans_2020
+- id: dev_27
+  question: How many households get food stamps, and how many of those include a disabled person?
+  year: 2019
+  population_group: null
+  required_files:
+  - snap_and_disability_2019
+- id: dev_28
+  question: What is the jobless rate?
+  year: 2020
+  population_group: null
+  required_files:
+  - labor_force_status_2020
+- id: dev_29
+  question: How many people work full time all year?
+  year: 2019
+  population_group: null
+  required_files:
+  - work_hours_and_weeks_2019
+- id: dev_30
+  question: Do mothers of young children have jobs?
+  year: 2020
+  population_group: null
+  required_files:
+  - working_parents_and_families_2020
+- id: dev_31
+  question: How many people work for the government versus themselves?
+  year: 2019
+  population_group: null
+  required_files:
+  - class_of_worker_2019
+- id: dev_32
+  question: What share of homes are owned versus rented?
+  year: 2020
+  population_group: null
+  required_files:
+  - housing_occupancy_and_tenure_2020
+- id: dev_33
+  question: How many homes are overcrowded or lack plumbing?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_crowding_and_facilities_2019
+- id: dev_34
+  question: How many bedrooms do homes have?
+  year: 2020
+  population_group: null
+  required_files:
+  - housing_rooms_and_bedrooms_2020
+- id: dev_35
+  question: How old are the buildings, and how many are apartments versus single-family houses?
+  year: 2019
+  population_group: null
+  required_files:
+  - housing_structure_age_and_move_in_2019
+- id: dev_36
+  question: How many households have no car?
+  year: 2020
+  population_group: null
+  required_files:
+  - vehicles_available_2020
+- id: dev_37
+  question: What is the typical monthly rent?
+  year: 2019
+  population_group: null
+  required_files:
+  - rent_and_rent_burden_2019
+- id: dev_38
+  question: How many renters are struggling to pay their rent?
+  year: 2020
+  population_group: null
+  required_files:
+  - rent_and_rent_burden_2020
+- id: dev_39
+  question: What is a typical home worth, and what do owners pay each month?
+  year: 2019
+  population_group: null
+  required_files:
+  - home_value_and_owner_costs_2019
+- id: dev_40
+  question: How many people have no health insurance?
+  year: 2020
+  population_group: null
+  required_files:
+  - health_insurance_2020
+- id: dev_41
+  question: How many households have no internet at home?
+  year: 2019
+  population_group: null
+  required_files:
+  - computers_and_internet_2019
+- id: dev_42
+  question: How many U.S. citizens are old enough to vote?
+  year: 2020
+  population_group: null
+  required_files:
+  - citizen_voting_age_population_2020
+- id: dev_43
+  question: What is the vacancy rate and the median rent?
+  year: 2020
+  population_group: null
+  required_files:
+  - housing_occupancy_and_tenure_2020
+  - rent_and_rent_burden_2020
+- id: dev_44
+  question: How many Asian people lived here in 2020 according to the official count?
+  year: 2020
+  population_group: D
+  required_files:
+  - census_count_race_and_hispanic_2020
+- id: dev_45
+  question: How many people live in prisons, college dorms or nursing homes?
+  year: 2020
+  population_group: null
+  required_files:
+  - census_count_group_quarters_2020
+- id: dev_46
+  question: How many adults 18 and over were counted in the 2020 census?
+  year: 2020
+  population_group: null
+  required_files:
+  - census_count_adults_race_and_hispanic_2020
