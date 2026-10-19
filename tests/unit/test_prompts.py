@@ -1,8 +1,10 @@
 from pathlib import Path
 
+from census_compass.guardrails.replies import MANIPULATION, OFF_TOPIC, inappropriate_reply
+
 PROMPTS = Path(__file__).resolve().parents[2] / "census_compass" / "prompts"
 TOOLS = ["resolve_year", "resolve_population_group", "resolve_geography",
-         "search_schema", "get_schema", "execute_query"]
+         "search_schema", "get_schema", "execute_query", "lookup_glossary"]
 
 
 def test_domain_rules_size_and_phrases():
@@ -73,6 +75,46 @@ def test_instructions_field_code_exception():
     assert "retrieved definitions" in text
 
 
-def test_system_prompt_under_3000_tokens():
+def test_system_prompt_under_3500_tokens():
     total = len(_read("agent_instructions.md")) + len(_read("domain_rules.md"))
-    assert total / 4 < 3000
+    assert total / 4 < 3500
+
+
+def _flat(name="agent_instructions.md"):
+    return " ".join(_read(name).split())
+
+
+def test_prompt_includes_glossary_rule_and_not_covered_phrase():
+    text = _flat()
+    assert "lookup_glossary" in text
+    assert "That isn't covered in my Census reference material" in text
+    assert "never answer from memory" in text.lower()
+
+
+def test_prompt_contains_each_fixed_reply_text():
+    text = _flat()
+    assert " ".join(OFF_TOPIC.split()) in text
+    assert " ".join(MANIPULATION.split()) in text
+    assert inappropriate_reply(None) in text
+    assert "Routing hint" in text
+
+
+def test_prompt_states_sql_on_request_rule():
+    text = _flat()
+    assert "only when the user asks" in text
+    assert "never write code or run user-supplied sql" in text.lower()
+
+
+def test_prompt_states_mixed_rule():
+    text = _flat()
+    assert "Census part" in text
+    assert "skipped" in text
+
+
+def test_prompt_defines_sensitive_data_boundary():
+    text = _flat()
+    assert "normal data questions: answer them" in text
+    assert "Sensitive demographic breakdowns are in scope" in text
+    for item in ["value judgements", "stereotypes", "blame", "predicting individuals' traits",
+                 "discriminatory uses", "harassment or hate"]:
+        assert item in text
