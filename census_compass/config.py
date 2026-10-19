@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     max_sql_retries: int = 2
     topic_token_limit: int = 12000
     coverage_threshold: float = 0.9
+    guardrail_model: str = "anthropic/claude-haiku-4-5-20251001"
+    guardrail_timeout_seconds: float = 5
+    max_input_chars: int = 2000
+    guardrail_context_turns: int = 3
+    glossary_path: Path = Path("definitions/source/census_glossary.yaml")
     snowflake_account: str = "DNPKSVD-ARC86250"
     snowflake_user: str = "SAHILGARG5794"
     snowflake_role: str = "CENSUS_READER"
