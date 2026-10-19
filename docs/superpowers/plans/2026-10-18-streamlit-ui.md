@@ -149,7 +149,7 @@ Create `__init__.py` in new packages as needed. Do not change `census_compass/ag
 ## Execution status (2026-10-18)
 
 - Tasks 1–4 are implemented and covered by unit and Streamlit AppTest checks.
-- Task 5's typed ADK runtime adapter and safe unavailable bootstrap are implemented and tested with injected runtimes. The live-runtime acceptance remains open: the application-level runtime with the required pre-ReAct scope gate is not available, so production UI requests return a safe unavailable response.
+- Task 5 now has a live local ADK runtime, browser-session-owned in-memory sessions, and a conservative pre-ReAct keyword gate. Automated tests pass; a local live UI request for "What is the population of Orange County?" reached the agent and correctly asked which Orange County because the name is ambiguous. General Census-document retrieval is not connected, and the keyword gate must be replaced by the structured router/evaluated guardrail design before public deployment.
 - Task 6 documentation and verification are complete for the available UI boundary. The full project suite passes (543 passed, 14 skipped); targeted Ruff and `git diff --check` pass. Desktop/mobile browser checks confirmed history restore, independent browser-session state, and narrow-screen question wrapping.
 - Final branch review approved with no findings. Live ADK/Snowflake behavior, hosting, service-user authentication, durable memory, and guardrail implementation remain separate work.
 

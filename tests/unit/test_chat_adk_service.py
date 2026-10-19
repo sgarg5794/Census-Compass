@@ -108,11 +108,28 @@ def test_runtime_failure_is_generic_and_does_not_retry():
     assert len(runtime.requests) == 1
 
 
-def test_missing_runtime_factory_is_honestly_unavailable():
+def test_runtime_initialization_failure_is_honestly_unavailable(monkeypatch):
+    from census_compass.chat import adk_service
+
+    def unavailable():
+        raise RuntimeError("private configuration detail")
+
+    monkeypatch.setattr(adk_service, "create_agent_runtime", unavailable)
     service = create_chat_service()
     assert isinstance(service, UnavailableChatService)
     events = list(service.stream_turn(request("visitor", "chat")))
     assert len(events) == 1 and isinstance(events[0], ErrorEvent)
+
+
+def test_default_factory_uses_the_application_runtime_when_available(monkeypatch):
+    from census_compass.chat import adk_service
+
+    runtime = RecordingRuntime([result_event()])
+    monkeypatch.setattr(adk_service, "create_agent_runtime", lambda: runtime)
+    service = adk_service.create_chat_service()
+    events = list(service.stream_turn(request("visitor", "chat")))
+    assert isinstance(events[-1], ResultEvent)
+    assert len(runtime.requests) == 1
 
 
 def test_close_releases_runtime_and_stops_future_turns():

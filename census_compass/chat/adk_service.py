@@ -1,9 +1,4 @@
-"""Visitor-isolated adapter for an application-owned, scope-gated agent runtime.
-
-An AgentRuntime must own its ADK Runner, SessionService, and pre-ReAct scope gate.
-The existing agent definition alone is insufficient: no scope gate or session
-factory is available yet. Consequently the default factory fails closed.
-"""
+"""Visitor-isolated adapter for an application-owned, scope-gated agent runtime."""
 
 from collections.abc import Iterator
 from typing import Protocol
@@ -95,13 +90,18 @@ class AdkChatService:
             self._runtime.close()
 
 
-def create_chat_service(runtime: AgentRuntime | None = None) -> ChatService:
-    """Build an injected service, or fail closed until scope-gated wiring exists.
+def create_agent_runtime() -> AgentRuntime:
+    """Import the live runtime only when the chat service is first requested."""
+    from census_compass.chat.adk_runtime import create_agent_runtime as build_runtime
 
-    The supplied runtime is an explicit trusted dependency. Production code
-    should not pass one until it implements the pre-ReAct scope check and an
-    ADK session lifecycle bound to the browser session.
-    """
+    return build_runtime()
+
+
+def create_chat_service(runtime: AgentRuntime | None = None) -> ChatService:
+    """Build the live service lazily, or fail closed if its runtime cannot start."""
     if runtime is None:
-        return UnavailableChatService()
+        try:
+            runtime = create_agent_runtime()
+        except Exception:
+            return UnavailableChatService()
     return AdkChatService(runtime)
