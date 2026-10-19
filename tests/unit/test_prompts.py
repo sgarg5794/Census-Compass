@@ -109,3 +109,12 @@ def test_prompt_states_mixed_rule():
     text = _flat()
     assert "Census part" in text
     assert "skipped" in text
+
+
+def test_prompt_defines_sensitive_data_boundary():
+    text = _flat()
+    assert "normal data questions: answer them" in text
+    assert "Sensitive demographic breakdowns are in scope" in text
+    for item in ["value judgements", "stereotypes", "blame", "predicting individuals' traits",
+                 "discriminatory uses", "harassment or hate"]:
+        assert item in text
