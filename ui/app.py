@@ -15,7 +15,16 @@ from census_compass.chat.state import (
     new_state,
     select_conversation,
 )
+from census_compass.warmup import start_warm_up
 from ui.components import render_message, render_sidebar, render_welcome
+
+
+@st.cache_resource
+def _warm_up_once() -> bool:
+    """Once per server process: load the embedding model before the first question."""
+    start_warm_up()
+    return True
+
 
 STATUS_LABELS = {
     "understanding": "Understanding your question",
@@ -124,4 +133,5 @@ def render_app(service: ChatService) -> None:
 
 
 if __name__ == "__main__":
+    _warm_up_once()
     render_app(_session_service())

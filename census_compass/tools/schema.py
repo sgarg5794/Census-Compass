@@ -1,5 +1,6 @@
 """Agent tools: search_schema and get_schema."""
 
+import threading
 from pathlib import Path
 
 from census_compass.config import get_settings
@@ -7,6 +8,10 @@ from census_compass.contracts import TopicFile, load_topic_files
 from census_compass.semantic.retrieval import search
 
 YEARS = (2019, 2020)
+
+
+_first_search_lock = threading.Lock()
+_warmed = False
 
 
 def _search_schema(
@@ -67,6 +72,14 @@ def search_schema(query: str, year: int, population_group: str | None = None) ->
         names to get_schema to see full field definitions. An empty list means
         nothing relevant was found.
     """
+    global _warmed
+    if not _warmed:
+        # Until one search has finished, the embedding model and index are still loading.
+        # Overlapping first searches crash the process (native libraries), so they take turns.
+        with _first_search_lock:
+            result = _search_schema(query, year, population_group)
+            _warmed = True
+            return result
     return _search_schema(query, year, population_group)
 
 
