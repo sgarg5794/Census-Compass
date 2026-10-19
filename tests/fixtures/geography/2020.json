@@ -1,0 +1,191 @@
+[
+ {
+  "state_abbr": "AL",
+  "state_fips": "01",
+  "county_fips": "001",
+  "county": "Autauga County",
+  "block_groups": 45
+ },
+ {
+  "state_abbr": "IL",
+  "state_fips": "17",
+  "county_fips": "031",
+  "county": "Cook County",
+  "block_groups": 3993
+ },
+ {
+  "state_abbr": "IL",
+  "state_fips": "17",
+  "county_fips": "043",
+  "county": "DuPage County",
+  "block_groups": 615
+ },
+ {
+  "state_abbr": "CA",
+  "state_fips": "06",
+  "county_fips": "059",
+  "county": "Orange County",
+  "block_groups": 1844
+ },
+ {
+  "state_abbr": "FL",
+  "state_fips": "12",
+  "county_fips": "095",
+  "county": "Orange County",
+  "block_groups": 831
+ },
+ {
+  "state_abbr": "NY",
+  "state_fips": "36",
+  "county_fips": "071",
+  "county": "Orange County",
+  "block_groups": 281
+ },
+ {
+  "state_abbr": "TX",
+  "state_fips": "48",
+  "county_fips": "361",
+  "county": "Orange County",
+  "block_groups": 68
+ },
+ {
+  "state_abbr": "TX",
+  "state_fips": "48",
+  "county_fips": "453",
+  "county": "Travis County",
+  "block_groups": 768
+ },
+ {
+  "state_abbr": "TX",
+  "state_fips": "48",
+  "county_fips": "201",
+  "county": "Harris County",
+  "block_groups": 2588
+ },
+ {
+  "state_abbr": "NM",
+  "state_fips": "35",
+  "county_fips": "013",
+  "county": "Doña Ana County",
+  "block_groups": 161
+ },
+ {
+  "state_abbr": "MO",
+  "state_fips": "29",
+  "county_fips": "189",
+  "county": "St. Louis County",
+  "block_groups": 785
+ },
+ {
+  "state_abbr": "MO",
+  "state_fips": "29",
+  "county_fips": "510",
+  "county": "St. Louis city",
+  "block_groups": 323
+ },
+ {
+  "state_abbr": "MN",
+  "state_fips": "27",
+  "county_fips": "137",
+  "county": "St. Louis County",
+  "block_groups": 181
+ },
+ {
+  "state_abbr": "MD",
+  "state_fips": "24",
+  "county_fips": "005",
+  "county": "Baltimore County",
+  "block_groups": 544
+ },
+ {
+  "state_abbr": "MD",
+  "state_fips": "24",
+  "county_fips": "510",
+  "county": "Baltimore city",
+  "block_groups": 653
+ },
+ {
+  "state_abbr": "LA",
+  "state_fips": "22",
+  "county_fips": "071",
+  "county": "Orleans Parish",
+  "block_groups": 440
+ },
+ {
+  "state_abbr": "AK",
+  "state_fips": "02",
+  "county_fips": "020",
+  "county": "Anchorage Municipality",
+  "block_groups": 230
+ },
+ {
+  "state_abbr": "AK",
+  "state_fips": "02",
+  "county_fips": "110",
+  "county": "Juneau City and Borough",
+  "block_groups": 30
+ },
+ {
+  "state_abbr": "AK",
+  "state_fips": "02",
+  "county_fips": "290",
+  "county": "Yukon-Koyukuk Census Area",
+  "block_groups": 13
+ },
+ {
+  "state_abbr": "WI",
+  "state_fips": "55",
+  "county_fips": "057",
+  "county": "Juneau County",
+  "block_groups": 21
+ },
+ {
+  "state_abbr": "NV",
+  "state_fips": "32",
+  "county_fips": "510",
+  "county": "Carson City",
+  "block_groups": 42
+ },
+ {
+  "state_abbr": "PR",
+  "state_fips": "72",
+  "county_fips": "127",
+  "county": "San Juan Municipio",
+  "block_groups": 332
+ },
+ {
+  "state_abbr": "DC",
+  "state_fips": "11",
+  "county_fips": "001",
+  "county": "District of Columbia",
+  "block_groups": 571
+ },
+ {
+  "state_abbr": "NY",
+  "state_fips": "36",
+  "county_fips": "005",
+  "county": "Bronx County",
+  "block_groups": 1132
+ },
+ {
+  "state_abbr": "NY",
+  "state_fips": "36",
+  "county_fips": "061",
+  "county": "New York County",
+  "block_groups": 1089
+ },
+ {
+  "state_abbr": "GU",
+  "state_fips": "66",
+  "county_fips": "010",
+  "county": "Guam",
+  "block_groups": 0
+ },
+ {
+  "state_abbr": "VI",
+  "state_fips": "78",
+  "county_fips": "010",
+  "county": "St. Croix Island",
+  "block_groups": 0
+ }
+]
