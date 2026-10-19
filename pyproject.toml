@@ -21,6 +21,7 @@ dependencies = [
     "jsonschema",
     "sqlglot",
     "sentence-transformers",
+    "mcp",  # required by litellm async completion path used by ADK (not an MCP server)
 ]
 
 [project.optional-dependencies]
