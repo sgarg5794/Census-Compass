@@ -22,7 +22,7 @@
   year: 2020
   population_group: null
   required_files:
-  - race_2020
+  - census_count_race_and_hispanic_2020
 - id: held_05
   question: What portion of people identify as more than one race?
   year: 2019
@@ -30,11 +30,11 @@
   required_files:
   - race_2019
 - id: held_06
-  question: Share of residents who are of Mexican or Puerto Rican background
+  question: Share of residents who are of Hispanic or Latino background
   year: 2020
   population_group: I
   required_files:
-  - hispanic_origin_2020
+  - census_count_race_and_hispanic_2020
 - id: held_07
   question: How many people are Latino versus non-Hispanic white?
   year: 2019
@@ -422,3 +422,9 @@
   required_files:
   - health_insurance_2020
   - poverty_2020
+- id: held_71
+  question: According to the American Community Survey, how many Hispanic residents are there?
+  year: 2020
+  population_group: I
+  required_files:
+  - hispanic_origin_2020

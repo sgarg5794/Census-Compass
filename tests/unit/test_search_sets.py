@@ -128,3 +128,29 @@ def test_heldout_guard():
     args = mod.parse_args(["--candidates", "m1", "m2"])
     assert args.candidates == ["m1", "m2"]
     assert args.set.endswith("search_dev.yaml")
+
+
+def test_census_count_not_mixed_with_acs_demographics(sets):
+    """Rule C: a 2020 question answerable from the Census count requires only the
+    census_count topic, not the ACS population/race/Hispanic topic, unless the
+    question also asks about income, age, housing, or explicitly about the survey/ACS."""
+    acs = {"hispanic_origin_2020", "race_2020", "population_age_and_sex_2020"}
+    allowed = ("income", "age", "housing", "survey", "acs", "american community")
+    for e in sum(sets, []):
+        files = set(e["required_files"])
+        if e["year"] == 2020 and any(f.startswith("census_count") for f in files):
+            if files & acs:
+                assert any(w in e["question"].lower() for w in allowed), e["id"]
+
+
+def test_2020_demographic_only_questions_use_census_count(sets):
+    """Both cases covered: an ACS-worded 2020 demographic question keeps the ACS topic."""
+    _, held = sets
+    survey = [
+        e
+        for e in held
+        if e["year"] == 2020 and "american community survey" in e["question"].lower()
+    ]
+    assert survey and all(
+        not any(f.startswith("census_count") for f in e["required_files"]) for e in survey
+    )

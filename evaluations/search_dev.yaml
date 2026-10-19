@@ -22,7 +22,7 @@
   year: 2020
   population_group: I
   required_files:
-  - hispanic_origin_2020
+  - census_count_race_and_hispanic_2020
 - id: dev_05
   question: How many people moved to a new home in the last year?
   year: 2019
