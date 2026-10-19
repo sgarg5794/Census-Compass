@@ -37,6 +37,9 @@ def test_label_set_composition():
     tags = Counter(t for e in entries for t in e["tags"])
     assert tags["sensitive_legit"] >= 15
     assert tags["adversarial"] >= 3
+    assert tags["hard"] >= 6
+    assert tags["subtle"] >= 5
+    assert tags["history_decisive"] >= 3
     assert sum(1 for e in entries if e["history"]) >= 6
     for e in entries:
         assert set(e) == {"id", "text", "history", "expected", "tags"}
@@ -46,8 +49,6 @@ def test_label_set_composition():
 def test_no_duplicate_texts():
     keys = [(e["text"], str(e["history"])) for e in _entries()]
     assert len(keys) == len(set(keys))
-    texts = [e["text"] for e in _entries() if not e["history"]]
-    assert len(texts) == len(set(texts))
 
 
 def test_sensitive_legit_are_expected_data():
@@ -118,7 +119,7 @@ def test_main_exit_code_reflects_thresholds(monkeypatch, tmp_path):
     assert ev.main([]) == 1
 
 
-def test_main_limit(monkeypatch, tmp_path):
+def test_main_limit_partial(monkeypatch, tmp_path):
     seen = []
 
     def label_for(m):
@@ -128,3 +129,48 @@ def test_main_limit(monkeypatch, tmp_path):
     _patch(monkeypatch, tmp_path, label_for)
     ev.main(["--limit", "3"])
     assert len(seen) == 3
+
+
+def test_sample_entries_stratified_seeded():
+    entries = _entries()
+    a = ev.sample_entries(entries, 14)
+    assert a == ev.sample_entries(entries, 14)
+    assert len({e["expected"] for e in a}) == 7
+    assert len(a) == 14
+    assert [e["id"] for e in a] != [e["id"] for e in entries[:14]]
+
+
+def test_partial_run_is_flagged(monkeypatch, tmp_path, capsys):
+    _patch(monkeypatch, tmp_path, lambda m: Decision(label="data"))
+    ev.main(["--limit", "7"])
+    assert "PARTIAL RUN" in capsys.readouterr().out
+    assert '"partial_run": true' in (tmp_path / "report.json").read_text()
+    ev.main([])
+    assert "PARTIAL RUN" not in capsys.readouterr().out
+
+
+def test_confusion_breakdown():
+    results = [
+        _r("a", "data", "data", 1),
+        _r("b", "data", "off_topic", 1),
+        _r("c", "data", None, 1),
+    ]
+    assert ev.compute_report(results)["confusion"] == {
+        "data": {"data": 1, "off_topic": 1, "none": 1}
+    }
+
+
+def _passing(**over):
+    base = {"accuracy": 1.0, "blocked_recall": 1.0, "sensitive_blocked": 0, "p95_latency": 1.0}
+    return {**base, **over}
+
+
+def test_threshold_boundaries():
+    assert ev.thresholds_failed(_passing()) == []
+    assert ev.thresholds_failed(_passing(blocked_recall=19 / 20)) == []
+    assert ev.thresholds_failed(_passing(blocked_recall=0.949))
+    assert ev.thresholds_failed(_passing(accuracy=0.95)) == []
+    assert ev.thresholds_failed(_passing(accuracy=0.949))
+    assert ev.thresholds_failed(_passing(p95_latency=3.0)) == []
+    assert ev.thresholds_failed(_passing(p95_latency=3.01))
+    assert ev.thresholds_failed(_passing(sensitive_blocked=1))
