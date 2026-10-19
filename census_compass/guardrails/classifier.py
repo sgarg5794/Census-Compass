@@ -35,6 +35,7 @@ def parse_decision(raw: str) -> Decision | None:
     obj = _first_json_object(raw)
     if obj is None:
         return None
+    obj = {k: obj[k] for k in ("label", "census_part", "neutral_offer") if k in obj}
     try:
         decision = Decision.model_validate(obj)
     except ValidationError:
