@@ -48,3 +48,31 @@ def test_domain_rules_joins_table_and_completeness():
     for phrase in ["unknown denominators", "missing block groups", "show no ±", "coverage below 90%"]:
         assert phrase in text
     assert len(text) / 4 <= 1500
+
+
+def test_instructions_role_line():
+    assert "You are Census Compass" in _read("agent_instructions.md")
+
+
+def test_instructions_definition_question_needs_no_query():
+    text = " ".join(_read("agent_instructions.md").split())
+    assert "definition" in text
+    assert "Do not run a query merely to answer a definition question" in text
+
+
+def test_instructions_verify_step():
+    text = _read("agent_instructions.md")
+    assert "Verify before answering" in text
+    assert "Missing or unavailable values are not zero" in text
+
+
+def test_instructions_field_code_exception():
+    text = " ".join(_read("agent_instructions.md").split())
+    assert "field codes" in text
+    assert "B01001e3" in text
+    assert "retrieved definitions" in text
+
+
+def test_system_prompt_under_3000_tokens():
+    total = len(_read("agent_instructions.md")) + len(_read("domain_rules.md"))
+    assert total / 4 < 3000
