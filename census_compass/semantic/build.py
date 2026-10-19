@@ -59,6 +59,7 @@ _REF = re.compile(r'"([^"]+)"\."([^"]+)"')
 _YEAR_SUFFIX = re.compile(r"_(\d{4})$")
 _RACE_VERSION = re.compile(r"([BC]\d{5})[A-I]")
 _E_ESTIMATE = re.compile(r"[BC]\d{5}Ee\d+")
+_BARE_CODE = re.compile(r"\b(?:[BC]\d{5}[A-Z]{0,2}[em]\d+|P\d{7})\b")
 _E_COLUMN = re.compile(r"[BC]\d{5}E[em]\d+")
 _KEY = "CENSUS_BLOCK_GROUP"
 _PROPER = ("United States", "Puerto Rico", "Hispanic", "Latino", "White", "Black",
@@ -421,6 +422,21 @@ def _check_groups(topics, v1_tables, year) -> list[str]:
     return errors
 
 
+def _unqualified(sql: str, own_columns: set[str]) -> list[str]:
+    """Problems with member SQL that does not name every column with its physical table
+    (spec 4.1): no qualified column at all, or a bare quoted identifier, Census column code or
+    column name of the file's table left after removing the qualified references."""
+    problems = [] if _REF.search(sql) else [f"SQL {sql!r} names no table-qualified column"]
+    rest = _REF.sub(" ", sql)
+    bare = re.findall(r'"[^"]*"', rest)
+    bare += [t for t in _BARE_CODE.findall(rest) if f'"{t}"' not in bare]
+    bare += [t for t in re.findall(r"\b\w+\b", rest)
+             if t in own_columns and t not in bare and f'"{t}"' not in bare]
+    if bare:
+        problems.append(f"SQL {sql!r} has unqualified column reference {', '.join(bare)}")
+    return problems
+
+
 def _check_file(file, members, own_expected, metadata) -> list[str]:
     errors = []
     name = file.name
@@ -450,7 +466,10 @@ def _check_file(file, members, own_expected, metadata) -> list[str]:
     for member in llm_members:
         meta = by_member.get(member.name)
         formula = meta is not None and meta.aggregation == "formula"
-        texts = [member.sql, *member.meta.values()]
+        texts = [member.sql, *([member.meta["moe_sql"]] if "moe_sql" in member.meta else [])]
+        own_columns = set(metadata.table_columns.get(own, ()))
+        errors += [f"{name}: member {member.name}: {problem}"
+                   for text in texts for problem in _unqualified(text, own_columns)]
         for table, column in (ref for text in texts for ref in _REF.findall(text)):
             if table != own and not (formula and table in join_tables):
                 errors.append(f"{name}: member {member.name} reads {table} without a declared "

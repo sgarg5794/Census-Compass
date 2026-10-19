@@ -137,6 +137,28 @@ def test_unknown_column_detected(settings):
     assert any("B25999e1" in e and "does not exist" in e for e in errors)
 
 
+@pytest.mark.parametrize("field, sql, expected", [
+    ("sql", "B25003e2", "unqualified column reference B25003e2"),
+    ("sql", '"B25003e2" + 0', 'unqualified column reference "B25003e2"'),
+    ("sql", "1", "names no table-qualified column"),
+    ("sql", '"2020_CBG_B25"."B25003e2" + B25003e3', "unqualified column reference B25003e3"),
+    ("sql", '"2020_CBG_B25"."B25003e2" + CENSUS_BLOCK_GROUP',
+     "unqualified column reference CENSUS_BLOCK_GROUP"),
+    ("moe_sql", "B25003m2", "unqualified column reference B25003m2"),
+])
+def test_unqualified_member_sql_detected(settings, field, sql, expected):
+    files, meta = _copy(2020)
+    target = _file(files, "housing_occupancy_and_tenure_2020")
+    member = next(m for m in target.measures if m.meta.get("moe_sql"))
+    if field == "sql":
+        member.sql = sql
+    else:
+        member.meta["moe_sql"] = sql
+    errors = run_checks(files, meta, _topics(), _v1(2020), settings)
+    assert any("housing_occupancy_and_tenure_2020" in e and member.name in e and expected in e
+               for e in errors), errors
+
+
 def test_second_physical_table_detected(settings):
     files, meta = _copy(2020)
     target = _file(files, "housing_occupancy_and_tenure_2020")
