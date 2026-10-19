@@ -23,14 +23,14 @@ def render_welcome() -> str | None:
     columns = st.columns(2)
     for index, question in enumerate(EXAMPLE_QUESTIONS):
         with columns[index % 2]:
-            if st.button(question, key=f"example-{index}", use_container_width=True):
+            if st.button(question, key=f"example-{index}", width="stretch", wrap=True):
                 return question
     return None
 
 
 def render_sidebar(state: "ChatState") -> tuple[str, str | None] | None:
     with st.sidebar:
-        if st.button("New chat", disabled=state.pending_request is not None, use_container_width=True):
+        if st.button("New chat", disabled=state.pending_request is not None, width="stretch"):
             return ("new", None)
         st.caption("Conversation history")
         for conversation in reversed(tuple(state.conversations.values())):
@@ -40,7 +40,7 @@ def render_sidebar(state: "ChatState") -> tuple[str, str | None] | None:
                 conversation.title,
                 key=f"conversation-{conversation.id}",
                 disabled=state.pending_request is not None,
-                use_container_width=True,
+                width="stretch",
             ):
                 return ("select", conversation.id)
     return None
@@ -55,12 +55,30 @@ def render_message(message: "ChatMessage") -> None:
 
         if result.truncated:
             st.warning("This result was truncated; the answer may be incomplete.")
+        periods = list(dict.fromkeys(e.period_label for e in result.evidence if e.period_label))
+        for period in periods:
+            st.caption(f"Reporting period: {period}")
+        for item in result.completeness:
+            parts = [f"Row {item.row + 1}, {item.column}"]
+            if item.coverage is not None:
+                parts.append(f"{item.coverage:.0%} coverage")
+            parts.append(f"{item.block_groups} block groups")
+            if item.missing_inputs:
+                missing = ", ".join(
+                    f"{name}: {count}" for name, count in item.missing_inputs.items()
+                )
+                parts.append(f"missing inputs {missing}")
+            if item.unknown_denominator is not None:
+                parts.append(f"unknown denominator: {item.unknown_denominator}")
+            if item.missing_moe is not None:
+                parts.append(f"missing margin of error: {item.missing_moe}")
+            st.caption(" · ".join(parts))
         for evidence in result.evidence:
             for limitation in evidence.limitations:
                 st.warning(limitation)
 
         if result.rows:
-            st.dataframe(pd.DataFrame.from_records(result.rows), use_container_width=True, hide_index=True)
+            st.dataframe(pd.DataFrame.from_records(result.rows), width="stretch", hide_index=True)
 
         if result.evidence:
             with st.expander("View query & source details"):
