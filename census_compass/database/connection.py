@@ -1,8 +1,10 @@
-"""Snowflake connection lifecycle: Keychain password, pinned role, bounded statements."""
+"""Snowflake connection lifecycle: password from the environment or OS credential store, pinned role, bounded statements."""
 
 from __future__ import annotations
 
+import os
 import re
+import sys
 from collections.abc import Callable
 from typing import Any
 
@@ -12,10 +14,16 @@ _QUERY_ID = re.compile(r"^[0-9a-f-]+$")
 
 
 def _keychain_password(account: str, user: str) -> str | None:
+    """Password from SNOWFLAKE_PASSWORD, else from the OS credential store (keyring)."""
+    env_password = os.environ.get("SNOWFLAKE_PASSWORD")
+    if env_password:
+        return env_password
     import keyring
-    import keyring.backends.macOS
 
-    keyring.set_keyring(keyring.backends.macOS.Keyring())
+    if sys.platform == "darwin":  # never fall back to a plaintext store on macOS
+        import keyring.backends.macOS
+
+        keyring.set_keyring(keyring.backends.macOS.Keyring())
     return keyring.get_password("census-compass-snowflake:" + account, user)
 
 
@@ -24,10 +32,12 @@ def open_connection(
     connect: Callable[..., Any] = snowflake.connector.connect,
     get_password: Callable[[str, str], str | None] = _keychain_password,
 ) -> Any:
+    if not settings.snowflake_account or not settings.snowflake_user:
+        raise RuntimeError("Set SNOWFLAKE_ACCOUNT and SNOWFLAKE_USER in .env (see the README)")
     password = get_password(settings.snowflake_account, settings.snowflake_user)
     if password is None:
         raise RuntimeError(
-            "No Snowflake password in the macOS Keychain; run scripts/snowflake_access.py --setup"
+            "No Snowflake password found; set SNOWFLAKE_PASSWORD or run python -m scripts.snowflake_access --setup"
         )
     conn = connect(
         account=settings.snowflake_account,

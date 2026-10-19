@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Database `US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET`, schema `PUBLIC`, role `CENSUS_READER`, `USE SECONDARY ROLES NONE` on every connection, warehouse `COMPUTE_WH`. Never modify Snowflake objects, grants or settings.
-- Credentials only via the existing macOS Keychain service `census-compass-snowflake:DNPKSVD-ARC86250`; never print, copy or store them elsewhere.
+- Credentials only via the existing macOS Keychain service `census-compass-snowflake:<account>`; never print, copy or store them elsewhere.
 - Member `sql` is always qualified with the real physical table name (`"2020_CBG_B25"."B25064e1"`); no aliases in LLM-facing files.
 - LLM-facing files contain no provenance, verification, coverage or missing-count fields.
 - Excluded tables: `2019_CBG_PATTERNS`, `2019_RENT_PERCENTAGE_HOUSEHOLD_INCOME`, `2019_TOTAL_RENTAL_GEO`, `2019_CBG_B99`, `2020_CBG_B99`; geometry tables are never queried.

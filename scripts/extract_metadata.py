@@ -28,7 +28,7 @@ def main():
     keyring.set_keyring(Keyring())
     password = keyring.get_password(SERVICE, USER)
     if password is None:
-        raise SystemExit("Run scripts/snowflake_access.py --setup in your local Terminal first.")
+        raise SystemExit("Run python -m scripts.snowflake_access --setup in your local Terminal first.")
 
     schema = "PUBLIC"
     query_ids = {}

@@ -27,8 +27,8 @@ class Settings(BaseSettings):
     max_input_chars: int = 2000
     guardrail_context_turns: int = 3
     glossary_path: Path = Path("definitions/source/census_glossary.yaml")
-    snowflake_account: str = "DNPKSVD-ARC86250"
-    snowflake_user: str = "SAHILGARG5794"
+    snowflake_account: str = ""
+    snowflake_user: str = ""
     snowflake_role: str = "CENSUS_READER"
     snowflake_warehouse: str = "COMPUTE_WH"
     snowflake_database: str = "US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"

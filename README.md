@@ -42,10 +42,24 @@ Google ADK agent running Claude (Sonnet) through LiteLLM, with internal Python t
 
 Design documents are in `docs/specs/`.
 
-## Run it locally
+## One-click setup with Claude Code
 
-You need Python 3.12 or 3.13, a Claude API key, and read access to the Census dataset
-in Snowflake (see step 3).
+If you use [Claude Code](https://claude.com/claude-code), open this repository in it and say
+**"setup census agent"** (or "setup census agent on local"). The project skill in
+[`.claude/skills/setup-census-agent/`](.claude/skills/setup-census-agent/SKILL.md) takes over:
+it installs the dependencies, asks you to add your Anthropic key and Snowflake credentials
+(you type them yourself, never into the chat), runs `python -m scripts.check_setup` to
+confirm the agent works, runs the unit tests and starts the chat UI. You still need the
+Snowflake account and dataset from step 3 below.
+
+Prefer to do it yourself? Use the general setup below.
+
+## Run it locally (general setup)
+
+You need Python 3.12 or 3.13 (check with `python3 --version`), an Anthropic API key, and
+a Snowflake account that can read the Census dataset (step 3). Without Snowflake the app
+still starts and answers glossary questions, small talk and declines, but it cannot
+answer data questions.
 
 1. **Install**
 
@@ -53,38 +67,60 @@ in Snowflake (see step 3).
    git clone https://github.com/sgarg5794/Census-Compass.git
    cd Census-Compass
    python3 -m venv .venv
-   source .venv/bin/activate
+   source .venv/bin/activate        # on Windows: .venv\Scripts\activate
    python -m pip install -r requirements.lock.txt
    python -m pip install --no-deps -e .
    ```
 
    The generated table definitions (`definitions/generated/`) and the search index
-   (`data/index/`) are committed, so there is nothing to build. The first run downloads a
-   small embedding model (BAAI/bge-small-en-v1.5) from Hugging Face.
+   (`data/index/`) are committed, so there is nothing to build. The first data question
+   downloads a small embedding model (BAAI/bge-small-en-v1.5) from Hugging Face, so it
+   can take longer than later ones.
 
-2. **Add your Anthropic key**
+2. **Create `.env` and add your Anthropic key**
 
    ```sh
    cp .env.example .env
    ```
 
-   Then set `ANTHROPIC_API_KEY=...` in `.env`. The file is git-ignored.
+   Open `.env` and put your key after `ANTHROPIC_API_KEY=` (no quotes or spaces). The
+   file is git-ignored, and the app reads it automatically at startup. The other values
+   in `.env.example` have working defaults.
 
-3. **Connect Snowflake (needed for data questions)**
+3. **Set up Snowflake (needed for data questions)**
 
-   Data questions run SQL in Snowflake, so you need an account that can read the
-   database `US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET` (schema `PUBLIC`).
-   Put your account, user, role and warehouse in `.env` (see the `SNOWFLAKE_*` entries in
-   `.env.example`; the defaults are the project owner's values), then store the password
-   in the macOS Keychain, which is where the agent reads it:
+   The agent runs read-only SQL against a free public dataset, so you need your own
+   Snowflake account with that dataset added. The table definitions in this repo only
+   describe the dataset (they are the agent's map); the numbers themselves are read from
+   the dataset in your Snowflake account.
 
-   ```sh
-   pip install keyring   # if it is not installed
-   python scripts/snowflake_access.py --setup
-   ```
+   1. **Create a Snowflake account** (a free trial works): https://signup.snowflake.com/
+   2. **Add the dataset.** In Snowsight open Data Products, Marketplace and get
+      [SafeGraph: US Open Census Data & Neighborhood Insights - Free Dataset](https://app.snowflake.com/marketplace/listing/GZSNZ2UNN0/safegraph-us-open-census-data-neighborhood-insights-free-dataset).
+      Name the database exactly `US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET`
+      (the schema is `PUBLIC`).
+   3. **Create a read-only role** by running this in a Snowsight worksheet (replace
+      `YOUR_USER` with your Snowflake login name):
 
-   Details are in `docs/snowflake_connection.md`. Without Snowflake the agent still
-   answers glossary questions, small talk and declines, but cannot answer data questions.
+      ```sql
+      CREATE ROLE IF NOT EXISTS CENSUS_READER;
+      GRANT ROLE CENSUS_READER TO USER YOUR_USER;
+      GRANT IMPORTED PRIVILEGES ON DATABASE US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET TO ROLE CENSUS_READER;
+      GRANT USAGE ON WAREHOUSE COMPUTE_WH TO ROLE CENSUS_READER;
+      ```
+
+      Use a different warehouse name if yours is not `COMPUTE_WH`, and set
+      `SNOWFLAKE_WAREHOUSE` to match.
+   4. **Add your account details to `.env`:** `SNOWFLAKE_ACCOUNT` (for example
+      `ORGNAME-ACCOUNTNAME`, shown in Snowsight under your account menu) and
+      `SNOWFLAKE_USER` (your login name). `SNOWFLAKE_ROLE` defaults to `CENSUS_READER`.
+   5. **Give the app your password** in one of two ways:
+      - set `SNOWFLAKE_PASSWORD=...` in `.env` (works on any system), or
+      - store it in your OS credential store with
+        `python -m scripts.snowflake_access --setup` (hidden prompt; tested on macOS).
+
+   If the account uses MFA, see `docs/snowflake_connection.md`. To check the connection:
+   `python -m scripts.snowflake_access`.
 
 4. **Start it**
 
@@ -100,11 +136,23 @@ in Snowflake (see step 3).
    adk web
    ```
 
-   Open the printed URL. More options: `docs/running_the_agent.md`.
+   Open the printed URL (Streamlit: http://localhost:8501) and ask, for example,
+   "What is the unemployment rate in Cook County, Illinois?". More options:
+   `docs/running_the_agent.md`.
+
+### If something goes wrong
+
+| What you see | Likely cause and fix |
+| --- | --- |
+| An authentication error from the model | `ANTHROPIC_API_KEY` is missing or wrong in `.env`. Restart the app after editing it. |
+| Data questions answer "couldn't reach the database" | `SNOWFLAKE_ACCOUNT`, `SNOWFLAKE_USER` or the password is missing or wrong, or the role has no access (step 3). Check with `python -m scripts.snowflake_access`. |
+| The first data question is slow or times out | The embedding model is downloading on first use. Ask again. |
+| `ModuleNotFoundError: census_compass` | Run the install commands in step 1 from the repository root, with the virtual environment active. |
 
 ## Tests and checks
 
 ```sh
+python -m scripts.check_setup        # quick check that settings, Snowflake and the agent work
 python -m pytest tests/unit          # about 3 minutes, no network
 ruff check .
 python -m scripts.run_guardrail_eval # live classifier evaluation (uses the Anthropic key)
@@ -119,6 +167,7 @@ python -m scripts.run_guardrail_e2e  # live end-to-end conversations (uses Anthr
 - `definitions/generated/` and `data/index/` – generated table definitions and search index (committed)
 - `data/tables/` – extracted table schemas, the input to the definition build
 - `ui/` – Streamlit chat interface
+- `.claude/skills/` – project skill for one-click setup with Claude Code
 - `evaluations/` – evaluation question sets and the guardrail label set
 - `scripts/` – extraction, build, evaluation and Snowflake setup scripts
 - `docs/` – design, setup, specs and plans

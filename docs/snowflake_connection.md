@@ -1,14 +1,13 @@
 # Local Snowflake access
 
-Account: `DNPKSVD-ARC86250`. User: `SAHILGARG5794`.
-Role: `CENSUS_READER`. Warehouse: `COMPUTE_WH`.
+Account and user: your own `SNOWFLAKE_ACCOUNT` and `SNOWFLAKE_USER` from `.env`.
+Role: `CENSUS_READER` (default). Warehouse: `COMPUTE_WH`.
 Database: `US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET`, schema `PUBLIC`.
 
 Run this once in your own macOS Terminal:
 
 ```sh
-cd /Users/sahilgarg/Desktop/Census-Compass
-.venv/bin/python scripts/snowflake_access.py --setup
+.venv/bin/python -m scripts.snowflake_access --setup
 ```
 
 Enter your Snowflake password at the hidden prompt. Approve MFA if requested.
@@ -19,7 +18,7 @@ project files or print it. macOS may ask you to approve Keychain access.
 For accounts requiring the connector's explicit username/password MFA mode:
 
 ```sh
-CENSUS_SNOWFLAKE_AUTHENTICATOR=username_password_mfa .venv/bin/python scripts/snowflake_access.py --setup
+CENSUS_SNOWFLAKE_AUTHENTICATOR=username_password_mfa .venv/bin/python -m scripts.snowflake_access --setup
 ```
 
 Authentication still depends on the account's authentication policy. Report
@@ -28,13 +27,13 @@ error codes without sharing your password if setup fails.
 After setup, the agent can run the default connection check:
 
 ```sh
-.venv/bin/python scripts/snowflake_access.py
+.venv/bin/python -m scripts.snowflake_access
 ```
 
 Or execute a query, with at most 100 result rows returned by default:
 
 ```sh
-.venv/bin/python scripts/snowflake_access.py --sql 'SELECT CURRENT_ROLE()'
+.venv/bin/python -m scripts.snowflake_access --sql 'SELECT CURRENT_ROLE()'
 ```
 
 `--file` accepts a file containing one query. `--limit` controls returned rows
@@ -44,7 +43,7 @@ This is an exploration helper, not the production agent's SQL validation layer.
 Database permissions remain the authority for allowed operations.
 
 Credentials are stored under the Keychain service
-`census-compass-snowflake:DNPKSVD-ARC86250`. They can be removed using macOS
+`census-compass-snowflake:<your account>`. They can be removed using macOS
 Keychain Access. The agent has not connected until the live connection check
 succeeds after local setup.
 
@@ -75,7 +74,7 @@ not automatically available on a server. No macOS Keychain dependency is needed.
 Set the following values locally or in deployment configuration:
 
 ```dotenv
-SNOWFLAKE_ACCOUNT=DNPKSVD-ARC86250
+SNOWFLAKE_ACCOUNT=<your account>
 SNOWFLAKE_USER=CENSUS_COMPASS_SERVICE
 SNOWFLAKE_AUTHENTICATOR=SNOWFLAKE_JWT
 SNOWFLAKE_PRIVATE_KEY_FILE=.secrets/snowflake_service.p8

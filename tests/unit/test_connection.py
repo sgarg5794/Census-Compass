@@ -44,7 +44,7 @@ def _open(role="CENSUS_READER"):
         conn.kwargs = kw
         return conn
 
-    s = Settings()
+    s = Settings(snowflake_account="acct", snowflake_user="user")
     return conn, open_connection(s, connect=connect, get_password=lambda a, u: "pw"), s
 
 
@@ -59,14 +59,21 @@ def test_secondary_roles_disabled_and_role_ok():
 def test_wrong_role_raises_and_closes():
     conn = FakeConn(role="ACCOUNTADMIN")
     with pytest.raises(RuntimeError) as e:
-        open_connection(Settings(), connect=lambda **kw: conn, get_password=lambda a, u: "pw")
+        open_connection(Settings(snowflake_account="acct", snowflake_user="user"), connect=lambda **kw: conn, get_password=lambda a, u: "pw")
     assert conn.closed
     assert "pw" not in str(e.value)
 
 
 def test_missing_password():
     with pytest.raises(RuntimeError, match="--setup"):
-        open_connection(Settings(), connect=lambda **kw: None, get_password=lambda a, u: None)
+        open_connection(Settings(snowflake_account="acct", snowflake_user="user"), connect=lambda **kw: None, get_password=lambda a, u: None)
+
+
+def test_password_from_environment(monkeypatch):
+    from census_compass.database.connection import _keychain_password
+
+    monkeypatch.setenv("SNOWFLAKE_PASSWORD", "from-env")
+    assert _keychain_password("acct", "user") == "from-env"
 
 
 def test_run_statement_truncates():

@@ -1,4 +1,4 @@
-"""Local Census access using a password held in macOS Keychain."""
+"""Local Census access using a password held in the OS credential store (macOS Keychain)."""
 
 import argparse
 import getpass
@@ -9,12 +9,15 @@ from pathlib import Path
 
 import keyring
 import snowflake.connector
-from keyring.backends.macOS import Keyring
 
-ACCOUNT = "DNPKSVD-ARC86250"
-USER = "SAHILGARG5794"
-ROLE = "CENSUS_READER"
-DATABASE = "US_OPEN_CENSUS_DATA_NEIGHBORHOOD_INSIGHTS_FREE_DATASET"
+from census_compass.config import get_settings
+
+_SETTINGS = get_settings()  # SNOWFLAKE_* values from .env or the environment
+ACCOUNT = _SETTINGS.snowflake_account
+USER = _SETTINGS.snowflake_user
+ROLE = _SETTINGS.snowflake_role
+WAREHOUSE = _SETTINGS.snowflake_warehouse
+DATABASE = _SETTINGS.snowflake_database
 SERVICE = "census-compass-snowflake:" + ACCOUNT
 TEST_SQL = (
     'SELECT CURRENT_ROLE() AS ACTIVE_ROLE, COUNT(*) AS ROW_COUNT '
@@ -29,7 +32,7 @@ def connect(password):
         password=password,
         authenticator=os.environ.get("CENSUS_SNOWFLAKE_AUTHENTICATOR", "snowflake"),
         role=ROLE,
-        warehouse="COMPUTE_WH",
+        warehouse=WAREHOUSE,
         database=DATABASE,
         schema="PUBLIC",
         login_timeout=60,
@@ -74,12 +77,14 @@ def main():
     if args.limit < 1 or args.limit > 10000:
         parser.error("--limit must be between 1 and 10000")
 
-    # Explicitly select the macOS backend; do not fall back to plaintext storage.
-    keyring.set_keyring(Keyring())
+    if sys.platform == "darwin":  # never fall back to a plaintext store on macOS
+        from keyring.backends.macOS import Keyring
+
+        keyring.set_keyring(Keyring())
     if args.setup:
         if not sys.stdin.isatty():
             parser.error("Run --setup in your local Terminal for hidden password entry")
-        password = getpass.getpass("Snowflake password (hidden; saved in macOS Keychain): ")
+        password = getpass.getpass("Snowflake password (hidden; saved in your OS credential store): ")
         if not password:
             parser.error("Password cannot be empty")
         with connect(password) as connection:
@@ -87,7 +92,7 @@ def main():
         if result["rows"] != [(ROLE, 3234)]:
             raise RuntimeError("Connection test returned an unexpected result")
         keyring.set_password(SERVICE, USER, password)
-        print("Verified CENSUS_READER access: 3234 rows. Password saved in macOS Keychain.")
+        print(f"Verified {ROLE} access: 3234 rows. Password saved in your OS credential store.")
         return
 
     password = keyring.get_password(SERVICE, USER)
