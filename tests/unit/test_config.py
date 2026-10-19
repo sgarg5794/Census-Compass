@@ -11,3 +11,14 @@ def test_defaults_match_spec(monkeypatch):
         5,
     )
     assert s.snowflake_role == "CENSUS_READER"
+
+
+def test_env_example_does_not_override_defaults(tmp_path):
+    from pathlib import Path
+
+    src = Path(__file__).resolve().parents[2] / ".env.example"
+    tmp = tmp_path / ".env"
+    tmp.write_text(src.read_text())
+    s = Settings(_env_file=tmp)
+    assert s.embedding_model == "BAAI/bge-small-en-v1.5"
+    assert s.agent_model == "anthropic/claude-sonnet-5-5"
