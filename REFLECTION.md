@@ -16,6 +16,30 @@ Resolvers for year, geography and population group turn the user's wording into 
 
 SQLGlot-based checks validate and constrain the generated SQL deterministically, so the model is not the only safeguard against its own mistakes. They help enforce query boundaries but cannot prove that every query is statistically meaningful, so rules about measure grain and aggregation are still needed.
 
+## What it looks like
+
+The screenshots are in [docs/screenshots/](docs/screenshots/). They come from the Streamlit chat UI running locally.
+
+Welcome screen with four example questions:
+
+![Welcome screen](docs/screenshots/welcome_screen.png)
+
+A data question. The answer gives the figure, the survey period, how many block groups had data, and says no uncertainty was computed for this rate:
+
+![Data answer](docs/screenshots/data-answer.png)
+
+A sensitive but legitimate question. The agent says Census data cannot explain why the rates differ, then offers the comparison and asks which White group to use:
+
+![Sensitive question](docs/screenshots/sensitive-question.png)
+
+A Census concept question, answered from the reviewed glossary with the source and page named:
+
+![Glossary answer](docs/screenshots/glossary-answer.png)
+
+A request that is declined, with a neutral question the data can answer:
+
+![Guardrail decline](docs/screenshots/guardrail-decline.png)
+
 ## Time Investment & Prioritization Under Constraints
 
 With limited time, I built one end-to-end path first: scope-check the request, resolve the key entities, retrieve the relevant schema, generate and validate a query, run it and present the result. I spent the most effort on semantic definitions and deterministic SQL checks. A fluent answer built on a misread field or an invalid aggregation would be especially misleading.
