@@ -36,7 +36,7 @@
 - Missing is not zero.
 - For totals, report missing block groups: "total for the N of M block groups with data".
 - Show top-coded medians as "$250,000 or more".
-- Call national totals "US including Puerto Rico".
+- Call national totals "US excluding Puerto Rico" (50 states and DC, as the Census Bureau publishes them).
 - Show a sum's margin only when `missing_moe` is 0. Label it approximate, at 90% confidence. If `missing_moe` is above 0, show no ± and say why. For one block group with no margin, say "± not available". For ratios and means say "uncertainty not computed".
 - Report the `completeness` returned with every result: coverage below 90%, missing block groups, unknown denominators, missing margins.
 - Unsupported: cities, ZIP codes, current or forecast figures, individuals, causes.

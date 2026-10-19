@@ -49,9 +49,10 @@ def test_state():
 
 def test_nation():
     r = resolve_geography("United States", 2020)
-    assert r["level"] == "nation" and r["sql_filter"] is None and "Puerto Rico" in r["name"]
+    assert r["level"] == "nation" and "'72'" in r["sql_filter"] and "excluding" in r["name"]
     assert r["status"] == "ok"
-    assert r["block_groups"] == FIXTURE_TOTAL
+    pr = resolve_geography("Puerto Rico", 2020)
+    assert r["block_groups"] == FIXTURE_TOTAL - pr["block_groups"]
 
 
 def test_ambiguous():
@@ -160,8 +161,14 @@ def test_territories_are_no_data(place):
 )
 def test_nation_wordings(place):
     r = resolve_geography(place, 2020)
-    assert (r["status"], r["level"], r["sql_filter"]) == ("ok", "nation", None)
-    assert r["name"] == "United States (including Puerto Rico)"
+    assert (r["status"], r["level"]) == ("ok", "nation")
+    assert r["name"] == "United States (excluding Puerto Rico)"
+    assert "72" in r["sql_filter"] and "<>" in r["sql_filter"]
+    assert "{table}" in r["sql_filter"]
+    pr = resolve_geography("Puerto Rico", 2020)
+    assert pr["level"] == "state" and "'72'" in pr["sql_filter"]
+    assert r["block_groups"] == resolve_geography("US", 2020)["block_groups"]
+    assert r["block_groups"] > 0
 
 
 def test_all_52_states_in_names_module():
@@ -522,3 +529,11 @@ def test_real_co_abbreviations(year):
     assert r["sql_filter"] == county_filter("06037")
     r = resolve_geography_from("LA", year, source_dir=source)
     assert r["candidates"] == ["Louisiana", "Los Angeles County, CA"]
+
+
+def test_nation_excludes_puerto_rico_block_groups():
+    nation = resolve_geography("United States", 2020)
+    pr = resolve_geography("Puerto Rico", 2020)
+    assert nation["sql_filter"] == 'LEFT({table}."CENSUS_BLOCK_GROUP", 2) <> \'72\''
+    assert pr["block_groups"] > 0
+    assert nation["block_groups"] + pr["block_groups"] == FIXTURE_TOTAL

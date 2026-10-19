@@ -131,7 +131,7 @@ cases:
       - "What was the total population of the United States in the 2015–2019 survey?"
     expected:
       kind: "number"
-      value: 328016242
+      value: 324697795
       unit: "count"
       tolerance:
         kind: "exact"
@@ -140,10 +140,10 @@ cases:
                COUNT(*) AS BLOCK_GROUPS,
                COUNT_IF("2019_CBG_B01"."B01003e1" IS NULL) AS MISSING
         FROM "2019_CBG_B01"
-        WHERE TRUE
+        WHERE LEFT("2019_CBG_B01"."CENSUS_BLOCK_GROUP", 2) <> '72'
       must_mention:
         - "ACS 2015–2019 5-year estimates"
-        - "including Puerto Rico"
+        - "excluding Puerto Rico"
       must_not: []
     traps: []
   - id: "males_under_five_california"
@@ -689,14 +689,14 @@ cases:
                SUM(IFF("2020_CBG_B19"."B19025Ee1" IS NULL OR "2020_CBG_B25"."B25003Ee1" IS NULL, NULL, "2020_CBG_B25"."B25003Ee1")) / NULLIF(SUM("2020_CBG_B25"."B25003Ee1"), 0) AS COVERAGE
         FROM "2020_CBG_B19"
         JOIN "2020_CBG_B25" ON "2020_CBG_B19"."CENSUS_BLOCK_GROUP" = "2020_CBG_B25"."CENSUS_BLOCK_GROUP"
-        WHERE TRUE
+        WHERE LEFT("2020_CBG_B19"."CENSUS_BLOCK_GROUP", 2) <> '72'
       coverage: 0.207
       must_mention:
         - "ACS 2016–2020 5-year estimates"
         - "Native Hawaiian and Other Pacific Islander"
         - "coverage"
         - "21%"
-        - "including Puerto Rico"
+        - "excluding Puerto Rico"
       must_not: []
     traps:
       - "race_low_coverage"
@@ -968,7 +968,7 @@ cases:
       - "What is the homeownership rate in the United States?"
     expected:
       kind: "number"
-      value: 64.44
+      value: 64.40
       unit: "percent"
       tolerance:
         kind: "absolute"
@@ -978,10 +978,10 @@ cases:
                / NULLIF(SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")), 0) AS VALUE,
                SUM(IFF("2020_CBG_B25"."B25003e2" IS NULL OR "2020_CBG_B25"."B25003e1" IS NULL, NULL, "2020_CBG_B25"."B25003e1")) / NULLIF(SUM("2020_CBG_B25"."B25003e1"), 0) AS COVERAGE
         FROM "2020_CBG_B25"
-        WHERE TRUE
+        WHERE LEFT("2020_CBG_B25"."CENSUS_BLOCK_GROUP", 2) <> '72'
       must_mention:
         - "ACS 2016–2020 5-year estimates"
-        - "including Puerto Rico"
+        - "excluding Puerto Rico"
       must_not: []
     traps: []
   - id: "household_size_utah"

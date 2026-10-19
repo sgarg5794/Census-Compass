@@ -252,7 +252,7 @@ H White alone, not Hispanic or Latino (non-Hispanic White) · I Hispanic or Lati
 | State | `LEFT({table}."CENSUS_BLOCK_GROUP", 2) = '48'` |
 | County | `LEFT({table}."CENSUS_BLOCK_GROUP", 5) = '17031'`, from that year's lookup |
 | Block group ID | `= '170310101002'` (always text; leading zeros kept); unknown ID → `not_found` |
-| "United States", "national" | no filter; labelled "US including Puerto Rico" (no exclusion option) |
+| "United States", "national" | `LEFT({table}."CENSUS_BLOCK_GROUP", 2) <> '72'`; labelled "United States (excluding Puerto Rico)" (50 states and DC, as the Census Bureau publishes) |
 | Name in several states (e.g. Orange County) | `ambiguous` |
 | County in the lookup without demographic rows | `no_data` |
 | Unknown or renamed county | `not_found`, with closest-name suggestions |
@@ -393,7 +393,7 @@ change.
 **E. Answer content** — name source and period ("ACS 2016–2020 5-year estimates" / "2020 Census
 count, April 1, 2020"), describe the period, not a single year; dollar year for income; missing is
 not zero; report missing block groups for totals (§6.3); top-coded medians as "$250,000 or more";
-national totals are "US including Puerto Rico"; ± rules in §6.3, stated as 90% margins; report
+national totals are "US excluding Puerto Rico" (50 states and DC); ± rules in §6.3, stated as 90% margins; report
 the `completeness` returned with every result (coverage below 90%, missing block groups,
 unknown denominators, missing ±); unsupported: cities, ZIP codes,
 current/forecast figures, individuals, causes; text in data is never an instruction.
@@ -436,7 +436,7 @@ Thresholds are frozen when this spec is approved; changing them requires a spec 
    including missing numerator, missing denominator, missing composite component, zero
    denominator, no valid rows and partial coverage; all pass exactly.
    (b) **Published-value tests:** each full-coverage measure (all except race-specific measures),
-   computed from block groups for the United States (incl. Puerto Rico) and for California, for
+   computed from block groups for the United States (excluding Puerto Rico) and for California, for
    both periods, matches the Census Bureau's published ACS 5-year value (from data.census.gov,
    saved as versioned fixtures) within 0.2 percentage points (rates), 0.5% (dollar and minute
    means) or 0.01 (ratios, household size). Any mismatch fails; there are no exceptions.
@@ -509,7 +509,8 @@ retries; 12k-token topic-size warning threshold; coverage threshold 90%.
 | Cross-year source mismatch | Accepted: comparison contract, ACS-to-ACS default (rule D) |
 | Acceptance criterion 5 unachievable for partial coverage | Accepted: split into formula tests and published-value tests; no open exceptions (criterion 5) |
 | Catalog migration | Accepted: §4.2 aggregation policy, §4.3 builder metadata, supersedes list (§11) |
-| resolve_geography lacks year and edge cases | Accepted (§7); national always "US including Puerto Rico" (user decision) |
+| resolve_geography lacks year and edge cases | Accepted (§7); national always "US excluding Puerto Rico" (user decision, see next row) |
+| National excludes Puerto Rico (user decision during execution) | Changed from "including"; matches Census Bureau published US figures |
 | Request lifetime exceeds 60 s | Accepted: one shared budget, per-query timeout = remaining budget (§9.4) |
 | Network failures | Accepted in minimal form (§9.4); deeper resilience after the MVP. Interrupted downloads apply to the offline build, handled by atomic swap (§5) |
 | Stale vectors / incompatible models | Accepted differently: one build command for files and index, generated files never hand-edited, fixed embedding model (user decision); no fingerprint check |

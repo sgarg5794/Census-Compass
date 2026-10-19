@@ -8,7 +8,7 @@ TOOLS = ["resolve_year", "resolve_population_group", "resolve_geography",
 def test_domain_rules_size_and_phrases():
     text = (PROMPTS / "domain_rules.md").read_text()
     assert len(text) / 4 <= 1500
-    for phrase in ["US including Puerto Rico", "not adjusted for inflation", "90%",
+    for phrase in ["US excluding Puerto Rico", "not adjusted for inflation", "90%",
                    "CENSUS_BLOCK_GROUP", "never aggregated"]:
         assert phrase in text
 

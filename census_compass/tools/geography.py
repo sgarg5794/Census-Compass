@@ -12,7 +12,9 @@ from census_compass.contracts import CountyRecord, GeographyResolution, load_geo
 from census_compass.geography_names import STATE_ALIASES, STATES, TERRITORIES, StateName
 
 _YEARS = (2019, 2020)
-_NATION_NAME = "United States (including Puerto Rico)"
+_PR_FIPS = "72"
+_NATION_FILTER = 'LEFT({table}."CENSUS_BLOCK_GROUP", 2) <> \'72\''
+_NATION_NAME = "United States (excluding Puerto Rico)"
 _STATE_FILTER = "LEFT({{table}}.\"CENSUS_BLOCK_GROUP\", 2) = '{}'"
 _COUNTY_FILTER = "LEFT({{table}}.\"CENSUS_BLOCK_GROUP\", 5) = '{}'"
 _BLOCK_GROUP_FILTER = "{{table}}.\"CENSUS_BLOCK_GROUP\" = '{}'"
@@ -432,8 +434,10 @@ def resolve_geography_from(place: str, year: int, *, source_dir: Path | None = N
             status="ok",
             name=_NATION_NAME,
             level="nation",
-            block_groups=index.total,
-            message="National figures include Puerto Rico.",
+            sql_filter=_NATION_FILTER,
+            block_groups=index.total - index.state_totals.get(_PR_FIPS, 0),
+            message="National figures cover the 50 states and DC; Puerto Rico is excluded, "
+            "matching the Census Bureau. Ask about Puerto Rico separately.",
         )
     if query == "la":  # "LA" / "L.A.": Louisiana or Los Angeles (controller ruling)
         candidates = ["Louisiana"] + [
@@ -467,8 +471,9 @@ def resolve_geography(place: str, year: int) -> dict:
     - state:  LEFT({table}."CENSUS_BLOCK_GROUP", 2) = '48'
     - county: LEFT({table}."CENSUS_BLOCK_GROUP", 5) = '17031'
     - block group: {table}."CENSUS_BLOCK_GROUP" = '170310101002'
-    - nation: no filter (sql_filter is null); always labelled
-      "United States (including Puerto Rico)".
+    - nation: LEFT({table}."CENSUS_BLOCK_GROUP", 2) <> '72' (50 states and DC; Puerto
+      Rico excluded, as the Census Bureau does); always labelled
+      "United States (excluding Puerto Rico)". Puerto Rico alone is state 72.
     To show county names, join the same year's county lookup (many-to-one):
     LEFT("<A>"."CENSUS_BLOCK_GROUP", 5) =
     "<Y>_METADATA_CBG_FIPS_CODES"."STATE_FIPS" || "<Y>_METADATA_CBG_FIPS_CODES"."COUNTY_FIPS"
