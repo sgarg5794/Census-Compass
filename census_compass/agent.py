@@ -1,4 +1,4 @@
-"""ADK agent definition: Claude via LiteLLM, the six tools and the system prompt.
+"""ADK agent definition: Claude via LiteLLM, the seven tools and the system prompt.
 
 `adk web` run from the repository root discovers `root_agent` through the
 `census_compass` package. Importing this module makes no model, LanceDB or
@@ -22,6 +22,7 @@ from census_compass.config import get_settings
 from census_compass.guardrails.contracts import ROUTE_STATE_KEY
 from census_compass.guardrails.gate import guardrail_callback, routing_hint
 from census_compass.tools.geography import resolve_geography
+from census_compass.tools.glossary import lookup_glossary
 from census_compass.tools.population_group import resolve_population_group
 from census_compass.tools.query import DEADLINE_KEY, REJECTIONS_KEY, execute_query
 from census_compass.tools.schema import get_schema, search_schema
@@ -82,6 +83,7 @@ root_agent = LlmAgent(
         search_schema,
         get_schema,
         execute_query,
+        lookup_glossary,
     ],
     before_agent_callback=[start_turn, guardrail_callback],
     on_model_error_callback=on_model_error,
