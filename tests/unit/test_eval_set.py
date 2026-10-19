@@ -232,3 +232,17 @@ def test_parse_value_rejects_annotation_codes():
 
 def test_script_specs_cover_every_full_coverage_measure():
     assert set(_script().measure_names()) == FULL_COVERAGE_MEASURES
+
+
+# Rule D (spec section 10): every 2019-vs-2020 answer explains the period overlap, the redrawn
+# block-group boundaries, and that the difference is not a measured change.
+RULE_D_CONCEPTS = ("share 4 of 5 survey years", "block-group boundaries were redrawn",
+                   "not a measured change")
+
+
+def test_comparison_cases_require_rule_d_explanations():
+    cases = [case for case in _cases() if "change_2019_2020" in case["traps"]]
+    assert len(cases) >= 3
+    for case in cases:
+        for concept in RULE_D_CONCEPTS:
+            assert concept in case["expected"]["must_mention"], (case["id"], concept)

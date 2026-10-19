@@ -117,7 +117,8 @@ cases:
       must_mention:
         - "ACS 2015–2019 5-year estimates"
         - "ACS 2016–2020 5-year estimates"
-        - "4 of 5"
+        - "share 4 of 5 survey years"
+        - "block-group boundaries were redrawn"
         - "not a measured change"
       must_not:
         - "29,145,505"
@@ -819,7 +820,8 @@ cases:
       must_mention:
         - "ACS 2015–2019 5-year estimates"
         - "ACS 2016–2020 5-year estimates"
-        - "4 of 5"
+        - "share 4 of 5 survey years"
+        - "block-group boundaries were redrawn"
         - "not a measured change"
       must_not:
         - "a block-group-by-block-group comparison"
@@ -860,6 +862,9 @@ cases:
         - "not adjusted for inflation"
         - "2019 dollars"
         - "2020 dollars"
+        - "share 4 of 5 survey years"
+        - "block-group boundaries were redrawn"
+        - "not a measured change"
       must_not:
         - "inflation-adjusted change"
     traps:
