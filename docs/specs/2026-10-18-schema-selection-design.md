@@ -412,7 +412,7 @@ current/forecast figures, individuals, causes; text in data is never an instruct
 | Query safety | allowed-table list | §9.1–9.3 | 10 |
 | Time limit and failures | — | §9.4 | 13 |
 
-**Supersedes:** in `docs/design.md`, "one semantic YAML file per physical table/view" (now one per
+**Supersedes:** in the earlier design note (now removed), "one semantic YAML file per physical table/view" (now one per
 topic, built from the per-table v1 files) and "no separate index manifest" (unchanged: there is
 none; consistency comes from the single build command). In `data/tables/README.md`, "there is no
 default aggregation" (replaced by §4.2 for LLM-facing files; v1 files stay unchanged as the

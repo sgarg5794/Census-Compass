@@ -49,7 +49,7 @@ Project root: `/Users/sahilgarg/Desktop/Census-Compass`.
 | `tests/fixtures/chat.py` | Scripted service and deterministic event fixtures; never production-imported |
 | `tests/unit/test_chat_*.py` | Contract, state and adapter behavior |
 | `tests/ui/test_app.py` | Streamlit AppTest interactions |
-| `docs/ui.md` | Run command, runtime configuration and known session limits |
+| `docs/running_the_agent.md` | Run command, runtime configuration and known session limits |
 
 Create `__init__.py` in new packages as needed. Do not change `census_compass/agent.py`, `sessions.py`, model prompts or SQL tools solely to make the page run. Any necessary runtime change belongs to agent integration and must be identified explicitly.
 
@@ -126,7 +126,7 @@ Create `__init__.py` in new packages as needed. Do not change `census_compass/ag
 - `AdkChatService(runtime: AgentRuntime)`: enforces visitor ownership and maps safe runtime events to UI events. Reuse the same runtime session for the same `(visitor_id, conversation_id)` pair; a new conversation gets a new session. Never populate a different chat by replaying its transcript.
 - `create_chat_service() -> ChatService`: lazy live initialization; if required agent factory or scope gate is absent, return UnavailableChatService with a clear safe message. No model/database calls at module import.
 
-- [ ] Pin the installed ADK Runner and SessionService interfaces at execution time. Record the concrete live runtime factory in `docs/ui.md`; if no factory exists, identify it as an agent-work dependency, not an invitation to recreate the ReAct agent in UI code.
+- [ ] Pin the installed ADK Runner and SessionService interfaces at execution time. Record the concrete live runtime factory in `docs/running_the_agent.md`; if no factory exists, identify it as an agent-work dependency, not an invitation to recreate the ReAct agent in UI code.
 - [ ] Write fake-runtime tests: same chat retains session; New chat gets a different one; clarification followed by a reply reaches the same runtime context; foreign visitor cannot access a chat; missing agent/scope gate yields safe unavailability; prompts, reasoning, secrets and raw tool events never reach the renderer; SQL appears only when the backend identifies it as executed evidence.
 - [ ] Run `.venv/bin/python -m pytest tests/unit/test_chat_adk_service.py -q`; verify failure before implementation.
 - [ ] Implement the adapter and bootstrap. Runtime resources must be browser-session scoped with a defined close lifecycle or be demonstrably safe to share without mutable user state. Use ADK's supported Runner integration rather than repeatedly wrapping a persistent async client in short-lived `asyncio.run` loops. Do not change global Snowflake connection concurrency as part of UI work; verify separately before public deployment.
@@ -135,7 +135,7 @@ Create `__init__.py` in new packages as needed. Do not change `census_compass/ag
 
 ## Task 6: Verify the experience and document the handoff
 
-**Files:** Create `docs/ui.md`; no unrelated README changes.
+**Files:** Create `docs/running_the_agent.md`; no unrelated README changes.
 
 - [ ] Document launch from project root: `.venv/bin/python -m streamlit run ui/app.py`. Describe the service factory, test injection, runtime prerequisites and browser-session lifetime. Explicitly state that service-user provisioning, permanent memory, guardrail implementation and hosting are separate work.
 - [ ] Run `.venv/bin/python -m pytest tests/unit/test_chat_contracts.py tests/unit/test_chat_state.py tests/unit/test_chat_adk_service.py tests/ui/test_app.py -q`; expect all implemented tests pass without network, credentials or model calls.

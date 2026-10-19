@@ -40,7 +40,7 @@ Google ADK agent running Claude (Sonnet) through LiteLLM, with internal Python t
 | `execute_query` | Validate (sqlglot, fail-closed) and run read-only SQL with a 60-second budget |
 | `lookup_glossary` | Answer Census concept questions from the reviewed glossary |
 
-Design documents are in `docs/design.md` and `docs/specs/`.
+Design documents are in `docs/specs/`.
 
 ## Run it locally
 
@@ -100,7 +100,7 @@ in Snowflake (see step 3).
    adk web
    ```
 
-   Open the printed URL. More options: `docs/running_the_agent.md` and `docs/ui.md`.
+   Open the printed URL. More options: `docs/running_the_agent.md`.
 
 ## Tests and checks
 
