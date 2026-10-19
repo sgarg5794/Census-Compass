@@ -228,7 +228,7 @@ def test_execute_query_reads_state_from_tool_context(monkeypatch):
     monkeypatch.setattr(query, "run_query", fake)
 
     class Ctx:
-        state = {"temp:sql_attempts": 0}
+        state = {"temp:sql_rejections": 0}
 
     assert execute_query("SELECT 1", Ctx()) == {"outcome": "answered"}
     assert seen == {"sql": "SELECT 1", "state": Ctx.state}
@@ -292,30 +292,131 @@ def test_augmentation_rejection_never_reaches_database(semantic):
     assert connector.calls == []
 
 
+BAD = 'SELECT e."B23025e9" FROM "2020_CBG_B23" e'
+
+
 def test_retry_limit_reached_without_validating_or_executing(semantic, monkeypatch):
     def boom(*a, **k):
         raise AssertionError("validated")
 
     monkeypatch.setattr(query, "validate_and_fix", boom)
     connector = Connector(FakeConn())
-    state = {"temp:budget_deadline": 1060.0, "temp:sql_attempts": 3}
+    state = {"temp:budget_deadline": 1060.0, "temp:sql_rejections": 3}
     out = _run(BY_COUNTY, semantic, connector, state=state)
     assert out["outcome"] == "query_rejected"
     assert "retry limit reached" in out["message"]
-    assert state["temp:sql_attempts"] == 4
     assert connector.calls == []
 
 
-def test_attempts_are_counted_and_third_attempt_is_allowed(semantic):
+def test_successful_queries_do_not_count_toward_retry_limit(semantic):
     state = {"temp:budget_deadline": 1060.0}
     conn = FakeConn()
     connector = Connector(conn)
-    for _ in range(3):
+    for _ in range(2):  # e.g. a 2019 vs 2020 comparison
         assert _run(BY_COUNTY, semantic, connector, state=state)["outcome"] == "answered"
-    assert state["temp:sql_attempts"] == 3
-    out = _run(BY_COUNTY, semantic, connector, state=state)
-    assert out["outcome"] == "query_rejected" and len(conn.statements) == 3
+    assert state.get("temp:sql_rejections", 0) == 0
+    assert _run(BAD, semantic, connector, state=state)["outcome"] == "query_rejected"
+    assert state["temp:sql_rejections"] == 1
+    assert _run(BY_COUNTY, semantic, connector, state=state)["outcome"] == "answered"
+    assert len(conn.statements) == 3
     assert len(connector.calls) == 1  # one lazily opened, reused connection
+
+
+def test_three_rejections_refuse_the_next_call(semantic):
+    state = {"temp:budget_deadline": 1060.0}
+    connector = Connector(FakeConn())
+    for _ in range(3):
+        out = _run(BAD, semantic, connector, state=state)
+        assert "retry limit" not in out["message"]
+    assert state["temp:sql_rejections"] == 3
+    out = _run(BY_COUNTY, semantic, connector, state=state)
+    assert out["outcome"] == "query_rejected" and "retry limit reached" in out["message"]
+    assert connector.calls == []
+
+
+def test_post_start_sql_error_counts_as_rejection(semantic):
+    err = ProgrammingError(msg="SQL compilation error", errno=2016, sfqid="01b2-0000-0003")
+    state = {"temp:budget_deadline": 1060.0}
+    out = _run(BY_COUNTY, semantic, Connector(FakeConn(errors=[err])), state=state)
+    assert out["outcome"] == "query_rejected" and state["temp:sql_rejections"] == 1
+
+
+def test_login_time_counts_against_the_budget(semantic):
+    clock = FakeClock(1000.0)
+    conn = FakeConn()
+
+    def slow_connect(**kwargs):
+        clock.now += 40
+        return conn
+
+    out = _run(
+        BY_COUNTY, semantic, slow_connect, state={"temp:budget_deadline": 1060.0}, clock=clock
+    )
+    assert out["outcome"] == "answered"
+    assert any("STATEMENT_TIMEOUT_IN_SECONDS = 20" in s for s in conn.executed)
+
+
+def test_login_past_deadline_times_out_without_executing(semantic):
+    clock = FakeClock(1000.0)
+    conn = FakeConn()
+
+    def slower(**kwargs):
+        clock.now += 70
+        return conn
+
+    out = _run(BY_COUNTY, semantic, slower, state={"temp:budget_deadline": 1060.0}, clock=clock)
+    assert out["outcome"] == "timed_out"
+    assert conn.statements == []
+
+
+def test_reconnect_time_counts_against_the_budget(semantic):
+    clock = FakeClock(1000.0)
+    first = FakeConn(errors=[OperationalError(msg="connection reset", errno=250003)])
+    second = FakeConn()
+    conns = [first, second]
+
+    def connect(**kwargs):
+        if len(conns) == 1:
+            clock.now += 58  # 2 s left after the reconnect < 5 s minimum
+        return conns.pop(0)
+
+    out = _run(BY_COUNTY, semantic, connect, state={"temp:budget_deadline": 1060.0}, clock=clock)
+    assert out["outcome"] == "timed_out"
+    assert second.statements == []
+
+
+def test_lock_wait_is_bounded_by_the_budget(semantic):
+    import threading
+    import time
+
+    held = threading.Event()
+    release = threading.Event()
+
+    def holder():
+        with query._lock:
+            held.set()
+            release.wait(5)
+
+    t = threading.Thread(target=holder)
+    t.start()
+    held.wait(5)
+    conn = FakeConn()
+    try:
+        start = time.monotonic()
+        out = run_query(
+            BY_COUNTY,
+            {"temp:budget_deadline": time.monotonic() + 0.3},
+            settings=Settings(),
+            semantic_dir=semantic,
+            connect=Connector(conn),
+            get_password=lambda a, u: PASSWORD,
+        )
+        elapsed = time.monotonic() - start
+    finally:
+        release.set()
+        t.join()
+    assert out["outcome"] == "timed_out"
+    assert elapsed < 2 and conn.statements == []
 
 
 def test_budget_exhausted_times_out_without_executing(semantic):
@@ -451,3 +552,38 @@ def test_metadata_is_cached_per_semantic_dir(semantic, monkeypatch):
     _run(BY_COUNTY, semantic, connector, state={})
     _run(BY_COUNTY, semantic, connector, state={})
     assert sorted(calls) == [2019, 2020]
+
+
+def test_redaction_is_case_insensitive_and_covers_warehouse(semantic):
+    settings = Settings(snowflake_user="agent_user", snowflake_warehouse="my_wh")
+    err = ProgrammingError(
+        msg="Object 'AGENT_USER' does not exist; warehouse MY_WH", errno=2003, sfqid="01ab-ce"
+    )
+    out = _run(BY_COUNTY, semantic, Connector(FakeConn(errors=[err])), settings=settings)
+    assert out["outcome"] == "query_rejected"
+    assert "agent_user" not in out["message"].lower() and "my_wh" not in out["message"].lower()
+    assert "***" in out["message"]
+
+
+def test_missing_semantic_files_are_generic_database_failure(tmp_path, caplog):
+    connector = Connector(FakeConn())
+    with caplog.at_level("ERROR"):
+        out = _run(BY_COUNTY, tmp_path / "nope", connector)
+    assert out["outcome"] == "database_failure"
+    assert "nope" not in out["message"] and "Traceback" not in out["message"]
+    assert connector.calls == []
+    assert any(r.exc_info for r in caplog.records)
+
+
+def test_unexpected_augment_error_is_generic_database_failure(semantic, monkeypatch, caplog):
+    def broken(sql, metadata):
+        raise ValueError("internal detail /secret/path")
+
+    monkeypatch.setattr(query, "augment", broken)
+    connector = Connector(FakeConn())
+    with caplog.at_level("ERROR"):
+        out = _run(BY_COUNTY, semantic, connector)
+    assert out["outcome"] == "database_failure"
+    assert "secret" not in out["message"]
+    assert connector.calls == []
+    assert any(r.exc_info for r in caplog.records)

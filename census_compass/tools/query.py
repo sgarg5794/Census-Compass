@@ -8,6 +8,7 @@ connection strings or stack traces.
 from __future__ import annotations
 
 import logging
+import re
 import threading
 import time
 from collections.abc import Callable, MutableMapping
@@ -37,7 +38,7 @@ log = logging.getLogger(__name__)
 
 YEARS = (2019, 2020)
 DEADLINE_KEY = "temp:budget_deadline"
-ATTEMPTS_KEY = "temp:sql_attempts"
+REJECTIONS_KEY = "temp:sql_rejections"
 
 _TIMEOUT_ERRNOS = {604, 630}  # SQL execution canceled; statement/warehouse timeout
 _SESSION_ERRNOS = {390111, 390112, 390114}  # session gone / expired / token expired
@@ -45,12 +46,17 @@ _DB_FAILURE_MESSAGE = (
     "The census database could not be reached or the login failed. "
     "Tell the user the data is temporarily unavailable; do not retry."
 )
+_INTERNAL_FAILURE_MESSAGE = (
+    "The query could not be run because of an internal error. "
+    "Tell the user the data is temporarily unavailable; do not retry."
+)
 _TIMEOUT_MESSAGE = (
     "The query ran out of the request's time budget and was stopped. "
     "Tell the user the question took too long; suggest a narrower question."
 )
 
-_lock = threading.Lock()
+_lock = threading.Lock()  # guards the shared connection
+_cache_lock = threading.Lock()
 _conn: Any = None
 _metadata_cache: dict[Path, tuple[BuilderMetadata, list[str]]] = {}
 
@@ -81,9 +87,10 @@ def execute_query(sql: str, tool_context: ToolContext) -> dict:
       "no rows" when the query returned nothing.
     - ``query_id``: the Snowflake query ID, when the query ran.
 
-    On query_rejected, fix the SQL using the message and call again. At most 2 retries
-    (3 calls) per question; after that the call returns query_rejected "retry limit reached"
-    and you must stop and explain. On timed_out or database_failure, do not retry.
+    On query_rejected, fix the SQL using the message and call again: at most 2 retries after a
+    rejected query per question (successful queries do not count, so a comparison may run
+    several). After a third rejection, further calls return query_rejected "retry limit
+    reached" and you must stop and explain. On timed_out or database_failure, do not retry.
     """
     return run_query(sql, tool_context.state)
 
@@ -94,6 +101,7 @@ def reset() -> None:
     with _lock:
         _close(_conn)
         _conn = None
+    with _cache_lock:
         _metadata_cache.clear()
 
 
@@ -109,9 +117,8 @@ def run_query(
 ) -> dict:
     """Implementation of ``execute_query`` with injectable dependencies."""
     settings = settings or get_settings()
-    attempts = int(state.get(ATTEMPTS_KEY) or 0) + 1
-    state[ATTEMPTS_KEY] = attempts
-    if attempts > settings.max_sql_retries + 1:
+    rejections = int(state.get(REJECTIONS_KEY) or 0)
+    if rejections > settings.max_sql_retries:
         return _result(
             Outcome.QUERY_REJECTED,
             message=(
@@ -119,7 +126,25 @@ def run_query(
                 "user the question could not be answered with a valid query."
             ),
         )
+    try:
+        out = _run(sql, settings, semantic_dir, connect, get_password, clock, state)
+    except Exception:
+        log.error("execute_query failed unexpectedly", exc_info=True)
+        out = _result(Outcome.DATABASE_FAILURE, message=_INTERNAL_FAILURE_MESSAGE)
+    if out["outcome"] == Outcome.QUERY_REJECTED:
+        state[REJECTIONS_KEY] = rejections + 1
+    return out
 
+
+def _run(
+    sql: str,
+    settings: Settings,
+    semantic_dir: Path | None,
+    connect: Callable[..., Any] | None,
+    get_password: Callable[[str, str], str | None] | None,
+    clock: Callable[[], float],
+    state: MutableMapping[str, Any],
+) -> dict:
     deadline = state.get(DEADLINE_KEY)
     if deadline is None:
         budget = RequestBudget(settings.request_budget_seconds, clock)
@@ -142,8 +167,12 @@ def run_query(
         return _rejected(e)
 
     opener = _opener(settings, connect, get_password)
-    with _lock:
+    if not _lock.acquire(timeout=max(0.0, budget.remaining())):
+        return _result(Outcome.TIMED_OUT, message=_TIMEOUT_MESSAGE)
+    try:
         return _execute(augmented, budget, settings, opener)
+    finally:
+        _lock.release()
 
 
 # --------------------------------------------------------------------------- execution
@@ -159,8 +188,8 @@ def _execute(
     max_rows = settings.max_result_rows
     reopened = False
     while True:
-        timeout = budget.statement_timeout(settings.min_statement_timeout_seconds)
-        if timeout is None:
+        # Checked before logging in (no point connecting without budget) and again after.
+        if budget.statement_timeout(settings.min_statement_timeout_seconds) is None:
             return _result(Outcome.TIMED_OUT, message=_TIMEOUT_MESSAGE)
         if _conn is None:
             try:
@@ -168,6 +197,10 @@ def _execute(
             except Exception as e:  # login, network, Keychain, role mismatch
                 log.warning("Snowflake connection failed: %s", type(e).__name__)
                 return _result(Outcome.DATABASE_FAILURE, message=_DB_FAILURE_MESSAGE)
+        # Computed after any (re)login so login time counts against the budget.
+        timeout = budget.statement_timeout(settings.min_statement_timeout_seconds)
+        if timeout is None:
+            return _result(Outcome.TIMED_OUT, message=_TIMEOUT_MESSAGE)
         try:
             columns, rows, truncated, query_id = run_statement(
                 _conn, augmented.sql, timeout, max_rows
@@ -276,9 +309,13 @@ def _is_connection_error(e: Exception) -> bool:
 def _snowflake_message(e: SnowflakeError, settings: Settings) -> str:
     lines = (e.msg or type(e).__name__).strip().splitlines() or [type(e).__name__]
     msg = lines[0][:300]
-    for secret in (settings.snowflake_account, settings.snowflake_user):
+    for secret in (
+        settings.snowflake_account,
+        settings.snowflake_user,
+        settings.snowflake_warehouse,
+    ):
         if secret:
-            msg = msg.replace(secret, "***")
+            msg = re.sub(re.escape(secret), "***", msg, flags=re.IGNORECASE)
     return msg
 
 
@@ -287,7 +324,7 @@ def _snowflake_message(e: SnowflakeError, settings: Settings) -> str:
 
 def _semantics(semantic_dir: Path) -> tuple[BuilderMetadata, list[str]]:
     key = semantic_dir.resolve()
-    with _lock:
+    with _cache_lock:
         cached = _metadata_cache.get(key)
     if cached is not None:
         return cached
@@ -303,7 +340,7 @@ def _semantics(semantic_dir: Path) -> tuple[BuilderMetadata, list[str]]:
     )
     tables = load_allowed_tables(semantic_dir).tables
     allowed = [t for year in YEARS for t in tables.get(year, [])]
-    with _lock:
+    with _cache_lock:
         _metadata_cache[key] = (merged, allowed)
     return merged, allowed
 
