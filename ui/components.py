@@ -29,9 +29,10 @@ def render_welcome() -> str | None:
 
 
 def render_sidebar(state: "ChatState") -> tuple[str, str | None] | None:
+    action = None
     with st.sidebar:
         if st.button("New chat", disabled=state.pending_request is not None, width="stretch"):
-            return ("new", None)
+            action = ("new", None)
         st.caption("Conversation history")
         for conversation in reversed(tuple(state.conversations.values())):
             if not conversation.messages:
@@ -42,8 +43,8 @@ def render_sidebar(state: "ChatState") -> tuple[str, str | None] | None:
                 disabled=state.pending_request is not None,
                 width="stretch",
             ):
-                return ("select", conversation.id)
-    return None
+                action = ("select", conversation.id)
+    return action
 
 
 def render_message(message: "ChatMessage") -> None:
